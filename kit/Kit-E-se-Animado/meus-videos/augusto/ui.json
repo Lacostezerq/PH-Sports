@@ -1,0 +1,616 @@
+{
+ "duracao": 516.63,
+ "palavrasPorLegenda": 3,
+ "destaques": [
+  "atrasado",
+  "dobra",
+  "devagar",
+  "espera.",
+  "espera",
+  "tempo",
+  "tempo.",
+  "som",
+  "som,",
+  "velocidade",
+  "Bia",
+  "Lurdes",
+  "Augusto",
+  "Augusto,"
+ ],
+ "trocas": {
+  "0": "0",
+  "1": "1",
+  "2": "2",
+  "3": "3",
+  "4": "4",
+  "5": "5",
+  "6": "6",
+  "7": "7",
+  "8": "8",
+  "9": "9",
+  "10": "10",
+  "11": "11",
+  "12": "12",
+  "13": "13",
+  "14": "14",
+  "15": "15",
+  "16": "16",
+  "17": "17",
+  "18": "18",
+  "19": "19",
+  "20": "20"
+ },
+ "elementos": [
+  {
+   "tipo": "etiqueta",
+   "inicio": 1.6,
+   "fim": 8.2,
+   "texto": "SEMANA 8 · AVENIDA PAULISTA · 15:00"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 28.6,
+   "fim": 31.6,
+   "numero": "8 SEMANAS",
+   "texto": "ANTES"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 80.1,
+   "fim": 83.1,
+   "numero": "×2",
+   "rotulo": "A VELOCIDADE DOBRA TODA SEMANA",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 84.8,
+   "fim": 87.65,
+   "numero": "5 km/h",
+   "rotulo": "PESSOA NORMAL",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 87.7,
+   "fim": 88.65,
+   "numero": "10 km/h",
+   "rotulo": "SEMANA 1",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 88.7,
+   "fim": 90.05,
+   "numero": "20 km/h",
+   "rotulo": "SEMANA 2",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 90.1,
+   "fim": 91.0,
+   "numero": "40 km/h",
+   "rotulo": "SEMANA 3",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 95.3,
+   "fim": 98.3,
+   "numero": "SEMANA 1",
+   "texto": "10 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 104.6,
+   "fim": 107.4,
+   "numero": "SEMANA 2",
+   "texto": "20 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 114.9,
+   "fim": 117.6,
+   "numero": "SEMANA 3",
+   "texto": "40 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 121.5,
+   "fim": 124.3,
+   "numero": "SEMANA 4",
+   "texto": "80 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 126.4,
+   "fim": 129.9,
+   "numero": "2,3 MI",
+   "rotulo": "VISUALIZAÇÕES",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 156.1,
+   "fim": 159.0,
+   "numero": "SEMANA 5",
+   "texto": "160 km/h"
+  },
+  {
+   "tipo": "burst",
+   "inicio": 183.4,
+   "fim": 186.6,
+   "texto": "LIKE!",
+   "topo": 200,
+   "esquerda": 120
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 188.6,
+   "fim": 191.5,
+   "numero": "SEMANA 6",
+   "texto": "320 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 196.8,
+   "fim": 199.2,
+   "numero": "64×",
+   "rotulo": "O MUNDO FICA MAIS DEVAGAR",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 199.5,
+   "fim": 205.0,
+   "numero": "3 s → 3 min",
+   "rotulo": "UMA FRASE DA BIA",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 227.6,
+   "fim": 230.5,
+   "numero": "SEMANA 7",
+   "texto": "640 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 242.7,
+   "fim": 245.6,
+   "numero": "SEMANA 8",
+   "texto": "1.280 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 245.8,
+   "fim": 249.5,
+   "numero": "MACH 1",
+   "rotulo": "MAIS RÁPIDO QUE O SOM",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 293.5,
+   "fim": 296.6,
+   "numero": "5.120 km/h",
+   "rotulo": "SEMANA 10",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 296.7,
+   "fim": 300.6,
+   "numero": "1 s = 17 min",
+   "rotulo": "PRA ELE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 301.0,
+   "fim": 306.5,
+   "numero": "40.960 km/h",
+   "rotulo": "SEMANA 13 · ESCAPA DA GRAVIDADE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 306.8,
+   "fim": 310.1,
+   "numero": "1 min = 6 dias",
+   "rotulo": "PRA ELE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 311.8,
+   "fim": 315.0,
+   "numero": "≈ LUZ",
+   "rotulo": "EM UNS 6 MESES",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 331.0,
+   "fim": 333.6,
+   "numero": "SEMANA 13",
+   "texto": "40.960 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 354.9,
+   "fim": 358.4,
+   "numero": "1 min = 6 dias",
+   "rotulo": "PRA ELE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 433.7,
+   "fim": 437.0,
+   "numero": "5 km/h",
+   "rotulo": "IGUAL A TODO MUNDO",
+   "topo": 60
+  },
+  {
+   "tipo": "burst",
+   "inicio": 507.1,
+   "fim": 511.2,
+   "texto": "INSCREVA-SE",
+   "topo": 120,
+   "esquerda": 1250
+  },
+  {
+   "tipo": "pill",
+   "inicio": 279.9,
+   "fim": 289.8,
+   "texto": "O QUE VOCÊ FARIA PRIMEIRO?",
+   "topo": 170
+  },
+  {
+   "tipo": "pill",
+   "inicio": 284.6,
+   "fim": 289.8,
+   "texto": "ESCREVE NOS COMENTÁRIOS",
+   "topo": 280
+  },
+  {
+   "tipo": "pill",
+   "inicio": 499.2,
+   "fim": 505.2,
+   "texto": "6 DIAS DENTRO DE 1 MINUTO:",
+   "topo": 150
+  },
+  {
+   "tipo": "pill",
+   "inicio": 500.4,
+   "fim": 505.2,
+   "texto": "COM QUEM VOCÊ PASSARIA?",
+   "topo": 255
+  },
+  {
+   "tipo": "pill",
+   "inicio": 503.3,
+   "fim": 505.2,
+   "texto": "ESCREVE SÓ O NOME",
+   "topo": 360
+  },
+  {
+   "tipo": "fato",
+   "inicio": 25.6,
+   "fim": 28.5,
+   "titulo": "BARREIRA DO SOM",
+   "valor": "1.235 km/h",
+   "texto": "velocidade do som no ar, ao nível do mar"
+  },
+  {
+   "tipo": "etiqueta",
+   "inicio": 34.0,
+   "fim": 38.0,
+   "texto": "ZONA LESTE · SÃO PAULO"
+  },
+  {
+   "tipo": "fato",
+   "inicio": 44.6,
+   "fim": 49.6,
+   "titulo": "FICHA DO AUGUSTO",
+   "valor": "23 atrasos",
+   "texto": "só neste mês (recorde da pizzaria)",
+   "lado": "direita"
+  },
+  {
+   "tipo": "etiqueta",
+   "inicio": 52.0,
+   "fim": 56.4,
+   "texto": "2 ANOS ATRÁS · 3:12 DA MANHÃ"
+  },
+  {
+   "tipo": "fato",
+   "inicio": 107.3,
+   "fim": 111.5,
+   "titulo": "COMPARA",
+   "barras": [
+    {
+     "rotulo": "bicicleta",
+     "valor": 18,
+     "texto": "~18 km/h",
+     "cor": "#8FD3C1"
+    },
+    {
+     "rotulo": "Augusto",
+     "valor": 20,
+     "texto": "20 km/h"
+    }
+   ]
+  },
+  {
+   "tipo": "fato",
+   "inicio": 117.0,
+   "fim": 121.3,
+   "titulo": "HOMEM MAIS RÁPIDO DA HISTÓRIA",
+   "texto": "Usain Bolt, pico de velocidade em 2009",
+   "barras": [
+    {
+     "rotulo": "Bolt",
+     "valor": 44.7,
+     "texto": "44,7 km/h",
+     "cor": "#8FD3C1"
+    },
+    {
+     "rotulo": "Augusto",
+     "valor": 40,
+     "texto": "40 km/h"
+    }
+   ]
+  },
+  {
+   "tipo": "etiqueta",
+   "inicio": 123.4,
+   "fim": 126.2,
+   "texto": "RADIAL LESTE · 18:40"
+  },
+  {
+   "tipo": "fato",
+   "inicio": 143.7,
+   "fim": 147.8,
+   "titulo": "ZONA LESTE → PINHEIROS",
+   "valor": "≈ 20 km",
+   "texto": "de carro, no trânsito: mais de 1 hora",
+   "lado": "direita",
+   "topo": 330
+  },
+  {
+   "tipo": "fato",
+   "inicio": 158.6,
+   "fim": 163.0,
+   "titulo": "160 km/h É",
+   "valor": "44 metros",
+   "texto": "por segundo: meio campo de futebol"
+  },
+  {
+   "tipo": "fato",
+   "inicio": 173.0,
+   "fim": 177.5,
+   "titulo": "CALORIAS POR DIA",
+   "barras": [
+    {
+     "rotulo": "pessoa",
+     "valor": 2000,
+     "texto": "2.000",
+     "cor": "#8FD3C1"
+    },
+    {
+     "rotulo": "Augusto",
+     "valor": 28000,
+     "texto": "≈ 28.000"
+    }
+   ]
+  },
+  {
+   "tipo": "fato",
+   "inicio": 191.6,
+   "fim": 195.0,
+   "titulo": "COMPARA",
+   "barras": [
+    {
+     "rotulo": "Fórmula 1",
+     "valor": 350,
+     "texto": "~350 km/h",
+     "cor": "#8FD3C1"
+    },
+    {
+     "rotulo": "Augusto",
+     "valor": 320,
+     "texto": "320 km/h"
+    }
+   ]
+  },
+  {
+   "tipo": "fato",
+   "inicio": 230.6,
+   "fim": 234.8,
+   "titulo": "COMPARA",
+   "barras": [
+    {
+     "rotulo": "avião",
+     "valor": 900,
+     "texto": "~900 km/h",
+     "cor": "#8FD3C1"
+    },
+    {
+     "rotulo": "Augusto",
+     "valor": 640,
+     "texto": "640 km/h"
+    }
+   ]
+  },
+  {
+   "tipo": "fato",
+   "inicio": 249.7,
+   "fim": 253.6,
+   "titulo": "PASSOU DO SOM",
+   "barras": [
+    {
+     "rotulo": "som",
+     "valor": 1235,
+     "texto": "1.235",
+     "cor": "#8FD3C1"
+    },
+    {
+     "rotulo": "Augusto",
+     "valor": 1280,
+     "texto": "1.280",
+     "cor": "#E2443A"
+    }
+   ]
+  },
+  {
+   "tipo": "fato",
+   "inicio": 256.6,
+   "fim": 260.3,
+   "titulo": "AVENIDA PAULISTA",
+   "valor": "2,8 km",
+   "texto": "de vidros estourados, de ponta a ponta",
+   "lado": "direita",
+   "topo": 330
+  },
+  {
+   "tipo": "fato",
+   "inicio": 301.6,
+   "fim": 306.4,
+   "titulo": "VELOCIDADE DE ESCAPE",
+   "valor": "40.300 km/h",
+   "texto": "o necessário para fugir da gravidade da Terra",
+   "topo": 330
+  },
+  {
+   "tipo": "fato",
+   "inicio": 312.0,
+   "fim": 315.0,
+   "titulo": "VELOCIDADE DA LUZ",
+   "valor": "1,08 bilhão",
+   "texto": "de km/h · nada no universo é mais rápido"
+  },
+  {
+   "tipo": "fato",
+   "inicio": 341.0,
+   "fim": 345.2,
+   "titulo": "NA SEMANA 13, PRA ELE",
+   "valor": "1 s = 2h16",
+   "texto": "o telefone ainda nem voltou pro gancho"
+  },
+  {
+   "tipo": "fato",
+   "inicio": 374.6,
+   "fim": 381.2,
+   "titulo": "RELÓGIO DO HOSPITAL",
+   "barras": [
+    {
+     "rotulo": "lá fora",
+     "valor": 40,
+     "texto": "40 seg",
+     "cor": "#8FD3C1"
+    },
+    {
+     "rotulo": "pra ele",
+     "valor": 330000,
+     "texto": "~4 dias"
+    }
+   ]
+  },
+  {
+   "tipo": "fato",
+   "inicio": 400.6,
+   "fim": 405.0,
+   "titulo": "UMA PALAVRA DE MEIO SEGUNDO",
+   "valor": "≈ 1h08",
+   "texto": "pro Augusto"
+  },
+  {
+   "tipo": "etiqueta",
+   "inicio": 452.4,
+   "fim": 455.6,
+   "texto": "HOJE"
+  },
+  {
+   "tipo": "velocimetro",
+   "inicio": 95.3,
+   "fim": 279.5,
+   "de": 5,
+   "passos": [
+    {
+     "t": 95.4,
+     "kmh": 10,
+     "rotulo": "SEMANA 1"
+    },
+    {
+     "t": 104.7,
+     "kmh": 20,
+     "rotulo": "SEMANA 2"
+    },
+    {
+     "t": 115.0,
+     "kmh": 40,
+     "rotulo": "SEMANA 3"
+    },
+    {
+     "t": 121.6,
+     "kmh": 80,
+     "rotulo": "SEMANA 4"
+    },
+    {
+     "t": 157.6,
+     "kmh": 160,
+     "rotulo": "SEMANA 5"
+    },
+    {
+     "t": 188.6,
+     "kmh": 320,
+     "rotulo": "SEMANA 6"
+    },
+    {
+     "t": 227.7,
+     "kmh": 640,
+     "rotulo": "SEMANA 7"
+    },
+    {
+     "t": 243.7,
+     "kmh": 1280,
+     "rotulo": "SEMANA 8"
+    }
+   ]
+  },
+  {
+   "tipo": "velocimetro",
+   "inicio": 331.0,
+   "fim": 349.8,
+   "de": 5120,
+   "passos": [
+    {
+     "t": 331.1,
+     "kmh": 40960,
+     "rotulo": "SEMANA 13"
+    }
+   ]
+  },
+  {
+   "tipo": "velocimetro",
+   "inicio": 428.0,
+   "fim": 441.0,
+   "de": 40960,
+   "passos": [
+    {
+     "t": 428.1,
+     "kmh": 40960,
+     "rotulo": "SEMANA 14"
+    },
+    {
+     "t": 432.8,
+     "kmh": 5,
+     "rotulo": "DE VOLTA"
+    }
+   ]
+  }
+ ]
+}

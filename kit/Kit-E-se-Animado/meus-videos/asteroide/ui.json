@@ -1,0 +1,15 @@
+{
+  "duracao": 47.4,
+  "palavrasPorLegenda": 3,
+  "destaques": ["asteroide", "terra", "novela", "segunda-feira", "cancelada", "dinossauros", "espécies", "nasa", "plano", "2022", "órbita", "anos", "ontem", "janela", "péssima", "piscina", "olímpica", "boa", "nenhum", "longe", "céu", "cair", "comenta", "segue"],
+  "trocas": { "Eaquela": "E aquela", "Evocê": "E você", "si": "se", "terra": "Terra", "com": "e" },
+  "elementos": [
+    { "tipo": "placa", "inicio": 9.2, "fim": 11.45, "numero": "10 KM", "rotulo": "DE LARGURA" },
+    { "tipo": "placa", "inicio": 11.6, "fim": 14.15, "numero": "75%", "rotulo": "DAS ESPÉCIES · HÁ 66 MILHÕES DE ANOS" },
+    { "tipo": "etiqueta", "inicio": 16.8, "fim": 19.2, "texto": "MISSÃO DART · 2022" },
+    { "tipo": "placa", "inicio": 19.4, "fim": 20.75, "numero": "−32 MIN", "rotulo": "NA VOLTA DA PEDRA" },
+    { "tipo": "placa", "inicio": 29.0, "fim": 31.35, "numero": "~20 M", "rotulo": "A PEDRA DA RÚSSIA, 2013" },
+    { "tipo": "pill", "inicio": 29.4, "fim": 31.35, "texto": "~1.500 FERIDOS, QUASE TODOS POR VIDRO", "topo": 1560 },
+    { "tipo": "placa", "inicio": 32.4, "fim": 35.05, "numero": "0", "rotulo": "GRANDES CONHECIDOS EM ROTA" }
+  ]
+}
