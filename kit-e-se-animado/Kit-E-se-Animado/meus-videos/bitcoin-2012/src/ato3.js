@@ -129,9 +129,9 @@ function K6(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, R, G } = almo
   return (t, u, C) => { const sobe = smooth(0, .5, u); M2.root.position.x = lerp(1.15, 1.55, sobe); M2.pose(mixPose(sentado({}), gesto('marcos', t, { ...idle(t), shR: [70, 10], elR: 20, lean: 8 }, 1.3), sobe)); M2.root.position.y = lerp(.2, 0, sobe); M2.sombra.visible = sobe > .95; rosto(M2, 'marcos', t, 'bravo', { look: [-.4, -.2] });
     R.pose(sentado({})); rosto(R, null, t, 'medo'); G.pose(sentado({ headX: -10 })); rosto(G, null, t, 'triste', { look: [.6, -.4] });
     camT(C, [[0, [-1.3, 1.1, -2.2]], [3.3, [-1.1, 1.15, -2.5]]], [[0, [1.5, 1.45, -3.6]], [3.3, [1.5, 1.5, -3.6]]], u, u < .6 ? .01 : 0, t); return {}; }; }); }
-function K7(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const Q = quartoTeen(c, { noite: true, ano: '2018' }); const G = ator(c, GUI20, 0, 0); sentar(G, -3.0, -4.9, Math.PI / 2, .62);
+function K7(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const Q = quartoTeen(c, { noite: true, ano: '2018' }); const G = ator(c, GUI20, 0, 0); sentar(G, -2.42, -4.9, Math.PI / 2, .62);
   return (t, u, C) => { G.pose(sentado({ shL: [40, 10], elL: 100, shR: [40, 10], elR: 100, lean: 15, headX: 5 })); rosto(G, null, t, u < 4 ? 'triste' : 'determinado', { look: [0, .1] });
-    cam(C, [[0, [.6, 2.0, -2.0]], [8.7, [-1.6, 1.25, -4.4]]], [[0, [-3.0, 1.0, -4.9]], [8.7, [-3.0, 1.15, -4.9]]], u); return { tint: '#E6EAFF', vig: .35, exposure: 1.35 }; }; }); }
+    cam(C, [[0, [1.2, 2.0, -2.0]], [8.7, [-1.0, 1.25, -4.4]]], [[0, [-2.42, 1.0, -4.9]], [8.7, [-2.42, 1.15, -4.9]]], u); return { tint: '#E6EAFF', vig: .35, exposure: 1.35 }; }; }); }
 
 export const ATO3 = [[H1, 179.07, 184.0], [H2, 184.0, 186.45], [H3, 186.45, 191.0], [H4, 191.0, 194.2], [H5, 194.2, 197.55], [H6, 197.55, 200.5], [H7, 200.5, 202.37], [H8, 202.37, 206.1], [H9, 206.1, 209.2],
   [I1, 209.2, 215.5], [I2, 215.5, 220.6], [J1, 220.6, 223.25], [J2, 223.25, 230.1], [J3, 230.1, 232.25], [J4, 232.25, 234.1], [J5, 234.1, 236.7], [J6, 236.7, 243.45], [J7, 243.45, 248.6], [J8, 248.6, 250.8],

@@ -31,6 +31,7 @@ export function gerarUI(P) {
   // ---------- elementos ----------
   const larg = (s, px) => String(s).length * px;
   for (const [n, e] of (cfg.elementos || []).entries()) {
+    if (e.tipo === 'lista' && e.itens.length && e.itens[0][1] > e.inicio + .3) e.inicio = e.itens[0][1] - .3;
     const id = `el${n}`, a = e.inicio, b = e.fim, dur = (b - a).toFixed(3); const nome = `${e.tipo}@${a}`;
     if (e.tipo === 'etiqueta') {
       const top = e.topo ?? 50; H.push(`<div id="${id}" class="clip tag" data-start="${a}" data-duration="${dur}" style="top:${top}px">${esc(e.texto)}</div>`);
@@ -61,9 +62,9 @@ export function gerarUI(P) {
     } else if (e.tipo === 'burst') {
       const left = e.esquerda ?? 120, top = e.topo ?? 200; const pts = []; for (let k = 0; k < 28; k++) { const an = Math.PI * k / 14 - Math.PI / 2, r = k % 2 ? 165 : 250; pts.push(`${(270 + r * 1.2 * Math.cos(an)).toFixed(0)},${(240 + r * .82 * Math.sin(an)).toFixed(0)}`); }
       const fs_ = e.texto.length > 8 ? 70 : 96;
-      H.push(`<svg id="${id}" class="clip" data-start="${a}" data-duration="${dur}" width="540" height="480" viewBox="0 0 540 480" style="position:absolute;left:${left}px;top:${top}px;overflow:visible"><g id="${id}g"><polygon points="${pts.join(' ')}" fill="#FFD45A" stroke="#C9472F" stroke-width="6" stroke-linejoin="round"/><text x="270" y="${240 + fs_ * .34}" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="${fs_}" fill="#C9361F">${esc(e.texto)}</text></g></svg>`);
+      H.push(`<svg id="${id}" class="clip" data-start="${a}" data-duration="${dur}" width="540" height="480" viewBox="0 0 540 480" style="position:absolute;left:${left}px;top:${top}px;overflow:visible;transform:scale(${e.escala ?? 1});transform-origin:0 0"><g id="${id}g"><polygon points="${pts.join(' ')}" fill="#FFD45A" stroke="#C9472F" stroke-width="6" stroke-linejoin="round"/><text x="270" y="${240 + fs_ * .34}" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="${fs_}" fill="#C9361F">${esc(e.texto)}</text></g></svg>`);
       J.push(`tl.fromTo("#${id}g",{scale:.35,rotation:-9,transformOrigin:"50% 50%"},{scale:1,rotation:-5,duration:.18,ease:"back.out(2)"},${a});tl.to("#${id}g",{rotation:-2,duration:${(b - a - .5).toFixed(2)},ease:"sine.inOut"},${a + .2});tl.to("#${id}g",{scale:.6,opacity:0,duration:.25},${b - .25});`);
-      R.push({ id: nome, a, b, r: [left - 30, top + 20, left + 570, top + 460] });
+      const es = e.escala ?? 1; R.push({ id: nome, a, b, r: [left - 30 * es, top + 20 * es, left + 570 * es, top + 460 * es] });
     } else if (e.tipo === 'carteira') {
       // medidor fixo no canto superior direito: 100 BTC e o valor em reais
       const de = e.de ?? 0, ate = e.ate ?? de; const fmt = e.formato || 'reais';
@@ -91,10 +92,10 @@ export function gerarUI(P) {
       R.push({ id: nome, a, b, r: [left, top, left + w + 40, top + h + 110] });
     } else if (e.tipo === 'lista') {
       const top = e.topo ?? 150, dir = e.lado === 'direita'; const pos = dir ? `right:60px;top:${top}px` : `left:60px;top:${top}px`;
-      const itens = e.itens.map(([txt, t], k) => `<div id="${id}_i${k}" class="li"><span class="lk">${k + 1}</span>${esc(txt)}</div>`).join('');
+      const itens = e.itens.map(([txt, t], k) => `<div id="${id}_i${k}" class="li" style="height:0;margin-top:0;opacity:0;overflow:hidden"><span class="lk">${k + 1}</span>${esc(txt)}</div>`).join('');
       H.push(`<div id="${id}" class="clip lista" data-start="${a}" data-duration="${dur}" style="${pos}"><div class="fh">${esc(e.titulo)}</div>${itens}</div>`);
       J.push(`tl.fromTo("#${id}",{opacity:0,x:${dir ? 40 : -40}},{opacity:1,x:0,duration:.35,ease:"power3.out"},${a});tl.to("#${id}",{opacity:0,duration:.3},${b - .3});`);
-      e.itens.forEach(([txt, t], k) => J.push(`tl.fromTo("#${id}_i${k}",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},${t});`));
+      e.itens.forEach(([txt, t], k) => J.push(`tl.fromTo("#${id}_i${k}",{opacity:0,x:-16,height:0,marginTop:0},{opacity:1,x:0,height:54,marginTop:14,duration:.3,immediateRender:false},${Math.max(a, t)});`));
       R.push({ id: nome, a, b, r: dir ? [1220, top, 1860, top + 80 + 64 * e.itens.length] : [60, top, 700, top + 80 + 64 * e.itens.length] });
     }
   }

@@ -129,7 +129,10 @@ export function salaAula(c, o = {}) {
   lousa.paint(o.lousa || 'prova', (x, W, H) => { x.fillStyle = '#2E5A44'; x.fillRect(0, 0, W, H); const g = (s, X, Y, sz) => { x.fillStyle = '#F4F1EA'; x.font = `700 ${sz}px Caveat`; x.textAlign = 'left'; x.fillText(s, X, Y); }; g('PROVA DE MATEMÁTICA', 40, 70, 64); g('1) 3x + 7 = 22', 60, 160, 54); g('2) Área do círculo de raio 4 = ?', 60, 240, 54); g('3) 15% de 240 = ?', 60, 320, 54); });
   const mesaP = mesa(c, 3.6, -6.4, 1.6, .7, .76, '#8A5A36'); const carteiras = [];
   for (let r = 0; r < 3; r++) for (let i = 0; i < 4; i++) { const x = -3.6 + i * 2.2, z = -4.8 + r * 1.6; const m = new THREE.Group(); m.add(rb(.7, .05, .5, '#D9B98A', 0, .72, 0, { r: .01, out: .005 })); m.add(cyl(.025, .025, .7, '#3A3A44', 0, .36, 0)); m.position.set(x, 0, z); c.add(m); cadeira(c, x, z + .45, Math.PI, '#2E6FB8'); carteiras.push([x, z]); }
-  janela(c, -5.88, 1.8, -3.5, 2.4, 1.2, { ry: Math.PI / 2, cortina: '#F2C230' }); const rel = relogioParede(); rel.position.set(-3.6, 2.6, -7.88); c.add(rel); ventilador(c, 0, 3.2, -4);
+  janela(c, -5.88, 1.8, -3.5, 2.4, 1.2, { ry: Math.PI / 2, cortina: '#F2C230' }); const rel = relogioParede(); rel.position.set(-3.6, 2.6, -7.88); c.add(rel); ventilador(c, 0, 3.05, -4);
+  c.add(bx(12.2, .12, 8.2, '#FBF6EA', 0, 3.26, -4, { shadow: false })); for (let i = 0; i < 3; i++) c.add(bx(1.6, .04, .4, '#FFFFFF', -3.5 + i * 3.5, 3.19, -2.6, { shadow: false }));
+  const fr = new THREE.Group(); fr.add(bx(4.2, 3.2, .2, toon('#E8DAB2'), -3.9, 1.6, 0, { shadow: false })); fr.add(bx(5.6, 3.2, .2, toon('#E8DAB2'), 3.2, 1.6, 0, { shadow: false })); fr.add(bx(2.2, 1.0, .2, toon('#E8DAB2'), -.7, 2.7, 0, { shadow: false })); fr.add(rb(1.0, 2.2, .08, '#8A5A36', -1.3, 1.1, -.05, { r: .02 })); fr.add(bx(12, .12, .06, '#FFFFFF', 0, .06, -.12, { shadow: false })); c.add(fr);
+  const mural = tela(2.2, 1.3, 512, false); mural.paint('mural', (x, W, H) => { x.fillStyle = '#C9A06A'; x.fillRect(0, 0, W, H); const cs = ['#F4F1EA', '#F2D24A', '#9FD8FF', '#F7A8C8']; for (let i = 0; i < 7; i++) { x.fillStyle = cs[i % 4]; x.fillRect(20 + (i % 4) * 120, 30 + Math.floor(i / 4) * 140, 100, 110); } }); mural.position.set(4.2, 1.8, -.12); mural.rotation.y = Math.PI; c.add(mural);
   return { C, lousa, carteiras, rel };
 }
 export function patio(c, o = {}) {
@@ -238,5 +241,13 @@ export function aterro(c, o = {}) {
 export function palco(c, o = {}) {
   ceu(c, o.c1 || '#1A1A3A', o.c2 || '#3A2A5A', { n: 0 }); W_(c, { r: 14, far: 60, pos: [6, 12, 8], ki: 1.6, hemi: 1.0, sky: '#C8B8FF', key: '#FFE8C8', ground: '#2A2040' });
   const g = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), toonTex((() => { const t = ctex(256, 256, (x) => { x.fillStyle = o.chao || '#2A2448'; x.fillRect(0, 0, 256, 256); x.strokeStyle = '#4A3E7A'; x.lineWidth = 3; x.strokeRect(0, 0, 256, 256); }); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(60, 60); return t; })())); g.rotation.x = -Math.PI / 2; g.receiveShadow = true; c.add(g);
+  // fundo: cidade à noite em volta do palco, estrelas e brilho no horizonte (nada de vazio atrás)
+  const R = rng(o.seed || 77); const cores = ['#3A3060', '#2E2850', '#443A6E', '#352C58'];
+  for (let i = 0; i < 34; i++) { const a = i / 34 * Math.PI * 2 + R() * .08, rr = 95 + R() * 30, w = 14 + R() * 10, h = 22 + R() * 50;
+    const p = predio({ w, d: w, h, tipo: i % 3 === 0 ? 'vidro' : 'janelas', cor: cores[i % 4], v1: '#3A3A70', v2: '#5A4A90', vj: '#FFD98A', noite: true, seed: 300 + i, corTerreo: '#241E40', topo: '#2A2448', teto: '#2A2448' }); p.position.set(Math.sin(a) * rr, 0, -Math.cos(a) * rr); p.rotation.y = -a; c.add(p); }
+  const est = new THREE.BufferGeometry(); const pos = []; for (let i = 0; i < 500; i++) { const a = R() * Math.PI * 2, e = .25 + R() * 1.2; pos.push(Math.cos(a) * Math.cos(e) * 300, Math.sin(e) * 300, Math.sin(a) * Math.cos(e) * 300); }
+  est.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); c.add(new THREE.Points(est, new THREE.PointsMaterial({ color: '#FFF4D8', size: 1.6, sizeAttenuation: false, fog: false, transparent: true, opacity: .85 })));
+  const hz = new THREE.Mesh(new THREE.CylinderGeometry(150, 150, 40, 48, 1, true), new THREE.MeshBasicMaterial({ map: ctex(8, 256, (x) => { const q = x.createLinearGradient(0, 0, 0, 256); q.addColorStop(0, 'rgba(255,170,120,0)'); q.addColorStop(1, 'rgba(255,150,110,.55)'); x.fillStyle = q; x.fillRect(0, 0, 8, 256); }), transparent: true, side: THREE.BackSide, depthWrite: false, fog: false })); hz.position.y = 20; c.add(hz);
+  c.fog = new THREE.Fog(o.c2 || '#3A2A5A', 40, 190);
   return { g };
 }

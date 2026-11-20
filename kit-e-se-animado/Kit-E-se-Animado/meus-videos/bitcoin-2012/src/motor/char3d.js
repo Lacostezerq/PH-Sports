@@ -156,7 +156,7 @@ export function makeChar3D(o = {}) {
     const top = add(hair, new THREE.SphereGeometry(.16, 18, 12), hc, [0, .26, .05], .008); top.scale.set(1.2, .6, 1.1);
   } else if (o.cabelo === 'curto') { // corte baixo (grisalho nas laterais se corCabelo2)
     add(hair, new THREE.SphereGeometry(R * 1.025, 40, 28, 0, Math.PI * 2, 0, 1.3), hc, [0, .025, -.03]);
-    for (const k of [-1, 1]) { const sd = add(hair, new THREE.SphereGeometry(.15, 16, 12), o.corCabelo2 || hc, [k * .22, -.02, -.13], .008); sd.scale.set(.5, .9, 1.1); }
+    for (const k of [-1, 1]) { const sd = add(hair, new THREE.SphereGeometry(.15, 16, 12), o.corCabelo2 || hc, [k * .205, -.0, -.12], .008); sd.scale.set(.38, .75, .95); }
     const nuca = add(hair, new THREE.SphereGeometry(.2, 18, 12), o.corCabelo2 || hc, [0, -.05, -.18], .008); nuca.scale.set(1.1, .8, .7);
   } else if (o.cabelo === 'chanel') { // corte chanel com franja
     add(hair, new THREE.SphereGeometry(R * 1.06, 40, 28), hc, [0, .05, -.07]);

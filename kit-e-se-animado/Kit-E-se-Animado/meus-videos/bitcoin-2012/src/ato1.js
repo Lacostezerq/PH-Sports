@@ -36,6 +36,11 @@ function A4(t0, t1) { return mk(t0, t1, { bg: '#2A2420' }, (c) => {
   const amb = new THREE.HemisphereLight('#FFD9B0', '#3A2A30', 1.2); c.add(amb); const k = new THREE.DirectionalLight('#FFC48A', 2); k.position.set(-2, 4, 2); k.castShadow = true; c.add(k);
   const fundo = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), toon('#2A2420')); fundo.rotation.x = -Math.PI / 2; c.add(fundo);
   for (let i = 0; i < 14; i++) { const s = sacoLixo(['#26262C', '#3A3A44', '#2A3A2A', '#F4F1EA', '#3E5C8A'][i % 5], i); s.scale.setScalar(.7 + (i % 3) * .15); s.position.set(-1.6 + (i % 5) * .8, -.15, -1 - Math.floor(i / 5) * .7 + (i % 2) * .2); c.add(s); }
+  for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2, rr = .95 + (i % 3) * .3; const s = sacoLixo(['#26262C', '#3A3A44', '#2A3A2A', '#5A4A3A', '#3E5C8A', '#2C4A3A'][i % 6], i + 20); s.scale.setScalar(.45 + (i % 4) * .08); s.position.set(Math.cos(a) * rr * 1.3, -.28 + (i % 2) * .05, .3 + Math.sin(a) * rr); s.rotation.y = i * 1.7; c.add(s); }
+  for (let i = 0; i < 9; i++) { const a = i * 2.4, rr = .55 + (i % 3) * .12; const p = sph(.05 + (i % 3) * .015, ['#F4F1EA', '#E8DCC0', '#D9D2C4'][i % 3], Math.cos(a) * rr * 1.4, .1, .3 + Math.sin(a) * rr * .9); c.add(p); }
+  for (let i = 0; i < 4; i++) { const b = rb(.32, .2, .26, ['#B88A5A', '#C9A06A'][i % 2], [-1.1, 1.0, -.7, .9][i], .02, [.9, .8, -.4, -.3][i], { r: .01, out: .005 }); b.rotation.y = i * .8; c.add(b); }
+  const lata = cyl(.04, .04, .12, '#C0392B', .62, .1, .55, { seg: 12, out: .004 }); lata.rotation.z = 1.5; c.add(lata);
+  for (const s of [-1, 1]) c.add(rb(.1, 2.4, 4, '#C95E1E', s * 2.2, .9, 0, { r: .02 })); c.add(rb(4.5, 2.4, .1, '#B8501A', 0, .9, -1.8, { r: .02 }));
   const ca = cadernoAberto(); ca.position.set(0, .32, .3); ca.rotation.set(-.35, .15, .05); c.add(ca);
   ca.userData.E.paint('e', (x, W, H) => folhaDraw(x, W, H, () => { mao(x, '3. ~~~~~~~~', W * .16, H * .25, 44, '#2A3A7A'); x.fillStyle = '#2A3A7A'; x.fillRect(W * .16, H * .23, W * .7, 10); }));
   ca.userData.D.paint('d', (x, W, H) => folhaDraw(x, W, H, () => { mao(x, 'SENHA:', W * .16, H * .2, 54, '#B8322B'); x.filter = 'blur(7px)'; mao(x, 'k7Rq-9xWm-2Lb', W * .16, H * .36, 52); mao(x, 'Fz4t-Pp81-Vh', W * .16, H * .48, 52); x.filter = 'none'; mao(x, '100 BTC', W * .5, H * .7, 60, '#B8322B', 'center'); x.strokeStyle = '#B8322B'; x.lineWidth = 6; x.beginPath(); x.ellipse(W * .5, H * .7, W * .3, H * .07, 0, 0, 7); x.stroke(); }));
@@ -52,14 +57,14 @@ function A6(t0, t1) { return mk(t0, t1, {}, (c) => { const P = perseguicao(c);
 function B1(t0, t1) { return mk(t0, t1, { bg: '#121A3A' }, (c) => { avenida(c, { hora: 'noite', seed: 31, detalhes: false }); const B = brilho(c, [0, 14, -60], { cor: '#9FD6FF', size: 40, n: 40, ps: 4, alt: 20 });
   return (t, u, C) => { B(u, .4 * (1 - smooth(1.5, 3.2, u)));
     cam(C, [[0, [0, 3, 20]], [3.2, [-3, 18, -26]]], [[0, [0, 10, -60]], [3.2, [-16, 17, -50]]], u); return { ...NOITE, bloom: .6, bloomT: .7 }; }; }); }
-function B2(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const A = apartamento(c); const G = ator(c, GUI30, 0, 0); sentar(G, -1.4, -4.15, 0, .55);
+function B2(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const A = apartamento(c); const G = ator(c, GUI30, 0, 0); sentar(G, -1.4, -4.36, 0, .5);
   A.nb.userData.sc.paint('p', (x, W, H) => { x.fillStyle = '#F4F6F8'; x.fillRect(0, 0, W, H); x.fillStyle = '#2C6E7F'; x.fillRect(0, 0, W, 40); txt(x, 'RELATÓRIO_FINAL_v7.xlsx', W / 2, 21, 20, '#fff', 700); x.fillStyle = '#C8D2D6'; for (let i = 0; i < 12; i++) x.fillRect(20, 60 + i * 20, W - 40, 10); });
   return (t, u, C) => { A.rel.set(3, 12 + u * .5, u * 10); G.pose(sentado({ shL: [45, 14], elL: 70, shR: [45, 14], elR: 70 + Math.sin(t * 9) * 6, headX: 12, lean: 8 })); rosto(G, null, t, 'tedio', { look: [0, .5] });
     cam(C, [[0, [1.8, 1.6, -.4]], [4.5, [.6, 1.25, -1.6]]], [[0, [-1.4, .8, -4.0]], [4.5, [-1.4, .95, -4.0]]], u); return { ...NOITE }; }; }); }
 function B3(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const A = apartamento(c); const G = ator(c, GUI30, 2.9, -5.2, -2.6);
   return (t, u, C) => { G.pose({ ...idle(t), shL: [55, 10], elL: 60, headX: 18 }); rosto(G, null, t, 'triste', { look: [-.4, .6] });
     cam(C, [[0, [1.4, .95, -5.0]], [5, [1.85, .85, -5.85]]], [[0, [2.1, .7, -6.35]], [5, [2.1, .68, -6.35]]], u); return { ...NOITE, blur: 10, focus: .7, range: .5 }; }; }); }
-function cozinhaBriga(c) { const K = casaFamilia(c, { sepia: true, ano: '2019' }); const M = ator(c, MARCOS, 1.8, -4.6, -.6); const G = ator(c, GUI20, -.4, -2.2, 2.3); return { K, M, G }; }
+function cozinhaBriga(c) { const K = casaFamilia(c, { sepia: true, ano: '2019' }); const M = ator(c, MARCOS, 1.8, -4.6, -.6); const G = ator(c, { ...GUI20, camisa: '#2F4E86', estampa: (x, w, h) => { x.fillStyle = '#24406E'; x.fillRect(w * .36, h * .58, w * .28, h * .2); } }, -.4, -2.2, 2.3); return { K, M, G }; }
 function B4(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinhaBriga(c);
   return (t, u, C) => { const g = Math.sin(t * 3.1); G.pose({ ...idle(t), shR: [40 + 25 * Math.max(0, g), 20], elR: 60, shL: [20, 10], elL: 40, lean: 6, headX: -6 }); rosto(G, null, t, 'bravo', { mouth: { open: .35 + .3 * Math.abs(Math.sin(t * 7)) } });
     M.pose({ ...idle(t, 1), shL: [55, -10], shR: [55, -10], elL: 110, elR: 110, headY: -10 + 8 * Math.sin(t * .8) }); rosto(M, null, t, 'bravo', { mouth: u > 3.2 && u < 5 ? { open: .4 + .3 * Math.abs(Math.sin(t * 6)) } : undefined });
@@ -72,7 +77,7 @@ function B5(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinha
 function B6(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinhaBriga(c); G.root.visible = false;
   return (t, u, C) => { M.pose({ ...idle(t, 1), shL: [10, 8], shR: [10, 8], headX: 12, headY: -25 }); rosto(M, null, t, 'triste', { look: [-.7, .3] });
     cam(C, [[0, [-1.2, 1.6, -1.6]], [1.7, [-.4, 1.6, -2.6]]], [[0, [1.8, 1.55, -4.6]], [1.7, [1.8, 1.6, -4.6]]], u); return { ...SEPIA, sat: .35 }; }; }); }
-function B7(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const A = apartamento(c); const G = ator(c, GUI30, 0, 0); G.root.rotation.set(0, Math.PI / 2, Math.PI / 2 - .1); G.root.position.set(-1.05, .78, -4.25); G.sombra.visible = false;
+function B7(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const A = apartamento(c); const G = ator(c, GUI30, 0, 0); G.root.rotation.set(0, 0, Math.PI / 2 - .06); G.root.position.set(-.55, .74, -4.35); G.sombra.visible = false;
   A.nb.userData.sc.paint('p', (x, W, H) => { x.fillStyle = '#20304A'; x.fillRect(0, 0, W, H); txt(x, 'Sem conexão', W / 2, H / 2, 30, '#9FB4D8', 700); });
   const B = brilho(c, [-1.6, 1.2, -4.0], { cor: '#FFE6A0', size: 4, n: 50 }); const zz = icone('zzz', .3); zz.position.set(-2.6, 1.6, -4.2); c.add(zz);
   return (t, u, C) => { A.rel.set(4, 40 + u * 2); G.pose({ ...sentado({ hipL: [20, 0], hipR: [20, 0], knL: 20, knR: 20 }), shL: [10, 30], shR: [160, 30], elR: 60, bob: 0 }); rosto(G, null, t, 'sono', { blink: u < 2.7 ? 1 : (u < 5.3 ? 1 : 0), mouth: { open: .12 } });

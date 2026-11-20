@@ -27,12 +27,12 @@ export const GUICHURRAS = { ...GUI_BASE, barba: '#5A3826', camisa: '#4FB8A0', ca
 
 // ---------- Seu Marcos (pai) ----------
 const logoFirma = (x, w, h) => { x.fillStyle = '#F2C230'; x.fillRect(0, h * .62, w, h * .07); const cx = w / 2 - 120, cy = h * .4; x.fillStyle = '#F2C230'; x.fillRect(cx - 46, cy - 30, 92, 60); x.fillStyle = '#1F2D4E'; x.font = '900 26px Inter'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText('CF', cx, cy + 2); x.fillStyle = '#F2C230'; x.font = '800 22px Inter'; x.fillText('CASA FORTE', w / 2 + 160, h * .42); };
-export const MARCOS = { pele: '#9A6646', cabelo: 'curto', corCabelo: '#2B2422', corCabelo2: '#9E9893', barba: '#4E4642', nariz: true, sobr: '#2B2422', sobrW: 19,
+export const MARCOS = { pele: '#9A6646', cabelo: 'curto', corCabelo: '#2B2422', barba: '#4E4642', nariz: true, sobr: '#2B2422', sobrW: 19,
   camisa: '#22355E', calca: '#3E3A36', tenis: '#4A3222', sola: '#2A1E16', escala: 1.07, estampa: (x, w, h) => { logoFirma(x, w, h); gola('#1A2848')(x, w, h); } };
 /** Marcos em casa no domingo (camisa xadrez). */
 export const MARCOSCASA = { ...MARCOS, camisa: '#B8463A', estampa: (x, w, h) => { x.strokeStyle = '#8E2F28'; x.lineWidth = 14; for (let i = 0; i < 12; i++) { x.beginPath(); x.moveTo(i * 90, 0); x.lineTo(i * 90, h); x.stroke(); x.beginPath(); x.moveTo(0, i * 50); x.lineTo(w, i * 50); x.stroke(); } } };
 /** Marcos no churrasco 2026: mais magro, avental. */
-export const MARCOSCHURRAS = { ...MARCOS, corCabelo: '#77716C', barba: '#8E8782', camisa: '#F4F1EA', calca: '#3E3A36', escala: 1.03,
+export const MARCOSCHURRAS = { ...MARCOS, corCabelo: '#2E2A28', barba: '#8E8782', camisa: '#F4F1EA', calca: '#3E3A36', escala: 1.03,
   estampa: (x, w, h) => { x.fillStyle = '#2E7D4F'; x.fillRect(w * .3, h * .3, w * .4, h * .7); x.fillStyle = '#F4F1EA'; x.font = '900 34px Inter'; x.textAlign = 'center'; x.fillText('MESTRE', w / 2, h * .6); x.fillText('DO FOGO', w / 2, h * .72); } };
 
 // ---------- Dona Regina (mãe) ----------

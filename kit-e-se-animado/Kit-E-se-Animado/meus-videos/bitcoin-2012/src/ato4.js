@@ -8,16 +8,16 @@ import { GUI20, MARCOS, REGINA, MEDICA, ENFERMEIRO, povo } from './elenco.js';
 import { casaFamilia, quartoTeen, avenida, prontoSocorro, HORA } from './cenarios.js';
 import { txt, maca, folhaDraw, mao, cadernoAberto, tela } from './objetos.js';
 import { brilho, sprite, linhasVel } from './efeitos.js';
-import { carro, ceu } from './mundo.js';
+import { carro, ceu, predio, arvore } from './mundo.js';
 import { hospital } from './interiores.js';
 import { ecg, registra } from './vida.js';
 
 // ---------- L: a manhã do dia 14 ----------
 function L1(t0, t1) { return mk(t0, t1, {}, (c) => { const K = casaFamilia(c, { ano: '2019', alvorada: true });
   return (t, u, C) => { K.rel.set(6, 30, u * 8); cam(C, [[0, [.4, 2.1, -4.6]], [2.75, [.4, 2.35, -5.9]]], [[0, [.4, 2.45, -6.88]], [2.75, [.4, 2.45, -6.88]]], u, 0, .4); return { tint: '#FFE8D8' }; }; }); }
-function L2(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const Q = quartoTeen(c, { ano: '2019' }); const G = ator(c, GUI20, 0, 0); sentar(G, -3.0, -4.9, Math.PI / 2, .62);
+function L2(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const Q = quartoTeen(c, { ano: '2019' }); const G = ator(c, GUI20, 0, 0); sentar(G, -2.42, -4.9, Math.PI / 2, .62);
   const rel = Q.desp; return (t, u, C) => { G.pose(sentado({ shL: [40, 10], elL: 100, shR: [40, 10], elR: 100, lean: 15, headX: 12 })); rosto(G, null, t, u < 4 ? 'preocupado' : 'determinado', { look: [-.6, -.4] });
-    cam(C, [[0, [-.6, 1.6, -3.4]], [4.5, [-1.1, 1.4, -3.9]], [9.9, [-1.6, 1.25, -4.4]]], [[0, [-3.0, 1.0, -4.9]], [4.5, [-3.0, 1.05, -4.9]], [9.9, [-3.0, 1.1, -4.9]]], u); return { tint: '#FFE0D0' }; }; }); }
+    cam(C, [[0, [0, 1.6, -3.4]], [4.5, [-.5, 1.4, -3.9]], [9.9, [-1.0, 1.25, -4.4]]], [[0, [-2.42, 1.0, -4.9]], [4.5, [-2.42, 1.05, -4.9]], [9.9, [-2.42, 1.1, -4.9]]], u); return { tint: '#FFE0D0' }; }; }); }
 function L3(t0, t1) { return mk(t0, t1, {}, (c) => { const K = casaFamilia(c, { ano: '2019', alvorada: true }); const M = ator(c, MARCOS, 0, 0); sentar(M, 1.15, -3.6, -Math.PI / 2 + .25, .48); const G = ator(c, GUI20, -4.6, -3.0, 1.0);
   return (t, u, C) => { const k = smooth(.3, 5.4, u); G.root.position.set(lerp(-4.8, -1.7, k), 0, lerp(-3.2, -2.6, k)); G.root.rotation.y = 1.35; G.pose(mixPose(walk(t, 1.2, .55), { shR: [55, -25], elR: 100, lean: 12 }, .55)); rosto(G, null, t, 'determinado');
     M.pose(sentado({ shR: [60, 10], elR: 110, headY: -20 * smooth(4.5, 5.6, u) })); rosto(M, null, t, 'neutro', { look: [-.5 * smooth(4.5, 5.6, u), 0] });
@@ -46,11 +46,18 @@ function fachadaHospital() { const g = new THREE.Group(); g.add(rb(18, 9, 8, '#E
   const ps = cartaz(4, .8, (x, W, H) => { x.fillStyle = '#C0392B'; x.fillRect(0, 0, W, H); txt(x, 'PRONTO-SOCORRO', W / 2, H / 2, H * .5, '#FFFFFF'); }); ps.position.set(0, 3.3, 5.6); g.add(ps); g.add(bx(8, .2, 3, '#C8CCD2', 0, 3.0, 5.4)); for (const s of [-1, 1]) g.add(cyl(.12, .12, 3, '#C8CCD2', s * 3.6, 1.5, 6.6));
   g.add(rb(3, 2.6, .1, '#9FC3D4', 0, 1.3, 4.05, { r: .02 })); return g; }
 function L8(t0, t1) { return mk(t0, t1, {}, (c) => { const H = HORA.manha; ceu(c, H.topo, H.base, { n: 6 }); const L = new THREE.HemisphereLight(H.sky, H.ground, 1.35); c.add(L); const S = new THREE.DirectionalLight(H.key, 2.1); S.position.set(20, 30, 30); S.castShadow = true; S.shadow.mapSize.set(2048, 2048); Object.assign(S.shadow.camera, { left: -20, right: 20, top: 20, bottom: -20, far: 100 }); c.add(S);
-  const ch = new THREE.Mesh(new THREE.PlaneGeometry(120, 120), toon('#C9C2B6')); ch.rotation.x = -Math.PI / 2; ch.receiveShadow = true; c.add(ch); const F = fachadaHospital(); F.position.set(0, 0, -14); c.add(F);
-  const K = carro('#2E6FB8', { out: true }); K.position.set(-7.2, 0, -1.2); K.rotation.y = .5; c.add(K); const M = ator(c, MARCOS, 0, 0); const G = ator(c, GUI20, 0, 0); G.sombra.visible = false;
-  return (t, u, C) => { const k = smooth(.2, 3.8, u); const x = lerp(-3.4, 0, k), z = lerp(-1.6, -8.4, k); M.root.position.set(x, 0, z); M.root.rotation.y = Math.atan2(3.4, -6.8); M.pose({ ...run(t, 2.6, .8), shL: [70, 10], elL: 60, shR: [70, 10], elR: 60 }); rosto(M, null, t, 'medo');
-    G.root.position.set(x + Math.cos(M.root.rotation.y) * 0, 1.0, z); G.root.rotation.set(0, M.root.rotation.y + Math.PI / 2, -1.3); G.pose({ shR: [55, -25], elR: 100, hipL: [80, 0], hipR: [80, 0], knL: 70, knR: 70 }); rosto(G, null, t, 'preocupado');
-    cam(C, [[0, [2.4, 1.8, .4]], [4, [4.4, 1.9, -4.6]]], [[0, [-3.0, 1.1, -1.8]], [4, [0, 1.2, -8.2]]], u); return {}; }; }); }
+  const ch = new THREE.Mesh(new THREE.PlaneGeometry(160, 160), toon('#C9C2B6')); ch.rotation.x = -Math.PI / 2; ch.receiveShadow = true; c.add(ch); const F = fachadaHospital(); F.position.set(0, 0, -14); c.add(F);
+  const ru = new THREE.Mesh(new THREE.PlaneGeometry(160, 9), toon('#55575E')); ru.rotation.x = -Math.PI / 2; ru.position.set(0, .01, 6); ru.receiveShadow = true; c.add(ru); for (let i = 0; i < 16; i++) c.add(bx(2, .02, .2, '#F4F1EA', -40 + i * 5.5, .02, 6));
+  const cores = ['#E8DCC8', '#D9C9B0', '#C8D2D6', '#E6CDB8']; [[-19, -16, 12, 16], [-31, -18, 10, 24], [19, -16, 12, 20], [31, -19, 10, 13], [-14, -34, 14, 30], [14, -34, 14, 26]].forEach(([x, z, w, h], i) => { const p = predio({ w, d: 12, h, tipo: i % 2 ? 'vidro' : 'janelas', cor: cores[i % 4], v1: '#A8D2EE', v2: '#6FA6D2', vj: '#8DB8D8', seed: 90 + i, corTerreo: '#4A4E58' }); p.position.set(x, 0, z); c.add(p); });
+  for (let i = 0; i < 7; i++) arvore(c, -12 + i * 4 + (i > 2 ? 4 : 0), -6.5, .75, i + 4); for (const x of [-9, 9]) { const b = rb(.12, 2.6, .12, '#5A6068', x, 1.3, -7.5); c.add(b); }
+  const amb = carro('#F4F6F8', { out: true }); amb.position.set(6.5, 0, -8.6); amb.rotation.y = -1.2; c.add(amb); const fx = bx(1.2, .12, .3, '#C0392B', 0, 1.75, 0); amb.add(fx);
+  const K = carro('#2E6FB8', { out: true }); K.position.set(-4.2, 0, 4.5); K.rotation.y = .35; c.add(K);
+  const M = ator(c, MARCOS, 0, 0); const G = ator(c, GUI20, 0, 0); G.sombra.visible = false;
+  const colo = new THREE.Group(); M.root.add(colo); colo.position.set(0, .66, .36); colo.add(G.root); G.root.position.set(-.5, 0, 0);
+  G.root.setRotationFromMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(0, 0, 1), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
+  return (t, u, C) => { const k = smooth(.1, 3.9, u); const x = lerp(-2.2, -.2, k), z = lerp(3.5, -8.4, k); M.root.position.set(x, 0, z); M.root.rotation.y = Math.atan2(2.0, -11.9); M.pose({ ...run(t, 2.6, .8), shL: [80, 8], elL: 35, shR: [80, -8], elR: 35 }); rosto(M, null, t, 'medo');
+    G.pose({ shR: [20, 10], elR: 40, shL: [10, 5], elL: 20, hipL: [55, 0], hipR: [50, 0], knL: 95, knR: 90, headX: 10 }); rosto(G, null, t, 'preocupado', { olhosAbertos: .5 });
+    cam(C, [[0, [1.4, 2.4, 9.0]], [4, [1.3, 2.3, -.8]]], [[0, [-1.4, 1.4, 1.0]], [4, [-.1, 1.6, -9.6]]], u); return {}; }; }); }
 
 // ---------- M: o hospital ----------
 function M1(t0, t1) { return mk(t0, t1, {}, (c) => { luzToon(c, { r: 8, pos: [4, 8, 5], target: [-.6, 0, -3.6], ki: 1.6, hemi: 1.45, sky: '#F2FAFF', key: '#FFF6EA' }); const H = hospital(c); const G = ator(c, GUI20, 0, 0); G.root.position.set(-.6, .62, -3.8); G.root.rotation.y = Math.PI / 2; G.sombra.visible = false; const Me = ator(c, MEDICA, .3, -3.2, -1.7);
