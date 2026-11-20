@@ -1,0 +1,29 @@
+{
+  "duracao": 422.7,
+  "palavrasPorLegenda": 3,
+  "destaques": ["sangue", "parteira", "nascer", "lisboa", "bebê", "2026", "celular", "internet", "pix", "like", "errado", "navios", "brasil", "agu", "vitória", "farmácia", "ferve", "salvar", "rico", "futuro", "açúcar", "ouro", "afundar", "padre", "ave-marias", "inventar", "celular", "ideia", "nada", "mágica", "isqueiro", "comentários", "geladeira", "perigoso", "inquisição", "bruxaria", "fogueira", "calado", "famoso", "lusíadas", "lembra", "inscreve", "parto", "mãos", "18%", "2%", "penitência", "sobreviver", "peste", "ratos", "inteira", "rato", "você", "lado", "lavada", "sininho", "mão"],
+  "trocas": { "Ea": "E a", "Eagora": "E agora", "Eaqui": "E aqui", "Eas": "E as", "Eaí": "E aí", "Ecomeça": "E começa", "Edaqui": "E daqui", "Ede": "E de", "Enunca": "E nunca", "Enão": "E não", "Eos": "E os", "Epara": "E para", "Equantas": "E quantas", "Equase": "E quase", "Ese": "E se", "Evai": "E vai", "Evocê": "E você", "pics": "Pix", "esqueiro": "isqueiro", "avemarias": "ave-marias", "Luzidas": "Lusíadas", "ensinovo": "E se novo", "microondas": "micro-ondas", "Porto": "porto", "Ver": "ver", "terra": "Terra" },
+  "trocasTempo": { "115.83": "encher", "116.41": "Lisboa", "275.28": "mãos", "292.36": "sem dente", "295.07": "mães", "298.19": "quê" },
+  "elementos": [
+    { "tipo": "etiqueta", "inicio": 10.3, "fim": 12.8, "texto": "LISBOA · 9 DE MARÇO DE 1500" },
+    { "tipo": "etiqueta", "inicio": 40.3, "fim": 46.0, "texto": "13 NAVIOS · A FROTA DE CABRAL" },
+    { "tipo": "capitulo", "inicio": 59.66, "fim": 62.6, "numero": "1", "texto": "SOBREVIVER" },
+    { "tipo": "placa", "inicio": 65.3, "fim": 70.3, "numero": "1 EM 4", "rotulo": "MORRIA ANTES DO 1º ANIVERSÁRIO" },
+    { "tipo": "placa", "inicio": 70.4, "fim": 73.0, "numero": "QUASE METADE", "rotulo": "NÃO CHEGAVA À ADOLESCÊNCIA" },
+    { "tipo": "capitulo", "inicio": 103.83, "fim": 106.8, "numero": "2", "texto": "FICAR RICO" },
+    { "tipo": "etiqueta", "inicio": 121.9, "fim": 126.2, "texto": "9 ANOS" },
+    { "tipo": "capitulo", "inicio": 133.69, "fim": 136.6, "numero": "3", "texto": "INVENTAR" },
+    { "tipo": "capitulo", "inicio": 185.53, "fim": 188.6, "numero": "4", "texto": "FICAR CALADO" },
+    { "tipo": "etiqueta", "inicio": 191.9, "fim": 198.0, "texto": "1536" },
+    { "tipo": "capitulo", "inicio": 213.32, "fim": 216.3, "numero": "5", "texto": "FICAR FAMOSO" },
+    { "tipo": "etiqueta", "inicio": 240.3, "fim": 247.0, "texto": "1572" },
+    { "tipo": "capitulo", "inicio": 254.97, "fim": 257.9, "numero": "6", "texto": "SALVAR GENTE" },
+    { "tipo": "etiqueta", "inicio": 266.6, "fim": 281.4, "texto": "VIENA, 1847" },
+    { "tipo": "placa", "inicio": 276.5, "fim": 281.5, "numero": "18% → 2%", "rotulo": "MORTES NA ALA, EM POUCOS MESES" },
+    { "tipo": "capitulo", "inicio": 301.76, "fim": 304.0, "numero": "7", "texto": "A PESTE" },
+    { "tipo": "etiqueta", "inicio": 304.1, "fim": 311.0, "texto": "1569" },
+    { "tipo": "placa", "inicio": 314.1, "fim": 317.1, "numero": "40 A 50 MIL", "rotulo": "MORTOS EM LISBOA" },
+    { "tipo": "placa", "inicio": 317.2, "fim": 322.0, "numero": "600 POR DIA", "rotulo": "NOS PIORES DIAS" },
+    { "tipo": "capitulo", "inicio": 370.46, "fim": 373.6, "numero": "8", "texto": "A VIRADA" }
+  ]
+}

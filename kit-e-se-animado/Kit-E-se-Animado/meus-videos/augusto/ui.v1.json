@@ -1,0 +1,300 @@
+{
+ "duracao": 516.63,
+ "palavrasPorLegenda": 3,
+ "destaques": [
+  "atrasado",
+  "dobra",
+  "devagar",
+  "espera.",
+  "espera",
+  "tempo",
+  "tempo.",
+  "som",
+  "som,",
+  "velocidade",
+  "Bia",
+  "Lurdes",
+  "Augusto",
+  "Augusto,"
+ ],
+ "trocas": {
+  "0": "0",
+  "1": "1",
+  "2": "2",
+  "3": "3",
+  "4": "4",
+  "5": "5",
+  "6": "6",
+  "7": "7",
+  "8": "8",
+  "9": "9",
+  "10": "10",
+  "11": "11",
+  "12": "12",
+  "13": "13",
+  "14": "14",
+  "15": "15",
+  "16": "16",
+  "17": "17",
+  "18": "18",
+  "19": "19",
+  "20": "20"
+ },
+ "elementos": [
+  {
+   "tipo": "etiqueta",
+   "inicio": 1.6,
+   "fim": 8.2,
+   "texto": "SEMANA 8 · AVENIDA PAULISTA · 15:00"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 28.6,
+   "fim": 31.6,
+   "numero": "8 SEMANAS",
+   "texto": "ANTES"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 80.1,
+   "fim": 83.1,
+   "numero": "×2",
+   "rotulo": "A VELOCIDADE DOBRA TODA SEMANA",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 84.8,
+   "fim": 87.65,
+   "numero": "5 km/h",
+   "rotulo": "PESSOA NORMAL",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 87.7,
+   "fim": 88.65,
+   "numero": "10 km/h",
+   "rotulo": "SEMANA 1",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 88.7,
+   "fim": 90.05,
+   "numero": "20 km/h",
+   "rotulo": "SEMANA 2",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 90.1,
+   "fim": 91.0,
+   "numero": "40 km/h",
+   "rotulo": "SEMANA 3",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 95.3,
+   "fim": 98.3,
+   "numero": "SEMANA 1",
+   "texto": "10 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 104.6,
+   "fim": 107.4,
+   "numero": "SEMANA 2",
+   "texto": "20 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 114.9,
+   "fim": 117.6,
+   "numero": "SEMANA 3",
+   "texto": "40 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 121.5,
+   "fim": 124.3,
+   "numero": "SEMANA 4",
+   "texto": "80 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 126.4,
+   "fim": 129.9,
+   "numero": "2,3 MI",
+   "rotulo": "VISUALIZAÇÕES",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 156.1,
+   "fim": 159.0,
+   "numero": "SEMANA 5",
+   "texto": "160 km/h"
+  },
+  {
+   "tipo": "burst",
+   "inicio": 183.4,
+   "fim": 186.6,
+   "texto": "LIKE!",
+   "topo": 200,
+   "esquerda": 120
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 188.6,
+   "fim": 191.5,
+   "numero": "SEMANA 6",
+   "texto": "320 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 196.8,
+   "fim": 199.2,
+   "numero": "64×",
+   "rotulo": "O MUNDO FICA MAIS DEVAGAR",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 199.5,
+   "fim": 205.0,
+   "numero": "3 s → 3 min",
+   "rotulo": "UMA FRASE DA BIA",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 227.6,
+   "fim": 230.5,
+   "numero": "SEMANA 7",
+   "texto": "640 km/h"
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 242.7,
+   "fim": 245.6,
+   "numero": "SEMANA 8",
+   "texto": "1.280 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 245.8,
+   "fim": 249.5,
+   "numero": "MACH 1",
+   "rotulo": "MAIS RÁPIDO QUE O SOM",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 293.5,
+   "fim": 296.6,
+   "numero": "5.120 km/h",
+   "rotulo": "SEMANA 10",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 296.7,
+   "fim": 300.6,
+   "numero": "1 s = 17 min",
+   "rotulo": "PRA ELE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 301.0,
+   "fim": 306.5,
+   "numero": "40.960 km/h",
+   "rotulo": "SEMANA 13 · ESCAPA DA GRAVIDADE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 306.8,
+   "fim": 310.1,
+   "numero": "1 min = 6 dias",
+   "rotulo": "PRA ELE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 311.8,
+   "fim": 315.0,
+   "numero": "≈ LUZ",
+   "rotulo": "EM UNS 6 MESES",
+   "topo": 60
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 331.0,
+   "fim": 333.6,
+   "numero": "SEMANA 13",
+   "texto": "40.960 km/h"
+  },
+  {
+   "tipo": "placa",
+   "inicio": 354.9,
+   "fim": 358.4,
+   "numero": "1 min = 6 dias",
+   "rotulo": "PRA ELE",
+   "topo": 60
+  },
+  {
+   "tipo": "placa",
+   "inicio": 433.7,
+   "fim": 437.0,
+   "numero": "5 km/h",
+   "rotulo": "IGUAL A TODO MUNDO",
+   "topo": 60
+  },
+  {
+   "tipo": "burst",
+   "inicio": 507.1,
+   "fim": 511.2,
+   "texto": "INSCREVA-SE",
+   "topo": 120,
+   "esquerda": 1250
+  },
+  {
+   "tipo": "pill",
+   "inicio": 279.9,
+   "fim": 289.8,
+   "texto": "O QUE VOCÊ FARIA PRIMEIRO?",
+   "topo": 170
+  },
+  {
+   "tipo": "pill",
+   "inicio": 284.6,
+   "fim": 289.8,
+   "texto": "ESCREVE NOS COMENTÁRIOS",
+   "topo": 280
+  },
+  {
+   "tipo": "pill",
+   "inicio": 499.2,
+   "fim": 505.2,
+   "texto": "6 DIAS DENTRO DE 1 MINUTO:",
+   "topo": 150
+  },
+  {
+   "tipo": "pill",
+   "inicio": 500.4,
+   "fim": 505.2,
+   "texto": "COM QUEM VOCÊ PASSARIA?",
+   "topo": 255
+  },
+  {
+   "tipo": "pill",
+   "inicio": 503.3,
+   "fim": 505.2,
+   "texto": "ESCREVE SÓ O NOME",
+   "topo": 360
+  }
+ ]
+}

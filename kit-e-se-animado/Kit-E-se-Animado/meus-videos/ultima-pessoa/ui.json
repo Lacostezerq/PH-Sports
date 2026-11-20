@@ -1,0 +1,29 @@
+{
+  "duracao": 408.9,
+  "palavrasPorLegenda": 3,
+  "destaques": ["terra", "ninguém", "pânico", "aluguel", "boleto", "mundo", "carro", "internet", "errado", "luzes", "apagam", "usinas", "brasil", "hidrelétricas", "equilibrista", "cai", "metrô", "dias", "gasolina", "celular", "bateria", "humanidade", "supermercado", "banquete", "freezers", "memorável", "mel", "enlatado", "plantar", "cacto", "cachorros", "gato", "lobos", "chernobyl", "chinelo", "reatores", "radiação", "nuclear", "espacial", "cadente", "sozinho", "vôlei", "aniversário", "silêncio", "rotina", "pombos", "pessoa", "asfalto", "florestas", "lua", "rádio", "margarina", "comenta", "inscreve", "sininho", "falta", "like"],
+  "trocas": { "Ea": "E a", "Eagora": "E agora", "Eantes": "E antes", "Eaquele": "E aquele", "Eaí": "E aí", "Econtinuam": "E continuam", "Edescobre": "E descobre", "Eme": "E me", "Eo": "E o", "Equando": "E quando", "Eresponde": "E responde", "Ese": "E se", "Esem": "E sem", "Esó": "E só", "Etem": "E tem", "Evocê": "E você", "vende": "vem de", "latado": "enlatado", "enlata": "em lata", "volei": "vôlei", "si": "se", "terra": "Terra", "lua": "Lua" },
+  "elementos": [
+    { "tipo": "contador", "inicio": 18.0, "fim": 22.0, "de": 8000000000, "ate": 1, "duracaoConta": 2.4, "rotulo": "PESSOAS NA TERRA" },
+    { "tipo": "capitulo", "inicio": 33.1, "fim": 36.0, "numero": "1", "texto": "A PRIMEIRA MANHÃ" },
+    { "tipo": "capitulo", "inicio": 70.65, "fim": 74.6, "numero": "2", "texto": "AS LUZES SE APAGAM" },
+    { "tipo": "etiqueta", "inicio": 84.0, "fim": 92.3, "texto": "BRASIL" },
+    { "tipo": "placa", "inicio": 111.3, "fim": 114.8, "numero": "~2 DIAS", "rotulo": "PARA O METRÔ DE NOVA YORK ALAGAR" },
+    { "tipo": "capitulo", "inicio": 141.74, "fim": 145.5, "numero": "3", "texto": "O SUPERMERCADO É SEU" },
+    { "tipo": "placa", "inicio": 174.2, "fim": 179.6, "numero": "MILHARES DE ANOS", "rotulo": "MEL ACHADO EM TUMBAS EGÍPCIAS" },
+    { "tipo": "capitulo", "inicio": 187.15, "fim": 189.1, "numero": "4", "texto": "OS ANIMAIS" },
+    { "tipo": "placa", "inicio": 189.2, "fim": 194.8, "numero": "~900 MILHÕES", "rotulo": "DE CACHORROS NO MUNDO" },
+    { "tipo": "etiqueta", "inicio": 209.0, "fim": 212.9, "texto": "CHERNOBYL" },
+    { "tipo": "placa", "inicio": 213.1, "fim": 220.1, "numero": "7×", "rotulo": "MAIS LOBOS QUE EM RESERVAS VIZINHAS" },
+    { "tipo": "capitulo", "inicio": 227.31, "fim": 229.6, "numero": "5", "texto": "O PERIGO QUE NINGUÉM DESLIGOU" },
+    { "tipo": "placa", "inicio": 229.7, "fim": 233.3, "numero": "+400", "rotulo": "REATORES NUCLEARES NO MUNDO" },
+    { "tipo": "placa", "inicio": 262.5, "fim": 266.4, "numero": "1 A 2 ANOS", "rotulo": "ATÉ A ESTAÇÃO ESPACIAL CAIR" },
+    { "tipo": "capitulo", "inicio": 271.81, "fim": 275.5, "numero": "6", "texto": "A SOLIDÃO" },
+    { "tipo": "capitulo", "inicio": 327.65, "fim": 331.4, "numero": "7", "texto": "O MUNDO SEM NÓS" },
+    { "tipo": "etiqueta", "inicio": 332.1, "fim": 334.6, "texto": "+5 ANOS" },
+    { "tipo": "etiqueta", "inicio": 334.7, "fim": 339.6, "texto": "+50 ANOS" },
+    { "tipo": "etiqueta", "inicio": 339.7, "fim": 347.8, "texto": "+300 ANOS" },
+    { "tipo": "placa", "inicio": 356.6, "fim": 359.2, "numero": "MILHÕES DE ANOS", "rotulo": "AS PEGADAS NA LUA" },
+    { "tipo": "placa", "inicio": 362.2, "fim": 366.0, "numero": "+100 ANOS", "rotulo": "DE SINAIS DE RÁDIO VIAJANDO" }
+  ]
+}
