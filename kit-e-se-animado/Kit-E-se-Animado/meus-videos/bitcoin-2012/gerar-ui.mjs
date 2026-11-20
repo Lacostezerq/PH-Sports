@@ -19,6 +19,8 @@ export function gerarUI(P) {
     g.push(W[i]); const fim = /[.,!?;:]$/.test(W[i].text), pausa = W[i + 1] && W[i + 1].start - W[i].end > .2, troca = W[i + 1] && W[i + 1].quem !== W[i].quem;
     if (fim || pausa || troca || g.length >= (cfg.palavrasPorLegenda || 3) || i === W.length - 1) { grupos.push(g); g = []; }
   }
+  // junta legendas curtas demais (< .5 s) com a seguinte, pra nunca aparecerem duas ao mesmo tempo
+  for (let i = 0; i < grupos.length - 1; i++) { const g0 = grupos[i], g1 = grupos[i + 1]; if (g1[0].start - g0[0].start < .5 && g0[0].quem === g1[0].quem && g0.length + g1.length <= 6) { grupos.splice(i, 2, [...g0, ...g1]); i--; } }
   const COR = cfg.corVoz || {};
   grupos.forEach((g, i) => {
     const a = g[0].start, nxt = grupos[i + 1] ? grupos[i + 1][0].start : T - .3;

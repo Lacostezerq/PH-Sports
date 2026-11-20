@@ -18,9 +18,14 @@ export function comodo(c, o = {}) {
   const fl = new THREE.Mesh(new THREE.PlaneGeometry(w, d), toonTex(pt)); fl.rotation.x = -Math.PI / 2; fl.position.set(0, 0, -d / 2 + (o.dz || 0) + d * .0); fl.receiveShadow = true; c.add(fl);
   const pm = toon(o.parede || '#F3E3C8'), pm2 = toon(o.parede2 || o.parede || '#F3E3C8');
   const back = bx(w, h, .2, pm, 0, h / 2, -d, { shadow: false }); c.add(back);
-  if (o.lados !== false) { c.add(bx(.2, h, d, pm2, -w / 2, h / 2, -d / 2, { shadow: false })); c.add(bx(.2, h, d, pm2, w / 2, h / 2, -d / 2, { shadow: false })); }
+  const E = o.frente ?? 6; // paredes e piso continuam pra frente, a câmera nunca vê o vazio
+  if (o.lados !== false) { c.add(bx(.2, h, d + E, pm2, -w / 2, h / 2, -d / 2 + E / 2, { shadow: false })); c.add(bx(.2, h, d + E, pm2, w / 2, h / 2, -d / 2 + E / 2, { shadow: false })); }
+  if (E > 0) { const fe = new THREE.Mesh(new THREE.PlaneGeometry(w, E), toonTex(pt)); fe.rotation.x = -Math.PI / 2; fe.position.set(0, 0, E / 2); fe.receiveShadow = true; c.add(fe); }
   if (o.meiaParede) { c.add(bx(w, h * .38, .05, toon(o.meiaParede), 0, h * .19, -d + .12, { shadow: false })); }
   c.add(bx(w, .12, .06, o.rodape || '#FFFFFF', 0, .06, -d + .12, { shadow: false }));
+  // teto (sem ele o céu aparecia por cima das paredes) e moldura de gesso
+  if (o.teto !== false) { const tc = o.teto || '#F6F1EA'; c.add(bx(w + .4, .14, d + E + .4, tc, 0, h + .07, -d / 2 + E / 2, { shadow: false })); c.add(bx(w, .1, .1, tc, 0, h - .05, -d + .15, { shadow: false }));
+    const lum = new THREE.Mesh(new THREE.CircleGeometry(.28, 24), new THREE.MeshBasicMaterial({ color: '#FFF8E6' })); lum.rotation.x = Math.PI / 2; lum.position.set(0, h - .005, -d / 2); c.add(lum); }
   return { w, d, h };
 }
 export function janela(c, x, y, z, w = 1.6, h = 1.3, o = {}) {

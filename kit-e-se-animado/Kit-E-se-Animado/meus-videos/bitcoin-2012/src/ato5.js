@@ -13,9 +13,9 @@ import { celular } from './mundo.js';
 // ---------- N: a faxina ----------
 function N1(t0, t1) { return mk(t0, t1, {}, (c) => { const K = casaFamilia(c, { ano: '2019' }); const R = ator(c, REGINA, 0, -3.0, 0); const v = vassoura(); R.hands.R.add(v); v.position.set(0, -.05, .05); v.rotation.x = -.4; const b = balde(); b.position.set(1.4, 0, -2.2); c.add(b);
   const N = []; for (let i = 0; i < 3; i++) { const n = icone('notas', .3); c.add(n); N.push(n); } const D = poeira(c, [[0, .1, -3]], { n: 14, sp: 1.5, size: .8, life: 2, op: .4, cor: '#E8DCC8' });
-  return (t, u, C) => { const x = Math.sin(u * 1.3) * 1.6; R.root.position.set(x, 0, -3.0 + Math.cos(u * 1.1) * .6); R.root.rotation.y = Math.cos(u * 1.3) > 0 ? 1.2 : -1.2; R.pose({ ...walk(t, 1.8, .6), shR: [60 + 20 * Math.sin(t * 8), 20], elR: 40, shL: [40, -10], elL: 60, lean: 15 }); rosto(R, null, t, 'preocupado', { mouth: { open: .2 + .2 * Math.sin(t * 5) } });
+  return (t, u, C) => { const x = Math.sin(u * 1.3) * 1.6; R.root.position.set(x, 0, -1.55 + Math.cos(u * 1.1) * .2); R.root.rotation.y = Math.cos(u * 1.3) > 0 ? 1.2 : -1.2; R.pose({ ...walk(t, 1.8, .6), shR: [60 + 20 * Math.sin(t * 8), 20], elR: 40, shL: [40, -10], elL: 60, lean: 15 }); rosto(R, null, t, 'preocupado', { mouth: { open: .2 + .2 * Math.sin(t * 5) } });
     v.rotation.z = .4 * Math.sin(t * 8); D((u * .8) % 2); N.forEach((n, i) => { const f = (u * .4 + i / 3) % 1; n.position.set(R.root.position.x + .2, 1.6 + f, R.root.position.z); n.material.opacity = Math.sin(f * Math.PI); });
-    cam(C, [[0, [-1.5, 2.2, 2.0]], [7.4, [1.0, 1.8, 1.0]]], [[0, [0, 1.0, -3.0]], [7.4, [0, 1.0, -3.0]]], u); return {}; }; }); }
+    cam(C, [[0, [-1.5, 2.2, 2.4]], [7.4, [1.0, 1.8, 1.6]]], [[0, [0, 1.0, -2.4]], [7.4, [0, 1.0, -2.4]]], u); return {}; }; }); }
 function quartoFaxina(c) { const Q = quartoTeen(c, { ano: '2019' }); const R = ator(c, REGINA, 2.65, -3.0, Math.PI / 2 - .2); const S = sacoLixo('#26262C', 2); S.position.set(2.7, 0, -2.2); S.scale.set(.9, 1.1, .9); c.add(S); const pilha = []; for (let i = 0; i < 6; i++) { const k = caderno({ cor: ['#2E6FB8', '#2E9C5A', '#C0392B', '#8E5BB8', '#F2C230', '#3A3A44'][i] }); c.add(k); pilha.push(k); } return { Q, R, S, pilha }; }
 function N2(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, R, S, pilha } = quartoFaxina(c);
   return (t, u, C) => { pilha.forEach((k, i) => { const f = clamp((u - .4 - i * .7) / .6, 0, 1); k.position.set(lerp(3.55, 2.7, f), lerp(.6 + i * .03, .55 - i * .02, f) + Math.sin(f * Math.PI) * .3, lerp(-3.6, -2.2, f)); k.rotation.set(f * 2, i, 0); k.visible = f < .98; });
@@ -27,7 +27,7 @@ function N3(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, R, S, pilha } = 
     cam(C, [[0, [1.3, 1.7, -.4]], [4.5, [1.5, 1.55, -.7]]], [[0, [2.75, .95, -2.6]], [4.5, [2.7, .75, -2.3]]], u); return {}; }; }); }
 
 // ---------- O: a avenida de novo, o caso real, o riso ----------
-function perseg2(c) { avenida(c, { hora: 'alvorada', seed: 12, cruz: -78 }); const T = caminhaoLixo(); c.add(T); const G = ator(c, GUICHINELO, -3, 0, Math.PI); return { T, G }; }
+function perseg2(c) { avenida(c, { hora: 'alvorada', seed: 12, cruz: -78, z0: 110 }); const T = caminhaoLixo(); c.add(T); const G = ator(c, GUICHINELO, -3, 0, Math.PI); return { T, G }; }
 function posCaminhao(T, t) { // segue em -z e vira à direita na rua transversal (z = -78)
   const d = 9 + 6.2 * (t - 386.78); let x = -3.2, z = -d, ry = Math.PI; if (d > 74) { const a = Math.min(Math.PI / 2, (d - 74) / 6); x = -3.2 + 6 * (1 - Math.cos(a)); z = -74 - 6 * Math.sin(a); ry = Math.PI - a; if (d > 74 + 6 * Math.PI / 2) { x += d - 74 - 6 * Math.PI / 2; } }
   T.position.set(x, 0, z); T.rotation.y = ry; rodar(T, d); T.userData.gf.material.color.set(Math.floor(t * 4) % 2 ? '#FFB020' : '#7A5A10'); return { x, z }; }
@@ -39,7 +39,7 @@ function O2(t0, t1) { return mk(t0, t1, {}, (c) => { const { T, G } = perseg2(c)
     cam(C, [[0, [-1.2, 2.1, gz + 7.0]], [6.3, [-1.6, 2.0, gz + 6.0]]], [[0, [-3, 1.2, gz - 20]], [6.3, [-1, 1.2, -78]]], u); return { bloom: .3 }; }; }); }
 function O3(t0, t1) { return mk(t0, t1, {}, (c) => { const A = aterro(c);
   return (t, u, C) => { A.braco.rotation.x = -.35 + .25 * Math.sin(t * .8); cam(C, [[0, [8, 6, 10]], [9.2, [-4, 5, 7]]], [[0, [0, 1, -16]], [9.2, [-4, 1.4, -16]]], u); return { sat: .85 }; }; }); }
-function ruaFinal(c) { avenida(c, { hora: 'alvorada', seed: 12, cruz: -78 }); const G = ator(c, GUICHINELO, -3, -20, Math.PI); return { G }; }
+function ruaFinal(c) { avenida(c, { hora: 'alvorada', seed: 12, cruz: -78, z0: 110 }); const G = ator(c, GUICHINELO, -3, -20, Math.PI); return { G }; }
 function O4(t0, t1) { return mk(t0, t1, {}, (c) => { const { G } = ruaFinal(c);
   return (t, u, C) => { const ri = smooth(3.0, 3.4, u); G.pose(mixPose({ ...idle(t), lean: 30, shL: [30, 10], shR: [30, 10], elL: 30, elR: 30, knL: 25, knR: 25, bob: -.05 + .02 * Math.sin(t * 7) }, { ...idle(t), lean: -10 + 6 * Math.sin(t * 9), shL: [40, 30], shR: [40, 30], headX: -15 }, ri)); G.root.rotation.y = Math.PI - 2.6 * smooth(.6, 2.0, u);
     rosto(G, null, t, ri > .5 ? 'rindo' : 'preocupado', { mouth: ri > .5 ? { open: .6 + .3 * Math.sin(t * 12) } : { open: .4 + .2 * Math.sin(t * 7), round: .6 } });
@@ -50,7 +50,7 @@ function O5(t0, t1) { return mk(t0, t1, {}, (c) => { const { G } = ruaFinal(c); 
 
 // ---------- P: o churrasco de 2026 ----------
 function churras(c, o = {}) { const Q = quintal(c, o); const M = ator(c, MARCOSCHURRAS, 3.2, -5.6, Math.PI - .3); const G = ator(c, GUICHURRAS, 1.6, -4.6, 2.0); const R = ator(c, REGINA, 0, 0); sentar(R, -2.6, -2.5, Math.PI, .48);
-  const esp = new THREE.Group(); esp.add(cyl(.006, .006, .6, '#C8CCD2', 0, 0, 0, { rot: [Math.PI / 2, 0, 0], seg: 4 })); M.hands.R.add(esp); esp.position.set(0, -.06, .2); return { Q, M, G, R }; }
+  const esp = new THREE.Group(); esp.add(cyl(.006, .006, .38, '#C8CCD2', 0, 0, 0, { rot: [Math.PI / 2, 0, 0], seg: 4 })); M.hands.R.add(esp); esp.position.set(0, -.08, .12); esp.rotation.x = .9; M.esp = esp; return { Q, M, G, R }; }
 const assando = (t) => ({ ...idle(t), shR: [70 + 8 * Math.sin(t * 2), 10], elR: 60, shL: [20, 10], elL: 30 });
 function P1(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c);
   return (t, u, C) => { M.pose(assando(t)); rosto(M, null, t, 'feliz'); G.pose(idle(t)); rosto(G, null, t, 'feliz', { olhosAbertos: true }); R.pose(sentado({ shR: [50, 10], elR: 90 })); rosto(R, null, t, 'feliz', { olhosAbertos: true });
@@ -58,16 +58,16 @@ function P1(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = chur
 function P2(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c);
   return (t, u, C) => { M.pose(assando(t)); rosto(M, null, t, 'feliz', { look: [0, .4] }); G.pose(idle(t)); rosto(G, null, t, 'feliz');
     cam(C, [[0, [7.0, 2.5, -2.4]], [3.7, [6.6, 2.3, -2.8]]], [[0, [2.6, 1.15, -5.5]], [3.7, [2.6, 1.15, -5.5]]], u); return {}; }; }); }
-function P3(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c);
+function P3(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c); M.esp.visible = false;
   return (t, u, C) => { M.root.rotation.y = -1.0; M.pose(gesto('marcos', t, { ...idle(t), shL: [20, 10] }, .7)); rosto(M, 'marcos', t, 'feliz', { look: [-.4, 0], lagrima: u > 4 }); G.pose(idle(t)); rosto(G, null, t, 'neutro', { look: [.5, 0] });
     cam(C, [[0, [1.15, 1.6, -3.3]], [6.5, [1.3, 1.55, -3.45]]], [[0, [3.2, 1.4, -5.6]], [6.5, [3.2, 1.42, -5.6]]], u); return {}; }; }); }
-function P4(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c);
+function P4(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c); M.esp.visible = false;
   return (t, u, C) => { M.root.rotation.y = -1.0; M.pose(idle(t)); rosto(M, null, t, 'triste', { look: [-.4, 0], lagrima: true }); G.pose(gesto('gui', t, { ...idle(t), shR: [30, 10] }, .6)); rosto(G, 'gui', t, 'feliz', { olhosAbertos: true, look: [.5, -.1] });
     cam(C, [[0, [4.5, 1.7, -2.7]], [5.3, [4.3, 1.65, -2.85]]], [[0, [1.9, 1.25, -4.8]], [5.3, [1.9, 1.25, -4.8]]], u); return {}; }; }); }
-function P5(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c);
+function P5(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c); M.esp.visible = false;
   return (t, u, C) => { M.root.rotation.y = -1.0; M.pose(gesto('marcos', t, { ...idle(t), shR: [60, 10], elR: 90 }, .8)); rosto(M, 'marcos', t, 'desconfiado', { look: [-.4, 0], smile: .4 }); G.pose(idle(t)); rosto(G, null, t, 'feliz', { olhosAbertos: true });
     cam(C, [[0, [2.2, 1.5, -2.6]], [4.6, [2.35, 1.48, -2.85]]], [[0, [3.2, 1.4, -5.6]], [4.6, [3.2, 1.4, -5.6]]], u); return {}; }; }); }
-function P6(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c); R.root.visible = false; const R2 = ator(c, REGINA, -1.0, -3.0, -1.2); const tig = cyl(.16, .12, .1, '#F2C230', 0, 0, 0, { out: .004 }); R2.hands.R.add(tig); tig.position.set(.1, -.05, .1);
+function P6(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = churras(c); M.esp.visible = false; R.root.visible = false; const R2 = ator(c, REGINA, -1.0, -3.0, -1.2); const tig = cyl(.16, .12, .1, '#F2C230', 0, 0, 0, { out: .004 }); R2.hands.R.add(tig); tig.position.set(.1, -.05, .1);
   return (t, u, C) => { M.root.rotation.y = -1.0; const ri = u > 1.2; M.pose({ ...idle(t), lean: ri ? -8 + 4 * Math.sin(t * 10) : 0, shL: [ri ? 40 : 10, 30], headX: ri ? -10 : 0 }); rosto(M, null, t, ri ? 'rindo' : 'surpreso', { mouth: ri ? { open: .6 + .3 * Math.sin(t * 11) } : undefined });
     G.pose(gesto('gui', t, idle(t), .6)); rosto(G, ri ? null : 'gui', t, ri && u > 2.6 ? 'rindo' : 'feliz', { olhosAbertos: true, mouth: u > 3.5 ? { open: .5 + .3 * Math.sin(t * 12) } : undefined });
     const k = smooth(1.5, 4.0, u); R2.root.position.set(lerp(-1.6, .4, k), 0, lerp(-2.6, -3.8, k)); R2.pose(k < 1 ? { ...walk(t, 1.6, .8), shR: [70, 10], elR: 60 } : { ...idle(t), shR: [70, 10], elR: 60 }); rosto(R2, null, t, 'feliz');
@@ -91,7 +91,7 @@ function Q4(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = mesa
   return (t, u, C) => { CA.userData.D.paint('d' + Math.floor(t * 2) % 2, (x, W, H) => folhaDraw(x, W, H, () => { mao(x, '3. ', W * .12, H * .2, 60, '#B8322B'); x.fillStyle = Math.floor(t * 2) % 2 ? '#B8322B' : '#FBF8EE'; x.fillRect(W * .26, H * .17, 6, H * .07); x.strokeStyle = '#9CC4E4'; }));
     [M, G, R].forEach((k) => { k.pose(sentado({})); rosto(k, null, t, 'feliz'); }); cam(C, [[0, [-1.62, 1.7, -2.3]], [5.95, [-1.6, 1.35, -2.55]]], [[0, [-1.62, .8, -3.05]], [5.95, [-1.6, .8, -3.05]]], u); return {}; }; }); }
 function Q5(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = mesaFamilia(c); const cups = [M, G, R].map(k => { const x = xicara(['#E2443A', '#F4F1EA', '#2E6FB8'][k === M ? 0 : k === G ? 1 : 2]); k.hands.R.add(x); x.position.set(0, -.06, .05); return x; });
-  return (t, u, C) => { const br = smooth(1.0, 1.6, u); [M, G, R].forEach((k, i) => { k.pose(sentado({ shR: [lerp(40, 130, br), lerp(10, -10 + i * 10, br)], elR: lerp(90, 40, br), headX: -10 * br })); rosto(k, null, t, 'rindo', { mouth: { open: .4 + .3 * Math.sin(t * 8 + i) } }); });
+  return (t, u, C) => { const br = smooth(1.0, 1.6, u); [M, G, R].forEach((k, i) => { k.pose(sentado({ shR: [lerp(40, 110, br), lerp(10, 55, br) + 10 * Math.sin(t * 7 + i) * br], elR: lerp(90, 25, br), headX: -10 * br })); rosto(k, null, t, 'rindo', { mouth: { open: .4 + .3 * Math.sin(t * 8 + i) } }); });
     cam(C, [[0, [-1.6, 1.55, -.2]], [6.4, [-1.6, 1.45, -1.0]]], [[0, [-1.6, 1.2, -4.2]], [6.4, [-1.6, 1.3, -4.2]]], u); return { bloom: .35 }; }; }); }
 function Q6(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quintal(c, { tarde: true }); const M = ator(c, MARCOSCHURRAS, -.5, -3.6, 1.1); const G = ator(c, GUICHURRAS, .22, -3.24, -2.04); const R = ator(c, REGINA, -1.2, -2.85, .9);
   return (t, u, C) => { const ab = smooth(.3, 1.4, u); M.pose({ ...idle(t), shL: [lerp(10, 80, ab), lerp(8, -40, ab)], elL: 60, shR: [lerp(10, 70, ab), -30 * ab], elR: 60 }); G.pose({ ...idle(t), shL: [lerp(10, 80, ab), -40 * ab], elL: 60, shR: [lerp(10, 80, ab), -40 * ab], elR: 60 }); R.pose({ ...idle(t), shR: [70 * ab, -30 * ab], elR: 50 });

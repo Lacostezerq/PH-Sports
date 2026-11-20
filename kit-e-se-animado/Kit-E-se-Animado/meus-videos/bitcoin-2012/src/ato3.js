@@ -8,14 +8,18 @@ import { GUI16, GUI20, MARCOSCASA, REGINA, DUDU, DUDUCOPA, povo, torcedor } from
 import { patio, bar, pintaTV, onibusDentro, republica, palco, casaFamilia, quartoTeen } from './cenarios.js';
 import { txt, moeda, moedaDraw, prato, tela } from './objetos.js';
 import { brilho, sprite } from './efeitos.js';
-import { celular, carro } from './mundo.js';
+import { celular, carro, arvore } from './mundo.js';
 
 const GOLS = [194.22, 195.19, 195.72, 196.38, 196.97];
 const golsAte = (t) => GOLS.filter(g => t >= g).length;
 const aluno = (i, extra = {}) => povo(i, { camisa: '#F6F4EE', estampa: GUI16.estampa, simples: true, ...extra });
 
 // ---------- H: o desafio e o 7 a 1 ----------
-function desafio(c) { patio(c); for (let i = 0; i < 6; i++) { const k = aluno(i + 2); k.place(-7 + i * 2.4, -10 - (i % 2) * 2, 0, (i % 3 - 1) * .6); c.add(k.root); k.pose(idle(i)); }
+// lado de trás do pátio: muro, árvores e o outro prédio da escola (antes era só chão e céu)
+function fundoPatio(c) { const m = new THREE.Group(); m.add(rb(46, 2.4, .4, '#E8DAB2', 0, 1.2, 0, { r: .05 })); m.add(bx(46.2, .2, .5, '#C0392B', 0, 2.45, 0)); for (let i = 0; i < 7; i++) m.add(rb(2.4, 1.2, .06, ['#2E9C6A', '#2E6FB8', '#F2C230', '#E2443A'][i % 4], -15 + i * 5, 1.2, -.24, { r: .05 })); m.position.set(0, 0, 9); m.rotation.y = Math.PI; c.add(m);
+  const b2 = new THREE.Group(); b2.add(rb(34, 8, 6, '#F2E6C4', 0, 4, 0, { r: .1 })); b2.add(bx(34.2, .5, 6.2, '#C0392B', 0, 8.2, 0)); for (let a = 0; a < 2; a++) for (let i = 0; i < 10; i++) b2.add(bx(1.5, 1.1, .1, '#9FCBE8', -14 + i * 3.1, 2.6 + a * 3, -3.02)); b2.position.set(0, 0, 18); c.add(b2);
+  for (let i = 0; i < 6; i++) arvore(c, -13 + i * 5.2, 7.2, .85, i + 9); }
+function desafio(c) { patio(c); fundoPatio(c); for (let i = 0; i < 6; i++) { const k = aluno(i + 2); k.place(-7 + i * 2.4, -10 - (i % 2) * 2, 0, (i % 3 - 1) * .6); c.add(k.root); k.pose(idle(i)); }
   const G = ator(c, GUI16, -.7, -3.6, .9); const D = ator(c, DUDU, 1.0, -2.7, -2.3); return { G, D }; }
 function H1(t0, t1) { return mk(t0, t1, {}, (c) => { const { G, D } = desafio(c);
   return (t, u, C) => { D.pose(gesto('dudu', t, { ...idle(t), shL: [55, -10], elL: 110 }, 1.2)); rosto(D, 'dudu', t, 'desconfiado', { look: [-.5, 0], smile: .5 }); G.pose(idle(t)); rosto(G, null, t, 'neutro', { look: [.6, 0] });
@@ -70,7 +74,7 @@ function grafico3D(c) { const pts = ANOS.map(([a, v], i) => new THREE.Vector3(-6
   const geo = new THREE.TubeGeometry(curva, 160, .14, 10, false); const m = new THREE.Mesh(geo, toon('#FFB43A', { emissive: '#7A4A10' })); m.castShadow = true; c.add(m); const n = geo.index.count;
   ANOS.forEach(([a, v], i) => { const p = cartaz(1.4, .5, (x, W, H) => { x.fillStyle = '#2A2448'; x.fillRect(0, 0, W, H); txt(x, String(a), W / 2, H / 2, H * .6, '#C9C2E8'); }); p.rotation.x = -Math.PI / 2; p.position.set(pts[i].x, .02, 1.4); c.add(p); c.add(cyl(.03, .03, pts[i].y, '#4A3E7A', pts[i].x, pts[i].y / 2, 0, { seg: 6 })); });
   return { set: (k) => geo.setDrawRange(0, Math.floor(n * clamp(k)) - Math.floor(n * clamp(k)) % 3), curva, pts }; }
-function J1(t0, t1) { return mk(t0, t1, {}, (c) => { palco(c); const Gf = grafico3D(c);
+function J1(t0, t1) { return mk(t0, t1, {}, (c) => { palco(c); const Gf = grafico3D(c); for (let i = 0; i < 40; i++) { const m = moeda(.22 + (i % 3) * .06); m.rotation.set(-Math.PI / 2 + (i % 5) * .15, 0, i); m.position.set(-7 + (i * 2.37) % 14, .03 + (i % 4) * .05, 1.2 + (i * 1.73) % 6.5); c.add(m); }
   return (t, u, C) => { Gf.set(smooth(.2, 2.6, u) * .82); cam(C, [[0, [-4, 3, 11]], [2.65, [-1, 3.6, 12]]], [[0, [-2, 2, 0]], [2.65, [0, 2.6, 0]]], u); return { bloom: .5, bloomT: .75 }; }; }); }
 function J2(t0, t1) { return mk(t0, t1, {}, (c) => { palco(c); const Gf = grafico3D(c); const G = ator(c, GUI20, 0, 0); const top = Gf.pts[5]; const base = moeda(.7); base.rotation.x = -Math.PI / 2; base.position.set(top.x, top.y + .05, 0); c.add(base);
   const M = []; for (let i = 0; i < 26; i++) { const m = moeda(.18); c.add(m); M.push(m); }

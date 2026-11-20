@@ -70,8 +70,8 @@ function B4(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinha
     M.pose({ ...idle(t, 1), shL: [55, -10], shR: [55, -10], elL: 110, elR: 110, headY: -10 + 8 * Math.sin(t * .8) }); rosto(M, null, t, 'bravo', { mouth: u > 3.2 && u < 5 ? { open: .4 + .3 * Math.abs(Math.sin(t * 6)) } : undefined });
     cam(C, [[0, [3.0, 1.65, .6]], [5.8, [2.3, 1.5, -.3]]], [[0, [.6, 1.15, -3.4]], [5.8, [.7, 1.2, -3.4]]], u); return SEPIA; }; }); }
 function B5(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinhaBriga(c); K.porta.rotation.y = 0;
-  return (t, u, C) => { const sai = smooth(.2, 3.4, u); const x = lerp(-.4, -5.3, sai), z = lerp(-2.2, -1.75, sai); G.root.position.set(x, 0, z); G.root.rotation.y = u < .3 ? 2.3 : Math.atan2(-4.9, .45);
-    G.pose(u < .3 ? idle(t) : walk(t, 1.9, 1)); rosto(G, null, t, 'bravo'); const ab = smooth(2.6, 3.2, u) * (1 - smooth(3.6, 3.9, u)); K.porta.rotation.y = -1.3 * ab; G.root.visible = u < 3.75;
+  return (t, u, C) => { const sai = smooth(.2, 3.4, u); const x = lerp(-.4, -6.9, sai), z = lerp(-2.2, -1.7, sai); G.root.position.set(x, 0, z); G.root.rotation.y = u < .3 ? 2.3 : Math.atan2(-4.9, .45);
+    G.pose(u < .3 ? idle(t) : walk(t, 1.9, 1)); rosto(G, null, t, 'bravo'); const ab = smooth(2.3, 2.8, u); K.porta.rotation.y = -1.3 * ab; G.root.visible = x > -6.5;
     M.pose({ ...idle(t, 1), shL: [55, -10], shR: [55, -10], elL: 110, elR: 110, headY: -30 * sai }); rosto(M, null, t, 'bravo', { look: [-.6 * sai, 0] });
     cam(C, [[0, [1.6, 1.6, .2]], [4.1, [2.6, 1.7, -.4]]], [[0, [-1.5, 1.2, -2.6]], [4.1, [-4.4, 1.2, -1.9]]], u); return SEPIA; }; }); }
 function B6(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinhaBriga(c); G.root.visible = false;
