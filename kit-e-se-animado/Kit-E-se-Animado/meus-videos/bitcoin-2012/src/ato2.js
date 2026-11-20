@@ -136,8 +136,8 @@ function G3(t0, t1) { return mk(t0, t1, {}, (c) => { const S = salaAula(c); cons
     P.pose({ ...idle(t), headY: 40 * lev }); rosto(P, null, t, lev > .5 ? 'surpreso' : 'neutro');
     cam(C, [[0, [4.8, 2.6, -7.2]], [3.2, [4.4, 2.3, -6.9]]], [[0, [gx, 1.0, gz]], [3.2, [gx, 1.0, gz]]], u); return {}; }; }); }
 function G4(t0, t1) { return mk(t0, t1, {}, (c) => { patio(c); const G = ator(c, GUI16, 0, -6, 0); const A = []; for (let i = 0; i < 6; i++) { const k = aluno(i + 1); const a = -1 + i * .4; k.place(Math.sin(a) * 2.6, -6 + Math.cos(a) * 2.6, 0, a + Math.PI); c.add(k.root); A.push(k); }
-  const bola = sph(.28, '#B98AF0', 0, 1.9, -6, { out: .006 }); bola.material = new THREE.MeshToonMaterial({ color: '#B98AF0', transparent: true, opacity: .8, emissive: '#5A3A9A' }); c.add(bola); const B = brilho(c, [0, 1.7, -6], { cor: '#C9A8FF', size: 1.5, n: 20, alt: 1 });
-  return (t, u, C) => { G.pose({ ...idle(t), shL: [40, 40], shR: [40, 40], elL: 60, elR: 60 }); rosto(G, null, t, 'vergonha', { olhosAbertos: true }); bola.position.y = 2.1 + .08 * Math.sin(t * 3); B(u, .7);
+  const B = brilho(c, [0, 1.7, -6], { cor: '#C9A8FF', size: 1.5, n: 20, alt: 1 });
+  return (t, u, C) => { G.pose({ ...idle(t), shL: [40, 40], shR: [40, 40], elL: 60, elR: 60 }); rosto(G, null, t, 'vergonha', { olhosAbertos: true }); B(u, .7);
     A.forEach((k, i) => { k.pose({ ...idle(t, i), shR: [95, 0], elR: 0 }); rosto(k, null, t, 'surpreso', { mouth: { open: .4 + .2 * Math.sin(t * 6 + i) } }); });
     cam(C, [[0, [0, 3.2, 1.4]], [3.25, [0, 2.4, -.6]]], [[0, [0, 1.0, -6]], [3.25, [0, 1.3, -6]]], u); return { bloom: .3 }; }; }); }
 function G5(t0, t1) { return mk(t0, t1, {}, (c) => { patio(c); patioGente(c, 6); const G = ator(c, GUI16, -1.5, -3.6, .7); const D = ator(c, DUDU, 2.2, -1.8, -2.2);

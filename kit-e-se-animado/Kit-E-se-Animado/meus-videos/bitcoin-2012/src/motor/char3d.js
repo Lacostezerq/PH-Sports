@@ -195,6 +195,8 @@ export function makeChar3D(o = {}) {
   const LL = leg(1), LR = leg(-1);
   const sombra = blob(.36, .4); sombra.position.y = .006; root.add(sombra);
   if (o.escala) root.scale.setScalar(o.escala);
+  // o cabelo não projeta sombra no rosto (evita a mancha escura de lado)
+  hair.traverse((m) => { if (m.isMesh) m.castShadow = false; });
 
   const st = { look: [0, 0], key: '' };
   const c = {

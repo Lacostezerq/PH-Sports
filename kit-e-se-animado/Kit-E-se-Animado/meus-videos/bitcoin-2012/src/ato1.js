@@ -97,7 +97,7 @@ function C3(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoTeen(c); co
   return (t, u, C) => { const p = { ...idle(t), shL: [70 + 10 * Math.sin(t * 2), 10], elL: 100, headX: -4, headY: 6 * Math.sin(t * 1.3) }; G.pose(p); rosto(G, null, t, u < .6 ? 'neutro' : 'surpreso', { mouth: u > .6 ? { open: .5, round: .8 } : undefined });
     cam(C, [[0, [1.7, 1.3, -.55]], [2.8, [1.95, 1.28, -.7]]], [[0, [3.88, 1.12, -1.45]], [2.8, [3.88, 1.12, -1.45]]], u); return {}; }; }); }
 function C4(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoTeen(c);
-  return (t, u, C) => { cam(C, [[0, [.3, 1.65, -4.7]], [2, [.22, 1.74, -5.55]]], [[0, [.2, 1.75, -6.38]], [2, [.2, 1.75, -6.38]]], u, 0, .4); return {}; }; }); }
+  return (t, u, C) => { cam(C, [[0, [.3, 1.62, -4.4]], [2, [.22, 1.68, -5.03]]], [[0, [.2, 1.68, -6.38]], [2, [.2, 1.68, -6.38]]], u, 0, .4); return {}; }; }); }
 function C5(t0, t1) { return mk(t0, t1, {}, (c) => { const K = casaFamilia(c, { ano: '2012' }); const G = ator(c, GUI16CASA, 0, 0);
   return (t, u, C) => { const d = smooth(0, 2.1, u), i = 11 * (1 - d); const y = d < 1 ? .24 * (i + 1) - .24 * Math.min(1, i) * 0 : 0; const z = d < 1 ? -3.4 - .3 * i : -3.4 + smooth(2.1, 2.7, u) * .9;
     G.root.position.set(-5.3 + smooth(2.2, 2.9, u) * .9, Math.max(0, y - .24 * (d >= .999 ? 1 : 0)), z); G.root.rotation.y = lerp(0, 1.2, smooth(2.3, 2.8, u)); G.sombra.visible = d >= .999;
