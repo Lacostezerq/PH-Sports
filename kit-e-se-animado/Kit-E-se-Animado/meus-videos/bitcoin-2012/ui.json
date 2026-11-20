@@ -1,0 +1,778 @@
+{
+"duracao": 480.7,
+"palavrasPorLegenda": 4,
+"corVoz": {
+"n": "#FFFFFF",
+"gui": "#9FD8FF",
+"marcos": "#FFC48A",
+"regina": "#F7A8C8",
+"dudu": "#C9A8FF"
+},
+"destaques": [
+"bitcoin",
+"bitcoins",
+"senha",
+"37",
+"milhões",
+"2012",
+"2026",
+"2019",
+"2017",
+"pai",
+"lixo",
+"caderno",
+"1.600",
+"100",
+"8",
+"16",
+"19",
+"6",
+"infarto",
+"vidente",
+"item",
+"3"
+],
+"elementos": [
+{
+"tipo": "etiqueta",
+"inicio": 1.0,
+"fim": 6.8,
+"texto": "2019 · 6h DA MANHÃ"
+},
+{
+"tipo": "fato",
+"lado": "esquerda",
+"inicio": 7.6,
+"fim": 13.9,
+"titulo": "DENTRO DO CAMINHÃO",
+"texto": "Um caderno velho com a senha de 100 bitcoins"
+},
+{
+"tipo": "carteira",
+"inicio": 14.3,
+"fim": 22.8,
+"de": 0,
+"ate": 37000000,
+"duracaoConta": 2.2,
+"status": "NO CAMINHÃO DE LIXO",
+"corStatus": "#FF7A6A"
+},
+{
+"tipo": "pill",
+"inicio": 19.3,
+"fim": 23.4,
+"texto": "...E ELE ESTÁ SORRINDO?"
+},
+{
+"tipo": "capitulo",
+"inicio": 24.4,
+"fim": 26.6,
+"numero": "2026",
+"texto": "O GUILHERME DE HOJE"
+},
+{
+"tipo": "fato",
+"lado": "esquerda",
+"inicio": 26.7,
+"fim": 31.1,
+"titulo": "GUILHERME · 30 ANOS",
+"texto": "Mora sozinho, trabalha demais e quase não dorme"
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 31.2,
+"fim": 36.2,
+"titulo": "SEU MARCOS · 2019",
+"texto": "Infarto numa quinta-feira de manhã"
+},
+{
+"tipo": "fato",
+"lado": "esquerda",
+"inicio": 42.1,
+"fim": 47.6,
+"titulo": "A ÚLTIMA FRASE",
+"texto": "“Então faz o que você quiser.”"
+},
+{
+"tipo": "etiqueta",
+"inicio": 50.8,
+"fim": 53.8,
+"texto": "7 ANOS SEM OUVIR ESSA VOZ"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 59.0,
+"fim": 65.7,
+"titulo": "TUDO IGUAL A ANTES",
+"itens": [
+[
+"O pôster na parede",
+60.66
+],
+[
+"Celular de teclado",
+61.78
+],
+[
+"Espelho: 16 anos",
+63.06
+]
+]
+},
+{
+"tipo": "capitulo",
+"inicio": 67.85,
+"fim": 71.0,
+"numero": "2012",
+"texto": "14 ANOS NO PASSADO",
+"topo": 70
+},
+{
+"tipo": "etiqueta",
+"inicio": 70.8,
+"fim": 76.6,
+"texto": "O PAI ESTÁ VIVO"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 88.1,
+"fim": 101.3,
+"titulo": "A LISTA",
+"itens": [
+[
+"Comprar bitcoin",
+92.27
+],
+[
+"Não contar pra ninguém",
+94.4
+],
+[
+"???",
+97.07
+]
+]
+},
+{
+"tipo": "pill",
+"inicio": 101.4,
+"fim": 105.0,
+"texto": "ITEM 3: SÓ NO FINAL"
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 105.3,
+"fim": 114.6,
+"titulo": "BITCOIN EM 2012",
+"valor": "US$ 8,27",
+"texto": "≈ R$ 16 por moeda",
+"fonte": "preço médio de 2012"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 115.0,
+"fim": 123.4,
+"titulo": "COMO ELE JUNTOU",
+"itens": [
+[
+"Vendeu o videogame",
+119.65
+],
+[
+"Juntou a mesada",
+120.74
+],
+[
+"Vendeu as figurinhas",
+121.71
+]
+]
+},
+{
+"tipo": "placa",
+"inicio": 123.5,
+"fim": 125.6,
+"numero": "R$ 1.600",
+"rotulo": "TUDO O QUE ELE CONSEGUIU"
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 136.45,
+"fim": 140.5,
+"titulo": "A COMPRA",
+"texto": "Uma semana brigando com um site em inglês"
+},
+{
+"tipo": "carteira",
+"inicio": 140.6,
+"fim": 151.3,
+"de": 0,
+"ate": 1600,
+"duracaoConta": 1.2,
+"status": "COMPRADO EM 2012",
+"corStatus": "#7DF0A0",
+"ano": "2012"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 141.9,
+"fim": 151.3,
+"titulo": "COMO FUNCIONA",
+"itens": [
+[
+"Não fica no banco",
+144.07
+],
+[
+"Fica numa carteira",
+145.72
+],
+[
+"Senha = dinheiro",
+147.5
+],
+[
+"Perdeu a senha? Já era",
+149.43
+]
+]
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 151.45,
+"fim": 158.4,
+"titulo": "ONDE ESTÁ A SENHA",
+"texto": "Na última página do caderno da lista"
+},
+{
+"tipo": "pill",
+"inicio": 158.5,
+"fim": 161.0,
+"texto": "GUARDA ESSE CADERNO."
+},
+{
+"tipo": "etiqueta",
+"inicio": 161.1,
+"fim": 166.4,
+"texto": "OS ANOS PASSAM..."
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 166.6,
+"fim": 174.0,
+"titulo": "ELE ACERTA TUDO",
+"itens": [
+[
+"Músicas antes de lançar",
+166.67
+],
+[
+"Memes antes de virar",
+169.17
+],
+[
+"Respostas da prova",
+170.87
+]
+]
+},
+{
+"tipo": "pill",
+"inicio": 174.1,
+"fim": 176.3,
+"texto": "APELIDO: VIDENTE"
+},
+{
+"tipo": "pill",
+"inicio": 179.12,
+"fim": 183.95,
+"texto": "BRASIL × ALEMANHA?"
+},
+{
+"tipo": "burst",
+"inicio": 184.06,
+"fim": 186.4,
+"texto": "7 × 1"
+},
+{
+"tipo": "capitulo",
+"inicio": 186.47,
+"fim": 189.2,
+"numero": "8 DE JULHO",
+"texto": "COPA DE 2014"
+},
+{
+"tipo": "placar",
+"inicio": 189.3,
+"fim": 202.3,
+"minuto": "1º TEMPO",
+"gols": [
+[
+194.22,
+"11'"
+],
+[
+195.19,
+"23'"
+],
+[
+195.72,
+"24'"
+],
+[
+196.38,
+"26'"
+],
+[
+196.97,
+"29'"
+]
+]
+},
+{
+"tipo": "fato",
+"lado": "esquerda",
+"topo": 230,
+"inicio": 197.6,
+"fim": 202.3,
+"titulo": "SEMIFINAL",
+"valor": "5 GOLS",
+"texto": "em menos de meia hora"
+},
+{
+"tipo": "burst",
+"inicio": 209.4,
+"fim": 215.4,
+"texto": "LIKE"
+},
+{
+"tipo": "pill",
+"topo": 60,
+"inicio": 212.46,
+"fim": 215.4,
+"texto": "ONDE VOCÊ ESTAVA NO 7 × 1?"
+},
+{
+"tipo": "burst",
+"inicio": 215.5,
+"fim": 220.5,
+"texto": "INSCREVA-SE"
+},
+{
+"tipo": "capitulo",
+"inicio": 220.67,
+"fim": 223.15,
+"numero": "2017",
+"texto": "O BITCOIN EXPLODE"
+},
+{
+"tipo": "grafico",
+"lado": "esquerda",
+"inicio": 223.25,
+"fim": 229.95,
+"titulo": "1 BITCOIN EM DÓLAR",
+"log": true,
+"pontos": [
+[
+"2012",
+8,
+"US$ 8"
+],
+[
+"2013",
+750
+],
+[
+"2014",
+320
+],
+[
+"2015",
+430
+],
+[
+"2016",
+960
+],
+[
+"2017",
+19000,
+"US$ 19 MIL"
+]
+],
+"marcar": [
+0,
+5
+],
+"duracaoLinha": 2.4
+},
+{
+"tipo": "carteira",
+"inicio": 225.9,
+"fim": 236.6,
+"de": 1600,
+"ate": 6000000,
+"duracaoConta": 2.0,
+"status": "E ELE NÃO VENDE",
+"corStatus": "#FFB43A",
+"ano": "2017"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 230.1,
+"fim": 236.6,
+"titulo": "MAS NA VIDA REAL",
+"itens": [
+[
+"Pega ônibus",
+230.13
+],
+[
+"Come miojo",
+232.27
+],
+[
+"Divide quarto",
+233.0
+]
+]
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"topo": 170,
+"inicio": 236.7,
+"fim": 243.4,
+"titulo": "ELE PODIA...",
+"itens": [
+[
+"Comprar casa",
+237.56
+],
+[
+"Comprar carro",
+238.38
+],
+[
+"Viajar",
+238.87
+]
+]
+},
+{
+"tipo": "pill",
+"topo": 50,
+"inicio": 240.0,
+"fim": 243.4,
+"texto": "...MAS ELE NÃO VENDE"
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 243.5,
+"fim": 250.7,
+"titulo": "ATENÇÃO",
+"texto": "Bitcoin sobe e desce muito. Ninguém sabe o futuro.",
+"fonte": "isto não é dica de investimento"
+},
+{
+"tipo": "capitulo",
+"inicio": 253.75,
+"fim": 256.75,
+"numero": "14/03/2019",
+"texto": "QUINTA-FEIRA"
+},
+{
+"tipo": "etiqueta",
+"inicio": 256.85,
+"fim": 260.85,
+"texto": "O DIA DO INFARTO"
+},
+{
+"tipo": "pill",
+"inicio": 258.3,
+"fim": 260.85,
+"texto": "FALTA 1 ANO"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 260.95,
+"fim": 264.35,
+"titulo": "ELE INSISTE",
+"itens": [
+[
+"Almoço de domingo",
+260.94
+],
+[
+"Toda conversa",
+262.28
+],
+[
+"Toda vez!",
+263.4
+]
+]
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 264.45,
+"fim": 268.3,
+"titulo": "O PEDIDO",
+"texto": "Um exame do coração. Ele paga."
+},
+{
+"tipo": "pill",
+"inicio": 278.55,
+"fim": 282.4,
+"texto": "A MESMA BRIGA DE 7 ANOS ATRÁS"
+},
+{
+"tipo": "pill",
+"inicio": 282.45,
+"fim": 287.0,
+"texto": "SÓ QUE AGORA ELE SABE O FINAL"
+},
+{
+"tipo": "capitulo",
+"inicio": 287.19,
+"fim": 289.85,
+"numero": "14/03/2019",
+"texto": "O DIA"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 289.95,
+"fim": 299.8,
+"titulo": "O QUE ELE SABE",
+"itens": [
+[
+"Dor por volta das 8h",
+289.94
+],
+[
+"Vai achar que é gases",
+294.58
+],
+[
+"Vai ficar em casa",
+296.06
+],
+[
+"Vai ser tarde demais",
+297.92
+]
+]
+},
+{
+"tipo": "etiqueta",
+"inicio": 299.85,
+"fim": 305.6,
+"texto": "O PLANO: FINGIR A DOR"
+},
+{
+"tipo": "lista",
+"lado": "esquerda",
+"inicio": 316.0,
+"fim": 321.4,
+"titulo": "A CORRIDA",
+"itens": [
+[
+"Fura sinal",
+316.07
+],
+[
+"Buzina",
+316.81
+],
+[
+"Sobe na calçada",
+317.45
+]
+]
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 321.5,
+"fim": 325.1,
+"titulo": "CORAÇÃO DO GUILHERME",
+"valor": "PERFEITO",
+"corValor": "#7DF0A0"
+},
+{
+"tipo": "pill",
+"topo": 60,
+"inicio": 330.6,
+"fim": 336.1,
+"texto": "INFARTO NA SALA DE ESPERA"
+},
+{
+"tipo": "fato",
+"lado": "esquerda",
+"topo": 180,
+"inicio": 331.4,
+"fim": 336.1,
+"titulo": "SOCORRO",
+"valor": "< 10 m",
+"texto": "da equipe médica"
+},
+{
+"tipo": "etiqueta",
+"inicio": 341.46,
+"fim": 344.7,
+"texto": "3 HORAS DEPOIS"
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 344.8,
+"fim": 351.8,
+"titulo": "O DIAGNÓSTICO",
+"texto": "Artéria quase toda entupida. Em casa, não daria tempo."
+},
+{
+"tipo": "placa",
+"inicio": 357.48,
+"fim": 362.0,
+"numero": "ITEM 3",
+"rotulo": "SALVAR O MEU PAI · 14/03/2019"
+},
+{
+"tipo": "pill",
+"inicio": 362.15,
+"fim": 368.2,
+"texto": "O BITCOIN ERA SÓ O DISFARCE"
+},
+{
+"tipo": "etiqueta",
+"inicio": 368.35,
+"fim": 374.7,
+"texto": "ENQUANTO ISSO, EM CASA"
+},
+{
+"tipo": "fato",
+"lado": "esquerda",
+"inicio": 375.8,
+"fim": 382.2,
+"titulo": "A FAXINA",
+"texto": "Pilha de caderno velho direto pro saco de lixo"
+},
+{
+"tipo": "carteira",
+"inicio": 382.4,
+"fim": 389.8,
+"texto": "R$ 37 mi",
+"status": "INDO PRO LIXO",
+"corStatus": "#FF7A6A",
+"cor": "#FF7A6A",
+"pisca": true
+},
+{
+"tipo": "etiqueta",
+"inicio": 388.95,
+"fim": 395.9,
+"texto": "6h DA MANHÃ · DE NOVO"
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 397.7,
+"fim": 405.2,
+"titulo": "CASO REAL · PAÍS DE GALES",
+"valor": "8.000 BTC",
+"texto": "Num disco rígido jogado fora em 2013. Está num aterro até hoje.",
+"fonte": "James Howells · Newport"
+},
+{
+"tipo": "carteira",
+"inicio": 409.6,
+"fim": 414.8,
+"de": 37000000,
+"ate": 0,
+"duracaoConta": 1.6,
+"status": "MAS O PAI ESTÁ VIVO",
+"corStatus": "#7DF0A0"
+},
+{
+"tipo": "capitulo",
+"inicio": 414.9,
+"fim": 417.8,
+"numero": "2026",
+"texto": "DOMINGO DE CHURRASCO"
+},
+{
+"tipo": "fato",
+"lado": "esquerda",
+"inicio": 419.85,
+"fim": 423.4,
+"titulo": "SEU MARCOS HOJE",
+"texto": "Exame do coração todo ano"
+},
+{
+"tipo": "pill",
+"inicio": 441.13,
+"fim": 444.3,
+"texto": "100 BITCOINS NÃO FAZEM CHURRASCO"
+},
+{
+"tipo": "pill",
+"inicio": 446.73,
+"fim": 450.2,
+"texto": "TODO MUNDO PENSA EM FICAR RICO"
+},
+{
+"tipo": "fato",
+"lado": "direita",
+"inicio": 452.0,
+"fim": 456.1,
+"titulo": "SE VOCÊ VOLTASSE...",
+"texto": "Não ia querer ver um gráfico. Ia querer ver um rosto."
+},
+{
+"tipo": "pill",
+"inicio": 459.76,
+"fim": 463.1,
+"texto": "LIGA PRA ESSA PESSOA HOJE"
+},
+{
+"tipo": "pill",
+"topo": 60,
+"inicio": 463.2,
+"fim": 469.0,
+"texto": "QUAL SERIA O SEU ITEM 3?"
+},
+{
+"tipo": "burst",
+"inicio": 469.14,
+"fim": 475.4,
+"texto": "INSCREVA-SE"
+},
+{
+"tipo": "pill",
+"topo": 60,
+"inicio": 472.76,
+"fim": 475.45,
+"texto": "MANDE PRA QUEM É O SEU ITEM 3"
+},
+{
+"tipo": "pill",
+"inicio": 475.6,
+"fim": 480.4,
+"texto": "GUARDE SUAS SENHAS E SUAS PESSOAS"
+}
+]
+}

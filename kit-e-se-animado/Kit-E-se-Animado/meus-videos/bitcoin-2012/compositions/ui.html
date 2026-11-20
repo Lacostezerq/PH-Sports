@@ -1,0 +1,718 @@
+<template>
+<style>
+@font-face{font-family:'Fraunces';src:url('assets/fonts/fraunces-black.ttf');font-weight:900}
+#root{position:absolute;inset:0}
+.capg{position:absolute;left:210px;width:1500px;top:900px;height:105px;display:flex;align-items:center;justify-content:center;gap:0 16px;flex-wrap:wrap;text-align:center;font:800 56px/1.05 Inter;letter-spacing:-.01em;text-shadow:0 3px 0 #000a,0 0 18px #000c,0 6px 26px #0008}
+.capg span{display:inline-block}
+.tag{position:absolute;left:60px;font:900 42px Fraunces;color:#FFE7B8;background:#2A1C12EB;border:3px solid #FFB43A99;border-radius:12px;padding:6px 24px;letter-spacing:.01em}
+.cap{position:absolute;left:0;width:1920px;text-align:center}
+.capi{display:inline-block;background:#120F1CEB;border:3px solid #FFB43A77;border-radius:16px;padding:26px 74px 30px;box-shadow:0 0 70px #FFB43A33}
+.capn{font:900 96px Fraunces;color:#FFB43A;text-shadow:0 0 26px #FFB43A77;line-height:1}
+.capt{font:700 46px 'IBM Plex Mono';letter-spacing:.12em;color:#F6E7CF;margin-top:12px}
+.fato,.lista,.graf{position:absolute;width:640px;background:#0E1422EE;border-left:9px solid #FFB43A;border-radius:16px;padding:18px 26px 20px;box-shadow:0 10px 30px #0007}
+.graf{width:auto}
+.fh{font:700 27px 'IBM Plex Mono';letter-spacing:.1em;color:#FFB43A}
+.fv{font:900 76px Fraunces;color:#fff;line-height:1.05;margin-top:6px}
+.ft{font:700 33px/1.22 Inter;color:#E8E3D8;margin-top:6px}
+.ff{font:600 20px 'IBM Plex Mono';color:#9AA3B2;margin-top:10px;letter-spacing:.04em}
+.fbr{display:flex;align-items:center;gap:12px;margin-top:12px}
+.fbl{width:150px;font:800 28px Inter;color:#fff;text-align:right}
+.fbt{flex:1;height:32px;background:#ffffff18;border-radius:13px;overflow:hidden}
+.fbb{height:100%;border-radius:13px}
+.fbv{width:190px;font:800 26px 'IBM Plex Mono';color:#FFB43A}
+.li{font:800 38px/1.2 Inter;color:#fff;margin-top:14px;display:flex;align-items:center;gap:16px}
+.lk{display:inline-block;width:52px;height:52px;border-radius:50%;background:#FFB43A;color:#1B1420;font:900 32px Fraunces;text-align:center;line-height:54px;flex:none}
+.pq{position:absolute;left:0;width:1920px;text-align:center}
+.pqi{display:inline-block;background:#0E1422EE;border:2px solid #FFB43A66;border-radius:18px;padding:12px 44px 12px}
+.pqn{font:900 92px Fraunces;color:#FFB43A;text-shadow:0 0 22px #FFB43A88;line-height:1.05}
+.pql{font:600 25px 'IBM Plex Mono';letter-spacing:.14em;color:#E2DCCD;margin-top:4px}
+.pill{position:absolute;left:0;width:1920px;text-align:center}
+.pill span{display:inline-block;background:#FFD45AF4;color:#1B1420;font:900 50px/1.1 Inter;letter-spacing:-.01em;padding:16px 44px;border-radius:48px;border:5px solid #1B1420;box-shadow:0 8px 0 #1B142088;max-width:1500px}
+.cart{position:absolute;right:40px;top:30px;width:360px;height:300px;background:#0E1422E6;border:3px solid #FFB43A88;border-radius:22px;text-align:center;box-shadow:0 10px 30px #0007}
+.ch{font:700 19px 'IBM Plex Mono';letter-spacing:.12em;color:#C9C2B2;margin-top:18px}
+.cb{font:900 46px Fraunces;color:#fff;margin-top:6px}
+.cbi{display:inline-block;width:54px;height:54px;border-radius:50%;background:#FFB43A;color:#1B1420;font:900 38px Inter;line-height:56px;vertical-align:4px}
+.cl{font:700 18px 'IBM Plex Mono';letter-spacing:.2em;color:#9AA3B2;margin-top:10px}
+.cn{font:900 56px Fraunces;color:#7DF0A0;margin-top:2px;text-shadow:0 0 18px #7DF0A055;white-space:nowrap}
+.cs{font:800 22px Inter;color:#FFB43A;letter-spacing:.04em;margin-top:2px}
+.ca{position:absolute;left:16px;bottom:10px;font:800 18px 'IBM Plex Mono';color:#FFB43A}
+.placar{position:absolute;left:610px;top:36px;width:700px;height:160px;background:#0E1422F0;border:3px solid #ffffff44;border-radius:18px;text-align:center}
+.pt{font:700 20px 'IBM Plex Mono';letter-spacing:.14em;color:#C9C2B2;margin-top:12px}
+.pr{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:4px}
+.pe{font:900 34px Inter;color:#fff;width:200px}
+.pg{font:900 72px Fraunces;color:#fff;display:inline-block;width:60px}
+.px{font:900 40px Inter;color:#9AA3B2}
+.pm{font:800 22px 'IBM Plex Mono';color:#FFB43A;margin-top:-4px}
+.gx{font:700 22px 'IBM Plex Mono';fill:#C9C2B2}
+.gv{font:900 30px Inter;fill:#fff}
+</style>
+<div id="root" data-composition-id="ui" data-width="1920" data-height="1080" data-layout-allow-overlap>
+<div id="cap0" class="clip capg" data-start="1.050" data-duration="1.170"><span style="color:#FFB43A">2019,</span></div>
+<div id="cap1" class="clip capg" data-start="2.220" data-duration="0.880"><span style="color:#FFB43A">6</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">manhã</span> <span style="color:#FFFFFF">e</span></div>
+<div id="cap2" class="clip capg" data-start="3.100" data-duration="0.980"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">está</span> <span style="color:#FFFFFF">correndo</span></div>
+<div id="cap3" class="clip capg" data-start="4.080" data-duration="0.900"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">chinelo</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">meio</span></div>
+<div id="cap4" class="clip capg" data-start="4.980" data-duration="0.940"><span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">avenida</span> <span style="color:#FFFFFF">atrás</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap5" class="clip capg" data-start="5.920" data-duration="1.080"><span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">caminhão</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFB43A">lixo.</span></div>
+<div id="cap6" class="clip capg" data-start="7.000" data-duration="0.640"><span style="color:#FFFFFF">Lá</span> <span style="color:#FFFFFF">dentro,</span></div>
+<div id="cap7" class="clip capg" data-start="7.640" data-duration="1.100"><span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">meio</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">toneladas</span></div>
+<div id="cap8" class="clip capg" data-start="8.740" data-duration="0.640"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">sacola,</span></div>
+<div id="cap9" class="clip capg" data-start="9.380" data-duration="1.080"><span style="color:#FFFFFF">tem</span> <span style="color:#FFFFFF">um</span> <span style="color:#FFB43A">caderno</span> <span style="color:#FFFFFF">velho</span></div>
+<div id="cap10" class="clip capg" data-start="10.460" data-duration="0.757"><span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">escola.</span></div>
+<div id="cap11" class="clip capg" data-start="11.217" data-duration="1.190"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">nesse</span> <span style="color:#FFB43A">caderno</span> <span style="color:#FFFFFF">está</span></div>
+<div id="cap12" class="clip capg" data-start="12.407" data-duration="1.130"><span style="color:#FFFFFF">a</span> <span style="color:#FFB43A">senha</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFB43A">100</span></div>
+<div id="cap13" class="clip capg" data-start="13.537" data-duration="0.690"><span style="color:#FFB43A">bitcoins.</span></div>
+<div id="cap14" class="clip capg" data-start="14.227" data-duration="1.250"><span style="color:#FFFFFF">Em</span> <span style="color:#FFB43A">2026,</span></div>
+<div id="cap15" class="clip capg" data-start="15.477" data-duration="1.250"><span style="color:#FFFFFF">esses</span> <span style="color:#FFB43A">100</span> <span style="color:#FFB43A">bitcoins</span> <span style="color:#FFFFFF">valem</span></div>
+<div id="cap16" class="clip capg" data-start="16.727" data-duration="1.580"><span style="color:#FFFFFF">uns</span> <span style="color:#FFB43A">37</span> <span style="color:#FFB43A">milhões</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap17" class="clip capg" data-start="18.307" data-duration="0.928"><span style="color:#FFFFFF">reais.</span></div>
+<div id="cap18" class="clip capg" data-start="19.235" data-duration="1.120"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">mais</span> <span style="color:#FFFFFF">estranho</span></div>
+<div id="cap19" class="clip capg" data-start="20.355" data-duration="1.330"><span style="color:#FFFFFF">dessa</span> <span style="color:#FFFFFF">cena</span> <span style="color:#FFFFFF">toda</span> <span style="color:#FFFFFF">é</span></div>
+<div id="cap20" class="clip capg" data-start="21.685" data-duration="0.930"><span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">está</span></div>
+<div id="cap21" class="clip capg" data-start="22.615" data-duration="0.891"><span style="color:#FFFFFF">sorrindo.</span></div>
+<div id="cap22" class="clip capg" data-start="23.506" data-duration="0.900"><span style="color:#FFFFFF">Pra</span> <span style="color:#FFFFFF">entender</span> <span style="color:#FFFFFF">isso,</span></div>
+<div id="cap23" class="clip capg" data-start="24.406" data-duration="1.220"><span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">gente</span> <span style="color:#FFFFFF">precisa</span> <span style="color:#FFFFFF">voltar</span></div>
+<div id="cap24" class="clip capg" data-start="25.626" data-duration="1.090"><span style="color:#FFFFFF">pra</span> <span style="color:#FFB43A">2026.</span></div>
+<div id="cap25" class="clip capg" data-start="26.716" data-duration="1.030"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">tem</span> <span style="color:#FFFFFF">30</span></div>
+<div id="cap26" class="clip capg" data-start="27.746" data-duration="0.380"><span style="color:#FFFFFF">anos,</span></div>
+<div id="cap27" class="clip capg" data-start="28.126" data-duration="0.830"><span style="color:#FFFFFF">mora</span> <span style="color:#FFFFFF">sozinho,</span></div>
+<div id="cap28" class="clip capg" data-start="28.956" data-duration="1.410"><span style="color:#FFFFFF">trabalha</span> <span style="color:#FFFFFF">demais</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">quase</span></div>
+<div id="cap29" class="clip capg" data-start="30.366" data-duration="0.870"><span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">dorme.</span></div>
+<div id="cap30" class="clip capg" data-start="31.236" data-duration="0.650"><span style="color:#FFFFFF">O</span> <span style="color:#FFB43A">pai</span> <span style="color:#FFFFFF">dele,</span></div>
+<div id="cap31" class="clip capg" data-start="31.886" data-duration="0.830"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Seu</span> <span style="color:#FFFFFF">Marcos,</span></div>
+<div id="cap32" class="clip capg" data-start="32.716" data-duration="1.475"><span style="color:#FFFFFF">morreu</span> <span style="color:#FFFFFF">em</span> <span style="color:#FFB43A">2019.</span></div>
+<div id="cap33" class="clip capg" data-start="34.191" data-duration="1.520"><span style="color:#FFFFFF">um</span> <span style="color:#FFB43A">infarto</span> <span style="color:#FFFFFF">numa</span> <span style="color:#FFFFFF">quinta-feira</span></div>
+<div id="cap34" class="clip capg" data-start="35.711" data-duration="0.560"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">manhã.</span></div>
+<div id="cap35" class="clip capg" data-start="36.271" data-duration="1.220"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">uma</span> <span style="color:#FFFFFF">semana</span> <span style="color:#FFFFFF">antes,</span></div>
+<div id="cap36" class="clip capg" data-start="37.491" data-duration="1.040"><span style="color:#FFFFFF">os</span> <span style="color:#FFFFFF">dois</span> <span style="color:#FFFFFF">tinham</span> <span style="color:#FFFFFF">brigado</span></div>
+<div id="cap37" class="clip capg" data-start="38.531" data-duration="0.930"><span style="color:#FFFFFF">feio</span> <span style="color:#FFFFFF">porque</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span></div>
+<div id="cap38" class="clip capg" data-start="39.461" data-duration="0.930"><span style="color:#FFFFFF">insistiu</span> <span style="color:#FFFFFF">pra</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">fazer</span></div>
+<div id="cap39" class="clip capg" data-start="40.391" data-duration="0.990"><span style="color:#FFFFFF">exame</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">pai</span></div>
+<div id="cap40" class="clip capg" data-start="41.381" data-duration="0.724"><span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">quis.</span></div>
+<div id="cap41" class="clip capg" data-start="42.105" data-duration="0.890"><span style="color:#FFFFFF">A</span> <span style="color:#FFFFFF">última</span> <span style="color:#FFFFFF">coisa</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap42" class="clip capg" data-start="42.995" data-duration="1.170"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">disse</span> <span style="color:#FFFFFF">pro</span></div>
+<div id="cap43" class="clip capg" data-start="44.165" data-duration="0.930"><span style="color:#FFB43A">pai</span> <span style="color:#FFFFFF">foi</span> <span style="color:#FFFFFF">“Então</span> <span style="color:#FFFFFF">faz</span></div>
+<div id="cap44" class="clip capg" data-start="45.095" data-duration="1.236"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">você</span> <span style="color:#FFFFFF">quiser”.</span></div>
+<div id="cap45" class="clip capg" data-start="46.331" data-duration="1.700"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">fez.</span></div>
+<div id="cap46" class="clip capg" data-start="48.031" data-duration="1.060"><span style="color:#FFFFFF">Numa</span> <span style="color:#FFFFFF">noite</span> <span style="color:#FFFFFF">qualquer,</span></div>
+<div id="cap47" class="clip capg" data-start="49.091" data-duration="1.080"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">dorme</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap48" class="clip capg" data-start="50.171" data-duration="0.584"><span style="color:#FFFFFF">sofá.</span></div>
+<div id="cap49" class="clip capg" data-start="50.755" data-duration="0.880"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">acorda</span> <span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">uma</span></div>
+<div id="cap50" class="clip capg" data-start="51.635" data-duration="0.870"><span style="color:#FFFFFF">voz</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">não</span></div>
+<div id="cap51" class="clip capg" data-start="52.505" data-duration="1.360"><span style="color:#FFFFFF">ouve</span> <span style="color:#FFFFFF">faz</span> <span style="color:#FFFFFF">7</span> <span style="color:#FFFFFF">anos.</span></div>
+<div id="cap52" class="clip capg" data-start="53.865" data-duration="0.820"><span style="color:#F7A8C8">Guilherme,</span></div>
+<div id="cap53" class="clip capg" data-start="54.685" data-duration="1.180"><span style="color:#F7A8C8">levanta</span> <span style="color:#F7A8C8">que</span> <span style="color:#F7A8C8">você</span> <span style="color:#F7A8C8">vai</span></div>
+<div id="cap54" class="clip capg" data-start="55.865" data-duration="1.330"><span style="color:#F7A8C8">perder</span> <span style="color:#F7A8C8">o</span> <span style="color:#F7A8C8">ônibus</span> <span style="color:#F7A8C8">da</span></div>
+<div id="cap55" class="clip capg" data-start="57.195" data-duration="0.450"><span style="color:#F7A8C8">escola.</span></div>
+<div id="cap56" class="clip capg" data-start="57.645" data-duration="1.252"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">abre</span> <span style="color:#FFFFFF">os</span> <span style="color:#FFFFFF">olhos.</span></div>
+<div id="cap57" class="clip capg" data-start="58.897" data-duration="0.560"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">quarto</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap58" class="clip capg" data-start="59.457" data-duration="1.200"><span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">adolescência,</span></div>
+<div id="cap59" class="clip capg" data-start="60.657" data-duration="1.120"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">pôster</span> <span style="color:#FFFFFF">na</span> <span style="color:#FFFFFF">parede,</span></div>
+<div id="cap60" class="clip capg" data-start="61.777" data-duration="1.280"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">celular</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">teclado,</span></div>
+<div id="cap61" class="clip capg" data-start="63.057" data-duration="1.050"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">espelho</span> <span style="color:#FFFFFF">mostra</span> <span style="color:#FFFFFF">um</span></div>
+<div id="cap62" class="clip capg" data-start="64.107" data-duration="1.720"><span style="color:#FFFFFF">moleque</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFB43A">16</span> <span style="color:#FFFFFF">anos,</span></div>
+<div id="cap63" class="clip capg" data-start="65.827" data-duration="0.900"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">calendário</span> <span style="color:#FFFFFF">diz</span></div>
+<div id="cap64" class="clip capg" data-start="66.727" data-duration="1.087"><span style="color:#FFB43A">2012.</span></div>
+<div id="cap65" class="clip capg" data-start="67.814" data-duration="0.810"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">desce</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">escada</span></div>
+<div id="cap66" class="clip capg" data-start="68.624" data-duration="1.040"><span style="color:#FFFFFF">correndo</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">para</span> <span style="color:#FFFFFF">na</span></div>
+<div id="cap67" class="clip capg" data-start="69.664" data-duration="1.174"><span style="color:#FFFFFF">porta</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">cozinha.</span></div>
+<div id="cap68" class="clip capg" data-start="70.838" data-duration="0.870"><span style="color:#FFFFFF">O</span> <span style="color:#FFB43A">pai</span> <span style="color:#FFFFFF">está</span> <span style="color:#FFFFFF">lá,</span></div>
+<div id="cap69" class="clip capg" data-start="71.708" data-duration="1.380"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">camisa</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">firma,</span></div>
+<div id="cap70" class="clip capg" data-start="73.088" data-duration="1.430"><span style="color:#FFFFFF">tomando</span> <span style="color:#FFFFFF">café</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">reclamando</span></div>
+<div id="cap71" class="clip capg" data-start="74.518" data-duration="1.180"><span style="color:#FFFFFF">do</span> <span style="color:#FFFFFF">preço</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">gasolina.</span></div>
+<div id="cap72" class="clip capg" data-start="75.698" data-duration="1.150"><span style="color:#FFFFFF">Como</span> <span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">nada</span> <span style="color:#FFFFFF">tivesse</span></div>
+<div id="cap73" class="clip capg" data-start="76.848" data-duration="0.690"><span style="color:#FFFFFF">acontecido.</span></div>
+<div id="cap74" class="clip capg" data-start="77.538" data-duration="1.150"><span style="color:#FFC48A">Que</span> <span style="color:#FFC48A">cara</span> <span style="color:#FFC48A">é</span> <span style="color:#FFC48A">essa,</span></div>
+<div id="cap75" class="clip capg" data-start="78.688" data-duration="0.830"><span style="color:#FFC48A">moleque?</span></div>
+<div id="cap76" class="clip capg" data-start="79.518" data-duration="0.660"><span style="color:#FFC48A">Viu</span> <span style="color:#FFC48A">assombração?</span></div>
+<div id="cap77" class="clip capg" data-start="80.816" data-duration="0.320"><span style="color:#9FD8FF">Não,</span></div>
+<div id="cap78" class="clip capg" data-start="81.136" data-duration="0.520"><span style="color:#FFB43A">pai.</span></div>
+<div id="cap79" class="clip capg" data-start="81.656" data-duration="1.260"><span style="color:#9FD8FF">Eu</span> <span style="color:#9FD8FF">só</span> <span style="color:#9FD8FF">estava</span> <span style="color:#9FD8FF">com</span></div>
+<div id="cap80" class="clip capg" data-start="82.916" data-duration="1.098"><span style="color:#9FD8FF">saudade.</span></div>
+<div id="cap81" class="clip capg" data-start="84.014" data-duration="1.400"><span style="color:#FFC48A">Saudade?</span></div>
+<div id="cap82" class="clip capg" data-start="85.414" data-duration="0.830"><span style="color:#FFC48A">Você</span> <span style="color:#FFC48A">me</span> <span style="color:#FFC48A">viu</span> <span style="color:#FFC48A">ontem</span></div>
+<div id="cap83" class="clip capg" data-start="86.244" data-duration="0.932"><span style="color:#FFC48A">à</span> <span style="color:#FFC48A">noite.</span></div>
+<div id="cap84" class="clip capg" data-start="87.176" data-duration="0.910"><span style="color:#FFFFFF">Naquela</span> <span style="color:#FFFFFF">noite,</span></div>
+<div id="cap85" class="clip capg" data-start="88.086" data-duration="0.850"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">pega</span> <span style="color:#FFFFFF">um</span></div>
+<div id="cap86" class="clip capg" data-start="88.936" data-duration="0.970"><span style="color:#FFB43A">caderno</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">escola</span> <span style="color:#FFFFFF">e</span></div>
+<div id="cap87" class="clip capg" data-start="89.906" data-duration="1.330"><span style="color:#FFFFFF">escreve</span> <span style="color:#FFFFFF">uma</span> <span style="color:#FFFFFF">lista</span> <span style="color:#FFFFFF">com</span></div>
+<div id="cap88" class="clip capg" data-start="91.236" data-duration="1.032"><span style="color:#FFFFFF">três</span> <span style="color:#FFFFFF">coisas.</span></div>
+<div id="cap89" class="clip capg" data-start="92.268" data-duration="0.850"><span style="color:#FFB43A">Item</span> <span style="color:#FFFFFF">1:</span></div>
+<div id="cap90" class="clip capg" data-start="93.268" data-duration="1.130"><span style="color:#FFFFFF">comprar</span> <span style="color:#FFB43A">bitcoin.</span></div>
+<div id="cap91" class="clip capg" data-start="94.398" data-duration="0.690"><span style="color:#FFB43A">Item</span> <span style="color:#FFFFFF">2:</span></div>
+<div id="cap92" class="clip capg" data-start="95.428" data-duration="1.646"><span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">contar</span> <span style="color:#FFFFFF">pra</span> <span style="color:#FFFFFF">ninguém.</span></div>
+<div id="cap93" class="clip capg" data-start="97.074" data-duration="0.930"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">Item</span> <span style="color:#FFB43A">3,</span></div>
+<div id="cap94" class="clip capg" data-start="98.004" data-duration="1.520"><span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">escreve</span> <span style="color:#FFFFFF">olha</span> <span style="color:#FFFFFF">por</span></div>
+<div id="cap95" class="clip capg" data-start="99.524" data-duration="0.620"><span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">tempo,</span></div>
+<div id="cap96" class="clip capg" data-start="100.144" data-duration="1.241"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">dobra</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">página.</span></div>
+<div id="cap97" class="clip capg" data-start="101.385" data-duration="1.580"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">esse</span> <span style="color:#FFB43A">Item</span> <span style="color:#FFB43A">3,</span></div>
+<div id="cap98" class="clip capg" data-start="102.965" data-duration="1.490"><span style="color:#FFFFFF">você</span> <span style="color:#FFFFFF">só</span> <span style="color:#FFFFFF">vai</span> <span style="color:#FFFFFF">descobrir</span></div>
+<div id="cap99" class="clip capg" data-start="104.455" data-duration="0.829"><span style="color:#FFFFFF">lá</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">final.</span></div>
+<div id="cap100" class="clip capg" data-start="105.284" data-duration="1.080"><span style="color:#FFFFFF">Em</span> <span style="color:#FFB43A">2012,</span></div>
+<div id="cap101" class="clip capg" data-start="106.364" data-duration="1.130"><span style="color:#FFFFFF">quase</span> <span style="color:#FFFFFF">ninguém</span> <span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap102" class="clip capg" data-start="107.494" data-duration="1.030"><span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFB43A">bitcoin.</span></div>
+<div id="cap103" class="clip capg" data-start="108.524" data-duration="0.920"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">custa</span> <span style="color:#FFFFFF">uns</span> <span style="color:#FFB43A">8</span></div>
+<div id="cap104" class="clip capg" data-start="109.444" data-duration="0.590"><span style="color:#FFFFFF">dólares,</span></div>
+<div id="cap105" class="clip capg" data-start="110.034" data-duration="1.110"><span style="color:#FFFFFF">mais</span> <span style="color:#FFFFFF">ou</span> <span style="color:#FFFFFF">menos</span> <span style="color:#FFB43A">16</span></div>
+<div id="cap106" class="clip capg" data-start="111.144" data-duration="0.488"><span style="color:#FFFFFF">reais.</span></div>
+<div id="cap107" class="clip capg" data-start="111.632" data-duration="0.850"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">sabe</span></div>
+<div id="cap108" class="clip capg" data-start="112.482" data-duration="1.050"><span style="color:#FFFFFF">exatamente</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">vai</span></div>
+<div id="cap109" class="clip capg" data-start="113.532" data-duration="1.354"><span style="color:#FFFFFF">acontecer</span> <span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">ele.</span></div>
+<div id="cap110" class="clip capg" data-start="114.886" data-duration="0.730"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">problema</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap111" class="clip capg" data-start="115.616" data-duration="1.030"><span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">moleque</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFB43A">16</span></div>
+<div id="cap112" class="clip capg" data-start="116.646" data-duration="1.330"><span style="color:#FFFFFF">anos</span> <span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">tem</span> <span style="color:#FFFFFF">dinheiro,</span></div>
+<div id="cap113" class="clip capg" data-start="117.976" data-duration="0.770"><span style="color:#FFFFFF">então</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">faz</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap114" class="clip capg" data-start="118.746" data-duration="0.900"><span style="color:#FFFFFF">impensável.</span></div>
+<div id="cap115" class="clip capg" data-start="119.646" data-duration="1.090"><span style="color:#FFFFFF">Vende</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">videogame,</span></div>
+<div id="cap116" class="clip capg" data-start="120.736" data-duration="0.970"><span style="color:#FFFFFF">junta</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">mesada,</span></div>
+<div id="cap117" class="clip capg" data-start="121.706" data-duration="0.710"><span style="color:#FFFFFF">vende</span> <span style="color:#FFFFFF">até</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">coleção</span></div>
+<div id="cap118" class="clip capg" data-start="122.416" data-duration="1.104"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">figurinha...</span></div>
+<div id="cap119" class="clip capg" data-start="123.520" data-duration="2.210"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">consegue</span> <span style="color:#FFFFFF">R$</span> <span style="color:#FFFFFF">1.600.</span></div>
+<div id="cap120" class="clip capg" data-start="125.730" data-duration="1.680"><span style="color:#FFC48A">Você</span> <span style="color:#FFC48A">vendeu</span> <span style="color:#FFC48A">o</span> <span style="color:#FFC48A">videogame</span></div>
+<div id="cap121" class="clip capg" data-start="127.410" data-duration="0.840"><span style="color:#FFC48A">que</span> <span style="color:#FFC48A">eu</span> <span style="color:#FFC48A">parcelei</span> <span style="color:#FFC48A">em</span></div>
+<div id="cap122" class="clip capg" data-start="128.250" data-duration="1.490"><span style="color:#FFC48A">10</span> <span style="color:#FFC48A">vezes</span> <span style="color:#FFC48A">para</span> <span style="color:#FFC48A">comprar</span></div>
+<div id="cap123" class="clip capg" data-start="129.740" data-duration="1.150"><span style="color:#FFC48A">dinheiro</span> <span style="color:#FFC48A">de</span> <span style="color:#FFC48A">internet?</span></div>
+<div id="cap124" class="clip capg" data-start="130.890" data-duration="0.850"><span style="color:#FFB43A">Pai!</span></div>
+<div id="cap125" class="clip capg" data-start="131.792" data-duration="0.940"><span style="color:#9FD8FF">Confia</span> <span style="color:#9FD8FF">em</span> <span style="color:#9FD8FF">mim.</span></div>
+<div id="cap126" class="clip capg" data-start="132.732" data-duration="1.060"><span style="color:#FFC48A">Confiar</span> <span style="color:#FFC48A">em</span> <span style="color:#FFC48A">quem</span> <span style="color:#FFC48A">acha</span></div>
+<div id="cap127" class="clip capg" data-start="133.792" data-duration="1.580"><span style="color:#FFC48A">que</span> <span style="color:#FFC48A">dinheiro</span> <span style="color:#FFC48A">mora</span> <span style="color:#FFC48A">dentro</span></div>
+<div id="cap128" class="clip capg" data-start="135.372" data-duration="1.043"><span style="color:#FFC48A">do</span> <span style="color:#FFC48A">computador?</span></div>
+<div id="cap129" class="clip capg" data-start="136.415" data-duration="0.960"><span style="color:#FFFFFF">Depois</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">uma</span> <span style="color:#FFFFFF">semana</span></div>
+<div id="cap130" class="clip capg" data-start="137.375" data-duration="1.100"><span style="color:#FFFFFF">brigando</span> <span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">site</span></div>
+<div id="cap131" class="clip capg" data-start="138.475" data-duration="0.650"><span style="color:#FFFFFF">em</span> <span style="color:#FFFFFF">inglês,</span></div>
+<div id="cap132" class="clip capg" data-start="139.125" data-duration="1.467"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">consegue...</span></div>
+<div id="cap133" class="clip capg" data-start="140.592" data-duration="1.260"><span style="color:#FFB43A">100</span> <span style="color:#FFB43A">bitcoins.</span></div>
+<div id="cap134" class="clip capg" data-start="141.852" data-duration="0.590"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">aqui</span> <span style="color:#FFFFFF">tem</span> <span style="color:#FFFFFF">uma</span></div>
+<div id="cap135" class="clip capg" data-start="142.442" data-duration="0.920"><span style="color:#FFFFFF">coisa</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">ninguém</span> <span style="color:#FFFFFF">te</span></div>
+<div id="cap136" class="clip capg" data-start="143.362" data-duration="0.709"><span style="color:#FFFFFF">conta.</span></div>
+<div id="cap137" class="clip capg" data-start="144.071" data-duration="1.120"><span style="color:#FFB43A">bitcoin</span> <span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">fica</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap138" class="clip capg" data-start="145.191" data-duration="0.530"><span style="color:#FFFFFF">banco,</span></div>
+<div id="cap139" class="clip capg" data-start="145.721" data-duration="0.760"><span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">fica</span> <span style="color:#FFFFFF">em</span> <span style="color:#FFFFFF">uma</span></div>
+<div id="cap140" class="clip capg" data-start="146.481" data-duration="1.020"><span style="color:#FFFFFF">carteira</span> <span style="color:#FFFFFF">digital,</span></div>
+<div id="cap141" class="clip capg" data-start="147.501" data-duration="0.540"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">quem</span> <span style="color:#FFFFFF">tem</span> <span style="color:#FFFFFF">a</span></div>
+<div id="cap142" class="clip capg" data-start="148.041" data-duration="1.391"><span style="color:#FFB43A">senha</span> <span style="color:#FFFFFF">tem</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">dinheiro.</span></div>
+<div id="cap143" class="clip capg" data-start="149.432" data-duration="1.210"><span style="color:#FFFFFF">Quem</span> <span style="color:#FFFFFF">perde</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFB43A">senha,</span></div>
+<div id="cap144" class="clip capg" data-start="150.642" data-duration="0.800"><span style="color:#FFFFFF">perde</span> <span style="color:#FFFFFF">tudo.</span></div>
+<div id="cap145" class="clip capg" data-start="151.442" data-duration="0.800"><span style="color:#FFFFFF">Então</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">anota</span> <span style="color:#FFFFFF">a</span></div>
+<div id="cap146" class="clip capg" data-start="152.242" data-duration="0.950"><span style="color:#FFB43A">senha</span> <span style="color:#FFFFFF">num</span> <span style="color:#FFFFFF">lugar</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap147" class="clip capg" data-start="153.192" data-duration="1.050"><span style="color:#FFFFFF">ninguém</span> <span style="color:#FFFFFF">vai</span> <span style="color:#FFFFFF">mexer.</span></div>
+<div id="cap148" class="clip capg" data-start="154.242" data-duration="1.070"><span style="color:#FFFFFF">A</span> <span style="color:#FFFFFF">última</span> <span style="color:#FFFFFF">página</span> <span style="color:#FFFFFF">do</span></div>
+<div id="cap149" class="clip capg" data-start="155.312" data-duration="1.124"><span style="color:#FFB43A">caderno</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">lista.</span></div>
+<div id="cap150" class="clip capg" data-start="156.436" data-duration="0.900"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">esconde</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">caderno</span></div>
+<div id="cap151" class="clip capg" data-start="157.336" data-duration="1.200"><span style="color:#FFFFFF">na</span> <span style="color:#FFFFFF">estante</span> <span style="color:#FFFFFF">do</span> <span style="color:#FFFFFF">quarto.</span></div>
+<div id="cap152" class="clip capg" data-start="158.536" data-duration="1.484"><span style="color:#FFFFFF">Guarda</span> <span style="color:#FFFFFF">esse</span> <span style="color:#FFB43A">caderno.</span></div>
+<div id="cap153" class="clip capg" data-start="160.020" data-duration="1.050"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">vai</span> <span style="color:#FFFFFF">importar.</span></div>
+<div id="cap154" class="clip capg" data-start="161.070" data-duration="1.340"><span style="color:#FFFFFF">Os</span> <span style="color:#FFFFFF">anos</span> <span style="color:#FFFFFF">começam</span> <span style="color:#FFFFFF">a</span></div>
+<div id="cap155" class="clip capg" data-start="162.410" data-duration="0.660"><span style="color:#FFFFFF">passar</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span></div>
+<div id="cap156" class="clip capg" data-start="163.070" data-duration="0.970"><span style="color:#FFFFFF">vira</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">pessoa</span> <span style="color:#FFFFFF">mais</span></div>
+<div id="cap157" class="clip capg" data-start="164.040" data-duration="1.330"><span style="color:#FFFFFF">estranha</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">escola,</span></div>
+<div id="cap158" class="clip capg" data-start="165.370" data-duration="1.300"><span style="color:#FFFFFF">porque</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">acerta</span> <span style="color:#FFFFFF">tudo.</span></div>
+<div id="cap159" class="clip capg" data-start="166.670" data-duration="0.860"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">as</span> <span style="color:#FFFFFF">músicas</span></div>
+<div id="cap160" class="clip capg" data-start="167.530" data-duration="1.030"><span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">vão</span> <span style="color:#FFFFFF">estourar</span> <span style="color:#FFFFFF">antes</span></div>
+<div id="cap161" class="clip capg" data-start="168.560" data-duration="0.610"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">lançar,</span></div>
+<div id="cap162" class="clip capg" data-start="169.170" data-duration="1.340"><span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">quais</span> <span style="color:#FFFFFF">memes</span> <span style="color:#FFFFFF">vão</span></div>
+<div id="cap163" class="clip capg" data-start="170.510" data-duration="0.360"><span style="color:#FFFFFF">aparecer,</span></div>
+<div id="cap164" class="clip capg" data-start="170.870" data-duration="0.880"><span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">até</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">resposta</span></div>
+<div id="cap165" class="clip capg" data-start="171.750" data-duration="0.840"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">prova</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap166" class="clip capg" data-start="172.590" data-duration="1.481"><span style="color:#FFFFFF">professor</span> <span style="color:#FFFFFF">ainda</span> <span style="color:#FFFFFF">nem</span> <span style="color:#FFFFFF">passou.</span></div>
+<div id="cap167" class="clip capg" data-start="174.071" data-duration="0.860"><span style="color:#FFFFFF">Os</span> <span style="color:#FFFFFF">amigos</span> <span style="color:#FFFFFF">começam</span> <span style="color:#FFFFFF">a</span></div>
+<div id="cap168" class="clip capg" data-start="174.931" data-duration="1.460"><span style="color:#FFFFFF">chamar</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFB43A">vidente.</span></div>
+<div id="cap169" class="clip capg" data-start="176.391" data-duration="0.960"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">melhor</span> <span style="color:#FFFFFF">amigo,</span></div>
+<div id="cap170" class="clip capg" data-start="177.351" data-duration="0.620"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Dudu,</span></div>
+<div id="cap171" class="clip capg" data-start="177.971" data-duration="1.149"><span style="color:#FFFFFF">decide</span> <span style="color:#FFFFFF">testar.</span></div>
+<div id="cap172" class="clip capg" data-start="179.120" data-duration="0.560"><span style="color:#C9A8FF">Tá</span> <span style="color:#C9A8FF">bom,</span></div>
+<div id="cap173" class="clip capg" data-start="179.680" data-duration="0.510"><span style="color:#FFB43A">vidente,</span></div>
+<div id="cap174" class="clip capg" data-start="180.400" data-duration="1.040"><span style="color:#C9A8FF">então</span> <span style="color:#C9A8FF">fala</span> <span style="color:#C9A8FF">aí,</span></div>
+<div id="cap175" class="clip capg" data-start="181.440" data-duration="1.350"><span style="color:#C9A8FF">quanto</span> <span style="color:#C9A8FF">vai</span> <span style="color:#C9A8FF">ser</span> <span style="color:#C9A8FF">Brasil</span></div>
+<div id="cap176" class="clip capg" data-start="182.790" data-duration="1.267"><span style="color:#C9A8FF">e</span> <span style="color:#C9A8FF">Alemanha</span> <span style="color:#C9A8FF">na</span> <span style="color:#C9A8FF">Copa?</span></div>
+<div id="cap177" class="clip capg" data-start="184.057" data-duration="1.360"><span style="color:#9FD8FF">Sete</span> <span style="color:#9FD8FF">a</span> <span style="color:#9FD8FF">um.</span></div>
+<div id="cap178" class="clip capg" data-start="186.467" data-duration="0.200"><span style="color:#FFFFFF">Oito</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">julho</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap179" class="clip capg" data-start="186.647" data-duration="1.520"><span style="color:#FFFFFF">2014.</span></div>
+<div id="cap180" class="clip capg" data-start="188.167" data-duration="1.060"><span style="color:#FFFFFF">Um bar</span> <span style="color:#FFFFFF">lotado,</span></div>
+<div id="cap181" class="clip capg" data-start="189.227" data-duration="0.920"><span style="color:#FFFFFF">A</span> <span style="color:#FFFFFF">camisa</span> <span style="color:#FFFFFF">amarela</span> <span style="color:#FFFFFF">em</span></div>
+<div id="cap182" class="clip capg" data-start="190.147" data-duration="0.892"><span style="color:#FFFFFF">todo</span> <span style="color:#FFFFFF">mundo.</span></div>
+<div id="cap183" class="clip capg" data-start="191.039" data-duration="0.920"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">sentado</span></div>
+<div id="cap184" class="clip capg" data-start="191.959" data-duration="1.030"><span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">canto</span> <span style="color:#FFFFFF">sem</span> <span style="color:#FFFFFF">conseguir</span></div>
+<div id="cap185" class="clip capg" data-start="192.989" data-duration="1.226"><span style="color:#FFFFFF">olhar</span> <span style="color:#FFFFFF">para</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">tela.</span></div>
+<div id="cap186" class="clip capg" data-start="194.215" data-duration="0.780"><span style="color:#FFFFFF">1 a 0,</span></div>
+<div id="cap187" class="clip capg" data-start="195.195" data-duration="0.520"><span style="color:#FFFFFF">2,</span></div>
+<div id="cap188" class="clip capg" data-start="195.715" data-duration="0.660"><span style="color:#FFB43A">3,</span></div>
+<div id="cap189" class="clip capg" data-start="196.375" data-duration="0.590"><span style="color:#FFFFFF">4,</span></div>
+<div id="cap190" class="clip capg" data-start="196.965" data-duration="0.587"><span style="color:#FFFFFF">5,</span></div>
+<div id="cap191" class="clip capg" data-start="197.552" data-duration="1.210"><span style="color:#FFFFFF">A</span> <span style="color:#FFFFFF">Alemanha</span> <span style="color:#FFFFFF">faz</span> <span style="color:#FFFFFF">cinco</span></div>
+<div id="cap192" class="clip capg" data-start="198.762" data-duration="0.890"><span style="color:#FFFFFF">gols</span> <span style="color:#FFFFFF">em</span> <span style="color:#FFFFFF">menos</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap193" class="clip capg" data-start="199.652" data-duration="0.840"><span style="color:#FFFFFF">meia</span> <span style="color:#FFFFFF">hora.</span></div>
+<div id="cap194" class="clip capg" data-start="200.492" data-duration="0.960"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">bar</span> <span style="color:#FFFFFF">inteiro</span> <span style="color:#FFFFFF">fica</span></div>
+<div id="cap195" class="clip capg" data-start="201.452" data-duration="0.918"><span style="color:#FFFFFF">em</span> <span style="color:#FFFFFF">silêncio.</span></div>
+<div id="cap196" class="clip capg" data-start="202.370" data-duration="0.700"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Dudu</span> <span style="color:#FFFFFF">vira</span></div>
+<div id="cap197" class="clip capg" data-start="203.070" data-duration="1.540"><span style="color:#FFFFFF">devagar</span> <span style="color:#FFFFFF">para</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme,</span></div>
+<div id="cap198" class="clip capg" data-start="204.610" data-duration="1.560"><span style="color:#FFFFFF">branco</span> <span style="color:#FFFFFF">igual</span> <span style="color:#FFFFFF">papel.</span></div>
+<div id="cap199" class="clip capg" data-start="206.170" data-duration="1.000"><span style="color:#C9A8FF">Cara,</span></div>
+<div id="cap200" class="clip capg" data-start="207.210" data-duration="1.170"><span style="color:#C9A8FF">quem</span> <span style="color:#C9A8FF">é</span> <span style="color:#C9A8FF">você?</span></div>
+<div id="cap201" class="clip capg" data-start="209.390" data-duration="0.808"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">você</span> <span style="color:#FFFFFF">também</span></div>
+<div id="cap202" class="clip capg" data-start="210.198" data-duration="1.366"><span style="color:#FFFFFF">lembra</span> <span style="color:#FFFFFF">exatamente</span> <span style="color:#FFFFFF">onde</span> <span style="color:#FFFFFF">estava</span></div>
+<div id="cap203" class="clip capg" data-start="211.564" data-duration="0.900"><span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">7</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">1,</span></div>
+<div id="cap204" class="clip capg" data-start="212.464" data-duration="0.740"><span style="color:#FFFFFF">deixa</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">seu</span> <span style="color:#FFFFFF">like</span></div>
+<div id="cap205" class="clip capg" data-start="213.204" data-duration="0.730"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">escreve</span> <span style="color:#FFFFFF">aí</span> <span style="color:#FFFFFF">nos</span></div>
+<div id="cap206" class="clip capg" data-start="213.934" data-duration="1.575"><span style="color:#FFFFFF">comentários</span> <span style="color:#FFFFFF">onde</span> <span style="color:#FFFFFF">você</span> <span style="color:#FFFFFF">estava.</span></div>
+<div id="cap207" class="clip capg" data-start="215.509" data-duration="0.940"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">já</span> <span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">inscreve,</span></div>
+<div id="cap208" class="clip capg" data-start="216.449" data-duration="0.800"><span style="color:#FFFFFF">porque</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">parte</span> <span style="color:#FFFFFF">mais</span></div>
+<div id="cap209" class="clip capg" data-start="217.249" data-duration="1.560"><span style="color:#FFFFFF">importante</span> <span style="color:#FFFFFF">dessa</span> <span style="color:#FFFFFF">história</span> <span style="color:#FFFFFF">ainda</span></div>
+<div id="cap210" class="clip capg" data-start="218.809" data-duration="1.290"><span style="color:#FFFFFF">nem</span> <span style="color:#FFFFFF">começou.</span></div>
+<div id="cap211" class="clip capg" data-start="220.667" data-duration="1.630"><span style="color:#FFB43A">2017.</span></div>
+<div id="cap212" class="clip capg" data-start="222.297" data-duration="0.950"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">bitcoin</span> <span style="color:#FFFFFF">explode.</span></div>
+<div id="cap213" class="clip capg" data-start="223.247" data-duration="1.170"><span style="color:#FFFFFF">Cada</span> <span style="color:#FFFFFF">moeda</span> <span style="color:#FFFFFF">passa</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap214" class="clip capg" data-start="224.417" data-duration="1.481"><span style="color:#FFB43A">19</span> <span style="color:#FFFFFF">mil</span> <span style="color:#FFFFFF">dólares.</span></div>
+<div id="cap215" class="clip capg" data-start="225.898" data-duration="0.930"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">os</span> <span style="color:#FFB43A">100</span> <span style="color:#FFB43A">bitcoins</span></div>
+<div id="cap216" class="clip capg" data-start="226.828" data-duration="1.060"><span style="color:#FFFFFF">do</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">chegam</span> <span style="color:#FFFFFF">a</span></div>
+<div id="cap217" class="clip capg" data-start="227.888" data-duration="1.420"><span style="color:#FFFFFF">valer</span> <span style="color:#FFFFFF">uns</span> <span style="color:#FFB43A">6</span> <span style="color:#FFB43A">milhões</span></div>
+<div id="cap218" class="clip capg" data-start="229.308" data-duration="0.818"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">reais.</span></div>
+<div id="cap219" class="clip capg" data-start="230.126" data-duration="0.510"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">ainda</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">um</span></div>
+<div id="cap220" class="clip capg" data-start="230.636" data-duration="1.630"><span style="color:#FFFFFF">universitário</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">pega</span> <span style="color:#FFFFFF">ônibus,</span></div>
+<div id="cap221" class="clip capg" data-start="232.266" data-duration="1.310"><span style="color:#FFFFFF">come</span> <span style="color:#FFFFFF">miojo</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">divide</span></div>
+<div id="cap222" class="clip capg" data-start="233.576" data-duration="0.550"><span style="color:#FFFFFF">quarto,</span></div>
+<div id="cap223" class="clip capg" data-start="234.126" data-duration="1.100"><span style="color:#FFFFFF">mas</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">celular</span> <span style="color:#FFFFFF">dele</span></div>
+<div id="cap224" class="clip capg" data-start="235.226" data-duration="1.479"><span style="color:#FFFFFF">tem</span> <span style="color:#FFFFFF">uma</span> <span style="color:#FFFFFF">fortuna.</span></div>
+<div id="cap225" class="clip capg" data-start="236.705" data-duration="0.860"><span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">podia</span> <span style="color:#FFFFFF">vender,</span></div>
+<div id="cap226" class="clip capg" data-start="237.565" data-duration="0.820"><span style="color:#FFFFFF">comprar</span> <span style="color:#FFFFFF">casa,</span></div>
+<div id="cap227" class="clip capg" data-start="238.385" data-duration="0.480"><span style="color:#FFFFFF">carro,</span></div>
+<div id="cap228" class="clip capg" data-start="238.865" data-duration="1.120"><span style="color:#FFFFFF">viajar,</span></div>
+<div id="cap229" class="clip capg" data-start="239.985" data-duration="0.690"><span style="color:#FFFFFF">mas</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap230" class="clip capg" data-start="240.675" data-duration="1.210"><span style="color:#FFFFFF">ainda</span> <span style="color:#FFFFFF">vai</span> <span style="color:#FFFFFF">subir</span> <span style="color:#FFFFFF">muito</span></div>
+<div id="cap231" class="clip capg" data-start="241.885" data-duration="0.840"><span style="color:#FFFFFF">mais</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">não</span></div>
+<div id="cap232" class="clip capg" data-start="242.725" data-duration="0.745"><span style="color:#FFFFFF">vende.</span></div>
+<div id="cap233" class="clip capg" data-start="243.470" data-duration="0.840"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">antes</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">você</span></div>
+<div id="cap234" class="clip capg" data-start="244.310" data-duration="1.290"><span style="color:#FFFFFF">corra</span> <span style="color:#FFFFFF">pra</span> <span style="color:#FFFFFF">comprar,</span></div>
+<div id="cap235" class="clip capg" data-start="245.600" data-duration="1.040"><span style="color:#FFB43A">bitcoin</span> <span style="color:#FFFFFF">sobe</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">desce</span></div>
+<div id="cap236" class="clip capg" data-start="246.640" data-duration="0.500"><span style="color:#FFFFFF">muito,</span></div>
+<div id="cap237" class="clip capg" data-start="247.140" data-duration="1.473"><span style="color:#FFFFFF">ninguém</span> <span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">futuro.</span></div>
+<div id="cap238" class="clip capg" data-start="248.613" data-duration="2.170"><span style="color:#FFFFFF">só</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme.</span></div>
+<div id="cap239" class="clip capg" data-start="250.783" data-duration="0.880"><span style="color:#FFFFFF">Só</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">existe</span> <span style="color:#FFFFFF">uma</span></div>
+<div id="cap240" class="clip capg" data-start="251.663" data-duration="1.000"><span style="color:#FFFFFF">data</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span></div>
+<div id="cap241" class="clip capg" data-start="252.663" data-duration="1.082"><span style="color:#FFFFFF">nunca</span> <span style="color:#FFFFFF">esqueceu.</span></div>
+<div id="cap242" class="clip capg" data-start="253.745" data-duration="0.960"><span style="color:#FFFFFF">Quinta-feira,</span></div>
+<div id="cap243" class="clip capg" data-start="254.705" data-duration="1.090"><span style="color:#FFFFFF">14</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">março</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap244" class="clip capg" data-start="255.795" data-duration="1.036"><span style="color:#FFB43A">2019.</span></div>
+<div id="cap245" class="clip capg" data-start="256.831" data-duration="1.490"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">dia</span> <span style="color:#FFFFFF">do</span> <span style="color:#FFB43A">infarto,</span></div>
+<div id="cap246" class="clip capg" data-start="258.321" data-duration="1.350"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">faltando</span> <span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">ano,</span></div>
+<div id="cap247" class="clip capg" data-start="259.671" data-duration="1.269"><span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">começa</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">insistir.</span></div>
+<div id="cap248" class="clip capg" data-start="260.940" data-duration="1.340"><span style="color:#FFFFFF">Todo</span> <span style="color:#FFFFFF">almoço</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">domingo,</span></div>
+<div id="cap249" class="clip capg" data-start="262.280" data-duration="1.120"><span style="color:#FFFFFF">toda</span> <span style="color:#FFFFFF">conversa,</span></div>
+<div id="cap250" class="clip capg" data-start="263.400" data-duration="1.020"><span style="color:#FFFFFF">toda</span> <span style="color:#FFFFFF">vez!</span></div>
+<div id="cap251" class="clip capg" data-start="264.420" data-duration="0.690"><span style="color:#FFB43A">Pai,</span></div>
+<div id="cap252" class="clip capg" data-start="265.110" data-duration="0.940"><span style="color:#9FD8FF">faz</span> <span style="color:#9FD8FF">um</span> <span style="color:#9FD8FF">exame</span> <span style="color:#9FD8FF">do</span></div>
+<div id="cap253" class="clip capg" data-start="266.050" data-duration="0.790"><span style="color:#9FD8FF">coração.</span></div>
+<div id="cap254" class="clip capg" data-start="266.840" data-duration="0.620"><span style="color:#9FD8FF">Só</span> <span style="color:#9FD8FF">um,</span></div>
+<div id="cap255" class="clip capg" data-start="267.460" data-duration="0.940"><span style="color:#9FD8FF">eu</span> <span style="color:#9FD8FF">pago.</span></div>
+<div id="cap256" class="clip capg" data-start="268.400" data-duration="0.910"><span style="color:#FFC48A">Guilherme,</span></div>
+<div id="cap257" class="clip capg" data-start="269.310" data-duration="0.897"><span style="color:#FFC48A">eu</span> <span style="color:#FFC48A">tô</span> <span style="color:#FFC48A">ótimo.</span></div>
+<div id="cap258" class="clip capg" data-start="270.207" data-duration="1.290"><span style="color:#FFC48A">Carrego</span> <span style="color:#FFC48A">saco</span> <span style="color:#FFC48A">de</span> <span style="color:#FFC48A">cimento</span></div>
+<div id="cap259" class="clip capg" data-start="271.497" data-duration="0.760"><span style="color:#FFC48A">até</span> <span style="color:#FFC48A">hoje.</span></div>
+<div id="cap260" class="clip capg" data-start="272.257" data-duration="1.210"><span style="color:#FFC48A">Me</span> <span style="color:#FFC48A">deixa</span> <span style="color:#FFC48A">em</span> <span style="color:#FFC48A">paz.</span></div>
+<div id="cap261" class="clip capg" data-start="273.467" data-duration="0.701"><span style="color:#FFB43A">Pai.</span></div>
+<div id="cap262" class="clip capg" data-start="274.168" data-duration="1.050"><span style="color:#9FD8FF">Por</span> <span style="color:#9FD8FF">favor.</span></div>
+<div id="cap263" class="clip capg" data-start="275.218" data-duration="0.420"><span style="color:#FFC48A">Chega,</span></div>
+<div id="cap264" class="clip capg" data-start="275.638" data-duration="0.790"><span style="color:#FFC48A">moleque.</span></div>
+<div id="cap265" class="clip capg" data-start="276.428" data-duration="1.060"><span style="color:#FFC48A">Eu</span> <span style="color:#FFC48A">sou</span> <span style="color:#FFC48A">seu</span> <span style="color:#FFB43A">pai,</span></div>
+<div id="cap266" class="clip capg" data-start="277.488" data-duration="1.059"><span style="color:#FFC48A">não</span> <span style="color:#FFC48A">seu</span> <span style="color:#FFC48A">filho.</span></div>
+<div id="cap267" class="clip capg" data-start="278.547" data-duration="1.640"><span style="color:#FFFFFF">É</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">mesma</span> <span style="color:#FFFFFF">briga.</span></div>
+<div id="cap268" class="clip capg" data-start="280.187" data-duration="1.130"><span style="color:#FFFFFF">A</span> <span style="color:#FFFFFF">mesma</span> <span style="color:#FFFFFF">briga</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap269" class="clip capg" data-start="281.317" data-duration="1.130"><span style="color:#FFFFFF">sete</span> <span style="color:#FFFFFF">anos</span> <span style="color:#FFFFFF">atrás.</span></div>
+<div id="cap270" class="clip capg" data-start="282.447" data-duration="0.860"><span style="color:#FFFFFF">Só</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">dessa</span> <span style="color:#FFFFFF">vez</span></div>
+<div id="cap271" class="clip capg" data-start="283.307" data-duration="1.040"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">como</span></div>
+<div id="cap272" class="clip capg" data-start="284.347" data-duration="0.841"><span style="color:#FFFFFF">ela</span> <span style="color:#FFFFFF">termina.</span></div>
+<div id="cap273" class="clip capg" data-start="285.188" data-duration="0.660"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">vai</span></div>
+<div id="cap274" class="clip capg" data-start="285.848" data-duration="1.340"><span style="color:#FFFFFF">deixar</span> <span style="color:#FFFFFF">terminar</span> <span style="color:#FFFFFF">igual.</span></div>
+<div id="cap275" class="clip capg" data-start="287.188" data-duration="1.360"><span style="color:#FFFFFF">14</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">março</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap276" class="clip capg" data-start="288.548" data-duration="1.394"><span style="color:#FFB43A">2019.</span></div>
+<div id="cap277" class="clip capg" data-start="289.942" data-duration="1.530"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap278" class="clip capg" data-start="291.472" data-duration="1.170"><span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">pai</span> <span style="color:#FFFFFF">vai</span> <span style="color:#FFFFFF">sentir</span></div>
+<div id="cap279" class="clip capg" data-start="292.642" data-duration="1.260"><span style="color:#FFFFFF">dor</span> <span style="color:#FFFFFF">por</span> <span style="color:#FFFFFF">volta</span> <span style="color:#FFFFFF">das</span></div>
+<div id="cap280" class="clip capg" data-start="293.902" data-duration="0.680"><span style="color:#FFFFFF">oito,</span></div>
+<div id="cap281" class="clip capg" data-start="294.582" data-duration="0.560"><span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">vai</span></div>
+<div id="cap282" class="clip capg" data-start="295.142" data-duration="0.920"><span style="color:#FFFFFF">achar</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">gases,</span></div>
+<div id="cap283" class="clip capg" data-start="296.062" data-duration="1.060"><span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">vai</span></div>
+<div id="cap284" class="clip capg" data-start="297.122" data-duration="0.801"><span style="color:#FFFFFF">ficar</span> <span style="color:#FFFFFF">em</span> <span style="color:#FFFFFF">casa...</span></div>
+<div id="cap285" class="clip capg" data-start="297.923" data-duration="0.810"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">sabe</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">vai</span></div>
+<div id="cap286" class="clip capg" data-start="298.733" data-duration="1.110"><span style="color:#FFFFFF">ser</span> <span style="color:#FFFFFF">tarde</span> <span style="color:#FFFFFF">demais.</span></div>
+<div id="cap287" class="clip capg" data-start="299.843" data-duration="0.800"><span style="color:#FFFFFF">Então</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">faz</span> <span style="color:#FFFFFF">a</span></div>
+<div id="cap288" class="clip capg" data-start="300.643" data-duration="0.870"><span style="color:#FFFFFF">única</span> <span style="color:#FFFFFF">coisa</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap289" class="clip capg" data-start="301.513" data-duration="0.790"><span style="color:#FFB43A">pai</span> <span style="color:#FFFFFF">teimoso</span></div>
+<div id="cap290" class="clip capg" data-start="302.303" data-duration="1.363"><span style="color:#FFFFFF">nunca</span> <span style="color:#FFFFFF">recusaria.</span></div>
+<div id="cap291" class="clip capg" data-start="303.666" data-duration="0.920"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">entra</span> <span style="color:#FFFFFF">na</span> <span style="color:#FFFFFF">cozinha</span></div>
+<div id="cap292" class="clip capg" data-start="304.586" data-duration="0.560"><span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">mão</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap293" class="clip capg" data-start="305.146" data-duration="0.610"><span style="color:#FFFFFF">peito.</span></div>
+<div id="cap294" class="clip capg" data-start="305.756" data-duration="1.084"><span style="color:#FFB43A">Pai!</span></div>
+<div id="cap295" class="clip capg" data-start="306.840" data-duration="1.090"><span style="color:#9FD8FF">Tô</span> <span style="color:#9FD8FF">sentindo</span> <span style="color:#9FD8FF">uma</span> <span style="color:#9FD8FF">dor</span></div>
+<div id="cap296" class="clip capg" data-start="307.930" data-duration="1.340"><span style="color:#9FD8FF">estranha</span> <span style="color:#9FD8FF">no</span> <span style="color:#9FD8FF">peito.</span></div>
+<div id="cap297" class="clip capg" data-start="309.270" data-duration="0.840"><span style="color:#FFC48A">Pega</span> <span style="color:#FFC48A">a</span> <span style="color:#FFC48A">chave,</span></div>
+<div id="cap298" class="clip capg" data-start="310.110" data-duration="0.600"><span style="color:#FFC48A">Regina.</span></div>
+<div id="cap299" class="clip capg" data-start="310.710" data-duration="0.540"><span style="color:#FFC48A">Pega</span> <span style="color:#FFC48A">a</span> <span style="color:#FFC48A">chave</span> <span style="color:#FFC48A">do</span></div>
+<div id="cap300" class="clip capg" data-start="311.250" data-duration="0.420"><span style="color:#FFC48A">carro.</span></div>
+<div id="cap301" class="clip capg" data-start="311.670" data-duration="0.770"><span style="color:#FFC48A">A</span> <span style="color:#FFC48A">gente</span> <span style="color:#FFC48A">vai</span> <span style="color:#FFC48A">para</span></div>
+<div id="cap302" class="clip capg" data-start="312.440" data-duration="1.030"><span style="color:#FFC48A">o</span> <span style="color:#FFC48A">hospital</span> <span style="color:#FFC48A">agora.</span></div>
+<div id="cap303" class="clip capg" data-start="313.470" data-duration="1.050"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">Seu</span> <span style="color:#FFFFFF">Marcos</span> <span style="color:#FFFFFF">dirige</span></div>
+<div id="cap304" class="clip capg" data-start="314.520" data-duration="1.550"><span style="color:#FFFFFF">como</span> <span style="color:#FFFFFF">nunca</span> <span style="color:#FFFFFF">dirigiu</span> <span style="color:#FFFFFF">na</span></div>
+<div id="cap305" class="clip capg" data-start="316.070" data-duration="0.200"><span style="color:#FFFFFF">vida.</span></div>
+<div id="cap306" class="clip capg" data-start="316.070" data-duration="0.740"><span style="color:#FFFFFF">Fura</span> <span style="color:#FFFFFF">sinal,</span></div>
+<div id="cap307" class="clip capg" data-start="316.810" data-duration="0.640"><span style="color:#FFFFFF">buzina,</span></div>
+<div id="cap308" class="clip capg" data-start="317.450" data-duration="1.200"><span style="color:#FFFFFF">sobe</span> <span style="color:#FFFFFF">na</span> <span style="color:#FFFFFF">calçada</span> <span style="color:#FFFFFF">e</span></div>
+<div id="cap309" class="clip capg" data-start="318.650" data-duration="1.710"><span style="color:#FFFFFF">entra</span> <span style="color:#FFFFFF">correndo</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">pronto-socorro</span></div>
+<div id="cap310" class="clip capg" data-start="320.360" data-duration="0.690"><span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">filho</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap311" class="clip capg" data-start="321.050" data-duration="0.463"><span style="color:#FFFFFF">braço.</span></div>
+<div id="cap312" class="clip capg" data-start="321.513" data-duration="0.980"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">médico</span> <span style="color:#FFFFFF">examina</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap313" class="clip capg" data-start="322.493" data-duration="1.320"><span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">coração</span></div>
+<div id="cap314" class="clip capg" data-start="323.813" data-duration="1.441"><span style="color:#FFFFFF">dele</span> <span style="color:#FFFFFF">está</span> <span style="color:#FFFFFF">perfeito.</span></div>
+<div id="cap315" class="clip capg" data-start="325.254" data-duration="1.000"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">nesse</span> <span style="color:#FFFFFF">exato</span></div>
+<div id="cap316" class="clip capg" data-start="326.254" data-duration="0.880"><span style="color:#FFFFFF">momento,</span></div>
+<div id="cap317" class="clip capg" data-start="327.134" data-duration="1.300"><span style="color:#FFFFFF">na</span> <span style="color:#FFFFFF">sala</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">espera,</span></div>
+<div id="cap318" class="clip capg" data-start="328.434" data-duration="0.720"><span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Seu</span> <span style="color:#FFFFFF">Marcos</span></div>
+<div id="cap319" class="clip capg" data-start="329.154" data-duration="0.730"><span style="color:#FFFFFF">coloca</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">mão</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap320" class="clip capg" data-start="329.884" data-duration="0.717"><span style="color:#FFFFFF">peito.</span></div>
+<div id="cap321" class="clip capg" data-start="330.601" data-duration="0.800"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">cai.</span></div>
+<div id="cap322" class="clip capg" data-start="331.401" data-duration="1.200"><span style="color:#FFFFFF">Enfermeira</span> <span style="color:#FFFFFF">correndo,</span></div>
+<div id="cap323" class="clip capg" data-start="332.601" data-duration="0.360"><span style="color:#FFFFFF">maca,</span></div>
+<div id="cap324" class="clip capg" data-start="332.961" data-duration="0.480"><span style="color:#FFFFFF">médico,</span></div>
+<div id="cap325" class="clip capg" data-start="333.441" data-duration="0.680"><span style="color:#FFFFFF">aparelho,</span></div>
+<div id="cap326" class="clip capg" data-start="334.121" data-duration="0.930"><span style="color:#FFFFFF">tudo</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">menos</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap327" class="clip capg" data-start="335.051" data-duration="1.164"><span style="color:#FFFFFF">10</span> <span style="color:#FFFFFF">metros.</span></div>
+<div id="cap328" class="clip capg" data-start="336.215" data-duration="1.180"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">chegou</span> <span style="color:#FFFFFF">ao</span> <span style="color:#FFFFFF">hospital</span></div>
+<div id="cap329" class="clip capg" data-start="337.395" data-duration="1.260"><span style="color:#FFFFFF">para</span> <span style="color:#FFFFFF">salvar</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">filho,</span></div>
+<div id="cap330" class="clip capg" data-start="338.655" data-duration="1.430"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">quem</span> <span style="color:#FFFFFF">precisava</span> <span style="color:#FFFFFF">ser</span></div>
+<div id="cap331" class="clip capg" data-start="340.085" data-duration="1.379"><span style="color:#FFFFFF">salvo</span> <span style="color:#FFFFFF">era</span> <span style="color:#FFFFFF">ele.</span></div>
+<div id="cap332" class="clip capg" data-start="341.464" data-duration="1.260"><span style="color:#FFFFFF">Três</span> <span style="color:#FFFFFF">horas</span> <span style="color:#FFFFFF">depois,</span></div>
+<div id="cap333" class="clip capg" data-start="342.724" data-duration="0.730"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">médico</span> <span style="color:#FFFFFF">sai</span> <span style="color:#FFFFFF">da</span></div>
+<div id="cap334" class="clip capg" data-start="343.454" data-duration="1.328"><span style="color:#FFFFFF">sala</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">cirurgia.</span></div>
+<div id="cap335" class="clip capg" data-start="344.782" data-duration="1.100"><span style="color:#FFFFFF">Ele</span> <span style="color:#FFFFFF">está</span> <span style="color:#FFFFFF">vivo,</span></div>
+<div id="cap336" class="clip capg" data-start="345.882" data-duration="1.160"><span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">artéria</span> <span style="color:#FFFFFF">estava</span> <span style="color:#FFFFFF">quase</span></div>
+<div id="cap337" class="clip capg" data-start="347.042" data-duration="0.830"><span style="color:#FFFFFF">toda</span> <span style="color:#FFFFFF">entupida,</span></div>
+<div id="cap338" class="clip capg" data-start="347.872" data-duration="0.670"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">tivesse</span></div>
+<div id="cap339" class="clip capg" data-start="348.542" data-duration="0.930"><span style="color:#FFFFFF">ficado</span> <span style="color:#FFFFFF">em</span> <span style="color:#FFFFFF">casa</span> <span style="color:#FFFFFF">naquela</span></div>
+<div id="cap340" class="clip capg" data-start="349.472" data-duration="0.390"><span style="color:#FFFFFF">manhã,</span></div>
+<div id="cap341" class="clip capg" data-start="349.862" data-duration="1.370"><span style="color:#FFFFFF">ninguém</span> <span style="color:#FFFFFF">ia</span> <span style="color:#FFFFFF">conseguir</span> <span style="color:#FFFFFF">chegar</span></div>
+<div id="cap342" class="clip capg" data-start="351.232" data-duration="0.641"><span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">tempo.</span></div>
+<div id="cap343" class="clip capg" data-start="351.873" data-duration="1.140"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">senta</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap344" class="clip capg" data-start="353.013" data-duration="0.770"><span style="color:#FFFFFF">corredor,</span></div>
+<div id="cap345" class="clip capg" data-start="353.783" data-duration="0.820"><span style="color:#FFFFFF">tira</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">caderno</span> <span style="color:#FFFFFF">da</span></div>
+<div id="cap346" class="clip capg" data-start="354.603" data-duration="1.820"><span style="color:#FFFFFF">memória</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">finalmente</span> <span style="color:#FFFFFF">desdobra</span></div>
+<div id="cap347" class="clip capg" data-start="356.423" data-duration="1.058"><span style="color:#FFFFFF">aquela</span> <span style="color:#FFFFFF">página.</span></div>
+<div id="cap348" class="clip capg" data-start="357.481" data-duration="1.280"><span style="color:#FFB43A">Item</span> <span style="color:#FFB43A">3</span> <span style="color:#FFFFFF">-</span> <span style="color:#FFFFFF">Salvar</span></div>
+<div id="cap349" class="clip capg" data-start="358.761" data-duration="0.790"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">meu</span> <span style="color:#FFB43A">pai,</span></div>
+<div id="cap350" class="clip capg" data-start="359.551" data-duration="1.350"><span style="color:#FFFFFF">14</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">março</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap351" class="clip capg" data-start="360.901" data-duration="1.251"><span style="color:#FFB43A">2019.</span></div>
+<div id="cap352" class="clip capg" data-start="362.152" data-duration="1.440"><span style="color:#FFFFFF">O</span> <span style="color:#FFB43A">bitcoin</span> <span style="color:#FFFFFF">nunca</span> <span style="color:#FFFFFF">foi</span></div>
+<div id="cap353" class="clip capg" data-start="363.592" data-duration="0.730"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">plano.</span></div>
+<div id="cap354" class="clip capg" data-start="364.322" data-duration="0.770"><span style="color:#FFFFFF">O</span> <span style="color:#FFB43A">bitcoin</span> <span style="color:#FFFFFF">era</span> <span style="color:#FFFFFF">só</span></div>
+<div id="cap355" class="clip capg" data-start="365.092" data-duration="1.300"><span style="color:#FFFFFF">pra</span> <span style="color:#FFFFFF">ninguém</span> <span style="color:#FFFFFF">desconfiar</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap356" class="clip capg" data-start="366.392" data-duration="0.950"><span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">tinha</span> <span style="color:#FFFFFF">voltado</span> <span style="color:#FFFFFF">por</span></div>
+<div id="cap357" class="clip capg" data-start="367.342" data-duration="0.972"><span style="color:#FFFFFF">outro</span> <span style="color:#FFFFFF">motivo.</span></div>
+<div id="cap358" class="clip capg" data-start="368.314" data-duration="0.690"><span style="color:#FFFFFF">Só</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">enquanto</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap359" class="clip capg" data-start="369.004" data-duration="1.080"><span style="color:#FFB43A">pai</span> <span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">recuperava</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap360" class="clip capg" data-start="370.084" data-duration="0.640"><span style="color:#FFFFFF">hospital,</span></div>
+<div id="cap361" class="clip capg" data-start="370.724" data-duration="1.080"><span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">Dona</span> <span style="color:#FFFFFF">Regina,</span></div>
+<div id="cap362" class="clip capg" data-start="371.804" data-duration="0.600"><span style="color:#FFFFFF">nervosa,</span></div>
+<div id="cap363" class="clip capg" data-start="372.404" data-duration="0.890"><span style="color:#FFFFFF">fez</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">toda</span></div>
+<div id="cap364" class="clip capg" data-start="373.294" data-duration="1.511"><span style="color:#FFFFFF">mãe</span> <span style="color:#FFFFFF">nervosa</span> <span style="color:#FFFFFF">faz.</span></div>
+<div id="cap365" class="clip capg" data-start="374.805" data-duration="0.960"><span style="color:#FFFFFF">faxina.</span></div>
+<div id="cap366" class="clip capg" data-start="375.765" data-duration="0.860"><span style="color:#FFFFFF">Limpou</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">casa</span> <span style="color:#FFFFFF">inteira</span></div>
+<div id="cap367" class="clip capg" data-start="376.625" data-duration="0.870"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">quarto</span> <span style="color:#FFFFFF">do</span></div>
+<div id="cap368" class="clip capg" data-start="377.495" data-duration="1.290"><span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">achou</span> <span style="color:#FFFFFF">uma</span> <span style="color:#FFFFFF">pilha</span></div>
+<div id="cap369" class="clip capg" data-start="378.785" data-duration="0.840"><span style="color:#FFFFFF">de</span> <span style="color:#FFB43A">caderno</span> <span style="color:#FFFFFF">velho</span> <span style="color:#FFFFFF">da</span></div>
+<div id="cap370" class="clip capg" data-start="379.625" data-duration="1.480"><span style="color:#FFFFFF">escola</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">colocou</span> <span style="color:#FFFFFF">tudo</span></div>
+<div id="cap371" class="clip capg" data-start="381.105" data-duration="1.181"><span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">saco</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFB43A">lixo.</span></div>
+<div id="cap372" class="clip capg" data-start="382.286" data-duration="1.400"><span style="color:#FFFFFF">Inclusive</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">caderno</span> <span style="color:#FFFFFF">da</span></div>
+<div id="cap373" class="clip capg" data-start="383.686" data-duration="0.530"><span style="color:#FFFFFF">lista,</span></div>
+<div id="cap374" class="clip capg" data-start="384.216" data-duration="0.560"><span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFB43A">senha</span> <span style="color:#FFFFFF">dos</span></div>
+<div id="cap375" class="clip capg" data-start="384.776" data-duration="1.410"><span style="color:#FFB43A">100</span> <span style="color:#FFB43A">bitcoins</span> <span style="color:#FFFFFF">na</span> <span style="color:#FFFFFF">última</span></div>
+<div id="cap376" class="clip capg" data-start="386.186" data-duration="0.595"><span style="color:#FFFFFF">página.</span></div>
+<div id="cap377" class="clip capg" data-start="386.781" data-duration="0.380"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">aí</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap378" class="clip capg" data-start="387.161" data-duration="0.800"><span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">gente</span> <span style="color:#FFFFFF">volta</span> <span style="color:#FFFFFF">pra</span></div>
+<div id="cap379" class="clip capg" data-start="387.961" data-duration="0.990"><span style="color:#FFFFFF">aquela</span> <span style="color:#FFFFFF">avenida,</span></div>
+<div id="cap380" class="clip capg" data-start="388.951" data-duration="0.920"><span style="color:#FFB43A">6</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">manhã,</span></div>
+<div id="cap381" class="clip capg" data-start="389.871" data-duration="0.910"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">chinelo</span></div>
+<div id="cap382" class="clip capg" data-start="390.781" data-duration="1.300"><span style="color:#FFFFFF">correndo</span> <span style="color:#FFFFFF">atrás</span> <span style="color:#FFFFFF">do</span> <span style="color:#FFFFFF">caminhão,</span></div>
+<div id="cap383" class="clip capg" data-start="392.081" data-duration="0.460"><span style="color:#FFFFFF">gritando,</span></div>
+<div id="cap384" class="clip capg" data-start="392.541" data-duration="1.440"><span style="color:#FFFFFF">acenando</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">caminhão</span></div>
+<div id="cap385" class="clip capg" data-start="393.981" data-duration="1.270"><span style="color:#FFFFFF">virando</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">esquina</span> <span style="color:#FFFFFF">e</span></div>
+<div id="cap386" class="clip capg" data-start="395.251" data-duration="0.882"><span style="color:#FFFFFF">sumindo.</span></div>
+<div id="cap387" class="clip capg" data-start="396.133" data-duration="0.860"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">exagero</span></div>
+<div id="cap388" class="clip capg" data-start="396.993" data-duration="0.700"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">filme,</span></div>
+<div id="cap389" class="clip capg" data-start="397.693" data-duration="0.780"><span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">homem</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">País</span></div>
+<div id="cap390" class="clip capg" data-start="398.473" data-duration="0.960"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">Gales</span> <span style="color:#FFFFFF">jogou</span> <span style="color:#FFFFFF">fora</span></div>
+<div id="cap391" class="clip capg" data-start="399.433" data-duration="1.100"><span style="color:#FFFFFF">sem</span> <span style="color:#FFFFFF">querer</span> <span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">disco</span></div>
+<div id="cap392" class="clip capg" data-start="400.533" data-duration="0.880"><span style="color:#FFFFFF">rígido</span> <span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">chave</span></div>
+<div id="cap393" class="clip capg" data-start="401.413" data-duration="1.762"><span style="color:#FFFFFF">de</span> <span style="color:#FFB43A">8</span> <span style="color:#FFFFFF">mil</span> <span style="color:#FFB43A">bitcoins.</span></div>
+<div id="cap394" class="clip capg" data-start="403.175" data-duration="0.660"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">até</span> <span style="color:#FFFFFF">hoje</span> <span style="color:#FFFFFF">não</span></div>
+<div id="cap395" class="clip capg" data-start="403.835" data-duration="1.500"><span style="color:#FFFFFF">conseguiu</span> <span style="color:#FFFFFF">recuperar.</span></div>
+<div id="cap396" class="clip capg" data-start="405.335" data-duration="1.280"><span style="color:#FFFFFF">O</span> <span style="color:#FFFFFF">Guilherme</span> <span style="color:#FFFFFF">para</span> <span style="color:#FFFFFF">no</span></div>
+<div id="cap397" class="clip capg" data-start="406.615" data-duration="0.820"><span style="color:#FFFFFF">meio</span> <span style="color:#FFFFFF">da</span> <span style="color:#FFFFFF">rua,</span></div>
+<div id="cap398" class="clip capg" data-start="407.435" data-duration="0.390"><span style="color:#FFFFFF">ofegante,</span></div>
+<div id="cap399" class="clip capg" data-start="408.408" data-duration="1.200"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">começa</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">rir,</span></div>
+<div id="cap400" class="clip capg" data-start="409.608" data-duration="0.850"><span style="color:#FFFFFF">porque</span> <span style="color:#FFFFFF">ele</span> <span style="color:#FFFFFF">acabou</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap401" class="clip capg" data-start="410.458" data-duration="1.930"><span style="color:#FFFFFF">perder</span> <span style="color:#FFB43A">37</span> <span style="color:#FFB43A">milhões</span> <span style="color:#FFFFFF">de</span></div>
+<div id="cap402" class="clip capg" data-start="412.388" data-duration="0.701"><span style="color:#FFFFFF">reais.</span></div>
+<div id="cap403" class="clip capg" data-start="413.089" data-duration="0.690"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFB43A">pai</span> <span style="color:#FFFFFF">dele</span></div>
+<div id="cap404" class="clip capg" data-start="413.779" data-duration="1.110"><span style="color:#FFFFFF">está</span> <span style="color:#FFFFFF">vivo.</span></div>
+<div id="cap405" class="clip capg" data-start="414.889" data-duration="1.040"><span style="color:#FFB43A">2026,</span></div>
+<div id="cap406" class="clip capg" data-start="415.929" data-duration="0.960"><span style="color:#FFFFFF">domingo,</span></div>
+<div id="cap407" class="clip capg" data-start="416.889" data-duration="1.170"><span style="color:#FFFFFF">churrasco</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">quintal</span> <span style="color:#FFFFFF">e</span></div>
+<div id="cap408" class="clip capg" data-start="418.059" data-duration="0.670"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">Seu</span> <span style="color:#FFFFFF">Marcos</span> <span style="color:#FFFFFF">na</span></div>
+<div id="cap409" class="clip capg" data-start="418.729" data-duration="1.080"><span style="color:#FFFFFF">churrasqueira,</span></div>
+<div id="cap410" class="clip capg" data-start="419.809" data-duration="1.210"><span style="color:#FFFFFF">70</span> <span style="color:#FFFFFF">quilos</span> <span style="color:#FFFFFF">mais</span> <span style="color:#FFFFFF">magro</span></div>
+<div id="cap411" class="clip capg" data-start="421.019" data-duration="0.790"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">teimosia,</span></div>
+<div id="cap412" class="clip capg" data-start="421.809" data-duration="1.675"><span style="color:#FFFFFF">fazendo</span> <span style="color:#FFFFFF">exame</span> <span style="color:#FFFFFF">todo</span> <span style="color:#FFFFFF">ano.</span></div>
+<div id="cap413" class="clip capg" data-start="423.484" data-duration="0.330"><span style="color:#FFC48A">Filho,</span></div>
+<div id="cap414" class="clip capg" data-start="423.814" data-duration="0.920"><span style="color:#FFC48A">a</span> <span style="color:#FFC48A">sua</span> <span style="color:#FFC48A">mãe</span> <span style="color:#FFC48A">me</span></div>
+<div id="cap415" class="clip capg" data-start="424.734" data-duration="1.690"><span style="color:#FFC48A">contou</span> <span style="color:#FFC48A">do</span> <span style="color:#FFB43A">caderno.</span></div>
+<div id="cap416" class="clip capg" data-start="426.424" data-duration="1.950"><span style="color:#FFC48A">Você</span> <span style="color:#FFC48A">jogou</span> <span style="color:#FFB43A">37</span> <span style="color:#FFB43A">milhões</span></div>
+<div id="cap417" class="clip capg" data-start="428.374" data-duration="0.920"><span style="color:#FFC48A">no</span> <span style="color:#FFB43A">lixo</span> <span style="color:#FFC48A">por</span> <span style="color:#FFC48A">minha</span></div>
+<div id="cap418" class="clip capg" data-start="429.294" data-duration="0.700"><span style="color:#FFC48A">causa.</span></div>
+<div id="cap419" class="clip capg" data-start="429.994" data-duration="0.500"><span style="color:#9FD8FF">Não,</span></div>
+<div id="cap420" class="clip capg" data-start="430.494" data-duration="0.802"><span style="color:#FFB43A">pai.</span></div>
+<div id="cap421" class="clip capg" data-start="431.296" data-duration="1.140"><span style="color:#9FD8FF">Eu</span> <span style="color:#9FD8FF">joguei</span> <span style="color:#9FD8FF">fora</span> <span style="color:#9FD8FF">um</span></div>
+<div id="cap422" class="clip capg" data-start="432.436" data-duration="1.210"><span style="color:#FFB43A">caderno.</span></div>
+<div id="cap423" class="clip capg" data-start="433.646" data-duration="0.200"><span style="color:#9FD8FF">Você,</span></div>
+<div id="cap424" class="clip capg" data-start="433.846" data-duration="1.446"><span style="color:#9FD8FF">eu</span> <span style="color:#9FD8FF">fui</span> <span style="color:#9FD8FF">buscar.</span></div>
+<div id="cap425" class="clip capg" data-start="435.292" data-duration="0.880"><span style="color:#FFC48A">E</span> <span style="color:#FFC48A">esse</span> <span style="color:#FFC48A">tal</span> <span style="color:#FFC48A">de</span></div>
+<div id="cap426" class="clip capg" data-start="436.172" data-duration="0.930"><span style="color:#FFB43A">bitcoin?</span></div>
+<div id="cap427" class="clip capg" data-start="437.102" data-duration="1.350"><span style="color:#FFC48A">Era</span> <span style="color:#FFC48A">dinheiro</span> <span style="color:#FFC48A">de</span> <span style="color:#FFC48A">verdade</span></div>
+<div id="cap428" class="clip capg" data-start="438.452" data-duration="0.950"><span style="color:#FFC48A">mesmo?</span></div>
+<div id="cap429" class="clip capg" data-start="439.992" data-duration="0.470"><span style="color:#9FD8FF">Era,</span></div>
+<div id="cap430" class="clip capg" data-start="440.462" data-duration="0.670"><span style="color:#FFB43A">pai,</span></div>
+<div id="cap431" class="clip capg" data-start="441.132" data-duration="1.370"><span style="color:#9FD8FF">mas</span> <span style="color:#FFB43A">100</span> <span style="color:#FFB43A">bitcoins</span> <span style="color:#9FD8FF">não</span></div>
+<div id="cap432" class="clip capg" data-start="442.502" data-duration="1.844"><span style="color:#9FD8FF">sabem</span> <span style="color:#9FD8FF">fazer</span> <span style="color:#9FD8FF">churrasco.</span></div>
+<div id="cap433" class="clip capg" data-start="444.346" data-duration="0.660"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">aqui</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap434" class="clip capg" data-start="445.006" data-duration="0.950"><span style="color:#FFFFFF">mora</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">virada</span> <span style="color:#FFFFFF">dessa</span></div>
+<div id="cap435" class="clip capg" data-start="445.956" data-duration="0.770"><span style="color:#FFFFFF">história.</span></div>
+<div id="cap436" class="clip capg" data-start="446.726" data-duration="1.040"><span style="color:#FFFFFF">Todo</span> <span style="color:#FFFFFF">mundo</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">imagina</span></div>
+<div id="cap437" class="clip capg" data-start="447.766" data-duration="1.080"><span style="color:#FFFFFF">voltar</span> <span style="color:#FFFFFF">no</span> <span style="color:#FFFFFF">tempo</span> <span style="color:#FFFFFF">pensa</span></div>
+<div id="cap438" class="clip capg" data-start="448.846" data-duration="1.422"><span style="color:#FFFFFF">primeiro</span> <span style="color:#FFFFFF">em</span> <span style="color:#FFFFFF">ficar</span> <span style="color:#FFFFFF">rico.</span></div>
+<div id="cap439" class="clip capg" data-start="450.268" data-duration="1.020"><span style="color:#FFFFFF">Mas</span> <span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">você</span> <span style="color:#FFFFFF">voltasse</span></div>
+<div id="cap440" class="clip capg" data-start="451.288" data-duration="0.750"><span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">verdade,</span></div>
+<div id="cap441" class="clip capg" data-start="452.038" data-duration="1.010"><span style="color:#FFFFFF">aposto</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">primeira</span></div>
+<div id="cap442" class="clip capg" data-start="453.048" data-duration="0.920"><span style="color:#FFFFFF">coisa</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">ia</span> <span style="color:#FFFFFF">querer</span></div>
+<div id="cap443" class="clip capg" data-start="453.968" data-duration="0.700"><span style="color:#FFFFFF">ver</span> <span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">era</span> <span style="color:#FFFFFF">um</span></div>
+<div id="cap444" class="clip capg" data-start="454.668" data-duration="0.663"><span style="color:#FFFFFF">gráfico.</span></div>
+<div id="cap445" class="clip capg" data-start="455.331" data-duration="0.870"><span style="color:#FFFFFF">era</span> <span style="color:#FFFFFF">um</span> <span style="color:#FFFFFF">rosto.</span></div>
+<div id="cap446" class="clip capg" data-start="456.201" data-duration="0.530"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">a</span> <span style="color:#FFFFFF">parte</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap447" class="clip capg" data-start="456.731" data-duration="0.960"><span style="color:#FFFFFF">incomoda</span> <span style="color:#FFFFFF">é</span> <span style="color:#FFFFFF">que</span> <span style="color:#FFFFFF">você</span></div>
+<div id="cap448" class="clip capg" data-start="457.691" data-duration="0.950"><span style="color:#FFFFFF">não</span> <span style="color:#FFFFFF">precisa</span> <span style="color:#FFFFFF">de</span> <span style="color:#FFFFFF">máquina</span></div>
+<div id="cap449" class="clip capg" data-start="458.641" data-duration="1.120"><span style="color:#FFFFFF">do</span> <span style="color:#FFFFFF">tempo</span> <span style="color:#FFFFFF">pra</span> <span style="color:#FFFFFF">isso.</span></div>
+<div id="cap450" class="clip capg" data-start="459.761" data-duration="1.090"><span style="color:#FFFFFF">Tem</span> <span style="color:#FFFFFF">alguém</span> <span style="color:#FFFFFF">aí</span> <span style="color:#FFFFFF">que</span></div>
+<div id="cap451" class="clip capg" data-start="460.851" data-duration="1.090"><span style="color:#FFFFFF">você</span> <span style="color:#FFFFFF">pode</span> <span style="color:#FFFFFF">ligar</span> <span style="color:#FFFFFF">hoje,</span></div>
+<div id="cap452" class="clip capg" data-start="461.941" data-duration="1.170"><span style="color:#FFFFFF">enquanto</span> <span style="color:#FFFFFF">ainda</span> <span style="color:#FFFFFF">dá.</span></div>
+<div id="cap453" class="clip capg" data-start="463.176" data-duration="0.720"><span style="color:#FFFFFF">Então</span> <span style="color:#FFFFFF">me</span> <span style="color:#FFFFFF">conta</span> <span style="color:#FFFFFF">nos</span></div>
+<div id="cap454" class="clip capg" data-start="463.896" data-duration="0.820"><span style="color:#FFFFFF">comentários,</span></div>
+<div id="cap455" class="clip capg" data-start="464.716" data-duration="1.030"><span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">você</span> <span style="color:#FFFFFF">voltasse</span> <span style="color:#FFFFFF">para</span></div>
+<div id="cap456" class="clip capg" data-start="465.746" data-duration="0.880"><span style="color:#FFB43A">2012,</span></div>
+<div id="cap457" class="clip capg" data-start="466.626" data-duration="0.810"><span style="color:#FFFFFF">qual</span> <span style="color:#FFFFFF">seria</span> <span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">seu</span></div>
+<div id="cap458" class="clip capg" data-start="467.436" data-duration="0.841"><span style="color:#FFB43A">item</span> <span style="color:#FFB43A">3?</span></div>
+<div id="cap459" class="clip capg" data-start="468.277" data-duration="0.860"><span style="color:#FFFFFF">Eu</span> <span style="color:#FFFFFF">leio</span> <span style="color:#FFFFFF">todos.</span></div>
+<div id="cap460" class="clip capg" data-start="469.137" data-duration="0.930"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">essa</span> <span style="color:#FFFFFF">história</span></div>
+<div id="cap461" class="clip capg" data-start="470.067" data-duration="0.910"><span style="color:#FFFFFF">mexeu</span> <span style="color:#FFFFFF">com</span> <span style="color:#FFFFFF">você,</span></div>
+<div id="cap462" class="clip capg" data-start="470.977" data-duration="1.070"><span style="color:#FFFFFF">se</span> <span style="color:#FFFFFF">inscreve</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">ativa</span></div>
+<div id="cap463" class="clip capg" data-start="472.047" data-duration="0.710"><span style="color:#FFFFFF">o</span> <span style="color:#FFFFFF">sininho.</span></div>
+<div id="cap464" class="clip capg" data-start="472.757" data-duration="0.900"><span style="color:#FFFFFF">E</span> <span style="color:#FFFFFF">manda</span> <span style="color:#FFFFFF">esse</span> <span style="color:#FFFFFF">vídeo</span></div>
+<div id="cap465" class="clip capg" data-start="473.657" data-duration="0.840"><span style="color:#FFFFFF">para</span> <span style="color:#FFFFFF">quem</span> <span style="color:#FFFFFF">seria</span> <span style="color:#FFFFFF">o</span></div>
+<div id="cap466" class="clip capg" data-start="474.497" data-duration="1.063"><span style="color:#FFFFFF">seu</span> <span style="color:#FFB43A">item</span> <span style="color:#FFB43A">3.</span></div>
+<div id="cap467" class="clip capg" data-start="475.560" data-duration="0.990"><span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">guarda</span> <span style="color:#FFFFFF">bem</span> <span style="color:#FFFFFF">as</span></div>
+<div id="cap468" class="clip capg" data-start="476.550" data-duration="1.130"><span style="color:#FFFFFF">suas</span> <span style="color:#FFFFFF">senhas</span> <span style="color:#FFFFFF">e</span> <span style="color:#FFFFFF">as</span></div>
+<div id="cap469" class="clip capg" data-start="477.680" data-duration="1.140"><span style="color:#FFFFFF">suas</span> <span style="color:#FFFFFF">pessoas.</span></div>
+<div id="el0" class="clip tag" data-start="1" data-duration="5.800" style="top:50px">2019 · 6h DA MANHÃ</div>
+<div id="el1" class="clip fato" data-start="7.6" data-duration="6.300" style="left:60px;top:150px"><div class="fh">DENTRO DO CAMINHÃO</div><div class="ft">Um caderno velho com a senha de 100 bitcoins</div></div>
+<div id="el2" class="clip cart" data-start="14.3" data-duration="8.500"><div class="ch">CARTEIRA DO GUILHERME</div><div class="cb"><span class="cbi">₿</span> 100 BTC</div><div class="cl">VALE HOJE</div><div id="el2_n" class="cn"></div><div id="el2_s" class="cs" style="color:#FF7A6A">NO CAMINHÃO DE LIXO</div><div class="ca"></div></div>
+<div id="el3" class="clip pill" data-start="19.3" data-duration="4.100" style="top:170px"><span>...E ELE ESTÁ SORRINDO?</span></div>
+<div id="el4" class="clip cap" data-start="24.4" data-duration="2.200" style="top:230px"><div class="capi"><div class="capn">2026</div><div class="capt">O GUILHERME DE HOJE</div></div></div>
+<div id="el5" class="clip fato" data-start="26.7" data-duration="4.400" style="left:60px;top:150px"><div class="fh">GUILHERME · 30 ANOS</div><div class="ft">Mora sozinho, trabalha demais e quase não dorme</div></div>
+<div id="el6" class="clip fato" data-start="31.2" data-duration="5.000" style="right:60px;top:150px"><div class="fh">SEU MARCOS · 2019</div><div class="ft">Infarto numa quinta-feira de manhã</div></div>
+<div id="el7" class="clip fato" data-start="42.1" data-duration="5.500" style="left:60px;top:150px"><div class="fh">A ÚLTIMA FRASE</div><div class="ft">“Então faz o que você quiser.”</div></div>
+<div id="el8" class="clip tag" data-start="50.8" data-duration="3.000" style="top:50px">7 ANOS SEM OUVIR ESSA VOZ</div>
+<div id="el9" class="clip lista" data-start="59" data-duration="6.700" style="left:60px;top:150px"><div class="fh">TUDO IGUAL A ANTES</div><div id="el9_i0" class="li"><span class="lk">1</span>O pôster na parede</div><div id="el9_i1" class="li"><span class="lk">2</span>Celular de teclado</div><div id="el9_i2" class="li"><span class="lk">3</span>Espelho: 16 anos</div></div>
+<div id="el10" class="clip cap" data-start="67.85" data-duration="3.150" style="top:70px"><div class="capi"><div class="capn">2012</div><div class="capt">14 ANOS NO PASSADO</div></div></div>
+<div id="el11" class="clip tag" data-start="70.8" data-duration="5.800" style="top:50px">O PAI ESTÁ VIVO</div>
+<div id="el12" class="clip lista" data-start="88.1" data-duration="13.200" style="left:60px;top:150px"><div class="fh">A LISTA</div><div id="el12_i0" class="li"><span class="lk">1</span>Comprar bitcoin</div><div id="el12_i1" class="li"><span class="lk">2</span>Não contar pra ninguém</div><div id="el12_i2" class="li"><span class="lk">3</span>???</div></div>
+<div id="el13" class="clip pill" data-start="101.4" data-duration="3.600" style="top:170px"><span>ITEM 3: SÓ NO FINAL</span></div>
+<div id="el14" class="clip fato" data-start="105.3" data-duration="9.300" style="right:60px;top:150px"><div class="fh">BITCOIN EM 2012</div><div class="fv">US$ 8,27</div><div class="ft">≈ R$ 16 por moeda</div><div class="ff">preço médio de 2012</div></div>
+<div id="el15" class="clip lista" data-start="115" data-duration="8.400" style="left:60px;top:150px"><div class="fh">COMO ELE JUNTOU</div><div id="el15_i0" class="li"><span class="lk">1</span>Vendeu o videogame</div><div id="el15_i1" class="li"><span class="lk">2</span>Juntou a mesada</div><div id="el15_i2" class="li"><span class="lk">3</span>Vendeu as figurinhas</div></div>
+<div id="el16" class="clip pq" data-start="123.5" data-duration="2.100" style="top:60px"><div class="pqi"><div id="el16_n" class="pqn">R$ 1.600</div><div class="pql">TUDO O QUE ELE CONSEGUIU</div></div></div>
+<div id="el17" class="clip fato" data-start="136.45" data-duration="4.050" style="right:60px;top:150px"><div class="fh">A COMPRA</div><div class="ft">Uma semana brigando com um site em inglês</div></div>
+<div id="el18" class="clip cart" data-start="140.6" data-duration="10.700"><div class="ch">CARTEIRA DO GUILHERME</div><div class="cb"><span class="cbi">₿</span> 100 BTC</div><div class="cl">VALE HOJE</div><div id="el18_n" class="cn"></div><div id="el18_s" class="cs" style="color:#7DF0A0">COMPRADO EM 2012</div><div class="ca">2012</div></div>
+<div id="el19" class="clip lista" data-start="141.9" data-duration="9.400" style="left:60px;top:150px"><div class="fh">COMO FUNCIONA</div><div id="el19_i0" class="li"><span class="lk">1</span>Não fica no banco</div><div id="el19_i1" class="li"><span class="lk">2</span>Fica numa carteira</div><div id="el19_i2" class="li"><span class="lk">3</span>Senha = dinheiro</div><div id="el19_i3" class="li"><span class="lk">4</span>Perdeu a senha? Já era</div></div>
+<div id="el20" class="clip fato" data-start="151.45" data-duration="6.950" style="right:60px;top:150px"><div class="fh">ONDE ESTÁ A SENHA</div><div class="ft">Na última página do caderno da lista</div></div>
+<div id="el21" class="clip pill" data-start="158.5" data-duration="2.500" style="top:170px"><span>GUARDA ESSE CADERNO.</span></div>
+<div id="el22" class="clip tag" data-start="161.1" data-duration="5.300" style="top:50px">OS ANOS PASSAM...</div>
+<div id="el23" class="clip lista" data-start="166.6" data-duration="7.400" style="left:60px;top:150px"><div class="fh">ELE ACERTA TUDO</div><div id="el23_i0" class="li"><span class="lk">1</span>Músicas antes de lançar</div><div id="el23_i1" class="li"><span class="lk">2</span>Memes antes de virar</div><div id="el23_i2" class="li"><span class="lk">3</span>Respostas da prova</div></div>
+<div id="el24" class="clip pill" data-start="174.1" data-duration="2.200" style="top:170px"><span>APELIDO: VIDENTE</span></div>
+<div id="el25" class="clip pill" data-start="179.12" data-duration="4.830" style="top:170px"><span>BRASIL × ALEMANHA?</span></div>
+<svg id="el26" class="clip" data-start="184.06" data-duration="2.340" width="540" height="480" viewBox="0 0 540 480" style="position:absolute;left:120px;top:200px;overflow:visible"><g id="el26g"><polygon points="270,35 314,108 400,55 393,134 505,112 448,181 562,194 468,240 562,286 448,299 505,368 393,346 400,425 314,372 270,445 226,372 140,425 147,346 35,368 92,299 -22,286 72,240 -22,194 92,181 35,112 147,134 140,55 226,108" fill="#FFD45A" stroke="#C9472F" stroke-width="6" stroke-linejoin="round"/><text x="270" y="272.64" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="96" fill="#C9361F">7 × 1</text></g></svg>
+<div id="el27" class="clip cap" data-start="186.47" data-duration="2.730" style="top:230px"><div class="capi"><div class="capn">8 DE JULHO</div><div class="capt">COPA DE 2014</div></div></div>
+<div id="el28" class="clip placar" data-start="189.3" data-duration="13.000"><div class="pt">COPA 2014 · SEMIFINAL</div><div class="pr"><span class="pe">BRASIL</span><span class="pg">0</span><span class="px">×</span><span class="pg" style="position:relative"><span id="el28_g0" style="position:absolute;left:0;right:0;opacity:1">0</span><span id="el28_g1" style="position:absolute;left:0;right:0;opacity:0">1</span><span id="el28_g2" style="position:absolute;left:0;right:0;opacity:0">2</span><span id="el28_g3" style="position:absolute;left:0;right:0;opacity:0">3</span><span id="el28_g4" style="position:absolute;left:0;right:0;opacity:0">4</span><span id="el28_g5" style="position:absolute;left:0;right:0;opacity:0">5</span>&nbsp;</span><span class="pe">ALEMANHA</span></div><div class="pm" style="position:relative;height:26px"><span id="el28_m0" style="position:absolute;left:0;right:0;opacity:1">1º TEMPO</span><span id="el28_m1" style="position:absolute;left:0;right:0;opacity:0">11'</span><span id="el28_m2" style="position:absolute;left:0;right:0;opacity:0">23'</span><span id="el28_m3" style="position:absolute;left:0;right:0;opacity:0">24'</span><span id="el28_m4" style="position:absolute;left:0;right:0;opacity:0">26'</span><span id="el28_m5" style="position:absolute;left:0;right:0;opacity:0">29'</span></div></div>
+<div id="el29" class="clip fato" data-start="197.6" data-duration="4.700" style="left:60px;top:230px"><div class="fh">SEMIFINAL</div><div class="fv">5 GOLS</div><div class="ft">em menos de meia hora</div></div>
+<svg id="el30" class="clip" data-start="209.4" data-duration="6.000" width="540" height="480" viewBox="0 0 540 480" style="position:absolute;left:120px;top:200px;overflow:visible"><g id="el30g"><polygon points="270,35 314,108 400,55 393,134 505,112 448,181 562,194 468,240 562,286 448,299 505,368 393,346 400,425 314,372 270,445 226,372 140,425 147,346 35,368 92,299 -22,286 72,240 -22,194 92,181 35,112 147,134 140,55 226,108" fill="#FFD45A" stroke="#C9472F" stroke-width="6" stroke-linejoin="round"/><text x="270" y="272.64" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="96" fill="#C9361F">LIKE</text></g></svg>
+<div id="el31" class="clip pill" data-start="212.46" data-duration="2.940" style="top:60px"><span>ONDE VOCÊ ESTAVA NO 7 × 1?</span></div>
+<svg id="el32" class="clip" data-start="215.5" data-duration="5.000" width="540" height="480" viewBox="0 0 540 480" style="position:absolute;left:120px;top:200px;overflow:visible"><g id="el32g"><polygon points="270,35 314,108 400,55 393,134 505,112 448,181 562,194 468,240 562,286 448,299 505,368 393,346 400,425 314,372 270,445 226,372 140,425 147,346 35,368 92,299 -22,286 72,240 -22,194 92,181 35,112 147,134 140,55 226,108" fill="#FFD45A" stroke="#C9472F" stroke-width="6" stroke-linejoin="round"/><text x="270" y="263.8" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="70" fill="#C9361F">INSCREVA-SE</text></g></svg>
+<div id="el33" class="clip cap" data-start="220.67" data-duration="2.480" style="top:230px"><div class="capi"><div class="capn">2017</div><div class="capt">O BITCOIN EXPLODE</div></div></div>
+<div id="el34" class="clip graf" data-start="223.25" data-duration="6.700" style="left:60px;top:150px"><div class="fh">1 BITCOIN EM DÓLAR</div><svg width="700" height="330" viewBox="0 0 700 330"><line x1="50" y1="290" x2="650" y2="290" stroke="#ffffff33" stroke-width="2"/><path id="el34_p" d="M50.0,290.0 L170.0,149.8 L290.0,176.1 L410.0,167.0 L530.0,142.2 L650.0,50.0" fill="none" stroke="#FFB43A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><circle id="el34_d0" cx="50" cy="290" r="9" fill="#FFB43A" stroke="#fff" stroke-width="3"/><text id="el34_t0" x="62" y="274" text-anchor="start" class="gv">US$ 8</text><circle id="el34_d5" cx="650" cy="50" r="9" fill="#FFB43A" stroke="#fff" stroke-width="3"/><text id="el34_t5" x="638" y="34" text-anchor="end" class="gv">US$ 19 MIL</text><text x="50" y="322" text-anchor="middle" class="gx">2012</text><text x="170" y="322" text-anchor="middle" class="gx">2013</text><text x="290" y="322" text-anchor="middle" class="gx">2014</text><text x="410" y="322" text-anchor="middle" class="gx">2015</text><text x="530" y="322" text-anchor="middle" class="gx">2016</text><text x="650" y="322" text-anchor="middle" class="gx">2017</text></svg></div>
+<div id="el35" class="clip cart" data-start="225.9" data-duration="10.700"><div class="ch">CARTEIRA DO GUILHERME</div><div class="cb"><span class="cbi">₿</span> 100 BTC</div><div class="cl">VALE HOJE</div><div id="el35_n" class="cn"></div><div id="el35_s" class="cs" style="color:#FFB43A">E ELE NÃO VENDE</div><div class="ca">2017</div></div>
+<div id="el36" class="clip lista" data-start="230.1" data-duration="6.500" style="left:60px;top:150px"><div class="fh">MAS NA VIDA REAL</div><div id="el36_i0" class="li"><span class="lk">1</span>Pega ônibus</div><div id="el36_i1" class="li"><span class="lk">2</span>Come miojo</div><div id="el36_i2" class="li"><span class="lk">3</span>Divide quarto</div></div>
+<div id="el37" class="clip lista" data-start="236.7" data-duration="6.700" style="left:60px;top:170px"><div class="fh">ELE PODIA...</div><div id="el37_i0" class="li"><span class="lk">1</span>Comprar casa</div><div id="el37_i1" class="li"><span class="lk">2</span>Comprar carro</div><div id="el37_i2" class="li"><span class="lk">3</span>Viajar</div></div>
+<div id="el38" class="clip pill" data-start="240" data-duration="3.400" style="top:50px"><span>...MAS ELE NÃO VENDE</span></div>
+<div id="el39" class="clip fato" data-start="243.5" data-duration="7.200" style="right:60px;top:150px"><div class="fh">ATENÇÃO</div><div class="ft">Bitcoin sobe e desce muito. Ninguém sabe o futuro.</div><div class="ff">isto não é dica de investimento</div></div>
+<div id="el40" class="clip cap" data-start="253.75" data-duration="3.000" style="top:230px"><div class="capi"><div class="capn">14/03/2019</div><div class="capt">QUINTA-FEIRA</div></div></div>
+<div id="el41" class="clip tag" data-start="256.85" data-duration="4.000" style="top:50px">O DIA DO INFARTO</div>
+<div id="el42" class="clip pill" data-start="258.3" data-duration="2.550" style="top:170px"><span>FALTA 1 ANO</span></div>
+<div id="el43" class="clip lista" data-start="260.95" data-duration="3.400" style="left:60px;top:150px"><div class="fh">ELE INSISTE</div><div id="el43_i0" class="li"><span class="lk">1</span>Almoço de domingo</div><div id="el43_i1" class="li"><span class="lk">2</span>Toda conversa</div><div id="el43_i2" class="li"><span class="lk">3</span>Toda vez!</div></div>
+<div id="el44" class="clip fato" data-start="264.45" data-duration="3.850" style="right:60px;top:150px"><div class="fh">O PEDIDO</div><div class="ft">Um exame do coração. Ele paga.</div></div>
+<div id="el45" class="clip pill" data-start="278.55" data-duration="3.850" style="top:170px"><span>A MESMA BRIGA DE 7 ANOS ATRÁS</span></div>
+<div id="el46" class="clip pill" data-start="282.45" data-duration="4.550" style="top:170px"><span>SÓ QUE AGORA ELE SABE O FINAL</span></div>
+<div id="el47" class="clip cap" data-start="287.19" data-duration="2.660" style="top:230px"><div class="capi"><div class="capn">14/03/2019</div><div class="capt">O DIA</div></div></div>
+<div id="el48" class="clip lista" data-start="289.95" data-duration="9.850" style="left:60px;top:150px"><div class="fh">O QUE ELE SABE</div><div id="el48_i0" class="li"><span class="lk">1</span>Dor por volta das 8h</div><div id="el48_i1" class="li"><span class="lk">2</span>Vai achar que é gases</div><div id="el48_i2" class="li"><span class="lk">3</span>Vai ficar em casa</div><div id="el48_i3" class="li"><span class="lk">4</span>Vai ser tarde demais</div></div>
+<div id="el49" class="clip tag" data-start="299.85" data-duration="5.750" style="top:50px">O PLANO: FINGIR A DOR</div>
+<div id="el50" class="clip lista" data-start="316" data-duration="5.400" style="left:60px;top:150px"><div class="fh">A CORRIDA</div><div id="el50_i0" class="li"><span class="lk">1</span>Fura sinal</div><div id="el50_i1" class="li"><span class="lk">2</span>Buzina</div><div id="el50_i2" class="li"><span class="lk">3</span>Sobe na calçada</div></div>
+<div id="el51" class="clip fato" data-start="321.5" data-duration="3.600" style="right:60px;top:150px"><div class="fh">CORAÇÃO DO GUILHERME</div><div class="fv" style="color:#7DF0A0">PERFEITO</div></div>
+<div id="el52" class="clip pill" data-start="330.6" data-duration="5.500" style="top:60px"><span>INFARTO NA SALA DE ESPERA</span></div>
+<div id="el53" class="clip fato" data-start="331.4" data-duration="4.700" style="left:60px;top:180px"><div class="fh">SOCORRO</div><div class="fv">&lt; 10 m</div><div class="ft">da equipe médica</div></div>
+<div id="el54" class="clip tag" data-start="341.46" data-duration="3.240" style="top:50px">3 HORAS DEPOIS</div>
+<div id="el55" class="clip fato" data-start="344.8" data-duration="7.000" style="right:60px;top:150px"><div class="fh">O DIAGNÓSTICO</div><div class="ft">Artéria quase toda entupida. Em casa, não daria tempo.</div></div>
+<div id="el56" class="clip pq" data-start="357.48" data-duration="4.520" style="top:60px"><div class="pqi"><div id="el56_n" class="pqn">ITEM 3</div><div class="pql">SALVAR O MEU PAI · 14/03/2019</div></div></div>
+<div id="el57" class="clip pill" data-start="362.15" data-duration="6.050" style="top:170px"><span>O BITCOIN ERA SÓ O DISFARCE</span></div>
+<div id="el58" class="clip tag" data-start="368.35" data-duration="6.350" style="top:50px">ENQUANTO ISSO, EM CASA</div>
+<div id="el59" class="clip fato" data-start="375.8" data-duration="6.400" style="left:60px;top:150px"><div class="fh">A FAXINA</div><div class="ft">Pilha de caderno velho direto pro saco de lixo</div></div>
+<div id="el60" class="clip cart" data-start="382.4" data-duration="7.400"><div class="ch">CARTEIRA DO GUILHERME</div><div class="cb"><span class="cbi">₿</span> 100 BTC</div><div class="cl">VALE HOJE</div><div id="el60_n" class="cn" style="color:#FF7A6A">R$ 37 mi</div><div id="el60_s" class="cs" style="color:#FF7A6A">INDO PRO LIXO</div><div class="ca"></div></div>
+<div id="el61" class="clip tag" data-start="388.95" data-duration="6.950" style="top:50px">6h DA MANHÃ · DE NOVO</div>
+<div id="el62" class="clip fato" data-start="397.7" data-duration="7.500" style="right:60px;top:150px"><div class="fh">CASO REAL · PAÍS DE GALES</div><div class="fv">8.000 BTC</div><div class="ft">Num disco rígido jogado fora em 2013. Está num aterro até hoje.</div><div class="ff">James Howells · Newport</div></div>
+<div id="el63" class="clip cart" data-start="409.6" data-duration="5.200"><div class="ch">CARTEIRA DO GUILHERME</div><div class="cb"><span class="cbi">₿</span> 100 BTC</div><div class="cl">VALE HOJE</div><div id="el63_n" class="cn"></div><div id="el63_s" class="cs" style="color:#7DF0A0">MAS O PAI ESTÁ VIVO</div><div class="ca"></div></div>
+<div id="el64" class="clip cap" data-start="414.9" data-duration="2.900" style="top:230px"><div class="capi"><div class="capn">2026</div><div class="capt">DOMINGO DE CHURRASCO</div></div></div>
+<div id="el65" class="clip fato" data-start="419.85" data-duration="3.550" style="left:60px;top:150px"><div class="fh">SEU MARCOS HOJE</div><div class="ft">Exame do coração todo ano</div></div>
+<div id="el66" class="clip pill" data-start="441.13" data-duration="3.170" style="top:170px"><span>100 BITCOINS NÃO FAZEM CHURRASCO</span></div>
+<div id="el67" class="clip pill" data-start="446.73" data-duration="3.470" style="top:170px"><span>TODO MUNDO PENSA EM FICAR RICO</span></div>
+<div id="el68" class="clip fato" data-start="452" data-duration="4.100" style="right:60px;top:150px"><div class="fh">SE VOCÊ VOLTASSE...</div><div class="ft">Não ia querer ver um gráfico. Ia querer ver um rosto.</div></div>
+<div id="el69" class="clip pill" data-start="459.76" data-duration="3.340" style="top:170px"><span>LIGA PRA ESSA PESSOA HOJE</span></div>
+<div id="el70" class="clip pill" data-start="463.2" data-duration="5.800" style="top:60px"><span>QUAL SERIA O SEU ITEM 3?</span></div>
+<svg id="el71" class="clip" data-start="469.14" data-duration="6.260" width="540" height="480" viewBox="0 0 540 480" style="position:absolute;left:120px;top:200px;overflow:visible"><g id="el71g"><polygon points="270,35 314,108 400,55 393,134 505,112 448,181 562,194 468,240 562,286 448,299 505,368 393,346 400,425 314,372 270,445 226,372 140,425 147,346 35,368 92,299 -22,286 72,240 -22,194 92,181 35,112 147,134 140,55 226,108" fill="#FFD45A" stroke="#C9472F" stroke-width="6" stroke-linejoin="round"/><text x="270" y="263.8" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="70" fill="#C9361F">INSCREVA-SE</text></g></svg>
+<div id="el72" class="clip pill" data-start="472.76" data-duration="2.690" style="top:60px"><span>MANDE PRA QUEM É O SEU ITEM 3</span></div>
+<div id="el73" class="clip pill" data-start="475.6" data-duration="4.800" style="top:170px"><span>GUARDE SUAS SENHAS E SUAS PESSOAS</span></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.set({},{},480.7);
+tl.fromTo("#el0",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},1);tl.to("#el0",{opacity:0,duration:.3},6.5);
+tl.fromTo("#el1",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},7.6);tl.to("#el1",{opacity:0,duration:.3},13.58);
+tl.fromTo("#el2",{opacity:0,y:-20},{opacity:1,y:0,duration:.35,ease:"power3.out"},14.3);tl.to("#el2",{opacity:0,duration:.3},22.5);
+(function(){var o={v:0},el=document.querySelector("#el2_n");function f(v){if(v>=1e6)return "R$ "+(v/1e6).toFixed(v>=1e7?0:1).replace(".",",")+" mi";return "R$ "+String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g,".");}if(el)el.textContent=f(0);tl.fromTo(o,{v:0},{v:37000000,duration:2.2,ease:"power2.out",immediateRender:false,onUpdate:function(){if(el)el.textContent=f(o.v);}},14.600000000000001);})();
+tl.fromTo("#el3 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},19.3);tl.to("#el3 span",{opacity:0,duration:.3},23.099999999999998);
+tl.fromTo("#el4 .capi",{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.45,ease:"power3.out"},24.4);tl.to("#el4 .capi",{opacity:0,duration:.35},26.200000000000003);
+tl.fromTo("#el5",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},26.7);tl.to("#el5",{opacity:0,duration:.3},30.78);
+tl.fromTo("#el6",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},31.2);tl.to("#el6",{opacity:0,duration:.3},35.88);
+tl.fromTo("#el7",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},42.1);tl.to("#el7",{opacity:0,duration:.3},47.28);
+tl.fromTo("#el8",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},50.8);tl.to("#el8",{opacity:0,duration:.3},53.5);
+tl.fromTo("#el9",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},59);tl.to("#el9",{opacity:0,duration:.3},65.4);
+tl.fromTo("#el9_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},60.66);
+tl.fromTo("#el9_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},61.78);
+tl.fromTo("#el9_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},63.06);
+tl.fromTo("#el10 .capi",{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.45,ease:"power3.out"},67.85);tl.to("#el10 .capi",{opacity:0,duration:.35},70.6);
+tl.fromTo("#el11",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},70.8);tl.to("#el11",{opacity:0,duration:.3},76.3);
+tl.fromTo("#el12",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},88.1);tl.to("#el12",{opacity:0,duration:.3},101);
+tl.fromTo("#el12_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},92.27);
+tl.fromTo("#el12_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},94.4);
+tl.fromTo("#el12_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},97.07);
+tl.fromTo("#el13 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},101.4);tl.to("#el13 span",{opacity:0,duration:.3},104.7);
+tl.fromTo("#el14",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},105.3);tl.to("#el14",{opacity:0,duration:.3},114.28);
+tl.fromTo("#el15",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},115);tl.to("#el15",{opacity:0,duration:.3},123.10000000000001);
+tl.fromTo("#el15_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},119.65);
+tl.fromTo("#el15_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},120.74);
+tl.fromTo("#el15_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},121.71);
+tl.fromTo("#el16 .pqi",{opacity:0,scale:.9},{opacity:1,scale:1,duration:.2,ease:"back.out(2)"},123.5);tl.to("#el16 .pqi",{opacity:0,duration:.25},125.35);
+tl.fromTo("#el17",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},136.45);tl.to("#el17",{opacity:0,duration:.3},140.18);
+tl.fromTo("#el18",{opacity:0,y:-20},{opacity:1,y:0,duration:.35,ease:"power3.out"},140.6);tl.to("#el18",{opacity:0,duration:.3},151);
+(function(){var o={v:0},el=document.querySelector("#el18_n");function f(v){if(v>=1e6)return "R$ "+(v/1e6).toFixed(v>=1e7?0:1).replace(".",",")+" mi";return "R$ "+String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g,".");}if(el)el.textContent=f(0);tl.fromTo(o,{v:0},{v:1600,duration:1.2,ease:"power2.out",immediateRender:false,onUpdate:function(){if(el)el.textContent=f(o.v);}},140.9);})();
+tl.fromTo("#el19",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},141.9);tl.to("#el19",{opacity:0,duration:.3},151);
+tl.fromTo("#el19_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},144.07);
+tl.fromTo("#el19_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},145.72);
+tl.fromTo("#el19_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},147.5);
+tl.fromTo("#el19_i3",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},149.43);
+tl.fromTo("#el20",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},151.45);tl.to("#el20",{opacity:0,duration:.3},158.08);
+tl.fromTo("#el21 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},158.5);tl.to("#el21 span",{opacity:0,duration:.3},160.7);
+tl.fromTo("#el22",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},161.1);tl.to("#el22",{opacity:0,duration:.3},166.1);
+tl.fromTo("#el23",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},166.6);tl.to("#el23",{opacity:0,duration:.3},173.7);
+tl.fromTo("#el23_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},166.67);
+tl.fromTo("#el23_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},169.17);
+tl.fromTo("#el23_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},170.87);
+tl.fromTo("#el24 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},174.1);tl.to("#el24 span",{opacity:0,duration:.3},176);
+tl.fromTo("#el25 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},179.12);tl.to("#el25 span",{opacity:0,duration:.3},183.64999999999998);
+tl.fromTo("#el26g",{scale:.35,rotation:-9,transformOrigin:"50% 50%"},{scale:1,rotation:-5,duration:.18,ease:"back.out(2)"},184.06);tl.to("#el26g",{rotation:-2,duration:1.84,ease:"sine.inOut"},184.26);tl.to("#el26g",{scale:.6,opacity:0,duration:.25},186.15);
+tl.fromTo("#el27 .capi",{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.45,ease:"power3.out"},186.47);tl.to("#el27 .capi",{opacity:0,duration:.35},188.79999999999998);
+tl.fromTo("#el28",{opacity:0,y:-20},{opacity:1,y:0,duration:.35},189.3);tl.to("#el28",{opacity:0,duration:.3},202);
+tl.set(["#el28_g0","#el28_m0"],{opacity:0},194.22);tl.set(["#el28_g1","#el28_m1"],{opacity:1},194.22);tl.fromTo("#el28_g1",{scale:1.9,color:"#FF5A4A"},{scale:1,color:"#FFFFFF",duration:.5,ease:"back.out(2)"},194.22);
+tl.set(["#el28_g1","#el28_m1"],{opacity:0},195.19);tl.set(["#el28_g2","#el28_m2"],{opacity:1},195.19);tl.fromTo("#el28_g2",{scale:1.9,color:"#FF5A4A"},{scale:1,color:"#FFFFFF",duration:.5,ease:"back.out(2)"},195.19);
+tl.set(["#el28_g2","#el28_m2"],{opacity:0},195.72);tl.set(["#el28_g3","#el28_m3"],{opacity:1},195.72);tl.fromTo("#el28_g3",{scale:1.9,color:"#FF5A4A"},{scale:1,color:"#FFFFFF",duration:.5,ease:"back.out(2)"},195.72);
+tl.set(["#el28_g3","#el28_m3"],{opacity:0},196.38);tl.set(["#el28_g4","#el28_m4"],{opacity:1},196.38);tl.fromTo("#el28_g4",{scale:1.9,color:"#FF5A4A"},{scale:1,color:"#FFFFFF",duration:.5,ease:"back.out(2)"},196.38);
+tl.set(["#el28_g4","#el28_m4"],{opacity:0},196.97);tl.set(["#el28_g5","#el28_m5"],{opacity:1},196.97);tl.fromTo("#el28_g5",{scale:1.9,color:"#FF5A4A"},{scale:1,color:"#FFFFFF",duration:.5,ease:"back.out(2)"},196.97);
+tl.fromTo("#el29",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},197.6);tl.to("#el29",{opacity:0,duration:.3},201.98000000000002);
+tl.fromTo("#el30g",{scale:.35,rotation:-9,transformOrigin:"50% 50%"},{scale:1,rotation:-5,duration:.18,ease:"back.out(2)"},209.4);tl.to("#el30g",{rotation:-2,duration:5.50,ease:"sine.inOut"},209.6);tl.to("#el30g",{scale:.6,opacity:0,duration:.25},215.15);
+tl.fromTo("#el31 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},212.46);tl.to("#el31 span",{opacity:0,duration:.3},215.1);
+tl.fromTo("#el32g",{scale:.35,rotation:-9,transformOrigin:"50% 50%"},{scale:1,rotation:-5,duration:.18,ease:"back.out(2)"},215.5);tl.to("#el32g",{rotation:-2,duration:4.50,ease:"sine.inOut"},215.7);tl.to("#el32g",{scale:.6,opacity:0,duration:.25},220.25);
+tl.fromTo("#el33 .capi",{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.45,ease:"power3.out"},220.67);tl.to("#el33 .capi",{opacity:0,duration:.35},222.75);
+tl.fromTo("#el34",{opacity:0,y:20},{opacity:1,y:0,duration:.35},223.25);tl.to("#el34",{opacity:0,duration:.3},229.64999999999998);tl.fromTo("#el34_p",{attr:{"stroke-dashoffset":1}},{attr:{"stroke-dashoffset":0},duration:2.4,ease:"power1.inOut"},223.55);
+tl.fromTo(["#el34_d0","#el34_t0"],{opacity:0},{opacity:1,duration:.25},223.55);
+tl.fromTo(["#el34_d5","#el34_t5"],{opacity:0},{opacity:1,duration:.25},225.95);
+tl.fromTo("#el35",{opacity:0,y:-20},{opacity:1,y:0,duration:.35,ease:"power3.out"},225.9);tl.to("#el35",{opacity:0,duration:.3},236.29999999999998);
+(function(){var o={v:1600},el=document.querySelector("#el35_n");function f(v){if(v>=1e6)return "R$ "+(v/1e6).toFixed(v>=1e7?0:1).replace(".",",")+" mi";return "R$ "+String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g,".");}if(el)el.textContent=f(1600);tl.fromTo(o,{v:1600},{v:6000000,duration:2,ease:"power2.out",immediateRender:false,onUpdate:function(){if(el)el.textContent=f(o.v);}},226.20000000000002);})();
+tl.fromTo("#el36",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},230.1);tl.to("#el36",{opacity:0,duration:.3},236.29999999999998);
+tl.fromTo("#el36_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},230.13);
+tl.fromTo("#el36_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},232.27);
+tl.fromTo("#el36_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},233);
+tl.fromTo("#el37",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},236.7);tl.to("#el37",{opacity:0,duration:.3},243.1);
+tl.fromTo("#el37_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},237.56);
+tl.fromTo("#el37_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},238.38);
+tl.fromTo("#el37_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},238.87);
+tl.fromTo("#el38 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},240);tl.to("#el38 span",{opacity:0,duration:.3},243.1);
+tl.fromTo("#el39",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},243.5);tl.to("#el39",{opacity:0,duration:.3},250.38);
+tl.fromTo("#el40 .capi",{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.45,ease:"power3.out"},253.75);tl.to("#el40 .capi",{opacity:0,duration:.35},256.35);
+tl.fromTo("#el41",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},256.85);tl.to("#el41",{opacity:0,duration:.3},260.55);
+tl.fromTo("#el42 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},258.3);tl.to("#el42 span",{opacity:0,duration:.3},260.55);
+tl.fromTo("#el43",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},260.95);tl.to("#el43",{opacity:0,duration:.3},264.05);
+tl.fromTo("#el43_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},260.94);
+tl.fromTo("#el43_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},262.28);
+tl.fromTo("#el43_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},263.4);
+tl.fromTo("#el44",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},264.45);tl.to("#el44",{opacity:0,duration:.3},267.98);
+tl.fromTo("#el45 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},278.55);tl.to("#el45 span",{opacity:0,duration:.3},282.09999999999997);
+tl.fromTo("#el46 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},282.45);tl.to("#el46 span",{opacity:0,duration:.3},286.7);
+tl.fromTo("#el47 .capi",{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.45,ease:"power3.out"},287.19);tl.to("#el47 .capi",{opacity:0,duration:.35},289.45000000000005);
+tl.fromTo("#el48",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},289.95);tl.to("#el48",{opacity:0,duration:.3},299.5);
+tl.fromTo("#el48_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},289.94);
+tl.fromTo("#el48_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},294.58);
+tl.fromTo("#el48_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},296.06);
+tl.fromTo("#el48_i3",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},297.92);
+tl.fromTo("#el49",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},299.85);tl.to("#el49",{opacity:0,duration:.3},305.3);
+tl.fromTo("#el50",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},316);tl.to("#el50",{opacity:0,duration:.3},321.09999999999997);
+tl.fromTo("#el50_i0",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},316.07);
+tl.fromTo("#el50_i1",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},316.81);
+tl.fromTo("#el50_i2",{opacity:0,x:-16},{opacity:1,x:0,duration:.3},317.45);
+tl.fromTo("#el51",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},321.5);tl.to("#el51",{opacity:0,duration:.3},324.78000000000003);
+tl.fromTo("#el52 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},330.6);tl.to("#el52 span",{opacity:0,duration:.3},335.8);
+tl.fromTo("#el53",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},331.4);tl.to("#el53",{opacity:0,duration:.3},335.78000000000003);
+tl.fromTo("#el54",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},341.46);tl.to("#el54",{opacity:0,duration:.3},344.4);
+tl.fromTo("#el55",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},344.8);tl.to("#el55",{opacity:0,duration:.3},351.48);
+tl.fromTo("#el56 .pqi",{opacity:0,scale:.9},{opacity:1,scale:1,duration:.2,ease:"back.out(2)"},357.48);tl.to("#el56 .pqi",{opacity:0,duration:.25},361.75);
+tl.fromTo("#el57 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},362.15);tl.to("#el57 span",{opacity:0,duration:.3},367.9);
+tl.fromTo("#el58",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},368.35);tl.to("#el58",{opacity:0,duration:.3},374.4);
+tl.fromTo("#el59",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},375.8);tl.to("#el59",{opacity:0,duration:.3},381.88);
+tl.fromTo("#el60",{opacity:0,y:-20},{opacity:1,y:0,duration:.35,ease:"power3.out"},382.4);tl.to("#el60",{opacity:0,duration:.3},389.5);
+tl.fromTo("#el60",{boxShadow:"0 0 0px #FF4A3A00"},{boxShadow:"0 0 46px #FF4A3AFF",duration:.4,repeat:8,yoyo:true},382.79999999999995);
+tl.fromTo("#el61",{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:"power3.out"},388.95);tl.to("#el61",{opacity:0,duration:.3},395.59999999999997);
+tl.fromTo("#el62",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},397.7);tl.to("#el62",{opacity:0,duration:.3},404.88);
+tl.fromTo("#el63",{opacity:0,y:-20},{opacity:1,y:0,duration:.35,ease:"power3.out"},409.6);tl.to("#el63",{opacity:0,duration:.3},414.5);
+(function(){var o={v:37000000},el=document.querySelector("#el63_n");function f(v){if(v>=1e6)return "R$ "+(v/1e6).toFixed(v>=1e7?0:1).replace(".",",")+" mi";return "R$ "+String(Math.round(v)).replace(/\B(?=(\d{3})+(?!\d))/g,".");}if(el)el.textContent=f(37000000);tl.fromTo(o,{v:37000000},{v:0,duration:1.6,ease:"power2.out",immediateRender:false,onUpdate:function(){if(el)el.textContent=f(o.v);}},409.90000000000003);})();
+tl.fromTo("#el64 .capi",{opacity:0,y:24,scale:.96},{opacity:1,y:0,scale:1,duration:.45,ease:"power3.out"},414.9);tl.to("#el64 .capi",{opacity:0,duration:.35},417.40000000000003);
+tl.fromTo("#el65",{opacity:0,x:-40},{opacity:1,x:0,duration:.35,ease:"power3.out"},419.85);tl.to("#el65",{opacity:0,duration:.3},423.08);
+tl.fromTo("#el66 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},441.13);tl.to("#el66 span",{opacity:0,duration:.3},444);
+tl.fromTo("#el67 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},446.73);tl.to("#el67 span",{opacity:0,duration:.3},449.9);
+tl.fromTo("#el68",{opacity:0,x:40},{opacity:1,x:0,duration:.35,ease:"power3.out"},452);tl.to("#el68",{opacity:0,duration:.3},455.78000000000003);
+tl.fromTo("#el69 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},459.76);tl.to("#el69 span",{opacity:0,duration:.3},462.8);
+tl.fromTo("#el70 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},463.2);tl.to("#el70 span",{opacity:0,duration:.3},468.7);
+tl.fromTo("#el71g",{scale:.35,rotation:-9,transformOrigin:"50% 50%"},{scale:1,rotation:-5,duration:.18,ease:"back.out(2)"},469.14);tl.to("#el71g",{rotation:-2,duration:5.76,ease:"sine.inOut"},469.34);tl.to("#el71g",{scale:.6,opacity:0,duration:.25},475.15);
+tl.fromTo("#el72 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},472.76);tl.to("#el72 span",{opacity:0,duration:.3},475.15);
+tl.fromTo("#el73 span",{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:"power3.out"},475.6);tl.to("#el73 span",{opacity:0,duration:.3},480.09999999999997);
+window.__timelines["ui"]=tl;
+</script>
+</template>
