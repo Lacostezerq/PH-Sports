@@ -127,7 +127,7 @@ export function quartoTeen(c, o = {}) {
   c.add(rb(.4, .5, .25, '#E8742A', -1.8, .25, -6.1, { r: .1, out: .008 })); c.add(rb(.3, .2, .05, '#C95E1E', -1.8, .2, -5.97, { r: .04 }));
   const vg = videogame(); vg.position.set(-.3, .02, -2.8); c.add(vg); const tp = new THREE.Mesh(new THREE.CircleGeometry(1.0, 32), toon('#F2C230')); tp.rotation.x = -Math.PI / 2; tp.position.set(-.6, .012, -3.3); c.add(tp);
   janela(c, -2.6, 1.85, -6.38, 1.2, 1.0, { cortina: '#2E6FB8', c1: noite ? '#1B2550' : '#8CCBF2', c2: noite ? '#3A4A8A' : '#DDF2FB' });
-  return { C, cama, cel, desp, pc, cad, est, cadLista, cal, esp, vg, Lab };
+  return { C, cama, cel, desp, pc, cad, est, cadLista, cal, esp, vg, Lab, fl };
 }
 // ---------- escola ----------
 export function salaAula(c, o = {}) {

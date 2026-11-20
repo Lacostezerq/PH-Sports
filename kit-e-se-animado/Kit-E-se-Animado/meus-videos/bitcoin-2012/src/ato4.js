@@ -14,7 +14,7 @@ import { ecg, registra } from './vida.js';
 
 // ---------- L: a manhã do dia 14 ----------
 function L1(t0, t1) { return mk(t0, t1, {}, (c) => { const K = casaFamilia(c, { ano: '2019', alvorada: true });
-  return (t, u, C) => { K.rel.set(6, 30, u * 8); cam(C, [[0, [.4, 2.1, -4.6]], [2.75, [.4, 2.35, -5.9]]], [[0, [.4, 2.45, -6.88]], [2.75, [.4, 2.45, -6.88]]], u, 0, .4); return { tint: '#FFE8D8' }; }; }); }
+  return (t, u, C) => { K.rel.set(6, 30, u * 8); cam(C, [[0, [.4, 2.3, -4.6]], [2.75, [.4, 2.55, -5.6]]], [[0, [.4, 2.6, -6.88]], [2.75, [.4, 2.6, -6.88]]], u, 0, .4); return { tint: '#FFE8D8' }; }; }); }
 function L2(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const Q = quartoTeen(c, { ano: '2019' }); const G = ator(c, GUI20, 0, 0); sentar(G, -2.42, -4.9, Math.PI / 2, .62);
   const rel = Q.desp; return (t, u, C) => { G.pose(sentado({ shL: [40, 10], elL: 100, shR: [40, 10], elR: 100, lean: 15, headX: 12 })); rosto(G, null, t, u < 4 ? 'preocupado' : 'determinado', { look: [-.6, -.4] });
     cam(C, [[0, [0, 1.6, -3.4]], [4.5, [-.5, 1.4, -3.9]], [9.9, [-1.0, 1.25, -4.4]]], [[0, [-2.42, 1.0, -4.9]], [4.5, [-2.42, 1.05, -4.9]], [9.9, [-2.42, 1.1, -4.9]]], u); return { tint: '#FFE0D0' }; }; }); }
@@ -88,12 +88,12 @@ function M6(t0, t1) { return mk(t0, t1, {}, (c) => { const P = prontoSocorro(c);
     const al = smooth(.2, .8, u); R.pose({ ...idle(t), shL: [120 * al, -20], shR: [120 * al, -20], elL: 120, elR: 120, headX: 10 }); rosto(R, null, t, 'choro', { smile: .6 }); G.pose({ ...idle(t), shR: [50 * al, 30], elR: 40 }); rosto(G, null, t, 'choro', { smile: .5 });
     cam(C, [[0, [1.3, 1.6, -7.3]], [7.1, [1.8, 1.5, -7.0]]], [[0, [3.1, 1.3, -4.8]], [7.1, [3.1, 1.3, -4.8]]], u); return {}; }; }); }
 function corredorMemoria(c) { const P = prontoSocorro(c); const G = ator(c, GUI20, 0, 0); sentar(G, -2.36, -2.0, 0, .5); return { P, G }; }
-function M7(t0, t1) { return mk(t0, t1, {}, (c) => { const { P, G } = corredorMemoria(c); const CA = cadernoAberto(); CA.scale.setScalar(1.1); c.add(CA); const B = brilho(c, [-2.36, 1.9, -1.6], { cor: '#FFE6A0', size: 2, n: 40, alt: 1.2 });
+function M7(t0, t1) { return mk(t0, t1, {}, (c) => { const { P, G } = corredorMemoria(c); const CA = cadernoAberto(); CA.scale.setScalar(1.1); c.add(CA); const B = brilho(c, [-2.36, 1.9, -1.4], { cor: '#FFE6A0', size: 2, n: 40, alt: 1.2, aura: 0 });
   CA.userData.E.paint('e', (x, W, H) => folhaDraw(x, W, H, () => { mao(x, 'A LISTA', W * .5, H * .08, 60, '#B8322B', 'center'); mao(x, '1. Comprar bitcoin', W * .16, H * .2, 46); mao(x, '2. Não contar pra ninguém', W * .16, H * .32, 42); }));
   CA.userData.D.paint('d', (x, W, H) => { folhaDraw(x, W, H); x.fillStyle = '#E8E2D0'; x.fillRect(0, H * .38, W, H * .62); });
-  CA.traverse(n => { if (n.material) { n.material = n.material.clone(); n.material.transparent = true; } if (n.userData && n.userData.isOutline) n.visible = false; });
+  CA.traverse(n => { n.castShadow = false; if (n.material) { n.material = n.material.clone(); n.material.transparent = true; } if (n.userData && n.userData.isOutline) n.visible = false; });
   return (t, u, C) => { const ap = smooth(1.2, 3.2, u); CA.position.set(-2.36, 1.95 + .05 * Math.sin(t * 2), -1.3); CA.rotation.set(1.15 + .12 * Math.sin(t), 0, 0); CA.traverse(n => { if (n.material) n.material.opacity = ap * .82; }); CA.visible = ap > .03; B(u, ap);
-    G.pose(sentado({ shL: [40, 10], elL: 100, shR: [40, 10], elR: 100, lean: 12, headX: -14 })); rosto(G, null, t, 'triste', { look: [0, -.6] });
+    G.pose(sentado({ shL: [22, 12], elL: 55, shR: [22, 12], elR: 55, lean: 12, headX: -14 })); rosto(G, null, t, 'triste', { look: [0, -.6] });
     cam(C, [[0, [-1.2, 1.45, .9]], [5.6, [-1.8, 1.5, .5]]], [[0, [-2.36, 1.6, -1.7]], [5.6, [-2.36, 1.62, -1.6]]], u); return { bloom: .25, bloomT: .85 }; }; }); }
 function M8(t0, t1) { return mk(t0, t1, {}, (c) => { const { P, G } = corredorMemoria(c); const CA = cadernoAberto(); CA.scale.setScalar(1.6); CA.position.set(-2.36, 1.75, -1.3); CA.rotation.set(1.0, 0, 0); c.add(CA); const B = brilho(c, [-2.36, 1.9, -1.4], { cor: '#FFE6A0', size: 2.5, n: 40, alt: 1.2 });
   CA.userData.E.paint('e', (x, W, H) => folhaDraw(x, W, H, () => { mao(x, 'A LISTA', W * .5, H * .08, 60, '#B8322B', 'center'); mao(x, '1. Comprar bitcoin', W * .16, H * .2, 46); mao(x, '2. Não contar pra ninguém', W * .16, H * .32, 42); }));

@@ -108,11 +108,11 @@ function J8(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { republica(c)
     cam(C, [[0, [.5, 1.35, -.9]], [2.2, [.45, 1.3, -1.3]]], [[0, [.4, 1.2, -3.0]], [2.2, [.4, 1.2, -3.0]]], u); return { tint: '#E8E2FF' }; }; }); }
 
 // ---------- K: a data e a insistência ----------
-function K1(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoTeen(c, { ano: '2019' }); const cal = Q.cal;
+function K1(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoTeen(c, { ano: '2019' }); const cal = Q.cal; Q.fl.visible = false;
   cal.paint('m', (x, W, H) => { x.fillStyle = '#FFFFFF'; x.fillRect(0, 0, W, H); x.fillStyle = '#C0392B'; x.fillRect(0, 0, W, H * .18); txt(x, 'MARÇO 2019', W / 2, H * .09, H * .09, '#FFFFFF'); const d = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']; d.forEach((s, i) => txt(x, s, W * .09 + i * W * .135, H * .25, H * .04, '#9A958A', 800));
     for (let i = 0; i < 31; i++) { const col = (i + 5) % 7, row = Math.floor((i + 5) / 7); txt(x, String(i + 1), W * .09 + col * W * .135, H * .33 + row * H * .11, H * .05, i === 13 ? '#C0392B' : '#3A3A44', i === 13 ? 900 : 600); }
     const cx = W * .09 + 4 * W * .135, cy = H * .33 + 2 * H * .11; x.strokeStyle = '#C0392B'; x.lineWidth = 8; x.beginPath(); x.ellipse(cx, cy, W * .07, H * .045, -.2, 0, 7); x.stroke(); });
-  return (t, u, C) => { cam(C, [[0, [.0, 1.7, -3.9]], [6, [.15, 1.74, -5.45]]], [[0, [.2, 1.72, -6.38]], [6, [.2, 1.74, -6.38]]], u, 0, .5); return {}; }; }); }
+  return (t, u, C) => { cam(C, [[0, [.0, 1.8, -3.4]], [6, [.15, 1.82, -4.35]]], [[0, [.2, 1.82, -6.38]], [6, [.2, 1.82, -6.38]]], u, 0, .5); return {}; }; }); }
 function almoco(c) { const K = casaFamilia(c, { ano: '2018' }); const M = ator(c, MARCOSCASA, 0, 0); sentar(M, 1.15, -3.6, -Math.PI / 2, .48); const R = ator(c, REGINA, 0, 0); sentar(R, .2, -4.55, 0, .48); const G = ator(c, GUI20, 0, 0); sentar(G, -.75, -3.6, Math.PI / 2, .48);
   for (let i = 0; i < 3; i++) { const p = prato(); p.position.set([.7, .2, -.3][i], .8, [-3.6, -4.05, -3.6][i]); c.add(p); } const trav = cyl(.22, .2, .09, '#F4F1EA', .2, .84, -3.45, { out: .004 }); c.add(trav); c.add(sph(.16, '#C98A4A', .2, .9, -3.45, { seg: 12 })); c.add(cyl(.12, .1, .12, '#E8E2D6', -.1, .86, -3.2, { out: .004 })); return { K, M, R, G }; }
 const comer = (t, ph = 0) => sentado({ shR: [55 + 10 * Math.sin(t * 3 + ph), 10], elR: 100 + 20 * Math.sin(t * 3 + ph), shL: [40, 10], elL: 70, headX: 10 });

@@ -490,7 +490,8 @@
    "inicio": 253.75,
    "fim": 256.75,
    "numero": "14/03/2019",
-   "texto": "QUINTA-FEIRA"
+   "texto": "QUINTA-FEIRA",
+   "topo": 40
   },
   {
    "tipo": "etiqueta",
@@ -550,7 +551,8 @@
    "inicio": 287.19,
    "fim": 289.85,
    "numero": "14/03/2019",
-   "texto": "O DIA"
+   "texto": "O DIA",
+   "topo": 40
   },
   {
    "tipo": "lista",

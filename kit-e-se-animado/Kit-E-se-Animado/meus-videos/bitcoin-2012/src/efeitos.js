@@ -65,8 +65,8 @@ export function chuva(c, box, o = {}) {
 }
 /** Brilho mágico (aura + faíscas subindo). */
 export function brilho(c, pos, o = {}) {
-  const g = new THREE.Group(); g.position.set(...pos); c.add(g); const aura = sprite(o.cor || '#FFD45A', o.size || 3, 0); g.add(aura); const R = rng(o.seed || 5); const F = [];
-  for (let i = 0; i < (o.n || 40); i++) { const s = sprite(i % 3 ? (o.cor || '#FFD45A') : '#FFFFFF', (.12 + R() * .1) * (o.ps || 1), 0); s.userData = { a: R() * 6.28, r: .3 + R() * .6, ph: R(), sp: .6 + R() }; g.add(s); F.push(s); }
+  const g = new THREE.Group(); g.position.set(...pos); c.add(g); const aura = sprite(o.cor || '#FFD45A', o.size || 3, 0); aura.renderOrder = 3; g.add(aura); const R = rng(o.seed || 5); const F = [];
+  for (let i = 0; i < (o.n || 40); i++) { const s = sprite(i % 3 ? (o.cor || '#FFD45A') : '#FFFFFF', (.12 + R() * .1) * (o.ps || 1), 0); s.userData = { a: R() * 6.28, r: .3 + R() * .6, ph: R(), sp: .6 + R() }; s.renderOrder = 3; g.add(s); F.push(s); }
   return (u, k) => { g.visible = k > .01; if (!g.visible) return; aura.material.opacity = (o.aura ?? .45) * k * (.85 + .15 * Math.sin(u * 7)); aura.scale.setScalar((o.size || 3) * (.9 + .1 * Math.sin(u * 3))); F.forEach((s) => { const q = s.userData, f = (u * .5 * q.sp + q.ph) % 1; s.position.set(Math.cos(q.a + u) * q.r, f * (o.alt || 2.2) - .2, Math.sin(q.a + u) * q.r); s.material.opacity = k * Math.sin(f * Math.PI); }); };
 }
 /** Tremida de câmera determinística. */
