@@ -17,7 +17,19 @@ import { makeChar3D } from '../base/char3d.js';
 import { montarCidade, VISTAS } from './index.js';
 
 let ATIVA = null;
-function liberar(s) { if (!s || !s._montada) return; s.scene.traverse((o) => { if (o.geometry && !o.geometry._comp) o.geometry.dispose(); }); s.scene.clear(); s._montada = false; s.C = null; }
+function liberar(s) {
+  if (!s || !s._montada) return;
+  const mats = new Set(), texs = new Set();
+  s.scene.traverse((o) => {
+    if (o.geometry) o.geometry.dispose();
+    if (o.isLight && o.shadow && o.shadow.map) { o.shadow.map.dispose(); o.shadow.map = null; }
+    const ms = Array.isArray(o.material) ? o.material : o.material ? [o.material] : [];
+    for (const m of ms) { mats.add(m); for (const k of ['map', 'emissiveMap', 'alphaMap']) if (m[k]) texs.add(m[k]); }
+  });
+  // libera a memória de vídeo (o three.js envia de novo sozinho se algo for reaproveitado depois)
+  for (const m of mats) m.dispose(); for (const t of texs) t.dispose();
+  s.scene.clear(); s._montada = false; s.C = null; if (s._limpar) s._limpar(); // solta a cena antiga para a memória voltar
+}
 
 /**
  * Cria uma cena (shot) do Stage com a cidade.
@@ -30,7 +42,7 @@ export function cenaCidade(t0, t1, o = {}, monta) {
   const v0 = o.vista ? VISTAS[o.vista] : null;
   const s = makeShot(t0, t1, '#BFE3F7', o.fov || v0?.fov || 45);
   s.camera.near = o.near || .08; s.camera.far = 3000; s.camera.updateProjectionMatrix();
-  let upd = null;
+  let upd = null; s._limpar = () => { upd = null; };
   const montar = () => { if (ATIVA && ATIVA !== s) liberar(ATIVA); ATIVA = s; s._montada = true;
     const C = montarCidade(s.scene, { ...o, foco: o.foco || v0?.foco, hora: o.hora ?? v0?.hora, dentro: o.dentro ?? v0?.dentro }); s.C = C; s.scene.userData.vida = [];
     upd = monta ? monta(C, s) : null; };

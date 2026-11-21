@@ -46,7 +46,7 @@ Pedra Alta é uma cidade do interior de São Paulo **inventada**. Ela foi feita 
 
 ## Como ver a cidade
 
-Na pasta do kit, rode `node mundo/ver/build.mjs` e depois abra `mundo/ver/ver.html` no navegador. No fim do endereço você pode pôr:
+Abra `mundo/ver/ver.html` no navegador. Ele já vem pronto; se mudar algo na cidade, rode antes `node mundo/ver/build.mjs` na pasta do kit. No fim do endereço você pode pôr:
 - `?vista=praca` mostra uma vista pronta. A lista de vistas está abaixo.
 - `?vista=sala&hora=20` mostra a mesma vista em outra hora.
 - `?livre=1&cx=60&cy=40&cz=60` deixa você girar a câmera com o mouse.
