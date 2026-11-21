@@ -100,7 +100,7 @@ function F2(t0, t1) { return mk(t0, t1, {}, (c) => { palco(c); const B = bancoPr
   const L = new THREE.PointLight('#8FC4FF', 6, 6, 1.6); L.position.set(2.6, 1.8, 1.4); c.add(L); const G = ator(c, GUI16CASA, .2, 1.2, 0);
   return (t, u, C) => { const x = smooth(2.2, 2.5, u); X.scale.setScalar(x < .01 ? .001 : x); X.rotation.z = .1 * Math.sin(t * 3); const ph = smooth(3.6, 4.2, u); tel.scale.setScalar(.3 + .7 * ph); tel.rotation.y = -.3 + .3 * Math.sin(t); L.intensity = 6 * ph;
     G.pose({ ...idle(t), headY: lerp(-40, 40, smooth(1.5, 4.5, u)) }); rosto(G, null, t, 'neutro', { look: [lerp(-.6, .6, smooth(1.5, 4.5, u)), 0] });
-    cam(C, [[0, [-2.0, 2.2, 7.4]], [2.6, [-1.2, 2.0, 6.6]], [5.6, [1.6, 2.0, 6.4]]], [[0, [-2.6, 1.5, 0]], [2.6, [-2.2, 1.5, 0]], [5.6, [2.0, 1.5, 0]]], u); return { bloom: .4, bloomT: .8 }; }; }); }
+    cam(C, [[0, [-2.0, 2.4, 7.4]], [2.6, [-1.4, 2.4, 6.8]], [5.6, [1.6, 2.2, 6.4]]], [[0, [-2.6, 2.1, 0]], [2.6, [-2.4, 2.2, 0]], [5.6, [2.0, 1.8, 0]]], u); return { bloom: .4, bloomT: .8 }; }; }); }
 function F3(t0, t1) { return mk(t0, t1, {}, (c) => { palco(c, { c1: '#1A1A2A', c2: '#2A2A40' }); const Co = cofre(); c.add(Co); const K = chave(); c.add(K); const cad = cadeado(); cad.position.set(0, 2.3, .9); c.add(cad); cad.visible = false; const XX = xis(); XX.position.set(0, 1.25, 1.7); c.add(XX); const B = brilho(c, [0, .9, .4], { cor: '#FFC060', size: 3, n: 40, alt: 2 });
   const Lr = new THREE.PointLight('#FF3A2A', 0, 6, 1.6); Lr.position.set(0, 1.6, 2); c.add(Lr);
   return (t, u, C) => { const entra = smooth(0, .9, u), abre = smooth(1.0, 1.6, u) * (1 - smooth(2.2, 2.5, u)), cai = smooth(1.9, 2.6, u);
