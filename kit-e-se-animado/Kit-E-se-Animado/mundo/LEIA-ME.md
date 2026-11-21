@@ -30,9 +30,10 @@ Pedra Alta é uma cidade do interior de São Paulo **inventada**. Ela foi feita 
 ## O que funciona sozinho
 
 - **Hora do dia:** céu, sol, sombras, pôr do sol e noite com estrelas. À noite acendem os postes, as luzes das casas, os letreiros e os refletores.
-- **Carros e ônibus** andam pelas ruas na mão certa. Param no semáforo vermelho, não batem um no outro e fazem curva nas esquinas. O ônibus para no ponto.
+- **Carros e ônibus** andam pelas ruas na mão certa. Param na linha antes da faixa quando o sinal fecha, entram um de cada vez nos cruzamentos e não batem um no outro. O ônibus para no ponto. **Se um personagem atravessa a rua, os carros param para ele passar.** Isso foi testado com 10 minutos de trânsito simulado: nenhuma batida, ninguém passou no vermelho e nenhum carro ficou travado.
 - **Pedestres** andam nas calçadas.
 - **Figurantes:** atendentes nas lojas, pessoas sentadas na praça, na igreja e no hospital, e alunos na escola.
+- **A câmera nunca fica com boneco colado na lente:** pedestre ou figurante que passa grudado na câmera some naquele instante.
 - **Personagens desviam de tudo:** quando um personagem anda, ele mesmo acha o caminho. Desvia de parede, móvel, carro e árvore, passa pelas portas e atravessa a rua pela faixa. **As portas abrem sozinhas** quando alguém chega perto.
 - **Coisas que se mexem:**
   - as TVs trocam de canal;
@@ -65,6 +66,10 @@ export const CENAS = [
   }),
 ];
 ```
+
+**Importante:** mande os personagens andarem (`C.andar`) dentro da função da cena, como no exemplo acima. Assim os carros já sabem por onde eles vão passar.
+
+Cada vista e cada lugar foram testados com uma conferência automática. Ela olha se algum figurante ficou dentro de móvel ou parede, se algum lugar de chegada caiu em cima de alguma coisa e se dá para andar de um lugar a outro. Para rodar de novo, abra `ver.html?vista=casaFrente&checar=casaFamilia.portao,casaFamilia.sala` no navegador.
 
 ## Vistas prontas
 

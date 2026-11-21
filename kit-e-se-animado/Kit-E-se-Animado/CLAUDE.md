@@ -10,3 +10,5 @@ Esta pasta é um kit para criar vídeos verticais animados no estilo "E se...?".
 Nunca gere voz. A voz é sempre a pessoa que grava ou gera no ElevenLabs.
 Fale com a pessoa em português simples. Ela provavelmente nunca programou.
 Não altere `tools/` nem `.claude/skills/e-se-animado/motor/`, a não ser que a pessoa peça.
+
+Cenários prontos: a cidade 3D **Pedra Alta** fica em `mundo/`. Veja `mundo/LEIA-ME.md`: tem casas mobiliadas, centro, escola, hospital, trânsito, pedestres, portas que abrem sozinhas e vistas prontas. Use `cenaCidade()` de `mundo/cidade/video.js` para filmar dentro dela.
