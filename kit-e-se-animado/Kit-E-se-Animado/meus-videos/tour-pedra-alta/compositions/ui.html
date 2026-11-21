@@ -1,0 +1,41 @@
+<template>
+<style>
+@font-face{font-family:'Fraunces';src:url('assets/fonts/fraunces-black.ttf');font-weight:900}
+#root{position:absolute;inset:0}
+.lg{position:absolute;left:70px;bottom:80px;opacity:0}
+.lg .n{font:900 74px Fraunces;color:#fff;text-shadow:0 4px 0 #0008,0 0 26px #000a;letter-spacing:.01em}
+.lg .s{font:700 34px Inter;color:#FFE7B8;text-shadow:0 2px 0 #000a,0 0 14px #000c;margin-top:4px}
+.lg .b{width:120px;height:8px;background:#F2C230;border-radius:4px;margin-bottom:14px}
+</style>
+<div id="root" data-composition-id="ui" data-width="1920" data-height="1080">
+<div class="lg" id="l0"><div class="b"></div><div class="n">PEDRA ALTA</div><div class="s">a cidade dos vídeos</div></div>
+<div class="lg" id="l1"><div class="b"></div><div class="n">AVENIDA BRASIL</div><div class="s">carros param no semáforo</div></div>
+<div class="lg" id="l2"><div class="b"></div><div class="n">PRAÇA DA MATRIZ</div><div class="s">coreto, fonte e parquinho</div></div>
+<div class="lg" id="l3"><div class="b"></div><div class="n">IGREJA MATRIZ</div><div class="s">por dentro</div></div>
+<div class="lg" id="l4"><div class="b"></div><div class="n">RUA DAS FLORES</div><div class="s">a casa da família</div></div>
+<div class="lg" id="l5"><div class="b"></div><div class="n">A SALA</div><div class="s">portas abrem sozinhas</div></div>
+<div class="lg" id="l6"><div class="b"></div><div class="n">O QUARTO</div></div>
+<div class="lg" id="l7"><div class="b"></div><div class="n">PADARIA PÃO DA SERRA</div></div>
+<div class="lg" id="l8"><div class="b"></div><div class="n">A ESCOLA</div><div class="s">sala de aula</div></div>
+<div class="lg" id="l9"><div class="b"></div><div class="n">SANTA CASA</div><div class="s">sala de espera</div></div>
+<div class="lg" id="l10"><div class="b"></div><div class="n">O LAGO</div><div class="s">fim de tarde</div></div>
+<div class="lg" id="l11"><div class="b"></div><div class="n">A PRAÇA À NOITE</div><div class="s">tudo aceso</div></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo("#l0",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},0.4);tl.to("#l0",{opacity:0,duration:.4},6.199999999999999);
+tl.fromTo("#l1",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},7.3);tl.to("#l1",{opacity:0,duration:.4},13.2);
+tl.fromTo("#l2",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},14.3);tl.to("#l2",{opacity:0,duration:.4},20.200000000000003);
+tl.fromTo("#l3",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},21.3);tl.to("#l3",{opacity:0,duration:.4},26.200000000000003);
+tl.fromTo("#l4",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},27.3);tl.to("#l4",{opacity:0,duration:.4},36.2);
+tl.fromTo("#l5",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},37.3);tl.to("#l5",{opacity:0,duration:.4},43.2);
+tl.fromTo("#l6",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},44.3);tl.to("#l6",{opacity:0,duration:.4},49.2);
+tl.fromTo("#l7",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},50.3);tl.to("#l7",{opacity:0,duration:.4},55.2);
+tl.fromTo("#l8",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},56.3);tl.to("#l8",{opacity:0,duration:.4},61.2);
+tl.fromTo("#l9",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},62.3);tl.to("#l9",{opacity:0,duration:.4},67.19999999999999);
+tl.fromTo("#l10",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},68.3);tl.to("#l10",{opacity:0,duration:.4},74.19999999999999);
+tl.fromTo("#l11",{opacity:0,x:-30},{opacity:1,x:0,duration:.5,ease:"power3.out"},75.3);tl.to("#l11",{opacity:0,duration:.4},83);
+tl.set({}, {}, 84);
+window.__timelines["ui"]=tl;
+</script>
+</template>

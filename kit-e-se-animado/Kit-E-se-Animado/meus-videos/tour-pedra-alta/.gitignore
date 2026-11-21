@@ -1,0 +1,4 @@
+assets/audio/*.wav
+node_modules/
+renders/
+partes/
