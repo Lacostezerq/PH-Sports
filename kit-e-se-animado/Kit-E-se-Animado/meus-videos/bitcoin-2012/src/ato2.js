@@ -69,7 +69,7 @@ function E6(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoDia(c); con
   return (t, u, C) => { G.pose(sentado({ shR: [60, 10], elR: 70 + 10 * Math.sin(t * 6), shL: [50, 10], elL: 60, headX: 25, lean: 8 })); rosto(G, null, t, 'determinado', { look: [.3, .8] }); pote.rotation.z = .4 * smooth(.2, .8, u);
     cam(C, [[0, [-.8, 1.3, -3.0]], [1.8, [-1.1, 1.2, -3.4]]], [[0, [-2.8, .75, -4.6]], [1.8, [-2.8, .75, -4.6]]], u); return {}; }; }); }
 function E7(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoDia(c); const N = []; for (let i = 0; i < 32; i++) { const n = cartaz(.16, .08, (x, W, H) => { x.fillStyle = ['#7AC4A0', '#E8B86A', '#9FB4E8'][i % 3]; x.fillRect(0, 0, W, H); txt(x, ['R$ 50', 'R$ 20', 'R$ 10'][i % 3], W / 2, H / 2, H * .45, '#1B1420'); }, { basic: true }); n.rotation.x = -Math.PI / 2; n.rotation.z = i * .7; c.add(n); N.push(n); }
-  return (t, u, C) => { N.forEach((n, i) => { const f = clamp((u - i * .04) * 3, 0, 1); n.position.set(-3.6 + (i % 6) * .13 + (i % 2) * .03, .67 + f * 0 + .002 * i + (1 - f) * .8, -4.4 + Math.floor(i / 6) * .12); n.visible = f > 0; });
+  return (t, u, C) => { N.forEach((n, i) => { const f = clamp((u + .14 - i * .026) * 3.2, 0, 1); n.position.set(-3.6 + (i % 6) * .13 + (i % 2) * .03, .67 + f * 0 + .002 * i + (1 - f) * .8, -4.4 + Math.floor(i / 6) * .12); n.visible = f > 0; });
     cam(C, [[0, [-2.4, 1.6, -3.6]], [2.2, [-2.7, 1.4, -3.9]]], [[0, [-3.3, .65, -4.2]], [2.2, [-3.3, .65, -4.15]]], u); return {}; }; }); }
 function quartoPai(c) { const Q = quartoDia(c); const G = ator(c, GUI16CASA, -.8, -3.6, .7); const M = ator(c, MARCOS, 1.2, -1.6, -2.3); return { Q, G, M }; }
 function E8(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, G, M } = quartoPai(c); Q.vg.visible = false;

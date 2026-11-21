@@ -130,6 +130,7 @@ export function makeChar3D(o = {}) {
   // cabeça
   const headG = new THREE.Group(); headG.position.y = .38; torsoG.add(headG);
   const head = add(headG, new THREE.SphereGeometry(R, LOD ? 24 : 48, LOD ? 16 : 32), pele, [0, R * .86, 0]);
+  head.receiveShadow = false; // rosto sem sombra projetada: evita listras e manchas escuras na cara
   for (const k of [-1, 1]) { const e = add(headG, new THREE.SphereGeometry(.055, 16, 12), pele, [k * R * .96, R * .82, -.01]); e.scale.set(.6, 1, .9); }
   const fcv = document.createElement('canvas'); fcv.width = FACE.W >> LOD; fcv.height = FACE.H >> LOD; const fctx = fcv.getContext('2d'); if (LOD) fctx.scale(.5, .5); const ftex = new THREE.CanvasTexture(fcv); ftex.colorSpace = THREE.SRGBColorSpace; ftex.anisotropy = 8;
   const faceM = new THREE.MeshToonMaterial({ map: ftex, gradientMap: toon('#fff').gradientMap, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -4, polygonOffsetUnits: -4 });
@@ -151,12 +152,12 @@ export function makeChar3D(o = {}) {
   }
   if (o.cabelo === 'topete') { // curto nas laterais com topete pra frente
     add(hair, new THREE.SphereGeometry(R * 1.03, 40, 28, 0, Math.PI * 2, 0, 1.45), hc, [0, .03, -.05]);
-    add(hair, new THREE.SphereGeometry(R * 1.04, 48, 32, 0, Math.PI * 2, 0, 1.8), hc, [0, .025, -.05], .008); // cabelo de trás: esfera deslocada p/ trás, linha do cabelo lisa e arredondada
+    add(hair, new THREE.SphereGeometry(R * 1.035, 48, 32, Math.PI + .18, Math.PI - .36, 0, 2.3), hc, [0, 0, 0], .008); // nuca: só a metade de trás, desce até o pescoço (não encosta no rosto)
     for (let i = 0; i < 5; i++) { const q = add(hair, new THREE.ConeGeometry(.085, .22, 10), hc, [(i - 2) * .075, .27 - Math.abs(i - 2) * .02, .12 - Math.abs(i - 2) * .02], .008); q.rotation.set(1.05, 0, -(i - 2) * .22); }
     const top = add(hair, new THREE.SphereGeometry(.16, 18, 12), hc, [0, .26, .05], .008); top.scale.set(1.2, .6, 1.1);
   } else if (o.cabelo === 'curto') { // corte baixo (grisalho nas laterais se corCabelo2)
     add(hair, new THREE.SphereGeometry(R * 1.025, 40, 28, 0, Math.PI * 2, 0, 1.3), hc, [0, .025, -.03]);
-    add(hair, new THREE.SphereGeometry(R * 1.04, 48, 32, 0, Math.PI * 2, 0, 1.8), o.corCabelo2 || hc, [0, .025, -.05], .008); // cabelo de trás: esfera deslocada p/ trás, linha do cabelo lisa e arredondada
+    add(hair, new THREE.SphereGeometry(R * 1.03, 48, 32, Math.PI + .18, Math.PI - .36, 0, 2.25), o.corCabelo2 || hc, [0, 0, 0], .008); // nuca: só a metade de trás, desce até o pescoço (não encosta no rosto)
   } else if (o.cabelo === 'chanel') { // corte chanel com franja
     add(hair, new THREE.SphereGeometry(R * 1.06, 40, 28), hc, [0, .05, -.07]);
     for (const k of [-1, 1]) { const l = add(hair, new THREE.SphereGeometry(.2, 20, 14), hc, [k * .25, -.12, -.06]); l.scale.set(.55, 1.15, 1); }
