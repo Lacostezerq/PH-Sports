@@ -6,7 +6,7 @@ import { paraMundo } from './util.js';
 // [lote, câmera [x,y,z], alvo [x,y,z], fov, hora, descrição]
 const V = {
   // ---- casa da família ----
-  casaFrente:     ['casaFamilia', [-3.5, 2.4, 18.5], [.8, 1.8, 5.5], 44, 15, 'Fachada da casa da família vista da Rua das Flores'],
+  casaFrente:     ['casaFamilia', [-3.5, 2.6, 24.3], [.4, 1.8, 5.5], 40, 15, 'Fachada da casa da família vista da Rua das Flores'],
   portao:         ['casaFamilia', [-.2, 1.6, 13.5], [-2.6, 1.3, 7], 45, 15, 'Portão e garagem com o carro'],
   sala:           ['casaFamilia', [-1.6, 1.6, 5.15], [-1.6, .95, 1.6], 62, 15, 'Sala: sofá, TV, estante, ventilador'],
   salaTV:         ['casaFamilia', [-.6, 1.3, 2.4], [-4.4, .9, 3.8], 50, 20, 'Sala vista do lado da TV (sofá de frente)'],
@@ -25,7 +25,7 @@ const V = {
   coreto:         ['praca', [-9, 2.2, 19], [0, 2.8, 11], 45, 17.5, 'Coreto'],
   fonte:          ['praca', [5.5, 1.3, 7], [0, 1.2, 1.5], 45, 11, 'Fonte da praça'],
   parquinho:      ['praca', [-10.5, 1.65, 20.8], [-14.5, .9, 12], 55, 16, 'Parquinho'],
-  avenida:        [null, [-2, 1.7, 3.2], [-60, 2, -2], 45, 15, 'Avenida Brasil com as lojas'],
+  avenida:        [null, [-2, 6, 0], [-60, 1.2, 0], 45, 15, 'Avenida Brasil com as lojas'],
   padaria:        ['padaria', [2.6, 1.65, 9], [-1.5, 1.1, 0], 58, 7.5, 'Dentro da padaria'],
   padariaFrente:  ['padaria', [1.5, 1.6, 17], [0, 2.6, 10], 45, 7.5, 'Fachada da padaria'],
   farmacia:       ['farmacia', [3.2, 1.65, 9], [-1, 1.1, -1], 58, 15, 'Dentro da farmácia'],
@@ -53,7 +53,7 @@ const V = {
   cidadeAerea:    [null, [210, 150, 230], [0, 0, 0], 45, 15, 'A cidade inteira de cima'],
   pedraAlta:      [null, [36, 30, -112], [60, 135, -540], 42, 16.5, 'A Pedra Alta vista da cidade'],
   lago:           [null, [5, 3, 178], [-35, 6, 132], 50, 17.4, 'Orla do lago vista da água: deck, quiosques, palmeiras e a cidade atrás'],
-  ruaDasFlores:   [null, [-90, 1.7, 63], [-40, 2, 64], 45, 15, 'Rua das Flores (rua da casa da família)'],
+  ruaDasFlores:   [null, [-89, 5, 60], [-40, 1.2, 61.5], 45, 15, 'Rua das Flores (rua da casa da família)'],
   noitePraca:     ['praca', [22, 6, 28], [0, 2.5, 6], 45, 20.5, 'Praça à noite, com tudo aceso'],
 };
 let LOTES = null;

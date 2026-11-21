@@ -7,10 +7,12 @@ import { RUA, CALC, MEIOFIO, XS, ZS, NOMES_X, NOMES_Z, qx, qz, SEMAFOROS, PONTOS
 
 /** Fase do semáforo no tempo t. eixo 'x' = carros andando no eixo x (ruas leste-oeste). Ciclo de 32 s. */
 export function sinal(t, eixo, ox = 0, oz = 0) {
-  const c = ((t + (ox + oz) * .05) % 32 + 32) % 32; // pequena defasagem entre cruzamentos
-  if (eixo === 'x') return c < 13 ? 'verde' : c < 16 ? 'amarelo' : 'vermelho';
-  return c < 16 ? 'vermelho' : c < 29 ? 'verde' : c < 32 ? 'amarelo' : 'vermelho';
+  const c = ((t + (ox + oz) * .05) % 32 + 32) % 32; // pequena defasagem entre cruzamentos; meio segundo de "todos vermelhos" na troca
+  if (eixo === 'x') return c < 12 ? 'verde' : c < 15.5 ? 'amarelo' : 'vermelho';
+  return c < 16 ? 'vermelho' : c < 28 ? 'verde' : c < 31.5 ? 'amarelo' : 'vermelho';
 }
+/** Quantos segundos ainda faltam de amarelo (0 se não está amarelo). */
+export function restoAmarelo(t, eixo, ox = 0, oz = 0) { const c = ((t + (ox + oz) * .05) % 32 + 32) % 32; return eixo === 'x' ? (c >= 12 && c < 15.5 ? 15.5 - c : 0) : (c >= 28 && c < 31.5 ? 31.5 - c : 0); }
 
 const AMARELO = '#F2C230', BRANCO = '#F4F1EA';
 export function ruas(C) {

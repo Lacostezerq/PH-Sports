@@ -3,7 +3,7 @@
 // (o mesmo quadro sempre fica igual, como o vídeo precisa).
 import * as THREE from 'three';
 import { XS, ZS, RUA, MEIOFIO, SEMAFOROS, qx, qz } from './mapa.js';
-import { sinal } from './ruas.js';
+import { sinal, restoAmarelo } from './ruas.js';
 import { carro } from './moveis.js';
 import { onibusParado } from './publicos.js';
 import { fundir, tm, bx, sph, cyl, rb } from './util.js';
@@ -15,7 +15,9 @@ const FAIXA = 2.5, VMAX = 8.5, VCURVA = 4.2, DT = .1, PARA = 7.2;
 
 /** Rota fechada de carro passando pelos cruzamentos dados ([[col,lin],...] = índices em XS/ZS). */
 function rota(nos) {
-  const P = nos.map(([i, j]) => [XS[i], ZS[j]]), pts = [], curva = [];
+  // inclui todos os cruzamentos do caminho (não só as esquinas onde vira), para o carro ver cada semáforo
+  const todos = []; for (let k = 0; k < nos.length; k++) { const [i0, j0] = nos[k], [i1, j1] = nos[(k + 1) % nos.length]; const n = Math.max(Math.abs(i1 - i0), Math.abs(j1 - j0)); for (let m = 0; m < n; m++) todos.push([i0 + Math.sign(i1 - i0) * m, j0 + Math.sign(j1 - j0) * m]); }
+  const P = todos.map(([i, j]) => [XS[i], ZS[j]]), pts = [], curva = [];
   const n = P.length;
   for (let s = 0; s < n; s++) {
     const A = P[s], B = P[(s + 1) % n], Cc = P[(s + 2) % n];
@@ -36,6 +38,7 @@ function amostra(R, s) { s = ((s % R.tot) + R.tot) % R.tot; let lo = 0, hi = R.p
 
 export function montarVida(C, o = {}) {
   const foco = C.foco, perto = (x, z, r) => Math.hypot(x - foco[0], z - foco[1]) < r;
+  C._perto = []; // pedestres e figurantes: somem se ficarem colados na câmera (nunca aparece boneco cortado na frente da lente)
   // ---------------- TRÂNSITO ----------------
   const ROTAS = [
     rota([[0, 0], [5, 0], [5, 4], [0, 4]]),               // volta na cidade inteira (horário)
@@ -51,25 +54,44 @@ export function montarVida(C, o = {}) {
   // simulação passo a passo (guardada para qualquer tempo pedido)
   const hist = []; let tSim = -30; const estado = () => carros.map(c => [c.s, c.v]);
   const pos = carros.map(() => null);
+  // cada cruzamento só tem um carro por vez (reserva); semáforo vermelho = para na faixa
+  const reserva = new Map(); const chave = (B) => B[0] + ',' + B[1];
+  const FREIO = 4.5;
   const passo = (t) => {
     for (const c of carros) { const p = amostra(ROTAS[c.r], c.s); c._p = p; }
+    // libera a reserva de quem já saiu do cruzamento
+    for (const [k, id] of reserva) { const c = carros[id], [X, Z] = k.split(',').map(Number); const R = ROTAS[c.r], nb = R.pts[(c._p.i + 1) % R.pts.length][2]; if (Math.hypot(c._p.x - X, c._p.z - Z) > PARA + .6 && !(nb && nb[0] === X && nb[1] === Z)) reserva.delete(k); }
     for (const c of carros) {
       const Rr = ROTAS[c.r], p = c._p, comp = c.onibus ? 12 : 4.2;
       let alvo = Rr.curva[p.i] || Rr.curva[(p.i + 6) % Rr.pts.length] ? VCURVA : VMAX; if (c.onibus) alvo *= .8;
-      // semáforo à frente
-      const aFrente = Rr.pts[(p.i + 1) % Rr.pts.length][2];
-      if (aFrente) { const B = aFrente; const sem = SEMAFOROS.some(([x, z]) => x === B[0] && z === B[1]);
-        if (sem) { const eixo = Math.abs(Math.sin(p.ang)) > .7 ? 'x' : 'z'; const f = sinal(t, eixo, B[0], B[1]); const d = Math.hypot(B[0] - p.x, B[1] - p.z) - PARA - comp / 2 + 1.6;
-          if (f !== 'verde' && d > -.5 && d < 30) { if (!(f === 'amarelo' && d < 4)) alvo = Math.min(alvo, Math.max(0, d) * .55); } } }
-      // carro (ou ônibus) na frente
       const hx = Math.sin(p.ang), hz = Math.cos(p.ang);
+      // carro mais perto na frente, na mesma faixa
+      let frente = Infinity; for (const q of carros) { if (q === c) continue; const dx = q._p.x - p.x, dz = q._p.z - p.z, fr = dx * hx + dz * hz, lat = Math.abs(-dx * hz + dz * hx); if (fr > 0 && fr < 40 && lat < 2.0 && Math.cos(q._p.ang - p.ang) > .5) frente = Math.min(frente, fr - (comp + (q.onibus ? 12 : 4.2)) / 2); }
+      const B = Rr.pts[(p.i + 1) % Rr.pts.length][2];
+      if (B) { // chegando num cruzamento
+        const dLinha = Math.hypot(B[0] - p.x, B[1] - p.z) - (RUA / 2 + 4.6) - comp / 2; // quanto falta para a frente do carro chegar na linha de parada (antes da faixa de pedestre)
+        const parar = () => { alvo = Math.min(alvo, Math.sqrt(2 * FREIO * Math.max(0, dLinha - .2))); };
+        const sem = SEMAFOROS.some(([x, z]) => x === B[0] && z === B[1]);
+        const k = chave(B), minha = reserva.get(k) === c.id;
+        if (!minha && dLinha < 40) {
+          let pode = true;
+          if (sem) { const eixo = Math.abs(hx) > .7 ? 'x' : 'z'; const f = sinal(t, eixo, B[0], B[1]); if (f === 'vermelho' || (f === 'amarelo' && (dLinha + comp + 9) / Math.max(c.v, 1) > restoAmarelo(t, eixo, B[0], B[1]))) pode = false; } // no amarelo só entra se dá tempo de atravessar
+          if (reserva.has(k)) pode = false;
+          if (frente < dLinha + 3) pode = false; // tem carro na frente esperando: ele entra primeiro
+          if (pode) { const E = amostra(Rr, c.s + dLinha + comp + 2 * PARA + 4); for (const q of carros) if (q !== c && q.v < 1.5 && Math.cos(q._p.ang - E.ang) > .7 && Math.hypot(q._p.x - E.x, q._p.z - E.z) < comp / 2 + 3.5) pode = false; } // não entra se não tem espaço do outro lado
+          if (pode && dLinha < Math.max(2.5, c.v * c.v / (2 * FREIO) + 2)) reserva.set(k, c.id); // entra: reserva o cruzamento
+          else if (!pode) parar();
+        }
+      }
+      // carro (ou ônibus) na frente, na mesma faixa
       for (const q of carros) { if (q === c) continue; const dx = q._p.x - p.x, dz = q._p.z - p.z, fr = dx * hx + dz * hz, lat = Math.abs(-dx * hz + dz * hx);
-        const folga = fr - (comp + (q.onibus ? 12 : 4.2)) / 2 - 1.8; if (fr > 0 && fr < 26 && lat < 1.9) { if (q._espera === c && c.id < q.id) continue; alvo = Math.min(alvo, Math.max(0, folga) * .8); if (folga < 2) c._espera = q; } }
+        const mesmaMao = Math.cos(q._p.ang - p.ang) > .5, colado = fr - (comp + (q.onibus ? 12 : 4.2)) / 2 < 1.2 && lat < 1.6;
+        if (fr > 0 && fr < 30 && ((lat < 2.0 && mesmaMao) || colado)) { const folga = fr - (comp + (q.onibus ? 12 : 4.2)) / 2 - 2.0; alvo = Math.min(alvo, Math.sqrt(2 * FREIO * Math.max(0, folga)) + Math.min(q.v, Math.max(0, folga))); } }
       // gente atravessando a rua na frente: o carro para
-      for (const A of C.andantes) { if (A.calcada || A.desligado) continue; const q = A.pos(t); const dx = q[0] - p.x, dz = q[1] - p.z, fr = dx * hx + dz * hz, lat = Math.abs(-dx * hz + dz * hx); if (fr > 0 && fr < 14 && lat < 2.4) alvo = Math.min(alvo, Math.max(0, fr - comp / 2 - 1.5) * .7); }
-      if (c.onibus) { for (const pt of C.pontosOnibus || []) { const d = Math.hypot(pt[0] - p.x, pt[1] - p.z); const fase = ((t + 400) % 90); if (d < 14 && fase < 9) alvo = Math.min(alvo, Math.max(0, d - 1) * .5); } }
-      c.v += Math.max(-6 * DT, Math.min(2.4 * DT, alvo - c.v)); c.v = Math.max(0, c.v); }
-    for (const c of carros) { c.s += c.v * DT; c._espera = null; }
+      for (const A of C.andantes) { if (A.calcada || A.desligado) continue; const q = A.pos(t); const dx = q[0] - p.x, dz = q[1] - p.z, fr = dx * hx + dz * hz, lat = Math.abs(-dx * hz + dz * hx); if (fr > 0 && fr < 16 && lat < 2.4) alvo = Math.min(alvo, Math.sqrt(2 * FREIO * Math.max(0, fr - comp / 2 - 1.8))); }
+      if (c.onibus) { for (const pt of C.pontosOnibus || []) { const d = (pt[0] - p.x) * hx + (pt[1] - p.z) * hz; const fase = ((t + 400) % 90); if (Math.hypot(pt[0] - p.x, pt[1] - p.z) < 16 && d > -1 && fase < 9) alvo = Math.min(alvo, Math.sqrt(2 * FREIO * Math.max(0, d))); } }
+      c.v += Math.max(-7 * DT, Math.min(2.4 * DT, alvo - c.v)); c.v = Math.max(0, c.v); }
+    for (const c of carros) c.s += c.v * DT;
   };
   const ate = (t) => { while (tSim < t) { hist.push(estado()); passo(tSim); tSim += DT; } };
   const estadoEm = (t) => { ate(t + DT); const k = (t + 30) / DT, i = Math.max(0, Math.min(hist.length - 2, Math.floor(k))), u = k - i; return hist[i].map((a, n) => [a[0] + (hist[i + 1][n][0] - a[0]) * u, a[1]]); };
@@ -82,6 +104,7 @@ export function montarVida(C, o = {}) {
     f.traverse(m => { if (m.material && m.material.emissive && m.material.color && m.material.color.getHexString() === 'fff6d8') { C.acender(m.material, 2.5); } });
     C.cena.add(f); return f; });
   C.vivos.push((t) => { const E = estadoEm(t); E.forEach(([s, v], n) => { const c = carros[n], p = amostra(ROTAS[c.r], s), g = objs[n]; g.position.set(p.x, 0, p.z); g.rotation.y = p.ang; for (const r of g.userData.rodas) r.rotation.x = s / .34; }); });
+  C.carros_debug = (t) => { ate(t); return { carros: carros.map(c => ({ id: c.id, r: c.r, x: +c._p.x.toFixed(1), z: +c._p.z.toFixed(1), v: +c.v.toFixed(2), ang: +c._p.ang.toFixed(2) })), reserva: [...reserva] }; };
   C.carros = { pos: (n, t) => { const E = estadoEm(t); const p = amostra(ROTAS[carros[n].r], E[n][0]); return [p.x, p.z, p.ang]; }, n: carros.length, objs };
 
   // ---------------- PEDESTRES NAS CALÇADAS ----------------
@@ -100,13 +123,13 @@ export function montarVida(C, o = {}) {
     const onde = (s) => { s = ((s % per) + per) % per; const f = s / .5, n0 = Math.floor(f) % N, n1 = (n0 + 1) % N, u = f - Math.floor(f); return base(s, r + suave[n0] * (1 - u) + suave[n1] * u); };
     const A = { pos: (t) => onde(s0 + sentido * vel * t), desligado: false, calcada: true }; C.andantes.push(A);
     C.vivos.push((t) => { const p = onde(s0 + sentido * vel * t), q = onde(s0 + sentido * vel * (t + .4)); k.place(p[0], p[1], MEIOFIO, Math.atan2(q[0] - p[0], q[1] - p[1])); k.pose(walk(t + i, 1.7, .9)); k.face({ emo: 'neutro', blink: (t * .37 + i * .13) % 1 < .04 ? 1 : 0 }); });
-    peds.push(k);
+    peds.push(k); C._perto.push(k);
   }
   // ---------------- FIGURANTES (só perto da câmera) ----------------
   const lista = (C.figurantes || []).filter(F => F.nivel === 'perto').sort((a, b) => Math.hypot(a.x - foco[0], a.z - foco[1]) - Math.hypot(b.x - foco[0], b.z - foco[1]));
   let nf = 0; for (const F of lista) { if (nf >= (o.figurantes ?? 30)) break; nf++;
     const k = povo(nf * 5 + 1, F.roupa || {}); k.seed = nf; C.cena.add(k.root);
-    if (F.sentado) { k.place(F.x, F.z, F.y + (F.assento ?? .46) - .28, F.ry); k.sombra.visible = false; } else k.place(F.x, F.z, F.y, F.ry);
+    if (F.sentado) { k.place(F.x, F.z, F.y + (F.assento ?? .46) - .28, F.ry); k.sombra.visible = false; } else k.place(F.x, F.z, F.y, F.ry); C._perto.push(k);
     C.vivos.push((t) => { if (F.sentado) k.pose({ ...sentado, ...(F.pose || {}), headX: Math.sin(t * .7 + nf) * 3 }); else k.pose({ ...idle(t, nf), ...(F.pose || {}) }); k.face({ emo: F.emo || 'neutro', blink: (t * .41 + nf * .17) % 1 < .04 ? 1 : 0, look: [Math.sin(t * .3 + nf) * .6, 0] }); });
   }
   // ---------------- PASSARINHOS ----------------

@@ -68,12 +68,16 @@ export function porta(ctx, nome, cx, cz, emX, w = .82, o = {}) {
   return P;
 }
 
+let VP = null;
+/** Vidro visto de longe (com cortina). Metade das janelas acende à noite. Materiais reaproveitados para ficar leve. */
+function vidroLonge(C, seed, cortina) { const VL = C._vl || (C._vl = new Map()); const k = (Math.abs(Math.round(seed)) % 8) + cortina; if (!VL.has(k)) { const t = vidroTex(Math.abs(Math.round(seed)) % 8, cortina); const acesa = (Math.abs(Math.round(seed)) % 8) < 4; const m = new THREE.MeshToonMaterial({ map: t, emissive: '#FFC870', emissiveMap: t, emissiveIntensity: 0 }); if (acesa && C) C.acender(m, .9); VL.set(k, m); } return VL.get(k); }
+function vidroPerto() { if (!VP) VP = new THREE.MeshToonMaterial({ color: '#BFDDF0', transparent: true, opacity: .28, depthWrite: false, side: THREE.DoubleSide }); return VP; }
 /** Janela: moldura, vidro (transparente perto; com cortina e reflexo de longe), grade opcional e cortina de pano do lado de dentro. */
 export function janela(ctx, cx, cz, emX, w, y0, y1, o = {}) {
   const t = o.t ?? .14; batente(ctx, cx, cz, emX, w, y0, y1, t, o.moldura || '#F4F1EA');
   const h = y1 - y0, cy = (y0 + y1) / 2;
   const longe = ctx.nivel !== 'perto';
-  const mat = longe ? toonTex(vidroTex(o.seed || 0, o.cortina || '#F3E3C0')) : new THREE.MeshToonMaterial({ color: '#BFDDF0', transparent: true, opacity: .28, depthWrite: false, side: THREE.DoubleSide });
+  const mat = longe ? vidroLonge(ctx.cidade, o.seed || 0, o.cortina || '#F3E3C0') : vidroPerto();
   const v = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat); v.position.set(cx, cy, cz); if (!emX) v.rotation.y = Math.PI / 2; if (o.virar) v.rotation.y += Math.PI; v.castShadow = false; ctx.add(v);
   if (longe && !o.duplo) { const v2 = v.clone(); v2.rotation.y += Math.PI; ctx.add(v2); }
   // caixilho (divisão do vidro)

@@ -45,6 +45,7 @@ export function montarCidade(cena, o = {}) {
   C.atualizar = (t, cam) => {
     if (o.horaAnda) C.hora((o.hora ?? 15) + t * o.horaAnda / 3600);
     for (const f of C.vivos) f(t);
+    if (cam && C._perto) for (const k of C._perto) { const p = k.root.position; k.root.visible = Math.hypot(p.x - cam.position.x, p.z - cam.position.z) > 2.4 || Math.abs(p.y + 1 - cam.position.y) > 2.2; }
     if (cam) { const d = new THREE.Vector3(); cam.getWorldDirection(d); const k = Math.max(6, Math.min(40, cam.position.y * 1.2 + 10)); C.focar(cam.position.x + d.x * k, cam.position.z + d.z * k); C.ceu.position.copy(cam.position); }
   };
   // se o vídeo usa o atalho mk() do kit, a cidade se atualiza sozinha

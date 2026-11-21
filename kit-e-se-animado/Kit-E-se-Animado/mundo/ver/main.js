@@ -5,6 +5,7 @@ import { Stage, makeShot } from '../base/core.js';
 import { FX } from '../base/toon.js';
 import { montarCidade, VISTAS } from '../cidade/index.js';
 import { GUI30 } from '../base/elenco.js';
+import { sinal } from '../cidade/ruas.js';
 import { makeChar3D } from '../base/char3d.js';
 const q = new URLSearchParams(location.search), n = (k, d) => q.has(k) ? +q.get(k) : d;
 const v = VISTAS[q.get('vista')] || null;
@@ -27,4 +28,5 @@ s.update = (t) => { C.atualizar(t, s.camera); return FX({}); };
 if (q.get('livre')) { const oc = new OrbitControls(s.camera, st.r.domElement); oc.target.set(...alvo); oc.update(); let t = T; const go = () => { t += 1 / 30; st.render(t); requestAnimationFrame(go); }; go(); }
 else { st.render(T); }
 window.__info = { check: window.__check, malhas: info, colisores: C.colisores.length, ms: Math.round(performance.now() - t0), draw: st.r.info.render.calls, tri: st.r.info.render.triangles };
+if (q.get('expor')) { window.__C = C; window.__sinal = sinal; }
 window.pronto = true;
