@@ -535,6 +535,14 @@
    "texto": "Um exame do coração. Ele paga."
   },
   {
+   "tipo": "fato",
+   "lado": "direita",
+   "inicio": 275.3,
+   "fim": 278.4,
+   "titulo": "A RESPOSTA DO PAI",
+   "texto": "Não vai fazer o exame."
+  },
+  {
    "tipo": "pill",
    "inicio": 278.55,
    "fim": 282.4,
