@@ -2,6 +2,10 @@
 
 Pedra Alta é uma cidade do interior de São Paulo **inventada**. Ela foi feita para servir de cenário em qualquer vídeo do kit. Fica guardada nesta pasta (`mundo/`) e vai junto para o GitHub.
 
+![Lugares de Pedra Alta](fotos/pedra-alta-lugares.jpg)
+
+O vídeo-tour da cidade está em `meus-videos/tour-pedra-alta/` (o arquivo de vídeo não vai para o GitHub por ser grande; para gerar de novo, use o HyperFrames nessa pasta).
+
 ## O que tem na cidade
 
 **Mapa:** 5 x 4 quadras, com ruas com nome, calçadas, faixas de pedestre, postes, placas de rua, semáforos e pontos de ônibus. Em volta:

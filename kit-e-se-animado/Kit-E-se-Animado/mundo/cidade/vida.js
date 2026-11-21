@@ -122,7 +122,8 @@ export function montarVida(C, o = {}) {
     const suave = new Float32Array(N); for (let n = 0; n < N; n++) { let m = 0; for (let k = -6; k <= 6; k++) { const v = off[(n + k + N) % N]; if (Math.abs(v) > Math.abs(m)) m = v * (1 - Math.abs(k) / 7); } suave[n] = m; }
     const onde = (s) => { s = ((s % per) + per) % per; const f = s / .5, n0 = Math.floor(f) % N, n1 = (n0 + 1) % N, u = f - Math.floor(f); return base(s, r + suave[n0] * (1 - u) + suave[n1] * u); };
     const A = { pos: (t) => onde(s0 + sentido * vel * t), desligado: false, calcada: true }; C.andantes.push(A);
-    C.vivos.push((t) => { const p = onde(s0 + sentido * vel * t), q = onde(s0 + sentido * vel * (t + .4)); k.place(p[0], p[1], MEIOFIO, Math.atan2(q[0] - p[0], q[1] - p[1])); k.pose(walk(t + i, 1.7, .9)); k.face({ emo: 'neutro', blink: (t * .37 + i * .13) % 1 < .04 ? 1 : 0 }); });
+    const desvia = (p, t) => { for (const A of C.andantes) { if (A.calcada || A.desligado) continue; const o = A.pos(t), dx = p[0] - o[0], dz = p[1] - o[1], d = Math.hypot(dx, dz); if (d < 1.4 && d > 1e-4) { const f = (1.4 - d) / d; p = [p[0] + dx * f, p[1] + dz * f]; } } return p; }; // abre espaço para quem está andando
+    C.vivos.push((t) => { const p = desvia(onde(s0 + sentido * vel * t), t), q = onde(s0 + sentido * vel * (t + .4)); k.place(p[0], p[1], MEIOFIO, Math.atan2(q[0] - p[0], q[1] - p[1])); k.pose(walk(t + i, 1.7, .9)); k.face({ emo: 'neutro', blink: (t * .37 + i * .13) % 1 < .04 ? 1 : 0 }); });
     peds.push(k); C._perto.push(k);
   }
   // ---------------- FIGURANTES (só perto da câmera) ----------------
