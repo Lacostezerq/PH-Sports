@@ -54,8 +54,8 @@ function A6(t0, t1) { return mk(t0, t1, {}, (c) => { const P = perseguicao(c);
     cam(C, [[0, [-2.2, 1.6, gz - 4.2]], [4.3, [-2.85, 1.48, gz - 1.6]]], [[0, [-3, 1.25, gz]], [4.3, [-3, 1.42, gz]]], u); return {}; }; }); }
 
 // ---------- B: 2026 e a briga ----------
-function B1(t0, t1) { return mk(t0, t1, { bg: '#121A3A' }, (c) => { avenida(c, { hora: 'noite', seed: 31, detalhes: false }); const B = brilho(c, [0, 14, -60], { cor: '#9FD6FF', size: 40, n: 40, ps: 4, alt: 20 });
-  return (t, u, C) => { B(u, .4 * (1 - smooth(1.5, 3.2, u)));
+function B1(t0, t1) { return mk(t0, t1, { bg: '#121A3A' }, (c) => { avenida(c, { hora: 'noite', seed: 31, detalhes: false });
+  return (t, u, C) => {
     cam(C, [[0, [0, 3, 20]], [3.2, [-3, 18, -26]]], [[0, [0, 10, -60]], [3.2, [-16, 17, -50]]], u); return { ...NOITE, bloom: .6, bloomT: .7 }; }; }); }
 function B2(t0, t1) { return mk(t0, t1, { bg: '#1E2648' }, (c) => { const A = apartamento(c); const G = ator(c, GUI30, 0, 0); sentar(G, -1.4, -4.36, 0, .5);
   A.nb.userData.sc.paint('p', (x, W, H) => { x.fillStyle = '#F4F6F8'; x.fillRect(0, 0, W, H); x.fillStyle = '#2C6E7F'; x.fillRect(0, 0, W, 40); txt(x, 'RELATÓRIO_FINAL_v7.xlsx', W / 2, 21, 20, '#fff', 700); x.fillStyle = '#C8D2D6'; for (let i = 0; i < 12; i++) x.fillRect(20, 60 + i * 20, W - 40, 10); });
@@ -69,9 +69,11 @@ function B4(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinha
   return (t, u, C) => { const g = Math.sin(t * 3.1); G.pose({ ...idle(t), shR: [40 + 25 * Math.max(0, g), 20], elR: 60, shL: [20, 10], elL: 40, lean: 6, headX: -6 }); rosto(G, null, t, 'bravo', { mouth: { open: .35 + .3 * Math.abs(Math.sin(t * 7)) } });
     M.pose({ ...idle(t, 1), shL: [55, -10], shR: [55, -10], elL: 110, elR: 110, headY: -10 + 8 * Math.sin(t * .8) }); rosto(M, null, t, 'bravo', { mouth: u > 3.2 && u < 5 ? { open: .4 + .3 * Math.abs(Math.sin(t * 6)) } : undefined });
     cam(C, [[0, [3.0, 1.65, .6]], [5.8, [2.3, 1.5, -.3]]], [[0, [.6, 1.15, -3.4]], [5.8, [.7, 1.2, -3.4]]], u); return SEPIA; }; }); }
-function B5(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinhaBriga(c); K.porta.rotation.y = 0;
+function B5(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinhaBriga(c); K.porta.rotation.y = Math.PI / 2;
+  const fora = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 2.15), new THREE.MeshBasicMaterial({ color: '#FFFFFF', toneMapped: false })); fora.rotation.y = Math.PI / 2; fora.position.set(-5.885, 1.08, -1.7); c.add(fora); // vão da porta: luz da rua lá fora
+  for (const z of [-1.16, -2.24]) c.add(bx(.1, 2.25, .08, '#6E4628', -5.93, 1.12, z)); c.add(bx(.1, .08, 1.16, '#6E4628', -5.93, 2.22, -1.7)); // batente
   return (t, u, C) => { const sai = smooth(.2, 3.4, u); const x = lerp(-.4, -6.9, sai), z = lerp(-2.2, -1.7, sai); G.root.position.set(x, 0, z); G.root.rotation.y = u < .3 ? 2.3 : Math.atan2(-4.9, .45);
-    G.pose(u < .3 ? idle(t) : walk(t, 1.9, 1)); rosto(G, null, t, 'bravo'); const ab = smooth(2.3, 2.8, u); K.porta.rotation.y = -1.3 * ab; G.root.visible = x > -6.5;
+    G.pose(u < .3 ? idle(t) : walk(t, 1.9, 1)); rosto(G, null, t, 'bravo'); const ab = smooth(1.9, 2.6, u); K.porta.rotation.y = Math.PI / 2 + 1.45 * ab; G.root.visible = x > -6.6;
     M.pose({ ...idle(t, 1), shL: [55, -10], shR: [55, -10], elL: 110, elR: 110, headY: -30 * sai }); rosto(M, null, t, 'bravo', { look: [-.6 * sai, 0] });
     cam(C, [[0, [1.6, 1.6, .2]], [4.1, [2.6, 1.7, -.4]]], [[0, [-1.5, 1.2, -2.6]], [4.1, [-4.4, 1.2, -1.9]]], u); return SEPIA; }; }); }
 function B6(t0, t1) { return mk(t0, t1, {}, (c) => { const { K, M, G } = cozinhaBriga(c); G.root.visible = false;
@@ -89,7 +91,7 @@ function C1(t0, t1) { return mk(t0, t1, {}, (c) => { const K = casaFamilia(c, { 
   return (t, u, C) => { R.pose({ ...idle(t), shL: [140, -28], shR: [140, -28], elL: 120, elR: 120, headX: -24, lean: -6 }); rosto(R, 'regina', t, 'bravo', { look: [0, -.7] });
     cam(C, [[0, [-2.3, 1.35, -1.7]], [3.8, [-2.8, 1.3, -2.1]]], [[0, [-4.6, 1.2, -2.9]], [3.8, [-4.6, 1.25, -2.9]]], u); return { flash: .9 * (1 - smooth(0, .5, u)) }; }; }); }
 function C2(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoTeen(c); const G = ator(c, GUI16CASA, 0, 0); G.root.position.set(-3.75, .48, -4.9); G.sombra.visible = false; G.root.rotation.y = Math.PI / 2;
-  return (t, u, C) => { const lev = smooth(0, 1.3, u); G.pose({ ...sentado({ knL: 8, knR: 8, hipL: [85, 0], hipR: [85, 0] }), lean: -82 * (1 - lev), shL: [25, 25], shR: [25, 25], elL: 30, elR: 30, headX: 10 * (1 - lev), headY: 40 * Math.sin(u * .8) * smooth(1.3, 1.9, u) });
+  return (t, u, C) => { const lev = smooth(0, 1.3, u); G.root.position.x = lerp(-3.15, -3.75, lev); /* deitado mais pra frente: a cabeça fica no travesseiro, não dentro da parede */ G.pose({ ...sentado({ knL: 8, knR: 8, hipL: [85, 0], hipR: [85, 0] }), lean: -82 * (1 - lev), shL: [25, 25], shR: [25, 25], elL: 30, elR: 30, headX: 10 * (1 - lev), headY: 40 * Math.sin(u * .8) * smooth(1.3, 1.9, u) });
     rosto(G, null, t, u < 1.4 ? 'sono' : 'surpreso', { look: [Math.sin(u * .8) * .7, -.1] });
     cam(C, [[0, [-1.6, 1.5, -3.2]], [1.6, [-1.6, 1.5, -3.3]], [2.6, [-1.1, 1.8, -4.4]], [3.6, [-1.1, 1.85, -4.7]], [4.4, [-2.7, 1.0, -5.0]], [5.3, [-2.95, .9, -5.2]]], [[0, [-3.6, 1.0, -4.9]], [1.6, [-3.6, 1.05, -4.9]], [2.6, [-1.2, 1.95, -6.37]], [3.6, [-1.2, 1.95, -6.37]], [4.4, [-3.55, .55, -6.05]], [5.3, [-3.55, .52, -6.05]]], u); return {}; }; }); }
 function C3(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quartoTeen(c); const G = ator(c, GUI16CASA, 3.1, -1.5, Math.PI / 2);
