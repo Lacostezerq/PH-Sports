@@ -22,7 +22,7 @@ function N2(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, R, S, pilha } = 
     R.pose({ ...idle(t), shR: [70 + 30 * Math.sin(t * 3), 10], elR: 40, shL: [60, 10], elL: 50, lean: 12 }); rosto(R, null, t, 'determinado');
     cam(C, [[0, [3.5, 1.55, -1.3]], [6.5, [3.6, 1.45, -1.6]]], [[0, [2.75, 1.0, -2.8]], [6.5, [2.75, .95, -2.7]]], u); return {}; }; }); }
 function N3(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, R, S, pilha } = quartoFaxina(c); pilha.forEach(k => k.visible = false); Q.cadLista.visible = false; const K = caderno(); c.add(K);
-  return (t, u, C) => { const f = smooth(.4, 2.6, u); K.position.set(lerp(2.95, 2.7, f), lerp(1.2, .75, f), lerp(-2.6, -2.2, f)); K.rotation.set(-.6 - f * .8, .3, .2); K.visible = f < .97; S.scale.set(.9, 1.1 - .1 * smooth(2.8, 3.4, u), .9);
+  return (t, u, C) => { const f = smooth(.4, 2.6, u); K.position.set(lerp(3.02, 2.72, f), lerp(1.0, .74, f), lerp(-2.45, -2.2, f)); K.rotation.set(-.6 - f * .8, .3, .2); K.visible = f < .97; S.scale.set(.9, 1.1 - .1 * smooth(2.8, 3.4, u), .9);
     R.pose({ ...idle(t), shR: [90 - 40 * f, 10], elR: 30, lean: 10 }); rosto(R, null, t, 'neutro', { look: [-.3, .4] });
     cam(C, [[0, [1.3, 1.7, -.4]], [4.5, [1.5, 1.55, -.7]]], [[0, [2.75, .95, -2.6]], [4.5, [2.7, .75, -2.3]]], u); return {}; }; }); }
 
@@ -46,7 +46,7 @@ function O4(t0, t1) { return mk(t0, t1, {}, (c) => { const { G } = ruaFinal(c);
     cam(C, [[0, [-2.0, 1.4, -17.4]], [4.3, [-2.3, 1.35, -18.2]]], [[0, [-3, 1.1, -20]], [4.3, [-3, 1.15, -20]]], u); return {}; }; }); }
 function O5(t0, t1) { return mk(t0, t1, {}, (c) => { const { G } = ruaFinal(c); G.root.rotation.y = Math.PI - 2.6;
   return (t, u, C) => { G.pose({ ...idle(t), lean: -10 + 6 * Math.sin(t * 9), shL: [40, 30], shR: [40, 30], headX: -15 + 5 * Math.sin(t * 9) }); rosto(G, null, t, u > 3.4 ? 'feliz' : 'rindo', { mouth: u < 3.4 ? { open: .6 + .3 * Math.sin(t * 12) } : { open: .2, smile: 1 }, lagrima: u > 3.4 });
-    cam(C, [[0, [-1.6, 1.3, -18.6]], [5.3, [2, 9, -8]]], [[0, [-3, 1.15, -20]], [5.3, [-3, 1, -30]]], u); return { bloom: .35 }; }; }); }
+    cam(C, [[0, [-1.6, 1.3, -18.6]], [5.3, [.4, 3.4, -14.2]]], [[0, [-3, 1.15, -20]], [5.3, [-3.2, .75, -22]]], u); return { bloom: .35 }; }; }); }
 
 // ---------- P: o churrasco de 2026 ----------
 function churras(c, o = {}) { const Q = quintal(c, o); const M = ator(c, MARCOSCHURRAS, 3.2, -5.6, Math.PI - .3); const G = ator(c, GUICHURRAS, 1.6, -4.6, 2.0); const R = ator(c, REGINA, 0, 0); sentar(R, -2.6, -2.5, Math.PI, .48);
@@ -96,7 +96,7 @@ function Q4(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = mesa
 function Q5(t0, t1) { return mk(t0, t1, {}, (c) => { const { Q, M, G, R } = mesaFamilia(c); const cups = [M, G, R].map(k => { const x = xicara(['#E2443A', '#F4F1EA', '#2E6FB8'][k === M ? 0 : k === G ? 1 : 2]); k.hands.R.add(x); x.position.set(0, -.06, .05); return x; });
   return (t, u, C) => { const br = smooth(1.0, 1.6, u); [M, G, R].forEach((k, i) => { k.pose(sentado({ shR: [lerp(40, 110, br), lerp(10, 55, br) + 10 * Math.sin(t * 7 + i) * br], elR: lerp(90, 25, br), headX: -10 * br })); rosto(k, null, t, 'rindo', { mouth: { open: .4 + .3 * Math.sin(t * 8 + i) } }); });
     cam(C, [[0, [-1.6, 1.55, -.2]], [6.4, [-1.6, 1.45, -1.0]]], [[0, [-1.6, 1.2, -4.2]], [6.4, [-1.6, 1.3, -4.2]]], u); return { bloom: .35 }; }; }); }
-function Q6(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quintal(c, { tarde: true }); const M = ator(c, MARCOSCHURRAS, -.5, -3.6, 1.1); const G = ator(c, GUICHURRAS, .22, -3.24, -2.04); const R = ator(c, REGINA, -1.2, -2.85, .9);
+function Q6(t0, t1) { return mk(t0, t1, {}, (c) => { const Q = quintal(c, { tarde: true }); const M = ator(c, MARCOSCHURRAS, -.5, -3.6, 1.1); const G = ator(c, GUICHURRAS, .42, -3.14, -2.04); const R = ator(c, REGINA, -1.2, -2.85, .9);
   return (t, u, C) => { const ab = smooth(.3, 1.4, u); M.pose({ ...idle(t), shL: [lerp(10, 80, ab), lerp(8, -40, ab)], elL: 60, shR: [lerp(10, 70, ab), -30 * ab], elR: 60 }); G.pose({ ...idle(t), shL: [lerp(10, 80, ab), -40 * ab], elL: 60, shR: [lerp(10, 80, ab), -40 * ab], elR: 60 }); R.pose({ ...idle(t), shR: [70 * ab, -30 * ab], elR: 50 });
     rosto(M, null, t, 'feliz', { lagrima: true }); rosto(G, null, t, 'feliz'); rosto(R, null, t, 'feliz');
     cam(C, [[0, [1.6, 1.4, 1.2]], [5.14, [2.6, 3.4, 4.6]]], [[0, [-.3, 1.2, -3.4]], [5.14, [-.3, 1.3, -3.6]]], u); return { bloom: .45, exposure: 1 - .5 * smooth(4.2, 5.14, u) }; }; }); }
