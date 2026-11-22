@@ -200,9 +200,10 @@ export const DIA7 = [
     return (t, u, c) => { const v = smooth(486.4, 487.0, t);
       g.pose({ ...sentado, shR: [60, 5], elR: 80, shL: [20, 10], elL: 30, headX: 14 }); rosto(g, null, t, v > .5 ? 'feliz' : 'neutro', { smile: v, look: [0, .7] }); P.anima(t, { sentado: true, abana: true, feliz: true, olhar: [.5, .4] });
       const h = cel.getWorldPosition(new THREE.Vector3()); const gh = g.headG.getWorldPosition(new THREE.Vector3());
-      const n = new THREE.Vector3(0, 0, 1).applyQuaternion(cel.getWorldQuaternion(new THREE.Quaternion())); const ph = h.clone().addScaledVector(n, .36); ph.y += .03;
-      const uu = u / 6.2; if (uu < .52) cam(c, [[0, [gh.x + 2.0, 1.85, gh.z - .5]], [1, [gh.x + 1.7, 1.8, gh.z - .35]]], [[0, [gh.x, gh.y - .3, gh.z]], [1, [gh.x, gh.y - .25, gh.z]]], uu / .52); else cam(c, [ph.x, ph.y, ph.z], [h.x, h.y, h.z], 0);
-      return { focus: uu < .52 ? 1.9 : .34, range: .4, blur: 7 };
+      const uu = u / 6.2; if (uu < .52 && cel.parent === C.cena) { g.hold(cel, 'R'); cel.rotation.set(-1.0, Math.PI, 0); cel.position.set(0, .03, .08); }
+      if (uu >= .52 && cel.parent !== C.cena) { g.root.updateMatrixWorld(true); C.cena.attach(cel); const n0 = new THREE.Vector3(0, 0, 1).applyQuaternion(cel.quaternion); cel.position.addScaledVector(n0, .22); cel.rotateZ(Math.PI); }
+      const n = new THREE.Vector3(0, 0, 1).applyQuaternion(cel.getWorldQuaternion(new THREE.Quaternion())); h.copy(cel.getWorldPosition(new THREE.Vector3())); const ph = h.clone().addScaledVector(n, .42); ph.y += .03; if (uu < .52) cam(c, [[0, [gh.x + 2.0, 1.85, gh.z - .5]], [1, [gh.x + 1.7, 1.8, gh.z - .35]]], [[0, [gh.x, gh.y - .3, gh.z]], [1, [gh.x, gh.y - .25, gh.z]]], uu / .52); else cam(c, [ph.x, ph.y, ph.z], [h.x, h.y, h.z], 0);
+      return { focus: uu < .52 ? 1.9 : .42, range: .4, blur: 7 };
     };
   }),
   // BN — "agora passa pra frente": a frase aparece no fim do bilhete
@@ -250,14 +251,14 @@ export const DIA7 = [
   }),
   // BP4 — e guarda uma linguiça pro Paçoca (fim)
   cena(521.2, 525.5, { ...OQ, hora: 7.5 }, (C) => {
-    ventiladorQuarto(C); const P = pacoca(1.0); C.cena.add(P.g); const [px, pz] = casa(3.0, 3.3); P.g.position.set(px, PISO, pz); P.g.rotation.y = Math.PI / 2;
+    ventiladorQuarto(C); const P = pacoca(1.0); C.cena.add(P.g); const [px, pz] = casa(3.0, 3.75); P.g.position.set(px, PISO, pz); P.g.rotation.y = -.4;
     const ln = linguica(); ln.scale.setScalar(2.2); C.cena.add(ln);
-    const g = ator(C, GUIPIJ, px + .7, pz + .1, -Math.PI / 2); g.root.visible = true;
+    const g = ator(C, GUIPIJ, px + .7, pz + .1, -Math.PI / 2 + .5); g.root.visible = true;
     return (t, u, c) => { const da = smooth(521.4, 522.3, t), pega = t > 522.4;
       g.pose({ ...idle(t), shR: [60 - 20 * da, 10], elR: 20, lean: 18 * da, headX: 10 }); rosto(g, null, t, 'feliz', { smile: 1, look: [0, .7] });
       const h = g.hands.R.getWorldPosition(new THREE.Vector3()); if (!pega) { ln.position.copy(h); ln.position.y -= .04; } else { const bp = P.cab.getWorldPosition(new THREE.Vector3()); ln.position.set(bp.x + .14, bp.y - .05, bp.z); ln.rotation.set(0, 0, 0); }
       const pulo = t > 522.1 && t < 522.7 ? Math.sin((t - 522.1) / .6 * Math.PI) * .12 : 0; P.g.position.y = PISO + pulo; P.anima(t, { sentado: !pulo && !pega ? true : pega, abana: true, feliz: true, olhar: pega ? [0, 0] : [.3, -.4] });
-      cam(c, [[0, [px + 1.35, 1.3, pz + 1.0]], [1, [px + 1.25, 1.2, pz + .9]]], [px + .2, .6, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
+      cam(c, [[0, [px + .3, 1.5, pz + 1.95]], [1, [px + .35, 1.42, pz + 1.85]]], [px + .35, 1.0, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
     };
   }),
 ];

@@ -66,7 +66,7 @@ export const DIA5 = [
   // AT2 — pega a última coxinha da padaria (atendente parada no meio do movimento)
   cena(319.6, 321.9, { foco: [-43.5, -16], hora: 10, dentro: true, raio: 26, tempo: parado, fx: GELO }, (C) => {
     const [vx, vz] = [-43.5 + .5, -19 - 2 + 4.2 + 0]; // vitrine (balcão da padaria)
-    const g = ator(C, GUIRUA, vx + .2, vz + 1.0, 0); mochila(g); const cx = coxinha(); cx.scale.setScalar(2.2); C.cena.add(cx);
+    const g = ator(C, GUIRUA, vx + .2, vz + 1.0, Math.PI + .7); mochila(g); const cx = coxinha(); cx.scale.setScalar(2.2); C.cena.add(cx);
     return (t, u, c) => {
       const pega = smooth(320.2, 320.9, t), come = smooth(321.2, 321.6, t);
       g.pose({ ...idle(t), shR: [70 + 40 * come, 10], elR: 20 + 110 * come, lean: 10 * pega * (1 - come) }); rosto(g, null, t, come > .5 ? 'rindo' : 'feliz', { smile: 1, mouth: come > .5 ? { open: .5 + Math.sin(t * 14) * .3 } : undefined });
