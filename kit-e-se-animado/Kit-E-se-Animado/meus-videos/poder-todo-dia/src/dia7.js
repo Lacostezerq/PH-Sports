@@ -235,7 +235,7 @@ export const DIA7 = [
     return (t, u, c) => { const ac = Math.sin(t * 7); const aponta = t > 513.9;
       g.pose(aponta ? { ...idle(t), shR: [85, 5], elR: 10, shL: [10, 10] } : { ...idle(t), shR: [160, 25 + ac * 15], elR: 30 + ac * 20, shL: [10, 10] }); rosto(g, null, t, 'rindo', { smile: 1, look: [0, 0] });
       P.anima(t, { sentado: true, abana: true, feliz: true, olhar: [0, 0] });
-      cam(c, [[0, [cx - 1.55, 1.35, cz - .25]], [1, [cx - 1.35, 1.3, cz - .2]]], [cx + .2, 1.05, cz - .25], u / 6.3); return { focus: 1.9, range: 1.5, blur: 5 };
+      cam(c, [[0, [cx - 1.85, 1.5, cz - .25]], [1, [cx - 1.65, 1.45, cz - .2]]], [cx + .2, 1.42, cz - .25], u / 6.3); return { focus: 1.9, range: 1.5, blur: 5 };
     };
   }),
   // BP3 — acordar colado no teto... e descer com cuidado (cai na cama: boing)
@@ -258,7 +258,7 @@ export const DIA7 = [
       g.pose({ ...idle(t), shR: [60 - 20 * da, 10], elR: 20, lean: 18 * da, headX: 10 }); rosto(g, null, t, 'feliz', { smile: 1, look: [0, .7] });
       const h = g.hands.R.getWorldPosition(new THREE.Vector3()); if (!pega) { ln.position.copy(h); ln.position.y -= .04; } else { const bp = P.cab.getWorldPosition(new THREE.Vector3()); ln.position.set(bp.x + .14, bp.y - .05, bp.z); ln.rotation.set(0, 0, 0); }
       const pulo = t > 522.1 && t < 522.7 ? Math.sin((t - 522.1) / .6 * Math.PI) * .12 : 0; P.g.position.y = PISO + pulo; P.anima(t, { sentado: !pulo && !pega ? true : pega, abana: true, feliz: true, olhar: pega ? [0, 0] : [.3, -.4] });
-      cam(c, [[0, [px + .3, 1.5, pz + 1.95]], [1, [px + .35, 1.42, pz + 1.85]]], [px + .35, 1.0, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
+      cam(c, [[0, [px + .3, 1.62, pz + 1.95]], [1, [px + .35, 1.55, pz + 1.85]]], [px + .35, 1.18, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
     };
   }),
 ];
