@@ -36,6 +36,7 @@ function liberar(s) {
  * o.vista / o.foco / o.hora / o.raio / o.vida ... = opções de montarCidade.
  * o.mover = [[segundos, 'nomeDaVista' ou {cam,alvo}], ...] câmera passando por vistas (tempo relativo ao começo da cena).
  * o.fx = efeitos de cor (ex.: { tint: '#D6DEFF' }).
+ * o.tempo = (t) => tempo da cidade (ex.: () => 300 congela carros, água e pessoas da cidade).
  * monta(C, shot) pode devolver upd(t, u, cam) chamado a cada quadro (t = tempo do vídeo, u = tempo dentro da cena).
  */
 export function cenaCidade(t0, t1, o = {}, monta) {
@@ -53,8 +54,8 @@ export function cenaCidade(t0, t1, o = {}, monta) {
     const C = s.C, cam = s.camera;
     if (caminho) { const p = keys(caminho.map(k => [k[0], k[1]]), u), q = keys(caminho.map(k => [k[0], k[2]]), u), f = keys(caminho.map(k => [k[0], k[3]]), u); aim(cam, p, q); if (Math.abs(cam.fov - f) > .01) { cam.fov = f; cam.updateProjectionMatrix(); } }
     else if (v0) aim(cam, v0.cam, v0.alvo);
+    C.atualizar(o.tempo ? o.tempo(t) : t, cam); // o.tempo(t) permite congelar ou adiantar o relógio da cidade
     const r = upd ? upd(t, u, cam) || {} : {};
-    C.atualizar(t, cam);
     return FX({ ...(o.fx || {}), ...r });
   };
   return s;

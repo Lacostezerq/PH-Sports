@@ -1,0 +1,203 @@
+{
+ "duracao": 525.5,
+ "palavrasPorLegenda": 4,
+ "corVoz": {
+  "n": "#FFFFFF",
+  "gui": "#9FD8FF",
+  "marcos": "#FFC48A",
+  "regina": "#F7A8C8",
+  "dudu": "#C9A8FF",
+  "pacoca": "#FFD36B",
+  "vizinho": "#B8E6A0",
+  "chefe": "#D6D6D6"
+ },
+ "destaques": [
+  "6200",
+  "oitenta",
+  "nove",
+  "80%",
+  "100",
+  "20%",
+  "17%",
+  "nenhum",
+  "like",
+  "sininho",
+  "inteiro",
+  "sozinho"
+ ],
+ "elementos": [
+  {
+   "tipo": "capitulo",
+   "inicio": 52.5,
+   "fim": 55.7,
+   "numero": "DIA 1",
+   "texto": "VOAR",
+   "topo": 70
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 111.5,
+   "fim": 114.7,
+   "numero": "DIA 2",
+   "texto": "LER MENTES",
+   "topo": 70
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 174.9,
+   "fim": 178.1,
+   "numero": "DIA 3",
+   "texto": "FICAR INVISÍVEL",
+   "topo": 70
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 235.1,
+   "fim": 238.29999999999998,
+   "numero": "DIA 4",
+   "texto": "FALAR COM OS ANIMAIS",
+   "topo": 70
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 292.4,
+   "fim": 295.59999999999997,
+   "numero": "DIA 5",
+   "texto": "PARAR O TEMPO",
+   "topo": 70
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 371.2,
+   "fim": 374.4,
+   "numero": "DIA 6",
+   "texto": "VER O FUTURO",
+   "topo": 70
+  },
+  {
+   "tipo": "capitulo",
+   "inicio": 398.6,
+   "fim": 401.8,
+   "numero": "DOMINGO",
+   "texto": "NENHUM PODER",
+   "topo": 70
+  },
+  {
+   "tipo": "fato",
+   "inicio": 116.2,
+   "fim": 124.6,
+   "titulo": "PESQUISA NO CANADÁ",
+   "valor": "6.200",
+   "texto": "pensamentos por dia",
+   "lado": "direita",
+   "topo": 300
+  },
+  {
+   "tipo": "fato",
+   "inicio": 238.0,
+   "fim": 246.6,
+   "titulo": "ESTUDO COM CACHORROS",
+   "valor": "~89",
+   "texto": "palavras e frases que eles entendem",
+   "lado": "direita",
+   "topo": 300
+  },
+  {
+   "tipo": "like",
+   "inicio": 303.3,
+   "fim": 312.9,
+   "clique": 306.2,
+   "texto": "DEIXA SEU LIKE",
+   "depois": "VALEU!",
+   "topo": 120
+  },
+  {
+   "tipo": "fato",
+   "inicio": 378.1,
+   "fim": 383.5,
+   "titulo": "QUANTO A PREVISÃO ACERTA",
+   "lado": "direita",
+   "topo": 280,
+   "barras": [
+    {
+     "rotulo": "Previsão",
+     "valor": 80,
+     "texto": "80%",
+     "cor": "#7FB8E8",
+     "t": 380.1
+    },
+    {
+     "rotulo": "Guilherme",
+     "valor": 100,
+     "texto": "100%",
+     "cor": "#FFB43A",
+     "t": 382.3
+    }
+   ]
+  },
+  {
+   "tipo": "fato",
+   "inicio": 424.4,
+   "fim": 437.4,
+   "titulo": "QUE PODER VOCÊ ESCOLHERIA?",
+   "lado": "direita",
+   "topo": 260,
+   "fonte": "pesquisa nos Estados Unidos",
+   "barras": [
+    {
+     "rotulo": "Viajar no tempo",
+     "valor": 29,
+     "texto": "29%",
+     "cor": "#8E5BB8",
+     "t": 428.5
+    },
+    {
+     "rotulo": "Ler mentes",
+     "valor": 20,
+     "texto": "20%",
+     "cor": "#C8608A",
+     "t": 430.4
+    },
+    {
+     "rotulo": "Voar",
+     "valor": 17,
+     "texto": "17%",
+     "cor": "#3E7CC8",
+     "t": 432.7
+    },
+    {
+     "rotulo": "Nenhum",
+     "valor": 0,
+     "texto": "ninguém",
+     "cor": "#FFB43A",
+     "t": 434.3
+    }
+   ]
+  },
+  {
+   "tipo": "pergunta",
+   "inicio": 503.4,
+   "fim": 511.2,
+   "titulo": "COMENTA AQUI",
+   "texto": "Qual poder você escolheria pra sempre?",
+   "tOpcoes": 506.0,
+   "opcoes": [
+    "Voar",
+    "Ler mentes",
+    "Ficar invisível",
+    "Falar com animais",
+    "Parar o tempo",
+    "Ver o futuro",
+    "Nenhum"
+   ]
+  },
+  {
+   "tipo": "inscrever",
+   "inicio": 511.3,
+   "fim": 517.5,
+   "clique": 511.9,
+   "sino": 513.1,
+   "topo": 80
+  }
+ ]
+}

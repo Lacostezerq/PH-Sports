@@ -1,0 +1,9 @@
+assets/audio/*.wav
+node_modules/
+renders/
+partes/
+*.wav
+*.mp3
+*.npy
+renders/
+_ui_teste.html
