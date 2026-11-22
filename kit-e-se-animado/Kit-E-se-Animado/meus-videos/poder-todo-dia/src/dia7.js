@@ -43,7 +43,7 @@ function orbita(C, k, tIni) {
   const ics = PODERES.map(([n, tf]) => { const s = iconePoder(n); C.cena.add(s); return { s, tf }; });
   return (t, raio = .5) => { const h = k.headG.getWorldPosition(new THREE.Vector3());
     ics.forEach(({ s, tf }, i) => { const a = t * .7 + i / 5 * 6.283; const ap = smooth(tIni + i * .15, tIni + i * .15 + .4, t); const fala = smooth(tf - .1, tf + .15, t) * (1 - smooth(tf + .9, tf + 1.3, t));
-      s.position.set(h.x + Math.cos(a) * raio, h.y + .38 + Math.sin(a * 2) * .05, h.z + Math.sin(a) * raio); s.scale.setScalar((.26 + fala * .18) * ap * (1 + Math.sin(t * 3 + i) * .03)); s.material.opacity = ap; }); };
+      s.position.set(h.x + Math.cos(a) * raio, h.y + .62 + Math.sin(a * 2) * .05, h.z + Math.sin(a) * raio); s.scale.setScalar((.26 + fala * .18) * ap * (1 + Math.sin(t * 3 + i) * .03)); s.material.opacity = ap; }); };
 }
 /** Guilherme de barriga para baixo dentro de um suporte (para flutuar e cair). */
 function guiFlutuando(C, def = GUIPIJ) {
@@ -108,7 +108,7 @@ export const DIA7 = [
       const n = Math.round(smooth(439.3, 440.9, t) * 20) / 20; if (n !== ult) { b.setTex({ estado: 'rasgado', nenhum: n }); ult = n; }
       const esc = t > 439.2 && t < 441.0; const mexe = esc ? Math.sin(t * 22) * 4 : 0;
       if (t > 441.05) fala(g, 'gui', t, 'feliz', { shR: [70, 5], elR: 60 }, .5, { smile: .6 }); else { g.pose({ ...idle(t), shR: [78 + mexe, -8 + (n * 12)], elR: 62, headX: 6 }); rosto(g, null, t, 'neutro', { look: [.3, .3] }); }
-      cam(c, [[0, [EX - .45, 1.55, EZ + 1.0]], [1, [EX - .4, 1.5, EZ + .85]]], [EX - .2, 1.42, EZ + .05], u / 4.3); return { focus: .95, range: .6, blur: 8 };
+      cam(c, [[0, [EX - 1.25, 1.72, EZ + .95]], [1, [EX - 1.1, 1.68, EZ + .85]]], [EX - .1, 1.48, EZ + .1], u / 4.3); return { focus: 1.25, range: .8, blur: 7 };
     };
   }),
   // BG — pega o ônibus, do jeito normal (o ônibus chega e para; ele sobe)
@@ -182,14 +182,14 @@ export const DIA7 = [
       peca.rotation.set(0, -Math.PI / 2 + (1 - k) * 6, (1 - k) * 2.5); peca.visible = t > 472.4 && t < tA;
       if (t >= tA && !trocou) { b.setTex({ estado: 'inteiro', nenhum: 1 }); trocou = true; } if (t < tA && trocou) { b.setTex({ estado: 'rasgado', nenhum: 1 }); trocou = false; }
       luz(t, smooth(tA - .2, tA, t) * (1 - smooth(tA + .3, tA + 1.5, t)));
-      cam(c, [[0, [casa(3.6, 4.6)[0], 1.65, casa(3.6, 4.6)[1]]], [.4, [casa(3.3, 4.3)[0], 1.6, casa(3.3, 4.3)[1]]], [1, [EX - 1.6, 1.55, EZ + 1.3]]], [[0, [qx, 1.3, qz]], [.38, [EX - .8, 1.4, EZ]], [.45, [NOTA[0], 1.7, NOTA[2]]], [1, [NOTA[0], 1.5, NOTA[2]]]], u / 9.4); return { focus: 1.8, range: 1.5, blur: 6, bloom: .3 };
+      cam(c, [[0, [casa(3.6, 4.6)[0], 1.65, casa(3.6, 4.6)[1]]], [.4, [EX - 1.9, 1.62, EZ - .95]], [1, [EX - 1.45, 1.58, EZ - 1.1]]], [[0, [qx, 1.3, qz]], [.38, [EX - .8, 1.4, EZ]], [.45, [NOTA[0], 1.7, NOTA[2]]], [1, [NOTA[0], 1.5, NOTA[2]]]], u / 9.4); return { focus: 1.8, range: 1.5, blur: 6, bloom: .3 };
     };
   }),
   // BL — ele lê o bilhete inteiro em voz alta
   cena(478.3, 484.3, OQN, (C) => {
     ventiladorQuarto(C); espelhoBilhete(C, { estado: "inteiro", nenhum: 1 }); const g = ator(C, GUIPIJ, EX - .9, EZ - .2, Math.PI / 2);
     return (t, u, c) => { fala(g, 'gui', t, 'surpreso', { shL: [15, 10], shR: [25, 10], elR: 30 }, .6, { look: [0, .2] });
-      const h = g.headG.getWorldPosition(new THREE.Vector3()); cam(c, [[0, [EX - .3, 1.55, EZ - .5]], [1, [EX - .35, 1.55, EZ - .42]]], [[0, [h.x, h.y - .02, h.z]], [.5, [h.x, h.y - .02, h.z]], [.7, [NOTA[0], 1.45, NOTA[2]]], [1, [NOTA[0], 1.42, NOTA[2]]]], u / 6); return { focus: .9, range: .6, blur: 9 };
+      const h = g.headG.getWorldPosition(new THREE.Vector3()); cam(c, [[0, [EX - .25, 1.6, EZ - 1.15]], [1, [EX - .3, 1.58, EZ - 1.0]]], [[0, [h.x, h.y - .02, h.z]], [.5, [h.x, h.y - .02, h.z]], [.7, [NOTA[0], 1.45, NOTA[2]]], [1, [NOTA[0], 1.42, NOTA[2]]]], u / 6); return { focus: 1.1, range: .8, blur: 8 };
     };
   }),
   // BM — o que ajudou foi alguém que apareceu: ele sorri sentado na cama; mensagem do Dudu
@@ -200,7 +200,9 @@ export const DIA7 = [
     return (t, u, c) => { const v = smooth(486.4, 487.0, t);
       g.pose({ ...sentado, shR: [60, 5], elR: 80, shL: [20, 10], elL: 30, headX: 14 }); rosto(g, null, t, v > .5 ? 'feliz' : 'neutro', { smile: v, look: [0, .7] }); P.anima(t, { sentado: true, abana: true, feliz: true, olhar: [.5, .4] });
       const h = cel.getWorldPosition(new THREE.Vector3()); const gh = g.headG.getWorldPosition(new THREE.Vector3());
-      cam(c, [[0, [gh.x + 1.6, 1.4, gh.z - .3]], [.45, [gh.x + 1.2, 1.3, gh.z - .1]], [.6, [h.x + .3, h.y + .3, h.z - .05]], [1, [h.x + .26, h.y + .27, h.z - .04]]], [[0, [gh.x, gh.y - .2, gh.z]], [.45, [gh.x, gh.y - .1, gh.z]], [.6, [h.x, h.y, h.z]], [1, [h.x, h.y, h.z]]], u / 6.2); return { focus: lerp(1.6, .4, smooth(.45, .6, u / 6.2)), range: .5, blur: 8 };
+      const n = new THREE.Vector3(0, 0, 1).applyQuaternion(cel.getWorldQuaternion(new THREE.Quaternion())); const ph = h.clone().addScaledVector(n, .34); ph.y += .03;
+      const uu = u / 6.2; if (uu < .52) cam(c, [[0, [gh.x + 2.0, 1.35, gh.z - .5]], [1, [gh.x + 1.7, 1.3, gh.z - .35]]], [[0, [gh.x, gh.y - .35, gh.z]], [1, [gh.x, gh.y - .3, gh.z]]], uu / .52); else cam(c, [ph.x, ph.y, ph.z], [h.x, h.y, h.z], 0);
+      return { focus: uu < .52 ? 1.9 : .34, range: .4, blur: 7 };
     };
   }),
   // BN — "agora passa pra frente": a frase aparece no fim do bilhete
@@ -255,7 +257,7 @@ export const DIA7 = [
       g.pose({ ...idle(t), shR: [60 - 20 * da, 10], elR: 20, lean: 18 * da, headX: 10 }); rosto(g, null, t, 'feliz', { smile: 1, look: [0, .7] });
       const h = g.hands.R.getWorldPosition(new THREE.Vector3()); if (!pega) { ln.position.copy(h); ln.position.y -= .04; } else { const bp = P.cab.getWorldPosition(new THREE.Vector3()); ln.position.set(bp.x + .14, bp.y - .05, bp.z); ln.rotation.set(0, 0, 0); }
       const pulo = t > 522.1 && t < 522.7 ? Math.sin((t - 522.1) / .6 * Math.PI) * .12 : 0; P.g.position.y = PISO + pulo; P.anima(t, { sentado: !pulo && !pega ? true : pega, abana: true, feliz: true, olhar: pega ? [0, 0] : [.3, -.4] });
-      cam(c, [[0, [px + .3, .95, pz - 1.5]], [1, [px + .35, .85, pz - 1.25]]], [px + .35, .65, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
+      cam(c, [[0, [px + .3, 1.0, pz + 1.4]], [1, [px + .35, .9, pz + 1.2]]], [px + .35, .7, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
     };
   }),
 ];

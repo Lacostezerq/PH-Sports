@@ -53,13 +53,13 @@ export const DIA6 = [
   }),
   // AZ — três da tarde: o relógio do quarto marca 15h e a chuva começa na janela
   cena(365.6, 373.7, { foco: casa(2.6, 3.2), hora: 15, dentro: true, raio: 28, fx: { ...FX6, tint: '#E8EEF8' } }, (C) => {
-    const rg = relogioGrande(); const [rx, rz] = casa(4.63, 4.0); rg.position.set(rx, 2.05, rz); rg.rotation.y = -Math.PI / 2; C.cena.add(rg);
+    const rg = relogioGrande(); const [rx, rz] = casa(4.63, 4.5); rg.position.set(rx, 2.1, rz); rg.rotation.y = Math.PI / 2; C.cena.add(rg);
     const [jx0, jz0] = QUARTO.janela; const chove = chuva(C.cena, [jx0 - 3, jx0 + 3, -.5, 6, jz0 - 4, jz0 - .6], { n: 500 });
     const [jx, jz] = casa(3.95, 5.0); const g = ator(C, GUIRUA, jx, jz, casaRy(-Math.PI / 2));
     return (t, u, c) => {
       rg.hora(14 + 59 / 60 + smooth(366.2, 368.6, t) / 60); const k0 = smooth(369.3, 370.2, t); chove(t, k0 < .05 ? .001 : k0);
       const olha = smooth(368.8, 369.6, t); g.pose({ ...idle(t), shL: [35, 10], elL: 90, shR: [35, 10], elR: 90, headY: -55 * olha + 10 * (1 - olha) }); rosto(g, null, t, t < 369.3 ? 'tedio' : 'neutro', { look: [-.4 * olha, .1] });
-      const k = smooth(367.4, 369.2, t); const [ax, az] = casa(3.2, 5.3); cam(c, [[0, [casa(1.9, 3.4)[0], 1.7, casa(1.9, 3.4)[1]]], [1, [casa(2.1, 3.6)[0], 1.65, casa(2.1, 3.6)[1]]]], [lerp(rx, ax, k), lerp(2.05, 1.45, k), lerp(rz, az, k)], u / 8.1); return { focus: 2, range: 2, blur: 5 };
+      const k = smooth(367.4, 369.2, t); const [ax, az] = casa(3.2, 5.3); cam(c, [[0, [casa(1.9, 3.4)[0], 1.7, casa(1.9, 3.4)[1]]], [1, [casa(2.1, 3.6)[0], 1.65, casa(2.1, 3.6)[1]]]], [lerp(rx, ax, k), lerp(2.1, 1.45, k), lerp(rz, az, k)], u / 8.1); return { focus: 2, range: 2, blur: 5 };
     };
   }),
   // BA — nem a previsão do tempo acerta tanto: vista de fora, a chuva na frente e ele na janela
@@ -67,7 +67,7 @@ export const DIA6 = [
     const [jx0, jz0] = QUARTO.janela; const chove = chuva(C.cena, [jx0 - 4, jx0 + 4, -.5, 7, jz0 - 4.5, jz0 - .5], { n: 900 });
     const [jx, jz] = casa(2.6, 5.0); const g = ator(C, GUIRUA, jx, jz, casaRy(0));
     return (t, u, c) => { chove(t, 1); g.pose({ ...idle(t), shL: [40, 10], elL: 100, shR: [40, 10], elR: 100 }); rosto(g, null, t, 'neutro', { look: [Math.sin(t * .5) * .3, -.1] });
-      cam(c, [[0, [casa(3.55, 5.2)[0], 1.55, casa(3.55, 5.2)[1]]], [1, [casa(3.45, 4.95)[0], 1.55, casa(3.45, 4.95)[1]]]], [jx, 1.45, jz], u / 9.9); return { focus: .95, range: .8, blur: 8, sat: .85 }; };
+      const [w0x, w0z] = casa(3.9, 3.7), [w1x, w1z] = casa(3.6, 3.95), [lx2, lz2] = casa(2.45, 5.2); cam(c, [[0, [w0x, 1.65, w0z]], [1, [w1x, 1.6, w1z]]], [lx2, 1.4, lz2], u / 9.9); return { focus: 1.6, range: 1.2, blur: 6, sat: .85 }; };
   }),
   // BB1 — a visão do domingo: o Dudu sozinho na sala de espera (bordas brilhando)
   cena(383.6, 393.0, { foco: [52, -88], hora: 8.2, dentro: true, raio: 26, fx: VISAO }, (C) => {
