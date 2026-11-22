@@ -182,7 +182,7 @@ export const DIA7 = [
       peca.rotation.set(0, -Math.PI / 2 + (1 - k) * 6, (1 - k) * 2.5); peca.visible = t > 472.4 && t < tA;
       if (t >= tA && !trocou) { b.setTex({ estado: 'inteiro', nenhum: 1 }); trocou = true; } if (t < tA && trocou) { b.setTex({ estado: 'rasgado', nenhum: 1 }); trocou = false; }
       luz(t, smooth(tA - .2, tA, t) * (1 - smooth(tA + .3, tA + 1.5, t)));
-      cam(c, [[0, [casa(3.6, 4.6)[0], 1.65, casa(3.6, 4.6)[1]]], [.4, [EX - 1.9, 1.62, EZ - .95]], [1, [EX - 1.45, 1.58, EZ - 1.1]]], [[0, [qx, 1.3, qz]], [.38, [EX - .8, 1.4, EZ]], [.45, [NOTA[0], 1.7, NOTA[2]]], [1, [NOTA[0], 1.5, NOTA[2]]]], u / 9.4); return { focus: 1.8, range: 1.5, blur: 6, bloom: .3 };
+      cam(c, [[0, [casa(3.6, 4.6)[0], 1.65, casa(3.6, 4.6)[1]]], [.4, [EX - 1.4, 1.62, EZ - 1.4]], [1, [EX - .75, 1.58, EZ - 1.45]]], [[0, [qx, 1.3, qz]], [.38, [EX - .8, 1.4, EZ]], [.45, [NOTA[0], 1.7, NOTA[2]]], [1, [NOTA[0], 1.5, NOTA[2]]]], u / 9.4); return { focus: 1.8, range: 1.5, blur: 6, bloom: .3 };
     };
   }),
   // BL — ele lê o bilhete inteiro em voz alta
@@ -200,8 +200,8 @@ export const DIA7 = [
     return (t, u, c) => { const v = smooth(486.4, 487.0, t);
       g.pose({ ...sentado, shR: [60, 5], elR: 80, shL: [20, 10], elL: 30, headX: 14 }); rosto(g, null, t, v > .5 ? 'feliz' : 'neutro', { smile: v, look: [0, .7] }); P.anima(t, { sentado: true, abana: true, feliz: true, olhar: [.5, .4] });
       const h = cel.getWorldPosition(new THREE.Vector3()); const gh = g.headG.getWorldPosition(new THREE.Vector3());
-      const n = new THREE.Vector3(0, 0, 1).applyQuaternion(cel.getWorldQuaternion(new THREE.Quaternion())); const ph = h.clone().addScaledVector(n, .34); ph.y += .03;
-      const uu = u / 6.2; if (uu < .52) cam(c, [[0, [gh.x + 2.0, 1.35, gh.z - .5]], [1, [gh.x + 1.7, 1.3, gh.z - .35]]], [[0, [gh.x, gh.y - .35, gh.z]], [1, [gh.x, gh.y - .3, gh.z]]], uu / .52); else cam(c, [ph.x, ph.y, ph.z], [h.x, h.y, h.z], 0);
+      const n = new THREE.Vector3(0, 0, 1).applyQuaternion(cel.getWorldQuaternion(new THREE.Quaternion())); const ph = h.clone().addScaledVector(n, -.34); ph.y += .03;
+      const uu = u / 6.2; if (uu < .52) cam(c, [[0, [gh.x + 2.0, 1.85, gh.z - .5]], [1, [gh.x + 1.7, 1.8, gh.z - .35]]], [[0, [gh.x, gh.y - .3, gh.z]], [1, [gh.x, gh.y - .25, gh.z]]], uu / .52); else cam(c, [ph.x, ph.y, ph.z], [h.x, h.y, h.z], 0);
       return { focus: uu < .52 ? 1.9 : .34, range: .4, blur: 7 };
     };
   }),
@@ -257,7 +257,7 @@ export const DIA7 = [
       g.pose({ ...idle(t), shR: [60 - 20 * da, 10], elR: 20, lean: 18 * da, headX: 10 }); rosto(g, null, t, 'feliz', { smile: 1, look: [0, .7] });
       const h = g.hands.R.getWorldPosition(new THREE.Vector3()); if (!pega) { ln.position.copy(h); ln.position.y -= .04; } else { const bp = P.cab.getWorldPosition(new THREE.Vector3()); ln.position.set(bp.x + .14, bp.y - .05, bp.z); ln.rotation.set(0, 0, 0); }
       const pulo = t > 522.1 && t < 522.7 ? Math.sin((t - 522.1) / .6 * Math.PI) * .12 : 0; P.g.position.y = PISO + pulo; P.anima(t, { sentado: !pulo && !pega ? true : pega, abana: true, feliz: true, olhar: pega ? [0, 0] : [.3, -.4] });
-      cam(c, [[0, [px + .3, 1.0, pz + 1.4]], [1, [px + .35, .9, pz + 1.2]]], [px + .35, .7, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
+      cam(c, [[0, [px + .3, 1.7, pz + 1.45]], [1, [px + .35, 1.6, pz + 1.3]]], [px + .35, .7, pz], u / 4.3); return { focus: 1.2, range: 1, blur: 7 };
     };
   }),
 ];

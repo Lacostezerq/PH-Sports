@@ -59,9 +59,9 @@ export const DIA5 = [
   cena(314.5, 319.6, { foco: [-12, 5], hora: 10, raio: 32, tempo: parado, carros: 0, fx: GELO }, (C) => {
     const o = onibusParado('#2E9C6A', 'CIRCULAR - CENTRO'); o.position.set(-14, 0, 2.5); o.rotation.y = Math.PI / 2; C.cena.add(o);
     const g = ator(C, GUIRUA, -2, 6.3, -Math.PI / 2); mochila(g); const vai = caminhar(C, g, [[-2, 6.3], [-10.2, 6.0], [-11.4, 4.4]], 314.6, { vel: 1.8, direto: true });
-    const gente = [[-4, 6.9, 1.6], [-6.5, 5.6, -1.4], [-8.2, 7.2, 1.2], [-12.5, 6.6, 0]].map(([x, z, ry], i) => figura(C, 40 + i, x, z, ry));
+    const gente = [[-4, 6.9, 1.6], [-6.5, 5.6, -1.4], [-8.8, 5.1, 1.2], [-12.5, 6.6, 0]].map(([x, z, ry], i) => figura(C, 40 + i, x, z, ry));
     return (t, u, c) => { vai(t); gente.forEach((k, i) => { k.pose(passoParado(i)); rosto(k, null, 0, 'neutro', { blink: 0, vivo: false }); }); rosto(g, null, t, 'rindo', { smile: 1 });
-      const p = g.root.position; cam(c, [[0, [-6.4, 1.65, 3.4]], [1, [-7.6, 1.6, 3.3]]], [p.x, 1.25, p.z], u / 5.1); return { focus: 4, range: 3, blur: 5 }; };
+      const p = g.root.position; cam(c, [[0, [-11.0, 1.55, 6.7]], [1, [-11.4, 1.5, 6.9]]], [p.x, 1.25, p.z], u / 5.1); return { focus: 4, range: 3, blur: 5 }; };
   }),
   // AT2 — pega a última coxinha da padaria (atendente parada no meio do movimento)
   cena(319.6, 321.9, { foco: [-43.5, -16], hora: 10, dentro: true, raio: 26, tempo: parado, fx: GELO }, (C) => {
@@ -71,7 +71,7 @@ export const DIA5 = [
       const pega = smooth(320.2, 320.9, t), come = smooth(321.2, 321.6, t);
       g.pose({ ...idle(t), shR: [70 + 40 * come, 10], elR: 20 + 110 * come, lean: 10 * pega * (1 - come) }); rosto(g, null, t, come > .5 ? 'rindo' : 'feliz', { smile: 1, mouth: come > .5 ? { open: .5 + Math.sin(t * 14) * .3 } : undefined });
       const h = g.hands.R.getWorldPosition(new THREE.Vector3()); const base = new THREE.Vector3(vx + .1, 1.1, vz); cx.position.lerpVectors(base, h, pega);
-      cam(c, [[0, [vx - 1.15, 1.5, vz + .15]], [1, [vx - 1.0, 1.45, vz + .25]]], [vx + .15, 1.3, vz + .85], u / 2.3); return { focus: 2, range: 1.5, blur: 6 };
+      cam(c, [[0, [vx + .55, 1.68, vz - .45]], [1, [vx + .45, 1.62, vz - .35]]], [vx + .2, 1.35, vz + 1.0], u / 2.3); return { focus: 2, range: 1.5, blur: 6 };
     };
   }),
   // AU — no meio de uma discussão, ele para o tempo para pensar numa resposta

@@ -53,7 +53,7 @@ export const DIA6 = [
   }),
   // AZ — três da tarde: o relógio do quarto marca 15h e a chuva começa na janela
   cena(365.6, 373.7, { foco: casa(2.6, 3.2), hora: 15, dentro: true, raio: 28, fx: { ...FX6, tint: '#E8EEF8' } }, (C) => {
-    const rg = relogioGrande(); const [rx, rz] = casa(4.63, 4.5); rg.position.set(rx, 2.1, rz); rg.rotation.y = Math.PI / 2; C.cena.add(rg);
+    const rg = relogioGrande(); const [rx, rz] = casa(4.45, 4.5); rg.position.set(rx, 2.1, rz); rg.rotation.y = Math.PI / 2; C.cena.add(rg);
     const [jx0, jz0] = QUARTO.janela; const chove = chuva(C.cena, [jx0 - 3, jx0 + 3, -.5, 6, jz0 - 4, jz0 - .6], { n: 500 });
     const [jx, jz] = casa(3.95, 5.0); const g = ator(C, GUIRUA, jx, jz, casaRy(-Math.PI / 2));
     return (t, u, c) => {
