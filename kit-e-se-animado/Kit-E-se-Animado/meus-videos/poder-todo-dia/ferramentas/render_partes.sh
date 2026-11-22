@@ -1,15 +1,17 @@
 #!/bin/bash
-# Renderiza o vídeo em partes (processos separados, para não faltar memória), junta e coloca o áudio final.
-# Uso: ferramentas/render_partes.sh [primeira_parte] [ultima_parte]
+# Renderiza o vídeo em pedaços de 10 s (um navegador por vez: pedaços curtos saem bem mais rápidos que partes longas).
+# Pula os pedaços que já existem, então pode ser chamado de novo para continuar.
+# Uso: ferramentas/render_partes.sh [primeiro] [ultimo]   (índices 0..52)
 set -e; cd "$(dirname "$0")/.."
 node build.mjs >/dev/null
 mkdir -p renders/partes
-CORTES=(0 60 120 180 240 300 360 420 480 525.5)
-I0=${1:-0}; I1=${2:-8}
+FIM=525.5; N=$(python3 -c "import math;print(math.ceil($FIM/10))")
+I0=${1:-0}; I1=${2:-$((N-1))}
 for i in $(seq $I0 $I1); do
-  a=${CORTES[$i]}; b=${CORTES[$((i+1))]}
-  if [ -s renders/partes/p$i.mp4 ]; then echo "parte $i ja existe"; continue; fi
-  echo "parte $i: $a a $b"
-  npx --yes hyperframes@0.9.16 render --start $a --end $b -w ${W:-3} --quality high --quiet -o renders/partes/tmp$i.mp4 . || exit 1
-  mv renders/partes/tmp$i.mp4 renders/partes/p$i.mp4
+  a=$((i*10)); b=$(python3 -c "print(min($FIM,($i+1)*10))"); f=renders/partes/p$(printf %02d $i).mp4
+  if [ -s $f ]; then echo "pedaco $i ja existe"; continue; fi
+  s=$(date +%s); echo "pedaco $i: $a a $b"
+  npx --yes hyperframes@0.9.16 render --start $a --end $b -w ${W:-1} --quality high --quiet -o renders/partes/tmp.mp4 . > renders/partes/ultimo.log 2>&1 || { tail -5 renders/partes/ultimo.log; exit 1; }
+  mv renders/partes/tmp.mp4 $f; echo "pedaco $i pronto em $(( $(date +%s)-s )) s"
 done
+echo "render completo"
