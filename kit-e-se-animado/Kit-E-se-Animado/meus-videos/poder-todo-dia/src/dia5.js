@@ -83,7 +83,7 @@ export const DIA5 = [
       if (anda) { g.place(-.1 + Math.cos(a) * .85, Math.sin(a) * .85, 0, a + Math.PI); g.pose({ ...walk(t, 1.4, .8), shR: [60, 10], elR: 130 }); rosto(g, null, t, 'desconfiado', { look: [-.6, .4] }); }
       else if (t <= 322.8) { g.place(.6, 0, 0, -Math.PI / 2); g.pose(idle(t)); rosto(g, null, t, 'bravo'); }
       else { g.place(.55, .25, 0, -Math.PI / 2 - .3); fala(g, 'gui', t, t < 328.5 ? 'feliz' : 'tedio', t < 328.5 ? { shR: [80, -10], elR: 40 } : { shL: [40, 50], shR: [40, 50], elL: 40, elR: 40 }, 1); }
-      cam(cm, [[0, [.1, 1.55, 2.6]], [1, [-.2, 1.5, 2.2]]], [-.1, 1.35, 0], u); return { focus: 2.4, range: 2, blur: 5, ...GELO };
+      cam(cm, [[0, [-2.3, 1.5, 1.9]], [1, [-2.0, 1.45, 1.6]]], [[0, [.2, 1.1, 0]], [1, [.25, 1.1, .1]]], u); return { focus: 2.9, range: 2, blur: 5, ...GELO };
     };
   }),
   // AV — sozinho no meio da avenida congelada; acena para uma criança e nada. A câmera sobe e ele fica pequenininho
