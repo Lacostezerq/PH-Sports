@@ -189,7 +189,7 @@ export const DIA7 = [
   cena(478.3, 484.3, OQN, (C) => {
     ventiladorQuarto(C); espelhoBilhete(C, { estado: "inteiro", nenhum: 1 }); const g = ator(C, GUIPIJ, EX - .9, EZ - .2, Math.PI / 2);
     return (t, u, c) => { fala(g, 'gui', t, 'surpreso', { shL: [15, 10], shR: [25, 10], elR: 30 }, .6, { look: [0, .2] });
-      const h = g.headG.getWorldPosition(new THREE.Vector3()); cam(c, [[0, [EX - .25, 1.6, EZ - 1.15]], [1, [EX - .3, 1.58, EZ - 1.0]]], [[0, [h.x, h.y - .02, h.z]], [.5, [h.x, h.y - .02, h.z]], [.7, [NOTA[0], 1.45, NOTA[2]]], [1, [NOTA[0], 1.42, NOTA[2]]]], u / 6); return { focus: 1.1, range: .8, blur: 8 };
+      const h = g.headG.getWorldPosition(new THREE.Vector3()); cam(c, [[0, [EX - .25, 1.6, EZ - 1.15]], [1, [EX - .3, 1.58, EZ - 1.0]]], [[0, [h.x, h.y + .2, h.z]], [.5, [h.x, h.y + .2, h.z]], [.7, [NOTA[0], 1.45, NOTA[2]]], [1, [NOTA[0], 1.42, NOTA[2]]]], u / 6); return { focus: 1.1, range: .8, blur: 8 };
     };
   }),
   // BM — o que ajudou foi alguém que apareceu: ele sorri sentado na cama; mensagem do Dudu
@@ -225,7 +225,7 @@ export const DIA7 = [
     ventiladorQuarto(C); espelhoBilhete(C, { estado: 'inteiro', nenhum: 1, passa: true }); const [cx, cz] = QUARTO.centro;
     const g = ator(C, GUIPIJ, cx + .2, cz + .1, -Math.PI / 2); const orb = orbita(C, g, 503.6);
     return (t, u, c) => { g.pose({ ...pensa(t), headY: Math.sin(t * 1.2) * 10 }); rosto(g, null, t, 'feliz', { smile: .5, look: [Math.sin(t * 1.4) * .7, .2] }); orb(t, .52);
-      cam(c, [[0, [cx - 1.4, 1.35, cz + .4]], [1, [cx - 1.7, 1.45, cz + .1]]], [cx + .2, 1.35, cz + .1], u / 7.9); return { focus: 1.7, range: 1.5, blur: 5 };
+      cam(c, [[0, [cx - 1.75, 1.5, cz + .45]], [1, [cx - 2.0, 1.55, cz + .15]]], [cx + .2, 1.78, cz + .1], u / 7.9); return { focus: 1.7, range: 1.5, blur: 5 };
     };
   }),
   // BP2 — "se inscreve, ativa o sininho, manda pra aquele amigo": Gui e Paçoca de frente, acenando
