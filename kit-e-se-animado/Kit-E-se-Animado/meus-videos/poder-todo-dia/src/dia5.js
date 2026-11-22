@@ -39,20 +39,20 @@ export const DIA5 = [
   }),
   // AS1 — "eu vou parar ele aqui também": a praça inteira congelada, câmera rodando devagar
   cena(295.1, 304.6, { foco: [0, -22], hora: 9.5, raio: 32, tempo: parado, fov: 46, fx: { ...GELO, sat: .55 } }, (C) => {
-    const g = ator(C, GUIRUA, 2.6, -21.5, -2.4); mochila(g);
+    const g = ator(C, GUIRUA, 4.3, -19.9, -2.4); mochila(g);
     const ps = []; for (let i = 0; i < 9; i++) { const p = pombo(); const a = i / 9 * 6.283; p.position.set(Math.cos(a) * (2 + i % 3 * .7), 2.2 + (i % 4) * .5, -28.5 + Math.sin(a) * (2 + i % 3 * .7)); p.rotation.set(.2, -a, .3 * Math.sin(i)); p.asa(.6 + (i % 3) * .3); C.cena.add(p); ps.push(p); }
     return (t, u, c) => { g.pose(passoParado(1)); rosto(g, null, 0, 'surpreso', { blink: 0, vivo: false });
-      const a = 2.2 + u * .9; cam(c, [Math.sin(a) * 12, 4.5 - u, -24 + Math.cos(a) * 12], [0, 1.8, -24.5], u / 9.5); return { focus: 11, range: 6, blur: 3 }; };
+      cam(c, [[0, [8.6, 2.6, -26.8]], [1, [8.2, 2.3, -25.0]]], [[0, [1.5, 1.9, -24.0]], [1, [3.6, 1.4, -21.2]]], u / 9.5); return { focus: 6, range: 5, blur: 3 }; };
   }),
   // AS2 — close nos pombos e no Guilherme parados... "pode soltar o tempo": tudo volta a andar
   cena(304.6, 314.5, { foco: [0, -22], hora: 9.5, raio: 32, tempo: (t) => t < 313.0 ? T0 : T0 + (t - 313.0), fov: 42, fx: GELO }, (C) => {
-    const g = ator(C, GUIRUA, 2.6, -21.5, -2.4); mochila(g);
+    const g = ator(C, GUIRUA, 4.3, -19.9, -2.4); mochila(g);
     const ps = []; for (let i = 0; i < 9; i++) { const p = pombo(); const a = i / 9 * 6.283; const b = [Math.cos(a) * (2 + i % 3 * .7), 2.2 + (i % 4) * .5, -28.5 + Math.sin(a) * (2 + i % 3 * .7)]; p.position.set(...b); p.rotation.set(.2, -a, .3 * Math.sin(i)); C.cena.add(p); ps.push([p, b, a, i]); }
     return (t, u, c) => {
       const solta = t > 313.0, d = t - 313.0;
       ps.forEach(([p, b, a, i]) => { if (!solta) { p.position.set(...b); p.asa(.6 + (i % 3) * .3); } else { p.position.set(b[0] + Math.cos(a) * d * 3, b[1] + d * 1.6, b[2] + Math.sin(a) * d * 3); p.asa(Math.sin(t * 20 + i) * 1); } });
-      if (!solta) { g.pose(passoParado(1)); rosto(g, null, 0, 'surpreso', { blink: 0, vivo: false }); } else { g.pose(walk(t, 1.8, 1)); rosto(g, null, t, 'feliz'); g.place(2.6 - Math.sin(2.4) * d * 1.2, -21.5 - Math.cos(2.4) * d * 1.2, .15, -2.4); }
-      cam(c, [[0, [5.6, 1.9, -26.4]], [1, [5.0, 1.8, -25.6]]], [[0, [1.4, 2.1, -24.8]], [1, [1.9, 1.7, -23.6]]], u / 9.9); return { focus: 5, range: 4, blur: 4, sat: solta ? .55 + smooth(313, 313.8, t) * .45 : .55, tint: solta && t > 313.6 ? '#FFFFFF' : '#DCE8FF' };
+      if (!solta) { g.pose(passoParado(1)); rosto(g, null, 0, 'surpreso', { blink: 0, vivo: false }); } else { g.pose(walk(t, 1.8, 1)); rosto(g, null, t, 'feliz'); g.place(4.3 + Math.sin(1.2) * d * 1.2, -19.9 + Math.cos(1.2) * d * 1.2, .15, 1.2); }
+      cam(c, [[0, [7.4, 1.9, -25.6]], [1, [7.0, 1.8, -24.6]]], [[0, [1.4, 2.1, -24.8]], [1, [3.8, 1.5, -21.0]]], u / 9.9); return { focus: 5, range: 4, blur: 4, sat: solta ? .55 + smooth(313, 313.8, t) * .45 : .55, tint: solta && t > 313.6 ? '#FFFFFF' : '#DCE8FF' };
     };
   }),
   // AT1 — ele anda entre as pessoas paradas até o ônibus parado
