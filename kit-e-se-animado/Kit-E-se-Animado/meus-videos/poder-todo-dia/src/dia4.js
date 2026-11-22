@@ -29,7 +29,7 @@ export const DIA4 = [
       const s = smooth(224.6, 225.0, t), bate = t > 225.0 && t < 225.5 ? Math.sin((t - 225) / .5 * Math.PI) : 0;
       poseCama(g, bx2, bz, s, t); g.root.position.z += -bate * .05 + s * .05; rosto(g, null, t, t < 223 ? 'sono' : t < 225.6 ? 'surpreso' : 'medo', { blink: t < 223 ? 1 : bate > .3 ? 1 : undefined, look: [0, .5] });
       P.anima(t, { sentado: true, bravo: t < 228, olhar: [0, .3] });
-      cam(c, [[0, [bx2 + .9, .55, bz - 2.6]], [1, [bx2 + .7, .6, bz - 2.4]]], [bx2 - .05, .75, bz - .3], u / 9.5); return { focus: 1.6, range: 1.6, blur: 6 };
+      cam(c, [[0, [bx2 + 1.1, 1.25, bz - 2.6]], [1, [bx2 + .9, 1.2, bz - 2.4]]], [bx2 - .05, .85, bz - .3], u / 9.5); return { focus: 1.6, range: 1.6, blur: 6 };
     };
   }),
   // AI — o Paçoca, vira-lata caramelo, orelha dobrada (close, abanando o rabo)
@@ -44,7 +44,7 @@ export const DIA4 = [
     const pal = ['SENTA', 'PASSEIO', 'BANHO', 'NÃO!', 'BOLINHA', 'DEITA', 'COMIDA', 'VEM'].map((w, i) => { const b = balao(w, { tipo: 'fala', tam: .42, fs: 90 }); C.cena.add(b); const a = i / 8 * Math.PI * 2; b.position.set(bx2 - .1 + Math.cos(a) * .65, PISO + .95 + (i % 3) * .22, bz - 1.45 + Math.sin(a) * .65); return [b, 238.6 + i * .8]; });
     return (t, u, c) => { P.anima(t, { sentado: true, abana: true, olhar: [Math.sin(t * 1.4) * .9, .3], fala: false });
       pal.forEach(([b, ta]) => balaoAnim(b, t, ta, 246.9));
-      const [x, z] = [bx2 - .1, bz - 1.45]; const a = 1.2 + u * .5; cam(c, [x + Math.sin(a) * 1.45, 1.15, z - Math.cos(a) * 1.0], [x, .85, z], u / 9.2); return { focus: 1.5, range: 1.2, blur: 6 };
+      const [x, z] = [bx2 - .1, bz - 1.45]; cam(c, [[0, [casa(2.35, 4.05)[0], 1.15, casa(2.35, 4.05)[1]]], [1, [casa(2.15, 3.9)[0], 1.15, casa(2.15, 3.9)[1]]]], [x, .95, z], u / 9.2); return { focus: 1.5, range: 1.2, blur: 6 };
     };
   }),
   // AK — "Linguiça." / "Claro que é linguiça." (os dois de frente)
@@ -55,7 +55,7 @@ export const DIA4 = [
       poseCama(g, bx2, bz, 1, t); if (t > 248.1 && t < 250.2) fala(g, 'gui', t, 'rindo', { ...sentado, hipL: [90, 6], hipR: [90, 6], knL: 85, knR: 85, shR: [40, 10], elR: 90 }, .8, { smile: 1 }); else rosto(g, null, t, 'feliz', { smile: 1 });
       const pul = t > 247.2 && t < 248.3 ? Math.abs(Math.sin((t - 247.2) * 6)) * .12 : 0; P.g.position.y = PISO + pul; P.anima(t, { sentado: t > 248.3, abana: true, feliz: true });
       ln.position.set(bx2 - .1 + .35, PISO + 1.1 + Math.sin(t * 2) * .03, bz - 1.45); ln.rotation.y = t; ln.visible = t < 249.5; ln.scale.setScalar(1.8);
-      cam(c, [[0, [casa(1.9, 4.2)[0], 1.2, casa(1.9, 4.2)[1]]], [1, [casa(2.1, 4.0)[0], 1.15, casa(2.1, 4.0)[1]]]], [bx2 - .1, .9, bz - .9], u / 5.1); return { focus: 2.4, range: 1.5, blur: 6 };
+      cam(c, [[0, [casa(1.9, 4.2)[0], 1.2, casa(1.9, 4.2)[1]]], [1, [casa(2.1, 4.0)[0], 1.35, casa(2.1, 4.0)[1]]]], [bx2 - .1, 1.08, bz - .9], u / 5.1); return { focus: 2.4, range: 1.5, blur: 6 };
     };
   }),
   // AL — lembrança 1: o Seu Marcos joga linguiça escondido embaixo da mesa
@@ -66,7 +66,7 @@ export const DIA4 = [
       const joga = smooth(253.7, 254.1, t); m.pose({ ...sentado, shR: [40 + joga * 40, -10], elR: 70 - joga * 50, twist: -20, headY: Math.sin(t * 5) * 25 * (1 - joga) }); rosto(m, null, t, 'desconfiado', { look: [Math.sin(t * 5) > 0 ? .9 : -.9, 0] });
       const a = new THREE.Vector3(mx, PISO + .7, mz), b = P.cab.getWorldPosition(new THREE.Vector3()); const k = clamp((t - 254.05) / .45); ln.position.lerpVectors(a, b, k); ln.position.y += Math.sin(k * Math.PI) * .3; ln.visible = k < 1; ln.scale.setScalar(1.6);
       P.anima(t, { sentado: true, abana: true, feliz: true, aberta: k > .8 ? .6 : 0, fala: false });
-      cam(c, [[0, [casa(.35, -1.0)[0], 1.05, casa(.35, -1.0)[1]]], [1, [casa(.3, -.85)[0], 1.0, casa(.3, -.85)[1]]]], [casa(-1.15, -.05)[0], .65, casa(-1.15, -.05)[1]], u / 3.4); return { focus: 1.7, range: 1.2, blur: 10 };
+      cam(c, [[0, [casa(.35, -1.0)[0], 1.25, casa(.35, -1.0)[1]]], [1, [casa(.3, -.85)[0], 1.2, casa(.3, -.85)[1]]]], [casa(-1.15, -.05)[0], .85, casa(-1.15, -.05)[1]], u / 3.4); return { focus: 1.7, range: 1.2, blur: 10 };
     };
   }),
   // AM — lembrança 2: os pombos da praça cochichando em roda
@@ -92,7 +92,7 @@ export const DIA4 = [
       poseCama(g, bx2, bz, 1, t); if (t < 263.8) fala(g, 'gui', t, 'desconfiado', { ...sentado, hipL: [90, 6], hipR: [90, 6], knL: 85, knR: 85 }, .6); else rosto(g, null, t, t > 267 ? 'medo' : 'desconfiado');
       P.anima(t, { sentado: true, triste: t > 266, cabeca: t > 264 && t < 265.4 ? [.25 * Math.sin(t * 8), 0] : undefined });
       const z = smooth(266.6, 267.6, t); const h = P.cab.getWorldPosition(new THREE.Vector3());
-      cam(c, [[0, [casa(1.9, 4.2)[0], 1.2, casa(1.9, 4.2)[1]]], [1, [casa(2.3, 3.6)[0], 1.0, casa(2.3, 3.6)[1]]]], [lerp(bx2 - .1, h.x, z), lerp(.95, h.y, z), lerp(bz - 1.0, h.z, z)], u / 5.1); return { focus: 2.2 - z * 1.0, range: 1.5, blur: 6 + z * 6 };
+      cam(c, [[0, [casa(1.9, 4.2)[0], 1.4, casa(1.9, 4.2)[1]]], [1, [casa(2.3, 3.6)[0], 1.15, casa(2.3, 3.6)[1]]]], [lerp(bx2 - .1, h.x, z), lerp(1.2, h.y, z), lerp(bz - 1.0, h.z, z)], u / 5.1); return { focus: 2.2 - z * 1.0, range: 1.5, blur: 6 + z * 6 };
     };
   }),
   // AP — ele entende que é sério: na janela, com o calendário marcando quinta
