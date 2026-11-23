@@ -88,7 +88,7 @@ export const DIA1 = [
       pas.rotation.y = t * .55; const bate = Math.max(0, Math.sin(t * 2.2)) ** 6;
       sup.position.set(cx + Math.sin(t * .7) * .35, TETO - .55 + bate * .1, cz + Math.cos(t * .5) * .25); sup.rotation.y = t * .25;
       k.pose(debate(t)); rosto(k, null, t, u < 3 ? 'desconfiado' : u < 6.5 ? 'medo' : 'bravo', { look: [Math.sin(t * 1.3) * .8, -.6] });
-      const [px, pz] = casa(1.2, 1.8), [qx, qz] = casa(1.3, 4.9); cam(c, [[0, [px, 1.3, pz]], [1, [qx, 1.4, qz]]], [cx, TETO - .7, cz], u / 10.3); return { focus: 2.3, range: 2.5, blur: 4 };
+      const [px, pz] = casa(2.2, 1.8), [qx, qz] = casa(2.3, 4.9); cam(c, [[0, [px, 1.3, pz]], [1, [qx, 1.4, qz]]], [cx, TETO - .7, cz], u / 10.3); return { focus: 2.3, range: 2.5, blur: 4 };
     };
   }),
   // F — cai na cama (boing) e o pai abre a porta

@@ -99,10 +99,10 @@ export const DIA4 = [
   cena(268.0, 278.1, OQ, (C) => {
     const [jx, jz] = casa(2.75, 4.55); const g = ator(C, GUIPIJ, jx, jz, casaRy(0)); // olhando a janela (de lado para a câmera)
     const P = pacoca(1.0); C.cena.add(P.g); const [qx2, qz2] = casa(3.55, 4.25); P.g.position.set(qx2, PISO, qz2); P.g.rotation.y = casaRy(-.4);
-    const cal = calendario(); const [kx, kz] = casa(4.63, 4.6); cal.position.set(kx, 1.75, kz); cal.rotation.y = -Math.PI / 2; C.cena.add(cal);
+    const cal = calendario(); const [kx, kz] = casa(4.45, 5.0); cal.position.set(kx, 1.75, kz); cal.rotation.y = Math.PI / 2; C.cena.add(cal);
     return (t, u, c) => {
       g.pose({ ...idle(t), shL: [35, 10], elL: 90, shR: [20, 10], headX: 6 }); rosto(g, null, t, 'triste', { look: [Math.sin(t * .4) * .4, .1] }); P.anima(t, { sentado: true, triste: true, olhar: [-.6, .4], fala: false });
-      cam(c, [[0, [casa(4.35, 3.3)[0], 1.55, casa(4.35, 3.3)[1]]], [1, [casa(4.2, 3.6)[0], 1.6, casa(4.2, 3.6)[1]]]], [[0, [jx, 1.4, jz]], [.62, [jx, 1.45, jz]], [1, [kx, 1.7, kz]]], u / 10.1); return { focus: 1.6, range: 1.5, blur: 6 };
+      cam(c, [[0, [casa(3.3, 3.1)[0], 1.55, casa(3.3, 3.1)[1]]], [1, [casa(3.05, 3.4)[0], 1.6, casa(3.05, 3.4)[1]]]], [[0, [jx, 1.4, jz]], [.62, [jx, 1.45, jz]], [1, [kx, 1.7, kz]]], u / 10.1); return { focus: 1.6, range: 1.5, blur: 6 };
     };
   }),
 ];
