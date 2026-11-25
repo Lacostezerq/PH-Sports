@@ -227,6 +227,6 @@ export function salinha(c, o = {}) {
   for (let i = 0; i < 2; i++) { const q = M.quadro(.5, .4, 30 + i, 'paisagem'); q.position.set(-W / 2 + .02, 1.7, -.6 + i * .9); q.rotation.y = Math.PI / 2; c.add(q); }
   const pl = M.planta(.9, 4); pl.position.set(-W / 2 + .35, 0, D / 2 - .35); c.add(pl);
   const lamp = lampada(.3); lamp.position.set(0, Hh, .2); c.add(lamp);
-  return { g, mesa, sofa, tv, janela: jan, W, D, Hh };
+  return { g, mesa, sofa, tv, janela: jan, W, D, Hh, manta };
 }
 export { marcaMao };
