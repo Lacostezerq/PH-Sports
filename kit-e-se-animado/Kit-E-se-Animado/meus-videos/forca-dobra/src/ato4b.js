@@ -126,10 +126,10 @@ export const ATO4C = [
       const k = (Math.sin(t * 2.2) + 1) / 2; S.gui.root.updateMatrixWorld(true); const a = S.gui.hands.R.localToWorld(new THREE.Vector3(0, -.02, .06)), b = S.gui.hands.L.localToWorld(new THREE.Vector3(0, -.02, .06)); o.position.copy(a).lerp(b, k); o.position.y += Math.sin(k * Math.PI) * .3; o.rotation.z = k * 6;
       rosto(S.gui, null, t, 'feliz', { look: [(k - .5) * 1.2, .6] }); S.ci.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, ...G.bracoCruzado }); cam(cm, [[0, [.8, 1.6, -.45]], [1, [.74, 1.56, -.38]]], [[0, [.15, 1.0, .7]], [1, [.15, 1.02, .72]]], u / 5); return { tint: '#FFF6E8' }; }; }),
   // Mo3 — segurando um ovo em cima de cada dedo
-  mk(660, 665, { bg: '#C8D8E0', fov: 30, perto: true }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); const os = [0, 1, 2, 3, 4].map(() => ovoMao(c));
+  mk(660, 665, { bg: '#C8D8E0', fov: 30, perto: true }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); S.ci.root.visible = false; const os = [0, 1, 2, 3, 4].map(() => ovoMao(c));
     return (t, u, cm) => { ovosUpd(S, 489, { semOvo: true }); S.gui.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 4, shR: [75, 0], elR: 90, headX: 8 }); S.gui.root.updateMatrixWorld(true);
       os.forEach((o, i) => { const p = S.gui.hands.R.localToWorld(new THREE.Vector3((i - 2) * .028, .06 + Math.sin(t * 3 + i) * .002, .02 + Math.abs(i - 2) * .01)); o.position.copy(p); o.rotation.z = Math.sin(t * 2 + i) * .05; });
-      rosto(S.gui, null, t, 'determinado', { look: [0, -.2] }); cam(cm, [[0, [.55, 1.15, .1]], [1, [.5, 1.12, .2]]], [[0, [.15, 1.05, .78]], [1, [.15, 1.08, .78]]], u / 5); return { tint: '#FFF6E8', focus: .7, range: .5, blur: 6 }; }; }),
+      rosto(S.gui, null, t, 'determinado', { look: [0, -.2] }); cam(cm, [[0, [1.25, 1.55, -.5]], [1, [1.18, 1.5, -.42]]], [[0, [.2, .98, .75]], [1, [.2, 1.0, .75]]], u / 5); return { tint: '#FFF6E8' }; }; }),
   // Mo4 — Dona Cida aplaudindo baixinho, sentada na cadeira
   mk(665, 670, { bg: '#C8D8E0', fov: 34 }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); const os = [0, 1, 2, 3, 4].map(() => ovoMao(c));
     return (t, u, cm) => { ovosUpd(S, 489, { semOvo: true }); S.gui.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 4, shR: [75, 0], elR: 90 }); S.gui.root.updateMatrixWorld(true); os.forEach((o, i) => { o.position.copy(S.gui.hands.R.localToWorld(new THREE.Vector3((i - 2) * .028, .06, .02 + Math.abs(i - 2) * .01))); });
