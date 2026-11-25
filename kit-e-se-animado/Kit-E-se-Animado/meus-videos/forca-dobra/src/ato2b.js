@@ -135,7 +135,7 @@ export const ATO2B = [
       const sent = { bob: -.17 - .3 * cai, hipL: [88, 4 + 14 * cai], hipR: [88, 4 + 14 * cai], knL: 88 - 50 * cai, knR: 88 - 50 * cai, lean: -6 - 10 * cai, shR: [30, 20], elR: 50, shL: [20 + 40 * cai, 30], elL: 20 };
       gui.pose(a < 1.7 ? andar(t, { f: 1.6 }) : mix(parado(t, 2), sent, senta)); naMao(tn, gui, 'R', [0, -.06, .04]); j(t, 1); pg(t);
       rosto(gui, null, t, cai > .5 ? 'surpreso' : 'tedio', { lagrima: false });
-      cam(cm, [[0, [-.7, 1.2, -.55]], [1, [-.65, 1.05, -.5]]], [[0, [.1, .6, -.3]], [1, [.15, .45, -.2]]], u / 7.4); return DIA; }; }),
+      cam(cm, [[0, [-.75, 1.75, .45]], [1, [-.7, 1.65, .35]]], [[0, [.1, .7, -.45]], [1, [.12, .65, -.4]]], u / 7.4); return DIA; }; }),
   // M6 — Dona Cida grita de longe: "Fecha o registro, menino!" — ele encharcado no chão, no meio da cadeira aberta, segurando a torneira
   mk(249, 255, { bg: '#C8D8E0', fov: 36 }, (c) => { const K = cozinha(c, { hora: 'manha' }); K.torneira.visible = false; const gui = ator(c, GUI, .15, -.12, 0); const tn = torneira(); c.add(tn); const cad = K.cad2; cad.position.set(.15, 0, -.2); cad.rotation.y = Math.PI; cad.abrir(1);
     const j = agua(c, [.075, 1.05, -1.56], [0, .9, 2.6]); const pg = pinga(c, gui, { chao: 0 }); const poca = new THREE.Mesh(new THREE.CircleGeometry(.9, 24), new THREE.MeshToonMaterial({ color: '#9EC8E8', transparent: true, opacity: .45 })); poca.rotation.x = -Math.PI / 2; poca.position.set(.15, .004, -.4); c.add(poca);
@@ -143,7 +143,7 @@ export const ATO2B = [
       rosto(gui, null, t, 'tedio', { look: [-.6, 0] }); poca.scale.setScalar(.8 + .2 * smooth(249, 255, t));
       cam(cm, [[0, [-.7, .95, -.55]], [1, [-.65, .92, -.5]]], [[0, [.12, .45, -.15]], [1, [.12, .45, -.15]]], u / 6); return DIA; }; }),
   // M7 — "...o mundo é feito de coisa muito fraca": a cozinha alagada, a maçaneta, as escovas, o celular trincado na mesa
-  mk(255, 266.4, { bg: '#C8D8E0', fov: 40 }, (c) => { const K = cozinha(c, { hora: 'manha' }); K.torneira.visible = false; const gui = ator(c, GUI, .15, -.12, 0); const cad = K.cad2; cad.position.set(.15, 0, -.2); cad.rotation.y = Math.PI; cad.abrir(1);
+  mk(255, 266.4, { bg: '#C8D8E0', fov: 40 }, (c) => { const K = cozinha(c, { hora: 'manha' }); K.torneira.visible = false; const gui = ator(c, GUI, .15, -.34, 0); const cad = K.cad2; cad.position.set(.15, 0, -.42); cad.rotation.y = Math.PI; cad.abrir(1);
     const ci = ator(c, CIDA, -1.3, .9, Math.PI / 2); const j = agua(c, [.075, 1.05, -1.56], [0, .9, 2.6]); const pg = pinga(c, gui, { chao: 0 });
     const f = celular((x, w, h) => { x.fillStyle = '#1A1A20'; x.fillRect(0, 0, w, h); x.strokeStyle = '#FFF'; x.lineWidth = 3; for (let i = 0; i < 12; i++) { x.beginPath(); x.moveTo(160, 240); x.lineTo(160 + Math.cos(i) * 300, 240 + Math.sin(i * 1.3) * 300); x.stroke(); } }); f.position.set(.35, .79, .55); f.rotation.x = -Math.PI / 2; c.add(f);
     const esc = [0, 1, 2].map((i) => { const e = escova(['#3EA6FF', '#E2443A', '#5AA84E'][i]); e.position.set(-.05 + i * .06, .79, .6); e.rotation.set(Math.PI / 2, 0, i * .7); c.add(e); return e; });
@@ -151,7 +151,7 @@ export const ATO2B = [
     return (t, u, cm) => { const a = t - 255; const fecha = t > 257.5; j(t, fecha ? Math.max(0, 1 - (t - 257.5) * 2) : 1); pg(t);
       const anda = clamp((a - .3) / 2); ci.place(lerp(-1.3, -1.05, anda), lerp(.9, -1.1, anda), 0, anda < 1 ? Math.PI * .9 : Math.PI); ci.pose(anda < 1 ? andar(t, { f: 2.2 }) : soma(G.pegaChao, { lean: 40 })); rosto(ci, null, t, 'bravo');
       gui.pose(soma(parado(t, 2, .4), { bob: -.47, hipL: [88, 18], hipR: [88, 18], knL: 38, knR: 38, lean: -16, shR: [20, 20], elR: 30, shL: [20, 30], elL: 20 })); rosto(gui, null, t, 'triste', { lento: .5 });
-      cam(cm, [[0, [1.35, 1.9, 1.3]], [.45, [1.2, 1.5, 1.1]], [1, [.8, 1.2, 1.15]]], [[0, [-.1, .4, -.3]], [.45, [.15, .8, .5]], [1, [.2, .8, .55]]], u / 11.4); return DIA; }; }),
+      cam(cm, [[0, [1.35, 1.9, 1.3]], [.45, [1.2, 1.9, 1.25]], [.6, [1.5, .78, .15]], [1, [1.45, .76, .12]]], [[0, [-.1, .4, -.3]], [.45, [.2, .8, .35]], [.6, [.15, .62, -.05]], [1, [.15, .6, -.05]]], u / 11.4, 0, .3); return DIA; }; }),
   // H1 — portaria: estende a mão pro porteiro, que aperta
   mk(266.4, 271, { bg: '#2A2420', fov: 38 }, (c) => { const P = escada(c); const gui = ator(c, GUI, 1.0, 4.4, Math.PI / 2); const por = ator(c, PORTEIRO, 2.0, 4.4, -Math.PI / 2);
     return (t, u, cm) => { const a = t - 266.4; const est = smooth(.8, 1.4, a); const ap = a > 1.6;
@@ -162,7 +162,7 @@ export const ATO2B = [
   mk(271, 275, { bg: '#2A2420', fov: 30 }, (c) => { const P = escada(c); const gui = ator(c, GUI, 1.0, 4.4, Math.PI / 2); const por = ator(c, PORTEIRO, 2.0, 4.4, -Math.PI / 2);
     return (t, u, cm) => { gui.pose(soma(parado(t, 2), { shR: [55, 4], elR: 15 })); por.pose(soma(parado(t, 4), { shR: [55, 4], elR: 15, lean: 8 * smooth(271.3, 272, t), bob: -.06 * smooth(271.3, 272, t) }, treme(t, .8 * smooth(271.3, 272, t))));
       rosto(gui, null, t, 'feliz'); rosto(por, null, t, t > 271.4 ? 'medo' : 'feliz', { mouth: t > 271.6 ? { open: .5, smile: -.8 } : undefined });
-      cam(cm, [[0, [1.0, 1.4, 2.6]], [1, [1.05, 1.38, 2.75]]], [[0, [2.0, 1.1, 4.4]], [1, [2.0, 1.1, 4.4]]], u / 4); return { tint: '#FFF4E4' }; }; }),
+      cam(cm, [[0, [1.5, 1.4, 2.6]], [1, [1.52, 1.38, 2.75]]], [[0, [2.0, 1.1, 4.4]], [1, [2.0, 1.1, 4.4]]], u / 4); return { tint: '#FFF4E4' }; }; }),
   // H3 — ele solta na hora, pede desculpa com as mãos, enfia as mãos nos bolsos; o porteiro balança a mão no ar
   mk(275, 290, { bg: '#2A2420', fov: 38 }, (c) => { const P = escada(c); const gui = ator(c, GUI, 1.0, 4.4, Math.PI / 2); const por = ator(c, PORTEIRO, 2.0, 4.4, -Math.PI / 2);
     return (t, u, cm) => { const a = t - 275; const desc = kv(a, [[.2, 0], [.6, 1], [2.6, 1], [3.2, 0]]); const bolso = smooth(3.0, 3.6, a); const sai = clamp((a - 6) / 4);
