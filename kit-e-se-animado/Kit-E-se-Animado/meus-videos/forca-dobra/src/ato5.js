@@ -134,12 +134,12 @@ export const ATO5 = [
       ci.place(-.55, 3.7, 0, lerp(.6, Math.PI + .4, smooth(2.6, 3.2, a))); ci.pose(soma(parado(t, 3), { shL: [25 * mao, -10 * mao], elL: 15 })); rosto(ci, null, t, 'feliz', { smile: .5 });
       cam(cm, [[0, [1.9, 1.25, 5.6]], [1, [1.7, 1.2, 5.4]]], [[0, [.3, .75, 3.8]], [1, [-.3, .8, 3.5]]], u / 5.2); return QUENTE; }; }),
   // E3 — mesmo enquadramento exato do dia 0: câmera de baixo, mesma lâmpada piscando; os dois sobem juntos, degrau por degrau, no ritmo dela
-  mk(779.6, 791, { bg: '#2A2420', fov: 50 }, (c) => { const P = escada(c); const g = ator(c, GUILUVA, XA + .22, 2.3, Math.PI); const ci = ator(c, CIDASEM, XA - .22, 2.3, Math.PI); const bm = botNaMao(g, 'R', .6); const sf = sacolaFeira(); sf.position.set(0, -.2, 0); ci.hands.R.add(sf);
+  mk(779.6, 791, { bg: '#2A2420', fov: 50, limpa: false }, (c) => { const P = escada(c); const g = ator(c, GUILUVA, XA + .22, 2.3, Math.PI); const ci = ator(c, CIDASEM, XA - .22, 2.3, Math.PI); const bm = botNaMao(g, 'R', .6); const sf = sacolaFeira(); sf.position.set(0, -.2, 0); ci.hands.R.add(sf);
     const pth = (dx) => [[XA + dx, 0, 2.6], ...trajetoEscada(0, 1, { portaria: false }).map(([x, y, z]) => [x + (Math.abs(x - XA) < .3 ? dx : Math.abs(x - XB) < .3 ? -dx : 0), y, z])];
     return (t, u, cm) => { subir(g, pth(.2), t, 779.6, .32, { f: .9, pose: (tt, e, p) => soma(p, { shL: [25, -12], elL: 15 }) }); subir(ci, pth(-.22), t, 779.6, .32, { f: .9, pose: (tt, e, p) => soma(p, { shR: [25, -12], elR: 15 }) }); bm.prumo(t);
       const fala = t > 786.5 && t < 789.5; rosto(ci, null, t, 'feliz', { mouth: fala ? { open: .3 + .25 * Math.abs(Math.sin(t * 9)) } : undefined, look: [.5, 0] }); rosto(g, null, t, t > 789.2 ? 'rindo' : 'feliz', { look: [-.4, 0] });
       if (t > 789.2) g.pose(soma(poseSubir(t, .9), rir(t, .6), { shL: [25, -12], elL: 15 }));
-      cam(cm, [[0, [1.05, 1.15, .3]], [1, [1.05, 1.3, .1]]], [[0, [-.62, 1.05, 1.5]], [1, [-.62, 1.65, .5]]], u / 11.4); return QUENTE; }; }),
+      const mp = g.root.position.clone().add(ci.root.position).multiplyScalar(.5); cam(cm, [[0, [.6, 2.15, 2.85]], [.3, [.4, 2.0, 2.78]], [1, [.3, 2.05, 2.7]]], [mp.x, mp.y + .9, mp.z], u / 11.4, 0, .3); return QUENTE; }; }),
   // K1 — cozinha, última imagem: ela conecta o botijão e acende o fogo de primeira. Fwoosh.
   mk(791, 796.4, { bg: '#3A3028', fov: 38 }, (c) => { const K = cozinha(c, { hora: 'tarde' }); const ci = ator(c, CIDASEM, -1.05, -.55, Math.PI); const g = ator(c, GUILUVA, .2, .5, -Math.PI / 2 - .3); const fogo = chama(c, -1.19, .91, -1.12);
     return (t, u, cm) => { const a = t - 791; ci.pose(kf(a, [[0, soma(G.ajoelhado, { lean: 22, shL: [60, 10], elL: 60, shR: [55, 0], elR: 70 + Math.sin(t * 9) * 25 })], [2.0, soma(G.ajoelhado, { lean: 22, shL: [60, 10], elL: 60, shR: [55, 0], elR: 70 })], [2.6, soma(parado(t, 3), { lean: 18, shR: [50, 4], elR: 50 })], [4.4, soma(parado(t, 3), { lean: 4, shR: [30, 10], elR: 60 })]]));
