@@ -96,11 +96,12 @@ export const ATO4A = [
       rosto(S.ci, null, t, ac < .5 ? 'sono' : 'determinado', { blink: ac < .5 ? 1 : undefined, look: [0, .4 * ap] }); S.gui.pose(SENT({ shR: [55, 0], elR: 70 })); rosto(S.gui, null, t, 'sono');
       cam(cm, [[0, [.45, 1.3, 1.55]], [1, [.42, 1.28, 1.45]]], [[0, [.15, .9, -.15]], [1, [.15, .9, -.15]]], u / 4); return { ...LUZ, tint: '#E0E0FF' }; }; }),
   // E47 — tentativa 47: a música para. Câmera bem perto da mão: o ovo inteiro na palma, sem nenhuma rachadura. Ele nem respira
-  mk(540.6, 548, { bg: '#1A1610', fov: 30, perto: true }, (c) => { const S = montaOvos(c); S.jm.userData.vidro.material.opacity = 1;
-    return (t, u, cm) => { ovosUpd(S, t); const ab = smooth(542, 544, t); S.gui.pose(SENT({ shR: [58, 0], elR: 80, headX: 14 })); S.gui.hands.R.scale.set(1, 1 - .15 * (1 - ab), 1);
+  mk(540.6, 548, { bg: '#1A1610', fov: 38, perto: true }, (c) => { const S = montaOvos(c); S.jm.userData.vidro.material.opacity = 1;
+    return (t, u, cm) => { ovosUpd(S, t); const ab = smooth(542, 544, t); S.gui.pose(SENT({ shR: [92, -4], elR: 62, headX: 12 })); S.gui.hands.R.scale.set(1, 1 - .15 * (1 - ab), 1);
       S.gui.root.updateMatrixWorld(true); const h = S.gui.hands.R.localToWorld(new THREE.Vector3(0, -.02, .06)); S.mao.position.copy(h).add(new THREE.Vector3(0, .03 * ab, 0));
       rosto(S.gui, null, t, 'surpreso', { look: [0, .7], blink: 0 }); S.ci.pose(soma(SENT({ lean: 6 }), { shL: [40, 10], elL: 60, shR: [40, 10], elR: 60, headX: 10 }));
-      const p = S.mao.position; cam(cm, [[0, [p.x + .5, p.y + .2, p.z - .35]], [1, [p.x + .3, p.y + .12, p.z - .22]]], [[0, [p.x, p.y, p.z]], [1, [p.x, p.y + .02, p.z]]], u / 7.4, 0, .2); return { ...LUZ, tint: '#FFF0D0', focus: .4, range: .15, blur: 14, sat: 1.1 }; }; }),
+      const p = S.mao.position; const ry = S.gui.root.rotation.y, fx = Math.sin(ry), fz = Math.cos(ry), sx = fz, sz = -fx; const D = lerp(1.25, 1.0, easeOut(clamp(u / 7.4)));
+      cam(cm, [[0, [p.x + fx * .45 - sx * D, p.y + .62, p.z + fz * .45 - sz * D]], [1, [p.x + fx * .4 - sx * D * .9, p.y + .56, p.z + fz * .4 - sz * D * .9]]], [[0, [p.x, p.y + .08, p.z]], [1, [p.x, p.y + .08, p.z]]], u / 7.4, 0, .2); return { ...LUZ, tint: '#FFF0D0', focus: cm.position.distanceTo(p), range: .5, blur: 8, sat: 1.1 }; }; }),
   // E48 — corte pra Dona Cida, que sorri pela primeira vez desde o aniversário
   mk(548, 553, { bg: '#1A1610', fov: 34 }, (c) => { const S = montaOvos(c); S.jm.userData.vidro.material.opacity = 1;
     return (t, u, cm) => { ovosUpd(S, t); const sor = smooth(548.8, 550.5, t); S.ci.pose(soma(SENT({ lean: 6 }), { shL: [40, 10], elL: 60, shR: [40, 10], elR: 60, headX: 4 })); rosto(S.ci, null, t, sor > .6 ? 'feliz' : 'neutro', { smile: sor, lento: .5, olhosAbertos: true });
