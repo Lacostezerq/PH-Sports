@@ -53,7 +53,7 @@ export const ATO4A = [
       S.band.visible = true; if (a < 2.6) { naMao(S.band, S.ci, 'R', [.08, -.08, .12], false); S.band.rotation.set(0, 0, 0); } else S.band.position.set(.25, .785, .45);
       S.ci.pose(sent ? soma(SENT({ lean: -4 }), mix({}, G.bracoCruzado, smooth(5, 5.8, a))) : a < 2.4 ? soma(andar(t, { f: 2 }), { shR: [60, -10], elR: 60, shL: [60, -10], elL: 60 }) : a < 3.4 ? soma(parado(t, 3), { lean: 20, shR: [60, 0], elR: 20, shL: [60, 0], elL: 20 }) : soma(parado(t, 3), { shL: [40, 10], elL: 20, lean: 10 }));
       rosto(S.ci, null, t, 'determinado'); S.gui.pose(SENT({ shR: [45, 6], elR: 80, shL: [45, 6], elL: 80, headX: a < 3 ? 16 : 0 })); rosto(S.gui, null, t, a > 3 ? 'surpreso' : 'triste', { look: a > 3 ? [0, .5] : [0, .7] });
-      cam(cm, [[0, [1.45, 1.4, 1.4]], [1, [1.35, 1.35, 1.25]]], [[0, [-.5, 1.0, .3]], [1, [.15, .95, .3]]], u / 8); return LUZ; }; }),
+      cam(cm, [[0, [1.7, 1.45, .95]], [1, [1.6, 1.4, .8]]], [[0, [-.5, 1.0, .3]], [1, [.15, .95, .3]]], u / 8); return LUZ; }; }),
   // O3 — "Pega um. Sem quebrar."
   mk(508, 510.4, { bg: '#1A1610', fov: 38 }, (c) => { const S = montaOvos(c);
     return (t, u, cm) => { ovosUpd(S, 489, { semOvo: true }); S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado, { headX: -2 })); rosto(S.ci, 'cida', t, 'determinado'); S.gui.pose(SENT({ shR: [45, 6], elR: 80, shL: [45, 6], elL: 80 }));
@@ -62,15 +62,15 @@ export const ATO4A = [
   mk(510.4, 513.6, { bg: '#1A1610', fov: 40 }, (c) => { const S = montaOvos(c);
     return (t, u, cm) => { ovosUpd(S, t); const pega = smooth(510.8, 511.6, t); S.gui.pose(soma(SENT({ shR: [lerp(50, 62, pega), 0], elR: lerp(65, 75, pega), headX: 10 }), t > 512.4 ? { lean: -12, headX: -14 } : {})); rosto(S.gui, null, t, t > 512.45 ? 'surpreso' : 'determinado', { blink: t > 512.45 && t < 513 ? 1 : undefined, look: [0, .5] });
       S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado)); rosto(S.ci, null, t, 'neutro');
-      cam(cm, [[0, [.9, 1.3, -.4]], [1, [.86, 1.27, -.36]]], [[0, [.12, .95, .95]], [1, [.12, 1.0, 1.0]]], u / 3.2); return LUZ; }; }),
+      cam(cm, [[0, [1.15, 1.3, -.05]], [1, [1.1, 1.27, 0]]], [[0, [.12, .95, .95]], [1, [.12, 1.0, 1.0]]], u / 3.2); return LUZ; }; }),
   // M2 — tentativas 2, 3, 4: todos estourando, gema na mesa
   mk(513.6, 517.6, { bg: '#1A1610', fov: 38 }, (c) => { const S = montaOvos(c);
     return (t, u, cm) => { ovosUpd(S, t); const c3 = ((t - 513.6) % 1); S.gui.pose(SENT({ shR: [55 + 8 * Math.sin(c3 * Math.PI), 0], elR: 70, headX: 12 })); rosto(S.gui, null, t, 'tedio', { look: [0, .6] }); S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado)); rosto(S.ci, null, t, 'neutro');
       cam(cm, [[0, [.95, 1.15, .95]], [1, [.85, 1.1, .85]]], [[0, [.1, .85, .7]], [1, [.1, .85, .7]]], u / 4); return LUZ; }; }),
   // M3 — tentativa 10: fecha os olhos, respira fundo... mas quebra
-  mk(517.6, 521.6, { bg: '#1A1610', fov: 36 }, (c) => { const S = montaOvos(c);
+  mk(517.6, 521.6, { bg: '#1A1610', fov: 36 }, (c) => { const S = montaOvos(c); S.ci.root.visible = false;
     return (t, u, cm) => { ovosUpd(S, t); const resp = Math.sin(clamp((t - 518.2) / 1.8) * Math.PI); S.gui.pose(SENT({ shR: [58, 0], elR: 72, lean: 10 - 5 * resp, shL: [40 + 4 * resp, 8], headX: -4 * resp })); rosto(S.gui, null, t, t > 520.5 ? 'triste' : 'neutro', { blink: t > 518.2 && t < 520.4 ? 1 : undefined });
-      S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado)); cam(cm, [[0, [.42, 1.3, -.6]], [1, [.4, 1.25, -.5]]], [[0, [.15, 1.0, 1.0]], [1, [.15, 1.0, 1.0]]], u / 4); return LUZ; }; }),
+      S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado)); cam(cm, [[0, [.62, 1.42, .38]], [1, [.58, 1.38, .42]]], [[0, [.15, 1.0, 1.0]], [1, [.15, 1.0, 1.0]]], u / 4); return LUZ; }; }),
   // M4 — tentativa 18: só com a ponta de dois dedos... e quebra
   mk(521.6, 525, { bg: '#1A1610', fov: 30 }, (c) => { const S = montaOvos(c);
     return (t, u, cm) => { ovosUpd(S, t); S.gui.pose(SENT({ shR: [62, 0], elR: 80, headX: 14 })); S.gui.hands.R.scale.set(.85, 1.15, .7); rosto(S.gui, null, t, t > 523.9 ? 'bravo' : 'determinado', { look: [0, .7] }); S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado));
@@ -81,7 +81,7 @@ export const ATO4A = [
       S.ci.pose(vai > .05 && vai < .95 ? soma(andar(t, { f: 2 }), a > 1.8 ? { shR: [60, -10], elR: 60, shL: [60, -10], elL: 60 } : {}) : soma(parado(t, 3), a > 1.8 ? { shR: [60, -10], elR: 60, shL: [60, -10], elL: 60 } : {})); rosto(S.ci, null, t, 'determinado');
       if (a > 1.8 && a < 3.3) naMao(b2, S.ci, 'R', [.08, -.08, .12], false); else if (a >= 3.3) b2.position.set(-.15, .785, .45); else b2.position.set(1.32, .93, -1.0); b2.rotation.set(0, 0, 0);
       S.gui.pose(SENT({ shR: [45, 6], elR: 80, headX: 6 })); rosto(S.gui, null, t, 'tedio', { look: [.4, 0] });
-      cam(cm, [[0, [-1.0, 1.45, 1.5]], [1, [-.9, 1.4, 1.35]]], [[0, [.4, .9, -.3]], [1, [.3, .9, -.2]]], u / 3.6); return LUZ; }; }),
+      cam(cm, [[0, [-1.4, 1.5, .55]], [1, [-1.3, 1.45, .45]]], [[0, [.4, .9, -.3]], [1, [.3, .9, -.2]]], u / 3.6); return LUZ; }; }),
   // M6 — tentativa 30: o chão cheio de casca; ele limpa o rosto com a manga
   mk(528.6, 532.6, { bg: '#1A1610', fov: 40 }, (c) => { const S = montaOvos(c);
     return (t, u, cm) => { ovosUpd(S, t); const limpa = kv(t, [[530.4, 0], [530.9, 1], [531.8, 1], [532.3, 0]]); S.gui.pose(SENT({ shR: [55, 0], elR: 70, shL: [lerp(40, 115, limpa), lerp(4, -20, limpa)], elL: lerp(60, 140, limpa) + 10 * Math.sin(t * 9) * limpa, headX: 6 })); rosto(S.gui, null, t, 'tedio', { blink: limpa > .5 ? 1 : undefined });
