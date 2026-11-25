@@ -59,7 +59,7 @@ export function forcaUI() {
   J.push(`tl.fromTo("#vhs",{opacity:0},{opacity:1,duration:.15},38.6);tl.fromTo("#vhs .vhsl",{backgroundPositionY:"0px"},{backgroundPositionY:"600px",duration:3.4,ease:"none"},38.6);tl.to("#vhs",{opacity:0,duration:.2},41.8);tl.fromTo("#vhs .vhst",{opacity:1},{opacity:.3,duration:.25,repeat:12,yoyo:true},38.7);`);
   // ---------- mundo de papel (3 s) ----------
   H.push(`<div id="papel" class="clip papel" data-start="627.2" data-duration="3.2"><svg width="1920" height="1080"><filter id="amassa"><feTurbulence type="fractalNoise" baseFrequency=".012 .02" numOctaves="4" seed="7"/><feDiffuseLighting lighting-color="#FFF7E6" surfaceScale="9"><feDistantLight azimuth="225" elevation="48"/></feDiffuseLighting></filter><rect width="1920" height="1080" filter="url(#amassa)"/></svg></div>`);
-  J.push(`tl.fromTo("#papel",{opacity:0},{opacity:.85,duration:.5},627.2);tl.to("#papel",{opacity:0,duration:.5},629.9);`);
+  J.push(`tl.fromTo("#papel",{opacity:0},{opacity:.32,duration:.5},627.2);tl.to("#papel",{opacity:0,duration:.5},629.9);`);
   const css = `
 .abre{position:absolute;inset:0;background:#000}
 .abw{position:absolute;left:0;top:430px;width:1920px;height:200px}

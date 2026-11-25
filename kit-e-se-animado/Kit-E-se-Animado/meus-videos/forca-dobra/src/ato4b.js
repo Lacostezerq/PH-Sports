@@ -45,15 +45,15 @@ export const ATO4B = [
   lad(578.2, 585, (S) => { const mp = motPe(S); return (t, u, cm) => { const tf = 25; S.upd(t, tf, { guiPose: (tt) => soma(segura(tt, 25), { lean: 0 }), guiEmo: 'neutro' }); const a = t - 578.2;
     S.ca.userData.porta.rotation.y = 1.3 * smooth(.3, 1.2, a); const sai = a > 1.4; S.mot.root.visible = !sai; mp.root.visible = sai;
     const ca = S.cw.position.z; if (sai) { const k = clamp((a - 1.4) / 4); mp.place(lerp(1.05, .75, k), lerp(ca + 3.2, .55, k), 0, lerp(0, -Math.PI / 2 - .3, smooth(.5, 1, k))); mp.pose(k < 1 ? soma(andar(t, { f: 1.3, amp: .7 }), treme(t, .8)) : soma(parado(t, 4), treme(t, .9))); rosto(mp, null, t, 'medo'); }
-    cam(cm, [[0, W(S, 2.8, 1.5, -2.6)], [1, W(S, 2.6, 1.3, -.4)]], [[0, W(S, .8, 1.0, ca + 3.2)], [1, W(S, .4, .9, .4)]], u / 6.8); return { bloom: .3 }; }; }),
+    cam(cm, [[0, W(S, 4.2, 1.9, -2.2)], [1, W(S, 3.7, 1.6, .5)]], [[0, W(S, .8, 1.0, ca + 3.2)], [1, W(S, .4, .9, .4)]], u / 6.8); return { bloom: .3 }; }; }),
   // V6 — cai de joelhos no asfalto e olha pra cima
   lad(585, 592.8, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => soma(parado(tt, 2), { shL: [10, 10], shR: [10, 10] }), guiEmo: 'preocupado' }); S.mot.root.visible = false; const a = t - 585;
     mp.place(.75, .6, 0, -Math.PI / 2 - .25); mp.pose(soma(mix(parado(t, 4), G.ajoelhado, smooth(.3, 1.2, a)), { headX: -18 * smooth(1.5, 2.5, a), shL: [30, 10], shR: [30, 10], elL: 30, elR: 30 }, treme(t, .5))); rosto(mp, null, t, 'choro', { look: [0, -.6] });
-    cam(cm, [[0, W(S, -1.3, 1.0, 1.6)], [1, W(S, -1.1, .95, 1.4)]], [[0, W(S, .75, .7, .6)], [1, W(S, .75, .75, .6)]], u / 7.8); return { bloom: .3 }; }; }),
+    cam(cm, [[0, W(S, -.55, 1.15, 2.1)], [1, W(S, -.45, 1.1, 1.9)]], [[0, W(S, .4, .75, .4)], [1, W(S, .45, .78, .45)]], u / 7.8); return { bloom: .3 }; }; }),
   // V7 — "Moleque, tu é o quê?" (chorando)
   lad(592.8, 596.4, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => parado(tt, 2), guiEmo: 'preocupado' }); S.mot.root.visible = false;
     mp.place(.75, .6, 0, -Math.PI / 2 - .25); mp.pose(soma(G.ajoelhado, { headX: -18, shL: [40 + 10 * Math.sin(t * 3), 20], elL: 40, shR: [40, 20], elR: 40 }, treme(t, .4))); rosto(mp, 'mot', t, 'choro', { look: [0, -.6] });
-    cam(cm, [[0, W(S, -.35, 1.05, 1.3)], [1, W(S, -.3, 1.02, 1.2)]], [[0, W(S, .75, .78, .6)], [1, W(S, .75, .78, .6)]], u / 3.6); return { bloom: .3 }; }; }),
+    cam(cm, [[0, W(S, .15, 1.02, 1.15)], [1, W(S, .2, 1.0, 1.08)]], [[0, W(S, .75, .78, .6)], [1, W(S, .75, .78, .6)]], u / 3.6); return { bloom: .3 }; }; }),
   // V8 — "Neto da Dona Cida." (tímido)
   lad(596.4, 599.6, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => soma(parado(tt, 2), G.maosBolso, { headX: 16 }), guiEmo: 'vergonha', guiExtra: { quem: 'gui', look: [0, .5] } }); S.gui.root.rotation.y = Math.PI / 2; S.mot.root.visible = false;
     mp.place(.75, .6, 0, -Math.PI / 2 - .25); mp.pose(soma(G.ajoelhado, { headX: -18 })); rosto(mp, null, t, 'choro', { look: [0, -.6] });
@@ -91,8 +91,8 @@ function montaPapel(c) {
 function papelUpd(P, t) {
   const { pt, gui, gente } = P;
   // passos curtos e devagar, desviando das pessoas como se fossem de vidro (620–630), tropeça no buraco (630.6) e apoia no poste
-  const z = t < 630.6 ? 8 - (t - 620) * 1.15 : -4.2 - .32 * smooth(630.6, 631.2, t); const desvia = gente.reduce((s, p) => { const pz = p.z + (p.r ? 1 : -1) * (t - 620) * -1.0; const d = Math.abs(pz - z); return s + (d < 2 ? (1 - d / 2) * .55 : 0); }, 0);
-  const tro = t > 630.6; gui.place(5.3 + (t < 630.6 ? -desvia * .8 : -.62 * smooth(630.6, 631.2, t)), z, 0, tro ? Math.PI - .5 * smooth(630.6, 631, t) : Math.PI);
+  const z = t < 630.6 ? 8 - (t - 620) * 1.15 : -4.2 - .32 * smooth(630.6, 631.2, t); const desvia = gente.reduce((s, p) => { const pz = p.z + (p.r ? 1 : -1) * (t - 620) * -1.0; const d = Math.abs(pz - z); return s + (d < 2 ? (1 - d / 2) * .55 : 0); }, 0); const desS = gente.reduce((s, p) => { const pz = p.z + (p.r ? 1 : -1) * (t - 620) * -1.0; const d = Math.abs(pz - z); return s + (d < 2.2 ? Math.sin(Math.PI / 2 * Math.min(1, (2.2 - d) / 1.2)) * Math.sign(5.3 - p.x) : 0); }, 0);
+  const tro = t > 630.6; gui.place(5.3 + (t < 630.6 ? desS * .62 : -.62 * smooth(630.6, 631.2, t)), z, 0, tro ? Math.PI - .5 * smooth(630.6, 631, t) : Math.PI);
   let p = andar(t, { f: 1.2, amp: .55, maos: 'bolso' }); if (desvia > .1 && !tro) p = soma(p, { shL: [20, 30], shR: [20, 30], elL: 40, elR: 40, lean: -4, twist: 12 * desvia });
   if (tro) p = kf(t, [[630.6, p], [630.9, soma(parado(t, 2), { lean: 25, shL: [70, 40], elL: 5, knR: 40, hipR: [30, 4], bob: -.08 })], [631.6, soma(parado(t, 2), { lean: 12, shL: [60, 50], elL: 10, bob: -.02 })], [633.6, soma(parado(t, 2), { lean: 12, shL: [60, 50], elL: 10 })], [634.4, soma(parado(t, 2), G.maosBolso)]]);
   gui.pose(p); rosto(gui, null, t, tro ? (t > 631.4 ? 'medo' : 'surpreso') : 'preocupado', { look: tro ? [-.6, -.2] : [Math.sin(t) * .4, .2] });
