@@ -60,7 +60,7 @@ export const ATO5 = [
     const poca = new THREE.Mesh(new THREE.CircleGeometry(.2, 18), new THREE.MeshToonMaterial({ color: '#BFE0F4', transparent: true, opacity: .6, emissive: '#FFFFFF', emissiveIntensity: .25 })); poca.rotation.x = -Math.PI / 2; poca.scale.set(1.6, .6, 1); poca.position.set(XA - .1, Y2 + .876, ESCORREGA[2]); c.add(poca);
     const path = [[XA, Y2, ZA0 + .2], [XA, Y2 + 1.4, ZLAND - .05]];
     return (t, u, cm) => { subir(ci, path, t, 705.2, .36, { f: 1.1, pose: (tt, e, p) => soma(p, { shL: [-6, 30], elL: 100, tilt: -5 }) }); rosto(ci, null, t, 'sono');
-      cam(cm, [[0, [XA + .12, Y2 + 2.2, ESCORREGA[2] - .75]], [1, [XA + .12, Y2 + 2.2, ESCORREGA[2] - .7]]], [[0, [XA, Y2 + .55, ESCORREGA[2] + .9]], [1, [XA, Y2 + .8, ESCORREGA[2] + .2]]], u / 3.6, 0, .2); return { ...QUENTE }; }; }),
+      cam(cm, [[0, [XA + .12, Y2 + 2.2, ESCORREGA[2] - .75]], [1, [XA + .12, Y2 + 2.2, ESCORREGA[2] - .7]]], [[0, [XA, Y2 + .85, ESCORREGA[2] + .9]], [1, [XA, Y2 + 1.2, ESCORREGA[2] + .35]]], u / 3.6, 0, .2); return { ...QUENTE }; }; }),
   // Q4 — o pé escorrega. Câmera lenta: o botijão escapa e quica degrau por degrau (bang, bang, bang); ela cai pra trás, braços abertos
   mk(708.6, 711, { bg: '#2A2420', fov: 46 , perto: true }, (c) => { const P = escada(c); const ci = ator(c, CIDASEM, XA, ZA0, Math.PI, Y2); const b = bot(); c.add(b);
     return (t, u, cm) => { cidaCai(ci, t); rosto(ci, null, t, 'medo', { mouth: { open: .5 } }); const k = (t - T_ESC) * 1.6; const st = Math.min(5, Math.floor(k)); const f = k - Math.floor(k);
