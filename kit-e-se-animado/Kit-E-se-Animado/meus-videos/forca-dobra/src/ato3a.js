@@ -74,7 +74,7 @@ function montaAcad(c) {
   const hal = cyl(.012, .012, .3, '#9EA4AC', 0, 0, 0, { seg: 6 }); c.add(hal); const fone = celular((x, w, h) => { x.fillStyle = '#1A1A20'; x.fillRect(0, 0, w, h); x.fillStyle = '#E2443A'; x.beginPath(); x.arc(40, 40, 14, 0, 7); x.fill(); }); c.add(fone);
   // anilhas que caem: cópias no mundo, partindo de onde estariam com a barra em U
   sup.updateMatrixWorld(true); const an = sup.userData.anilhas; const caem = an.map((a, i) => { const m = a.clone(); c.add(m); m.visible = false; return m; });
-  const curva = new THREE.CatmullRomCurve3([[-.75, -.55], [-.55, -.2], [-.3, 0], [0, .04], [.3, 0], [.55, -.2], [.75, -.55]].map(([x, y]) => new THREE.Vector3(x, y, 0)));
+  const curva = new THREE.CatmullRomCurve3([[-.6, .7], [-.45, .35], [-.25, .08], [0, 0], [.25, .08], [.45, .35], [.6, .7]].map(([x, y]) => new THREE.Vector3(x, y, 0)));
   const u = new THREE.Mesh(new THREE.TubeGeometry(curva, 40, .018, 8), toon('#C9CED6')); sup.add(u); u.visible = false;
   return { A, B, sup, gui, tia, dono, bone, extras, hal, fone, an, caem, u };
 }
@@ -95,7 +95,7 @@ function acadUpd(S, t) {
   // barra: no suporte -> na mão dele, acima da cabeça -> dobra em U; anilhas escorregam e caem (BUM)
   if (t < T_ERGUE - .2) { B.position.set(0, 1.15, -.55); B.rotation.set(0, 0, 0); }
   else { gui.root.updateMatrixWorld(true); const h = gui.hands.R.localToWorld(new THREE.Vector3(0, -.05, 0)); sup.worldToLocal(h); B.position.copy(h); B.rotation.set(0, 0, 0); }
-  dobrarBarra(B, dob); B.children[0].visible = dob < .5; S.u.visible = dob >= .5; if (S.u.visible) { S.u.position.copy(B.position); S.u.scale.setScalar(.6 + .4 * dob); } const cai = t > T_CAI; an.forEach((a) => { a.visible = !cai; });
+  dobrarBarra(B, dob); B.children[0].visible = dob < .5; S.u.visible = dob >= .5; if (S.u.visible) { S.u.position.copy(B.position); S.u.position.y += .16; S.u.scale.setScalar(.6 + .4 * dob); } const cai = t > T_CAI; an.forEach((a) => { a.visible = !cai; });
   caem.forEach((m, i) => { m.visible = cai; if (!cai) return; const a = an[i]; const s = Math.sign(a.userData.x0 ?? a.position.x); const k = t - T_CAI; const y0 = B.position.y - .35, x0 = s * (.35 + (i % 6) * .04);
     const y = Math.max(.22 - (i % 6) * .02, y0 - 4.9 * k * k + (k > .45 ? 0 : 0)); m.position.set(x0 + s * k * .8, y, -.5 + (i % 6) * .03 - .55 + .3); m.rotation.set(Math.min(1.57, k * 4), 0, Math.PI / 2 + s * Math.min(1.2, k * 3)); });
   // dono da academia: olhando; tira o boné devagar

@@ -1,6 +1,6 @@
 // Camada de tela própria deste vídeo: frase da abertura que quebra como vidro, contador de força (dia + kg, "tum" e tremida),
 // silhuetas de comparação, contagem 3-2-1, contador de tentativas, rebobinar (VHS) e o mundo de papel.
-const fmt = (n) => n.toLocaleString('pt-BR');
+const fmt = (n) => '\u200B' + n.toLocaleString('pt-BR'); // caractere invisível: impede o GSAP de ler "204.800" como o número 204.8
 // [instante, dia, kg]
 export const FORCA = [[4.3, 12, 204800], [42, 0, 50], [104.2, 0, 100], [108, 1, 100], [152, 2, 200], [176, 3, 400], [222, 4, 800], [290, 5, 1600], [330, 6, 3200], [360, 7, 6400], [390, 8, 12800],
   [440, 9, 25600], [452, 10, 51200], [500, 11, 102400], [560, 12, 204800], [620, 14, 819200], [650, 15, 1638400], [660, 16, 3276800], [670, 17, 6553600], [754, 20, 52428800], [806, 20, 52428800]];
