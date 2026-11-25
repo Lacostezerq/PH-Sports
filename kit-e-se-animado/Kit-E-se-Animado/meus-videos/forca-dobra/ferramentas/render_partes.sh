@@ -5,7 +5,7 @@
 set -e; cd "$(dirname "$0")/.."
 node build.mjs >/dev/null
 mkdir -p renders/partes
-FIM=525.5; N=$(python3 -c "import math;print(math.ceil($FIM/10))")
+FIM=840; N=$(python3 -c "import math;print(math.ceil($FIM/10))")
 I0=${1:-0}; I1=${2:-$((N-1))}
 for i in $(seq $I0 $I1); do
   a=$((i*10)); b=$(python3 -c "print(min($FIM,($i+1)*10))"); f=renders/partes/p$(printf %02d $i).mp4

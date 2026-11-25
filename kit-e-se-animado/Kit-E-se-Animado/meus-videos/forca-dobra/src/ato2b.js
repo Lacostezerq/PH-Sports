@@ -16,7 +16,7 @@ import { cyl, rb } from './motor/toon.js';
 const DIA = { tint: '#FFFBF2', bloom: .22 };
 const T_BATE = 195.7; // a mão do Rafa bate na mesa
 // ---------- pátio ----------
-const RODA = Array.from({ length: 11 }, (_, i) => { const a = -2.4 + i * (4.8 / 10); return [Math.sin(a) * 1.75, Math.cos(a) * 1.75 * .9 - .1, a]; });
+const RODA = Array.from({ length: 11 }, (_, i) => { const a = -2.4 + i * (4.8 / 10); return [Math.sin(a) * 2.25, Math.cos(a) * 2.25 * .9 - .1, a]; });
 /** Pátio com a roda de alunos, o Rafa sentado, o Tiago e o Guilherme. */
 function montaPatio(c) {
   const P = patio(c); const mesa = P.mesa; const { A, B } = mesa.userData;
@@ -80,7 +80,7 @@ export const ATO2B = [
       alunosUpd(S, t, 'pula'); S.tia.pose(soma(pular(t, 2.3), G.filmar)); naMao(S.fone, S.tia, 'R', [0, -.09, .03]); rosto(S.tia, null, t, 'feliz', { mouth: { open: .7 } }); mesaUpd(S, t);
       cam(cm, [[0, [.3, 3.4, 3.2]], [.5, [1.6, 2.9, 2.4]], [1, [2.3, 2.6, .9]]], [[0, [0, .7, 0]], [1, [0, .8, 0]]], u / 10.4); return DIA; }; }),
   // F7 — Tiago: "Mano, tu quebrou a mesa! Tu quebrou a mesa!"
-  mk(208, 211.8, { bg: '#CFE4EE', fov: 40 }, (c) => { const S = montaPatio(c); guiSentado(S); S.tia.place(.9, .9, 0, Math.PI + 1.0);
+  mk(208, 211.8, { bg: '#CFE4EE', fov: 40 }, (c) => { const S = montaPatio(c); guiSentado(S); S.tia.place(.9, .9, 0, Math.PI + 1.0); S.gui.root.visible = false; S.gui.fixo = true;
     return (t, u, cm) => { bracoUpd(S, t, 1); S.tia.pose(soma(pular(t, 2.6), G.filmar, { shL: [120, 40], elL: 40 })); naMao(S.fone, S.tia, 'R', [0, -.09, .03]); rosto(S.tia, 'tiago', t, 'feliz', { look: [-.4, 0] }); alunosUpd(S, t, 'pula'); mesaUpd(S, t);
       S.gui.pose(soma(parado(t, 2), { bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, shR: [40, 10], elR: 60 })); rosto(S.gui, null, t, 'surpreso'); S.rafa.pose(soma(BRACO(), { lean: -14, shL: [60, -10, -40], elL: 95, shR: [20, 20], elR: 30 })); rosto(S.rafa, null, t, 'medo');
       cam(cm, [[0, [-.95, 1.4, -.3]], [1, [-.9, 1.38, -.22]]], [[0, [.9, 1.12, .9]], [1, [.9, 1.12, .9]]], u / 3.8); return DIA; }; }),
@@ -94,7 +94,7 @@ export const ATO2B = [
     return (t, u, cm) => { const a = t - 216; const esc = smooth(3.0, 4.0, a);
       S.gui.pose(soma(parado(t, 2, .5), { bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88 }, mix({ shR: [60, 4], elR: 70, headX: 22, headY: -10 }, G.maosBolso, esc))); S.gui.hands.R.rotation.y = Math.sin(a * 1.5) * .8 * (1 - esc);
       rosto(S.gui, null, t, esc > .5 ? 'preocupado' : 'desconfiado', { look: esc > .5 ? [.5, 0] : [-.2, .7] }); S.rafa.pose(BRACO()); alunosUpd(S, t, 'olha'); mesaUpd(S, t);
-      cam(cm, [[0, [-1.05, .8, -.2]], [.5, [-1.0, .8, -.15]], [1, [-1.3, 1.25, -.5]]], [[0, [-.3, .78, .45]], [.5, [-.3, .78, .45]], [1, [-.2, .95, .75]]], u / 6); return { ...DIA, focus: .7, range: .5, blur: 6 }; }; }),
+      cam(cm, [[0, [-.05, 1.0, .02]], [.5, [-.05, 1.0, .05]], [1, [-.1, 1.15, -.15]]], [[0, [-.28, .8, .55]], [.5, [-.28, .8, .55]], [1, [-.2, 1.0, .75]]], u / 6); return { ...DIA, focus: .7, range: .5, blur: 6 }; }; }),
   // M1 — dia 4: ele abre a porta do banheiro e a maçaneta fica na mão
   mk(222, 226.6, { bg: '#C8D8E0', fov: 55 }, (c) => { const B = banheiro(c); const gui = ator(c, GUI, -.15, .55, 0); const mac = B.macaneta; const fake = mac.clone(); c.add(fake); fake.visible = false;
     return (t, u, cm) => { const a = t - 222; const puxa = kv(a, [[.8, 0], [1.3, 1], [1.6, 1], [1.9, .3]]); const solta = a > 1.55;
@@ -126,7 +126,7 @@ export const ATO2B = [
     return (t, u, cm) => { const a = t - 236.6; const sai = a > 1.4; T0.visible = !sai; tn.visible = sai; if (sai) naMao(tn, gui, 'R', [0, -.06, .04]);
       gui.pose(sai ? soma(parado(t, 2), { shR: [50, 10], elR: 40, shL: [60, 30], elL: 120, lean: -14, headX: -10, headY: Math.sin(t * 7) * 15 }) : soma(parado(t, 2), { shR: [75 * smooth(.3, 1, a), 0], elR: 20, lean: 6 }));
       j(t, sai ? 1 : 0); if (a > 1.8) pg(t); rosto(gui, null, t, sai ? 'medo' : 'sono', { blink: sai ? 1 : undefined, mouth: sai ? { open: .6 } : undefined });
-      cam(cm, [[0, [.8, 1.25, -1.2]], [1, [.78, 1.22, -1.15]]], [[0, [.05, 1.0, -.7]], [1, [.05, 1.02, -.7]]], u / 5); return DIA; }; }),
+      cam(cm, [[0, [.65, 1.3, -.15]], [1, [.6, 1.28, -.2]]], [[0, [.05, 1.0, -.75]], [1, [.05, 1.02, -.75]]], u / 5); return DIA; }; }),
   // M5 — senta na cadeira de plástico: as quatro pernas abrem pra fora, ele cai sentado no chão (ainda com a torneira)
   mk(241.6, 249, { bg: '#C8D8E0', fov: 40 }, (c) => { const K = cozinha(c, { hora: 'manha' }); K.torneira.visible = false; const gui = ator(c, GUI, .1, -.5, Math.PI * .9); const tn = torneira(); c.add(tn); const cad = K.cad2; cad.position.set(.15, 0, -.2); cad.rotation.y = Math.PI;
     const j = agua(c, [.075, 1.05, -1.56], [0, .9, 2.6]); const pg = pinga(c, gui, { chao: 0 });
@@ -135,13 +135,13 @@ export const ATO2B = [
       const sent = { bob: -.17 - .3 * cai, hipL: [88, 4 + 14 * cai], hipR: [88, 4 + 14 * cai], knL: 88 - 50 * cai, knR: 88 - 50 * cai, lean: -6 - 10 * cai, shR: [30, 20], elR: 50, shL: [20 + 40 * cai, 30], elL: 20 };
       gui.pose(a < 1.7 ? andar(t, { f: 1.6 }) : mix(parado(t, 2), sent, senta)); naMao(tn, gui, 'R', [0, -.06, .04]); j(t, 1); pg(t);
       rosto(gui, null, t, cai > .5 ? 'surpreso' : 'tedio', { lagrima: false });
-      cam(cm, [[0, [1.3, 1.25, .5]], [1, [1.25, 1.1, .45]]], [[0, [.1, .6, -.3]], [1, [.15, .45, -.2]]], u / 7.4); return DIA; }; }),
+      cam(cm, [[0, [-.7, 1.2, -.55]], [1, [-.65, 1.05, -.5]]], [[0, [.1, .6, -.3]], [1, [.15, .45, -.2]]], u / 7.4); return DIA; }; }),
   // M6 — Dona Cida grita de longe: "Fecha o registro, menino!" — ele encharcado no chão, no meio da cadeira aberta, segurando a torneira
   mk(249, 255, { bg: '#C8D8E0', fov: 36 }, (c) => { const K = cozinha(c, { hora: 'manha' }); K.torneira.visible = false; const gui = ator(c, GUI, .15, -.12, 0); const tn = torneira(); c.add(tn); const cad = K.cad2; cad.position.set(.15, 0, -.2); cad.rotation.y = Math.PI; cad.abrir(1);
     const j = agua(c, [.075, 1.05, -1.56], [0, .9, 2.6]); const pg = pinga(c, gui, { chao: 0 }); const poca = new THREE.Mesh(new THREE.CircleGeometry(.9, 24), new THREE.MeshToonMaterial({ color: '#9EC8E8', transparent: true, opacity: .45 })); poca.rotation.x = -Math.PI / 2; poca.position.set(.15, .004, -.4); c.add(poca);
     return (t, u, cm) => { gui.pose(soma(parado(t, 2, .4), { bob: -.47, hipL: [88, 18], hipR: [88, 18], knL: 38, knR: 38, lean: -16, shR: [30, 20], elR: 50, shL: [60, 30], elL: 20, headY: t > 249.2 ? -40 : 0 })); naMao(tn, gui, 'R', [0, -.06, .04]); j(t, 1); pg(t);
       rosto(gui, null, t, 'tedio', { look: [-.6, 0] }); poca.scale.setScalar(.8 + .2 * smooth(249, 255, t));
-      cam(cm, [[0, [1.3, 1.0, .5]], [1, [1.25, .98, .45]]], [[0, [.12, .45, -.15]], [1, [.12, .45, -.15]]], u / 6); return DIA; }; }),
+      cam(cm, [[0, [-.7, .95, -.55]], [1, [-.65, .92, -.5]]], [[0, [.12, .45, -.15]], [1, [.12, .45, -.15]]], u / 6); return DIA; }; }),
   // M7 — "...o mundo é feito de coisa muito fraca": a cozinha alagada, a maçaneta, as escovas, o celular trincado na mesa
   mk(255, 266.4, { bg: '#C8D8E0', fov: 40 }, (c) => { const K = cozinha(c, { hora: 'manha' }); K.torneira.visible = false; const gui = ator(c, GUI, .15, -.12, 0); const cad = K.cad2; cad.position.set(.15, 0, -.2); cad.rotation.y = Math.PI; cad.abrir(1);
     const ci = ator(c, CIDA, -1.3, .9, Math.PI / 2); const j = agua(c, [.075, 1.05, -1.56], [0, .9, 2.6]); const pg = pinga(c, gui, { chao: 0 });

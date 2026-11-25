@@ -6,13 +6,16 @@ import { FX } from './motor/toon.js';
 import { tw } from './vida.js';
 /** mk(t0,t1,{bg,fov,fog,far}, build) — build(c, s) devolve upd(t,u,cam) => efeitos. */
 export function mk(t0, t1, o, build) {
-  const s = makeShot(t0, t1, o.bg || '#BFE3F7', o.fov || 32), c = s.scene;
-  if (o.fog) c.fog = new THREE.Fog(o.fog[0], o.fog[1], o.fog[2]);
+  const s = makeShot(t0, t1, o.bg || '#BFE3F7', o.fov || 32); const bg = s.scene.background;
   s.camera.near = o.near || .05; s.camera.far = o.far || 500; s.camera.updateProjectionMatrix();
-  const U = build(c, s) || (() => ({}));
-  s.update = (t, u) => { uT.value = t; CUR = { t0, t1, viva: o.viva ?? 1 }; restaura(c); const r = U(t, u, s.camera) || {}; if (o.limpa !== false) limpaVista(c, s.camera); const V = c.userData.vida; if (V && o.vida !== false) { const T = tw(t); for (const f of V) f(t, T, u); } return FX(r); };
+  let U = null, c = null;
+  // a cena só é montada quando o vídeo chega nela; a anterior é desmontada (economiza memória)
+  const monta = () => { if (ULTIMA && ULTIMA !== s) ULTIMA._desmonta(); ULTIMA = s; c = s.scene = new THREE.Scene(); c.background = bg; if (o.fog) c.fog = new THREE.Fog(o.fog[0], o.fog[1], o.fog[2]); U = build(c, s) || (() => ({})); };
+  s._desmonta = () => { if (!U) return; c.traverse((n) => { if (n.geometry) n.geometry.dispose(); if (n.material) for (const m of [].concat(n.material)) { if (m.map && !m.map.userData.fixa && m.map.image && m.map.image.tagName === 'CANVAS' && m.map.image.__dyn) m.map.dispose(); m.dispose(); } }); s.scene = new THREE.Scene(); s.scene.background = bg; U = null; c = null; };
+  s.update = (t, u) => { if (!U) monta(); uT.value = t; CUR = { t0, t1, viva: o.viva ?? 1, scene: c, perto: o.perto }; restaura(c); const r = U(t, u, s.camera) || {}; if (o.limpa !== false) limpaVista(c, s.camera); const V = c.userData.vida; if (V && o.vida !== false) { const T = tw(t); for (const f of V) f(t, T, u); } return FX(r); };
   return s;
 }
+let ULTIMA = null;
 let CUR = { t0: 0, t1: 1, viva: 1 };
 // ---- vista limpa: quem fica colado na câmera ou na frente de quem está sendo filmado sai do quadro ----
 const _v = new THREE.Vector3(), _a = new THREE.Vector3(), _b = new THREE.Vector3();
@@ -22,7 +25,7 @@ export function limpaVista(c, cam) {
   const alvo = cam.userData.alvo; if (!alvo) return; c.updateMatrixWorld(true); _a.copy(cam.position); _b.set(alvo[0], alvo[1], alvo[2]); const ab = _b.clone().sub(_a); const L2 = ab.lengthSq();
   for (const k of atoresDa(c)) { if (!k.root.visible || k.fixo) continue; let vis = false; for (let p = k.root.parent; p; p = p.parent) if (p.visible === false) { vis = true; break; } if (vis) continue;
     k.headG.getWorldPosition(_v); _v.y += .26 * (k.root.scale.x || 1); const dc = _v.distanceTo(_a); const s = Math.max(0, Math.min(1, _v.clone().sub(_a).dot(ab) / L2)); const d = _v.distanceTo(_a.clone().addScaledVector(ab, s));
-    const alvoProx = _v.distanceTo(_b) < .55; if (dc < .55 || (!alvoProx && s > .02 && s < .8 && d < .3 * (k.root.scale.x || 1) && dc < _a.distanceTo(_b) - .4)) { k.root.visible = false; k._ocultei = true; } }
+    const alvoProx = _v.distanceTo(_b) < .55; if (dc < .75 || (!alvoProx && s > .02 && s < .8 && d < .3 * (k.root.scale.x || 1) && dc < _a.distanceTo(_b) - .4)) { k.root.visible = false; k._ocultei = true; } }
 }
 /** Usado pelas cenas da cidade para a câmera viva saber o começo e o fim do plano. */
 export function setCur(c) { CUR = c; }
@@ -36,6 +39,9 @@ export function cam(c, P, Q, u, roll = 0, viva = CUR.viva) {
     const push = .05 * viva * (k * k * (3 - 2 * k)) + longo; for (let i = 0; i < 3; i++) p[i] += (q[i] - p[i]) * push;
     const a = d * .011 * viva; p[0] += nz(t, 1) * a; p[1] += nz(t, 4) * a * .7; p[2] += nz(t, 7) * a * .5; q[0] += nz(t, 9) * a * .35; q[1] += nz(t, 12) * a * .3;
     roll += nz(t, 15) * .006 * viva; }
+  // rosto na mira: afasta a câmera até a cabeça ocupar no máximo ~40% da altura da tela
+  if (CUR.scene && CUR.perto !== true) { const L = atoresDa(CUR.scene); for (const k of L) { if (!k.root.visible) continue; k.headG.getWorldPosition(_v); _v.y += .26 * (k.root.scale.x || 1);
+      if (Math.hypot(_v.x - q[0], _v.y - q[1], _v.z - q[2]) < .45) { const mn = (CUR.perto || .71 * (k.root.scale.x || 1)) / Math.tan(c.fov * Math.PI / 360); const d = Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]); if (d < mn && d > 1e-3) for (let i = 0; i < 3; i++) p[i] = q[i] + (p[i] - q[i]) * mn / d; break; } } }
   aim(c, p, q, roll); c.userData.alvo = q; }
 import { makeChar3D, pisca } from './motor/char3d.js';
 import { boca } from './fala.js';

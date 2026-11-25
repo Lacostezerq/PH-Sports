@@ -60,7 +60,7 @@ export const ATO2A = [
   // K4 — ele pega o pote e gira: a tampa voa, bate no teto e cai dentro da xícara. Splash.
   mk(121.6, 123.9, { bg: '#C8D8E0', fov: 44 }, (c) => { const S = cena1(c);
     return (t, u, cm) => { const { ci, gui } = S; gui.place(-.62, .62, 0, Math.PI / 2 - .1); ci.place(-.15, -.55, 0, .9);
-      gui.pose(kf(t, [[121.6, soma(parado(t, 2), { shR: [40, 8], elR: 60 })], [121.9, soma(parado(t, 2), { shR: [50, 6], elR: 90, shL: [45, 8, -30], elL: 95 })], [122.3, soma(parado(t, 2), { shR: [50, 6], elR: 90, shL: [45, 8, -30], elL: 80, twist: -4 })], [122.45, soma(parado(t, 2), { shR: [50, 6], elR: 90, shL: [70, 20], elL: 40, twist: 8, headX: -20 }), 'out']]));
+      gui.pose(kf(t, [[121.6, soma(parado(t, 2), { shR: [40, 8], elR: 60 })], [121.9, soma(parado(t, 2), { shR: [38, 6], elR: 68, shL: [45, 8, -30], elL: 95 })], [122.3, soma(parado(t, 2), { shR: [38, 6], elR: 68, shL: [45, 8, -30], elL: 80, twist: -4 })], [122.45, soma(parado(t, 2), { shR: [38, 6], elR: 68, shL: [70, 20], elL: 40, twist: 8, headX: -20 }), 'out']]));
       ci.pose(soma(parado(t, 3), t > 122.4 ? { shL: [40, 20], elL: 60, shR: [40, 20], elR: 60, lean: -6, headX: -20 } : { shR: [50, 10], elR: 30 })); poteUpd(S, t); S.sp(t);
       rosto(gui, null, t, t > 122.4 ? 'surpreso' : 'sono', { look: t > 122.4 ? [0, -.8] : [0, .5] }); rosto(ci, null, t, t > 122.4 ? 'surpreso' : 'neutro', { look: t > 122.4 ? [0, -.8] : [-.3, .3] });
       const k = smooth(122.35, 123.3, t); cam(cm, [[0, [1.25, .95, 1.75]], [1, [1.15, .95, 1.6]]], [[0, [-.4, 1.1 + 1.0 * Math.sin(k * Math.PI) * (k < .6 ? 1 : .6), .4]], [1, [-.2, .85, .42]]], k, 0, .3); return MANHA; }; }),
@@ -68,12 +68,12 @@ export const ATO2A = [
   mk(123.9, 127.1, { bg: '#C8D8E0', fov: 36 }, (c) => { const S = cena1(c);
     return (t, u, cm) => { const { ci, gui } = S; gui.place(-.62, .62, 0, Math.PI / 2 - .1); ci.place(-.15, -.55, 0, .9); poteUpd(S, t);
       ci.pose(soma(parado(t, 3), { shL: [30, 20], elL: 70, shR: [30, 20], elR: 70, lean: -5 })); rosto(ci, 'cida', t, 'surpreso', { look: [-.4, .2] });
-      gui.pose(soma(parado(t, 2), { shR: [50, 6], elR: 90, shL: [30 + 30 * smooth(125.4, 125.8, t), 30], elL: 60 }, G.ombros && t > 125.5 ? { headZ: 8 } : {})); rosto(gui, 'gui', t, 'preocupado', { look: [.4, 0] });
+      gui.pose(soma(parado(t, 2), { shR: [38, 6], elR: 68, shL: [30 + 30 * smooth(125.4, 125.8, t), 30], elL: 60 }, G.ombros && t > 125.5 ? { headZ: 8 } : {})); rosto(gui, 'gui', t, 'preocupado', { look: [.4, 0] });
       cam(cm, [[0, [.95, 1.18, .95]], [1, [.85, 1.15, .85]]], [[0, [-.45, 1.0, .1]], [1, [-.45, 1.0, .1]]], u / 3.2); return MANHA; }; }),
   // K6 — os dois olham pro pote. Depois um pro outro.
   mk(127.1, 132, { bg: '#C8D8E0', fov: 34 }, (c) => { const S = cena1(c);
     return (t, u, cm) => { const { ci, gui } = S; gui.place(-.62, .62, 0, Math.PI / 2 - .1); ci.place(-.15, -.55, 0, .9); poteUpd(S, t); const outro = smooth(129.6, 130.1, t);
-      gui.pose(soma(parado(t, 2), { shR: [62, 6], elR: 80, headX: 14 * (1 - outro), headY: 30 * outro })); rosto(gui, null, t, 'desconfiado', { look: [outro ? .5 : 0, .5 * (1 - outro)] });
+      gui.pose(soma(parado(t, 2), { shR: [42, 6], elR: 70, headX: 14 * (1 - outro), headY: 30 * outro })); rosto(gui, null, t, 'desconfiado', { look: [outro ? .5 : 0, .5 * (1 - outro)] });
       ci.pose(soma(parado(t, 3), { headX: 18 * (1 - outro), headY: -20 * outro, lean: 6 })); rosto(ci, null, t, 'desconfiado', { look: [-.5 * outro, .5 * (1 - outro)] });
       cam(cm, [[0, [.75, 1.3, 1.35]], [1, [.65, 1.28, 1.2]]], [[0, [-.45, .95, .1]], [1, [-.4, 1.0, .1]]], u / 4.9); return MANHA; }; }),
   // E1 — corredor da escola: joga a mochila no ombro; ela voa rápido demais e quase acerta o colega

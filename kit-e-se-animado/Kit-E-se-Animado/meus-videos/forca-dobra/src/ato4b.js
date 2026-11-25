@@ -49,15 +49,15 @@ export const ATO4B = [
   // V6 — cai de joelhos no asfalto e olha pra cima
   lad(585, 592.8, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => soma(parado(tt, 2), { shL: [10, 10], shR: [10, 10] }), guiEmo: 'preocupado' }); S.mot.root.visible = false; const a = t - 585;
     mp.place(.75, .6, 0, -Math.PI / 2 - .25); mp.pose(soma(mix(parado(t, 4), G.ajoelhado, smooth(.3, 1.2, a)), { headX: -18 * smooth(1.5, 2.5, a), shL: [30, 10], shR: [30, 10], elL: 30, elR: 30 }, treme(t, .5))); rosto(mp, null, t, 'choro', { look: [0, -.6] });
-    cam(cm, [[0, W(S, 2.4, 1.0, 1.7)], [1, W(S, 2.0, .95, 1.4)]], [[0, W(S, .4, .7, .4)], [1, W(S, .4, .75, .4)]], u / 7.8); return { bloom: .3 }; }; }),
+    cam(cm, [[0, W(S, -1.3, 1.0, 1.6)], [1, W(S, -1.1, .95, 1.4)]], [[0, W(S, .75, .7, .6)], [1, W(S, .75, .75, .6)]], u / 7.8); return { bloom: .3 }; }; }),
   // V7 — "Moleque, tu é o quê?" (chorando)
   lad(592.8, 596.4, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => parado(tt, 2), guiEmo: 'preocupado' }); S.mot.root.visible = false;
     mp.place(.75, .6, 0, -Math.PI / 2 - .25); mp.pose(soma(G.ajoelhado, { headX: -18, shL: [40 + 10 * Math.sin(t * 3), 20], elL: 40, shR: [40, 20], elR: 40 }, treme(t, .4))); rosto(mp, 'mot', t, 'choro', { look: [0, -.6] });
     cam(cm, [[0, W(S, -.35, 1.05, 1.3)], [1, W(S, -.3, 1.02, 1.2)]], [[0, W(S, .75, .78, .6)], [1, W(S, .75, .78, .6)]], u / 3.6); return { bloom: .3 }; }; }),
   // V8 — "Neto da Dona Cida." (tímido)
-  lad(596.4, 599.6, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => soma(parado(tt, 2), G.maosBolso, { headX: 12 }), guiEmo: 'vergonha', guiExtra: { quem: 'gui', look: [.4, .4] } }); S.mot.root.visible = false;
+  lad(596.4, 599.6, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => soma(parado(tt, 2), G.maosBolso, { headX: 16 }), guiEmo: 'vergonha', guiExtra: { quem: 'gui', look: [0, .5] } }); S.gui.root.rotation.y = Math.PI / 2; S.mot.root.visible = false;
     mp.place(.75, .6, 0, -Math.PI / 2 - .25); mp.pose(soma(G.ajoelhado, { headX: -18 })); rosto(mp, null, t, 'choro', { look: [0, -.6] });
-    cam(cm, [[0, W(S, 1.35, .75, .9)], [1, W(S, 1.3, .72, .85)]], [[0, W(S, 0, 1.0, .25)], [1, W(S, 0, 1.0, .25)]], u / 3.2); return { bloom: .3 }; }; }),
+    cam(cm, [[0, W(S, 1.6, .7, .45)], [1, W(S, 1.55, .72, .42)]], [[0, W(S, 0, 1.05, .25)], [1, W(S, 0, 1.05, .25)]], u / 3.2); return { bloom: .3 }; }; }),
   // V9 — ele pega a sacola de pão do chão e vai embora; gente saindo das lojas filmando
   lad(599.6, 605, (S, c) => { const mp = motPe(S); mp.root.visible = true; const fil = [[-4.8, -3.2], [-5.4, -1.0], [4.9, -2.4], [5.2, .8], [-4.6, 1.6]].map(([x, z], i) => { const k = ator(S.g, pessoa(i + 2), x, z, x > 0 ? -Math.PI / 2 : Math.PI / 2); const f = celular(); k.hands.R.add(f); f.position.set(0, -.08, .04); return k; });
     return (t, u, cm) => { const a = t - 599.6; S.upd(t, 25, { guiPose: (tt) => parado(tt, 2), guiEmo: 'neutro' }); S.mot.root.visible = false; S.sacC.visible = false;
@@ -65,7 +65,7 @@ export const ATO4B = [
       S.gui.pose(vai > 0 ? andar(t, { f: 1.7 }) : soma(parado(t, 2), mix({}, G.pegaChao, pega))); const sp = S.sacC; sp.visible = true; if (a > .9) naMao(sp, S.gui, 'L', [0, -.22, 0], false); sp.rotation.set(0, 0, 0); rosto(S.gui, null, t, 'neutro');
       mp.place(.75, .6, 0, -Math.PI / 2 - .25 + .9 * smooth(2, 3.5, a)); mp.pose(soma(G.ajoelhado, { headX: -10 })); rosto(mp, null, t, 'choro', { look: [.5, -.4] });
       fil.forEach((k, i) => { k.pose(soma(parado(t, i), G.filmar)); rosto(k, null, t, 'surpreso'); k.faceTo(S.gui.root.position.x, S.gui.root.position.z); });
-      cam(cm, [[0, W(S, -1.4, 1.5, -3.2)], [1, W(S, -1.2, 1.6, -3.6)]], [[0, W(S, .2, .8, .6)], [1, W(S, .3, .9, 2.0)]], u / 5.4); return { bloom: .3 }; }; }),
+      cam(cm, [[0, W(S, -2.6, 1.6, 2.6)], [1, W(S, -2.4, 1.7, 3.2)]], [[0, W(S, .2, .8, .6)], [1, W(S, .3, .9, 2.0)]], u / 5.4); return { bloom: .3 }; }; }),
   // V10 — "Se ele tivesse segurado com toda a força, a carreta teria virado lata, e o motorista junto" (o "e se" aparece por um instante, cinza)
   lad(605, 611.2, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { const lata = t > 608.4 && t < 610.6; S.upd(t, 25, { guiPose: (tt) => parado(tt, 2) }); S.mot.root.visible = false; S.gui.root.visible = false; S.sacC.visible = false;
     S.ca.scale.set(.58, .58 * (lata ? .78 : 1), .58 * (lata ? .62 : 1)); S.ca.rotation.z = lata ? .06 : 0; mp.root.visible = !lata; mp.place(.75, .6, 0, -Math.PI / 2 + .6); mp.pose(soma(G.ajoelhado, { headX: -6 })); rosto(mp, null, t, 'choro');
@@ -110,7 +110,7 @@ export const ATO4C = [
   // P3 — tropeça de leve num buraco e apoia a mão no poste: o poste entorta até ficar torto pro lado
   mk(630.4, 636, { bg: '#CFE4EE', fov: 40 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); camT(cm, [[0, [2.6, 1.3, -7.6]], [1, [2.4, 1.6, -7.8]]], [[0, [4.8, .9, -4.3]], [1, [4.6, 2.0, -4.8]]], u / 5.6, t > 631 && t < 632.3 ? .01 : 0); return { tint: '#FFFAF0' }; }; }),
   // P4 — "Oitocentas toneladas, mais que o Cristo Redentor..." — o poste torto, ele parado olhando
-  mk(636, 642, { bg: '#CFE4EE', fov: 38 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); cam(cm, [[0, [6.6, 1.5, -6.8]], [1, [6.4, 1.4, -6.3]]], [[0, [4.8, 1.6, -4.4]], [1, [4.9, 1.2, -4.3]]], u / 6); return { tint: '#FFFAF0' }; }; }),
+  mk(636, 642, { bg: '#CFE4EE', fov: 38 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); cam(cm, [[0, [3.3, 1.5, -6.6]], [1, [3.4, 1.4, -6.2]]], [[0, [4.8, 1.6, -4.4]], [1, [4.9, 1.2, -4.3]]], u / 6); return { tint: '#FFFAF0' }; }; }),
   // P5 — ele olha em volta, ninguém viu, e sai rápido de cabeça baixa
   mk(642, 650, { bg: '#CFE4EE', fov: 40 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, 640); const a = t - 642; const g = P.gui; const sai = clamp((a - 2.6) / 5);
     g.place(4.85 + .4 * sai, -4.2 - sai * 6, 0, a < 2.6 ? Math.PI + Math.sin(a * 2.4) * .9 : Math.PI); g.pose(sai > 0 ? andar(t, { f: 2.0, maos: 'bolso', curvado: true }) : soma(parado(t, 2), G.maosBolso, { headY: Math.sin(a * 2.4) * 40 })); rosto(g, null, t, 'preocupado');
@@ -120,12 +120,12 @@ export const ATO4C = [
     return (t, u, cm) => { ovosUpd(S, 489, {}); const dois = t > 652.6; S.gui.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 6, shR: [60, 0], elR: 80, shL: [dois ? 60 : 30, 0], elL: dois ? 80 : 50, headX: 12 }); o2.visible = dois; naMao(o2, S.gui, 'L', [0, -.02, .06], false); rosto(S.gui, null, t, 'determinado', { look: [0, .6] });
       S.ci.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, ...G.bracoCruzado }); rosto(S.ci, null, t, 'feliz'); cam(cm, [[0, [.42, 1.3, -.65]], [1, [.4, 1.25, -.55]]], [[0, [.15, .95, .95]], [1, [.15, .95, .95]]], u / 5); return { tint: '#FFF6E8' }; }; }),
   // Mo2 — passando um ovo de uma mão pra outra
-  mk(655, 660, { bg: '#C8D8E0', fov: 32 }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); S.mao.visible = false; const o = ovoMao(c);
+  mk(655, 660, { bg: '#C8D8E0', fov: 32, perto: true }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); S.mao.visible = false; const o = ovoMao(c);
     return (t, u, cm) => { ovosUpd(S, 489, { semOvo: true }); S.gui.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 6, shR: [60, 10], elR: 80, shL: [60, 10], elL: 80, headX: 14 });
       const k = (Math.sin(t * 2.2) + 1) / 2; S.gui.root.updateMatrixWorld(true); const a = S.gui.hands.R.localToWorld(new THREE.Vector3(0, -.02, .06)), b = S.gui.hands.L.localToWorld(new THREE.Vector3(0, -.02, .06)); o.position.copy(a).lerp(b, k); o.position.y += Math.sin(k * Math.PI) * .18; o.rotation.z = k * 6;
       rosto(S.gui, null, t, 'feliz', { look: [(k - .5) * 1.2, .6] }); S.ci.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, ...G.bracoCruzado }); cam(cm, [[0, [.75, 1.05, .45]], [1, [.7, 1.02, .5]]], [[0, [.15, .95, .78]], [1, [.15, .95, .78]]], u / 5); return { tint: '#FFF6E8' }; }; }),
   // Mo3 — segurando um ovo em cima de cada dedo
-  mk(660, 665, { bg: '#C8D8E0', fov: 30 }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); const os = [0, 1, 2, 3, 4].map(() => ovoMao(c));
+  mk(660, 665, { bg: '#C8D8E0', fov: 30, perto: true }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); const os = [0, 1, 2, 3, 4].map(() => ovoMao(c));
     return (t, u, cm) => { ovosUpd(S, 489, { semOvo: true }); S.gui.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 4, shR: [75, 0], elR: 90, headX: 8 }); S.gui.root.updateMatrixWorld(true);
       os.forEach((o, i) => { const p = S.gui.hands.R.localToWorld(new THREE.Vector3((i - 2) * .028, .06 + Math.sin(t * 3 + i) * .002, .02 + Math.abs(i - 2) * .01)); o.position.copy(p); o.rotation.z = Math.sin(t * 2 + i) * .05; });
       rosto(S.gui, null, t, 'determinado', { look: [0, -.2] }); cam(cm, [[0, [.55, 1.15, .1]], [1, [.5, 1.12, .2]]], [[0, [.15, 1.05, .78]], [1, [.15, 1.08, .78]]], u / 5); return { tint: '#FFF6E8', focus: .7, range: .5, blur: 6 }; }; }),
@@ -139,7 +139,7 @@ export const ATO4C = [
     const al = [[-1.2, -1.0], [0, -1.0], [-2.4, .3], [0, .3], [2.4, -1.0]].map(([x, z], i) => { const k = ator(c, pessoa(i, { camisa: '#F6F4EE', calca: '#2F4E86' }), x, z + .4, Math.PI); k.place(x, z + .4, .02, Math.PI); return k; });
     return (t, u, cm) => { g.pose({ bob: -.2, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 6, shL: [40, 6], elL: 70, shR: [40, 6], elR: 70, headX: -14, headY: 20 }); rosto(g, null, t, 'tedio', { look: [.4, -.6] });
       al.forEach((k, i) => { k.pose({ bob: -.2, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 10, shL: [40, 6], elL: 70, shR: [40 + 10 * Math.sin(t * 2 + i), 6], elR: 70, headX: 12 }); rosto(k, null, t, 'tedio'); });
-      cam(cm, [[0, [1.9, 1.3, 1.7]], [.45, [1.8, 1.3, 1.5]], [1, [1.4, 1.9, .5]]], [[0, [1.2, 1.05, .1]], [.45, [1.2, 1.1, .1]], [1, [2.2, 2.45, -3.7]]], u / 4.5); return { tint: '#FFF8EC' }; }; }),
+      cam(cm, [[0, [3.2, 1.4, .8]], [.45, [3.1, 1.4, .7]], [1, [1.6, 1.9, .6]]], [[0, [1.2, 1.05, .1]], [.45, [1.2, 1.1, .1]], [1, [2.2, 2.45, -3.7]]], u / 4.5); return { tint: '#FFF8EC' }; }; }),
   // D17b — batuca de leve na carteira com a ponta do dedo e a carteira afunda um pouquinho
   mk(674.5, 680, { bg: '#F2E6C8', fov: 30 }, (c) => { const S = salaAula(c); const g = ator(c, GUILUVA, 1.2, .1, Math.PI); g.place(1.2, .1, .02, Math.PI); const ct = S.carteiras.reduce((m, k) => Math.hypot(k.position.x - 1.2, k.position.z + .1) < Math.hypot(m.position.x - 1.2, m.position.z + .1) ? k : m);
     return (t, u, cm) => { const bat = Math.max(0, Math.sin(t * 9)); g.pose({ bob: -.2, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 10, shL: [40, 6], elL: 70, shR: [44, 6], elR: 70 + bat * 8, headX: 18 }); const af = smooth(676.5, 677.2, t); ct.userData.tampo.position.y = .72 - .03 * af; ct.userData.tampo.rotation.z = .05 * af;

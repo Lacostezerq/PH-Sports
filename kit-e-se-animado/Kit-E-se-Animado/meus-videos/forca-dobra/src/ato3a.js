@@ -74,7 +74,9 @@ function montaAcad(c) {
   const hal = cyl(.012, .012, .3, '#9EA4AC', 0, 0, 0, { seg: 6 }); c.add(hal); const fone = celular((x, w, h) => { x.fillStyle = '#1A1A20'; x.fillRect(0, 0, w, h); x.fillStyle = '#E2443A'; x.beginPath(); x.arc(40, 40, 14, 0, 7); x.fill(); }); c.add(fone);
   // anilhas que caem: cópias no mundo, partindo de onde estariam com a barra em U
   sup.updateMatrixWorld(true); const an = sup.userData.anilhas; const caem = an.map((a, i) => { const m = a.clone(); c.add(m); m.visible = false; return m; });
-  return { A, B, sup, gui, tia, dono, bone, extras, hal, fone, an, caem };
+  const curva = new THREE.CatmullRomCurve3([[-.75, -.55], [-.55, -.2], [-.3, 0], [0, .04], [.3, 0], [.55, -.2], [.75, -.55]].map(([x, y]) => new THREE.Vector3(x, y, 0)));
+  const u = new THREE.Mesh(new THREE.TubeGeometry(curva, 40, .018, 8), toon('#C9CED6')); sup.add(u); u.visible = false;
+  return { A, B, sup, gui, tia, dono, bone, extras, hal, fone, an, caem, u };
 }
 const T_ERGUE = 340.2, T_DOBRA = 341.4, T_CAI = 341.9;
 function acadUpd(S, t) {
@@ -93,7 +95,7 @@ function acadUpd(S, t) {
   // barra: no suporte -> na mão dele, acima da cabeça -> dobra em U; anilhas escorregam e caem (BUM)
   if (t < T_ERGUE - .2) { B.position.set(0, 1.15, -.55); B.rotation.set(0, 0, 0); }
   else { gui.root.updateMatrixWorld(true); const h = gui.hands.R.localToWorld(new THREE.Vector3(0, -.05, 0)); sup.worldToLocal(h); B.position.copy(h); B.rotation.set(0, 0, 0); }
-  dobrarBarra(B, dob); const cai = t > T_CAI; an.forEach((a) => { a.visible = !cai; });
+  dobrarBarra(B, dob); B.children[0].visible = dob < .5; S.u.visible = dob >= .5; if (S.u.visible) { S.u.position.copy(B.position); S.u.scale.setScalar(.6 + .4 * dob); } const cai = t > T_CAI; an.forEach((a) => { a.visible = !cai; });
   caem.forEach((m, i) => { m.visible = cai; if (!cai) return; const a = an[i]; const s = Math.sign(a.userData.x0 ?? a.position.x); const k = t - T_CAI; const y0 = B.position.y - .35, x0 = s * (.35 + (i % 6) * .04);
     const y = Math.max(.22 - (i % 6) * .02, y0 - 4.9 * k * k + (k > .45 ? 0 : 0)); m.position.set(x0 + s * k * .8, y, -.5 + (i % 6) * .03 - .55 + .3); m.rotation.set(Math.min(1.57, k * 4), 0, Math.PI / 2 + s * Math.min(1.2, k * 3)); });
   // dono da academia: olhando; tira o boné devagar
@@ -132,7 +134,7 @@ export const ATO3A = [
         x.fillStyle = '#FFF'; x.font = '900 34px Inter'; x.fillText('👁 ' + fmt(v), 12, 340);
         vis.slice(-5).forEach(([tc, txt, cor], i) => { const y = 380 + i * 44; x.fillStyle = cor; x.beginPath(); x.arc(26, y, 14, 0, 7); x.fill(); x.fillStyle = '#FFF'; x.font = '600 19px Inter'; x.fillText(txt, 48, y + 7); }); }); }
       naMao(f, S.tia, 'R', [0, -.12, .08], [-.4, 0, 0]); S.tia.pose(soma(parado(t, 5), { shR: [62, -6], elR: 80, shL: [55, -6], elL: 75, headX: 22 })); rosto(S.tia, null, t, 'feliz', { look: [0, .8] });
-      const p = S.tia.headG.localToWorld(new THREE.Vector3(.3, .55, -.55)); S.tia.fixo = true; const q = f.position.clone(); cam(cm, [p.x, p.y, p.z], [q.x, q.y, q.z], u / 9.6, 0, .3); return { ...SOL, focus: .55, range: .25, blur: 10 }; }; }),
+      const p = S.tia.headG.localToWorld(new THREE.Vector3(-.5, .3, -.3)); S.tia.fixo = true; const q = f.position.clone(); cam(cm, [p.x, p.y, p.z], [q.x, q.y, q.z], u / 9.6, 0, .3); return { ...SOL, focus: .55, range: .25, blur: 10 }; }; }),
   // A1 — academia de bairro: espelho grande, música alta, gente treinando
   mk(330, 335.2, { bg: '#2A2A30', fov: 42 }, (c) => { const S = montaAcad(c); return (t, u, cm) => { acadUpd(S, t); cam(cm, [[0, [-1.4, 2.3, 3.6]], [1, [-1.0, 2.0, 3.2]]], [[0, [1, 1.0, -1]], [1, [.6, 1.0, -1.2]]], u / 5.2); return { bloom: .3 }; }; }),
   // A2 — o Tiago entra puxando o Guilherme pelo braço; todo mundo para e olha

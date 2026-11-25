@@ -3,6 +3,7 @@
 // Também confere sobreposição entre elementos (avisos no console).
 import fs from 'node:fs';
 import path from 'node:path';
+import { forcaUI } from './ui_forca.mjs';
 export function gerarUI(P) {
   const cfg = JSON.parse(fs.readFileSync(path.join(P, 'ui.json'), 'utf8'));
   const T = cfg.duracao;
@@ -123,6 +124,7 @@ export function gerarUI(P) {
       R.push({ id: nome, a, b, r: dir ? [1220, top, 1860, top + 80 + 64 * e.itens.length] : [60, top, 700, top + 80 + 64 * e.itens.length] });
     }
   }
+  const FU = forcaUI(); H.push(...FU.H); J.push(...FU.J); R.push(...FU.R);
   // ---------- conferência de sobreposição ----------
   const inter = (p, q) => p.r[0] < q.r[2] && q.r[0] < p.r[2] && p.r[1] < q.r[3] && q.r[1] < p.r[3] && p.a < q.b - .05 && q.a < p.b - .05;
   for (let i = 0; i < R.length; i++) for (let j = i + 1; j < R.length; j++) if (inter(R[i], R[j]) && !(R[i].id === 'legenda' && R[j].id === 'legenda')) avisos.push(`${R[i].id} cobre ${R[j].id}`);
@@ -191,6 +193,7 @@ export function gerarUI(P) {
 .inss{width:96px;height:96px}
 .gx{font:700 22px 'IBM Plex Mono';fill:#C9C2B2}
 .gv{font:900 30px Inter;fill:#fff}
+${FU.css}
 </style>
 <div id="root" data-composition-id="ui" data-width="1920" data-height="1080" data-layout-allow-overlap>
 ${H.join('\n')}

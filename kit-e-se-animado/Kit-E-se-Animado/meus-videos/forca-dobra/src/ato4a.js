@@ -10,14 +10,14 @@ import { G, soma, vivo, treme, andar, parado, kf, kv, mix } from './mov.js';
 import { clamp, smooth, easeOut, lerp, rng } from './motor/core.js';
 import { sph } from './motor/toon.js';
 
-const LUZ = { tint: '#FFE8C0', bloom: .3, vig: .45 };
+const LUZ = { tint: '#FFF0D8', bloom: .12, vig: .45, exposure: .9 };
 export const OVO_ESC = 1.7;
 // instantes em que um ovo estoura (tentativas 1, 2, 3, 4, 10, 18, 30)
 const QUEBRA = [512.4, 514.6, 515.6, 516.6, 520.4, 523.8, 530.0];
 const SENT = (o = {}) => ({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 10, shL: [40, 4], elL: 60, shR: [50, 0], elR: 65, ...o });
 /** Cozinha da noite com a mesa do treino. o.hora 'noite' | 'madrugada'. */
 export function montaOvos(c, o = {}) {
-  const K = cozinha(c, { hora: o.hora || 'noite' }); if (!o.hora) { K.luz.intensity = 8; K.lamp.userData.bulbo.material.emissiveIntensity = 1.4; }
+  const K = cozinha(c, { hora: o.hora || 'noite' }); if (!o.hora) { K.luz.intensity = 3.5; K.lamp.userData.bulbo.material.emissiveIntensity = 1.2; }
   const jm = janela(1.0, .9, 'madrugada', 2); jm.position.set(.4, 1.6, -1.6 + .03); c.add(jm); jm.traverse((m) => { if (m.material) { m.material = m.material.clone(); m.material.transparent = true; } }); jm.userData.vidro.material.opacity = 0;
   const gui = ator(c, o.luva ? o.luva : GUI, .15, 1.05, Math.PI); sentar(gui, .15, 1.05, Math.PI, .46);
   const ci = ator(c, CIDA, .15, -.15, 0); sentar(ci, .15, -.15, 0, .46);
@@ -96,7 +96,7 @@ export const ATO4A = [
       rosto(S.ci, null, t, ac < .5 ? 'sono' : 'determinado', { blink: ac < .5 ? 1 : undefined, look: [0, .4 * ap] }); S.gui.pose(SENT({ shR: [55, 0], elR: 70 })); rosto(S.gui, null, t, 'sono');
       cam(cm, [[0, [.45, 1.3, 1.55]], [1, [.42, 1.28, 1.45]]], [[0, [.15, .9, -.15]], [1, [.15, .9, -.15]]], u / 4); return { ...LUZ, tint: '#E0E0FF' }; }; }),
   // E47 — tentativa 47: a música para. Câmera bem perto da mão: o ovo inteiro na palma, sem nenhuma rachadura. Ele nem respira
-  mk(540.6, 548, { bg: '#1A1610', fov: 30 }, (c) => { const S = montaOvos(c); S.jm.userData.vidro.material.opacity = 1;
+  mk(540.6, 548, { bg: '#1A1610', fov: 30, perto: true }, (c) => { const S = montaOvos(c); S.jm.userData.vidro.material.opacity = 1;
     return (t, u, cm) => { ovosUpd(S, t); const ab = smooth(542, 544, t); S.gui.pose(SENT({ shR: [58, 0], elR: 80, headX: 14 })); S.gui.hands.R.scale.set(1, 1 - .15 * (1 - ab), 1);
       S.gui.root.updateMatrixWorld(true); const h = S.gui.hands.R.localToWorld(new THREE.Vector3(0, -.02, .06)); S.mao.position.copy(h).add(new THREE.Vector3(0, .03 * ab, 0));
       rosto(S.gui, null, t, 'surpreso', { look: [0, .7], blink: 0 }); S.ci.pose(soma(SENT({ lean: 6 }), { shL: [40, 10], elL: 60, shR: [40, 10], elR: 60, headX: 10 }));

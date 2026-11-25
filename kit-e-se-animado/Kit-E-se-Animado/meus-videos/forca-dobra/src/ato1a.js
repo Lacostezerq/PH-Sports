@@ -10,7 +10,7 @@ import { tremor } from './efeitos.js';
 const TS = tsAbertura;
 const FXT = { tint: '#FFF0E0', sat: 1.08 };
 /** Plano na ladeira: build(S, c) devolve upd(t, u, cm) => efeitos. */
-const lad = (t0, t1, build, o = {}) => mk(t0, t1, { bg: '#E8B080', fov: o.fov || 40, far: 600 }, (c) => { const S = montaLadeira(c, o); const U = build(S, c); return (t, u, cm) => { S.g.updateMatrixWorld(true); return { ...FXT, ...(U(t, u, cm) || {}) }; }; });
+const lad = (t0, t1, build, o = {}) => mk(t0, t1, { bg: '#E8B080', fov: o.fov || 40, far: 600, perto: o.perto }, (c) => { const S = montaLadeira(c, o); const U = build(S, c); return (t, u, cm) => { S.g.updateMatrixWorld(true); return { ...FXT, ...(U(t, u, cm) || {}) }; }; });
 const W = (S, x, y, z) => S.L.w(x, y, z);
 // pose do Guilherme segurando a carreta (depois do toque) e antes (esperando)
 const segura = (t, ts) => { const b = ts > T_IMP; const k = clamp((ts - T_IMP) / .2); return soma(G.maosFrente, { shL: [-22, 0], shR: [-22, 0], hipL: [24, 6], knL: 24 + 8 * k, hipR: [-18 - 6 * k, 4], knR: 6, lean: 2 + 5 * k, bob: -.02 * k }, treme(t, b ? 1.2 * Math.exp(-(ts - T_IMP) * .8) + .25 : 0)); };
@@ -29,7 +29,7 @@ export const ATO1A = [
     const z = S.cw.position.z + PC; camT(cm, [[0, W(S, 2.3, .55, -6.5)], [1, W(S, 2.1, .7, -7.6)]], [[0, W(S, -.5, 2.2, z)], [1, W(S, -.5, 2.0, z)]], u / 2.8, .012 + u * .004); return { focus: 30, range: 40, blur: 2 }; }),
   // 3 — o motorista desesperado, buzina travada: "Sai da frente, moleque!"
   lad(11, 14.2, (S) => (t, u, cm) => { const ts = TS(t); S.upd(t, ts, { guiPose, motEmo: 'medo' }); S.ca.updateMatrixWorld(true);
-    const p = pw(S.ca, -.7 + u * .15, 2.25, 10.6 - u * .4), q = pw(S.ca, .55, 2.4, 5.5); camT(cm, p, q, u / 3.2, .02); return { focus: 3.2, range: 2, blur: 5 }; }),
+    const p = pw(S.ca, -.7 + u * .15, 2.25, 10.6 - u * .4), q = pw(S.ca, .55, 2.4, 5.5); camT(cm, p, q, u / 3.2, .02); return { focus: 3.2, range: 2, blur: 5 }; }, { perto: true }),
   // 4 — o chinelo parado no meio da faixa
   lad(14.2, 16.4, (S) => (t, u, cm) => { const ts = TS(t); S.upd(t, ts, { guiPose });
     cam(cm, [[0, W(S, .55, .12, .9)], [1, W(S, .45, .14, .75)]], [[0, W(S, 0, .08, 0)], [1, W(S, 0, .1, -.05)]], u / 2.2); return { focus: .9, range: .4, blur: 14 }; }),
@@ -53,7 +53,7 @@ export const ATO1A = [
     cam(cm, [[0, W(S, -2.7, .3, -1.05)], [1, W(S, -2.35, .36, -.8)]], [[0, W(S, 0, .95, .2)], [1, W(S, 0, .95, .22)]], u / 3.8, 0, 0); return { focus: 2.0, range: 2, blur: 4, bloom: .35 }; }),
   // 11 — aproxima no rosto; congela (a poeira para no ar)
   lad(29.3, 33.6, (S) => (t, u, cm) => { const ts = TS(t), tg = Math.min(t, 32.6); S.upd(tg, ts, { guiPose, guiEmo: 'determinado' }); const fz = smooth(32.5, 32.8, t);
-    cam(cm, [[0, W(S, .5, 1.24, -.76)], [1, W(S, .26, 1.16, -.52)]], [[0, W(S, 0, 1.06, .22)], [1, W(S, 0, 1.08, .24)]], u / 4.3, 0, 0); return { focus: 1.4, range: .8, blur: 8, sat: 1.08 - .5 * fz, tint: fz > 0 ? '#E8EEF8' : FXT.tint, flash: fz * (1 - smooth(32.8, 33.1, t)) * .5 }; }),
+    cam(cm, [[0, W(S, .5, 1.24, -.76)], [1, W(S, .26, 1.16, -.52)]], [[0, W(S, 0, 1.06, .22)], [1, W(S, 0, 1.08, .24)]], u / 4.3, 0, 0); return { focus: 1.4, range: .8, blur: 8, sat: 1.08 - .5 * fz, tint: fz > 0 ? '#E8EEF8' : FXT.tint, flash: fz * (1 - smooth(32.8, 33.1, t)) * .5 }; }, { perto: true }),
   // 12 — congelado: surge um celular com o like do lado; ele encosta o dedo de leve e o celular continua inteiro
   lad(33.6, 38.6, (S) => { const fone = celular(); fone.scale.setScalar(4.2); S.g.add(fone);
     const desenha = (k, ok) => fone.desenha((x, w, h) => { x.fillStyle = '#F4F6FA'; x.fillRect(0, 0, w, h); x.fillStyle = '#E2443A'; x.fillRect(0, 0, w, 60); x.fillStyle = '#FFFFFF'; x.font = '800 30px Inter'; x.textAlign = 'center'; x.fillText('▶ vídeo', w / 2, 42);
@@ -65,7 +65,7 @@ export const ATO1A = [
     return (t, u, cm) => { const ts = TS(t); S.upd(32.6, ts, { guiPose: (tt, s) => pose(t, s), guiEmo: t > 36.1 ? 'feliz' : 'determinado', guiExtra: { look: t > 34.6 ? [-.7, 0] : [0, 0], smile: t > 36.2 ? .6 : undefined } });
       const ent = easeOut(clamp((t - 33.8) / .55)); const toque = t > 36.05; const k = toque ? Math.exp(-(t - 36.05) * 5) : 0; const e2 = toque ? 1 : 0; if (e2 !== est || toque) { desenha(k, toque); est = e2; }
       fone.position.set(.5 + (1 - ent) * 1.0, 1.12 + Math.sin(t * 2) * .01, -.02); fone.rotation.set(0, -2.85 + k * .05, Math.sin(t * 1.7) * .02 + k * .04);
-      cam(cm, W(S, .3, 1.3, -.76), W(S, .16, 1.04, .15), u / 5, 0, 0); return { sat: .62, tint: '#E8EEF8', focus: 1.9, range: 1, blur: 4 }; }; }),
+      cam(cm, W(S, .3, 1.3, -.76), W(S, .16, 1.04, .15), u / 5, 0, 0); return { sat: .62, tint: '#E8EEF8', focus: 1.9, range: 1, blur: 4 }; }; }, { perto: true }),
   // 13 — rebobinando: a carreta sobe de ré, o pão volta rolando, o sol volta pro alto
   lad(38.6, 42, (S) => (t, u, cm) => { const ts = TS(t); S.upd(t, ts, { guiPose, guiEmo: 'neutro' }); const k = u / 3.4;
     cam(cm, [[0, W(S, 2.4, 14, 11)], [1, W(S, 2.0, 16, 13)]], [[0, W(S, 0, 0, -40)], [1, W(S, 0, 0, -55)]], k, Math.sin(t * 30) * .004, 0); return { tint: k < .5 ? '#FFE0C8' : '#F4F4FF', exposure: 1 + Math.sin(t * 40) * .06, sat: .8 }; }),

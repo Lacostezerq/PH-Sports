@@ -43,7 +43,7 @@ function salaUpd(S, t, limpa = 0) {
 function montaFila(c) {
   const P = escada(c); const Y = 4 * FH;
   // fila: do patamar do 4º andar descendo o lance B do 3º andar e o patamar do meio
-  const pos = [[.15, Y, 2.0], [XB, Y - .2, 1.2], [XB, Y - .55, .7], [XB, Y - .9, .15], [XB, Y - 1.25, -.4], [.3, 3 * FH + 1.4, -1.25], [-.3, 3 * FH + 1.4, -1.25], [XA, 3 * FH + 1.05, -.3], [XA, 3 * FH + .7, .25]];
+  const pos = [[.15, Y, 2.0], [XB, Y - .2, 1.2], [XB, Y - .55, .7], [XB, Y - .9, .15], [XB, Y - 1.25, -.4], [.3, 3 * FH + 1.4, -1.25], [-.3, 3 * FH + 1.4, -1.25]];
   const defs = [pessoa(3, { camisa: '#8E6A3A', calca: '#6A4A2A', estampa: (x, w, h) => { x.fillStyle = '#5A3A1A'; for (let i = 0; i < 30; i++) { x.beginPath(); x.arc((i * 131) % w, h * .5 + (i * 61) % (h * .5), 14, 0, 7); x.fill(); } } }), pessoa(1), pessoa(0), { ...pessoa(2), camisa: '#2A2E38', calca: '#2A2E38', estampa: (x, w, h) => { x.fillStyle = '#F4F1EA'; x.beginPath(); x.moveTo(w / 2 - 40, 0); x.lineTo(w / 2, h * .4); x.lineTo(w / 2 + 40, 0); x.fill(); x.fillStyle = '#C0392B'; x.fillRect(w / 2 - 8, 0, 16, h * .45); } }, crianca(1), pessoa(4), pessoa(5), pessoa(6), pessoa(7)];
   const ks = pos.map(([x, y, z], i) => ator(c, defs[i], x, z, i < 5 ? Math.PI : i < 7 ? (i === 5 ? -Math.PI / 2 : -Math.PI / 2) : Math.PI, y));
   const chave = bx(.03, .06, .01, '#C9CED6', 0, 0, 0); c.add(chave); const tel = celular((x, w, h) => { x.fillStyle = '#F4F6FA'; x.fillRect(0, 0, w, h); x.fillStyle = '#C8CDD4'; x.fillRect(90, 120, 120, 300); x.fillStyle = '#9AA0A8'; x.fillRect(90, 260, 120, 6); x.fillRect(190, 160, 8, 60); x.fillStyle = '#2A2A30'; x.font = '700 26px Inter'; x.fillText('geladeira 😩', 60, 480); }); tel.scale.setScalar(1.5); c.add(tel);
@@ -95,16 +95,16 @@ export const ATO3B = [
     return (t, u, cm) => { Q.ventilador.girar(t); Q.colchao.position.y = .31; Q.travesseiro.position.y = .42; const rol = kv(t, [[366.6, 1.2], [367.4, -1.1]]); const tort = easeOut(clamp((t - 367.6) / .2));
       Q.cama.rotation.z = .1 * tort; Q.cama.position.y = -.05 * tort; deitPose(g, rol, -.08 - .03 * tort); g.root.position.x += .03 * tort;
       g.pose({ shL: [20, 14], elL: 30, shR: [30, 10], elR: 60, hipL: [20, 4], hipR: [30, 4], knL: 30, knR: 40 }); rosto(g, null, t, t > 367.7 ? 'medo' : 'sono', { blink: t < 367.6 && t > 366.2 ? .6 : undefined });
-      camT(cm, [[0, [1.35, .55, .9]], [1, [1.3, .6, .8]]], [[0, [.62, .25, .3]], [1, [.62, .35, -.1]]], u / 5, t > 367.6 ? .015 * Math.exp(-(t - 367.6) * 6) : 0); return NOITE; }; }),
+      camT(cm, [[0, [1.3, 1.1, 1.4]], [1, [1.25, 1.05, 1.3]]], [[0, [.62, .3, .2]], [1, [.62, .35, -.1]]], u / 5, t > 367.6 ? .015 * Math.exp(-(t - 367.6) * 6) : 0); return NOITE; }; }),
   // Q3 — ele desce pro chão e puxa o colchão
   mk(371, 375.2, { bg: '#08080E', fov: 40 }, (c) => { const Q = montaQuarto(c); Q.cama.rotation.z = .1; Q.cama.position.y = -.05; const g = ator(c, GUI, .0, -.1, Math.PI / 2);
-    return (t, u, cm) => { Q.ventilador.girar(t); const a = t - 371; const pux = smooth(1.2, 3.2, a); Q.colchao.position.set(lerp(0, -.75, pux), lerp(.31, .05 - .18 * 0, pux) - (pux > .9 ? 0 : 0), 0); if (pux > 0) Q.colchao.position.y = lerp(.31, -.13, pux); Q.travesseiro.position.set(lerp(0, -.75, pux), lerp(.42, -.03, pux), -.8);
-      g.place(lerp(0, -.35, pux), -.1, 0, Math.PI / 2); g.pose(soma(G.pegaChao, { lean: 40, shL: [60, 6], shR: [60, 6] }, { bob: -.1 })); rosto(g, null, t, 'triste');
+    return (t, u, cm) => { Q.ventilador.girar(t); const a = t - 371; const pux = smooth(1.2, 3.2, a); Q.colchao.position.set(lerp(0, -1.07, pux), lerp(.31, .1, pux), 0); Q.travesseiro.position.set(lerp(0, -1.07, pux), lerp(.42, .22, pux), -.8);
+      g.place(lerp(-.75, -1.15, pux), .35, 0, Math.PI / 2); g.pose(soma(G.pegaChao, { lean: 40, shL: [60, 6], shR: [60, 6] }, { bob: -.1 })); rosto(g, null, t, 'triste');
       cam(cm, [[0, [-1.1, 1.5, 1.3]], [1, [-1.0, 1.4, 1.15]]], [[0, [.2, .3, -.3]], [1, [-.2, .3, -.3]]], u / 4.2); return NOITE; }; }),
   // Q4 — deitado no colchão no chão, sem se mexer, braços cruzados no peito, olhando o teto
-  mk(375.2, 381, { bg: '#08080E', fov: 40 }, (c) => { const Q = montaQuarto(c); Q.cama.rotation.z = .1; Q.cama.position.y = -.05; Q.colchao.position.set(-.13, -.13, -.35); Q.travesseiro.position.set(-.13, -.03, -.8 - .35); const g = deita(c, -.13 + .62 - .62 + .0, .1, .42);
-    return (t, u, cm) => { Q.ventilador.girar(t); deitPose(g, 0, 0); g.root.position.x = -.13; g.pose(soma(G.bracoCruzado, { lean: 0, headX: -4 })); rosto(g, null, t, 'triste', { look: [0, 0], olhosAbertos: true, lento: .3 });
-      cam(cm, [[0, [-.13, 2.25, .35]], [1, [-.13, 2.15, .2]]], [[0, [-.13, 0, -.2]], [1, [-.13, 0, -.35]]], u / 5.8, Math.PI); return { ...NOITE, exposure: .75 }; }; }),
+  mk(375.2, 381, { bg: '#08080E', fov: 40 }, (c) => { const Q = montaQuarto(c); Q.cama.rotation.z = .1; Q.cama.position.y = -.05; Q.colchao.position.set(-1.07, .1, 0); Q.travesseiro.position.set(-1.07, .22, -.8); const g = deita(c, -.45, .22, .42);
+    return (t, u, cm) => { Q.ventilador.girar(t); deitPose(g, 0, 0); g.pose(soma(G.bracoCruzado, { lean: 0, headX: -4 })); rosto(g, null, t, 'triste', { look: [0, 0], olhosAbertos: true, lento: .3 });
+      cam(cm, [[0, [-.45, 2.2, .95]], [1, [-.45, 2.1, .8]]], [[0, [-.45, 0, -.3]], [1, [-.45, 0, -.4]]], u / 5.8); return { ...NOITE, exposure: .75 }; }; }),
   // B1 — manhã: close no batente da porta: a marca das duas mãos afundadas na madeira; ele passa o dedo, preocupado
   mk(381, 390, { bg: '#C8D8E0', fov: 34 }, (c) => { const Q = montaQuarto(c, 'manha'); Q.luz.intensity = 3; const ms = [[1.38, .5], [1.12, .55]].map(([y, z]) => { const m = marcaMao(); m.position.set(-1.373, y, z); m.rotation.y = Math.PI / 2; m.scale.setScalar(.85); c.add(m); return m; });
     const g = ator(c, GUI, -.55, .9, -Math.PI / 2 - .4);
@@ -113,11 +113,11 @@ export const ATO3B = [
   // S1 — sala, dia 8: bolo de chocolate com vela 72 acesa; Dona Cida de vestido de sair, sorrindo; ela abre os braços
   mk(390, 398, { bg: '#3A3028', fov: 40 }, (c) => { const S = montaSala(c);
     return (t, u, cm) => { salaUpd(S, t); const ab = smooth(395.5, 397, t); S.ci.pose(soma(parado(t, 3), mix({}, G.bracosAbertos, ab))); rosto(S.ci, null, t, 'feliz', { smile: .8 }); S.gui.pose(soma(parado(t, 2), G.maosBolso)); rosto(S.gui, null, t, 'neutro');
-      cam(cm, [[0, [1.5, 1.6, 1.4]], [.5, [1.2, 1.4, 1.2]], [1, [.95, 1.25, 1.05]]], [[0, [.0, .8, .3]], [1, [-.35, 1.0, .45]]], u / 8); return { bloom: .3 }; }; }),
+      cam(cm, [[0, [1.5, 1.7, 1.7]], [.5, [1.0, 1.5, 1.6]], [1, [.5, 1.35, 1.6]]], [[0, [.0, .8, .3]], [1, [-.35, 1.0, .45]]], u / 8); return { bloom: .3 }; }; }),
   // S2 — "Me dá um abraço, hoje é meu dia!"
   mk(398, 401.2, { bg: '#3A3028', fov: 34 }, (c) => { const S = montaSala(c);
     return (t, u, cm) => { salaUpd(S, t); S.ci.pose(soma(parado(t, 3), G.bracosAbertos, { shL: [55 + 6 * Math.sin(t * 3), 55], shR: [55 + 6 * Math.sin(t * 3 + 1), 55] })); rosto(S.ci, 'cida', t, 'feliz', { smile: .8 }); S.gui.pose(soma(parado(t, 2), G.maosBolso));
-      cam(cm, [[0, [.55, 1.15, .95]], [1, [.5, 1.12, .9]]], [[0, [-.45, .92, .5]], [1, [-.45, .92, .5]]], u / 3.2); return { bloom: .3 }; }; }),
+      cam(cm, [[0, [.3, 1.2, 1.45]], [1, [.25, 1.18, 1.4]]], [[0, [-.45, .92, .5]], [1, [-.45, .92, .5]]], u / 3.2); return { bloom: .3 }; }; }),
   // S3 — ele dá um passo pra trás; pela janela, ao fundo, o portão do prédio amassado pra dentro
   mk(401.2, 405, { bg: '#3A3028', fov: 36 }, (c) => { const S = montaSala(c);
     return (t, u, cm) => { salaUpd(S, t); const pas = smooth(401.6, 402.4, t); S.gui.place(lerp(.95, 1.25, pas), lerp(.55, .45, pas), 0, -Math.PI / 2 + .1); S.gui.pose(pas > 0 && pas < 1 ? andar(t, { f: 1.4, amp: .6 }) : soma(parado(t, 2), G.maosBolso, { lean: -6 }));
@@ -144,16 +144,16 @@ export const ATO3B = [
   mk(425.4, 440, { bg: '#3A3028', fov: 38 }, (c) => { const S = montaSala(c); S.ci.place(-1.4, .3, 0, -Math.PI / 2); S.gui.place(1.5, 1.35, 0, -Math.PI / 2 - .5); const pano = rb(.12, .1, .03, '#F2C230', 0, 0, 0); c.add(pano);
     return (t, u, cm) => { const lim = smooth(427, 438, t); salaUpd(S, t, lim * .95); const esf = Math.sin(t * 5); S.ci.pose(soma(parado(t, 3, .4), { shR: [100 + 12 * esf, 10 + 10 * esf], elR: 40, headX: -8, lean: 4 })); naMao(pano, S.ci, 'R', [0, -.07, .02]); rosto(S.ci, null, t, 'triste', { lento: .5 });
       S.gui.pose(soma(parado(t, 2, .4), { shL: [6, 10], shR: [6, 10], elL: 20, elR: 20 })); S.gui.hands.L.scale.set(.9, .7, 1.05); S.gui.hands.R.scale.set(.9, .7, 1.05); rosto(S.gui, null, t, 'triste', { lagrima: true });
-      cam(cm, [[0, [1.9, 1.45, 2.0]], [1, [1.85, 1.4, 1.85]]], [[0, [-.6, 1.0, .3]], [1, [-1.0, 1.05, .3]]], u / 14.6); return { bloom: .25, sat: .85 }; }; }),
+      cam(cm, [[0, [1.6, 1.5, 1.1]], [1, [1.55, 1.45, 1.0]]], [[0, [-.6, 1.0, .3]], [1, [-1.0, 1.05, .3]]], u / 14.6); return { bloom: .25, sat: .85 }; }; }),
   // F1 — dias 9 e 10: fila descendo a escada — vizinho de chave e roupa de barro, mulher com a foto da geladeira, homem com marreta, cara de terno, criança
-  mk(440, 446.5, { bg: '#2A2420', fov: 52 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); const Y = F.Y; cam(cm, [[0, [-.4, Y + 2.2, 2.3]], [1, [-.2, Y + 2.0, 2.0]]], [[0, [XB, Y - 1.3, -.3]], [1, [.2, Y - 1.6, -1.0]]], u / 6.5); return { tint: '#FFF4E4' }; }; }),
+  mk(440, 446.5, { bg: '#2A2420', fov: 52 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.2, 2.6]], [1, [.9, Y + 2.1, 2.4]]], [[0, [XB, Y - 1.3, -.3]], [1, [.2, Y - 1.6, -1.0]]], u / 6.5); return { tint: '#FFF4E4' }; }; }),
   mk(446.5, 452, { bg: '#2A2420', fov: 48 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); const Y = F.Y; cam(cm, [[0, [-.75, Y - .6, -.9]], [1, [-.75, Y - .55, -.6]]], [[0, [XB, Y - .5, 1.0]], [1, [XB, Y - .9, -.2]]], u / 5.5); return { tint: '#FFF4E4' }; }; }),
   // T1 — na porta, o Tiago com caderno e caneta organizando a fila e anotando "cinquenta reais"
-  mk(452, 456, { bg: '#2A2420', fov: 36 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); rosto(F.tia, null, t, 'feliz', { look: [0, .6] }); const Y = F.Y; cam(cm, [[0, [-.3, Y + 1.25, 1.45]], [1, [-.35, Y + 1.22, 1.55]]], [[0, [-.85, Y + .95, 2.35]], [1, [-.85, Y + .9, 2.35]]], u / 4); return { tint: '#FFF4E4' }; }; }),
+  mk(452, 456, { bg: '#2A2420', fov: 36 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); F.ks[0].root.visible = false; rosto(F.tia, null, t, 'feliz', { look: [0, .6] }); const Y = F.Y; cam(cm, [[0, [-.3, Y + 1.25, 1.45]], [1, [-.35, Y + 1.22, 1.55]]], [[0, [-.85, Y + .95, 2.35]], [1, [-.85, Y + .9, 2.35]]], u / 4); return { tint: '#FFF4E4' }; }; }),
   // T2 — "Gui, em um mês a gente fica rico!"
-  mk(456, 459.4, { bg: '#2A2420', fov: 34 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); F.tia.pose(soma(parado(t, 5), { shL: [55, -6], elL: 80, shR: [70 + 20 * Math.sin(t * 4), 20], elR: 60, lean: -4 })); rosto(F.tia, 'tiago', t, 'feliz', { look: [.4, 0] }); const Y = F.Y;
+  mk(456, 459.4, { bg: '#2A2420', fov: 34 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); F.ks[0].root.visible = false; F.tia.pose(soma(parado(t, 5), { shL: [55, -6], elL: 80, shR: [70 + 20 * Math.sin(t * 4), 20], elR: 60, lean: -4 })); rosto(F.tia, 'tiago', t, 'feliz', { look: [.4, 0] }); const Y = F.Y;
     cam(cm, [[0, [-.15, Y + 1.2, 1.4]], [1, [-.2, Y + 1.18, 1.5]]], [[0, [-.85, Y + 1.0, 2.35]], [1, [-.85, Y + 1.0, 2.35]]], u / 3.4); return { tint: '#FFF4E4' }; }; }),
-  mk(459.4, 465, { bg: '#2A2420', fov: 44 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); rosto(F.tia, null, t, 'feliz'); const Y = F.Y; cam(cm, [[0, [.9, Y + 1.6, .1]], [1, [.8, Y + 1.7, .3]]], [[0, [-.5, Y + .8, 2.2]], [1, [.5, Y - .4, .5]]], u / 5.6); return { tint: '#FFF4E4' }; }; }),
+  mk(459.4, 465, { bg: '#2A2420', fov: 44 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); rosto(F.tia, null, t, 'feliz'); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.0, 2.6]], [1, [.95, Y + 2.3, 2.5]]], [[0, [-.7, Y + .8, 2.2]], [1, [.4, Y - 1.0, .3]]], u / 5.6); return { tint: '#FFF4E4' }; }; }),
   // C1 — cozinha: enche o copo na torneira nova, remendada com fita; leva à boca; o copo vira pó de vidro; a água escorre pelos dedos
   mk(465, 470.6, { bg: '#3A3028', fov: 38 }, (c) => { const C = montaCopo(c); return (t, u, cm) => { copoUpd(C, t); cam(cm, [[0, [.85, 1.3, .3]], [1, [.75, 1.25, .1]]], [[0, [.1, 1.0, -1.1]], [1, [.1, 1.0, -1.0]]], u / 5.6); return { tint: '#FFF0DC' }; }; }),
   mk(470.6, 476, { bg: '#3A3028', fov: 34 }, (c) => { const C = montaCopo(c); return (t, u, cm) => { copoUpd(C, t); C.po(t); cam(cm, [[0, [.75, 1.2, .55]], [.5, [.6, 1.15, .4]], [1, [.55, 1.05, .35]]], [[0, [.1, 1.05, -.45]], [.5, [.15, .95, -.4]], [1, [.15, .85, -.35]]], u / 5.4); return { tint: '#FFF0DC', focus: 1.0, range: .6, blur: 6 }; }; }),
