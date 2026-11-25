@@ -106,10 +106,10 @@ export const ATO3B = [
     return (t, u, cm) => { Q.ventilador.girar(t); deitPose(g, 0, 0); g.pose(soma(G.bracoCruzado, { lean: 0, headX: -4 })); rosto(g, null, t, 'triste', { look: [0, 0], olhosAbertos: true, lento: .3 });
       cam(cm, [[0, [-.45, 2.2, .95]], [1, [-.45, 2.1, .8]]], [[0, [-.45, 0, -.3]], [1, [-.45, 0, -.4]]], u / 5.8); return { ...NOITE, exposure: .75 }; }; }),
   // B1 — manhã: close no batente da porta: a marca das duas mãos afundadas na madeira; ele passa o dedo, preocupado
-  mk(381, 390, { bg: '#C8D8E0', fov: 34 }, (c) => { const Q = montaQuarto(c, 'manha'); Q.luz.intensity = 3; const ms = [[1.38, .5], [1.12, .55]].map(([y, z]) => { const m = marcaMao(); m.position.set(-1.373, y, z); m.rotation.y = Math.PI / 2; m.scale.setScalar(.85); c.add(m); return m; });
-    const g = ator(c, GUI, -.55, .9, -Math.PI / 2 - .4);
+  mk(381, 390, { bg: '#C8D8E0', fov: 44, limpa: false, perto: true }, (c) => { const Q = montaQuarto(c, 'manha'); Q.luz.intensity = 3; const ms = [[1.38, .5], [1.12, .55]].map(([y, z]) => { const m = marcaMao(); m.position.set(-1.373, y, z); m.rotation.y = Math.PI / 2; m.scale.setScalar(.85); c.add(m); return m; });
+    const g = ator(c, GUI, -.95, .88, -Math.PI / 2 - .64);
     return (t, u, cm) => { const a = t - 381; const dedo = smooth(3.5, 4.5, a); g.pose(soma(parado(t, 2, .6), { shR: [lerp(10, 92, dedo), lerp(10, -10, dedo)], elR: lerp(10, 20, dedo) + 8 * Math.sin(t * 1.3) * dedo, headY: 15, headX: 6 })); rosto(g, null, t, 'preocupado', { look: [.4, 0] });
-      cam(cm, [[0, [-.85, 1.3, .1]], [.4, [-.85, 1.25, .2]], [1, [-.2, 1.35, 0]]], [[0, [-1.37, 1.25, .55]], [.4, [-1.37, 1.2, .55]], [1, [-.9, 1.15, .7]]], u / 9); return { tint: '#FFF4E4' }; }; }),
+      cam(cm, [[0, [-.3, 1.4, -.05]], [.35, [-.25, 1.4, -.1]], [1, [-.12, 1.45, -.2]]], [[0, [-1.25, 1.2, .62]], [.35, [-1.22, 1.18, .64]], [1, [-1.15, 1.12, .72]]], u / 9, 0, .3); return { tint: '#FFF4E4' }; }; }),
   // S1 — sala, dia 8: bolo de chocolate com vela 72 acesa; Dona Cida de vestido de sair, sorrindo; ela abre os braços
   mk(390, 398, { bg: '#3A3028', fov: 40 }, (c) => { const S = montaSala(c);
     return (t, u, cm) => { salaUpd(S, t); const ab = smooth(395.5, 397, t); S.ci.pose(soma(parado(t, 3), mix({}, G.bracosAbertos, ab))); rosto(S.ci, null, t, 'feliz', { smile: .8 }); S.gui.pose(soma(parado(t, 2), G.maosBolso)); rosto(S.gui, null, t, 'neutro');
@@ -122,15 +122,15 @@ export const ATO3B = [
   mk(401.2, 405, { bg: '#3A3028', fov: 36 }, (c) => { const S = montaSala(c);
     return (t, u, cm) => { salaUpd(S, t); const pas = smooth(401.6, 402.4, t); S.gui.place(lerp(.95, 1.25, pas), lerp(.55, .45, pas), 0, -Math.PI / 2 + .1); S.gui.pose(pas > 0 && pas < 1 ? andar(t, { f: 1.4, amp: .6 }) : soma(parado(t, 2), G.maosBolso, { lean: -6 }));
       rosto(S.gui, null, t, 'triste', { look: [0, .2] }); S.ci.pose(soma(parado(t, 3), G.bracosAbertos)); rosto(S.ci, null, t, 'feliz');
-      cam(cm, [[0, [-.4, 1.25, -.3]], [1, [-.35, 1.22, -.35]]], [[0, [1.6, 1.15, -.1]], [1, [1.6, 1.2, -.2]]], u / 3.8); return { bloom: .3 }; }; }),
+      cam(cm, [[0, [-.4, 1.25, -.3]], [1, [-.35, 1.22, -.35]]], [[0, [1.4, 1.1, .35]], [1, [1.6, 1.15, .22]]], u / 3.8); return { bloom: .3 }; }; }),
   // S4 — "Não dá, vó... Se eu te abraço, eu te machuco." (voz embargada)
   mk(405, 409, { bg: '#3A3028', fov: 32 }, (c) => { const S = montaSala(c); S.gui.place(1.25, .45, 0, -Math.PI / 2 + .1);
     return (t, u, cm) => { salaUpd(S, t); S.gui.pose(soma(parado(t, 2, .6), G.maosBolso, { headX: 10, lean: -4 })); rosto(S.gui, 'gui', t, 'triste', { lagrima: t > 406.5, look: [0, .3] }); S.ci.pose(soma(parado(t, 3), G.bracosAbertos));
       cam(cm, [[0, [.3, 1.15, .75]], [1, [.35, 1.13, .72]]], [[0, [1.25, 1.0, .45]], [1, [1.25, 1.0, .45]]], u / 4); return { bloom: .3 }; }; }),
   // S5 — o sorriso dela vai sumindo devagar; os braços descem. Silêncio, só a vela queimando
-  mk(409, 413, { bg: '#3A3028', fov: 32 }, (c) => { const S = montaSala(c); S.gui.place(1.25, .45, 0, -Math.PI / 2 + .1);
+  mk(409, 413, { bg: '#3A3028', fov: 32, perto: true }, (c) => { const S = montaSala(c); S.gui.place(1.25, .45, 0, -Math.PI / 2 + .1);
     return (t, u, cm) => { salaUpd(S, t); const d = smooth(409.3, 412.2, t); S.ci.pose(soma(parado(t, 3, .4), mix(G.bracosAbertos, { shL: [5, 10], shR: [5, 10], elL: 20, elR: 20 }, d))); rosto(S.ci, null, t, d > .6 ? 'triste' : 'feliz', { smile: .8 * (1 - d), lento: .4 }); S.gui.pose(soma(parado(t, 2), G.maosBolso));
-      cam(cm, [[0, [.45, 1.0, .75]], [1, [.4, 1.0, .7]]], [[0, [-.45, .9, .5]], [1, [-.3, .9, .45]]], u / 4); return { bloom: .3 }; }; }),
+      cam(cm, [[0, [.95, 1.05, .95]], [1, [.88, 1.04, .9]]], [[0, [-.45, .9, .5]], [1, [-.3, .9, .45]]], u / 4); return { bloom: .3 }; }; }),
   // S6 — ele se inclina e sopra a vela de longe: a vela apaga, metade da cobertura voa e cola na parede
   mk(413, 418, { bg: '#3A3028', fov: 38 }, (c) => { const S = montaSala(c); S.gui.place(1.25, .45, 0, -Math.PI / 2 + .1);
     return (t, u, cm) => { salaUpd(S, t); const sop = kv(t, [[414.3, 0], [415.0, 1], [415.6, 1], [416.4, 0]]); S.gui.pose(soma(parado(t, 2), G.maosBolso, { lean: 18 * sop, headX: 8 * sop })); rosto(S.gui, null, t, 'triste', { mouth: t > 415 && t < 415.5 ? { open: .3, round: 1 } : undefined });
