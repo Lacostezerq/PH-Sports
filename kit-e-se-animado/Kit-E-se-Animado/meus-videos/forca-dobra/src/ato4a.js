@@ -87,7 +87,7 @@ export const ATO4A = [
     return (t, u, cm) => { ovosUpd(S, t); const limpa = kv(t, [[530.4, 0], [530.9, 1], [531.8, 1], [532.3, 0]]); S.gui.pose(SENT({ shR: [55, 0], elR: 70, shL: [lerp(40, 115, limpa), lerp(4, -20, limpa)], elL: lerp(60, 140, limpa) + 10 * Math.sin(t * 9) * limpa, headX: 6 })); rosto(S.gui, null, t, 'tedio', { blink: limpa > .5 ? 1 : undefined });
       S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado)); cam(cm, [[0, [1.3, .55, 1.9]], [1, [1.2, .8, 1.7]]], [[0, [.0, .1, 1.1]], [1, [.15, .85, 1.0]]], u / 4); return LUZ; }; }),
   // M7 — pela janela, a noite vira madrugada
-  mk(532.6, 536.6, { bg: '#1A1610', fov: 34 }, (c) => { const S = montaOvos(c);
+  mk(532.6, 536.6, { bg: '#1A1610', fov: 34 }, (c) => { const S = montaOvos(c); S.ci.root.visible = false; S.gui.root.visible = false;
     return (t, u, cm) => { ovosUpd(S, t); const m = smooth(533.2, 535.8, t); S.jm.userData.vidro.material.opacity = m; S.gui.pose(SENT({ shR: [55, 0], elR: 70, headX: 10 })); S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado, { headX: 14 * m }));
       cam(cm, [[0, [-.2, 1.5, .4]], [1, [-.1, 1.5, .2]]], [[0, [.4, 1.55, -1.6]], [1, [.4, 1.5, -1.6]]], u / 4); return { ...LUZ, tint: m > .5 ? '#D8DCFF' : LUZ.tint }; }; }),
   // M8 — Dona Cida cochilando na cadeira; acorda e aponta pra bandeja
@@ -101,7 +101,7 @@ export const ATO4A = [
       S.gui.root.updateMatrixWorld(true); const h = S.gui.hands.R.localToWorld(new THREE.Vector3(0, -.02, .06)); S.mao.position.copy(h).add(new THREE.Vector3(0, .03 * ab, 0));
       rosto(S.gui, null, t, 'surpreso', { look: [0, .7], blink: 0 }); S.ci.pose(soma(SENT({ lean: 6 }), { shL: [40, 10], elL: 60, shR: [40, 10], elR: 60, headX: 10 }));
       const p = S.mao.position; const ry = S.gui.root.rotation.y, fx = Math.sin(ry), fz = Math.cos(ry), sx = fz, sz = -fx; const D = lerp(1.25, 1.0, easeOut(clamp(u / 7.4)));
-      cam(cm, [[0, [p.x + fx * .45 - sx * D, p.y + .62, p.z + fz * .45 - sz * D]], [1, [p.x + fx * .4 - sx * D * .9, p.y + .56, p.z + fz * .4 - sz * D * .9]]], [[0, [p.x, p.y + .08, p.z]], [1, [p.x, p.y + .08, p.z]]], u / 7.4, 0, .2); return { ...LUZ, tint: '#FFF0D0', focus: cm.position.distanceTo(p), range: .5, blur: 8, sat: 1.1 }; }; }),
+      cam(cm, [[0, [p.x + fx * .45 - sx * D, p.y + .3, p.z + fz * .45 - sz * D]], [1, [p.x + fx * .4 - sx * D * .9, p.y + .26, p.z + fz * .4 - sz * D * .9]]], [[0, [p.x, p.y + .08, p.z]], [1, [p.x, p.y + .08, p.z]]], u / 7.4, 0, .2); return { ...LUZ, tint: '#FFF0D0', focus: cm.position.distanceTo(p), range: .5, blur: 8, sat: 1.1 }; }; }),
   // E48 — corte pra Dona Cida, que sorri pela primeira vez desde o aniversário
   mk(548, 553, { bg: '#1A1610', fov: 34 }, (c) => { const S = montaOvos(c); S.jm.userData.vidro.material.opacity = 1;
     return (t, u, cm) => { ovosUpd(S, t); const sor = smooth(548.8, 550.5, t); S.ci.pose(soma(SENT({ lean: 6 }), { shL: [40, 10], elL: 60, shR: [40, 10], elR: 60, headX: 4 })); rosto(S.ci, null, t, sor > .6 ? 'feliz' : 'neutro', { smile: sor, lento: .5, olhosAbertos: true });
@@ -110,5 +110,5 @@ export const ATO4A = [
   mk(553, 560, { bg: '#1A1610', fov: 36 }, (c) => { const S = montaOvos(c); S.jm.userData.vidro.material.opacity = 1;
     return (t, u, cm) => { ovosUpd(S, t); const vira = t > 557.4; S.ci.pose(soma(SENT({ lean: 4 }), { shR: [45 + 20 * Math.max(0, Math.sin(t * 3)) * (t < 557.3), 12], elR: 50, shL: [40, 10], elL: 60 })); rosto(S.ci, 'cida', t, 'feliz', { smile: .8, olhosAbertos: true });
       S.gui.pose(SENT({ shR: [58, 0], elR: 80, headX: vira ? 12 : 0 })); rosto(S.gui, null, t, vira ? 'feliz' : 'surpreso', { look: [0, vira ? .7 : 0], smile: vira ? .4 : undefined });
-      cam(cm, [[0, [1.5, 1.35, .45]], [1, [1.4, 1.3, .45]]], [[0, [.15, .95, .45]], [1, [.15, .95, .45]]], u / 7); return { ...LUZ, tint: '#FFE8D0' }; }; }),
+      cam(cm, [[0, [2.25, 1.45, .45]], [1, [2.1, 1.4, .45]]], [[0, [.15, .95, .45]], [1, [.15, .95, .45]]], u / 7); return { ...LUZ, tint: '#FFE8D0' }; }; }),
 ];
