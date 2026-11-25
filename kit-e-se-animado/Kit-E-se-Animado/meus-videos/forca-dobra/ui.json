@@ -1,0 +1,15 @@
+{
+ "duracao": 840,
+ "palavrasPorLegenda": 4,
+ "corVoz": {
+  "n": "#FFFFFF",
+  "gui": "#9FD8FF",
+  "cida": "#F7A8C8",
+  "tiago": "#FFE27A",
+  "rafa": "#FFB07A",
+  "mot": "#FFC48A",
+  "dono": "#B8E6A0"
+ },
+ "destaques": [],
+ "elementos": []
+}

@@ -171,14 +171,16 @@ export function makeChar3D(o = {}) {
   // braços
   const arm = (k) => {
     const sh = new THREE.Group(); sh.position.set(k * .185, .3, 0); torsoG.add(sh);
-    const curta = (o.manga || 'curta') === 'curta';
-    add(sh, cap(curta ? .064 : .058, curta ? .07 : .17), camisa, [0, curta ? -.055 : -.1, 0]);
-    if (curta) add(sh, cap(.05, .15), pele, [0, -.11, 0]);
+    const regata = o.manga === 'regata', curta = regata || (o.manga || 'curta') === 'curta';
+    if (regata) add(sh, cap(.06, .17), pele, [0, -.1, 0]); // regata: braço todo à mostra
+    else add(sh, cap(curta ? .064 : .058, curta ? .07 : .17), camisa, [0, curta ? -.055 : -.1, 0]);
+    if (curta && !regata) add(sh, cap(.05, .15), pele, [0, -.11, 0]);
     const el = new THREE.Group(); el.position.y = -.21; sh.add(el);
     add(el, cap(.048, .14), curta ? pele : camisa, [0, -.085, 0]);
     const hand = new THREE.Group(); hand.position.y = -.2; el.add(hand);
     const hg = new THREE.SphereGeometry(.062, 20, 14); const h = add(hand, hg, o.luva || pele, [0, -.01, 0]); h.scale.set(.85, 1.05, .8);
     add(hand, new THREE.SphereGeometry(.026, 12, 10), o.luva || pele, [-k * .045, .02, .03], .007);
+    if (o.forte) { sh.children.forEach(m => m.isMesh && m.scale.set(o.forte, 1, o.forte)); el.children.forEach(m => m.isMesh && m.scale.set(o.forte * .92, 1, o.forte * .92)); } // braço musculoso
     return { sh, el, hand };
   };
   const AL = arm(1), AR = arm(-1);

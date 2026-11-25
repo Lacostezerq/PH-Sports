@@ -64,7 +64,7 @@ for idx, quem, t0 in GR:
 pk = np.abs(y).max(); y = y / pk * .89
 pcm = (np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes()
 subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 's16le', '-ar', str(SR), '-ac', '1', '-i', '-', P + '/assets/audio/voz.wav'], input=pcm, check=True)
-json.dump(palavras, open(P + '/assets/audio/transcript.json', 'w'), ensure_ascii=False)
+json.dump(palavras, open(P + '/assets/audio/transcript.json', 'w'), ensure_ascii=False); json.dump(palavras, open(P + '/assets/audio/transcript_final.json', 'w'), ensure_ascii=False)
 # boca (30 fps) de cada fala de personagem
 hop = SR // 30; nf = len(y) // hop; fr = y[:nf * hop].reshape(nf, hop)
 rms = np.sqrt((fr ** 2).mean(1) + 1e-12); zc = (np.abs(np.diff(np.sign(fr), axis=1)) > 0).mean(1); dbf = 20 * np.log10(rms + 1e-9)
