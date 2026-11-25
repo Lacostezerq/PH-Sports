@@ -39,8 +39,10 @@ function degrausTrincados(c) { const pts = []; for (let n = 0; n < 2; n++) { for
 /** Caminho dele subindo correndo da portaria até o lance do 3º andar. */
 const CAMINHO_GUI = () => [[1.4, 0, 5.0], [XA, 0, 2.3], ...trajetoEscada(0, 2, { portaria: false }), [XA, Y2, ZA0 + .05], [XA, Y2 + .175, ZA0 - .2]];
 const T_CORRE = 714.2;
-function guiCorre(g, t, o = {}) { const e = subir(g, CAMINHO_GUI(), t, T_CORRE, 1.02, { f: 1.4, amp: 1.5, pose: (tt, e, p) => e.fim ? null : soma(e.sobe ? soma(p, { lean: 18 }) : correr(tt, 1.6, 1.2), { shL: [-30 * Math.sin(tt * 9), 10], shR: [30 * Math.sin(tt * 9), 10] }) }); return e; }
+function guiCorre(g, t, o = {}) { const e = subir(g, CAMINHO_GUI(), t, T_CORRE, 1.5, { f: 1.4, amp: 1.5, pose: (tt, e, p) => e.fim ? null : soma(e.sobe ? soma(p, { lean: 18 }) : correr(tt, 1.6, 1.2), { shL: [-30 * Math.sin(tt * 9), 10], shR: [30 * Math.sin(tt * 9), 10] }) }); return e; }
 
+/** Esconde o corrimão do lance A do 2º andar (atravessava o rosto dos dois no abraço). */
+function semCorrimao(P) { P.g.traverse((o) => { if (o.isMesh && Math.abs(o.position.x - (XA + .55)) < .01 && o.position.y > Y2 && o.position.y < Y2 + 2.5) o.visible = false; }); }
 export const ATO5 = [
   // Q1 — ela sobe com o botijão no quadril, igual no dia zero. Primeiro andar
   mk(695, 700, { bg: '#2A2420', fov: 50 }, (c) => { const P = escada(c); const ci = ator(c, CIDASEM, XA, 2.3, Math.PI); const b = bot(); ci.root.add(b); b.position.set(.24 / .84, .22 / .84, .02); b.rotation.z = -.35; b.scale.setScalar(.65 / .84);
@@ -77,17 +79,17 @@ export const ATO5 = [
       cam(cm, [[0, [1.05, 1.0, .1]], [1, [1.05, 1.4, -.2]]], [[0, [-.3, .9, 2.6]], [1, [-.62, 1.4, .4]]], u / 4.2); return LENTO; }; }),
   // Q8 — Dona Cida no ar, caindo (câmera lenta)
   mk(718.4, 722, { bg: '#2A2420', fov: 44 , perto: true }, (c) => { const P = escada(c); const ci = ator(c, CIDASEM, XA, ZA0, Math.PI, Y2); const b = bot(); b.position.set(XA + .2, Y2 + .05, ZA0 + .5); c.add(b);
-    return (t, u, cm) => { cidaCai(ci, t); rosto(ci, null, t, 'medo', { blink: .6 }); cam(cm, [[0, [1.05, Y2 + 1.1, .2]], [1, [1.05, Y2 + 1.15, .35]]], [[0, [XA, Y2 + .85, .5]], [1, [XA, Y2 + .82, .6]]], u / 3.6); return LENTO; }; }),
+    return (t, u, cm) => { cidaCai(ci, t); rosto(ci, null, t, 'medo', { blink: .6 }); ci.root.updateMatrixWorld(true); const cp = ci.root.localToWorld(new THREE.Vector3(0, .6, 0)); cam(cm, [[0, [.95, Y2 + 1.45, .75]], [1, [.95, Y2 + 1.45, .95]]], [cp.x, cp.y, cp.z], u / 3.6, 0, .2); return LENTO; }; }),
   // Q9 — "Seis mil e quinhentas toneladas... se segurar forte demais, quebra ela; se segurar fraco, ela cai" — ele chega e estica os braços
   mk(722, 726, { bg: '#2A2420', fov: 56 , perto: true }, (c) => { const P = escada(c); const g = ator(c, GUILUVA, 1.4, 5.0, Math.PI); const D = degrausTrincados(c); const ci = ator(c, CIDASEM, XA, ZA0, Math.PI, Y2);
     return (t, u, cm) => { const e = guiCorre(g, t); D.f(clamp(e.prog * 1.25)); rosto(g, null, t, 'determinado'); cidaCai(ci, t); rosto(ci, null, t, 'medo', { blink: .7 });
       ci.root.updateMatrixWorld(true); const cp = ci.root.localToWorld(new THREE.Vector3(0, .75, 0)); cam(cm, [[0, [.95, Y2 + 2.1, 2.85]], [1, [.9, Y2 + 2.0, 2.75]]], [[0, [cp.x + .3, cp.y - .1, cp.z - .3]], [1, [cp.x + .25, cp.y - .1, cp.z - .25]]], u / 4); return LENTO; }; }),
-  mk(726, 730.6, { bg: '#2A2420', fov: 46 , perto: true }, (c) => { const P = escada(c); const g = ator(c, GUILUVA, 1.4, 5.0, Math.PI); const D = degrausTrincados(c); D.f(1); const ci = ator(c, CIDASEM, XA, ZA0, Math.PI, Y2);
+  mk(726, 730.6, { bg: '#2A2420', fov: 46 , perto: true, limpa: false }, (c) => { const P = escada(c); const g = ator(c, GUILUVA, 1.4, 5.0, Math.PI); const D = degrausTrincados(c); D.f(1); const ci = ator(c, CIDASEM, XA, ZA0, Math.PI, Y2);
     const fant = new THREE.Mesh(new THREE.SphereGeometry(.22, 24, 16), new THREE.MeshBasicMaterial({ color: '#FFF6E0', transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending })); fant.scale.set(1, 1.3, 1); c.add(fant);
     return (t, u, cm) => { const e = guiCorre(g, t); const est = smooth(727, 728.6, t); if (e.fim) { g.place(XA, ZA0 - .15, Y2 + .175, Math.PI); g.pose(soma(mix(parado(t, 2), G.maosFrente, est), { shL: [10 * est, 10 * est], shR: [10 * est, 10 * est], elL: 30 * est, elR: 30 * est })); }
       rosto(g, null, t, 'determinado'); cidaCai(ci, t); rosto(ci, null, t, 'medo', { blink: .8 });
       fant.position.set(XA, Y2 + 1.0, ZA0 - .55); fant.material.opacity = .45 * Math.sin(clamp((t - 728.4) / 1.1) * Math.PI);
-      cam(cm, [[0, [1.05, Y2 + 1.0, 1.2]], [1, [1.05, Y2 + 1.05, .95]]], [[0, [XA, Y2 + .9, .4]], [1, [XA, Y2 + 1.0, .2]]], u / 4.6); return { ...LENTO, bloom: .4, bloomT: .88 }; }; }),
+      cam(cm, [[0, [.9, Y2 + 1.35, .3]], [1, [.9, Y2 + 1.35, .45]]], [[0, [XA, Y2 + .85, 1.05]], [1, [XA, Y2 + .95, 1.2]]], u / 4.6, 0, .2); return { ...LENTO, bloom: .4, bloomT: .88 }; }; }),
   // Q10 — ele segura. Silêncio total. Ela abre os olhos devagar, inteira, no colo dele
   mk(730.6, 736, { bg: '#2A2420', fov: 36 , perto: true }, (c) => { const P = escada(c); const g = ator(c, GUILUVA, XA, ZA0 - .15, Math.PI, Y2 + .175); const ci = ator(c, CIDASEM, XA, ZA0, Math.PI, Y2); ci.fixo = true; g.fixo = true;
     return (t, u, cm) => { g.pose(soma(parado(t, 2, .3), G.abraco, { lean: 4, elL: 70, elR: 70 }, treme(t, .25))); rosto(g, null, t, 'preocupado', { look: [0, .5] });
@@ -100,17 +102,17 @@ export const ATO5 = [
       colo(g, ci); ci.pose({ shL: [30, 20], shR: [50, 10], elL: 50, elR: 70, hipL: [80, 4], hipR: [80, 4], knL: 85, knR: 85, headX: 8 }); rosto(ci, null, t, 'surpreso');
       cam(cm, [[0, [-.35, Y2 + 1.7, -.75]], [1, [-.38, Y2 + 1.68, -.7]]], [[0, [XA, Y2 + 1.4, .4]], [1, [XA, Y2 + 1.4, .4]]], u / 2); return { tint: '#F0F0FF', sat: .95 }; }; }),
   // Q12 — ele coloca ela sentada no degrau, devagar; ela olha pra ele; ele abre os braços com medo; ela abraça ele primeiro
-  mk(738, 746, { bg: '#2A2420', fov: 44 , perto: true }, (c) => { const P = escada(c); const ci = ator(c, CIDASEM, XA, ZA0 - .5, 0, Y2); const g = ator(c, GUILUVA, XA, ZA0 + .1, Math.PI, Y2);
+  mk(738, 746, { bg: '#2A2420', fov: 44 , perto: true, limpa: false }, (c) => { const P = escada(c); semCorrimao(P); const ci = ator(c, CIDASEM, XA, ZA0 - .5, 0, Y2); const g = ator(c, GUILUVA, XA, ZA0 + .1, Math.PI, Y2);
     return (t, u, cm) => { const a = t - 738; sentar(ci, XA, ZA0 - .45, 0, Y2 + .35 + .1); ci.root.position.y = Y2 + .175 + .175 - .28 * .84 + .02;
       const abre = smooth(1.8, 2.8, a), abr = smooth(3.6, 4.6, a); g.place(XA, ZA0 + .15, Y2, Math.PI); g.pose(soma(G.ajoelhado, mix(mix({}, soma(G.bracosAbertos, { shL: [40, 40], shR: [40, 40] }), abre), G.abraco, abr), treme(t, .3 * abre * (1 - abr)), { lean: 20 * abr }));
       ci.pose(soma({ bob: -.17, hipL: [80, 4], hipR: [80, 4], knL: 80, knR: 80 }, mix({ shL: [20, 10], shR: [20, 10], elL: 30, elR: 30 }, G.abraco, smooth(3.3, 4.2, a)), { lean: 14 * abr })); rosto(ci, null, t, a > 3 ? 'feliz' : 'neutro', { lagrima: a > 3 });
       rosto(g, null, t, abr > .5 ? 'triste' : 'medo', { lagrima: true }); const ang = a / 8 * .9;
-      cam(cm, [XA + Math.sin(-1.3 + ang) * 1.6 + .3, Y2 + 1.3, ZA0 - .15 + Math.cos(-1.3 + ang) * 1.6 * .6], [XA, Y2 + .8, ZA0 - .15], u / 8, 0, .3); return { tint: '#FFF0E4' }; }; }),
+      cam(cm, [[0, [.45, Y2 + 1.12, 1.15]], [1, [.45, Y2 + 1.05, 1.45]]], [[0, [XA, Y2 + .88, 1.3]], [1, [XA, Y2 + .9, 1.32]]], u / 8, 0, .3); return { tint: '#FFF0E4' }; }; }),
   // Q13 — "Falei que você não era fraco!" — a câmera gira devagar em volta dos dois; nada quebra; lá embaixo, o botijão parado
-  mk(746, 754, { bg: '#2A2420', fov: 46 , perto: true }, (c) => { const P = escada(c); const ci = ator(c, CIDASEM, XA, ZA0 - .45, 0, Y2); const g = ator(c, GUILUVA, XA, ZA0 + .15, Math.PI, Y2); const b = bot(); b.position.set(-.3, Y2 - FH + FH, ZA0 + .9); b.rotation.z = 1.4; b.position.y = Y2 + .17; c.add(b);
+  mk(746, 754, { bg: '#2A2420', fov: 46 , perto: true, limpa: false }, (c) => { const P = escada(c); semCorrimao(P); const ci = ator(c, CIDASEM, XA, ZA0 - .45, 0, Y2); const g = ator(c, GUILUVA, XA, ZA0 + .15, Math.PI, Y2); const b = bot(); b.position.set(-.3, Y2 - FH + FH, ZA0 + .9); b.rotation.z = 1.4; b.position.y = Y2 + .17; c.add(b);
     return (t, u, cm) => { ci.root.position.set(XA, Y2 + .175 + .175 - .28 * .84 + .02, ZA0 - .45); ci.root.rotation.y = 0; ci.sombra.visible = false; g.pose(soma(G.ajoelhado, G.abraco, { lean: 20 }, vivo(t, 2, .3))); ci.pose(soma({ bob: -.17, hipL: [80, 4], hipR: [80, 4], knL: 80, knR: 80 }, G.abraco, { lean: 14 }, rir(t, .4)));
       rosto(ci, 'cida', t, 'feliz', { lagrima: true }); rosto(g, null, t, 'feliz', { lagrima: true, blink: 1 }); const ang = 1.6 + (t - 746) / 8 * .8;
-      cam(cm, [XA + Math.sin(-.4 + ang) * 1.5 + .2, Y2 + 1.35 + ang * .2, ZA0 - .15 + Math.cos(-.4 + ang) * 1.3], [XA, Y2 + .75, ZA0 - .15], u / 8, 0, .3); return { tint: '#FFF0E4', bloom: .35 }; }; }),
+      cam(cm, [[0, [.5, Y2 + 1.02, 1.5]], [1, [.45, Y2 + 1.15, 1.08]]], [[0, [XA, Y2 + .92, 1.3]], [1, [XA, Y2 + .88, 1.3]]], u / 8, 0, .3); return { tint: '#FFF0E4', bloom: .35 }; }; }),
   // D20 — dia 20: "Cinquenta e duas mil toneladas, o peso do Titanic..." — os dois no sofa, ela com a cabeça no ombro dele
   mk(754, 762, { bg: '#3A3028', fov: 38 }, (c) => { const S = salinha(c); const g = ator(c, GUILUVA, -.35, -1.05, 0); sentar(g, -.35, -1.05, 0, .45); const ci = ator(c, CIDASEM, -.95, -1.05, 0); sentar(ci, -.95, -1.05, 0, .45);
     return (t, u, cm) => { g.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, shL: [30, 30], elL: 40, shR: [20, 8], elR: 50, lean: -6 }); ci.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, shL: [20, 8], elL: 50, shR: [30, 10], elR: 60, tilt: -14, headZ: -14, lean: -6 });
