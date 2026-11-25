@@ -77,7 +77,7 @@ export const ATO2A = [
       ci.pose(soma(parado(t, 3), { headX: 18 * (1 - outro), headY: -20 * outro, lean: 6 })); rosto(ci, null, t, 'desconfiado', { look: [-.5 * outro, .5 * (1 - outro)] });
       cam(cm, [[0, [.75, 1.3, 1.35]], [1, [.65, 1.28, 1.2]]], [[0, [-.45, .95, .1]], [1, [-.4, 1.0, .1]]], u / 4.9); return MANHA; }; }),
   // E1 — corredor da escola: joga a mochila no ombro; ela voa rápido demais e quase acerta o colega
-  mk(132, 138.4, { bg: '#F2E6C8', fov: 42 }, (c) => { corredor(c); const gui = ator(c, GUI, 0, 1, Math.PI); const col = ator(c, aluno(3), -.75, 0, Math.PI); const al = [0, 1, 2, 4, 5].map((i) => ator(c, aluno(i), (i % 2 ? .7 : -.7), -6 - i * 1.6, i % 2 ? 0 : Math.PI));
+  mk(132, 138.4, { bg: '#F2E6C8', fov: 42, limpa: false }, (c) => { corredor(c); const gui = ator(c, GUI, 0, 1, Math.PI); const col = ator(c, aluno(3), -.75, 0, Math.PI); const al = [0, 1, 2, 4, 5].map((i) => ator(c, aluno(i), (i % 2 ? .7 : -.7), -6 - i * 1.6, i % 2 ? 0 : Math.PI));
     const mo = mochila('#2E6FB8'); c.add(mo);
     return (t, u, cm) => { const a = t - 132; const z = 1 - Math.min(a, 2.6) * .9; gui.place(0, z, 0, Math.PI); col.place(-.72, z - .3 - Math.min(a, 2.6) * 0, 0, Math.PI); col.place(-.72, .7 - Math.min(a, 2.6) * .9, 0, Math.PI);
       const joga = clamp((a - 2.6) / .35); // a mochila dá a volta inteira em vez de parar no ombro
@@ -102,16 +102,16 @@ export const ATO2A = [
   // D1 — dia 2, mesma escada, mesmo enquadramento: botijão numa mão balançando, pão na outra, assobiando, dois degraus por vez
   mk(152, 156.6, { bg: '#2A2420', fov: 50 }, (c) => { const P = escada(c); const gui = ator(c, GUI, XA, 2.3, Math.PI); const bm = botNaMao(gui, 'R', 1.5); const sp = paoNaMao(gui, 'L', 1); const no = notas(c, gui);
     const path = [[XA, 0, 2.7], ...trajetoEscada(0, 1, { portaria: false })];
-    return (t, u, cm) => { subir(gui, path, t, 152, 1.05, { f: 1.3, amp: 1.5, pose: (tt, e, p) => soma(p, { shR: [Math.sin(tt * 4) * 18, 12], elR: 10, lean: -2 }) }); bm.prumo(t); sp.prumo(t); no(t);
+    return (t, u, cm) => { subir(gui, path, t, 152, .8, { f: 1.3, amp: 1.5, pose: (tt, e, p) => soma(p, { shR: [Math.sin(tt * 4) * 18, 12], elR: 10, lean: -2 }) }); bm.prumo(t); sp.prumo(t); no(t);
       rosto(gui, null, t, 'feliz', { mouth: { open: .2, round: 1 } });
-      cam(cm, [[0, [1.05, 1.15, .3]], [1, [1.05, 1.3, .1]]], [[0, [-.62, 1.05, 1.5]], [1, [-.62, 1.65, .3]]], u / 4.6); return { tint: '#FFF4E4' }; }; }),
+      const gp = gui.root.position; cam(cm, [[0, [.35, 1.95, 2.75]], [1, [.3, 2.0, 2.7]]], [[0, [gp.x, gp.y + .9, gp.z]], [1, [gp.x, gp.y + .9, gp.z]]], u / 4.6); return { tint: '#FFF4E4' }; }; }),
   // D2 — lá em cima, Dona Cida segura a porta e estreita os olhos por cima dos óculos
   mk(156.6, 170, { bg: '#2A2420', fov: 46 }, (c) => { const P = escada(c); const Y = 4 * FH; const gui = ator(c, GUI, XB, ZLAND, 0, 3 * FH + 1.4); const bm = botNaMao(gui, 'R', 1.5); const sp = paoNaMao(gui, 'L', 1); const no = notas(c, gui);
     const ci = ator(c, CIDA, -.15, 2.45, Math.PI - .5, Y); const pg = [[XB, 3 * FH + 1.4, ZLAND + .2], [XB, Y, ZA0 + .05], [XB - .2, Y, ZA0 + .4], [.2, Y, 1.75]];
     return (t, u, cm) => { const a = t - 156.6; P.portas[3].rotation.y = -1.4; const e = subir(gui, pg, t, 158.2, 1.0, { f: 1.4, amp: 1.4, pose: (tt, e, p) => e.parado ? soma(parado(tt, 2), { shR: [6, 12], elR: 10 }) : soma(p, { shR: [Math.sin(tt * 4) * 18, 12], elR: 10 }) });
       bm.prumo(t); sp.prumo(t); no(t, 1 - smooth(162, 163, t)); rosto(gui, null, t, t < 162.5 ? 'feliz' : 'neutro', { mouth: t < 162.5 ? { open: .2, round: 1 } : undefined, look: [-.4, -.2] });
       const desc = smooth(161.8, 163.5, t); ci.pose(soma(parado(t, 3), { shL: [55, 30], elL: 30, headX: 14 * desc, lean: 4 * desc })); rosto(ci, null, t, desc > .5 ? 'desconfiado' : 'neutro', { look: [0, -.55 * desc] });
-      cam(cm, [[0, [.15, Y + 2.0, -.7]], [.4, [.15, Y + 1.9, -.55]], [1, [-.4, Y + 1.5, 1.0]]], [[0, [.5, Y - .2, .5]], [.4, [.2, Y + .7, 1.6]], [1, [-.15, Y + 1.0, 2.4]]], u / 13.4); return { tint: '#FFF4E4' }; }; }),
+      const gp = gui.root.position, vc = smooth(.36, .5, u / 13.4); cam(cm, [[0, [.25, Y + 1.95, 2.3]], [.36, [.1, Y + 1.9, 2.2]], [.5, [-.95, Y + 1.6, .6]], [1, [-.97, Y + 1.6, .65]]], [[0, [lerp(gp.x, -.15, vc), lerp(gp.y + .9, Y + 1.0, vc), lerp(gp.z, 2.4, vc)]], [1, [lerp(gp.x, -.15, vc), lerp(gp.y + .9, Y + 1.0, vc), lerp(gp.z, 2.4, vc)]]], u / 13.4, 0, .3); return { tint: '#FFF4E4' }; }; }),
   // D3 — "Tá tomando o quê escondido de mim?"
   mk(170, 172.6, { bg: '#2A2420', fov: 32 }, (c) => { const P = escada(c); const Y = 4 * FH; const ci = ator(c, CIDA, -.15, 2.45, Math.PI - .5, Y); const gui = ator(c, GUI, .35, 1.6, -.53, Y); botNaMao(gui, 'R'); paoNaMao(gui, 'L');
     return (t, u, cm) => { P.portas[3].rotation.y = -1.4; ci.pose(soma(parado(t, 3), { shL: [55, 30], elL: 30, headX: 14, lean: 4, shR: [30 + 15 * Math.sin(t * 3), 20], elR: 80 })); rosto(ci, 'cida', t, 'desconfiado', { look: [0, -.55] });
@@ -122,6 +122,6 @@ export const ATO2A = [
     return (t, u, cm) => { const a = t - 172.6; P.portas[3].rotation.y = -1.4; const omb = kv(a, [[.1, 0], [.4, 1], [1.0, 1], [1.3, 0]]);
       const anda = clamp((a - 1.4) / 1.6); gui.place(lerp(.2, -.6, anda), lerp(1.75, 3.2, anda), Y, anda > 0 ? -.5 + .5 * anda : -.4); gui.root.visible = anda < .9;
       gui.pose(anda > 0 ? andar(t, { f: 1.8 }) : soma(parado(t, 2), { shL: [10, 24 * omb], elL: 40 * omb, headZ: 8 * omb, bob: .015 * omb })); bm.prumo(t); sp.prumo(t); rosto(gui, null, t, 'feliz', { look: [-.4, 0] });
-      ci.place(-.15, 2.45, Y, lerp(Math.PI - .5, Math.PI + .6, smooth(1.4, 2.6, a))); ci.pose(soma(parado(t, 3), { shL: [55, 30], elL: 30, headX: 10 })); rosto(ci, null, t, 'desconfiado', { look: [.3, -.5] });
+      const sai = smooth(1.1, 2.0, a); ci.place(lerp(-.15, .4, sai), lerp(2.45, 2.55, sai), Y, lerp(Math.PI - .5, Math.PI + .6, smooth(1.4, 2.6, a))); ci.pose(soma(parado(t, 3), { shL: [55, 30], elL: 30, headX: 10 })); rosto(ci, null, t, 'desconfiado', { look: [.3, -.5] });
       cam(cm, [[0, [.75, Y + 1.4, .4]], [1, [.65, Y + 1.35, .55]]], [[0, [-.1, Y + .9, 2.2]], [1, [-.3, Y + .9, 2.5]]], u / 3.4); return { tint: '#FFF4E4' }; }; }),
 ];
