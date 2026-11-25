@@ -62,7 +62,7 @@ export const ATO4A = [
   mk(510.4, 513.6, { bg: '#1A1610', fov: 40 }, (c) => { const S = montaOvos(c);
     return (t, u, cm) => { ovosUpd(S, t); const pega = smooth(510.8, 511.6, t); S.gui.pose(soma(SENT({ shR: [lerp(50, 62, pega), 0], elR: lerp(65, 75, pega), headX: 10 }), t > 512.4 ? { lean: -12, headX: -14 } : {})); rosto(S.gui, null, t, t > 512.45 ? 'surpreso' : 'determinado', { blink: t > 512.45 && t < 513 ? 1 : undefined, look: [0, .5] });
       S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado)); rosto(S.ci, null, t, 'neutro');
-      cam(cm, [[0, [.55, 1.25, -.55]], [1, [.5, 1.22, -.5]]], [[0, [.15, .95, .9]], [1, [.15, 1.0, 1.0]]], u / 3.2); return LUZ; }; }),
+      cam(cm, [[0, [.9, 1.3, -.4]], [1, [.86, 1.27, -.36]]], [[0, [.12, .95, .95]], [1, [.12, 1.0, 1.0]]], u / 3.2); return LUZ; }; }),
   // M2 — tentativas 2, 3, 4: todos estourando, gema na mesa
   mk(513.6, 517.6, { bg: '#1A1610', fov: 38 }, (c) => { const S = montaOvos(c);
     return (t, u, cm) => { ovosUpd(S, t); const c3 = ((t - 513.6) % 1); S.gui.pose(SENT({ shR: [55 + 8 * Math.sin(c3 * Math.PI), 0], elR: 70, headX: 12 })); rosto(S.gui, null, t, 'tedio', { look: [0, .6] }); S.ci.pose(soma(SENT({ lean: -4 }), G.bracoCruzado)); rosto(S.ci, null, t, 'neutro');

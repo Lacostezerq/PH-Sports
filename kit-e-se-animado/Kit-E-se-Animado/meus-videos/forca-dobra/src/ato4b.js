@@ -83,17 +83,18 @@ const POSTE = [4.5, -5];
 function montaPapel(c) {
   const L = rua(c, { incl: 0, hora: 'dia', tipo: 'lojas', faixa: false, z0: -60, z1: 40, seed: 52, carros: [[1, -14, '#3E7CC8'], [-1, -8, '#F4F1EA'], [1, 12, '#E2443A']] });
   const pt = L.postes.find((p) => Math.abs(p.position.x - POSTE[0]) < .1 && Math.abs(p.position.z - POSTE[1]) < 1) || L.postes[0];
+  L.g.children.forEach((o) => { if (o.isGroup && o.children.length === 6 && Math.abs(o.position.y - .16) < .01 && Math.abs(o.position.x - POSTE[0]) < 1.2 && o.position.z > -11 && o.position.z < 0) o.visible = false; }); // árvore que tapava o poste e o Guilherme
   const bur = new THREE.Mesh(new THREE.CircleGeometry(.22, 16), toon('#3A3630')); bur.rotation.x = -Math.PI / 2; bur.scale.set(1.3, 1, 1); bur.position.set(5.0, .162, -3.9); L.g.add(bur);
-  const gui = ator(L.g, GUILUVA, 5.3, 8, Math.PI); const gente = [[5.0, -6, 0], [5.6, -14, 0], [5.2, -22, 0], [4.8, 2, Math.PI], [5.7, 14, Math.PI]].map(([x, z, r], i) => ({ k: ator(L.g, pessoa(i + 1), x, z, r), x, z, r }));
+  const gui = ator(L.g, GUILUVA, 5.3, 8, Math.PI); const gente = [[5.0, -6, 0], [5.6, -9.5, 0], [5.2, -45, 0], [4.8, 1.5, Math.PI], [5.7, 32, Math.PI]].map(([x, z, r], i) => ({ k: ator(L.g, pessoa(i + 1), x, z, r), x, z, r }));
   return { L, pt, gui, gente };
 }
 function papelUpd(P, t) {
   const { pt, gui, gente } = P;
   // passos curtos e devagar, desviando das pessoas como se fossem de vidro (620–630), tropeça no buraco (630.6) e apoia no poste
-  const z = t < 630.6 ? 8 - (t - 620) * 1.15 : -4.2; const desvia = gente.reduce((s, p) => { const pz = p.z + (p.r ? 1 : -1) * (t - 620) * -1.0; const d = Math.abs(pz - z); return s + (d < 2 ? (1 - d / 2) * .55 : 0); }, 0);
-  const tro = t > 630.6; gui.place(5.3 + (t < 630.6 ? -desvia * .8 : -.45 * smooth(630.6, 631.2, t)), z, 0, tro ? Math.PI - .5 * smooth(630.6, 631, t) : Math.PI);
+  const z = t < 630.6 ? 8 - (t - 620) * 1.15 : -4.2 - .32 * smooth(630.6, 631.2, t); const desvia = gente.reduce((s, p) => { const pz = p.z + (p.r ? 1 : -1) * (t - 620) * -1.0; const d = Math.abs(pz - z); return s + (d < 2 ? (1 - d / 2) * .55 : 0); }, 0);
+  const tro = t > 630.6; gui.place(5.3 + (t < 630.6 ? -desvia * .8 : -.62 * smooth(630.6, 631.2, t)), z, 0, tro ? Math.PI - .5 * smooth(630.6, 631, t) : Math.PI);
   let p = andar(t, { f: 1.2, amp: .55, maos: 'bolso' }); if (desvia > .1 && !tro) p = soma(p, { shL: [20, 30], shR: [20, 30], elL: 40, elR: 40, lean: -4, twist: 12 * desvia });
-  if (tro) p = kf(t, [[630.6, p], [630.9, soma(parado(t, 2), { lean: 25, shR: [70, 40], elR: 5, knR: 40, hipR: [30, 4], bob: -.08 })], [631.6, soma(parado(t, 2), { lean: 12, shR: [60, 50], elR: 10, bob: -.02 })], [633.6, soma(parado(t, 2), { lean: 12, shR: [60, 50], elR: 10 })], [634.4, soma(parado(t, 2), G.maosBolso)]]);
+  if (tro) p = kf(t, [[630.6, p], [630.9, soma(parado(t, 2), { lean: 25, shL: [70, 40], elL: 5, knR: 40, hipR: [30, 4], bob: -.08 })], [631.6, soma(parado(t, 2), { lean: 12, shL: [60, 50], elL: 10, bob: -.02 })], [633.6, soma(parado(t, 2), { lean: 12, shL: [60, 50], elL: 10 })], [634.4, soma(parado(t, 2), G.maosBolso)]]);
   gui.pose(p); rosto(gui, null, t, tro ? (t > 631.4 ? 'medo' : 'surpreso') : 'preocupado', { look: tro ? [-.6, -.2] : [Math.sin(t) * .4, .2] });
   pt.entortar(smooth(630.95, 632.2, t) * .9);
   gente.forEach((q, i) => { const pz = q.z + (q.r ? 1 : -1) * (t - 620) * -1.0; q.k.place(q.x, pz, .16, q.r); q.k.pose(andar(t + i, { f: 1.7 })); rosto(q.k, null, t, 'neutro'); });
@@ -108,13 +109,13 @@ export const ATO4C = [
   // P2 — por três segundos tudo ganha textura de papel amassado (a camada de cima faz o papel)
   mk(627, 630.4, { bg: '#CFE4EE', fov: 46 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); const z = P.gui.root.position.z; cam(cm, [[0, [1.5, 3.2, z - 6]], [1, [1.8, 3.0, z - 5.4]]], [5.2, 1.0, z], u / 3.4); return { sat: .35, tint: '#F4ECD8', exposure: 1.05 }; }; }),
   // P3 — tropeça de leve num buraco e apoia a mão no poste: o poste entorta até ficar torto pro lado
-  mk(630.4, 636, { bg: '#CFE4EE', fov: 40 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); camT(cm, [[0, [2.6, 1.3, -7.6]], [1, [2.4, 1.6, -7.8]]], [[0, [4.8, .9, -4.3]], [1, [4.6, 2.0, -4.8]]], u / 5.6, t > 631 && t < 632.3 ? .01 : 0); return { tint: '#FFFAF0' }; }; }),
+  mk(630.4, 636, { bg: '#CFE4EE', fov: 40 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); camT(cm, [[0, [5.9, 1.35, -7.4]], [1, [5.85, 1.6, -7.6]]], [[0, [4.7, 1.0, -4.5]], [1, [4.6, 1.7, -4.8]]], u / 5.6, t > 631 && t < 632.3 ? .01 : 0); return { tint: '#FFFAF0' }; }; }),
   // P4 — "Oitocentas toneladas, mais que o Cristo Redentor..." — o poste torto, ele parado olhando
-  mk(636, 642, { bg: '#CFE4EE', fov: 38 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); cam(cm, [[0, [3.3, 1.5, -6.6]], [1, [3.4, 1.4, -6.2]]], [[0, [4.8, 1.6, -4.4]], [1, [4.9, 1.2, -4.3]]], u / 6); return { tint: '#FFFAF0' }; }; }),
+  mk(636, 642, { bg: '#CFE4EE', fov: 38 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); cam(cm, [[0, [5.8, 1.5, -7.6]], [1, [5.75, 1.45, -7.3]]], [[0, [4.65, 1.5, -4.7]], [1, [4.75, 1.25, -4.4]]], u / 6); return { tint: '#FFFAF0' }; }; }),
   // P5 — ele olha em volta, ninguém viu, e sai rápido de cabeça baixa
   mk(642, 650, { bg: '#CFE4EE', fov: 40 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, 640); const a = t - 642; const g = P.gui; const sai = clamp((a - 2.6) / 5);
-    g.place(4.85 + .4 * sai, -4.2 - sai * 6, 0, a < 2.6 ? Math.PI + Math.sin(a * 2.4) * .9 : Math.PI); g.pose(sai > 0 ? andar(t, { f: 2.0, maos: 'bolso', curvado: true }) : soma(parado(t, 2), G.maosBolso, { headY: Math.sin(a * 2.4) * 40 })); rosto(g, null, t, 'preocupado');
-    P.pt.entortar(.9); cam(cm, [[0, [3.0, 1.6, -9.5]], [1, [3.2, 1.7, -12.5]]], [[0, [4.8, 1.0, -4.6]], [1, [5.0, 1.0, -8.5]]], u / 8); return { tint: '#FFFAF0' }; }; }),
+    g.place(4.68 + .4 * sai, -4.52 - sai * 6, 0, a < 2.6 ? Math.PI + Math.sin(a * 2.4) * .9 : Math.PI); g.pose(sai > 0 ? andar(t, { f: 2.0, maos: 'bolso', curvado: true }) : soma(parado(t, 2), G.maosBolso, { headY: Math.sin(a * 2.4) * 40 })); rosto(g, null, t, 'preocupado');
+    P.pt.entortar(.9); cam(cm, [[0, [5.75, 1.45, -7.3]], [1, [5.9, 1.5, -12.8]]], [g.root.position.x, 1.0, g.root.position.z], u / 8, 0, .3); return { tint: '#FFFAF0' }; }; }),
   // Mo1 — dias 13 a 16 na cozinha: segurando um ovo, depois dois (o contador sobe a cada corte)
   mk(650, 655, { bg: '#C8D8E0', fov: 36 }, (c) => { const S = montaOvos(c, { luva: GUILUVA, hora: 'tarde' }); S.band.visible = true; const o2 = ovoMao(c);
     return (t, u, cm) => { ovosUpd(S, 489, {}); const dois = t > 652.6; S.gui.pose({ bob: -.17, hipL: [88, 4], hipR: [88, 4], knL: 88, knR: 88, lean: 6, shR: [60, 0], elR: 80, shL: [dois ? 60 : 30, 0], elL: dois ? 80 : 50, headX: 12 }); o2.visible = dois; naMao(o2, S.gui, 'L', [0, -.02, .06], false); rosto(S.gui, null, t, 'determinado', { look: [0, .6] });
