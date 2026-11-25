@@ -46,6 +46,7 @@ function montaFila(c) {
   const pos = [[.15, Y, 2.0], [XB, Y - .2, 1.2], [XB, Y - .55, .7], [XB, Y - .9, .15], [XB, Y - 1.25, -.4], [.3, 3 * FH + 1.4, -1.25], [-.3, 3 * FH + 1.4, -1.25]];
   const defs = [pessoa(3, { camisa: '#8E6A3A', calca: '#6A4A2A', estampa: (x, w, h) => { x.fillStyle = '#5A3A1A'; for (let i = 0; i < 30; i++) { x.beginPath(); x.arc((i * 131) % w, h * .5 + (i * 61) % (h * .5), 14, 0, 7); x.fill(); } } }), pessoa(1), pessoa(0), { ...pessoa(2), camisa: '#2A2E38', calca: '#2A2E38', estampa: (x, w, h) => { x.fillStyle = '#F4F1EA'; x.beginPath(); x.moveTo(w / 2 - 40, 0); x.lineTo(w / 2, h * .4); x.lineTo(w / 2 + 40, 0); x.fill(); x.fillStyle = '#C0392B'; x.fillRect(w / 2 - 8, 0, 16, h * .45); } }, crianca(1), pessoa(4), pessoa(5), pessoa(6), pessoa(7)];
   const ks = pos.map(([x, y, z], i) => ator(c, defs[i], x, z, i < 5 ? Math.PI : i < 7 ? (i === 5 ? -Math.PI / 2 : -Math.PI / 2) : Math.PI, y));
+  ks[0].place(-.3, 1.75, Y, -.79); // o vizinho da chave fica de frente pra porta, longe da câmera do alto
   const chave = bx(.03, .06, .01, '#C9CED6', 0, 0, 0); c.add(chave); const tel = celular((x, w, h) => { x.fillStyle = '#F4F6FA'; x.fillRect(0, 0, w, h); x.fillStyle = '#C8CDD4'; x.fillRect(90, 120, 120, 300); x.fillStyle = '#9AA0A8'; x.fillRect(90, 260, 120, 6); x.fillRect(190, 160, 8, 60); x.fillStyle = '#2A2A30'; x.font = '700 26px Inter'; x.fillText('geladeira 😩', 60, 480); }); tel.scale.setScalar(1.5); c.add(tel);
   const marreta = new THREE.Group(); marreta.add(cyl(.015, .015, .6, '#B8864A', 0, -.2, 0, { seg: 6 })); marreta.add(bx(.14, .07, .07, '#3A3A44', 0, .1, 0)); c.add(marreta);
   const cartao = bx(.07, .045, .004, '#F4F1EA', 0, 0, 0); c.add(cartao);
@@ -64,7 +65,7 @@ function filaUpd(F, t) {
 
 // ---------- copo ----------
 function montaCopo(c) { const K = cozinha(c, { hora: 'tarde' }); const fita = cyl(.024, .024, .03, '#9AA0A8', 0, 0, 0, { seg: 10 }); fita.rotation.x = Math.PI / 2; fita.position.set(.075, 1.05, -1.55); c.add(fita);
-  const gui = ator(c, GUI, .1, -.7, Math.PI); const cp = copo(); c.add(cp); const tia = ator(c, TIAGO, -1.45, .9, Math.PI / 2 - .2); const cad = rb(.15, .2, .02, '#E8D8A0', 0, 0, 0); c.add(cad);
+  K.cad2.position.z = .08; const gui = ator(c, GUI, .1, -.7, Math.PI); const cp = copo(); c.add(cp); const tia = ator(c, TIAGO, -1.45, .9, Math.PI / 2 - .2); const cad = rb(.15, .2, .02, '#E8D8A0', 0, 0, 0); c.add(cad);
   const enche = jato(c, [.075, 1.02, -1.48], [0, -.4, 0], { n: 20, tam: .02, vida: .25, abre: .05 }); const pp = [0, 0, 0]; const po = respingo(c, pp, { t0: 472.6, cores: ['#E8F4FF', '#FFFFFF', '#BFE4FF'], n: 40, v: .9, tam: .018, vida: 1.2, chao: 0 });
   const gotas = []; for (let i = 0; i < 16; i++) { const s = sprite('#8FCBEA', .03, .9, false); s.userData = { ph: i / 16 }; c.add(s); gotas.push(s); }
   return { K, gui, cp, tia, cad, enche, po, pp, gotas };
@@ -146,14 +147,14 @@ export const ATO3B = [
       S.gui.pose(soma(parado(t, 2, .4), { shL: [6, 10], shR: [6, 10], elL: 20, elR: 20 })); S.gui.hands.L.scale.set(.9, .7, 1.05); S.gui.hands.R.scale.set(.9, .7, 1.05); rosto(S.gui, null, t, 'triste', { lagrima: true });
       cam(cm, [[0, [1.6, 1.5, 1.1]], [1, [1.55, 1.45, 1.0]]], [[0, [-.6, 1.0, .3]], [1, [-1.0, 1.05, .3]]], u / 14.6); return { bloom: .25, sat: .85 }; }; }),
   // F1 — dias 9 e 10: fila descendo a escada — vizinho de chave e roupa de barro, mulher com a foto da geladeira, homem com marreta, cara de terno, criança
-  mk(440, 446.5, { bg: '#2A2420', fov: 52 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.2, 2.6]], [1, [.9, Y + 2.1, 2.4]]], [[0, [XB, Y - 1.3, -.3]], [1, [.2, Y - 1.6, -1.0]]], u / 6.5); return { tint: '#FFF4E4' }; }; }),
+  mk(440, 446.5, { bg: '#2A2420', fov: 58 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.55, 2.75]], [1, [.95, Y + 2.5, 2.65]]], [[0, [XB, Y - 1.3, -.3]], [1, [.3, Y - 1.6, -1.0]]], u / 6.5); return { tint: '#FFF4E4' }; }; }),
   mk(446.5, 452, { bg: '#2A2420', fov: 48 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); const Y = F.Y; cam(cm, [[0, [-.75, Y - .6, -.9]], [1, [-.75, Y - .55, -.6]]], [[0, [XB, Y - .5, 1.0]], [1, [XB, Y - .9, -.2]]], u / 5.5); return { tint: '#FFF4E4' }; }; }),
   // T1 — na porta, o Tiago com caderno e caneta organizando a fila e anotando "cinquenta reais"
   mk(452, 456, { bg: '#2A2420', fov: 36 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); F.ks[0].root.visible = false; rosto(F.tia, null, t, 'feliz', { look: [0, .6] }); const Y = F.Y; cam(cm, [[0, [-.3, Y + 1.25, 1.45]], [1, [-.35, Y + 1.22, 1.55]]], [[0, [-.85, Y + .95, 2.35]], [1, [-.85, Y + .9, 2.35]]], u / 4); return { tint: '#FFF4E4' }; }; }),
   // T2 — "Gui, em um mês a gente fica rico!"
   mk(456, 459.4, { bg: '#2A2420', fov: 34 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); F.ks[0].root.visible = false; F.tia.pose(soma(parado(t, 5), { shL: [55, -6], elL: 80, shR: [70 + 20 * Math.sin(t * 4), 20], elR: 60, lean: -4 })); rosto(F.tia, 'tiago', t, 'feliz', { look: [.4, 0] }); const Y = F.Y;
     cam(cm, [[0, [-.15, Y + 1.2, 1.4]], [1, [-.2, Y + 1.18, 1.5]]], [[0, [-.85, Y + 1.0, 2.35]], [1, [-.85, Y + 1.0, 2.35]]], u / 3.4); return { tint: '#FFF4E4' }; }; }),
-  mk(459.4, 465, { bg: '#2A2420', fov: 44 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); rosto(F.tia, null, t, 'feliz'); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.0, 2.6]], [1, [.95, Y + 2.3, 2.5]]], [[0, [-.7, Y + .8, 2.2]], [1, [.4, Y - 1.0, .3]]], u / 5.6); return { tint: '#FFF4E4' }; }; }),
+  mk(459.4, 465, { bg: '#2A2420', fov: 44 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); rosto(F.tia, null, t, 'feliz'); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.0, 2.6]], [1, [.95, Y + 2.5, 2.65]]], [[0, [-.7, Y + .8, 2.2]], [1, [.3, Y - 1.6, -1.0]]], u / 5.6); return { tint: '#FFF4E4' }; }; }),
   // C1 — cozinha: enche o copo na torneira nova, remendada com fita; leva à boca; o copo vira pó de vidro; a água escorre pelos dedos
   mk(465, 470.6, { bg: '#3A3028', fov: 38 }, (c) => { const C = montaCopo(c); return (t, u, cm) => { copoUpd(C, t); cam(cm, [[0, [.85, 1.3, .3]], [1, [.75, 1.25, .1]]], [[0, [.1, 1.0, -1.1]], [1, [.1, 1.0, -1.0]]], u / 5.6); return { tint: '#FFF0DC' }; }; }),
   mk(470.6, 476, { bg: '#3A3028', fov: 34 }, (c) => { const C = montaCopo(c); return (t, u, cm) => { copoUpd(C, t); C.po(t); cam(cm, [[0, [.75, 1.2, .55]], [.5, [.6, 1.15, .4]], [1, [.55, 1.05, .35]]], [[0, [.1, 1.05, -.45]], [.5, [.15, .95, -.4]], [1, [.15, .85, -.35]]], u / 5.4); return { tint: '#FFF0DC', focus: 1.0, range: .6, blur: 6 }; }; }),
