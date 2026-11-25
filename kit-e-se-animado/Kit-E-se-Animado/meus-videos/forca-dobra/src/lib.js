@@ -10,10 +10,20 @@ export function mk(t0, t1, o, build) {
   if (o.fog) c.fog = new THREE.Fog(o.fog[0], o.fog[1], o.fog[2]);
   s.camera.near = o.near || .05; s.camera.far = o.far || 500; s.camera.updateProjectionMatrix();
   const U = build(c, s) || (() => ({}));
-  s.update = (t, u) => { uT.value = t; CUR = { t0, t1, viva: o.viva ?? 1 }; const r = U(t, u, s.camera) || {}; const V = c.userData.vida; if (V && o.vida !== false) { const T = tw(t); for (const f of V) f(t, T, u); } return FX(r); };
+  s.update = (t, u) => { uT.value = t; CUR = { t0, t1, viva: o.viva ?? 1 }; restaura(c); const r = U(t, u, s.camera) || {}; if (o.limpa !== false) limpaVista(c, s.camera); const V = c.userData.vida; if (V && o.vida !== false) { const T = tw(t); for (const f of V) f(t, T, u); } return FX(r); };
   return s;
 }
 let CUR = { t0: 0, t1: 1, viva: 1 };
+// ---- vista limpa: quem fica colado na câmera ou na frente de quem está sendo filmado sai do quadro ----
+const _v = new THREE.Vector3(), _a = new THREE.Vector3(), _b = new THREE.Vector3();
+const atoresDa = (c) => c.userData._at || (c.userData._at = (() => { const L = []; c.traverse((n) => { if (n.userData && n.userData.ator) L.push(n.userData.ator); }); return L; })());
+function restaura(c) { for (const k of atoresDa(c)) if (k._ocultei) { k.root.visible = true; k._ocultei = false; } }
+export function limpaVista(c, cam) {
+  const alvo = cam.userData.alvo; if (!alvo) return; c.updateMatrixWorld(true); _a.copy(cam.position); _b.set(alvo[0], alvo[1], alvo[2]); const ab = _b.clone().sub(_a); const L2 = ab.lengthSq();
+  for (const k of atoresDa(c)) { if (!k.root.visible || k.fixo) continue; let vis = false; for (let p = k.root.parent; p; p = p.parent) if (p.visible === false) { vis = true; break; } if (vis) continue;
+    k.headG.getWorldPosition(_v); _v.y += .26 * (k.root.scale.x || 1); const dc = _v.distanceTo(_a); const s = Math.max(0, Math.min(1, _v.clone().sub(_a).dot(ab) / L2)); const d = _v.distanceTo(_a.clone().addScaledVector(ab, s));
+    const alvoProx = _v.distanceTo(_b) < .55; if (dc < .55 || (!alvoProx && s > .02 && s < .8 && d < .3 * (k.root.scale.x || 1) && dc < _a.distanceTo(_b) - .4)) { k.root.visible = false; k._ocultei = true; } }
+}
 /** Usado pelas cenas da cidade para a câmera viva saber o começo e o fim do plano. */
 export function setCur(c) { CUR = c; }
 const nz = (t, a) => Math.sin(t * .71 + a) * .6 + Math.sin(t * 1.37 + a * 2.1) * .3 + Math.sin(t * 2.9 + a * 3.3) * .1;
@@ -26,7 +36,7 @@ export function cam(c, P, Q, u, roll = 0, viva = CUR.viva) {
     const push = .05 * viva * (k * k * (3 - 2 * k)) + longo; for (let i = 0; i < 3; i++) p[i] += (q[i] - p[i]) * push;
     const a = d * .011 * viva; p[0] += nz(t, 1) * a; p[1] += nz(t, 4) * a * .7; p[2] += nz(t, 7) * a * .5; q[0] += nz(t, 9) * a * .35; q[1] += nz(t, 12) * a * .3;
     roll += nz(t, 15) * .006 * viva; }
-  aim(c, p, q, roll); }
+  aim(c, p, q, roll); c.userData.alvo = q; }
 import { makeChar3D, pisca } from './motor/char3d.js';
 import { boca } from './fala.js';
 /** Coloca um personagem na cena. */

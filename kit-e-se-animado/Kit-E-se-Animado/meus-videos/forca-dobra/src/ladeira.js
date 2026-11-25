@@ -29,7 +29,7 @@ const rosto = (k, t, emo, ex = {}) => rostoLib(k, ex.quem || null, t, emo, ex);
 export function montaLadeira(c, o = {}) {
   const L = rua(c, { incl: 6, hora: o.hora || 'tarde', tipo: 'lojas', z0: -210, z1: 50, seed: 31, carros: [[1, -36, '#3E7CC8'], [-1, -21, '#F4F1EA'], [1, 21, '#5AA84E'], [-1, 31, '#2A2A30']] });
   const g = L.g, R = rng(17);
-  const add = (def, x, z, ry) => { const k = cria(def); k.place(x, z, 0, ry); g.add(k.root); k.seed = Math.abs((x * 13 + z * 7) | 0) % 9; return k; };
+  const add = (def, x, z, ry) => { const k = cria(def); k.place(x, z, 0, ry); g.add(k.root); k.root.userData.ator = k; k.seed = Math.abs((x * 13 + z * 7) | 0) % 9; return k; };
   // Guilherme na faixa, de frente para a subida (-z), sacola de pão na mão esquerda
   const gui = add(GUI, 0, 0, Math.PI); const sacM = paoNaMao(gui, 'L', .6);
   const sacC = sacolaPao(); sacC.scale.setScalar(.8); g.add(sacC); const paoR = pao(); paoR.scale.setScalar(.8); g.add(paoR);

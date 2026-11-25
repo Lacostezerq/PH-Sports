@@ -57,10 +57,13 @@ export function predio(c, o = {}) {
   // parede da frente de cada andar (com a porta do apartamento) — a portaria fica aberta no térreo
   const portas = [];
   for (let n = 1; n <= ANDARES; n++) {
-    const y0 = n * FH; g.add(plano(2.4, FH, matAz(2.4, FH, 10 + n, '#E2DCC4'), 0, y0 + FH / 2, 2.9, 0, Math.PI));
-    const p = new THREE.Group(); p.position.set(-.6, y0, 2.88); g.add(p); p.add(bx(.9, 2.1, .05, '#7A5236', 0, 1.05, 0, { out: .008 })); p.add(sph(.03, '#C9A030', -.33, 1.0, -.04, { seg: 8 }));
-    const num = new THREE.Mesh(new THREE.PlaneGeometry(.18, .12), toonTex(ctex(120, 80, (x) => { x.fillStyle = '#C9A030'; x.fillRect(0, 0, 120, 80); x.fillStyle = '#2A1E14'; x.font = '900 56px Inter'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(n + '1', 60, 42); }))); num.position.set(0, 1.75, -.03); num.rotation.y = Math.PI; p.add(num);
-    p.add(bx(.06, 2.2, .1, '#5E3E26', -.48, 1.1, 0)); p.add(bx(.06, 2.2, .1, '#5E3E26', .48, 1.1, 0)); p.add(bx(1.02, .08, .1, '#5E3E26', 0, 2.16, 0));
+    const y0 = n * FH; const mz = matAz(2.4, FH, 10 + n, '#E2DCC4');
+    // parede com o vão da porta (x de -1.05 a -.15) e um pedacinho do apartamento lá dentro
+    g.add(plano(.15, FH, mz, -1.125, y0 + FH / 2, 2.9, 0, Math.PI)); g.add(plano(1.35, FH, mz, .525, y0 + FH / 2, 2.9, 0, Math.PI)); g.add(plano(.9, FH - 2.12, mz, -.6, y0 + 2.12 + (FH - 2.12) / 2, 2.9, 0, Math.PI));
+    g.add(plano(2.0, 2.4, toon('#D8C8A8'), -.6, y0 + 1.2, 4.2, 0, Math.PI)); g.add(plano(1.4, 2.0, toon('#B89A70'), -.6, y0 + .002, 3.55, -Math.PI / 2)); for (const sx of [-1.05, -.15]) g.add(plano(1.3, 2.12, toon('#CDBB98'), sx, y0 + 1.06, 3.55, 0, sx < -.6 ? Math.PI / 2 : -Math.PI / 2));
+    const p = new THREE.Group(); p.position.set(-1.05, y0, 2.88); g.add(p); const pp = new THREE.Group(); pp.position.x = .45; p.add(pp); pp.add(bx(.9, 2.1, .05, '#7A5236', 0, 1.05, 0, { out: .008 })); pp.add(sph(.03, '#C9A030', .33, 1.0, -.04, { seg: 8 }));
+    const num = new THREE.Mesh(new THREE.PlaneGeometry(.18, .12), toonTex(ctex(120, 80, (x) => { x.fillStyle = '#C9A030'; x.fillRect(0, 0, 120, 80); x.fillStyle = '#2A1E14'; x.font = '900 56px Inter'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(n + '1', 60, 42); }))); num.position.set(0, 1.75, -.03); num.rotation.y = Math.PI; pp.add(num);
+    g.add(bx(.06, 2.2, .1, '#5E3E26', -1.08, y0 + 1.1, 2.88)); g.add(bx(.06, 2.2, .1, '#5E3E26', -.12, y0 + 1.1, 2.88)); g.add(bx(1.02, .08, .1, '#5E3E26', -.6, y0 + 2.16, 2.88));
     portas.push(p);
     const l2 = lampada(.2); l2.position.set(0, y0 + FH - .02, ZA0 + .7); g.add(l2);
     // tapetinho na porta

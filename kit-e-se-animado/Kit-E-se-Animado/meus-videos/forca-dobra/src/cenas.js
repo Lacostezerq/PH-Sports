@@ -1,3 +1,10 @@
 import { ATO1A } from './ato1a.js';
 import { ATO1B } from './ato1b.js';
-export const CENAS = [...ATO1A, ...ATO1B];
+import { ATO2A } from './ato2a.js';
+import { ATO2B } from './ato2b.js';
+import { ATO3A } from './ato3a.js';
+import { ATO3B } from './ato3b.js';
+import { ATO4A } from './ato4a.js';
+import { ATO4B, ATO4C } from './ato4b.js';
+import { ATO5 } from './ato5.js';
+export const CENAS = [...ATO1A, ...ATO1B, ...ATO2A, ...ATO2B, ...ATO3A, ...ATO3B, ...ATO4A, ...ATO4B, ...ATO4C, ...ATO5];

@@ -55,7 +55,7 @@ export const pessoa = (i, extra = {}) => { const [camisa, calca, corCabelo, cabe
 /** Aluno da escola (uniforme branco e azul). */
 export const aluno = (i, extra = {}) => pessoa(i, { camisa: '#F6F4EE', calca: '#2F4E86', escala: .94, estampa: (x, w, h) => { gola('#2F4E86', .88)(x, w, h); x.fillStyle = '#2F4E86'; x.beginPath(); x.arc(w / 2 + 120, h * .55, 34, 0, 7); x.fill(); }, ...extra });
 /** Criança da rua (chinelo, bermuda). */
-export const crianca = (i, extra = {}) => pessoa(i + 2, { escala: .66, meia: GENTE[(i + 2) % 8][4], tenis: GENTE[(i + 2) % 8][4], sola: ['#2D8CD6', '#E2443A', '#F2C230'][i % 3], ...extra });
+export const crianca = (i, extra = {}) => pessoa(i + 2, { escala: .66, meia: GENTE[(i + 2) % 8][4], tenis: GENTE[(i + 2) % 8][4], sola: ['#2D8CD6', '#E2443A', '#F2C230'][i % 3], chinelo: ['#2D8CD6', '#E2443A', '#F2C230'][i % 3], ...extra });
 
 /** Cria o personagem. Coloca o capuz no moletom do Guilherme. */
 export function cria(def) {

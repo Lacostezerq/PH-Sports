@@ -9,7 +9,7 @@ export { walk, run, idle, sentado, mixPose } from './motor/char3d.js';
 /** Câmera viva. P e Q podem ser um ponto [x,y,z] ou chaves [[u,[x,y,z]],...] (u de 0 a 1 dentro do plano). */
 export const cam = (c, P, Q, u, roll = 0, viva) => camLib(c, typeof P[0] === 'number' ? [[0, P]] : P, typeof Q[0] === 'number' ? [[0, Q]] : Q, u, roll, viva);
 /** Personagem na cena (com o capuz quando é o Guilherme). */
-export function ator(c, def, x = 0, z = 0, ry = 0, y = 0) { const k = cria(def); k.place(x, z, y, ry); c.add(k.root); k.seed = Math.abs((x * 13 + z * 7) | 0) % 9; return k; }
+export function ator(c, def, x = 0, z = 0, ry = 0, y = 0) { const k = cria(def); k.place(x, z, y, ry); c.add(k.root); k.root.userData.ator = k; k.seed = Math.abs((x * 13 + z * 7) | 0) % 9; return k; }
 /** Posição de um pedaço do personagem no mundo. */
 export const pw = (o, dx = 0, dy = 0, dz = 0) => { const v = o.localToWorld(new THREE.Vector3(dx, dy, dz)); return [v.x, v.y, v.z]; };
 export { THREE };
