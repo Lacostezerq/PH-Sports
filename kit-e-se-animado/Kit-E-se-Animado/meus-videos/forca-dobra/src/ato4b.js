@@ -85,7 +85,7 @@ function montaPapel(c) {
   const pt = L.postes.find((p) => Math.abs(p.position.x - POSTE[0]) < .1 && Math.abs(p.position.z - POSTE[1]) < 1) || L.postes[0];
   L.g.children.forEach((o) => { if (o.isGroup && o.children.length === 6 && Math.abs(o.position.y - .16) < .01 && Math.abs(o.position.x - POSTE[0]) < 1.2 && o.position.z > -11 && o.position.z < 0) o.visible = false; }); // árvore que tapava o poste e o Guilherme
   const bur = new THREE.Mesh(new THREE.CircleGeometry(.22, 16), toon('#3A3630')); bur.rotation.x = -Math.PI / 2; bur.scale.set(1.3, 1, 1); bur.position.set(5.0, .162, -3.9); L.g.add(bur);
-  const gui = ator(L.g, GUILUVA, 5.3, 8, Math.PI); const gente = [[5.0, -6, 0], [5.6, -9.5, 0], [5.2, -45, 0], [4.8, 1.5, Math.PI], [5.7, 32, Math.PI]].map(([x, z, r], i) => ({ k: ator(L.g, pessoa(i + 1), x, z, r), x, z, r }));
+  const gui = ator(L.g, GUILUVA, 5.3, 8, Math.PI); const gente = [[6.0, -6, 0], [5.6, -9.5, 0], [5.2, -45, 0], [5.85, 1.5, Math.PI], [5.7, 32, Math.PI]].map(([x, z, r], i) => ({ k: ator(L.g, pessoa(i + 1), x, z, r), x, z, r }));
   return { L, pt, gui, gente };
 }
 function papelUpd(P, t) {
@@ -105,7 +105,7 @@ const ovoMao = (c) => { const o = ovo(); o.scale.setScalar(OVO_ESC); c.add(o); r
 
 export const ATO4C = [
   // P1 — dia 14: andando na calçada de luvas pretas, passos curtos e devagar, desviando das pessoas como se fossem de vidro
-  mk(620, 627, { bg: '#CFE4EE', fov: 40 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); const z = P.gui.root.position.z; cam(cm, [[0, [4.4, 1.45, z - 3.2]], [1, [4.4, 1.4, z - 3.0]]], [5.2, 1.0, z], u / 7); return { tint: '#FFFAF0' }; }; }),
+  mk(620, 627, { limpa: false, bg: '#CFE4EE', fov: 40 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); const z = P.gui.root.position.z; cam(cm, [[0, [4.4, 1.45, z - 3.2]], [1, [4.4, 1.4, z - 3.0]]], [5.2, 1.0, z], u / 7); return { tint: '#FFFAF0' }; }; }),
   // P2 — por três segundos tudo ganha textura de papel amassado (a camada de cima faz o papel)
   mk(627, 630.4, { bg: '#CFE4EE', fov: 46 }, (c) => { const P = montaPapel(c); return (t, u, cm) => { papelUpd(P, t); const z = P.gui.root.position.z; cam(cm, [[0, [1.5, 3.2, z - 6]], [1, [1.8, 3.0, z - 5.4]]], [5.2, 1.0, z], u / 3.4); return { sat: .35, tint: '#F4ECD8', exposure: 1.05 }; }; }),
   // P3 — tropeça de leve num buraco e apoia a mão no poste: o poste entorta até ficar torto pro lado
