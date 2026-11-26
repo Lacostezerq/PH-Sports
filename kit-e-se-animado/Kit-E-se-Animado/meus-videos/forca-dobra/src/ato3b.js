@@ -88,13 +88,13 @@ function copoUpd(C, t) {
 export const ATO3B = [
   // Q1 — dia 7, quarto escuro, só a luz da rua: ele vira na cama e o estrado quebra (crack)
   mk(360, 366, { bg: '#08080E', fov: 40 }, (c) => { const Q = montaQuarto(c); const g = deita(c); const po = poeira(c, [[.62, .3, -.3], [.62, .3, .3]], { n: 16, size: .5, life: 2, op: .4, sp: .8 });
-    return (t, u, cm) => { Q.ventilador.girar(t); const rol = kv(t, [[361.2, 0], [361.9, 1.2]]); const cai = easeIn(clamp((t - 362.3) / .15)); deitPose(g, rol, -.08 * cai); Q.colchao.position.y = .39 - .08 * cai; Q.travesseiro.position.y = .5 - .08 * cai; Q.lencol = Q.lencol;
+    return (t, u, cm) => { Q.ventilador.girar(t); const rol = kv(t, [[361.2, 0], [361.9, 1.2]]); const cai = easeIn(clamp((t - 362.3) / .15)); deitPose(g, rol, -.08 * cai); Q.colchao.position.y = .39 - .08 * cai; Q.travesseiro.position.y = .5 - .08 * cai; Q.lencol.position.y = .45 - .08 * cai;
       g.pose({ shL: [30, 10], elL: 60, shR: [20, 14], elR: 30, hipL: [30, 4], hipR: [20, 4], knL: 40, knR: 30 }); rosto(g, null, t, t > 362.4 ? 'surpreso' : 'sono', { blink: t < 362.3 ? 1 : undefined }); po(t - 362.3);
       camT(cm, [[0, [-.9, 1.9, 1.3]], [1, [-.7, 1.7, 1.0]]], [[0, [.62, .4, -.2]], [1, [.62, .45, -.25]]], u / 6, t > 362.3 ? .02 * Math.exp(-(t - 362.3) * 6) : 0); return NOITE; }; }),
   // Q2 — vira de novo e quebra o pé da cama, que fica torta
   mk(366, 371, { bg: '#08080E', fov: 40 }, (c) => { const Q = montaQuarto(c); const g = deita(c);
-    return (t, u, cm) => { Q.ventilador.girar(t); Q.colchao.position.y = .31; Q.travesseiro.position.y = .42; const rol = kv(t, [[366.6, 1.2], [367.4, -1.1]]); const tort = easeOut(clamp((t - 367.6) / .2));
-      Q.cama.rotation.z = .1 * tort; Q.cama.position.y = -.05 * tort; deitPose(g, rol, -.08 - .03 * tort); g.root.position.x += .03 * tort;
+    return (t, u, cm) => { Q.ventilador.girar(t); Q.colchao.position.y = .31; Q.lencol.position.y = .37; Q.travesseiro.position.y = .42; const rol = kv(t, [[366.6, 1.2], [367.4, -1.1]]); const tort = easeOut(clamp((t - 367.6) / .2));
+      Q.cama.rotation.z = .1 * tort; Q.cama.position.y = -.05 * tort; deitPose(g, rol, -.02 - .01 * tort); g.root.position.x += .03 * tort;
       g.pose({ shL: [20, 14], elL: 30, shR: [30, 10], elR: 60, hipL: [20, 4], hipR: [30, 4], knL: 30, knR: 40 }); rosto(g, null, t, t > 367.7 ? 'medo' : 'sono', { blink: t < 367.6 && t > 366.2 ? .6 : undefined });
       camT(cm, [[0, [1.3, 1.1, 1.4]], [1, [1.25, 1.05, 1.3]]], [[0, [.62, .3, .2]], [1, [.62, .35, -.1]]], u / 5, t > 367.6 ? .015 * Math.exp(-(t - 367.6) * 6) : 0); return NOITE; }; }),
   // Q3 — ele desce pro chão e puxa o colchão

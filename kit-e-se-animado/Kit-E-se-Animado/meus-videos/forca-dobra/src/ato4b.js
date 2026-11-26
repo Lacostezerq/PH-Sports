@@ -45,7 +45,7 @@ export const ATO4B = [
   lad(578.2, 585, (S) => { const mp = motPe(S); return (t, u, cm) => { const tf = 25; S.upd(t, tf, { guiPose: (tt) => soma(segura(tt, 25), { lean: 0 }), guiEmo: 'neutro' }); const a = t - 578.2;
     S.ca.userData.porta.rotation.y = 1.3 * smooth(.3, 1.2, a); const sai = a > 1.4; S.mot.root.visible = !sai; mp.root.visible = sai;
     const ca = S.cw.position.z; if (sai) { const k = clamp((a - 1.4) / 4); mp.place(lerp(1.05, .75, k), lerp(ca + 3.2, .55, k), 0, lerp(0, -Math.PI / 2 - .3, smooth(.5, 1, k))); mp.pose(k < 1 ? soma(andar(t, { f: 1.3, amp: .7 }), treme(t, .8)) : soma(parado(t, 4), treme(t, .9))); rosto(mp, null, t, 'medo'); }
-    cam(cm, [[0, W(S, 4.2, 1.9, -2.2)], [1, W(S, 3.7, 1.6, .5)]], [[0, W(S, .8, 1.0, ca + 3.2)], [1, W(S, .4, .9, .4)]], u / 6.8); return { bloom: .3 }; }; }),
+    cam(cm, [[0, W(S, 4.2, 1.9, -2.2)], [1, W(S, 3.4, 2.7, -1.6)]], [[0, W(S, .8, 1.0, ca + 3.2)], [1, W(S, .4, .9, .4)]], u / 6.8); return { bloom: .3 }; }; }),
   // V6 — cai de joelhos no asfalto e olha pra cima
   lad(585, 592.8, (S) => { const mp = motPe(S); mp.root.visible = true; return (t, u, cm) => { S.upd(t, 25, { guiPose: (tt) => soma(parado(tt, 2), { shL: [10, 10], shR: [10, 10] }), guiEmo: 'preocupado' }); S.mot.root.visible = false; const a = t - 585;
     mp.place(.75, .6, 0, -Math.PI / 2 - .25); mp.pose(soma(mix(parado(t, 4), G.ajoelhado, smooth(.3, 1.2, a)), { headX: -18 * smooth(1.5, 2.5, a), shL: [30, 10], shR: [30, 10], elL: 30, elR: 30 }, treme(t, .5))); rosto(mp, null, t, 'choro', { look: [0, -.6] });

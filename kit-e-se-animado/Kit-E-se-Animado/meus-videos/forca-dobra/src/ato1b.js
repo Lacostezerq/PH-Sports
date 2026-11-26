@@ -76,10 +76,10 @@ export const ATO1B = [
       cam(cm, [[0, [-.1, FH + 1.95, 2.75]], [1, [-.15, FH + 1.9, 2.65]]], [[0, [-.75, FH + 1.0, .55]], [1, [-.7, FH + 1.0, .6]]], u / 3.4); return QUENTE; }; }),
   // P7 — ela pega o botijão, apoia no quadril e sobe; entrega a sacola de pão pra ele sem olhar
   mk(63, 66.4, { bg: '#2A2420', fov: 56, perto: true }, (c) => { const P = escada(c); const gui = ator(c, GUI, -.95, ZA0 - 1.08, Math.PI / 2, FH + .7); const b = bot(); c.add(b);
-    const ci = ator(c, CIDA, XA, ZA0 - .75, Math.PI, FH + .5); const sf = sacolaFeira(); sf.position.set(0, -.2, 0); ci.hands.R.add(sf); const sp = sacolaPao(); sp.scale.setScalar(.8); c.add(sp); const spg = paoNaMao(gui, 'R', .4);
-    const path = [[XA, FH + .5, ZA0 - .75], [XA, FH + .5, ZA0 - .76], [XA, FH + 1.4, ZLAND - .05], [XA + .15, FH + 1.4, ZLAND - .6], [XB - .15, FH + 1.4, ZLAND - .6]];
+    const ci = ator(c, CIDA, XA, ZA0 - .75, Math.PI, FH + .5); const sf = sacolaFeira(); sf.position.set(0, -.2, 0); ci.hands.R.add(sf); const sp = sacolaPao(); sp.scale.setScalar(.8); c.add(sp); const spg = paoNaMao(gui, 'R', .08);
+    const path = [[XA, FH + .5, ZA0 - .75], [XA + .03, FH + .5, ZA0 - .76], [XA + .14, FH + 1.4, ZLAND - .05], [XA + .15, FH + 1.4, ZLAND - .6], [XB - .15, FH + 1.4, ZLAND - .6]];
     return (t, u, cm) => { const a = t - 63; const sobe = a > 1.9;
-      const e = subir(ci, path, t, 64.9, .8, { f: 2.0, pose: (tt, e, p) => { if (!sobe) return null; return soma(p, { shL: [-6, 30], elL: 100, tilt: -5 }); } });
+      const e = sobe && subir(ci, path, t, 64.9, .8, { f: 2.0, pose: (tt, e, p) => { if (!sobe) return null; return soma(p, { shL: [-6, 30], elL: 100, tilt: -5 }); } });
       if (!sobe) { ci.place(XA, ZA0 - .75 + .05, FH + .5, Math.PI - .5 * smooth(0, .4, a)); const pega = kv(a, [[.1, 0], [.6, 1], [1.2, 1], [1.7, 0]]); ci.pose(soma(mix(parado(t, 3), { lean: 50, bob: -.1, hipL: [40, 8], hipR: [40, 8], knL: 40, knR: 40, shL: [70, 10], elL: 10, headX: -10 }, pega), a > 1.2 ? { shL: [-6, 30], elL: 100, tilt: -5 } : {})); }
       // botijão: no degrau -> na mão dela -> no quadril
       const noQ = a > 1.15; const hp = new THREE.Vector3(); if (noQ) { ci.root.updateMatrixWorld(true); ci.root.localToWorld(hp.set(.24, .22, .02)); b.position.copy(hp); b.rotation.set(0, ci.root.rotation.y, -.35); } else { b.position.set(XA - .05, FH + .9, ZA0 - 1.5); b.rotation.set(0, 0, 0); if (a > .6) { const k = smooth(.6, 1.15, a); ci.root.updateMatrixWorld(true); ci.root.localToWorld(hp.set(.24, .22, .02)); b.position.lerp(hp, k); } }

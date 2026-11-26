@@ -196,7 +196,7 @@ export function quarto(c, o = {}) {
   const prat = M.comoda(.7, '#B87A4A'); prat.position.set(-.85, 0, 1.15); prat.rotation.y = Math.PI; c.add(prat);
   const lamp = lampada(.25); lamp.position.set(0, Hh, 0); c.add(lamp);
   const L = new THREE.PointLight('#FFE2AE', noite ? 0 : 3, 5, 1.6); L.position.set(0, 2.2, 0); c.add(L);
-  return { g, cama, colchao, travesseiro: trav, ventilador: vent, janela: jan, porta, batente: bat, luz: L, lamp, rua, W, D, Hh };
+  return { g, cama, colchao, lencol, travesseiro: trav, ventilador: vent, janela: jan, porta, batente: bat, luz: L, lamp, rua, W, D, Hh };
 }
 /** Banheiro pequeno: pia com espelho, torneira, copo com escovas, porta com maçaneta. */
 export function banheiro(c) {
