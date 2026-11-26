@@ -96,7 +96,7 @@ export const ATO3B = [
     return (t, u, cm) => { Q.ventilador.girar(t); Q.colchao.position.y = .31; Q.lencol.position.y = .37; Q.travesseiro.position.y = .42; const rol = kv(t, [[366.6, 1.2], [367.4, -1.1]]); const tort = easeOut(clamp((t - 367.6) / .2));
       Q.cama.rotation.z = .1 * tort; Q.cama.position.y = -.05 * tort; deitPose(g, rol, -.02 - .01 * tort); g.root.position.x += .03 * tort;
       g.pose({ shL: [20, 14], elL: 30, shR: [30, 10], elR: 60, hipL: [20, 4], hipR: [30, 4], knL: 30, knR: 40 }); rosto(g, null, t, t > 367.7 ? 'medo' : 'sono', { blink: t < 367.6 && t > 366.2 ? .6 : undefined });
-      camT(cm, [[0, [1.3, 1.1, 1.4]], [1, [1.25, 1.05, 1.3]]], [[0, [.62, .3, .2]], [1, [.62, .35, -.1]]], u / 5, t > 367.6 ? .015 * Math.exp(-(t - 367.6) * 6) : 0); return NOITE; }; }),
+      camT(cm, [[0, [1.55, 1.55, 1.95]], [1, [1.45, 1.5, 1.85]]], [[0, [.62, .3, .2]], [1, [.62, .35, -.1]]], u / 5, t > 367.6 ? .015 * Math.exp(-(t - 367.6) * 6) : 0); return NOITE; }; }),
   // Q3 — ele desce pro chão e puxa o colchão
   mk(371, 375.2, { bg: '#08080E', fov: 40 }, (c) => { const Q = montaQuarto(c); Q.cama.rotation.z = .1; Q.cama.position.y = -.05; const g = ator(c, GUI, .0, -.1, Math.PI / 2);
     return (t, u, cm) => { Q.ventilador.girar(t); const a = t - 371; const pux = smooth(1.2, 3.2, a); Q.colchao.position.set(lerp(0, -1.07, pux), lerp(.31, .1, pux), 0); Q.travesseiro.position.set(lerp(0, -1.07, pux), lerp(.42, .22, pux), -.8);
@@ -154,7 +154,7 @@ export const ATO3B = [
   // T2 — "Gui, em um mês a gente fica rico!"
   mk(456, 459.4, { limpa: false, bg: '#2A2420', fov: 34 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); F.ks[0].root.visible = false; F.tia.pose(soma(parado(t, 5), { shL: [55, -6], elL: 80, shR: [70 + 20 * Math.sin(t * 4), 20], elR: 60, lean: -4 })); rosto(F.tia, 'tiago', t, 'feliz', { look: [.4, 0] }); const Y = F.Y;
     cam(cm, [[0, [-.15, Y + 1.2, 1.4]], [1, [-.2, Y + 1.18, 1.5]]], [[0, [-.85, Y + 1.0, 2.35]], [1, [-.85, Y + 1.0, 2.35]]], u / 3.4); return { tint: '#FFF4E4' }; }; }),
-  mk(459.4, 465, { limpa: false, bg: '#2A2420', fov: 44 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); rosto(F.tia, null, t, 'feliz'); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.0, 2.6]], [1, [.95, Y + 2.5, 2.65]]], [[0, [-.7, Y + .8, 2.2]], [1, [.3, Y - 1.6, -1.0]]], u / 5.6); return { tint: '#FFF4E4' }; }; }),
+  mk(459.4, 465, { limpa: false, bg: '#2A2420', fov: 44 }, (c) => { const F = montaFila(c); return (t, u, cm) => { filaUpd(F, t); rosto(F.tia, null, t, 'feliz'); const Y = F.Y; cam(cm, [[0, [1.0, Y + 2.0, 2.6]], [1, [1.15, Y + 2.75, 2.35]]], [[0, [-.7, Y + .8, 2.2]], [1, [.4, Y - 1.6, -1.1]]], u / 5.6, 0, 0); return { tint: '#FFF4E4' }; }; }),
   // C1 — cozinha: enche o copo na torneira nova, remendada com fita; leva à boca; o copo vira pó de vidro; a água escorre pelos dedos
   mk(465, 470.6, { bg: '#3A3028', fov: 38 }, (c) => { const C = montaCopo(c); return (t, u, cm) => { copoUpd(C, t); cam(cm, [[0, [.85, 1.3, .3]], [1, [.75, 1.25, .1]]], [[0, [.1, 1.0, -1.1]], [1, [.1, 1.0, -1.0]]], u / 5.6); return { tint: '#FFF0DC' }; }; }),
   mk(470.6, 476, { bg: '#3A3028', fov: 34 }, (c) => { const C = montaCopo(c); return (t, u, cm) => { copoUpd(C, t); C.po(t); cam(cm, [[0, [.75, 1.2, .55]], [.5, [.6, 1.15, .4]], [1, [.55, 1.05, .35]]], [[0, [.1, 1.05, -.45]], [.5, [.15, .95, -.4]], [1, [.15, .85, -.35]]], u / 5.4); return { tint: '#FFF0DC', focus: 1.0, range: .6, blur: 6 }; }; }),
