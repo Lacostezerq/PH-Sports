@@ -37,7 +37,7 @@ export const ATO1B = [
       P.portaRua.rotation.y = -1.2 * (smooth(0, .4, a) * (1 - smooth(1.0, 1.4, a)) + smooth(3.0, 3.3, a));
       cam(cm, [[0, [-.85, 1.55, 6.7]], [1, [-.7, 1.5, 6.4]]], [[0, [.8, .85, 4.3]], [1, [.6, .8, 4.1]]], u / 3.6); return QUENTE; }; }),
   // P2 — ele se abaixa, segura a alça com as duas mãos, faz força (cara vermelha) e levanta tremendo
-  mk(45.6, 51, { bg: '#2A2420', fov: 36 }, (c) => { const P = escada(c); const gui = ator(c, GUI, -.25, 3.55, .35); const por = ator(c, PORTEIRO, 2.75, 6.25, -Math.PI / 2 - .3);
+  mk(45.6, 51, { limpa: false, bg: '#2A2420', fov: 36 }, (c) => { const P = escada(c); const gui = ator(c, GUI, -.25, 3.55, .35); const por = ator(c, PORTEIRO, 2.75, 6.25, -Math.PI / 2 - .3);
     const b = bot(); c.add(b); const sw = suor(c, gui, { v: .9 });
     return (t, u, cm) => { const a = t - 45.6; const anda = clamp(a / 1.1); gui.place(lerp(-.25, .85, anda), lerp(3.55, 3.85, anda), 0, lerp(.35, 0, anda));
       const agacha = { lean: 34, bob: -.2, hipL: [68, 10], hipR: [68, 10], knL: 96, knR: 96, shL: [56, 4], shR: [56, 4], elL: 8, elR: 8, headX: -12 };
@@ -75,7 +75,7 @@ export const ATO1B = [
       const vira = smooth(60.6, 61.3, t); gui.pose(soma(ENCOSTA, ofego(t, 1), { headY: -40 * vira, headX: 4 * vira })); rosto(gui, null, t, vira > .5 ? 'surpreso' : 'sono', { look: [.6 * vira, .4] });
       cam(cm, [[0, [-.1, FH + 1.95, 2.75]], [1, [-.15, FH + 1.9, 2.65]]], [[0, [-.75, FH + 1.0, .55]], [1, [-.7, FH + 1.0, .6]]], u / 3.4); return QUENTE; }; }),
   // P7 — ela pega o botijão, apoia no quadril e sobe; entrega a sacola de pão pra ele sem olhar
-  mk(63, 66.4, { bg: '#2A2420', fov: 56, perto: true }, (c) => { const P = escada(c); const gui = ator(c, GUI, -.95, ZA0 - 1.08, Math.PI / 2, FH + .7); const b = bot(); c.add(b);
+  mk(63, 66.4, { limpa: false, bg: '#2A2420', fov: 56, perto: true }, (c) => { const P = escada(c); const gui = ator(c, GUI, -.95, ZA0 - 1.08, Math.PI / 2, FH + .7); const b = bot(); c.add(b);
     const ci = ator(c, CIDA, XA, ZA0 - .75, Math.PI, FH + .5); const sf = sacolaFeira(); sf.position.set(0, -.2, 0); ci.hands.R.add(sf); const sp = sacolaPao(); sp.scale.setScalar(.8); c.add(sp); const spg = paoNaMao(gui, 'R', .08);
     const path = [[XA, FH + .5, ZA0 - .75], [XA + .03, FH + .5, ZA0 - .76], [XA + .14, FH + 1.4, ZLAND - .05], [XA + .15, FH + 1.4, ZLAND - .6], [XB - .15, FH + 1.4, ZLAND - .6]];
     return (t, u, cm) => { const a = t - 63; const sobe = a > 1.9;
@@ -97,7 +97,7 @@ export const ATO1B = [
       subir(gui, pg, t, 66.9, .42, { f: 1.1, pose: (tt, e, p) => soma(p, ofego(tt, .5)) }); spg.prumo(t); rosto(gui, null, t, 'sono');
       const gp = gui.root.position; cam(cm, [[0, [-.1, FH + 1.95, 2.75]], [1, [0, FH + 2.05, 2.7]]], [[0, [gp.x, gp.y + .9, gp.z]], [1, [gp.x, gp.y + .9, gp.z]]], u / 4); return QUENTE; }; }),
   // P9 — terceiro lance: ela passa pela câmera com força; ele lá atrás, mão no corrimão, sem fôlego (saco de cimento na tela)
-  mk(70.4, 76.2, { bg: '#2A2420', fov: 40 }, (c) => { const P = escada(c); const gui = ator(c, GUI, XB, ZLAND, 0, 2 * FH + 1.4); const ci = ator(c, CIDA, XB, ZLAND, 0, 2 * FH + 1.4);
+  mk(70.4, 76.2, { limpa: false, bg: '#2A2420', fov: 40 }, (c) => { const P = escada(c); const gui = ator(c, GUI, XB, ZLAND, 0, 2 * FH + 1.4); const ci = ator(c, CIDA, XB, ZLAND, 0, 2 * FH + 1.4);
     const b = bot(); ci.root.add(b); b.position.set(.24 / .84, .22 / .84, .02); b.rotation.z = -.35; b.scale.setScalar(.65 / .84); const sf = sacolaFeira(); sf.position.set(0, -.2, 0); ci.hands.R.add(sf); const spg = paoNaMao(gui, 'R', .6); const sw = suor(c, gui, { v: 1 });
     const pc = [[XB, 2 * FH + 1.4, ZLAND - .05], [XB, 3 * FH, ZA0 + .05], [XB - .1, 3 * FH, ZA0 + .6], [XA + .1, 3 * FH, ZA0 + .6], [XA, 3 * FH, ZA0 + .05], [XA, 3 * FH + 1.4, ZLAND - .05]];
     const pg = [[XA + .15, 2 * FH + 1.4, ZLAND - .6], [XB - .15, 2 * FH + 1.4, ZLAND - .6], [XB, 2 * FH + 1.4, ZLAND - .05], [XB, 3 * FH, ZA0 + .05], [XB - .1, 3 * FH, ZA0 + .6]];

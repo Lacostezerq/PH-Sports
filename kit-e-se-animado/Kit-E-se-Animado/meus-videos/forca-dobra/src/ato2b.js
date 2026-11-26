@@ -54,7 +54,7 @@ export const ATO2B = [
       alunosUpd(S, t, 'olha'); S.gui.pose(soma(G.maosBolso, vivo(t, 2))); rosto(S.gui, null, t, 'neutro'); S.tia.pose(soma(parado(t, 5), G.celular)); naMao(S.fone, S.tia, 'R', [0, -.09, .03]); rosto(S.tia, null, t, 'feliz'); mesaUpd(S, t);
       cam(cm, [[0, [4.5, 3.2, 4.8]], [1, [3.6, 2.4, 3.9]]], [[0, [0, .6, 0]], [1, [0, .8, 0]]], u / 5.5); return DIA; }; }),
   // F2 — o Rafa chama: "Vem, magrelo, vai ser rapidinho!"
-  mk(181.5, 188.7, { bg: '#CFE4EE', fov: 55 }, (c) => { const S = montaPatio(c);
+  mk(181.5, 188.7, { limpa: false, bg: '#CFE4EE', fov: 55 }, (c) => { const S = montaPatio(c);
     return (t, u, cm) => { const fl = t > 186; S.rafa.pose(soma(BRACO(), { shL: [70 + 20 * Math.max(0, Math.sin(t * 5)), 10], elL: 50 + 50 * Math.max(0, Math.sin(t * 5)), headY: fl ? 22 : Math.sin(t) * 15, headX: -4 })); rosto(S.rafa, 'rafa', t, fl ? 'desconfiado' : 'feliz', { smile: .7, look: fl ? [.6, 0] : [0, 0] });
       alunosUpd(S, t, 'olha'); S.gui.pose(soma(G.maosBolso, vivo(t, 2))); rosto(S.gui, null, t, 'preocupado'); S.tia.pose(soma(parado(t, 5), G.celular)); naMao(S.fone, S.tia, 'R', [0, -.09, .03]); rosto(S.tia, null, t, 'feliz'); mesaUpd(S, t);
       cam(cm, [[0, [-.7, 1.35, 1.15]], [.6, [-.6, 1.3, 1.05]], [1, [-.6, 1.28, 1.0]]], [[0, [.2, .95, -.7]], [1, [.2, 1.0, -.75]]], u / 7.2); return DIA; }; }),

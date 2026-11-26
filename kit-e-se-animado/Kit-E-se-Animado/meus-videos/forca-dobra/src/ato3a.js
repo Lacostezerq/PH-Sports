@@ -114,13 +114,13 @@ export const ATO3A = [
   // R1 — rua do bairro, dia 5: molecada jogando bola com chinelo de trave
   mk(290, 296, { bg: '#CFE4EE', fov: 40 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [-4.6, 2.4, 5.5]], [1, [-3.8, 1.9, 4.2]]], [[0, [.3, .4, -1]], [1, [.6, .5, -1.3]]], u / 6); return SOL; }; }),
   // R2 — a bola rola pra debaixo do carro estacionado
-  mk(296, 300, { bg: '#CFE4EE', fov: 38 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [.6, .35, -4.4]], [1, [.9, .3, -4.0]]], [[0, [1.6, .2, -1.6]], [1, [2.5, .15, -1.9]]], u / 4); return { ...SOL, focus: 2.5, range: 1.5, blur: 4 }; }; }),
+  mk(296, 300, { limpa: false, bg: '#CFE4EE', fov: 38 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [1.5, .4, -4.6]], [1, [1.8, .35, -4.2]]], [[0, [2.0, .2, -1.6]], [1, [2.8, .15, -1.9]]], u / 4); return { ...SOL, focus: 2.5, range: 1.5, blur: 4 }; }; }),
   // R3 — a molecada se abaixa, tenta com o braço, com um cabo de vassoura, e não alcança
   mk(300, 305.6, { bg: '#CFE4EE', fov: 40 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [.2, .9, -4.6]], [1, [.4, .8, -4.3]]], [[0, [2.2, .3, -2.0]], [1, [2.3, .3, -1.9]]], u / 5.6); return SOL; }; }),
   // R4 — Guilherme passa, segura o para-choque e levanta o carro até o peito como uma caixa de sapato; um menino pega a bola
-  mk(305.6, 311.4, { bg: '#CFE4EE', fov: 40 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [.0, 1.2, -6.2]], [.5, [.4, 1.0, -5.4]], [1, [.9, .95, -5.2]]], [[0, [1.8, .9, -4.0]], [.5, [2.6, .7, -3.2]], [1, [2.5, .7, -2.6]]], u / 5.8); return SOL; }; }),
+  mk(305.6, 311.4, { limpa: false, bg: '#CFE4EE', fov: 40 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [.0, 1.2, -6.2]], [.5, [.4, 1.0, -5.4]], [1, [.9, .95, -5.2]]], [[0, [1.8, .9, -4.0]], [.5, [2.6, .7, -3.2]], [1, [2.5, .7, -2.6]]], u / 5.8); return SOL; }; }),
   // R5 — abaixa o carro devagar; o alarme dispara
-  mk(311.4, 316, { bg: '#CFE4EE', fov: 38 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [1.0, 1.15, -5.6]], [1, [1.2, 1.1, -5.3]]], [[0, [2.8, .75, -3.0]], [1, [2.8, .65, -2.6]]], u / 4.6); return SOL; }; }),
+  mk(311.4, 316, { limpa: false, bg: '#CFE4EE', fov: 38 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [1.0, 1.15, -5.6]], [1, [1.2, 1.1, -5.3]]], [[0, [2.8, .75, -3.0]], [1, [2.8, .65, -2.6]]], u / 4.6); return SOL; }; }),
   // R6 — as crianças paradas de boca aberta; ao fundo, o Tiago filmando tudo
   mk(316, 320.4, { bg: '#CFE4EE', fov: 36 }, (c) => { const S = montaRua(c); return (t, u, cm) => { ruaUpd(S, t); cam(cm, [[0, [.2, 1.05, -5.0]], [1, [.1, 1.0, -4.7]]], [[0, [1.6, .55, -2.0]], [1, [.0, .8, .6]]], u / 4.4); return SOL; }; }),
   // V1 — tela do celular do Tiago: vídeo postado, visualizações subindo, comentários rolando (plim plim)
@@ -139,7 +139,7 @@ export const ATO3A = [
   // A1 — academia de bairro: espelho grande, música alta, gente treinando
   mk(330, 335.2, { bg: '#2A2A30', fov: 42 }, (c) => { const S = montaAcad(c); return (t, u, cm) => { acadUpd(S, t); cam(cm, [[0, [-1.4, 2.3, 3.6]], [1, [-1.0, 2.0, 3.2]]], [[0, [1, 1.0, -1]], [1, [.6, 1.0, -1.2]]], u / 5.2); return { bloom: .3 }; }; }),
   // A2 — o Tiago entra puxando o Guilherme pelo braço; todo mundo para e olha
-  mk(335.2, 339.6, { bg: '#2A2A30', fov: 40 }, (c) => { const S = montaAcad(c); return (t, u, cm) => { acadUpd(S, t); cam(cm, [[0, [-.8, 1.5, -1.8]], [1, [-.6, 1.45, -1.5]]], [[0, [.4, 1.0, 2.8]], [1, [.3, 1.0, 1.6]]], u / 4.4); return { bloom: .3 }; }; }),
+  mk(335.2, 339.6, { limpa: false, bg: '#2A2A30', fov: 40 }, (c) => { const S = montaAcad(c); return (t, u, cm) => { acadUpd(S, t); cam(cm, [[0, [-.8, 1.5, -1.8]], [1, [-.6, 1.45, -1.5]]], [[0, [.4, 1.0, 2.8]], [1, [.3, 1.0, 1.6]]], u / 4.4); return { bloom: .3 }; }; }),
   // A3 — ele pega a barra com uma mão e levanta; a barra entorta em U; as anilhas escorregam e caem. BUM.
   mk(339.6, 342.6, { bg: '#2A2A30', fov: 40 }, (c) => { const S = montaAcad(c); return (t, u, cm) => { acadUpd(S, t); const k = Math.max(0, t - T_CAI - .3);
     camT(cm, [[0, [-1.6, 1.4, 1.6]], [1, [-1.45, 1.55, 1.45]]], [[0, [.2, 1.3, -.5]], [1, [.2, 1.6, -.4]]], u / 3, t > T_CAI + .3 ? .04 * Math.exp(-k * 5) : 0); return { bloom: .3 }; }; }),

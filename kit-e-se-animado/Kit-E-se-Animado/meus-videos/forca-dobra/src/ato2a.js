@@ -118,10 +118,10 @@ export const ATO2A = [
       gui.pose(parado(t, 2)); rosto(gui, null, t, 'neutro');
       gui.root.visible = false; cam(cm, [[0, [.6, Y + 1.12, 1.1]], [1, [.55, Y + 1.1, 1.2]]], [[0, [-.15, Y + .92, 2.45]], [1, [-.15, Y + .92, 2.45]]], u / 2.6); return { tint: '#FFF4E4' }; }; }),
   // D4 — ele só dá de ombros e entra
-  mk(172.6, 176, { bg: '#2A2420', fov: 42 }, (c) => { const P = escada(c); const Y = 4 * FH; const ci = ator(c, CIDA, -.15, 2.45, Math.PI - .5, Y); const gui = ator(c, GUI, .2, 1.75, -.4, Y); const bm = botNaMao(gui, 'R', 1.2); const sp = paoNaMao(gui, 'L', 1);
+  mk(172.6, 176, { limpa: false, bg: '#2A2420', fov: 42 }, (c) => { const P = escada(c); const Y = 4 * FH; const ci = ator(c, CIDA, -.15, 2.45, Math.PI - .5, Y); const gui = ator(c, GUI, .2, 1.75, -.4, Y); const bm = botNaMao(gui, 'R', 1.2); const sp = paoNaMao(gui, 'L', 1);
     return (t, u, cm) => { const a = t - 172.6; P.portas[3].rotation.y = -1.4; const omb = kv(a, [[.1, 0], [.4, 1], [1.0, 1], [1.3, 0]]);
       const anda = clamp((a - 1.4) / 1.6); gui.place(lerp(.2, -.6, anda), lerp(1.75, 3.2, anda), Y, anda > 0 ? -.5 + .5 * anda : -.4); gui.root.visible = anda < .9;
       gui.pose(anda > 0 ? andar(t, { f: 1.8 }) : soma(parado(t, 2), { shL: [10, 24 * omb], elL: 40 * omb, headZ: 8 * omb, bob: .015 * omb })); bm.prumo(t); sp.prumo(t); rosto(gui, null, t, 'feliz', { look: [-.4, 0] });
       const sai = smooth(1.1, 2.0, a); ci.place(lerp(-.15, .4, sai), lerp(2.45, 2.55, sai), Y, lerp(Math.PI - .5, Math.PI + .6, smooth(1.4, 2.6, a))); ci.pose(soma(parado(t, 3), { shL: [55, 30], elL: 30, headX: 10 })); rosto(ci, null, t, 'desconfiado', { look: [.3, -.5] });
-      cam(cm, [[0, [.75, Y + 1.4, .4]], [1, [.65, Y + 1.35, .55]]], [[0, [-.1, Y + .9, 2.2]], [1, [-.3, Y + .9, 2.5]]], u / 3.4); return { tint: '#FFF4E4' }; }; }),
+      cam(cm, [[0, [1.2, Y + 2.0, 1.15]], [1, [1.1, Y + 1.95, 1.25]]], [[0, [-.15, Y + .9, 2.5]], [1, [-.3, Y + .9, 2.7]]], u / 3.4); return { tint: '#FFF4E4' }; }; }),
 ];

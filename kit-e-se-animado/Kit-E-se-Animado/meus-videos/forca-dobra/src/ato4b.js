@@ -17,7 +17,7 @@ import { sph, cyl, rb, bx, toon, ctex } from './motor/toon.js';
 import * as M from '../../../mundo/cidade/moveis.js';
 
 const FXT = { tint: '#FFF0E0', sat: 1.08 };
-const lad = (t0, t1, build, o = {}) => mk(t0, t1, { bg: '#E8B080', fov: o.fov || 40, far: 600 }, (c) => { const S = montaLadeira(c, o); const U = build(S, c); return (t, u, cm) => { S.g.updateMatrixWorld(true); return { ...FXT, ...(U(t, u, cm) || {}) }; }; });
+const lad = (t0, t1, build, o = {}) => mk(t0, t1, { bg: '#E8B080', fov: o.fov || 40, far: 600, limpa: o.limpa }, (c) => { const S = montaLadeira(c, o); const U = build(S, c); return (t, u, cm) => { S.g.updateMatrixWorld(true); return { ...FXT, ...(U(t, u, cm) || {}) }; }; });
 const W = (S, x, y, z) => S.L.w(x, y, z);
 const segura = (t, tf) => { const k = clamp((tf - T_IMP) / .2); return soma(G.maosFrente, { shL: [-22, 0], shR: [-22, 0], hipL: [24, 6], knL: 24 + 8 * k, hipR: [-18 - 6 * k, 4], knR: 6, lean: 2 + 5 * k, bob: -.02 * k }, treme(t, tf > T_IMP ? .9 * Math.exp(-(tf - T_IMP) * .8) + .15 : 0)); };
 const espera = (t, tf) => kf(tf, [[0, soma({ shL: [0, 9], shR: [4, 9], elL: 14, elR: 12 }, vivo(t, 3, .6))], [19.6, { shL: [6, 10], shR: [4, 9], elL: 18, elR: 12 }], [19.85, { shL: [-6, 14], shR: [2, 10], elL: 6, elR: 10 }, 'out'], [20.5, soma(G.maosFrente, { shL: [-18, 0], shR: [-18, 0], hipL: [24, 6], knL: 22, hipR: [-18, 4], knR: 6, lean: 2 }), 'back']]);
@@ -75,7 +75,7 @@ export const ATO4B = [
     const capuz = sph(.33, '#959BA3', 0, 0, 0, { seg: 18 }); capuz.scale.set(1.05, 1.0, 1.08); S.gui.headG.add(capuz); capuz.position.set(0, .27, -.04);
     return (t, u, cm) => { const a = t - 611.2; S.upd(t, 25, {}); S.mot.root.visible = false; S.sacC.visible = true; S.gui.place(.6, 9 - a * .95, 0, Math.PI); S.gui.pose(andar(t, { f: 1.5, curvado: true })); naMao(S.sacC, S.gui, 'L', [0, -.22, 0], false); S.sacC.rotation.set(0, 0, 0); rosto(S.gui, null, t, 'neutro');
       fil.forEach((k, i) => { k.place(k.root.position.x, k.root.position.z - .015, 0, Math.PI); k.pose(soma(parado(t, i), G.filmar)); rosto(k, null, t, 'surpreso'); });
-      cam(cm, [[0, W(S, .3, 1.6, 12.5)], [1, W(S, .2, 1.9, 13.5)]], [[0, W(S, .5, 1.0, 4)], [1, W(S, .5, 1.6, -4)]], u / 8.8); return { bloom: .35, tint: '#FFE6CC' }; }; }),
+      cam(cm, [[0, W(S, .3, 1.6, 12.5)], [1, W(S, .2, 1.9, 13.5)]], [[0, W(S, .5, 1.0, 4)], [1, W(S, .5, 1.6, -4)]], u / 8.8); return { bloom: .35, tint: '#FFE6CC' }; }; }, { limpa: false }),
 ];
 
 // ---------- dia 14: mundo de papel ----------
