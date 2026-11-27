@@ -72,10 +72,12 @@ export function cronometro(e = 1) {
     const a = (seg % 60) / 60 * 6.283; x.strokeStyle = '#C8302A'; x.lineWidth = 10; x.beginPath(); x.moveTo(256, 256); x.lineTo(256 + Math.sin(a) * 190, 256 - Math.cos(a) * 190); x.stroke(); x.fillStyle = '#C8302A'; x.beginPath(); x.arc(256, 256, 14, 0, 7); x.fill(); tx.needsUpdate = true; };
   g.set(0); g.scale.setScalar(e); return g;
 }
+let BOLA = null;
 /** Partículas que sobem/explodem (menta, notas, faíscas). Devolve upd(k) com k 0..1. */
 export function particulas(c, centro, o = {}) {
   const n = o.n || 40, cor = o.cor || '#7AF0B0'; const L = [];
-  for (let i = 0; i < n; i++) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ color: cor, transparent: true, depthWrite: false })); s.scale.setScalar(o.tam || .02); c.add(s); const a = Math.random() * 6.283, b = Math.random() * 2 - 1; L.push({ s, d: new THREE.Vector3(Math.cos(a) * Math.sqrt(1 - b * b), b * .6 + (o.sobe || 0), Math.sin(a) * Math.sqrt(1 - b * b)), v: .4 + Math.random() * .6, ph: Math.random() }); }
+  if (!BOLA) BOLA = ctex(64, 64, (x) => { const g = x.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.6, 'rgba(255,255,255,.85)'); g.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0, 0, 64, 64); });
+  for (let i = 0; i < n; i++) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: BOLA, color: cor, transparent: true, depthWrite: false })); s.scale.setScalar(o.tam || .02); c.add(s); const a = Math.random() * 6.283, b = Math.random() * 2 - 1; L.push({ s, d: new THREE.Vector3(Math.cos(a) * Math.sqrt(1 - b * b), b * .6 + (o.sobe || 0), Math.sin(a) * Math.sqrt(1 - b * b)), v: .4 + Math.random() * .6, ph: Math.random() }); }
   return (k, t = 0) => { for (const p of L) { const kk = clamp((k - p.ph * .3) / .7); p.s.visible = kk > 0 && kk < 1; p.s.position.set(centro[0] + p.d.x * kk * (o.r || .3) * p.v, centro[1] + p.d.y * kk * (o.r || .3) * p.v + (o.g || 0) * kk * kk, centro[2] + p.d.z * kk * (o.r || .3) * p.v); p.s.material.opacity = 1 - kk; } };
 }
 /** Papel picado caindo numa caixa. upd(t). */

@@ -116,14 +116,14 @@ export function corredor(c) {
   return { g, W, L };
 }
 /** Sala de aula: carteiras em fileiras, quadro verde, relógio de parede (ponteiros em relogio.h/m). Frente da sala em z = -3.5. */
-export function salaAula(c) {
+export function salaAula(c, o = {}) {
   luzToon(c, { r: 8, pos: [5, 7, 2], ki: 1.4, hemi: 1.4 }); c.add(new THREE.AmbientLight('#FFF4E6', .45));
   const g = new THREE.Group(); c.add(g); const W = 7, D = 7.5, H = 3;
   g.add(plano(W, D, toonTex(rep(pisoTex('ceramica', '#D8CDB4', '#C4B89E'), 7, 7)), 0, 0, 0, -Math.PI / 2));
   for (const [L, x, z, ry] of [[W, 0, -D / 2, 0], [W, 0, D / 2, Math.PI], [D, -W / 2, 0, Math.PI / 2], [D, W / 2, 0, -Math.PI / 2]]) { g.add(plano(L, 1.1, toon('#3E8A6A'), x, .55, z, 0, ry)); g.add(plano(L, 1.9, parede('#F2E6C8', 3, 1), x, 2.05, z, 0, ry)); }
   g.add(plano(W, D, toon('#F4F0E8'), 0, H, 0, Math.PI / 2));
   const q = bx(3.6, 1.3, .05, '#2E5A44', 0, 1.65, -D / 2 + .04, { out: .008 }); g.add(q); g.add(bx(3.7, .06, .12, '#9A7A5A', 0, .98, -D / 2 + .08));
-  const giz = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 1.1), new THREE.MeshBasicMaterial({ transparent: true, map: ctex(1024, 330, (x) => { x.strokeStyle = '#F4F1EA'; x.fillStyle = '#F4F1EA'; x.font = '600 48px Caveat'; x.fillText('Física — Força e Movimento', 40, 70); x.font = '700 72px Caveat'; x.fillText('F = m · a', 80, 180); x.font = '600 40px Caveat'; x.fillText('1 kgf ≈ 9,8 N', 520, 170); x.lineWidth = 4; x.beginPath(); x.moveTo(560, 250); x.lineTo(820, 250); x.lineTo(800, 236); x.moveTo(820, 250); x.lineTo(800, 264); x.stroke(); }) }));
+  const giz = new THREE.Mesh(new THREE.PlaneGeometry(3.4, 1.1), new THREE.MeshBasicMaterial({ transparent: true, map: ctex(1024, 330, (x) => { if (o.giz) { o.giz(x); return; } x.strokeStyle = '#F4F1EA'; x.fillStyle = '#F4F1EA'; x.font = '600 48px Caveat'; x.fillText('Física — Força e Movimento', 40, 70); x.font = '700 72px Caveat'; x.fillText('F = m · a', 80, 180); x.font = '600 40px Caveat'; x.fillText('1 kgf ≈ 9,8 N', 520, 170); x.lineWidth = 4; x.beginPath(); x.moveTo(560, 250); x.lineTo(820, 250); x.lineTo(800, 236); x.moveTo(820, 250); x.lineTo(800, 264); x.stroke(); }) }));
   giz.position.set(0, 1.65, -D / 2 + .07); g.add(giz);
   // relógio de parede
   const rel = new THREE.Group(); rel.position.set(2.2, 2.45, -D / 2 + .04); g.add(rel);
