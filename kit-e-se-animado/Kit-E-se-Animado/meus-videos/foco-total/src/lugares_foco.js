@@ -26,8 +26,12 @@ function sala(g, cx, w, d, h, o = {}) {
   const P = {};
   P.fundo = plano(w, h, pm, cx, h / 2, -d / 2, 0, 0); g.add(P.fundo);
   P.frente = plano(w, h, pm, cx, h / 2, d / 2, 0, Math.PI); g.add(P.frente);
-  P.esq = plano(d, h, pm, cx - w / 2, h / 2, 0, 0, Math.PI / 2); g.add(P.esq);
-  P.dir = plano(d, h, pm, cx + w / 2, h / 2, 0, 0, -Math.PI / 2); g.add(P.dir);
+  // parede lateral; com o.porta.{esq|dir} = z, deixa um vão de porta (0,8 x 2,12) centrado nesse z
+  const lateral = (x, ry, zc) => { if (zc === undefined) return plano(d, h, pm, x, h / 2, 0, 0, ry); const G = new THREE.Group(), a0 = zc - .42, a1 = zc + .42;
+    G.add(plano(a0 + d / 2, h, pm, x, h / 2, (-d / 2 + a0) / 2, 0, ry)); G.add(plano(d / 2 - a1, h, pm, x, h / 2, (a1 + d / 2) / 2, 0, ry)); G.add(plano(.84, h - 2.12, pm, x, (h + 2.12) / 2, zc, 0, ry)); return G; };
+  const po = o.porta || {};
+  P.esq = lateral(cx - w / 2, Math.PI / 2, po.esq); g.add(P.esq);
+  P.dir = lateral(cx + w / 2, -Math.PI / 2, po.dir); g.add(P.dir);
   P.teto = plano(w, d, toon('#F4F0E8'), cx, h, 0, Math.PI / 2); g.add(P.teto);
   for (const [x, z, ww, dd] of [[cx, -d / 2 + .01, w, .02], [cx - w / 2 + .01, 0, .02, d], [cx + w / 2 - .01, 0, .02, d]]) g.add(bx(ww, .08, dd, '#C8BEAE', x, .04, z, { shadow: false }));
   return P;
@@ -47,7 +51,7 @@ export function casa(c, o = {}) {
   c.add(new THREE.AmbientLight(noite ? '#6A78B8' : '#FFF4E6', noite ? .35 : .45));
   const g = new THREE.Group(); c.add(g); const D = 3, H = 2.6;
   // ---------- cozinha ----------
-  const PK = sala(g, -3.1, 3.0, D, H, { azul: true, piso: ['ceramica', '#C9BBA4', '#B5A68C'] });
+  const PK = sala(g, -3.1, 3.0, D, H, { porta: { dir: .85 }, azul: true, piso: ['ceramica', '#C9BBA4', '#B5A68C'] });
   const fog = M.fogao('#F4F1EA'); fog.position.set(-4.0, 0, -D / 2 + .34); g.add(fog);
   const chama = []; for (let i = 0; i < 2; i++) { const f = new THREE.Mesh(new THREE.ConeGeometry(.035, .06, 10, 1, true), new THREE.MeshBasicMaterial({ color: '#5AB0FF', transparent: true, opacity: .85 })); f.position.set(-4.12 + i * .24, .93, -D / 2 + .3); g.add(f); chama.push(f); }
   const panela = new THREE.Group(); panela.position.set(-4.12, .92, -D / 2 + .3); g.add(panela); panela.add(cyl(.11, .1, .12, '#9EA6B0', 0, .06, 0, { out: .004, seg: 16 })); panela.add(bx(.18, .015, .02, '#2A2A30', .17, .1, 0));
@@ -62,7 +66,7 @@ export function casa(c, o = {}) {
   const cadK = [[-.55, 0, Math.PI / 2], [.55, 0, -Math.PI / 2], [0, -.62, 0]].map(([x, z, ry]) => { const k = cadeiraPlastico(); k.position.set(-3.0 + x, 0, .45 + z); k.rotation.y = ry; g.add(k); return k; });
   const lk = lampada(.3); lk.position.set(-3.1, H, .2); g.add(lk); const LK = new THREE.PointLight('#FFE2AE', noite ? 6 : 2, 6, 1.6); LK.position.set(-3.1, 2.1, .2); g.add(LK);
   // ---------- quarto do Guilherme ----------
-  const PG = sala(g, 0, 3.0, D, H, { parede: '#B8D0DC', piso: ['madeira', '#9A6A42', '#8A5E3A'] });
+  const PG = sala(g, 0, 3.0, D, H, { porta: { esq: .85, dir: .85 }, parede: '#B8D0DC', piso: ['madeira', '#9A6A42', '#8A5E3A'] });
   const cama = new THREE.Group(); cama.position.set(.95, 0, -.45); g.add(cama);
   cama.add(rb(.95, .3, 1.95, '#8A5A36', 0, .17, 0, { out: .01 })); cama.add(rb(.95, .7, .06, '#7A4E2E', 0, .55, -.98, { out: .01 }));
   cama.add(rb(.88, .1, 1.85, '#F4F1EA', 0, .37, 0, { out: .008 })); const trav = rb(.6, .14, .3, '#F4F1EA', 0, .49, -.8, { out: .006 }); cama.add(trav);
@@ -84,7 +88,7 @@ export function casa(c, o = {}) {
   pos.position.set(1.0, 1.7, -D / 2 + .02); g.add(pos);
   const lg = lampada(.25); lg.position.set(0, H, 0); g.add(lg); const LG = new THREE.PointLight('#FFE2AE', noite ? 0 : 1.5, 5, 1.6); LG.position.set(0, 2.2, 0); g.add(LG);
   // ---------- quarto do Davi ----------
-  const PD = sala(g, 2.85, 2.5, D, H, { parede: '#F2D89A', piso: ['madeira', '#B88A5A', '#A87A4A'] });
+  const PD = sala(g, 2.85, 2.5, D, H, { porta: { esq: .85 }, parede: '#F2D89A', piso: ['madeira', '#B88A5A', '#A87A4A'] });
   const camaD = new THREE.Group(); camaD.position.set(3.55, 0, -.55); g.add(camaD); camaD.add(rb(.75, .26, 1.6, '#E2443A', 0, .15, 0, { out: .008 })); camaD.add(rb(.7, .09, 1.5, '#F4F1EA', 0, .32, 0, { out: .006 }));
   const travD = rb(.45, .12, .24, '#F4F1EA', 0, .42, -.6, { out: .005 }); camaD.add(travD); const cobD = rb(.72, .045, 1.0, '#F2C230', 0, .39, .2, { out: .005 }); camaD.add(cobD);
   for (let i = 0; i < 9; i++) { const st = new THREE.Mesh(new THREE.CircleGeometry(.04, 5), new THREE.MeshBasicMaterial({ color: '#FFF2A0' })); st.position.set(2.0 + (i % 3) * .5, 1.7 + Math.floor(i / 3) * .25, -D / 2 + .015); g.add(st); }
@@ -94,7 +98,7 @@ export function casa(c, o = {}) {
   const jd = janela(.7, .7, hora, 7); jd.position.set(3.3, 1.6, -D / 2 + .02); g.add(jd);
   const ld = lampada(.22); ld.position.set(2.85, H, 0); g.add(ld); const LD = new THREE.PointLight('#FFE2AE', noite ? 0 : 1.5, 5, 1.6); LD.position.set(2.85, 2.2, 0); g.add(LD);
   // paredes divisórias com espessura (para o corte)
-  for (const x of [-1.55, 1.55]) g.add(bx(.1, H, D, '#E8E0D0', x, H / 2, 0));
+  for (const x of [-1.55, 1.55]) { g.add(bx(.1, H, .85 - .42 + D / 2, '#E8E0D0', x, H / 2, (-D / 2 + .85 - .42) / 2)); g.add(bx(.1, H, D / 2 - .85 - .42, '#E8E0D0', x, H / 2, (.85 + .42 + D / 2) / 2)); g.add(bx(.1, H - 2.12, .84, '#E8E0D0', x, (H + 2.12) / 2, .85)); }
   const portaK = portaLado(g, -1.55, .85, 1); // cozinha <-> quarto do Guilherme
   const portaD = portaLado(g, 1.55, .85, -1); // quarto do Guilherme <-> quarto do Davi
   portaG.visible = false;

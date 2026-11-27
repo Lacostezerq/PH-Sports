@@ -19,10 +19,10 @@ export const ATO0 = [
     return (t, u, cm) => { guiJoga(S, t); advJoga(S, t); salaoUpd(S, t); const s = 600 - t; S.rel.userData.set('09:5' + Math.floor(9 - t * 3), '10:00', 0);
       cam(cm, [.75, 1.32, .35], [.46, 1.1, -.02], u / 1.05, 0, 0); return { exposure: .7, vig: .6 }; }; }),
   // A1b — close extremo no rosto do Guilherme, luz dura de cima, o tabuleiro brilhando nos olhos
-  mk(1.05, 3.36, { ...ESC, fov: 24, perto: true, limpa: false }, (c) => { const S = montaSalao(c, { semGente: true });
+  mk(1.05, 3.36, { ...ESC, fov: 28, perto: true, limpa: false }, (c) => { const S = montaSalao(c, { semGente: true });
     S.holo.intensity = 22;
     return (t, u, cm) => { guiJoga(S, t); advJoga(S, t); S.adv.root.visible = false; const g = S.gui; g.headG.updateMatrixWorld(true); const h = g.headG.localToWorld(new THREE.Vector3(0, .26, .3));
-      cam(cm, [[0, [h.x + .05, h.y + .02, h.z - .95]], [1, [h.x + .02, h.y, h.z - .6]]], [h.x, h.y - .02, h.z + .2], u / 2.3, 0, 0); return { exposure: .78, vig: .6 }; }; }),
+      cam(cm, [[0, [h.x + .06, h.y + .03, h.z - 1.45]], [1, [h.x + .03, h.y, h.z - 1.1]]], [h.x, h.y - .02, h.z + .2], u / 2.3, 0, 0); return { exposure: .78, vig: .6 }; }; }),
   // A2 — "conseguiu isso por sete dias": os dois na mesa, câmera girando devagar
   mk(3.36, 5.92, { ...ESC, fov: 34 }, (c) => { const S = montaSalao(c);
     return (t, u, cm) => { guiJoga(S, t); advJoga(S, t); salaoUpd(S, t); const a = lerp(-.9, -.5, u / 2.56);
@@ -38,11 +38,13 @@ export const ATO0 = [
       UF.mundo.value = 1; set(1, t); fundo(c, '#121218', 1); cam(cm, [[0, [.9, 1.3, .55]], [1, [.75, 1.22, .4]]], [.42, 1.09, -.02], u / 1.6, 0, 0); return { focus: 1.0, range: .3, blur: 10, vig: .5 }; }; }),
   // A5 — "silêncio absoluto... o celular vibrando no bolso 14 vezes": a câmera desce do rosto pro bolso
   mk(11.44, 16.56, { ...ESC, fov: 32, perto: true, limpa: false }, (c) => { const S = montaSalao(c); const set = emFoco([S.tel]);
-    const luzTel = new THREE.PointLight('#9FD8FF', 0, 1, 2); c.add(luzTel);
+    const luzTel = new THREE.PointLight('#9FD8FF', 0, .35, 2); c.add(luzTel);
     return (t, u, cm) => { guiJoga(S, t); advJoga(S, t); salaoUpd(S, t); const vb = vibra(t, PULSOS); celNoBolso(S, t, vb); const on = PULSOS.some((p) => t >= p && t < p + .3);
-      S.tel.tela(on ? 'chamadasBorrado' : 'apagada', 0); luzTel.position.copy(S.tel.position); luzTel.position.y += .08; luzTel.intensity = on ? 2.5 : 0;
-      UF.mundo.value = 1; set(1, t); fundo(c, '#121218', 1); const k = easeIO(clamp((u - 1.2) / 2.6));
-      const p = S.tel.position; cam(cm, [lerp(-1.1, -.6, k), lerp(1.42, 1.02, k), lerp(.2, .52, k)], [lerp(0, p.x, k), lerp(1.25, p.y, k), lerp(.62, p.z, k)], u / 5.12, 0, 0); return { focus: lerp(.95, .55, k), range: .25, blur: 12, vig: .5 }; }; }),
+      S.tel.tela(on ? 'chamadasBorrado' : 'apagada', 0); luzTel.position.copy(S.tel.position); luzTel.position.y += .08; luzTel.intensity = on ? .5 : 0;
+      UF.mundo.value = 1; set(1, t); fundo(c, '#121218', 1); const p = S.tel.position;
+      S.adv.root.visible = u >= 2.2;
+      if (u < 2.2) { const q = u / 2.2; cam(cm, [lerp(-1.35, -1.1, q), lerp(1.62, 1.55, q), lerp(-.95, -.7, q)], [0, 1.22, .55], q, 0, 0); return { focus: .9, range: .4, blur: 9, vig: .5 }; }
+      const q = (u - 2.2) / 2.92; cam(cm, [lerp(-.85, -.7, q), lerp(1.4, 1.3, q), lerp(1.25, 1.1, q)], [p.x, p.y, p.z], q, 0, 0); return { focus: .6, range: .3, blur: 10, vig: .5, exposure: .85 }; }; }),
   // A6 — "e ele não sentiu nenhuma": freeze no rosto imóvel
   mk(16.56, 18.36, { ...ESC, fov: 26, perto: true, limpa: false }, (c) => { const S = montaSalao(c); const set = emFoco([S.gui.root]);
     return (t, u, cm) => { guiJoga(S, 16.6, 'determinado', { parado: true }); advJoga(S, 16.6); salaoUpd(S, 16.6); S.juiz.root.visible = false; UF.mundo.value = 1; set(.6, t); fundo(c, '#121218', 1);
@@ -66,8 +68,8 @@ export const ATO0 = [
       cam(cm, [[0, [.15, 1.05, 2.2]], [1, [.05, 1.02, 1.8]]], [0, 1.08, 0], u / 3.6, 0, 0); return { bloom: .25, bloomT: .9, vig: .5, exposure: .85 }; }; }),
   // A10 — "já merece deixar o like": volta o freeze do Guilherme (o botão de like vem na tela)
   mk(31.44, 34.44, { ...ESC, fov: 30, perto: true, limpa: false }, (c) => { const S = montaSalao(c); const set = emFoco([S.gui.root]);
-    return (t, u, cm) => { guiJoga(S, 16.6, 'determinado', { parado: true }); advJoga(S, 16.6); salaoUpd(S, 16.6); S.juiz.root.visible = false; UF.mundo.value = .85; set(.5, t); fundo(c, '#121218', .85);
-      cam(cm, [[0, [-.95, 1.48, -.42]], [1, [-.85, 1.45, -.32]]], [-.1, 1.25, .62], u / 3, 0, 0); return { vig: .45 }; }; }),
+    return (t, u, cm) => { S.adv.root.visible = false; guiJoga(S, 16.6, 'determinado', { parado: true }); advJoga(S, 16.6); salaoUpd(S, 16.6); S.juiz.root.visible = false; UF.mundo.value = .85; set(.5, t); fundo(c, '#121218', .85);
+      cam(cm, [[0, [-1.45, 1.62, -.9]], [1, [-1.3, 1.58, -.75]]], [-.05, 1.22, .62], u / 3, 0, 0); return { vig: .45 }; }; }),
   // A11 — "bora voltar sete dias": rebobina — as peças voltam, o público senta de ré
   mk(34.44, 35.96, { ...ESC, fov: 38 }, (c) => { const S = montaSalao(c); const P = Object.values(S.T.P);
     return (t, u, cm) => { const r = 34.44 + (35.96 - t) * 3; guiJoga(S, r * 3); advJoga(S, r * 3); salaoUpd(S, r * 4, 'aplauso');

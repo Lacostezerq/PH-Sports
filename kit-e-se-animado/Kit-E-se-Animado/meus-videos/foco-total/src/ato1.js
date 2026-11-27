@@ -17,7 +17,7 @@ const deitaCama = (g) => { deitar(g, .95, .43, .38); g.root.position.y = .43 + .
 export const ATO1 = [
   // B1 — "Dia zero. Esse é o Guilherme, 17 anos": deitado na cama mexendo no celular
   mk(35.96, 39.12, { bg: '#DDE6EE', fov: 38, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); deitaCama(g);
-    return (t, u, cm) => { g.pose({ shR: [55, 12], elR: 95, shL: [20, 10], elL: 30, headX: -14 }); rosto(g, null, t, 'tedio', { look: [0, -.6] }); naMao(K.tel, g, 'R', [0, -.06, .05], [Math.PI / 2 + .3, 0, 0]); K.tel.tela('foto', ((t * .7) % 1));
+    return (t, u, cm) => { g.pose({ shR: [100, 8], elR: 35, shL: [20, 10], elL: 30, headX: -14 }); rosto(g, null, t, 'tedio', { look: [0, -.6] }); naMao(K.tel, g, 'R', [0, -.06, .05], false); g.headG.updateMatrixWorld(true); K.tel.up.set(0, 1, 0); K.tel.lookAt(g.headG.localToWorld(new THREE.Vector3(0, .2, .25))); K.tel.tela('foto', ((t * .7) % 1));
       cam(cm, [[0, [-.4, 2.2, .9]], [1, [-.15, 1.9, .6]]], [.95, .55, -.4], u / 3.16, 0, 0); return DIA; }; }),
   // B2 — "Mora com a mãe, a Dona Rose, que trabalha de caixa no mercado do bairro"
   mk(39.12, 42.88, { bg: '#F4F4F0', fov: 36 }, (c) => { const M = mercado(c); const r = ator(c, ROSE, -.05, -.42, 0); const cli = ator(c, pessoa(4), 1.6, 1.05, Math.PI + .3); const cx = cyl(.06, .06, .12, '#3E7CC8', 0, 0, 0, { out: .004 }); c.add(cx);
@@ -30,11 +30,11 @@ export const ATO1 = [
     return (t, u, cm) => { const a = (t - 42.88) * 1.6; const x = .2 + Math.cos(a) * .95, z = .35 + Math.sin(a) * .7; d.place(x, z, 0, Math.atan2(-Math.sin(a), Math.cos(a))); d.pose(soma(correr(t, 3.2, 1), { shR: [150, 20], elR: 10 })); cp.vento(t, 1);
       rosto(d, null, t, 'feliz', { mouth: { open: .5, smile: .9 } }); cam(cm, [[0, [.2, 1.6, 1.45]], [1, [.25, 1.5, 1.35]]], [x * .5 + .1, .45, z * .5 + .1], u / 3.56); return DIA; }; }),
   // B4 — "que acha que o irmão mais velho é a pessoa mais legal do planeta": olhos brilhando, coração
-  mk(46.44, 49.72, { bg: '#E8D8B8', fov: 34 }, (c) => { const S = salinha(c); const d = ator(c, DAVI, .55, .9, -2.5); const cp = capa(d, '#E2443A'); const g = ator(c, GUI, -.3, -1.0, 0); sentar(g, -.4, -1.05, 0, .45); const tel = celular(); c.add(tel); const co = icone('coracao', .22); c.add(co);
+  mk(46.44, 49.72, { bg: '#E8D8B8', fov: 62 }, (c) => { const S = salinha(c); const d = ator(c, DAVI, .55, .9, -2.5); const cp = capa(d, '#E2443A'); const g = ator(c, GUI, -.3, -1.0, 0); sentar(g, -.4, -1.05, 0, .45); const tel = celular(); c.add(tel); const co = icone('coracao', .22); c.add(co);
     return (t, u, cm) => { d.pose(soma(parado(t, 2), { shL: [40, 10], elL: 90, shR: [40, 10], elR: 90, headX: -8, bob: Math.abs(Math.sin(t * 6)) * .02 })); cp.vento(t, .2); rosto(d, null, t, 'apaixonado', { look: [-.5, -.2] });
       g.pose(sentadoCel(t)); rosto(g, null, t, 'tedio', { look: [0, .6] }); naMao(tel, g, 'R', [0, -.07, .04], [-1.35, 0, 0]); tel.tela('chat', .5);
       const k = clamp((t - 47.4) / .5); co.visible = t > 47.4; d.headG.updateMatrixWorld(true); const hp = d.headG.localToWorld(new THREE.Vector3(.15, .55, 0)); co.position.copy(hp); co.position.y += k * .15; co.scale.setScalar(.22 * (k < 1 ? easeOut(k) * 1.2 : 1 + Math.sin(t * 9) * .08));
-      cam(cm, [[0, [-1.5, 1.25, .95]], [1, [-1.4, 1.2, .85]]], [.05, .7, -.1], u / 3.28); return DIA; }; }),
+      cam(cm, [[0, [1.72, 1.5, .02]], [1, [1.66, 1.45, -.04]]], [.05, .75, -.12], u / 3.28); return DIA; }; }),
   // B5 — "o mesmo problema que quase todo mundo tem hoje": na escrivaninha, a cabeça vira pra cada barulho
   mk(49.72, 53.24, { bg: '#DDE6EE', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); const rel = relogioParede(); rel.position.set(.3, 2.0, 1.47); rel.rotation.y = Math.PI; c.add(rel);
     return (t, u, cm) => { const vira = kv(t, [[49.7, 0], [50.3, 0], [50.6, 1], [51.4, 1], [51.7, -1], [52.4, -1], [52.7, .4]]); g.pose(sentado({ shR: [50, 6], elR: 84, shL: [44, 6], elL: 80, lean: 8, headX: 6, headY: vira * 55 }));
@@ -43,13 +43,13 @@ export const ATO1 = [
   // B6 — "ele não conseguia prestar atenção em nada": close, a cabeça vai de um lado pro outro
   mk(53.24, 56.04, { bg: '#DDE6EE', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g);
     return (t, u, cm) => { const vira = Math.sin((t - 53.24) * 4.2); g.pose(sentado({ shR: [50, 6], elR: 84, shL: [44, 6], elL: 80, lean: 8, headX: 6, headY: vira * 50 })); rosto(g, null, t, 'preocupado', { look: [vira * .8, 0] }); paginaUm(K, 0);
-      cam(cm, [[0, [-.8, 1.3, 1.25]], [1, [-.78, 1.28, 1.1]]], [-.68, 1.18, .25], u / 2.8); return DIA; }; }),
+      cam(cm, [[0, [-1.38, 1.55, -1.38]], [1, [-1.3, 1.5, -1.25]]], [-.7, 1.1, .25], u / 2.8); return DIA; }; }),
   // B7 — "senta pra fazer a lição... escreve o número 1. O celular acende"
   mk(56.04, 60.16, { bg: '#DDE6EE', fov: 46, limpa: false, perto: true }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); const cn = cyl(.006, .006, .14, '#2E5EC8', 0, 0, 0, { out: .002 }); c.add(cn);
     K.tel.position.set(-1.02, .79, -.12); K.tel.rotation.set(-Math.PI / 2, 0, -Math.PI / 2);
     return (t, u, cm) => { g.pose(sentado(soma({ shR: [58, 4], elR: 92, shL: [44, 6], elL: 84, lean: 14, headX: 26 }, t > 59 && t < 60 ? { shR: [58 + Math.sin(t * 20) * 3, 4] } : {}))); rosto(g, null, t, 'neutro', { look: [0, .7] });
       naMao(cn, g, 'R', [0, -.05, .04], [.6, 0, 0]); paginaUm(K, clamp((t - 59.1) / .9)); const on = t > 60.0; K.tel.tela(on ? 'bloqueio' : 'apagada', 0);
-      cam(cm, [[0, [-1.15, 1.3, 1.0]], [1, [-1.2, 1.12, .75]]], [-1.12, .79, .25], u / 4.12, 0, 0); return DIA; }; }),
+      cam(cm, [[0, [-1.42, 1.32, .85]], [1, [-1.4, 1.22, .72]]], [-1.0, .86, .15], u / 4.12, 0, 0); return DIA; }; }),
   // B8 — "ele pega só pra ver rapidinho. Responde, curte, abre um vídeo": por cima do ombro, a tela do celular
   mk(60.16, 66.84, { bg: '#DDE6EE', fov: 46, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); paginaUm(K, 1);
     return (t, u, cm) => { const pega = clamp((t - 62.2) / .6); g.pose(sentado(soma({ shR: [lerp(40, 66, pega), 6], elR: lerp(80, 108, pega), shL: [44, 6], elL: 84, lean: 10, headX: 24 }, vivo(t, 1, .2)))); rosto(g, null, t, 'neutro', { look: [0, .6] });
@@ -60,7 +60,7 @@ export const ATO1 = [
     const luz = new THREE.PointLight('#9FD8FF', .6, 1.2, 2); c.add(luz);
     return (t, u, cm) => { g.pose(sentadoCel(t)); rosto(g, null, t, 'tedio', { look: [0, .55], blink: 0 }); telNaMao(K.tel, g); K.tel.tela('tapete', ((t - 66.84) / 4.8)); luz.position.copy(K.tel.position); luz.position.x += .12;
       const m = clamp((t - 66.9) / 1.4) * 40; rel.hora(19, 20 + m); K.luzAbaj.intensity = 1.2; K.luzes.LG.intensity = 1.8;
-      if (t < 68) cam(cm, [-.6, 1.95, -.6], [-.5, 2.0, -1.47], (t - 66.84) / 1.16, 0, 0); else cam(cm, [[0, [-1.2, 1.32, -.3]], [1, [-1.15, 1.3, -.2]]], [-.62, 1.2, .25], (t - 68) / 3.64, 0, 0);
+      if (t < 68) cam(cm, [-.6, 1.95, -.6], [-.5, 2.0, -1.47], (t - 66.84) / 1.16, 0, 0); else cam(cm, [[0, [-1.4, 1.5, -1.38]], [1, [-1.32, 1.45, -1.22]]], [-.66, 1.12, .25], (t - 68) / 3.64, 0, 0);
       return { tint: '#D8E2FF', exposure: .9 }; }; }),
   // B10 — "e o caderno continua com o número 1": corte seco, zoom dramático no 1 sozinho
   mk(71.64, 73.72, { bg: '#C8C0B8', fov: 46, limpa: false, perto: true }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); paginaUm(K, 1); K.luzAbaj.intensity = .8; K.luzes.LG.intensity = 1.5;
@@ -83,23 +83,23 @@ export const ATO1 = [
   // B13 — "Gui, Gui, olha meu desenho!": o Davi de pijama entra com a folha e puxa a manga
   mk(85.48, 87.32, { bg: '#C8C0B8', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); paginaUm(K, 1); K.luzAbaj.intensity = 1.2; K.luzes.LG.intensity = 1.8; const d = ator(c, DAVIPIJAMA, 0, 0, 0); const f = folha(); c.add(f); f.scale.setScalar(.6); K.portaD.abre(1);
     return (t, u, cm) => { g.pose(sentadoCel(t)); rosto(g, null, t, 'tedio', { look: [0, .55] }); telNaMao(K.tel, g); K.tel.tela('tapete', .7);
-      const k = clamp((t - 85.48) / 1.0); const x = lerp(1.5, -.25, easeOut(k)), z = lerp(.85, .45, k); d.place(x, z, 0, -Math.PI / 2 - .3); d.pose(k < 1 ? soma(andar(t, { f: 2.2 }), { shL: [70, -10], elL: 80 }) : { shR: [70, 20], elR: 30, shL: [60, -12], elL: 80, lean: 6 }); fala(d, 'davi', t, 'feliz', k < 1 ? andar(t, { f: 2.2 }) : { shR: [80 + Math.sin(t * 14) * 6, 20], elR: 30, shL: [60, -12], elL: 80 });
-      naMao(f, d, 'L', [0, -.05, .04], [-.3, 0, 0]); f.set(0); cam(cm, [[0, [.1, 1.5, -1.15]], [1, [0, 1.45, -1.05]]], [-.15, .95, .45], u / 1.84); return { tint: '#E8E2F8' }; }; }),
+      const k = clamp((t - 85.48) / 1.0); const x = lerp(1.5, -.5, easeOut(k)), z = lerp(.85, .8, k); d.place(x, z, 0, k < 1 ? -Math.PI / 2 : Math.PI); d.pose(k < 1 ? soma(andar(t, { f: 2.2 }), { shL: [70, -10], elL: 80 }) : { shR: [70, 20], elR: 30, shL: [60, -12], elL: 80, lean: 6 }); fala(d, 'davi', t, 'feliz', k < 1 ? andar(t, { f: 2.2 }) : { shR: [80 + Math.sin(t * 14) * 6, 20], elR: 30, shL: [60, -12], elL: 80 });
+      naMao(f, d, 'L', [0, -.05, .04], [-.3, 0, 0]); f.set(0); cam(cm, [[0, [.7, 1.5, 1.35]], [1, [.6, 1.45, 1.3]]], [-.45, .95, .55], u / 1.84); return { tint: '#E8E2F8' }; }; }),
   // B14 — "Depois, Davi.": close no rosto iluminado pela tela, sem virar
   mk(87.32, 88.52, { bg: '#C8C0B8', fov: 46, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); const luz = new THREE.PointLight('#9FD8FF', 0, 1, 2); c.add(luz);
     return (t, u, cm) => { g.pose(sentadoCel(t)); fala(g, 'gui', t, 'tedio', sentadoCel(t), .2, { look: [0, .6] }); g.pose(sentadoCel(t)); telNaMao(K.tel, g); K.tel.tela('tapete', .75); luz.position.copy(K.tel.position);
-      cam(cm, [[0, [-1.05, 1.28, .9]], [1, [-1.0, 1.27, .82]]], [-.66, 1.15, .25], u / 1.2, 0, 0); return { tint: '#D8E2FF', exposure: .85 }; }; }),
+      cam(cm, [[0, [-1.1, 1.3, -.5]], [1, [-1.05, 1.28, -.4]]], [-.66, 1.15, .25], u / 1.2, 0, 0); return { tint: '#D8E2FF', exposure: .85 }; }; }),
   // B15 — "É rapidinho, eu fiz pra...": o Davi começa a desdobrar a folha (pontinha de giz verde)
-  mk(88.52, 90.24, { bg: '#C8C0B8', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const d = ator(c, DAVIPIJAMA, -.25, .45, -Math.PI / 2 - .3); const f = folha(); c.add(f); f.scale.setScalar(.6);
+  mk(88.52, 90.24, { bg: '#C8C0B8', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const d = ator(c, DAVIPIJAMA, -.5, .8, Math.PI); const f = folha(); c.add(f); f.scale.setScalar(.6);
     return (t, u, cm) => { fala(d, 'davi', t, 'feliz', { shL: [62, -14], elL: 70, shR: [62, -14], elR: 70, headX: 12 }, .3); d.root.updateMatrixWorld(true); const a = d.hands.L.localToWorld(new THREE.Vector3(0, -.05, .03)), b = d.hands.R.localToWorld(new THREE.Vector3(0, -.05, .03));
       f.position.copy(a).add(b).multiplyScalar(.5); f.quaternion.copy(d.root.quaternion); f.rotateX(-.4); f.set(clamp((t - 89.1) / 1.6) * .3);
-      const F = frenteDe(d.root, .7, .45, .9); cam(cm, F, [f.position.x, f.position.y, f.position.z], u / 1.72, 0, 0); return { tint: '#E8E2F8' }; }; }),
+      cam(cm, [[0, [.3, 1.08, .3]], [1, [.2, 1.02, .38]]], [f.position.x, f.position.y, f.position.z], u / 1.72, 0, 0); return { tint: '#E8E2F8' }; }; }),
   // B16 — "Depois, já falei.": a mão faz "vai", a folha fecha de novo
-  mk(90.24, 92.04, { bg: '#C8C0B8', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); paginaUm(K, 1); K.luzAbaj.intensity = 1.2; K.luzes.LG.intensity = 1.8; const d = ator(c, DAVIPIJAMA, -.25, .45, -Math.PI / 2 - .3); const f = folha(); c.add(f); f.scale.setScalar(.6);
+  mk(90.24, 92.04, { bg: '#C8C0B8', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); paginaUm(K, 1); K.luzAbaj.intensity = 1.2; K.luzes.LG.intensity = 1.8; const d = ator(c, DAVIPIJAMA, -.5, .8, Math.PI); const f = folha(); c.add(f); f.scale.setScalar(.6);
     return (t, u, cm) => { const vai = Math.max(0, Math.sin((t - 90.4) * 9)) * (t > 90.4 && t < 91.4 ? 1 : 0); const pg = sentado({ shR: [62, 6], elR: 100, shL: [70 + vai * 20, 40 + vai * 20], elL: 20 + vai * 40, lean: 8, headX: 22 }); fala(g, 'gui', t, 'bravo', pg, 0, { look: [0, .6] }); g.pose(pg); telNaMao(K.tel, g); K.tel.tela('tapete', .8);
       d.pose({ shL: [62, -14], elL: 70, shR: [62, -14], elR: 70, headX: 4, lean: -4 }); rosto(d, null, t, t > 91 ? 'triste' : 'surpreso', { look: [-.6, -.1] }); d.root.updateMatrixWorld(true); const a = d.hands.L.localToWorld(new THREE.Vector3(0, -.05, .03)), b = d.hands.R.localToWorld(new THREE.Vector3(0, -.05, .03));
       f.position.copy(a).add(b).multiplyScalar(.5); f.quaternion.copy(d.root.quaternion); f.rotateX(-.4); f.set(.3 * (1 - clamp((t - 91.2) / .6)));
-      cam(cm, [[0, [.15, 1.45, -1.15]], [1, [.05, 1.4, -1.05]]], [-.4, .85, .4], u / 1.8); return { tint: '#E8E2F8' }; }; }),
+      cam(cm, [[0, [.7, 1.5, 1.35]], [1, [.6, 1.45, 1.3]]], [-.45, .95, .55], u / 1.8); return { tint: '#E8E2F8' }; }; }),
   // B17 — "O Davi ficou parado um tempo do lado da cama, segurando uma folha dobrada no peito"
   mk(92.04, 98.04, { bg: '#C8C0B8', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); paginaUm(K, 1); K.luzAbaj.intensity = 1.2; K.luzes.LG.intensity = 1.8; const d = ator(c, DAVIPIJAMA, .3, .2, -Math.PI / 2 - .6); const f = folha(); c.add(f); f.scale.setScalar(.6);
     return (t, u, cm) => { g.pose(sentadoCel(t)); rosto(g, null, t, 'tedio', { look: [0, .55] }); telNaMao(K.tel, g); K.tel.tela('tapete', .9);
@@ -108,9 +108,9 @@ export const ATO1 = [
       cam(cm, [[0, [.55, 1.15, -1.2]], [1, [.45, 1.1, -1.05]]], [.1, .75, .25], u / 6, 0, .6); return { tint: '#E0DCF4' }; }; }),
   // B18 — "E depois voltou pro quarto dele, arrastando o chinelo": close no chinelo, a porta fecha
   mk(98.04, 101.40, { bg: '#C8C0B8', fov: 46, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const d = ator(c, DAVIPIJAMA, 0, 0, 0); const f = folha(); c.add(f); f.scale.setScalar(.6);
-    return (t, u, cm) => { const k = clamp((t - 98.2) / 2.0); const x = lerp(.3, 1.85, k), z = lerp(.2, .85, k); d.place(x, z, 0, Math.atan2(1.55, .65)); d.pose(k < 1 ? soma(andar(t, { f: 1.4, amp: .5 }), { shL: [30, -40], elL: 120, shR: [30, -40], elR: 120 }) : parado(t, 2)); rosto(d, null, t, 'triste', { look: [0, .4] });
+    return (t, u, cm) => { const k = clamp((t - 98.2) / 2.4); const k1 = clamp(k / .3), k2 = clamp((k - .3) / .7); const x = lerp(.3, 1.95, k2), z = lerp(.2, .85, k1); d.place(x, z, 0, k < .3 ? 0 : Math.PI / 2); d.pose(k < 1 ? soma(andar(t, { f: 1.4, amp: .5 }), { shL: [30, -40], elL: 120, shR: [30, -40], elR: 120 }) : parado(t, 2)); rosto(d, null, t, 'triste', { look: [0, .4] });
       d.root.updateMatrixWorld(true); const a = d.hands.L.localToWorld(new THREE.Vector3(0, -.04, .04)), b = d.hands.R.localToWorld(new THREE.Vector3(0, -.04, .04)); f.position.copy(a).add(b).multiplyScalar(.5); f.quaternion.copy(d.root.quaternion); f.set(0);
-      K.portaD.abre(1 - clamp((t - 100.5) / .8)); if (t < 100.2) cam(cm, [[0, [-.1, .32, 1.25]], [1, [.1, .3, 1.25]]], [x, .12, z], u / 2.2, 0, 0); else cam(cm, [.4, 1.0, 1.25], [1.55, .9, .85], (t - 100.2) / 1.2, 0, 0); return { tint: '#E0DCF4' }; }; }),
+      K.portaD.abre(1 - clamp((t - 100.65) / .7)); if (t < 99.7) cam(cm, [[0, [-.35, .32, 1.35]], [1, [.25, .3, 1.38]]], [x, .14, z], u / 2.2, 0, 0); else cam(cm, [[0, [-.4, 1.15, 1.4]], [1, [-.2, 1.1, 1.4]]], [1.5, .8, .85], (t - 99.7) / 1.7, 0, 0); return { tint: '#E0DCF4' }; }; }),
   // B19 — "Guarda esse desenho, ele vai voltar": freeze na folha (o círculo vem na tela)
   mk(101.40, 103.48, { bg: '#2A2A34', fov: 30, limpa: false, perto: true }, (c) => { const K = montaCasa(c, { hora: 'noite' }); K.portaD.abre(0); const d = ator(c, DAVIPIJAMA, 2.3, .6, -2.2); const f = folha(); c.add(f); f.scale.setScalar(1.0); const set = emFoco([f]);
     return (t, u, cm) => { d.pose({ shL: [30, -40], elL: 120, shR: [30, -40], elR: 120, headX: 14 }); rosto(d, null, 101.4, 'triste', { look: [0, .5], vivo: false }); d.root.updateMatrixWorld(true); const a = d.hands.L.localToWorld(new THREE.Vector3(0, -.04, .04)), b = d.hands.R.localToWorld(new THREE.Vector3(0, -.04, .04));

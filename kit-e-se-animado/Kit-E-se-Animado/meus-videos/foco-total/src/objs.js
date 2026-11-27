@@ -68,7 +68,7 @@ export function bolo() {
   g.add(cyl(.16, .16, .12, '#5A3018', 0, .09, 0, { seg: 28, out: .006 })); const cob = cyl(.165, .165, .025, '#3A1E10', 0, .16, 0, { seg: 28 }); g.add(cob);
   for (let i = 0; i < 12; i++) { const a = i / 12 * 6.283; g.add(sph(.014, '#F2546E', Math.cos(a) * .14, .175, Math.sin(a) * .14, { seg: 6 })); }
   const vela = new THREE.Group(); vela.position.y = .17; g.add(vela);
-  for (const [s, n] of [[-1, '7'], [1, '2']]) { const p = new THREE.Mesh(new THREE.PlaneGeometry(.07, .09), toonTex(ctex(70, 90, (x) => { x.fillStyle = '#F2C230'; x.font = '900 86px Inter'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.strokeStyle = '#B88A1A'; x.lineWidth = 6; x.strokeText(n, 35, 48); x.fillText(n, 35, 48); }), { transparent: true, alphaTest: .4, side: THREE.DoubleSide })); p.position.set(s * .035, .055, 0); vela.add(p); }
+  for (const [s, n] of [[-1, '1'], [1, '7']]) { const p = new THREE.Mesh(new THREE.PlaneGeometry(.07, .09), toonTex(ctex(70, 90, (x) => { x.fillStyle = '#F2C230'; x.font = '900 86px Inter'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.strokeStyle = '#B88A1A'; x.lineWidth = 6; x.strokeText(n, 35, 48); x.fillText(n, 35, 48); }), { transparent: true, alphaTest: .4, side: THREE.DoubleSide })); p.position.set(s * .035, .055, 0); vela.add(p); }
   const ch = new THREE.Mesh(new THREE.ConeGeometry(.012, .035, 8), new THREE.MeshBasicMaterial({ color: '#FFB43A' })); ch.position.set(0, .13, 0); vela.add(ch); vela.add(bx(.003, .02, .003, '#2A2A2A', 0, .105, 0));
   g.userData.chama = ch; g.userData.cobertura = cob; return g;
 }

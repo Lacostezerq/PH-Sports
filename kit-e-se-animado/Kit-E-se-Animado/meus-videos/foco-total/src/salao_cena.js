@@ -30,5 +30,5 @@ export function salaoUpd(S, t, est = 'jogo') {
 }
 /** Celular no bolso da bermuda do Guilherme (sentado), brilhando quando vibra. */
 export function celNoBolso(S, t, vib = 0) {
-  const p = S.gui.root.position; S.tel.position.set(p.x - .18 + vib, HS + .1, p.z - .16); S.tel.rotation.set(0, -Math.PI / 2 - .5, Math.PI / 2 - .2);
+  const p = S.gui.root.position; S.tel.position.set(p.x - .145 + vib, HS + .06, p.z - .16); S.tel.rotation.set(0, -Math.PI / 2 - .5, Math.PI / 2 - .2);
 }
