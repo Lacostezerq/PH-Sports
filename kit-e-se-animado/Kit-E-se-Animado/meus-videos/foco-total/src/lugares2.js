@@ -72,7 +72,7 @@ export function rua(c, o = {}) {
   // postes, lixeiras, árvores, hidrante na calçada
   const postes = [];
   for (let z = Z0 + 6; z < Z1; z += 14) for (const s of [-1, 1]) { const p = poste(); p.position.set(s * (RW / 2 + .5), .16, z + (s > 0 ? 7 : 0)); p.rotation.y = s > 0 ? Math.PI : 0; g.add(p); postes.push(p); }
-  for (let z = Z0 + 10; z < Z1; z += 11) { const s = R() > .5 ? 1 : -1; const a = arvore(R); a.position.set(s * (RW / 2 + 1.6), .16, z); g.add(a); const lx = lixeira(); lx.position.set(-s * (RW / 2 + .5), .16, z + 3); g.add(lx); }
+  for (let z = Z0 + 10; z < Z1; z += 11) { const s = R() > .5 ? 1 : -1; const a = arvore(R); a.position.set(s * (RW / 2 + 2.25), .16, z); g.add(a); const lx = lixeira(); lx.position.set(-s * (RW / 2 + .5), .16, z + 3); g.add(lx); }
   // carros estacionados
   const parados = []; for (const [s, z, cor] of o.carros || [[1, -26, '#3E7CC8'], [-1, -14, '#F4F1EA'], [1, 18, '#5AA84E'], [-1, 26, '#2A2A30']]) { const k = carroPop(cor); k.position.set(s * (RW / 2 - 1.1), 0, z); g.add(k); parados.push(k); }
   if (o.passaros !== false) passaros(c, { centro: [0, 26, -40], raio: 30, n: 6 });

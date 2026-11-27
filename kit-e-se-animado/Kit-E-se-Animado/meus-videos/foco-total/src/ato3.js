@@ -14,7 +14,7 @@ import { rb, bx, cyl, sph, toon, ctex } from './motor/toon.js';
 const TARDE = { tint: '#FFF0DC', bloom: .22 };
 const NOTAS = ['#F2546E', '#F2C230', '#3EA6FF', '#5AE07A', '#B88AF2'];
 /** Gui sentado na beira da cama tocando violão (corpo do violão no colo). */
-const BEIRA = { x: .75, z: .25, ry: -Math.PI / 2 };
+const BEIRA = { x: .64, z: .25, ry: -Math.PI / 2 };
 function tocando(g, v, t, f = 1, olhos = 0) {
   // corpo do violão no colo, braço pra esquerda; mão direita batendo nas cordas na boca do violão, mão esquerda no braço trocando de casa
   const base = sentado({ lean: 10, headX: 16, headZ: -6 }); g.pose(base);
@@ -118,9 +118,9 @@ export const ATO4 = [
     return (t, u, cm) => { const p = soma(parado(t, 2), { shR: [10, 30], elR: 80, shL: [60, 20], elL: 90, tilt: -8, headZ: -10 }); fala(d, 'davi', t, 'vergonha', p, 0, { look: [-.6, 0] }); d.pose(p); naMao(B, d, 'R', [-.05, -.05, .08], false);
       cam(cm, [[0, [.6, .95, .75]], [1, [.7, .92, .76]]], [1.5, .75, .8], u / 1.58); return { tint: '#FFE8B8', bloom: .3 }; }; }),
   // E3 — "Bora, mas só um pouquinho.": espreguiça e joga a coberta de lado
-  mk(327.56, 330.58, { bg: '#F4E8C8', fov: 44 }, (c) => { const K = montaCasa(c, { hora: 'manha' }); K.tel.visible = false; const g = ator(c, GUI, 0, 0, 0); sentar(g, .95, -.2, Math.PI / 2, .42);
-    return (t, u, cm) => { const e = smooth(327.6, 328.4, t) * (1 - smooth(329.3, 329.9, t)); const p = sentado({ shL: [lerp(20, 165, e), 20], shR: [lerp(20, 165, e), 20], elL: 20, elR: 20, headX: -10 * e }); fala(g, 'gui', t, e > .5 ? 'sono' : 'feliz', p, 0); g.pose(p);
-      K.coberta.position.x = -smooth(329.6, 330.2, t) * .5; K.coberta.rotation.z = smooth(329.6, 330.2, t) * .5; cam(cm, [[0, [1.4, 1.35, .95]], [1, [1.38, 1.3, .85]]], [.95, .9, -.2], u / 3.02); return { tint: '#FFE8B8', bloom: .3 }; }; }),
+  mk(327.56, 330.58, { bg: '#F4E8C8', fov: 44 }, (c) => { const K = montaCasa(c, { hora: 'manha' }); K.tel.visible = false; const g = ator(c, GUI, 0, 0, 0); sentar(g, .95, -.98, 0, .47); K.coberta.position.y = .53;
+    return (t, u, cm) => { const e = smooth(327.6, 328.4, t) * (1 - smooth(329.3, 329.9, t)); const p = sentado({ knL: 0, knR: 0, shL: [lerp(20, 165, e), 20], shR: [lerp(20, 165, e), 20], elL: 20, elR: 20, headX: -10 * e }); fala(g, 'gui', t, e > .5 ? 'sono' : 'feliz', p, 0); g.pose(p);
+      K.coberta.position.x = -smooth(329.6, 330.2, t) * .5; K.coberta.rotation.z = smooth(329.6, 330.2, t) * .5; cam(cm, [[0, [.2, 1.4, .75]], [1, [.25, 1.35, .6]]], [.95, .85, -.75], u / 3.02); return { tint: '#FFE8B8', bloom: .3 }; }; }),
   // E4 — "E aí aconteceu uma coisa que ninguém esperava, porque ele focou 100% no irmão": o campinho, o foco dourado liga
   mk(330.58, 336.68, { bg: '#BFE3F7', fov: 40 }, (c) => { const S = montaCampo(c); const set = emFoco([S.d.root, S.g.root, S.B]);
     return (t, u, cm) => { const x = lerp(-2.5, 1.5, u / 6.1); S.d.place(x, .2 + Math.sin(t * 2) * .3, 0, Math.PI / 2); S.d.pose(correr(t, 2.6, .8)); rosto(S.d, null, t, 'feliz', { lingua: true }); S.B.position.set(x + .3, .0, .2 + Math.sin(t * 2) * .3); S.B.rotation.z = -t * 6;

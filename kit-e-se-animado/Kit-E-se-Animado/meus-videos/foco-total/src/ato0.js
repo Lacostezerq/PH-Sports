@@ -1,6 +1,6 @@
 // ATO 0 — abertura (0 a 36 s): a final do campeonato no clímax, o celular vibrando 14 vezes, três mistérios e a rebobinada.
 import * as THREE from 'three';
-import { mk, cam, ator, rosto, sentar, UF, emFoco, fundo, rampa, celular, cronometro, particulas, vibra, soma, vivo, G, sentado, clamp, smooth, lerp, easeIO, easeOut } from './cf.js';
+import { mk, cam, ator, rosto, sentar, UF, emFoco, fundo, rampa, celular, cronometro, particulas, vibra, soma, vivo, vivoS, G, sentado, clamp, smooth, lerp, easeIO, easeOut } from './cf.js';
 import { montaSalao, salaoUpd, celNoBolso, HS } from './salao_cena.js';
 import { vazio } from './lugares_foco.js';
 import { DAVI } from './elenco_foco.js';
@@ -10,8 +10,8 @@ import { rb, bx } from './motor/toon.js';
 const ESC = { bg: '#121218', far: 120 };
 const PULSOS = [13.96, 14.25, 14.5, 14.72, 14.9, 15.05, 15.2, 15.33, 15.45, 15.56, 15.66, 15.76, 15.86, 15.95];
 /** Rosto do Guilherme jogando: olhar fixo no tabuleiro. */
-const guiJoga = (S, t, emo = 'determinado', o = {}) => { S.gui.pose(sentado(soma({ shR: [48, 6], elR: 96, shL: [44, 6], elL: 98, lean: 12, headX: 16 }, o.parado ? {} : vivo(t, 1, .3)))); rosto(S.gui, null, t, emo, { look: [0, .45], vivo: !o.parado, blink: o.parado ? 0 : undefined }); };
-const advJoga = (S, t) => { S.adv.pose(sentado(soma({ shR: [40, 6], elR: 100, shL: [30, 6], elL: 90, lean: 10, headX: 14 }, vivo(t, 4, .4)))); rosto(S.adv, null, t, 'determinado', { look: [0, .4] }); };
+const guiJoga = (S, t, emo = 'determinado', o = {}) => { S.gui.pose(sentado(soma({ shR: [48, 6], elR: 96, shL: [44, 6], elL: 98, lean: 12, headX: 16 }, o.parado ? {} : vivoS(t, 1, .3)))); rosto(S.gui, null, t, emo, { look: [0, .45], vivo: !o.parado, blink: o.parado ? 0 : undefined }); };
+const advJoga = (S, t) => { S.adv.pose(sentado(soma({ shR: [40, 6], elR: 100, shL: [30, 6], elL: 90, lean: 10, headX: 14 }, vivoS(t, 4, .4)))); rosto(S.adv, null, t, 'determinado', { look: [0, .4] }); };
 
 export const ATO0 = [
   // A1a — escuro: o relógio de xadrez batendo, close

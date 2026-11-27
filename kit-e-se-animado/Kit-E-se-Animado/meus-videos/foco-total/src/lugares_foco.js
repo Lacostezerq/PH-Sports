@@ -179,7 +179,7 @@ export function salao(c, o = {}) {
   const fx = new THREE.Mesh(new THREE.PlaneGeometry(12, 1.6), toonTex(ctex(1500, 200, (x) => { x.fillStyle = '#1E3A6A'; x.fillRect(0, 0, 1500, 200); txt(x, 'CAMPEONATO ESTADUAL DE XADREZ', 750, 80, 84, '#F2C230'); txt(x, 'FINAL', 750, 165, 52, '#F4F1EA'); }))); fx.position.set(0, 7, -15.9); g.add(fx);
   // tablado da final
   const tab = rb(4.2, .3, 3.2, '#5A2A2A', 0, .15, 0, { out: .01 }); g.add(tab); g.add(plano(4.0, 3.0, toon('#8E1E2A'), 0, .305, 0, -Math.PI / 2));
-  const mesaF = new THREE.Group(); mesaF.position.set(0, .3, 0); g.add(mesaF); mesaF.add(rb(1.0, .05, .8, '#F4F1EA', 0, .74, 0, { out: .008 })); mesaF.add(bx(.9, .7, .7, '#E8E2D6', 0, .37, 0));
+  const mesaF = new THREE.Group(); mesaF.position.set(0, .3, 0); g.add(mesaF); mesaF.add(rb(1.0, .05, .8, '#F4F1EA', 0, .74, 0, { out: .008 })); mesaF.add(bx(.9, .7, .34, '#E8E2D6', 0, .37, 0));
   const T = tabuleiro(.055); T.g.position.set(0, .765, 0); mesaF.add(T.g);
   const rel = relogioXadrez(); rel.position.set(.42, .765, -.02); rel.rotation.y = Math.PI / 2; rel.scale.setScalar(1.1); mesaF.add(rel);
   for (const z of [.62, -.62]) { const cd = M.cadeira('#2A2A30'); cd.position.set(0, .3, z); cd.rotation.y = z > 0 ? Math.PI : 0; g.add(cd); }

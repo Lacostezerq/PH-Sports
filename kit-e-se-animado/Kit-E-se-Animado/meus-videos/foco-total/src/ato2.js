@@ -14,7 +14,7 @@ import { deitar } from './lib.js';
 import { rb, bx, cyl, sph, toon, ctex } from './motor/toon.js';
 
 const MANHA = { tint: '#FFF8EC', bloom: .22 };
-const deitaCama = (g) => { deitar(g, .95, .43, .38); g.root.position.y = .63; return g; };
+const deitaCama = (g) => { deitar(g, .95, .43, -.02); g.root.position.y = .63; return g; };
 /** Gui escovando os dentes (mão direita na boca). */
 const escovando = (t, f = 1) => ({ shR: [96, -24], elR: 142 + Math.sin(t * 16 * f) * 8, shL: [10, 10], elL: 20, headX: -2 });
 /** Banheiro com o Guilherme na pia. */
@@ -122,7 +122,7 @@ export const ATO2 = [
   // C16 — "Prova surpresa, gente. Guarda tudo!": o professor bate a mão na mesa, a sala acorda pulando, papel voando
   mk(180.24, 182.96, { bg: '#F2E6C8', fov: 44 }, (c) => { const S = montaAula(c); const pap = []; for (let i = 0; i < 14; i++) { const p = new THREE.Mesh(new THREE.PlaneGeometry(.21, .29), new THREE.MeshToonMaterial({ color: '#FBF8EE', side: THREE.DoubleSide })); c.add(p); pap.push(p); }
     return (t, u, cm) => { const bate = t > 180.5; const pulo = clamp((t - 180.6) / .5); S.pr.place(-1.4, -2.3, 0, .3); fala(S.pr, 'prof', t, 'bravo', bate ? { shR: [60 - Math.max(0, Math.sin((t - 180.5) * 12)) * 30, 10], elR: 20, lean: 10 } : { shR: [120, 10], elR: 30 }, .2);
-      S.L.forEach((a, i) => { a.pose(sentado(soma({ shL: [60, 30], shR: [60, 30], elL: 30, elR: 30 }, { bob: Math.sin(pulo * Math.PI) * .12 }))); rosto(a, null, t, pulo > 0 ? 'surpreso' : 'sono'); });
+      S.L.forEach((a, i) => { a.pose(sentado(soma({ shL: [60, 30], shR: [60, 30], elL: 30, elR: 30 }, { bob: -.17 + Math.sin(pulo * Math.PI) * .12 }))); rosto(a, null, t, pulo > 0 ? 'surpreso' : 'sono'); });
       S.ti.pose(sentado({ bob: Math.sin(pulo * Math.PI) * .12, shL: [60, 30], shR: [60, 30] })); rosto(S.ti, null, t, 'medo'); S.g.pose(sentado({ shR: [30, 8], elR: 70 })); rosto(S.g, null, t, 'neutro');
       pap.forEach((p, i) => { const k = clamp((t - 180.6) / 2); p.visible = k > 0; p.position.set(-2.4 + (i % 5) * 1.2 + Math.sin(i) * .3, .8 + Math.sin(k * Math.PI) * (1 + (i % 3) * .3), -1.4 + Math.floor(i / 5) * 1.3 + k * .4); p.rotation.set(k * 6 + i, k * 4, i); });
       cam(cm, [[0, [2.7, 1.9, -3.0]], [1, [2.5, 1.8, -2.8]]], [-.3, 1.0, -.2], u / 2.72, 0, 1); const sh = bate && t < 180.9 ? Math.sin(t * 80) * .02 : 0; cm.position.y += sh; return {}; }; }),

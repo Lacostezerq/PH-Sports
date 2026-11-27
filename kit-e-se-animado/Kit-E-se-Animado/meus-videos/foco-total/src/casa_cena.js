@@ -1,7 +1,7 @@
 // A casa da família com gente: onde cada um fica, celular na mão, relógio de parede, capa de toalha, espelho falso.
 import * as THREE from 'three';
 import { casa } from './lugares_foco.js';
-import { ator, rosto, sentar, celular, naMao, soma, vivo, sentado, clamp, lerp } from './cf.js';
+import { ator, rosto, sentar, celular, naMao, soma, vivo, vivoS, sentado, clamp, lerp } from './cf.js';
 import { rb, bx, cyl, sph, tm, toon, ctex, toonTex } from './motor/toon.js';
 import { folhaDraw, mao } from './objetos.js';
 
@@ -46,4 +46,4 @@ export function carregando() {
   const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tx, transparent: true, depthWrite: false })); s.scale.setScalar(.22); s.renderOrder = 10; return s;
 }
 /** Pose sentado mexendo no celular. */
-export const sentadoCel = (t, seed = 1) => sentado(soma({ shL: [64, 4], elL: 76, shR: [40, 12], elR: 70, lean: 4, headX: 26 }, vivo(t, seed, .4)));
+export const sentadoCel = (t, seed = 1) => sentado(soma({ shL: [64, 4], elL: 76, shR: [40, 12], elR: 70, lean: 4, headX: 26 }, vivoS(t, seed, .4)));

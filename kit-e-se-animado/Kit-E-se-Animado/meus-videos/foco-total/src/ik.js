@@ -63,3 +63,9 @@ export function levaBoca(g, lado, k, base = {}, rep = [.1, -.22, .36]) {
 }
 /** Ciclo de mordidas: devolve k (0 repouso .. 1 na boca), com pausa na boca. per = segundos por mordida. */
 export function ciclo(t, per = 2.4, fase = 0) { const x = (((t + fase) / per) % 1 + 1) % 1; if (x < .3) return .5 - .5 * Math.cos(x / .3 * Math.PI); if (x < .45) return 1; if (x < .75) return .5 + .5 * Math.cos((x - .45) / .3 * Math.PI); return 0; }
+/** Mão apoiada: se a mão solta afunda abaixo da altura `y` (assento, colchão), dobra o braço para ela ficar em cima. */
+export function apoia(g, p, y, lados = ['L', 'R']) {
+  let P = p;
+  for (const l of lados) { g.pose(P); g.root.updateMatrixWorld(true); const pm = palma(g, l); if (pm.y < y + .02) { const a = pm.clone(); a.y = y + .03; P = alcanca(g, l, a, P); } }
+  return P;
+}

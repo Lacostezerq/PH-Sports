@@ -93,3 +93,5 @@ export const sacode = (t) => ({ shR: [40 + Math.sin(t * 18) * 15, 20], elR: 70 +
 /** Batucar os dedos na mesa (mão direita). */
 export const batuca = (t) => ({ shR: [38, 6], elR: 68 + Math.max(0, Math.sin(t * 9)) * 8 });
 export { smooth, easeIO, easeOut, easeIn, clamp, lerp, idle };
+/** Vida para quem está sentado: igual ao vivo, mas sem mexer quadril, joelho e altura (senão desfaz a pose sentada). */
+export function vivoS(t, seed = 0, amp = 1) { const v = vivo(t, seed, amp); delete v.hipL; delete v.hipR; delete v.knL; delete v.knR; delete v.bob; return v; }

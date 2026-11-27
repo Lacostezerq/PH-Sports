@@ -1,6 +1,7 @@
 // ATO 1 — dia 0 (36 a 129 s): a família, o Guilherme que não presta atenção em nada, o desenho do Davi, o gás, e o pedido antes de dormir.
 import * as THREE from 'three';
-import { frenteDe, mk, cam, ator, rosto, fala, sentar, icone, UF, emFoco, fundo, celular, particulas, vibra, soma, vivo, parado, andar, correr, G, sentado, clamp, smooth, lerp, easeIO, easeOut, kv, naMao } from './cf.js';
+import { apoia } from './ik.js';
+import { frenteDe, mk, cam, ator, rosto, fala, sentar, icone, UF, emFoco, fundo, celular, particulas, vibra, soma, vivo, vivoS, parado, andar, correr, G, sentado, clamp, smooth, lerp, easeIO, easeOut, kv, naMao } from './cf.js';
 import { ombro, montaCasa, sentaMesa, telNaMao, paginaUm, relogioParede, capa, carregando, sentadoCel, MESA, CAD } from './casa_cena.js';
 import { mercado } from './lugares_foco.js';
 import { salinha } from './lugares.js';
@@ -12,15 +13,15 @@ import { rb, bx, cyl, sph, toon, ctex, luzToon } from './motor/toon.js';
 const DIA = { tint: '#FFF8EC', bloom: .2 };
 const NOITE = { tint: '#C8D4FF', exposure: .8 };
 /** Guilherme deitado de costas na cama (cabeça na cabeceira). */
-const deitaCama = (g) => { deitar(g, .95, .43, .38); g.root.position.y = .43 + .2; return g; };
+const deitaCama = (g) => { deitar(g, .95, .43, -.02); g.root.position.y = .43 + .2; return g; };
 
 export const ATO1 = [
   // B1 — "Dia zero. Esse é o Guilherme, 17 anos": deitado na cama mexendo no celular
   mk(35.96, 39.12, { bg: '#DDE6EE', fov: 38, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); deitaCama(g);
-    return (t, u, cm) => { g.pose({ shR: [100, 8], elR: 35, shL: [20, 10], elL: 30, headX: -14 }); rosto(g, null, t, 'tedio', { look: [0, -.6] }); naMao(K.tel, g, 'R', [0, -.06, .05], false); g.headG.updateMatrixWorld(true); K.tel.up.set(0, 1, 0); K.tel.lookAt(g.headG.localToWorld(new THREE.Vector3(0, .2, .25))); K.tel.tela('foto', ((t * .7) % 1));
+    return (t, u, cm) => { g.pose({ shR: [100, 8], elR: 35, shL: [10, 70], elL: 20, headX: 8 }); rosto(g, null, t, 'tedio', { look: [0, -.6] }); naMao(K.tel, g, 'R', [0, -.06, .05], false); g.headG.updateMatrixWorld(true); K.tel.up.set(0, 1, 0); K.tel.lookAt(g.headG.localToWorld(new THREE.Vector3(0, .2, .25))); K.tel.tela('foto', ((t * .7) % 1));
       cam(cm, [[0, [-.4, 2.2, .9]], [1, [-.15, 1.9, .6]]], [.95, .55, -.4], u / 3.16, 0, 0); return DIA; }; }),
   // B2 — "Mora com a mãe, a Dona Rose, que trabalha de caixa no mercado do bairro"
-  mk(39.12, 42.88, { bg: '#F4F4F0', fov: 36 }, (c) => { const M = mercado(c); const r = ator(c, ROSE, -.05, -.42, 0); const cli = ator(c, pessoa(4), 1.6, 1.05, Math.PI + .3); const cx = cyl(.06, .06, .12, '#3E7CC8', 0, 0, 0, { out: .004 }); c.add(cx);
+  mk(39.12, 42.88, { bg: '#F4F4F0', fov: 36 }, (c) => { const M = mercado(c); const r = ator(c, ROSE, -.05, -.56, 0); const cli = ator(c, pessoa(4), 1.6, 1.05, Math.PI + .3); const cx = cyl(.06, .06, .12, '#3E7CC8', 0, 0, 0, { out: .004 }); c.add(cx);
     return (t, u, cm) => { const f = (t * 1.25) % 1; const p = M.prods[Math.floor(t * 1.25) % 5]; r.pose({ shR: [55 + Math.sin(f * 6.28) * 10, 30 - f * 40], elR: 60, shL: [30, 10], elL: 70, lean: 6, headX: 10, twist: Math.sin(f * 6.28) * 10 });
       rosto(r, null, t, 'neutro', { look: [.3, .4] }); naMao(cx, r, 'R', [0, -.06, .05]); M.laser.material.opacity = f > .45 && f < .6 ? .9 : .3; M.telaM.paint(String(Math.floor(t * 1.25)), (x, W, H) => { x.fillStyle = '#1E3A5A'; x.fillRect(0, 0, W, H); x.fillStyle = '#9FE8B0'; x.font = "700 40px 'IBM Plex Mono'"; x.fillText('R$ ' + (12.5 + Math.floor(t * 1.25) * 4.9).toFixed(2), 20, H / 2); });
       cli.pose(parado(t, 3)); rosto(cli, null, t, 'neutro', { look: [-.3, .2] });
@@ -30,9 +31,9 @@ export const ATO1 = [
     return (t, u, cm) => { const a = (t - 42.88) * 1.6; const x = .2 + Math.cos(a) * .95, z = .35 + Math.sin(a) * .7; d.place(x, z, 0, Math.atan2(-Math.sin(a), Math.cos(a))); d.pose(soma(correr(t, 3.2, 1), { shR: [150, 20], elR: 10 })); cp.vento(t, 1);
       rosto(d, null, t, 'feliz', { mouth: { open: .5, smile: .9 } }); cam(cm, [[0, [.2, 1.6, 1.45]], [1, [.25, 1.5, 1.35]]], [x * .5 + .1, .45, z * .5 + .1], u / 3.56); return DIA; }; }),
   // B4 — "que acha que o irmão mais velho é a pessoa mais legal do planeta": olhos brilhando, coração
-  mk(46.44, 49.72, { bg: '#E8D8B8', fov: 62 }, (c) => { const S = salinha(c); const d = ator(c, DAVI, .55, .9, -2.5); const cp = capa(d, '#E2443A'); const g = ator(c, GUI, -.3, -1.0, 0); sentar(g, -.4, -1.05, 0, .45); const tel = celular(); c.add(tel); const co = icone('coracao', .22); c.add(co);
+  mk(46.44, 49.72, { bg: '#E8D8B8', fov: 62 }, (c) => { const S = salinha(c); const d = ator(c, DAVI, .55, .9, -2.5); const cp = capa(d, '#E2443A'); const g = ator(c, GUI, -.3, -1.0, 0); sentar(g, -.4, -.9, 0, .64); const tel = celular(); c.add(tel); const co = icone('coracao', .22); c.add(co);
     return (t, u, cm) => { d.pose(soma(parado(t, 2), { shL: [40, 10], elL: 90, shR: [40, 10], elR: 90, headX: -8, bob: Math.abs(Math.sin(t * 6)) * .02 })); cp.vento(t, .2); rosto(d, null, t, 'apaixonado', { look: [-.5, -.2] });
-      g.pose(sentadoCel(t)); rosto(g, null, t, 'tedio', { look: [0, .6] }); naMao(tel, g, 'R', [0, -.07, .04], [-1.35, 0, 0]); tel.tela('chat', .5);
+      g.pose(sentadoCel(t)); apoia(g, sentadoCel(t), .64); rosto(g, null, t, 'tedio', { look: [0, .6] }); naMao(tel, g, 'R', [0, -.07, .04], [-1.35, 0, 0]); tel.tela('chat', .5);
       const k = clamp((t - 47.4) / .5); co.visible = t > 47.4; d.headG.updateMatrixWorld(true); const hp = d.headG.localToWorld(new THREE.Vector3(.15, .55, 0)); co.position.copy(hp); co.position.y += k * .15; co.scale.setScalar(.22 * (k < 1 ? easeOut(k) * 1.2 : 1 + Math.sin(t * 9) * .08));
       cam(cm, [[0, [1.72, 1.5, .02]], [1, [1.66, 1.45, -.04]]], [.05, .75, -.12], u / 3.28); return DIA; }; }),
   // B5 — "o mesmo problema que quase todo mundo tem hoje": na escrivaninha, a cabeça vira pra cada barulho
@@ -52,7 +53,7 @@ export const ATO1 = [
       cam(cm, [[0, [-1.05, 1.22, 1.45]], [1, [-1.02, 1.16, 1.3]]], [-.88, .88, .1], u / 4.12, 0, 0); return DIA; }; }),
   // B8 — "ele pega só pra ver rapidinho. Responde, curte, abre um vídeo": por cima do ombro, a tela do celular
   mk(60.16, 66.84, { bg: '#DDE6EE', fov: 46, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); paginaUm(K, 1);
-    return (t, u, cm) => { const pega = clamp((t - 62.2) / .6); g.pose(sentado(soma({ shR: [lerp(40, 66, pega), 6], elR: lerp(80, 108, pega), shL: [44, 6], elL: 84, lean: 10, headX: 24 }, vivo(t, 1, .2)))); rosto(g, null, t, 'neutro', { look: [0, .6] });
+    return (t, u, cm) => { const pega = clamp((t - 62.2) / .6); g.pose(sentado(soma({ shR: [lerp(40, 66, pega), 6], elR: lerp(80, 108, pega), shL: [44, 6], elL: 84, lean: 10, headX: 24 }, vivoS(t, 1, .2)))); rosto(g, null, t, 'neutro', { look: [0, .6] });
       if (t < 62.2) { K.tel.position.set(-1.02, .79, -.12); K.tel.rotation.set(-Math.PI / 2, 0, -Math.PI / 2); K.tel.tela('bloqueio'); } else { telNaMao(K.tel, g); const tela = t < 63.7 ? ['bloqueio', 0] : t < 65.1 ? ['chat', (t - 63.7) / 1.4] : t < 66 ? ['foto', (t - 65.1) / .9] : ['tapete', 0]; K.tel.tela(tela[0], tela[1]); }
       const P = K.tel.position; if (t < 62.6) cam(cm, [[0, [-1.08, 1.24, 1.62]], [1, [-1.05, 1.2, 1.45]]], [-.88, .9, .1], (t - 60.16) / 2.44, 0, 0); else { g.headG.visible = false; g.headG.updateMatrixWorld(true); const e = g.headG.localToWorld(new THREE.Vector3(0, .3, .05)); cam(cm, [e.x, e.y, e.z], [P.x, P.y, P.z], (t - 62.6) / 4.2, 0, 0); } return { ...DIA, focus: .45, range: .25, blur: 6 }; }; }),
   // B9 — "40 minutos depois, assistindo um cara limpar um tapete": relógio girando, rosto hipnotizado com a luz do celular
@@ -117,7 +118,7 @@ export const ATO1 = [
       f.position.copy(a).add(b).multiplyScalar(.5); f.quaternion.copy(d.root.quaternion); f.set(0); UF.mundo.value = .9; set(1, t); fundo(c, '#2A2A34', .9);
       const F = frenteDe(d.root, .75 - u * .05, .5); cam(cm, F, [f.position.x, f.position.y, f.position.z], u / 2.08, 0, 0); return { vig: .5 }; }; }),
   // B20 — "Guilherme, você ouviu o que eu falei?": a Dona Rose na cozinha mexendo a panela, vira pra porta
-  mk(103.48, 105.84, { bg: '#E8E0D0', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const r = ator(c, ROSE, -3.9, -.95, Math.PI); const col = cyl(.01, .01, .25, '#9A6236', 0, 0, 0); c.add(col); const fum = particulas(c, [-4.12, 1.08, -1.2], { n: 20, cor: '#F4F4F4', r: .25, g: .3, sobe: 1.2, tam: .05 });
+  mk(103.48, 105.84, { bg: '#E8E0D0', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const r = ator(c, ROSE, -3.9, -.6, Math.PI); const col = cyl(.01, .01, .25, '#9A6236', 0, 0, 0); c.add(col); const fum = particulas(c, [-4.12, 1.08, -1.2], { n: 20, cor: '#F4F4F4', r: .25, g: .3, sobe: 1.2, tam: .05 });
     return (t, u, cm) => { const vira = smooth(103.6, 104.1, t); r.root.rotation.y = lerp(Math.PI, Math.PI * .35, vira); const p = soma({ shR: [55 - vira * 20, 10], elR: 70 + Math.sin(t * 7) * 15 * (1 - vira), shL: [20, 10], elL: 40 }); fala(r, 'mae', t, 'bravo', p, .6); r.pose(p); naMao(col, r, 'R', [0, -.08, .04]); fum((t * .5) % 1);
       cam(cm, [[0, [-2.2, 1.45, 1.1]], [1, [-2.4, 1.4, .95]]], [-3.8, 1.15, -.8], u / 2.36); return { tint: '#FFF0DC' }; }; }),
   // B21 — "Ouvi, mãe.": o Guilherme aparece na porta, balançando a cabeça, celular na mão
@@ -134,10 +135,10 @@ export const ATO1 = [
       g.headG.updateMatrixWorld(true); const h = g.headG.localToWorld(new THREE.Vector3(0, .75, 0)); ld.position.copy(h); ld.material.rotation = -t * 6;
       cam(cm, [[0, [-2.75, 1.3, .95]], [1, [-2.6, 1.28, .92]]], [-1.75, 1.25, .85], u / 2.28, 0, 0); return { tint: '#FFF0DC' }; }; }),
   // B24 — "Que o gás tá acabando, filho. Eu falei três vezes.": aponta o fogão, a chama azul fraquinha
-  mk(110.56, 114.32, { bg: '#E8E0D0', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const r = ator(c, ROSE, -3.55, -.55, Math.PI * .7); const col = cyl(.01, .01, .25, '#9A6236', 0, 0, 0); c.add(col);
+  mk(110.56, 114.32, { bg: '#E8E0D0', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'noite' }); const r = ator(c, ROSE, -3.6, -.42, Math.PI * .7); const col = cyl(.01, .01, .25, '#9A6236', 0, 0, 0); c.add(col);
     return (t, u, cm) => { const p = t < 112.3 ? G.apontar : { shR: [40, 20], elR: 60, shL: [70, 10], elL: 20 + Math.abs(Math.sin(t * 6)) * 20, headX: 4 }; fala(r, 'mae', t, 'preocupado', p, .3); r.pose(p); naMao(col, r, 'R', [0, -.06, .04]);
       const fr = .35 + Math.abs(Math.sin(t * 13)) * .25 * (Math.sin(t * 3) > -.2 ? 1 : .1); K.chama.forEach((f) => { f.scale.set(1, fr, 1); f.material.opacity = .4 + fr; });
-      if (t < 112.3) cam(cm, [[0, [-3.0, 1.3, .35]], [1, [-3.4, 1.15, -.5]]], [[0, [-3.6, 1.1, -.6]], [1, [-4.0, .95, -1.2]]], (t - 110.56) / 1.74, 0, 0); else cam(cm, [-2.55, 1.35, -1.0], [-3.55, 1.1, -.55], (t - 112.3) / 2, 0, 0); return { tint: '#FFF0DC' }; }; }),
+      if (t < 112.3) cam(cm, [[0, [-3.0, 1.3, .35]], [1, [-3.4, 1.15, -.5]]], [[0, [-3.6, 1.1, -.6]], [1, [-4.0, .95, -1.2]]], (t - 110.56) / 1.74, 0, 0); else cam(cm, [-2.6, 1.35, -.85], [-3.6, 1.1, -.42], (t - 112.3) / 2, 0, 0); return { tint: '#FFF0DC' }; }; }),
   // B25 — "Ele não ouviu nenhuma das três": flashback rápido, três vezes a mãe falando e ele no celular
   mk(114.32, 116.80, { bg: '#E8E0D0', fov: 46 }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const r = ator(c, ROSE, -2.1, .2, -Math.PI / 2 + .3); const g = ator(c, GUI, 0, 0, 0); sentaMesa(g); K.portaK.abre(1); K.PK.frente.visible = K.PG.frente.visible = false;
     return (t, u, cm) => { const i = Math.min(2, Math.floor((t - 114.32) / .83)); const tt = t - 114.32 - i * .83; r.place([-2.1, -1.9, -2.3][i], [.2, -.3, .7][i], 0, -Math.PI / 2 + .3); r.pose(soma(G.apontar, { shR: [80 + Math.sin(tt * 12) * 10, 6] })); rosto(r, null, t, 'bravo', { mouth: { open: Math.abs(Math.sin(tt * 14)) * .6 } });

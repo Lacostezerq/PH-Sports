@@ -6,11 +6,15 @@ import { rb, cyl, sph, bx, tm, toon, ctex } from './motor/toon.js';
 import { clamp, lerp, easeIO, easeOut, smooth } from './motor/core.js';
 export { UF, emFoco, fundo };
 export { cam, ator, rosto, fala, gesto, sentar, icone, camT, pw, THREE } from './base.js';
-export { soma, mix, kf, kv, vivo, parado, ofego, treme, andar, correr, G, acenar, rir, pular, sacode, batuca } from './mov.js';
+export { soma, mix, kf, kv, vivo, vivoS, parado, ofego, treme, andar, correr, G, acenar, rir, pular, sacode, batuca } from './mov.js';
 export { naMao, respingo, notas } from './fx2.js';
 export { clamp, lerp, easeIO, easeOut, smooth };
 export { easeIn, keys, rng } from './motor/core.js';
-export { walk, run, idle, sentado, mixPose } from './motor/char3d.js';
+export { walk, run, idle, mixPose } from './motor/char3d.js';
+import { sentado as sentado0 } from './motor/char3d.js';
+/** Sentado que aceita o "vivo" somado: quadril, joelho e altura do vivo viram pequenos ajustes em cima da pose sentada (sem esticar as pernas). */
+export const sentado = (o = {}) => { const v = o.hipL && o.hipL[0] === 0 && o.hipR && o.hipR[0] === 0; if (!v) return sentado0(o); const b = sentado0({});
+  return { ...sentado0(o), hipL: [b.hipL[0], b.hipL[1] + o.hipL[1]], hipR: [b.hipR[0], b.hipR[1] + o.hipR[1]], knL: b.knL + (o.knL || 0), knR: b.knR + (o.knR || 0), bob: b.bob + (o.bob || 0) }; };
 
 /** Plano deste vídeo: igual ao mk, mas os materiais aceitam o efeito foco e os uniformes zeram a cada quadro. */
 export function mk(t0, t1, o, build) {
