@@ -102,7 +102,9 @@ export function folha(o = {}) {
   const pv = new THREE.Group(); g.add(pv); const direita = new THREE.Group(); pv.add(direita); const esquerda = new THREE.Group(); pv.add(esquerda);
   for (const [lado, gx] of [[esquerda, 0], [direita, 1]]) { const baixo = new THREE.Group(); lado.add(baixo); const cima = new THREE.Group(); lado.add(cima);
     const mb = mk(gx, 0); mb.position.set((gx ? 1 : -1) * w / 4, -h / 4, 0); baixo.add(mb); const mc = mk(gx, 1); mc.position.set((gx ? 1 : -1) * w / 4, h / 4, 0); cima.add(mc); Q.push({ lado, baixo, cima }); }
-  const set = (a = 0, brilho = 0) => { a = clamp(a); const k1 = easeIO(clamp(a * 2)), k2 = easeIO(clamp(a * 2 - 1));
+  const fech = new THREE.Group(); g.add(fech); const fq = rb(w / 2, h / 2, .006, '#F4EFE0', -w / 4, -h / 4, 0, { out: .002, r: .002 }); fech.add(fq);
+  const vin = new THREE.Mesh(new THREE.PlaneGeometry(w / 2 * .9, .002), new THREE.MeshBasicMaterial({ color: '#C8C0A8' })); vin.position.set(-w / 4, -h / 4, .0035); fech.add(vin); const verde = new THREE.Mesh(new THREE.PlaneGeometry(.02, .015), new THREE.MeshBasicMaterial({ color: '#4FB04A' })); verde.position.set(-w / 2 + .015, -h / 2 + .012, .0035); fech.add(verde);
+  const set = (a = 0, brilho = 0) => { a = clamp(a); const fechada = a < .015; fech.visible = fechada; pv.visible = !fechada; const k1 = easeIO(clamp(a * 2)), k2 = easeIO(clamp(a * 2 - 1));
     // primeiro abre a dobra horizontal (metade de cima desce), depois a vertical (metade direita abre)
     for (const q of Q) { q.cima.rotation.x = -(1 - k1) * Math.PI * .98; q.cima.position.z = (1 - k1) * .002; }
     Q[1].lado.rotation.y = -(1 - k2) * Math.PI * .98; Q[1].lado.position.z = (1 - k2) * .004;

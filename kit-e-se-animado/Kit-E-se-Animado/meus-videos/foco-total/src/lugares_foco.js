@@ -57,7 +57,7 @@ export function casa(c, o = {}) {
   const jk = janela(.9, .8, hora, 2); jk.position.set(-3.1, 1.6, -D / 2 + .02); g.add(jk);
   const mesa = new THREE.Group(); mesa.position.set(-3.0, 0, .45); g.add(mesa);
   const xad = ctex(256, 256, (x) => { for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) { x.fillStyle = (i + j) % 2 ? '#3E7CC8' : '#F6F2EA'; x.fillRect(i * 32, j * 32, 32, 32); } });
-  mesa.add(new THREE.Mesh(new THREE.BoxGeometry(1.12, .012, .82), toonTex(rep(xad, 2, 1.5)))).position.y = .77;
+  { const tl = new THREE.Mesh(new THREE.BoxGeometry(1.12, .012, .82), toonTex(rep(xad, 2, 1.5))); tl.position.y = .77; mesa.add(tl); }
   mesa.add(rb(1.0, .04, .7, '#B87A4A', 0, .745, 0)); for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) mesa.add(bx(.05, .72, .05, '#9A6236', a * .44, .36, b * .29));
   const cadK = [[-.55, 0, Math.PI / 2], [.55, 0, -Math.PI / 2], [0, -.62, 0]].map(([x, z, ry]) => { const k = cadeiraPlastico(); k.position.set(-3.0 + x, 0, .45 + z); k.rotation.y = ry; g.add(k); return k; });
   const lk = lampada(.3); lk.position.set(-3.1, H, .2); g.add(lk); const LK = new THREE.PointLight('#FFE2AE', noite ? 6 : 2, 6, 1.6); LK.position.set(-3.1, 2.1, .2); g.add(LK);
@@ -77,7 +77,7 @@ export function casa(c, o = {}) {
   const jg = janela(.9, .9, hora, 4); jg.position.set(.4, 1.55, -D / 2 + .02); g.add(jg);
   const sol = new THREE.SpotLight(noite ? '#B8C8FF' : '#FFF0D0', noite ? 8 : 10, 7, .55, .6, 1.4); sol.position.set(.4, 2.3, -D / 2 - .6); sol.target.position.set(.2, 0, .6); g.add(sol, sol.target);
   const portaG = portaLado(g, 1.5, .9, -1); // porta para o quarto do Davi? não: porta para o corredor fica na parede da frente; esta liga os quartos (fechada)
-  const vio = violao({ teia: true, semCorda: 2 }); vio.position.set(1.36, .52, .3); vio.rotation.set(0, -Math.PI / 2, Math.PI / 2 - .2); g.add(vio);
+  const vio = violao({ teia: true, semCorda: 2 }); vio.position.set(-1.36, .22, 1.36); vio.rotation.set(0, Math.PI / 2, Math.PI / 2 - .2); g.add(vio);
   const esp = new THREE.Group(); esp.position.set(-1.48, 1.35, -.95); esp.rotation.y = Math.PI / 2; g.add(esp); esp.add(rb(.5, .8, .03, '#7A5236', 0, 0, 0, { out: .005 })); const vid = new THREE.Mesh(new THREE.PlaneGeometry(.44, .74), new THREE.MeshBasicMaterial({ color: '#9AB0C0' })); vid.position.z = .017; esp.add(vid);
   const tv = new THREE.Group(); tv.position.set(-.3, 0, -1.25); g.add(tv); const rack = M.comoda(.8, '#B87A4A'); tv.add(rack); tv.add(rb(.5, .34, .06, '#2A2A30', 0, 1.06, -.02, { out: .006 })); const telaTV = tela(.44, .28, 256); telaTV.position.set(0, 1.06, .015); tv.add(telaTV);
   const pos = new THREE.Mesh(new THREE.PlaneGeometry(.45, .6), toonTex(ctex(225, 300, (x) => { x.fillStyle = '#2A2E44'; x.fillRect(0, 0, 225, 300); x.fillStyle = '#F2C230'; x.beginPath(); x.arc(112, 130, 70, 0, 7); x.fill(); txt(x, 'ROCK', 112, 250, 50, '#F4F1EA'); })));
@@ -88,7 +88,7 @@ export function casa(c, o = {}) {
   const camaD = new THREE.Group(); camaD.position.set(3.55, 0, -.55); g.add(camaD); camaD.add(rb(.75, .26, 1.6, '#E2443A', 0, .15, 0, { out: .008 })); camaD.add(rb(.7, .09, 1.5, '#F4F1EA', 0, .32, 0, { out: .006 }));
   const travD = rb(.45, .12, .24, '#F4F1EA', 0, .42, -.6, { out: .005 }); camaD.add(travD); const cobD = rb(.72, .045, 1.0, '#F2C230', 0, .39, .2, { out: .005 }); camaD.add(cobD);
   for (let i = 0; i < 9; i++) { const st = new THREE.Mesh(new THREE.CircleGeometry(.04, 5), new THREE.MeshBasicMaterial({ color: '#FFF2A0' })); st.position.set(2.0 + (i % 3) * .5, 1.7 + Math.floor(i / 3) * .25, -D / 2 + .015); g.add(st); }
-  const espD = new THREE.Group(); espD.position.set(2.1, 1.0, -D / 2 + .03); g.add(espD); espD.add(rb(.45, .9, .03, '#F2546E', 0, 0, 0, { out: .005 })); espD.add(new THREE.Mesh(new THREE.PlaneGeometry(.39, .84), new THREE.MeshBasicMaterial({ color: '#A8C0D0' }))).position.z = .017;
+  const espD = new THREE.Group(); espD.position.set(2.1, 1.0, -D / 2 + .03); g.add(espD); espD.add(rb(.45, .9, .03, '#F2546E', 0, 0, 0, { out: .005 })); { const ev = new THREE.Mesh(new THREE.PlaneGeometry(.39, .84), new THREE.MeshBasicMaterial({ color: '#A8C0D0' })); ev.position.z = .017; espD.add(ev); }
   const moch = mochila('#3E7CC8'); moch.position.set(2.15, .19, .9); moch.rotation.y = .6; g.add(moch);
   const desenhos = []; for (let i = 0; i < 3; i++) { const d2 = new THREE.Mesh(new THREE.PlaneGeometry(.3, .22), toonTex(ctex(150, 110, (x) => { x.fillStyle = '#FBF7EC'; x.fillRect(0, 0, 150, 110); x.strokeStyle = ['#E2443A', '#3E7CC8', '#5AA84E'][i]; x.lineWidth = 6; x.beginPath(); x.arc(75, 50, 26, 0, 7); x.stroke(); x.beginPath(); x.moveTo(20, 95); x.lineTo(130, 90); x.stroke(); }))); d2.position.set(4.08, 1.5, -.4 + i * .4); d2.rotation.y = -Math.PI / 2; g.add(d2); desenhos.push(d2); }
   const jd = janela(.7, .7, hora, 7); jd.position.set(3.3, 1.6, -D / 2 + .02); g.add(jd);
@@ -177,7 +177,7 @@ export function salao(c, o = {}) {
   const tab = rb(4.2, .3, 3.2, '#5A2A2A', 0, .15, 0, { out: .01 }); g.add(tab); g.add(plano(4.0, 3.0, toon('#8E1E2A'), 0, .305, 0, -Math.PI / 2));
   const mesaF = new THREE.Group(); mesaF.position.set(0, .3, 0); g.add(mesaF); mesaF.add(rb(1.0, .05, .8, '#F4F1EA', 0, .74, 0, { out: .008 })); mesaF.add(bx(.9, .7, .7, '#E8E2D6', 0, .37, 0));
   const T = tabuleiro(.055); T.g.position.set(0, .765, 0); mesaF.add(T.g);
-  const rel = relogioXadrez(); rel.position.set(.42, .765, -.02); rel.rotation.y = -Math.PI / 2; rel.scale.setScalar(1.1); mesaF.add(rel);
+  const rel = relogioXadrez(); rel.position.set(.42, .765, -.02); rel.rotation.y = Math.PI / 2; rel.scale.setScalar(1.1); mesaF.add(rel);
   for (const z of [.62, -.62]) { const cd = M.cadeira('#2A2A30'); cd.position.set(0, .3, z); cd.rotation.y = z > 0 ? Math.PI : 0; g.add(cd); }
   // holofotes sobre a mesa da final
   const holo = new THREE.SpotLight('#FFF4E0', 60, 20, .32, .5, 1.2); holo.position.set(0, 9, 1.5); holo.target.position.set(0, .8, 0); holo.castShadow = true; g.add(holo, holo.target);
