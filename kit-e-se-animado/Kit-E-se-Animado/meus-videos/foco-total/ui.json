@@ -1,0 +1,18 @@
+{
+ "duracao": 747,
+ "palavrasPorLegenda": 4,
+ "corVoz": {
+  "n": "#FFFFFF",
+  "gui": "#9FD8FF",
+  "davi": "#FFE27A",
+  "mae": "#F7A8C8",
+  "tiago": "#A8F0B0",
+  "prof": "#FFC48A",
+  "pef": "#FFC48A",
+  "caio": "#C8B8FF",
+  "cic": "#FFB07A",
+  "juiz": "#E0E0E0"
+ },
+ "destaques": [],
+ "elementos": []
+}

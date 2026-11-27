@@ -1,0 +1,14856 @@
+[
+{
+"text": "E",
+"quem": "n",
+"start": 0,
+"end": 0.105,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 0.105,
+"end": 0.315,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 0.315,
+"end": 0.735,
+"pensa": false
+},
+{
+"text": "focasse",
+"quem": "n",
+"start": 0.735,
+"end": 1.47,
+"pensa": false
+},
+{
+"text": "100%",
+"quem": "n",
+"start": 1.47,
+"end": 1.89,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 1.89,
+"end": 2.1,
+"pensa": false
+},
+{
+"text": "tudo",
+"quem": "n",
+"start": 2.1,
+"end": 2.52,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 2.625,
+"end": 2.94,
+"pensa": false
+},
+{
+"text": "faz?",
+"quem": "n",
+"start": 2.94,
+"end": 3.36,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 3.36,
+"end": 3.44,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 3.44,
+"end": 4.16,
+"pensa": false
+},
+{
+"text": "conseguiu",
+"quem": "n",
+"start": 4.16,
+"end": 4.88,
+"pensa": false
+},
+{
+"text": "isso",
+"quem": "n",
+"start": 4.88,
+"end": 5.2,
+"pensa": false
+},
+{
+"text": "por",
+"quem": "n",
+"start": 5.2,
+"end": 5.44,
+"pensa": false
+},
+{
+"text": "sete",
+"quem": "n",
+"start": 5.44,
+"end": 5.52,
+"pensa": false
+},
+{
+"text": "dias,",
+"quem": "n",
+"start": 5.52,
+"end": 5.92,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 5.92,
+"end": 5.983,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 5.983,
+"end": 6.11,
+"pensa": false
+},
+{
+"text": "sétimo",
+"quem": "n",
+"start": 6.11,
+"end": 6.552,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 6.552,
+"end": 6.742,
+"pensa": false
+},
+{
+"text": "estava",
+"quem": "n",
+"start": 6.742,
+"end": 7.121,
+"pensa": false
+},
+{
+"text": "sentado",
+"quem": "n",
+"start": 7.121,
+"end": 7.564,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 7.564,
+"end": 7.69,
+"pensa": false
+},
+{
+"text": "final",
+"quem": "n",
+"start": 7.69,
+"end": 8.006,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 8.006,
+"end": 8.133,
+"pensa": false
+},
+{
+"text": "campeonato",
+"quem": "n",
+"start": 8.133,
+"end": 8.765,
+"pensa": false
+},
+{
+"text": "estadual",
+"quem": "n",
+"start": 8.765,
+"end": 9.271,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 9.271,
+"end": 9.397,
+"pensa": false
+},
+{
+"text": "xadrez,",
+"quem": "n",
+"start": 9.397,
+"end": 9.84,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 9.84,
+"end": 10.069,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 10.069,
+"end": 10.212,
+"pensa": false
+},
+{
+"text": "relógio",
+"quem": "n",
+"start": 10.222,
+"end": 10.756,
+"pensa": false
+},
+{
+"text": "correndo,",
+"quem": "n",
+"start": 10.756,
+"end": 11.444,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 11.444,
+"end": 11.52,
+"pensa": false
+},
+{
+"text": "sala",
+"quem": "n",
+"start": 11.52,
+"end": 11.825,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 11.825,
+"end": 11.978,
+"pensa": false
+},
+{
+"text": "silêncio",
+"quem": "n",
+"start": 11.978,
+"end": 12.589,
+"pensa": false
+},
+{
+"text": "absoluto",
+"quem": "n",
+"start": 12.589,
+"end": 13.2,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 13.2,
+"end": 13.284,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 13.284,
+"end": 13.368,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 13.368,
+"end": 13.956,
+"pensa": false
+},
+{
+"text": "vibrando",
+"quem": "n",
+"start": 13.956,
+"end": 14.628,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 14.628,
+"end": 14.796,
+"pensa": false
+},
+{
+"text": "bolso",
+"quem": "n",
+"start": 14.796,
+"end": 15.216,
+"pensa": false
+},
+{
+"text": "catorze",
+"quem": "n",
+"start": 15.216,
+"end": 15.384,
+"pensa": false
+},
+{
+"text": "vezes",
+"quem": "n",
+"start": 15.384,
+"end": 15.804,
+"pensa": false
+},
+{
+"text": "seguidas.",
+"quem": "n",
+"start": 15.804,
+"end": 16.56,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 16.56,
+"end": 16.646,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 16.646,
+"end": 16.903,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 16.903,
+"end": 17.16,
+"pensa": false
+},
+{
+"text": "sentiu",
+"quem": "n",
+"start": 17.16,
+"end": 17.674,
+"pensa": false
+},
+{
+"text": "nenhuma.",
+"quem": "n",
+"start": 17.674,
+"end": 18.36,
+"pensa": false
+},
+{
+"text": "Até",
+"quem": "n",
+"start": 18.36,
+"end": 18.544,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 18.544,
+"end": 18.606,
+"pensa": false
+},
+{
+"text": "final",
+"quem": "n",
+"start": 18.606,
+"end": 18.913,
+"pensa": false
+},
+{
+"text": "desse",
+"quem": "n",
+"start": 18.913,
+"end": 19.22,
+"pensa": false
+},
+{
+"text": "vídeo",
+"quem": "n",
+"start": 19.22,
+"end": 19.589,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 19.589,
+"end": 19.834,
+"pensa": false
+},
+{
+"text": "vai",
+"quem": "n",
+"start": 19.834,
+"end": 20.019,
+"pensa": false
+},
+{
+"text": "entender",
+"quem": "n",
+"start": 20.019,
+"end": 20.51,
+"pensa": false
+},
+{
+"text": "por",
+"quem": "n",
+"start": 20.51,
+"end": 20.694,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 20.694,
+"end": 20.879,
+"pensa": false
+},
+{
+"text": "essas",
+"quem": "n",
+"start": 20.879,
+"end": 21.186,
+"pensa": false
+},
+{
+"text": "catorze",
+"quem": "n",
+"start": 21.186,
+"end": 21.309,
+"pensa": false
+},
+{
+"text": "ligações",
+"quem": "n",
+"start": 21.309,
+"end": 21.8,
+"pensa": false
+},
+{
+"text": "valiam",
+"quem": "n",
+"start": 21.8,
+"end": 22.169,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 22.169,
+"end": 22.414,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 22.414,
+"end": 22.599,
+"pensa": false
+},
+{
+"text": "qualquer",
+"quem": "n",
+"start": 22.599,
+"end": 23.09,
+"pensa": false
+},
+{
+"text": "troféu,",
+"quem": "n",
+"start": 23.09,
+"end": 23.52,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 23.52,
+"end": 23.581,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 23.581,
+"end": 23.763,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 23.763,
+"end": 24.068,
+"pensa": false
+},
+{
+"text": "num",
+"quem": "n",
+"start": 24.068,
+"end": 24.25,
+"pensa": false
+},
+{
+"text": "desenho",
+"quem": "n",
+"start": 24.25,
+"end": 24.676,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 24.676,
+"end": 24.859,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 24.859,
+"end": 24.98,
+"pensa": false
+},
+{
+"text": "menino",
+"quem": "n",
+"start": 24.98,
+"end": 25.345,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 25.345,
+"end": 25.467,
+"pensa": false
+},
+{
+"text": "oito",
+"quem": "n",
+"start": 25.467,
+"end": 25.528,
+"pensa": false
+},
+{
+"text": "anos",
+"quem": "n",
+"start": 25.528,
+"end": 25.771,
+"pensa": false
+},
+{
+"text": "tentou",
+"quem": "n",
+"start": 25.771,
+"end": 26.136,
+"pensa": false
+},
+{
+"text": "mostrar",
+"quem": "n",
+"start": 26.136,
+"end": 26.562,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 26.562,
+"end": 26.745,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 26.745,
+"end": 26.927,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 26.927,
+"end": 26.988,
+"pensa": false
+},
+{
+"text": "semana",
+"quem": "n",
+"start": 26.988,
+"end": 27.353,
+"pensa": false
+},
+{
+"text": "inteira,",
+"quem": "n",
+"start": 27.353,
+"end": 27.84,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 27.84,
+"end": 27.918,
+"pensa": false
+},
+{
+"text": "por",
+"quem": "n",
+"start": 27.918,
+"end": 28.143,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 28.153,
+"end": 28.378,
+"pensa": false
+},
+{
+"text": "vinte",
+"quem": "n",
+"start": 28.388,
+"end": 28.544,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 28.544,
+"end": 29.092,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 29.092,
+"end": 29.249,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 29.249,
+"end": 29.405,
+"pensa": false
+},
+{
+"text": "sábado",
+"quem": "n",
+"start": 29.405,
+"end": 29.875,
+"pensa": false
+},
+{
+"text": "qualquer",
+"quem": "n",
+"start": 29.875,
+"end": 30.501,
+"pensa": false
+},
+{
+"text": "mudaram",
+"quem": "n",
+"start": 30.501,
+"end": 31.049,
+"pensa": false
+},
+{
+"text": "tudo.",
+"quem": "n",
+"start": 31.049,
+"end": 31.44,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 31.44,
+"end": 31.507,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 31.507,
+"end": 31.64,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 31.64,
+"end": 31.907,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "n",
+"start": 31.907,
+"end": 32.163,
+"pensa": false
+},
+{
+"text": "focado",
+"quem": "n",
+"start": 32.173,
+"end": 32.573,
+"pensa": false
+},
+{
+"text": "até",
+"quem": "n",
+"start": 32.573,
+"end": 32.773,
+"pensa": false
+},
+{
+"text": "aqui,",
+"quem": "n",
+"start": 32.773,
+"end": 33.107,
+"pensa": false
+},
+{
+"text": "já",
+"quem": "n",
+"start": 33.107,
+"end": 33.24,
+"pensa": false
+},
+{
+"text": "merece",
+"quem": "n",
+"start": 33.24,
+"end": 33.64,
+"pensa": false
+},
+{
+"text": "deixar",
+"quem": "n",
+"start": 33.64,
+"end": 34.04,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 34.04,
+"end": 34.107,
+"pensa": false
+},
+{
+"text": "like.",
+"quem": "n",
+"start": 34.107,
+"end": 34.44,
+"pensa": false
+},
+{
+"text": "Bora",
+"quem": "n",
+"start": 34.44,
+"end": 34.82,
+"pensa": false
+},
+{
+"text": "voltar",
+"quem": "n",
+"start": 34.82,
+"end": 35.39,
+"pensa": false
+},
+{
+"text": "sete",
+"quem": "n",
+"start": 35.39,
+"end": 35.485,
+"pensa": false
+},
+{
+"text": "dias.",
+"quem": "n",
+"start": 35.485,
+"end": 35.96,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 35.96,
+"end": 36.536,
+"pensa": false
+},
+{
+"text": "zero.",
+"quem": "n",
+"start": 36.536,
+"end": 36.92,
+"pensa": false
+},
+{
+"text": "Esse",
+"quem": "n",
+"start": 36.92,
+"end": 37.303,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "n",
+"start": 37.303,
+"end": 37.398,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 37.398,
+"end": 37.494,
+"pensa": false
+},
+{
+"text": "Guilherme,",
+"quem": "n",
+"start": 37.494,
+"end": 38.45,
+"pensa": false
+},
+{
+"text": "17",
+"quem": "n",
+"start": 38.45,
+"end": 38.642,
+"pensa": false
+},
+{
+"text": "anos.",
+"quem": "n",
+"start": 38.642,
+"end": 39.12,
+"pensa": false
+},
+{
+"text": "Mora",
+"quem": "n",
+"start": 39.12,
+"end": 39.379,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 39.379,
+"end": 39.574,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 39.574,
+"end": 39.639,
+"pensa": false
+},
+{
+"text": "mãe,",
+"quem": "n",
+"start": 39.639,
+"end": 39.898,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 39.898,
+"end": 39.963,
+"pensa": false
+},
+{
+"text": "Dona",
+"quem": "n",
+"start": 39.963,
+"end": 40.222,
+"pensa": false
+},
+{
+"text": "Rose,",
+"quem": "n",
+"start": 40.222,
+"end": 40.546,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 40.546,
+"end": 40.741,
+"pensa": false
+},
+{
+"text": "trabalha",
+"quem": "n",
+"start": 40.741,
+"end": 41.259,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 41.259,
+"end": 41.389,
+"pensa": false
+},
+{
+"text": "caixa",
+"quem": "n",
+"start": 41.389,
+"end": 41.713,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 41.713,
+"end": 41.843,
+"pensa": false
+},
+{
+"text": "mercado",
+"quem": "n",
+"start": 41.843,
+"end": 42.297,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 42.297,
+"end": 42.426,
+"pensa": false
+},
+{
+"text": "bairro,",
+"quem": "n",
+"start": 42.426,
+"end": 42.88,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 42.88,
+"end": 42.969,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 42.969,
+"end": 43.236,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 43.236,
+"end": 43.325,
+"pensa": false
+},
+{
+"text": "irmão",
+"quem": "n",
+"start": 43.325,
+"end": 43.77,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 43.77,
+"end": 44.126,
+"pensa": false
+},
+{
+"text": "novo,",
+"quem": "n",
+"start": 44.126,
+"end": 44.571,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 44.571,
+"end": 44.66,
+"pensa": false
+},
+{
+"text": "Davi,",
+"quem": "n",
+"start": 44.66,
+"end": 45.105,
+"pensa": false
+},
+{
+"text": "8",
+"quem": "n",
+"start": 45.105,
+"end": 45.194,
+"pensa": false
+},
+{
+"text": "anos,",
+"quem": "n",
+"start": 45.194,
+"end": 45.639,
+"pensa": false
+},
+{
+"text": "banguela,",
+"quem": "n",
+"start": 45.639,
+"end": 46.44,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 46.44,
+"end": 46.629,
+"pensa": false
+},
+{
+"text": "acha",
+"quem": "n",
+"start": 46.629,
+"end": 46.882,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 46.882,
+"end": 47.071,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 47.071,
+"end": 47.134,
+"pensa": false
+},
+{
+"text": "irmão",
+"quem": "n",
+"start": 47.134,
+"end": 47.449,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 47.449,
+"end": 47.702,
+"pensa": false
+},
+{
+"text": "velho",
+"quem": "n",
+"start": 47.702,
+"end": 48.017,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "n",
+"start": 48.017,
+"end": 48.08,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 48.08,
+"end": 48.143,
+"pensa": false
+},
+{
+"text": "pessoa",
+"quem": "n",
+"start": 48.143,
+"end": 48.522,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 48.522,
+"end": 48.774,
+"pensa": false
+},
+{
+"text": "legal",
+"quem": "n",
+"start": 48.774,
+"end": 49.089,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 49.089,
+"end": 49.215,
+"pensa": false
+},
+{
+"text": "planeta.",
+"quem": "n",
+"start": 49.215,
+"end": 49.72,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 49.72,
+"end": 49.784,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 49.784,
+"end": 49.848,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 49.848,
+"end": 50.424,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 50.424,
+"end": 50.744,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 50.744,
+"end": 50.808,
+"pensa": false
+},
+{
+"text": "mesmo",
+"quem": "n",
+"start": 50.808,
+"end": 51.128,
+"pensa": false
+},
+{
+"text": "problema",
+"quem": "n",
+"start": 51.128,
+"end": 51.64,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 51.64,
+"end": 51.832,
+"pensa": false
+},
+{
+"text": "quase",
+"quem": "n",
+"start": 51.832,
+"end": 52.152,
+"pensa": false
+},
+{
+"text": "todo",
+"quem": "n",
+"start": 52.152,
+"end": 52.408,
+"pensa": false
+},
+{
+"text": "mundo",
+"quem": "n",
+"start": 52.408,
+"end": 52.728,
+"pensa": false
+},
+{
+"text": "tem",
+"quem": "n",
+"start": 52.728,
+"end": 52.92,
+"pensa": false
+},
+{
+"text": "hoje:",
+"quem": "n",
+"start": 52.92,
+"end": 53.24,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 53.24,
+"end": 53.473,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 53.473,
+"end": 53.707,
+"pensa": false
+},
+{
+"text": "conseguia",
+"quem": "n",
+"start": 53.707,
+"end": 54.407,
+"pensa": false
+},
+{
+"text": "prestar",
+"quem": "n",
+"start": 54.407,
+"end": 54.951,
+"pensa": false
+},
+{
+"text": "atenção",
+"quem": "n",
+"start": 54.951,
+"end": 55.496,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 55.496,
+"end": 55.651,
+"pensa": false
+},
+{
+"text": "nada.",
+"quem": "n",
+"start": 55.651,
+"end": 56.04,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 56.04,
+"end": 56.233,
+"pensa": false
+},
+{
+"text": "senta",
+"quem": "n",
+"start": 56.233,
+"end": 56.555,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 56.555,
+"end": 56.748,
+"pensa": false
+},
+{
+"text": "fazer",
+"quem": "n",
+"start": 56.748,
+"end": 57.07,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 57.07,
+"end": 57.134,
+"pensa": false
+},
+{
+"text": "lição",
+"quem": "n",
+"start": 57.134,
+"end": 57.456,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 57.456,
+"end": 57.585,
+"pensa": false
+},
+{
+"text": "matemática,",
+"quem": "n",
+"start": 57.585,
+"end": 58.293,
+"pensa": false
+},
+{
+"text": "abre",
+"quem": "n",
+"start": 58.293,
+"end": 58.551,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 58.551,
+"end": 58.615,
+"pensa": false
+},
+{
+"text": "caderno,",
+"quem": "n",
+"start": 58.615,
+"end": 59.13,
+"pensa": false
+},
+{
+"text": "escreve",
+"quem": "n",
+"start": 59.13,
+"end": 59.581,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 59.581,
+"end": 59.645,
+"pensa": false
+},
+{
+"text": "número",
+"quem": "n",
+"start": 59.645,
+"end": 60.031,
+"pensa": false
+},
+{
+"text": "1.",
+"quem": "n",
+"start": 60.031,
+"end": 60.16,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 60.16,
+"end": 60.222,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 60.222,
+"end": 60.66,
+"pensa": false
+},
+{
+"text": "acende",
+"quem": "n",
+"start": 60.66,
+"end": 61.034,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 61.034,
+"end": 61.222,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 61.222,
+"end": 61.409,
+"pensa": false
+},
+{
+"text": "notificação,",
+"quem": "n",
+"start": 61.409,
+"end": 62.159,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 62.159,
+"end": 62.346,
+"pensa": false
+},
+{
+"text": "pega",
+"quem": "n",
+"start": 62.346,
+"end": 62.596,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 62.596,
+"end": 62.721,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 62.721,
+"end": 62.908,
+"pensa": false
+},
+{
+"text": "ver",
+"quem": "n",
+"start": 62.908,
+"end": 63.095,
+"pensa": false
+},
+{
+"text": "rapidinho.",
+"quem": "n",
+"start": 63.095,
+"end": 63.72,
+"pensa": false
+},
+{
+"text": "Responde",
+"quem": "n",
+"start": 63.72,
+"end": 64.275,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 64.275,
+"end": 64.483,
+"pensa": false
+},
+{
+"text": "mensagem,",
+"quem": "n",
+"start": 64.483,
+"end": 65.107,
+"pensa": false
+},
+{
+"text": "curte",
+"quem": "n",
+"start": 65.107,
+"end": 65.453,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 65.453,
+"end": 65.661,
+"pensa": false
+},
+{
+"text": "foto,",
+"quem": "n",
+"start": 65.661,
+"end": 66.008,
+"pensa": false
+},
+{
+"text": "abre",
+"quem": "n",
+"start": 66.008,
+"end": 66.285,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 66.285,
+"end": 66.424,
+"pensa": false
+},
+{
+"text": "vídeo.",
+"quem": "n",
+"start": 66.424,
+"end": 66.84,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 66.84,
+"end": 66.903,
+"pensa": false
+},
+{
+"text": "40",
+"quem": "n",
+"start": 66.903,
+"end": 67.029,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 67.029,
+"end": 67.472,
+"pensa": false
+},
+{
+"text": "depois,",
+"quem": "n",
+"start": 67.472,
+"end": 67.914,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "n",
+"start": 67.914,
+"end": 68.156,
+"pensa": false
+},
+{
+"text": "assistindo",
+"quem": "n",
+"start": 68.166,
+"end": 68.798,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 68.798,
+"end": 68.924,
+"pensa": false
+},
+{
+"text": "cara",
+"quem": "n",
+"start": 68.924,
+"end": 69.177,
+"pensa": false
+},
+{
+"text": "limpar",
+"quem": "n",
+"start": 69.24,
+"end": 69.619,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 69.619,
+"end": 69.745,
+"pensa": false
+},
+{
+"text": "tapete",
+"quem": "n",
+"start": 69.745,
+"end": 70.124,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 70.124,
+"end": 70.314,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 70.314,
+"end": 70.503,
+"pensa": false
+},
+{
+"text": "era",
+"quem": "n",
+"start": 70.503,
+"end": 70.693,
+"pensa": false
+},
+{
+"text": "lavado",
+"quem": "n",
+"start": 70.693,
+"end": 71.072,
+"pensa": false
+},
+{
+"text": "há",
+"quem": "n",
+"start": 71.072,
+"end": 71.198,
+"pensa": false
+},
+{
+"text": "10",
+"quem": "n",
+"start": 71.198,
+"end": 71.324,
+"pensa": false
+},
+{
+"text": "anos.",
+"quem": "n",
+"start": 71.324,
+"end": 71.64,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 71.64,
+"end": 71.712,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 71.712,
+"end": 71.783,
+"pensa": false
+},
+{
+"text": "caderno",
+"quem": "n",
+"start": 71.783,
+"end": 72.286,
+"pensa": false
+},
+{
+"text": "continua",
+"quem": "n",
+"start": 72.286,
+"end": 72.859,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 72.859,
+"end": 73.074,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 73.074,
+"end": 73.146,
+"pensa": false
+},
+{
+"text": "número",
+"quem": "n",
+"start": 73.146,
+"end": 73.577,
+"pensa": false
+},
+{
+"text": "1.",
+"quem": "n",
+"start": 73.577,
+"end": 73.72,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 73.72,
+"end": 73.798,
+"pensa": false
+},
+{
+"text": "isso",
+"quem": "n",
+"start": 73.798,
+"end": 74.109,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 74.109,
+"end": 74.342,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "n",
+"start": 74.342,
+"end": 74.42,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 74.42,
+"end": 74.576,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 74.576,
+"end": 74.809,
+"pensa": false
+},
+{
+"text": "ele.",
+"quem": "n",
+"start": 74.809,
+"end": 75.12,
+"pensa": false
+},
+{
+"text": "Um",
+"quem": "n",
+"start": 75.12,
+"end": 75.247,
+"pensa": false
+},
+{
+"text": "estudo",
+"quem": "n",
+"start": 75.247,
+"end": 75.629,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 75.629,
+"end": 75.757,
+"pensa": false
+},
+{
+"text": "pesquisadora",
+"quem": "n",
+"start": 75.757,
+"end": 76.52,
+"pensa": false
+},
+{
+"text": "Gloria",
+"quem": "n",
+"start": 76.52,
+"end": 76.902,
+"pensa": false
+},
+{
+"text": "Mark",
+"quem": "n",
+"start": 76.902,
+"end": 77.157,
+"pensa": false
+},
+{
+"text": "mostrou",
+"quem": "n",
+"start": 77.157,
+"end": 77.602,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 77.602,
+"end": 77.793,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 77.793,
+"end": 77.921,
+"pensa": false
+},
+{
+"text": "pessoas",
+"quem": "n",
+"start": 77.921,
+"end": 78.366,
+"pensa": false
+},
+{
+"text": "conseguem",
+"quem": "n",
+"start": 78.366,
+"end": 78.939,
+"pensa": false
+},
+{
+"text": "ficar",
+"quem": "n",
+"start": 78.939,
+"end": 79.257,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 79.257,
+"end": 79.385,
+"pensa": false
+},
+{
+"text": "uns",
+"quem": "n",
+"start": 79.385,
+"end": 79.576,
+"pensa": false
+},
+{
+"text": "11",
+"quem": "n",
+"start": 79.576,
+"end": 79.703,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 79.703,
+"end": 80.149,
+"pensa": false
+},
+{
+"text": "numa",
+"quem": "n",
+"start": 80.149,
+"end": 80.403,
+"pensa": false
+},
+{
+"text": "tarefa",
+"quem": "n",
+"start": 80.403,
+"end": 80.785,
+"pensa": false
+},
+{
+"text": "antes",
+"quem": "n",
+"start": 80.785,
+"end": 81.103,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 81.103,
+"end": 81.231,
+"pensa": false
+},
+{
+"text": "serem",
+"quem": "n",
+"start": 81.231,
+"end": 81.549,
+"pensa": false
+},
+{
+"text": "interrompidas.",
+"quem": "n",
+"start": 81.549,
+"end": 82.44,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 82.44,
+"end": 82.516,
+"pensa": false
+},
+{
+"text": "muitas",
+"quem": "n",
+"start": 82.516,
+"end": 82.972,
+"pensa": false
+},
+{
+"text": "vezes,",
+"quem": "n",
+"start": 82.972,
+"end": 83.428,
+"pensa": false
+},
+{
+"text": "quem",
+"quem": "n",
+"start": 83.428,
+"end": 83.732,
+"pensa": false
+},
+{
+"text": "interrompe",
+"quem": "n",
+"start": 83.732,
+"end": 84.492,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "n",
+"start": 84.492,
+"end": 84.568,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 84.568,
+"end": 84.644,
+"pensa": false
+},
+{
+"text": "gente",
+"quem": "n",
+"start": 84.644,
+"end": 85.024,
+"pensa": false
+},
+{
+"text": "mesmo.",
+"quem": "n",
+"start": 85.024,
+"end": 85.48,
+"pensa": false
+},
+{
+"text": "Gui,",
+"quem": "davi",
+"start": 85.48,
+"end": 85.8,
+"pensa": false
+},
+{
+"text": "Gui,",
+"quem": "davi",
+"start": 85.8,
+"end": 86.12,
+"pensa": false
+},
+{
+"text": "olha",
+"quem": "davi",
+"start": 86.12,
+"end": 86.44,
+"pensa": false
+},
+{
+"text": "meu",
+"quem": "davi",
+"start": 86.44,
+"end": 86.68,
+"pensa": false
+},
+{
+"text": "desenho!",
+"quem": "davi",
+"start": 86.68,
+"end": 87.32,
+"pensa": false
+},
+{
+"text": "Depois,",
+"quem": "gui",
+"start": 87.32,
+"end": 88.02,
+"pensa": false
+},
+{
+"text": "Davi.",
+"quem": "gui",
+"start": 88.02,
+"end": 88.52,
+"pensa": false
+},
+{
+"text": "É",
+"quem": "davi",
+"start": 88.52,
+"end": 88.598,
+"pensa": false
+},
+{
+"text": "rapidinho,",
+"quem": "davi",
+"start": 88.598,
+"end": 89.38,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "davi",
+"start": 89.38,
+"end": 89.536,
+"pensa": false
+},
+{
+"text": "fiz",
+"quem": "davi",
+"start": 89.536,
+"end": 89.771,
+"pensa": false
+},
+{
+"text": "pra...",
+"quem": "davi",
+"start": 89.771,
+"end": 90.24,
+"pensa": false
+},
+{
+"text": "Depois,",
+"quem": "gui",
+"start": 90.24,
+"end": 91.08,
+"pensa": false
+},
+{
+"text": "já",
+"quem": "gui",
+"start": 91.08,
+"end": 91.32,
+"pensa": false
+},
+{
+"text": "falei.",
+"quem": "gui",
+"start": 91.32,
+"end": 92.04,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 92.04,
+"end": 92.114,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 92.114,
+"end": 92.41,
+"pensa": false
+},
+{
+"text": "ficou",
+"quem": "n",
+"start": 92.41,
+"end": 92.781,
+"pensa": false
+},
+{
+"text": "parado",
+"quem": "n",
+"start": 92.781,
+"end": 93.225,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 93.225,
+"end": 93.373,
+"pensa": false
+},
+{
+"text": "tempo",
+"quem": "n",
+"start": 93.373,
+"end": 93.744,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 93.744,
+"end": 93.892,
+"pensa": false
+},
+{
+"text": "lado",
+"quem": "n",
+"start": 93.892,
+"end": 94.188,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 94.188,
+"end": 94.336,
+"pensa": false
+},
+{
+"text": "cama,",
+"quem": "n",
+"start": 94.336,
+"end": 94.707,
+"pensa": false
+},
+{
+"text": "segurando",
+"quem": "n",
+"start": 94.707,
+"end": 95.373,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 95.373,
+"end": 95.596,
+"pensa": false
+},
+{
+"text": "folha",
+"quem": "n",
+"start": 95.596,
+"end": 95.966,
+"pensa": false
+},
+{
+"text": "dobrada",
+"quem": "n",
+"start": 95.966,
+"end": 96.484,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 96.484,
+"end": 96.633,
+"pensa": false
+},
+{
+"text": "peito",
+"quem": "n",
+"start": 96.633,
+"end": 97.003,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 97.003,
+"end": 97.225,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 97.225,
+"end": 97.373,
+"pensa": false
+},
+{
+"text": "duas",
+"quem": "n",
+"start": 97.373,
+"end": 97.67,
+"pensa": false
+},
+{
+"text": "mãos.",
+"quem": "n",
+"start": 97.67,
+"end": 98.04,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 98.04,
+"end": 98.111,
+"pensa": false
+},
+{
+"text": "depois",
+"quem": "n",
+"start": 98.111,
+"end": 98.612,
+"pensa": false
+},
+{
+"text": "voltou",
+"quem": "n",
+"start": 98.612,
+"end": 99.041,
+"pensa": false
+},
+{
+"text": "pro",
+"quem": "n",
+"start": 99.041,
+"end": 99.255,
+"pensa": false
+},
+{
+"text": "quarto",
+"quem": "n",
+"start": 99.255,
+"end": 99.684,
+"pensa": false
+},
+{
+"text": "dele,",
+"quem": "n",
+"start": 99.684,
+"end": 100.042,
+"pensa": false
+},
+{
+"text": "arrastando",
+"quem": "n",
+"start": 100.042,
+"end": 100.757,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 100.757,
+"end": 100.828,
+"pensa": false
+},
+{
+"text": "chinelo.",
+"quem": "n",
+"start": 100.828,
+"end": 101.4,
+"pensa": false
+},
+{
+"text": "Guarda",
+"quem": "n",
+"start": 101.4,
+"end": 101.803,
+"pensa": false
+},
+{
+"text": "esse",
+"quem": "n",
+"start": 101.803,
+"end": 102.071,
+"pensa": false
+},
+{
+"text": "desenho,",
+"quem": "n",
+"start": 102.071,
+"end": 102.608,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 102.608,
+"end": 102.809,
+"pensa": false
+},
+{
+"text": "vai",
+"quem": "n",
+"start": 102.809,
+"end": 103.01,
+"pensa": false
+},
+{
+"text": "voltar.",
+"quem": "n",
+"start": 103.01,
+"end": 103.48,
+"pensa": false
+},
+{
+"text": "Guilherme,",
+"quem": "mae",
+"start": 103.48,
+"end": 104.241,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "mae",
+"start": 104.241,
+"end": 104.546,
+"pensa": false
+},
+{
+"text": "ouviu",
+"quem": "mae",
+"start": 104.546,
+"end": 104.926,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "mae",
+"start": 104.926,
+"end": 105.003,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "mae",
+"start": 105.003,
+"end": 105.231,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "mae",
+"start": 105.231,
+"end": 105.383,
+"pensa": false
+},
+{
+"text": "falei?",
+"quem": "mae",
+"start": 105.383,
+"end": 105.84,
+"pensa": false
+},
+{
+"text": "Ouvi,",
+"quem": "gui",
+"start": 105.84,
+"end": 106.418,
+"pensa": false
+},
+{
+"text": "mãe.",
+"quem": "gui",
+"start": 106.418,
+"end": 106.88,
+"pensa": false
+},
+{
+"text": "Então",
+"quem": "mae",
+"start": 106.88,
+"end": 107.347,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "mae",
+"start": 107.347,
+"end": 107.424,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "mae",
+"start": 107.424,
+"end": 107.658,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "mae",
+"start": 107.658,
+"end": 107.813,
+"pensa": false
+},
+{
+"text": "falei?",
+"quem": "mae",
+"start": 107.813,
+"end": 108.28,
+"pensa": false
+},
+{
+"text": "Que...",
+"quem": "gui",
+"start": 108.28,
+"end": 109.135,
+"pensa": false
+},
+{
+"text": "Que",
+"quem": "gui",
+"start": 109.135,
+"end": 109.563,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "gui",
+"start": 109.563,
+"end": 109.705,
+"pensa": false
+},
+{
+"text": "pra...",
+"quem": "gui",
+"start": 109.705,
+"end": 110.56,
+"pensa": false
+},
+{
+"text": "Que",
+"quem": "mae",
+"start": 110.56,
+"end": 110.815,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "mae",
+"start": 110.815,
+"end": 110.9,
+"pensa": false
+},
+{
+"text": "gás",
+"quem": "mae",
+"start": 110.9,
+"end": 111.155,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "mae",
+"start": 111.155,
+"end": 111.325,
+"pensa": false
+},
+{
+"text": "acabando,",
+"quem": "mae",
+"start": 111.325,
+"end": 112.09,
+"pensa": false
+},
+{
+"text": "filho.",
+"quem": "mae",
+"start": 112.09,
+"end": 112.6,
+"pensa": false
+},
+{
+"text": "Eu",
+"quem": "mae",
+"start": 112.6,
+"end": 112.846,
+"pensa": false
+},
+{
+"text": "falei",
+"quem": "mae",
+"start": 112.846,
+"end": 113.46,
+"pensa": false
+},
+{
+"text": "três",
+"quem": "mae",
+"start": 113.46,
+"end": 113.583,
+"pensa": false
+},
+{
+"text": "vezes.",
+"quem": "mae",
+"start": 113.583,
+"end": 114.32,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 114.32,
+"end": 114.643,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 114.643,
+"end": 114.967,
+"pensa": false
+},
+{
+"text": "ouviu",
+"quem": "n",
+"start": 114.967,
+"end": 115.506,
+"pensa": false
+},
+{
+"text": "nenhuma",
+"quem": "n",
+"start": 115.506,
+"end": 116.261,
+"pensa": false
+},
+{
+"text": "das",
+"quem": "n",
+"start": 116.261,
+"end": 116.584,
+"pensa": false
+},
+{
+"text": "três.",
+"quem": "n",
+"start": 116.584,
+"end": 116.8,
+"pensa": false
+},
+{
+"text": "Naquela",
+"quem": "n",
+"start": 116.8,
+"end": 117.377,
+"pensa": false
+},
+{
+"text": "noite,",
+"quem": "n",
+"start": 117.377,
+"end": 117.872,
+"pensa": false
+},
+{
+"text": "deitado,",
+"quem": "n",
+"start": 117.872,
+"end": 118.532,
+"pensa": false
+},
+{
+"text": "olhando",
+"quem": "n",
+"start": 118.532,
+"end": 119.109,
+"pensa": false
+},
+{
+"text": "pro",
+"quem": "n",
+"start": 119.109,
+"end": 119.356,
+"pensa": false
+},
+{
+"text": "caderno",
+"quem": "n",
+"start": 119.356,
+"end": 119.934,
+"pensa": false
+},
+{
+"text": "aberto",
+"quem": "n",
+"start": 119.934,
+"end": 120.428,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 120.428,
+"end": 120.676,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 120.676,
+"end": 120.841,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 120.841,
+"end": 120.923,
+"pensa": false
+},
+{
+"text": "número",
+"quem": "n",
+"start": 120.923,
+"end": 121.418,
+"pensa": false
+},
+{
+"text": "1",
+"quem": "n",
+"start": 121.418,
+"end": 121.5,
+"pensa": false
+},
+{
+"text": "escrito,",
+"quem": "n",
+"start": 121.5,
+"end": 122.16,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 122.16,
+"end": 122.354,
+"pensa": false
+},
+{
+"text": "falou",
+"quem": "n",
+"start": 122.354,
+"end": 122.678,
+"pensa": false
+},
+{
+"text": "baixinho",
+"quem": "n",
+"start": 122.678,
+"end": 123.197,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 123.262,
+"end": 123.456,
+"pensa": false
+},
+{
+"text": "queria",
+"quem": "n",
+"start": 123.456,
+"end": 123.845,
+"pensa": false
+},
+{
+"text": "conseguir",
+"quem": "n",
+"start": 123.845,
+"end": 124.428,
+"pensa": false
+},
+{
+"text": "focar",
+"quem": "n",
+"start": 124.428,
+"end": 124.752,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 124.752,
+"end": 124.882,
+"pensa": false
+},
+{
+"text": "verdade.",
+"quem": "n",
+"start": 124.882,
+"end": 125.4,
+"pensa": false
+},
+{
+"text": "Só",
+"quem": "n",
+"start": 125.4,
+"end": 125.619,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 125.619,
+"end": 125.947,
+"pensa": false
+},
+{
+"text": "vez",
+"quem": "n",
+"start": 125.947,
+"end": 126.275,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 126.275,
+"end": 126.493,
+"pensa": false
+},
+{
+"text": "vida.",
+"quem": "n",
+"start": 126.493,
+"end": 127.04,
+"pensa": false
+},
+{
+"text": "Desligou",
+"quem": "n",
+"start": 127.04,
+"end": 127.808,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 127.808,
+"end": 127.904,
+"pensa": false
+},
+{
+"text": "luz",
+"quem": "n",
+"start": 127.904,
+"end": 128.192,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 128.192,
+"end": 128.288,
+"pensa": false
+},
+{
+"text": "dormiu.",
+"quem": "n",
+"start": 128.288,
+"end": 128.96,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 128.96,
+"end": 129.44,
+"pensa": false
+},
+{
+"text": "um.",
+"quem": "n",
+"start": 129.44,
+"end": 129.76,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 129.76,
+"end": 129.968,
+"pensa": false
+},
+{
+"text": "acorda",
+"quem": "n",
+"start": 129.968,
+"end": 130.384,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 130.384,
+"end": 130.454,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 130.454,
+"end": 130.523,
+"pensa": false
+},
+{
+"text": "primeira",
+"quem": "n",
+"start": 130.523,
+"end": 131.078,
+"pensa": false
+},
+{
+"text": "coisa",
+"quem": "n",
+"start": 131.078,
+"end": 131.425,
+"pensa": false
+},
+{
+"text": "estranha",
+"quem": "n",
+"start": 131.425,
+"end": 131.98,
+"pensa": false
+},
+{
+"text": "acontece",
+"quem": "n",
+"start": 131.98,
+"end": 132.535,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 132.535,
+"end": 132.674,
+"pensa": false
+},
+{
+"text": "hora",
+"quem": "n",
+"start": 132.674,
+"end": 132.951,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 132.951,
+"end": 133.09,
+"pensa": false
+},
+{
+"text": "escovar",
+"quem": "n",
+"start": 133.09,
+"end": 133.576,
+"pensa": false
+},
+{
+"text": "os",
+"quem": "n",
+"start": 133.576,
+"end": 133.714,
+"pensa": false
+},
+{
+"text": "dentes.",
+"quem": "n",
+"start": 133.714,
+"end": 134.2,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 134.2,
+"end": 134.486,
+"pensa": false
+},
+{
+"text": "sente",
+"quem": "n",
+"start": 134.486,
+"end": 134.963,
+"pensa": false
+},
+{
+"text": "cada",
+"quem": "n",
+"start": 134.963,
+"end": 135.345,
+"pensa": false
+},
+{
+"text": "cerda",
+"quem": "n",
+"start": 135.345,
+"end": 135.812,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 135.822,
+"end": 136.012,
+"pensa": false
+},
+{
+"text": "escova.",
+"quem": "n",
+"start": 136.012,
+"end": 136.68,
+"pensa": false
+},
+{
+"text": "Ouve",
+"quem": "n",
+"start": 136.68,
+"end": 137,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 137,
+"end": 137.08,
+"pensa": false
+},
+{
+"text": "espuma",
+"quem": "n",
+"start": 137.08,
+"end": 137.56,
+"pensa": false
+},
+{
+"text": "estourando.",
+"quem": "n",
+"start": 137.56,
+"end": 138.44,
+"pensa": false
+},
+{
+"text": "Sente",
+"quem": "n",
+"start": 138.44,
+"end": 138.832,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 138.832,
+"end": 138.91,
+"pensa": false
+},
+{
+"text": "gosto",
+"quem": "n",
+"start": 138.91,
+"end": 139.302,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 139.302,
+"end": 139.458,
+"pensa": false
+},
+{
+"text": "menta",
+"quem": "n",
+"start": 139.458,
+"end": 139.85,
+"pensa": false
+},
+{
+"text": "como",
+"quem": "n",
+"start": 139.85,
+"end": 140.163,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 140.163,
+"end": 140.32,
+"pensa": false
+},
+{
+"text": "fosse",
+"quem": "n",
+"start": 140.32,
+"end": 140.712,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 140.712,
+"end": 140.79,
+"pensa": false
+},
+{
+"text": "primeira",
+"quem": "n",
+"start": 140.79,
+"end": 141.417,
+"pensa": false
+},
+{
+"text": "vez",
+"quem": "n",
+"start": 141.417,
+"end": 141.652,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 141.652,
+"end": 141.808,
+"pensa": false
+},
+{
+"text": "vida.",
+"quem": "n",
+"start": 141.808,
+"end": 142.2,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 142.2,
+"end": 142.285,
+"pensa": false
+},
+{
+"text": "escova",
+"quem": "n",
+"start": 142.285,
+"end": 142.794,
+"pensa": false
+},
+{
+"text": "por",
+"quem": "n",
+"start": 142.794,
+"end": 143.049,
+"pensa": false
+},
+{
+"text": "exatamente",
+"quem": "n",
+"start": 143.049,
+"end": 143.898,
+"pensa": false
+},
+{
+"text": "dois",
+"quem": "n",
+"start": 143.898,
+"end": 143.983,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 143.983,
+"end": 144.578,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 144.578,
+"end": 144.832,
+"pensa": false
+},
+{
+"text": "nem",
+"quem": "n",
+"start": 144.832,
+"end": 145.087,
+"pensa": false
+},
+{
+"text": "perceber",
+"quem": "n",
+"start": 145.087,
+"end": 145.766,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 145.766,
+"end": 145.851,
+"pensa": false
+},
+{
+"text": "tempo",
+"quem": "n",
+"start": 145.851,
+"end": 146.276,
+"pensa": false
+},
+{
+"text": "passando.",
+"quem": "n",
+"start": 146.276,
+"end": 147.04,
+"pensa": false
+},
+{
+"text": "No",
+"quem": "n",
+"start": 147.04,
+"end": 147.263,
+"pensa": false
+},
+{
+"text": "café,",
+"quem": "n",
+"start": 147.273,
+"end": 147.661,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 147.661,
+"end": 147.894,
+"pensa": false
+},
+{
+"text": "passa",
+"quem": "n",
+"start": 147.894,
+"end": 148.283,
+"pensa": false
+},
+{
+"text": "manteiga",
+"quem": "n",
+"start": 148.283,
+"end": 148.904,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 148.904,
+"end": 149.06,
+"pensa": false
+},
+{
+"text": "pão",
+"quem": "n",
+"start": 149.06,
+"end": 149.293,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 149.293,
+"end": 149.526,
+"pensa": false
+},
+{
+"text": "tanta",
+"quem": "n",
+"start": 149.526,
+"end": 149.914,
+"pensa": false
+},
+{
+"text": "atenção",
+"quem": "n",
+"start": 149.914,
+"end": 150.37,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 150.38,
+"end": 150.613,
+"pensa": false
+},
+{
+"text": "espalha",
+"quem": "n",
+"start": 150.613,
+"end": 151.157,
+"pensa": false
+},
+{
+"text": "até",
+"quem": "n",
+"start": 151.157,
+"end": 151.39,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 151.39,
+"end": 151.468,
+"pensa": false
+},
+{
+"text": "última",
+"quem": "n",
+"start": 151.468,
+"end": 151.934,
+"pensa": false
+},
+{
+"text": "borda.",
+"quem": "n",
+"start": 151.934,
+"end": 152.4,
+"pensa": false
+},
+{
+"text": "Perfeitamente",
+"quem": "n",
+"start": 152.4,
+"end": 153.7,
+"pensa": false
+},
+{
+"text": "reto.",
+"quem": "n",
+"start": 153.7,
+"end": 154.2,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 154.2,
+"end": 154.273,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 154.273,
+"end": 154.346,
+"pensa": false
+},
+{
+"text": "Dona",
+"quem": "n",
+"start": 154.346,
+"end": 154.639,
+"pensa": false
+},
+{
+"text": "Rose",
+"quem": "n",
+"start": 154.639,
+"end": 154.931,
+"pensa": false
+},
+{
+"text": "para",
+"quem": "n",
+"start": 154.931,
+"end": 155.224,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 155.224,
+"end": 155.37,
+"pensa": false
+},
+{
+"text": "mexer",
+"quem": "n",
+"start": 155.37,
+"end": 155.736,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 155.736,
+"end": 155.809,
+"pensa": false
+},
+{
+"text": "café",
+"quem": "n",
+"start": 155.809,
+"end": 156.102,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 156.102,
+"end": 156.321,
+"pensa": false
+},
+{
+"text": "olhar.",
+"quem": "n",
+"start": 156.321,
+"end": 156.76,
+"pensa": false
+},
+{
+"text": "Que",
+"quem": "mae",
+"start": 156.76,
+"end": 157.056,
+"pensa": false
+},
+{
+"text": "capricho",
+"quem": "mae",
+"start": 157.056,
+"end": 157.847,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "mae",
+"start": 157.847,
+"end": 157.946,
+"pensa": false
+},
+{
+"text": "esse?",
+"quem": "mae",
+"start": 157.946,
+"end": 158.44,
+"pensa": false
+},
+{
+"text": "Sei",
+"quem": "gui",
+"start": 158.44,
+"end": 158.758,
+"pensa": false
+},
+{
+"text": "lá,",
+"quem": "gui",
+"start": 158.758,
+"end": 159.076,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "gui",
+"start": 159.076,
+"end": 159.288,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "gui",
+"start": 159.288,
+"end": 159.5,
+"pensa": false
+},
+{
+"text": "tô",
+"quem": "gui",
+"start": 159.5,
+"end": 159.712,
+"pensa": false
+},
+{
+"text": "fazendo.",
+"quem": "gui",
+"start": 159.712,
+"end": 160.56,
+"pensa": false
+},
+{
+"text": "Na",
+"quem": "n",
+"start": 160.56,
+"end": 160.703,
+"pensa": false
+},
+{
+"text": "escola,",
+"quem": "n",
+"start": 160.703,
+"end": 161.203,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 161.203,
+"end": 161.275,
+"pensa": false
+},
+{
+"text": "professor",
+"quem": "n",
+"start": 161.275,
+"end": 161.918,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 161.918,
+"end": 162.061,
+"pensa": false
+},
+{
+"text": "história",
+"quem": "n",
+"start": 162.061,
+"end": 162.633,
+"pensa": false
+},
+{
+"text": "começa",
+"quem": "n",
+"start": 162.633,
+"end": 163.062,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 163.062,
+"end": 163.133,
+"pensa": false
+},
+{
+"text": "falar",
+"quem": "n",
+"start": 163.133,
+"end": 163.49,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 163.49,
+"end": 163.633,
+"pensa": false
+},
+{
+"text": "Revolução",
+"quem": "n",
+"start": 163.633,
+"end": 164.277,
+"pensa": false
+},
+{
+"text": "Francesa.",
+"quem": "n",
+"start": 164.277,
+"end": 164.92,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 164.92,
+"end": 164.999,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 164.999,
+"end": 165.079,
+"pensa": false
+},
+{
+"text": "Guilherme,",
+"quem": "n",
+"start": 165.079,
+"end": 165.873,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 165.873,
+"end": 166.112,
+"pensa": false
+},
+{
+"text": "sempre",
+"quem": "n",
+"start": 166.112,
+"end": 166.588,
+"pensa": false
+},
+{
+"text": "dormia",
+"quem": "n",
+"start": 166.588,
+"end": 167.065,
+"pensa": false
+},
+{
+"text": "nessa",
+"quem": "n",
+"start": 167.065,
+"end": 167.462,
+"pensa": false
+},
+{
+"text": "aula",
+"quem": "n",
+"start": 167.462,
+"end": 167.78,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 167.78,
+"end": 168.019,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 168.019,
+"end": 168.098,
+"pensa": false
+},
+{
+"text": "cara",
+"quem": "n",
+"start": 168.098,
+"end": 168.416,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 168.416,
+"end": 168.575,
+"pensa": false
+},
+{
+"text": "caderno,",
+"quem": "n",
+"start": 168.575,
+"end": 169.21,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 169.21,
+"end": 169.449,
+"pensa": false
+},
+{
+"text": "perde",
+"quem": "n",
+"start": 169.449,
+"end": 169.846,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 169.846,
+"end": 170.084,
+"pensa": false
+},
+{
+"text": "palavra.",
+"quem": "n",
+"start": 170.084,
+"end": 170.72,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 170.72,
+"end": 170.976,
+"pensa": false
+},
+{
+"text": "vê",
+"quem": "n",
+"start": 170.976,
+"end": 171.147,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 171.147,
+"end": 171.317,
+"pensa": false
+},
+{
+"text": "datas,",
+"quem": "n",
+"start": 171.317,
+"end": 171.829,
+"pensa": false
+},
+{
+"text": "os",
+"quem": "n",
+"start": 171.829,
+"end": 172,
+"pensa": false
+},
+{
+"text": "nomes,",
+"quem": "n",
+"start": 172,
+"end": 172.512,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 172.512,
+"end": 172.597,
+"pensa": false
+},
+{
+"text": "cara",
+"quem": "n",
+"start": 172.597,
+"end": 172.939,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 172.939,
+"end": 173.109,
+"pensa": false
+},
+{
+"text": "Napoleão,",
+"quem": "n",
+"start": 173.109,
+"end": 173.877,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 173.877,
+"end": 174.048,
+"pensa": false
+},
+{
+"text": "cenas",
+"quem": "n",
+"start": 174.048,
+"end": 174.475,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 174.475,
+"end": 174.645,
+"pensa": false
+},
+{
+"text": "Bastilha,",
+"quem": "n",
+"start": 174.645,
+"end": 175.413,
+"pensa": false
+},
+{
+"text": "tudo",
+"quem": "n",
+"start": 175.413,
+"end": 175.755,
+"pensa": false
+},
+{
+"text": "grudando",
+"quem": "n",
+"start": 175.755,
+"end": 176.437,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 176.437,
+"end": 176.608,
+"pensa": false
+},
+{
+"text": "cabeça",
+"quem": "n",
+"start": 176.608,
+"end": 177.12,
+"pensa": false
+},
+{
+"text": "como",
+"quem": "n",
+"start": 177.12,
+"end": 177.375,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 177.375,
+"end": 177.502,
+"pensa": false
+},
+{
+"text": "alguém",
+"quem": "n",
+"start": 177.502,
+"end": 177.884,
+"pensa": false
+},
+{
+"text": "estivesse",
+"quem": "n",
+"start": 177.884,
+"end": 178.457,
+"pensa": false
+},
+{
+"text": "gravando",
+"quem": "n",
+"start": 178.457,
+"end": 178.967,
+"pensa": false
+},
+{
+"text": "direto",
+"quem": "n",
+"start": 178.967,
+"end": 179.349,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 179.349,
+"end": 179.476,
+"pensa": false
+},
+{
+"text": "cérebro",
+"quem": "n",
+"start": 179.476,
+"end": 179.922,
+"pensa": false
+},
+{
+"text": "dele.",
+"quem": "n",
+"start": 179.922,
+"end": 180.24,
+"pensa": false
+},
+{
+"text": "Prova",
+"quem": "prof",
+"start": 180.24,
+"end": 180.63,
+"pensa": false
+},
+{
+"text": "surpresa,",
+"quem": "prof",
+"start": 180.63,
+"end": 181.332,
+"pensa": false
+},
+{
+"text": "gente.",
+"quem": "prof",
+"start": 181.332,
+"end": 181.8,
+"pensa": false
+},
+{
+"text": "Guarda",
+"quem": "prof",
+"start": 181.8,
+"end": 182.433,
+"pensa": false
+},
+{
+"text": "tudo!",
+"quem": "prof",
+"start": 182.433,
+"end": 182.96,
+"pensa": false
+},
+{
+"text": "Mano,",
+"quem": "tiago",
+"start": 182.96,
+"end": 183.436,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "tiago",
+"start": 183.436,
+"end": 183.531,
+"pensa": false
+},
+{
+"text": "gente",
+"quem": "tiago",
+"start": 183.531,
+"end": 184.008,
+"pensa": false
+},
+{
+"text": "vai",
+"quem": "tiago",
+"start": 184.008,
+"end": 184.293,
+"pensa": false
+},
+{
+"text": "morrer.",
+"quem": "tiago",
+"start": 184.293,
+"end": 184.96,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 184.96,
+"end": 185.095,
+"pensa": false
+},
+{
+"text": "Tiago",
+"quem": "n",
+"start": 185.095,
+"end": 185.772,
+"pensa": false
+},
+{
+"text": "tirou",
+"quem": "n",
+"start": 185.772,
+"end": 186.449,
+"pensa": false
+},
+{
+"text": "3.",
+"quem": "n",
+"start": 186.449,
+"end": 186.72,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 186.72,
+"end": 186.813,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 186.813,
+"end": 187.653,
+"pensa": false
+},
+{
+"text": "tirou",
+"quem": "n",
+"start": 187.653,
+"end": 188.12,
+"pensa": false
+},
+{
+"text": "10.",
+"quem": "n",
+"start": 188.12,
+"end": 188.4,
+"pensa": false
+},
+{
+"text": "Terminou",
+"quem": "n",
+"start": 188.4,
+"end": 188.977,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 188.977,
+"end": 189.121,
+"pensa": false
+},
+{
+"text": "15",
+"quem": "n",
+"start": 189.121,
+"end": 189.266,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 189.266,
+"end": 189.77,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 189.77,
+"end": 189.843,
+"pensa": false
+},
+{
+"text": "ainda",
+"quem": "n",
+"start": 189.843,
+"end": 190.203,
+"pensa": false
+},
+{
+"text": "ficou",
+"quem": "n",
+"start": 190.203,
+"end": 190.564,
+"pensa": false
+},
+{
+"text": "entediado",
+"quem": "n",
+"start": 190.564,
+"end": 191.213,
+"pensa": false
+},
+{
+"text": "esperando",
+"quem": "n",
+"start": 191.213,
+"end": 191.862,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 191.862,
+"end": 191.934,
+"pensa": false
+},
+{
+"text": "resto",
+"quem": "n",
+"start": 191.934,
+"end": 192.295,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 192.295,
+"end": 192.439,
+"pensa": false
+},
+{
+"text": "sala.",
+"quem": "n",
+"start": 192.439,
+"end": 192.8,
+"pensa": false
+},
+{
+"text": "No",
+"quem": "n",
+"start": 192.8,
+"end": 192.989,
+"pensa": false
+},
+{
+"text": "intervalo,",
+"quem": "n",
+"start": 192.989,
+"end": 193.931,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 193.931,
+"end": 194.214,
+"pensa": false
+},
+{
+"text": "come",
+"quem": "n",
+"start": 194.214,
+"end": 194.591,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 194.591,
+"end": 194.874,
+"pensa": false
+},
+{
+"text": "coxinha",
+"quem": "n",
+"start": 194.874,
+"end": 195.534,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 195.534,
+"end": 195.817,
+"pensa": false
+},
+{
+"text": "foco",
+"quem": "n",
+"start": 195.817,
+"end": 196.194,
+"pensa": false
+},
+{
+"text": "total.",
+"quem": "n",
+"start": 196.194,
+"end": 196.76,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 196.76,
+"end": 196.858,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "n",
+"start": 196.858,
+"end": 196.956,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 196.956,
+"end": 197.053,
+"pensa": false
+},
+{
+"text": "melhor",
+"quem": "n",
+"start": 197.053,
+"end": 197.64,
+"pensa": false
+},
+{
+"text": "coxinha",
+"quem": "n",
+"start": 197.64,
+"end": 198.324,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 198.324,
+"end": 198.52,
+"pensa": false
+},
+{
+"text": "vida",
+"quem": "n",
+"start": 198.52,
+"end": 198.911,
+"pensa": false
+},
+{
+"text": "dele.",
+"quem": "n",
+"start": 198.911,
+"end": 199.4,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 199.4,
+"end": 199.677,
+"pensa": false
+},
+{
+"text": "sente",
+"quem": "n",
+"start": 199.677,
+"end": 200.139,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 200.139,
+"end": 200.231,
+"pensa": false
+},
+{
+"text": "casca",
+"quem": "n",
+"start": 200.231,
+"end": 200.693,
+"pensa": false
+},
+{
+"text": "estalando,",
+"quem": "n",
+"start": 200.693,
+"end": 201.617,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 201.617,
+"end": 201.709,
+"pensa": false
+},
+{
+"text": "vapor",
+"quem": "n",
+"start": 201.709,
+"end": 202.171,
+"pensa": false
+},
+{
+"text": "saindo,",
+"quem": "n",
+"start": 202.171,
+"end": 202.817,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 202.817,
+"end": 202.91,
+"pensa": false
+},
+{
+"text": "frango,",
+"quem": "n",
+"start": 202.91,
+"end": 203.556,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 203.556,
+"end": 203.649,
+"pensa": false
+},
+{
+"text": "catupiry.",
+"quem": "n",
+"start": 203.649,
+"end": 204.47,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 204.48,
+"end": 204.548,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 204.548,
+"end": 204.617,
+"pensa": false
+},
+{
+"text": "Tiago",
+"quem": "n",
+"start": 204.617,
+"end": 204.958,
+"pensa": false
+},
+{
+"text": "fica",
+"quem": "n",
+"start": 204.958,
+"end": 205.231,
+"pensa": false
+},
+{
+"text": "olhando",
+"quem": "n",
+"start": 205.231,
+"end": 205.71,
+"pensa": false
+},
+{
+"text": "assustado,",
+"quem": "n",
+"start": 205.71,
+"end": 206.393,
+"pensa": false
+},
+{
+"text": "porque",
+"quem": "n",
+"start": 206.393,
+"end": 206.803,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 206.803,
+"end": 206.871,
+"pensa": false
+},
+{
+"text": "amigo",
+"quem": "n",
+"start": 206.871,
+"end": 207.213,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "n",
+"start": 207.213,
+"end": 207.476,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 207.486,
+"end": 207.622,
+"pensa": false
+},
+{
+"text": "olho",
+"quem": "n",
+"start": 207.622,
+"end": 207.896,
+"pensa": false
+},
+{
+"text": "fechado,",
+"quem": "n",
+"start": 207.896,
+"end": 208.442,
+"pensa": false
+},
+{
+"text": "sorrindo",
+"quem": "n",
+"start": 208.442,
+"end": 208.989,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 208.989,
+"end": 209.252,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 209.262,
+"end": 209.467,
+"pensa": false
+},
+{
+"text": "coxinha",
+"quem": "n",
+"start": 209.467,
+"end": 209.945,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 209.945,
+"end": 210.082,
+"pensa": false
+},
+{
+"text": "4",
+"quem": "n",
+"start": 210.082,
+"end": 210.15,
+"pensa": false
+},
+{
+"text": "reais.",
+"quem": "n",
+"start": 210.15,
+"end": 210.56,
+"pensa": false
+},
+{
+"text": "Tu",
+"quem": "tiago",
+"start": 210.978,
+"end": 211.209,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "tiago",
+"start": 211.209,
+"end": 211.44,
+"pensa": false
+},
+{
+"text": "bem,",
+"quem": "tiago",
+"start": 211.44,
+"end": 211.901,
+"pensa": false
+},
+{
+"text": "mano?",
+"quem": "tiago",
+"start": 211.901,
+"end": 212.478,
+"pensa": false
+},
+{
+"text": "Tiago,",
+"quem": "gui",
+"start": 212.478,
+"end": 213.041,
+"pensa": false
+},
+{
+"text": "essa",
+"quem": "gui",
+"start": 213.041,
+"end": 213.416,
+"pensa": false
+},
+{
+"text": "coxinha",
+"quem": "gui",
+"start": 213.416,
+"end": 214.072,
+"pensa": false
+},
+{
+"text": "mudou",
+"quem": "gui",
+"start": 214.072,
+"end": 214.541,
+"pensa": false
+},
+{
+"text": "minha",
+"quem": "gui",
+"start": 214.541,
+"end": 215.009,
+"pensa": false
+},
+{
+"text": "vida.",
+"quem": "gui",
+"start": 215.009,
+"end": 215.478,
+"pensa": false
+},
+{
+"text": "À",
+"quem": "n",
+"start": 215.478,
+"end": 215.554,
+"pensa": false
+},
+{
+"text": "noite,",
+"quem": "n",
+"start": 215.554,
+"end": 216.013,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 216.013,
+"end": 216.242,
+"pensa": false
+},
+{
+"text": "senta",
+"quem": "n",
+"start": 216.242,
+"end": 216.624,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 216.624,
+"end": 216.996,
+"pensa": false
+},
+{
+"text": "lição",
+"quem": "n",
+"start": 217.006,
+"end": 217.388,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 217.388,
+"end": 217.541,
+"pensa": false
+},
+{
+"text": "matemática",
+"quem": "n",
+"start": 217.541,
+"end": 218.304,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 218.304,
+"end": 218.381,
+"pensa": false
+},
+{
+"text": "faz",
+"quem": "n",
+"start": 218.381,
+"end": 218.61,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 218.61,
+"end": 218.763,
+"pensa": false
+},
+{
+"text": "30",
+"quem": "n",
+"start": 218.763,
+"end": 218.916,
+"pensa": false
+},
+{
+"text": "questões",
+"quem": "n",
+"start": 218.916,
+"end": 219.527,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 219.527,
+"end": 219.756,
+"pensa": false
+},
+{
+"text": "levantar",
+"quem": "n",
+"start": 219.756,
+"end": 220.367,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 220.367,
+"end": 220.443,
+"pensa": false
+},
+{
+"text": "cabeça,",
+"quem": "n",
+"start": 220.443,
+"end": 220.978,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 220.978,
+"end": 221.237,
+"pensa": false
+},
+{
+"text": "pegar",
+"quem": "n",
+"start": 221.237,
+"end": 221.668,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 221.668,
+"end": 221.754,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 221.754,
+"end": 222.357,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 222.357,
+"end": 222.616,
+"pensa": false
+},
+{
+"text": "vez",
+"quem": "n",
+"start": 222.616,
+"end": 222.875,
+"pensa": false
+},
+{
+"text": "sequer.",
+"quem": "n",
+"start": 222.875,
+"end": 223.478,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 223.478,
+"end": 223.552,
+"pensa": false
+},
+{
+"text": "quando",
+"quem": "n",
+"start": 223.552,
+"end": 223.997,
+"pensa": false
+},
+{
+"text": "olha",
+"quem": "n",
+"start": 223.997,
+"end": 224.209,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 224.219,
+"end": 224.294,
+"pensa": false
+},
+{
+"text": "relógio,",
+"quem": "n",
+"start": 224.294,
+"end": 224.887,
+"pensa": false
+},
+{
+"text": "passaram",
+"quem": "n",
+"start": 224.887,
+"end": 225.48,
+"pensa": false
+},
+{
+"text": "duas",
+"quem": "n",
+"start": 225.48,
+"end": 225.776,
+"pensa": false
+},
+{
+"text": "horas",
+"quem": "n",
+"start": 225.776,
+"end": 226.147,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 226.147,
+"end": 226.369,
+"pensa": false
+},
+{
+"text": "pareceram",
+"quem": "n",
+"start": 226.369,
+"end": 227.037,
+"pensa": false
+},
+{
+"text": "10",
+"quem": "n",
+"start": 227.037,
+"end": 227.185,
+"pensa": false
+},
+{
+"text": "minutos.",
+"quem": "n",
+"start": 227.185,
+"end": 227.778,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 227.778,
+"end": 227.851,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 227.851,
+"end": 227.996,
+"pensa": false
+},
+{
+"text": "aí",
+"quem": "n",
+"start": 227.996,
+"end": 228.142,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 228.142,
+"end": 228.36,
+"pensa": false
+},
+{
+"text": "percebe",
+"quem": "n",
+"start": 228.36,
+"end": 228.869,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 228.869,
+"end": 229.087,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 229.087,
+"end": 229.16,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 229.16,
+"end": 229.669,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "n",
+"start": 229.669,
+"end": 229.814,
+"pensa": false
+},
+{
+"text": "cheio",
+"quem": "n",
+"start": 229.814,
+"end": 230.178,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 230.178,
+"end": 230.323,
+"pensa": false
+},
+{
+"text": "mensagem,",
+"quem": "n",
+"start": 230.323,
+"end": 230.978,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 230.978,
+"end": 231.047,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 231.047,
+"end": 231.256,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 231.256,
+"end": 231.464,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 231.464,
+"end": 231.672,
+"pensa": false
+},
+{
+"text": "sentiu",
+"quem": "n",
+"start": 231.672,
+"end": 232.089,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 232.089,
+"end": 232.297,
+"pensa": false
+},
+{
+"text": "vibrar",
+"quem": "n",
+"start": 232.297,
+"end": 232.714,
+"pensa": false
+},
+{
+"text": "nenhuma",
+"quem": "n",
+"start": 232.714,
+"end": 233.2,
+"pensa": false
+},
+{
+"text": "vez.",
+"quem": "n",
+"start": 233.2,
+"end": 233.478,
+"pensa": false
+},
+{
+"text": "Lembra",
+"quem": "n",
+"start": 233.478,
+"end": 234.078,
+"pensa": false
+},
+{
+"text": "disso.",
+"quem": "n",
+"start": 234.078,
+"end": 234.678,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 234.678,
+"end": 234.894,
+"pensa": false
+},
+{
+"text": "dois.",
+"quem": "n",
+"start": 234.894,
+"end": 235.038,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 235.038,
+"end": 235.255,
+"pensa": false
+},
+{
+"text": "pega",
+"quem": "n",
+"start": 235.255,
+"end": 235.543,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 235.543,
+"end": 235.615,
+"pensa": false
+},
+{
+"text": "violão",
+"quem": "n",
+"start": 235.615,
+"end": 236.048,
+"pensa": false
+},
+{
+"text": "velho",
+"quem": "n",
+"start": 236.048,
+"end": 236.408,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 236.408,
+"end": 236.552,
+"pensa": false
+},
+{
+"text": "pai,",
+"quem": "n",
+"start": 236.552,
+"end": 236.841,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 236.841,
+"end": 237.057,
+"pensa": false
+},
+{
+"text": "tava",
+"quem": "n",
+"start": 237.057,
+"end": 237.345,
+"pensa": false
+},
+{
+"text": "encostado",
+"quem": "n",
+"start": 237.345,
+"end": 237.994,
+"pensa": false
+},
+{
+"text": "atrás",
+"quem": "n",
+"start": 237.994,
+"end": 238.355,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 238.355,
+"end": 238.499,
+"pensa": false
+},
+{
+"text": "porta",
+"quem": "n",
+"start": 238.499,
+"end": 238.859,
+"pensa": false
+},
+{
+"text": "há",
+"quem": "n",
+"start": 238.859,
+"end": 238.899,
+"pensa": false
+},
+{
+"text": "três",
+"quem": "n",
+"start": 238.859,
+"end": 239.148,
+"pensa": false
+},
+{
+"text": "anos",
+"quem": "n",
+"start": 239.148,
+"end": 239.436,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 239.436,
+"end": 239.652,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 239.652,
+"end": 239.869,
+"pensa": false
+},
+{
+"text": "corda",
+"quem": "n",
+"start": 239.869,
+"end": 240.229,
+"pensa": false
+},
+{
+"text": "faltando,",
+"quem": "n",
+"start": 240.229,
+"end": 240.878,
+"pensa": false
+},
+{
+"text": "troca",
+"quem": "n",
+"start": 240.878,
+"end": 241.237,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 241.237,
+"end": 241.309,
+"pensa": false
+},
+{
+"text": "corda,",
+"quem": "n",
+"start": 241.309,
+"end": 241.741,
+"pensa": false
+},
+{
+"text": "coloca",
+"quem": "n",
+"start": 241.741,
+"end": 242.172,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 242.172,
+"end": 242.316,
+"pensa": false
+},
+{
+"text": "vídeo",
+"quem": "n",
+"start": 242.316,
+"end": 242.675,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 242.675,
+"end": 242.819,
+"pensa": false
+},
+{
+"text": "aula,",
+"quem": "n",
+"start": 242.819,
+"end": 243.178,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 243.178,
+"end": 243.255,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 243.255,
+"end": 243.486,
+"pensa": false
+},
+{
+"text": "tarde",
+"quem": "n",
+"start": 243.486,
+"end": 243.87,
+"pensa": false
+},
+{
+"text": "depois",
+"quem": "n",
+"start": 243.87,
+"end": 244.332,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "n",
+"start": 244.332,
+"end": 244.486,
+"pensa": false
+},
+{
+"text": "tocando",
+"quem": "n",
+"start": 244.486,
+"end": 245.024,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 245.024,
+"end": 245.101,
+"pensa": false
+},
+{
+"text": "música",
+"quem": "n",
+"start": 245.101,
+"end": 245.563,
+"pensa": false
+},
+{
+"text": "inteira,",
+"quem": "n",
+"start": 245.563,
+"end": 246.178,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 246.178,
+"end": 246.397,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 246.397,
+"end": 246.543,
+"pensa": false
+},
+{
+"text": "trocas",
+"quem": "n",
+"start": 246.543,
+"end": 246.98,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 246.98,
+"end": 247.126,
+"pensa": false
+},
+{
+"text": "acorde",
+"quem": "n",
+"start": 247.126,
+"end": 247.626,
+"pensa": false
+},
+{
+"text": "certinhas,",
+"quem": "n",
+"start": 247.636,
+"end": 248.366,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 248.366,
+"end": 248.584,
+"pensa": false
+},
+{
+"text": "errar",
+"quem": "n",
+"start": 248.584,
+"end": 248.949,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 248.949,
+"end": 249.168,
+"pensa": false
+},
+{
+"text": "batida.",
+"quem": "n",
+"start": 249.168,
+"end": 249.678,
+"pensa": false
+},
+{
+"text": "Para",
+"quem": "tiago",
+"start": 249.678,
+"end": 249.992,
+"pensa": false
+},
+{
+"text": "tudo!",
+"quem": "tiago",
+"start": 249.992,
+"end": 250.385,
+"pensa": false
+},
+{
+"text": "Tu",
+"quem": "tiago",
+"start": 250.385,
+"end": 250.542,
+"pensa": false
+},
+{
+"text": "aprendeu",
+"quem": "tiago",
+"start": 250.542,
+"end": 251.171,
+"pensa": false
+},
+{
+"text": "isso",
+"quem": "tiago",
+"start": 251.171,
+"end": 251.485,
+"pensa": false
+},
+{
+"text": "hoje?",
+"quem": "tiago",
+"start": 251.485,
+"end": 251.878,
+"pensa": false
+},
+{
+"text": "Hoje",
+"quem": "gui",
+"start": 251.878,
+"end": 252.511,
+"pensa": false
+},
+{
+"text": "à",
+"quem": "gui",
+"start": 252.67,
+"end": 252.828,
+"pensa": false
+},
+{
+"text": "tarde.",
+"quem": "gui",
+"start": 252.828,
+"end": 253.778,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 253.778,
+"end": 253.856,
+"pensa": false
+},
+{
+"text": "Tiago",
+"quem": "n",
+"start": 253.856,
+"end": 254.244,
+"pensa": false
+},
+{
+"text": "posta,",
+"quem": "n",
+"start": 254.244,
+"end": 254.709,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 254.709,
+"end": 254.787,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 254.787,
+"end": 254.864,
+"pensa": false
+},
+{
+"text": "vídeo",
+"quem": "n",
+"start": 254.864,
+"end": 255.252,
+"pensa": false
+},
+{
+"text": "passa",
+"quem": "n",
+"start": 255.252,
+"end": 255.64,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 255.64,
+"end": 255.795,
+"pensa": false
+},
+{
+"text": "200",
+"quem": "n",
+"start": 255.795,
+"end": 256.028,
+"pensa": false
+},
+{
+"text": "mil",
+"quem": "n",
+"start": 256.028,
+"end": 256.261,
+"pensa": false
+},
+{
+"text": "visualizações",
+"quem": "n",
+"start": 256.261,
+"end": 257.269,
+"pensa": false
+},
+{
+"text": "antes",
+"quem": "n",
+"start": 257.269,
+"end": 257.657,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 257.657,
+"end": 257.812,
+"pensa": false
+},
+{
+"text": "janta,",
+"quem": "n",
+"start": 257.812,
+"end": 258.278,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 258.278,
+"end": 258.46,
+"pensa": false
+},
+{
+"text": "comentário",
+"quem": "n",
+"start": 258.582,
+"end": 259.19,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 259.19,
+"end": 259.312,
+"pensa": false
+},
+{
+"text": "gente",
+"quem": "n",
+"start": 259.312,
+"end": 259.615,
+"pensa": false
+},
+{
+"text": "pedindo",
+"quem": "n",
+"start": 259.615,
+"end": 260.042,
+"pensa": false
+},
+{
+"text": "aula,",
+"quem": "n",
+"start": 260.042,
+"end": 260.346,
+"pensa": false
+},
+{
+"text": "pedindo",
+"quem": "n",
+"start": 260.346,
+"end": 260.771,
+"pensa": false
+},
+{
+"text": "música,",
+"quem": "n",
+"start": 260.771,
+"end": 261.197,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 261.197,
+"end": 261.258,
+"pensa": false
+},
+{
+"text": "perguntando",
+"quem": "n",
+"start": 261.258,
+"end": 261.927,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 261.927,
+"end": 262.048,
+"pensa": false
+},
+{
+"text": "era",
+"quem": "n",
+"start": 262.048,
+"end": 262.231,
+"pensa": false
+},
+{
+"text": "montagem.",
+"quem": "n",
+"start": 262.231,
+"end": 262.778,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 262.778,
+"end": 262.846,
+"pensa": false
+},
+{
+"text": "foi",
+"quem": "n",
+"start": 262.846,
+"end": 263.056,
+"pensa": false
+},
+{
+"text": "aí",
+"quem": "n",
+"start": 263.056,
+"end": 263.195,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 263.195,
+"end": 263.403,
+"pensa": false
+},
+{
+"text": "apareceu",
+"quem": "n",
+"start": 263.403,
+"end": 263.959,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 263.959,
+"end": 264.029,
+"pensa": false
+},
+{
+"text": "primeiro",
+"quem": "n",
+"start": 264.029,
+"end": 264.585,
+"pensa": false
+},
+{
+"text": "sinal",
+"quem": "n",
+"start": 264.585,
+"end": 264.932,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 264.932,
+"end": 265.071,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 265.071,
+"end": 265.28,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 265.28,
+"end": 265.627,
+"pensa": false
+},
+{
+"text": "alguma",
+"quem": "n",
+"start": 265.627,
+"end": 266.043,
+"pensa": false
+},
+{
+"text": "coisa",
+"quem": "n",
+"start": 266.043,
+"end": 266.392,
+"pensa": false
+},
+{
+"text": "errada.",
+"quem": "n",
+"start": 266.392,
+"end": 266.877,
+"pensa": false
+},
+{
+"text": "Guilherme,",
+"quem": "mae",
+"start": 266.877,
+"end": 268.231,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "mae",
+"start": 268.231,
+"end": 268.365,
+"pensa": false
+},
+{
+"text": "janta!",
+"quem": "mae",
+"start": 268.365,
+"end": 269.178,
+"pensa": false
+},
+{
+"text": "Ela",
+"quem": "n",
+"start": 269.178,
+"end": 269.543,
+"pensa": false
+},
+{
+"text": "chamou",
+"quem": "n",
+"start": 269.543,
+"end": 270.274,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 270.274,
+"end": 270.641,
+"pensa": false
+},
+{
+"text": "vez,",
+"quem": "n",
+"start": 270.641,
+"end": 271.127,
+"pensa": false
+},
+{
+"text": "duas,",
+"quem": "n",
+"start": 271.127,
+"end": 271.737,
+"pensa": false
+},
+{
+"text": "cinco",
+"quem": "n",
+"start": 271.737,
+"end": 272.346,
+"pensa": false
+},
+{
+"text": "vezes,",
+"quem": "n",
+"start": 272.346,
+"end": 273.078,
+"pensa": false
+},
+{
+"text": "foi",
+"quem": "n",
+"start": 273.078,
+"end": 273.353,
+"pensa": false
+},
+{
+"text": "até",
+"quem": "n",
+"start": 273.353,
+"end": 273.627,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 273.627,
+"end": 273.72,
+"pensa": false
+},
+{
+"text": "porta",
+"quem": "n",
+"start": 273.72,
+"end": 274.178,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 274.178,
+"end": 274.361,
+"pensa": false
+},
+{
+"text": "quarto,",
+"quem": "n",
+"start": 274.361,
+"end": 275.003,
+"pensa": false
+},
+{
+"text": "bateu,",
+"quem": "n",
+"start": 275.003,
+"end": 275.553,
+"pensa": false
+},
+{
+"text": "chamou",
+"quem": "n",
+"start": 275.553,
+"end": 276.103,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 276.103,
+"end": 276.286,
+"pensa": false
+},
+{
+"text": "novo,",
+"quem": "n",
+"start": 276.286,
+"end": 276.745,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 276.745,
+"end": 276.836,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 276.836,
+"end": 277.111,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 277.111,
+"end": 277.386,
+"pensa": false
+},
+{
+"text": "ouviu",
+"quem": "n",
+"start": 277.386,
+"end": 277.845,
+"pensa": false
+},
+{
+"text": "nenhuma.",
+"quem": "n",
+"start": 277.845,
+"end": 278.577,
+"pensa": false
+},
+{
+"text": "Porque",
+"quem": "n",
+"start": 278.577,
+"end": 279.026,
+"pensa": false
+},
+{
+"text": "quando",
+"quem": "n",
+"start": 279.026,
+"end": 279.473,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 279.473,
+"end": 279.513,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 279.473,
+"end": 280.144,
+"pensa": false
+},
+{
+"text": "focava,",
+"quem": "n",
+"start": 280.144,
+"end": 280.667,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 280.667,
+"end": 280.74,
+"pensa": false
+},
+{
+"text": "resto",
+"quem": "n",
+"start": 280.74,
+"end": 281.115,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 281.115,
+"end": 281.264,
+"pensa": false
+},
+{
+"text": "mundo",
+"quem": "n",
+"start": 281.264,
+"end": 281.637,
+"pensa": false
+},
+{
+"text": "simplesmente",
+"quem": "n",
+"start": 281.637,
+"end": 282.532,
+"pensa": false
+},
+{
+"text": "desligava.",
+"quem": "n",
+"start": 282.532,
+"end": 283.278,
+"pensa": false
+},
+{
+"text": "A",
+"quem": "n",
+"start": 283.278,
+"end": 283.373,
+"pensa": false
+},
+{
+"text": "voz",
+"quem": "n",
+"start": 283.373,
+"end": 283.658,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 283.658,
+"end": 283.848,
+"pensa": false
+},
+{
+"text": "mãe,",
+"quem": "n",
+"start": 283.848,
+"end": 284.228,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 284.228,
+"end": 284.322,
+"pensa": false
+},
+{
+"text": "barulho",
+"quem": "n",
+"start": 284.322,
+"end": 284.988,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 284.988,
+"end": 285.178,
+"pensa": false
+},
+{
+"text": "rua,",
+"quem": "n",
+"start": 285.178,
+"end": 285.558,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 285.558,
+"end": 285.653,
+"pensa": false
+},
+{
+"text": "cheiro",
+"quem": "n",
+"start": 285.653,
+"end": 286.223,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 286.223,
+"end": 286.413,
+"pensa": false
+},
+{
+"text": "comida,",
+"quem": "n",
+"start": 286.413,
+"end": 287.077,
+"pensa": false
+},
+{
+"text": "tudo",
+"quem": "n",
+"start": 287.077,
+"end": 287.396,
+"pensa": false
+},
+{
+"text": "sumia",
+"quem": "n",
+"start": 287.396,
+"end": 287.793,
+"pensa": false
+},
+{
+"text": "como",
+"quem": "n",
+"start": 287.793,
+"end": 288.111,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 288.111,
+"end": 288.269,
+"pensa": false
+},
+{
+"text": "alguém",
+"quem": "n",
+"start": 288.269,
+"end": 288.747,
+"pensa": false
+},
+{
+"text": "tivesse",
+"quem": "n",
+"start": 288.747,
+"end": 289.303,
+"pensa": false
+},
+{
+"text": "tirado",
+"quem": "n",
+"start": 289.303,
+"end": 289.781,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 289.781,
+"end": 289.86,
+"pensa": false
+},
+{
+"text": "som.",
+"quem": "n",
+"start": 289.86,
+"end": 290.178,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 290.178,
+"end": 290.255,
+"pensa": false
+},
+{
+"text": "enquanto",
+"quem": "n",
+"start": 290.255,
+"end": 290.868,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 290.868,
+"end": 291.098,
+"pensa": false
+},
+{
+"text": "tocava,",
+"quem": "n",
+"start": 291.098,
+"end": 291.635,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 291.635,
+"end": 291.711,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 291.711,
+"end": 292.018,
+"pensa": false
+},
+{
+"text": "entrou",
+"quem": "n",
+"start": 292.018,
+"end": 292.478,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 292.478,
+"end": 292.631,
+"pensa": false
+},
+{
+"text": "quarto",
+"quem": "n",
+"start": 292.631,
+"end": 293.091,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 293.091,
+"end": 293.321,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 293.321,
+"end": 293.398,
+"pensa": false
+},
+{
+"text": "mesma",
+"quem": "n",
+"start": 293.398,
+"end": 293.781,
+"pensa": false
+},
+{
+"text": "folha",
+"quem": "n",
+"start": 293.781,
+"end": 294.165,
+"pensa": false
+},
+{
+"text": "dobrada.",
+"quem": "n",
+"start": 294.165,
+"end": 294.778,
+"pensa": false
+},
+{
+"text": "Ficou",
+"quem": "n",
+"start": 294.778,
+"end": 295.132,
+"pensa": false
+},
+{
+"text": "parado",
+"quem": "n",
+"start": 295.132,
+"end": 295.557,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 295.557,
+"end": 295.699,
+"pensa": false
+},
+{
+"text": "lado",
+"quem": "n",
+"start": 295.699,
+"end": 295.982,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 295.982,
+"end": 296.124,
+"pensa": false
+},
+{
+"text": "cama",
+"quem": "n",
+"start": 296.124,
+"end": 296.407,
+"pensa": false
+},
+{
+"text": "por",
+"quem": "n",
+"start": 296.407,
+"end": 296.62,
+"pensa": false
+},
+{
+"text": "10",
+"quem": "n",
+"start": 296.62,
+"end": 296.761,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 296.761,
+"end": 297.257,
+"pensa": false
+},
+{
+"text": "inteiros,",
+"quem": "n",
+"start": 297.257,
+"end": 297.894,
+"pensa": false
+},
+{
+"text": "esperando",
+"quem": "n",
+"start": 297.894,
+"end": 298.532,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 298.532,
+"end": 298.745,
+"pensa": false
+},
+{
+"text": "levantar",
+"quem": "n",
+"start": 298.745,
+"end": 299.311,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 299.311,
+"end": 299.382,
+"pensa": false
+},
+{
+"text": "cabeça,",
+"quem": "n",
+"start": 299.382,
+"end": 299.878,
+"pensa": false
+},
+{
+"text": "balançando",
+"quem": "n",
+"start": 299.878,
+"end": 300.601,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 300.601,
+"end": 300.675,
+"pensa": false
+},
+{
+"text": "corpo",
+"quem": "n",
+"start": 300.675,
+"end": 301.037,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 301.037,
+"end": 301.181,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 301.181,
+"end": 301.326,
+"pensa": false
+},
+{
+"text": "lado",
+"quem": "n",
+"start": 301.326,
+"end": 301.615,
+"pensa": false
+},
+{
+"text": "pro",
+"quem": "n",
+"start": 301.615,
+"end": 301.968,
+"pensa": false
+},
+{
+"text": "outro,",
+"quem": "n",
+"start": 301.978,
+"end": 302.412,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 302.412,
+"end": 302.485,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 302.485,
+"end": 302.557,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 302.557,
+"end": 303.209,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 303.209,
+"end": 303.425,
+"pensa": false
+},
+{
+"text": "levantou.",
+"quem": "n",
+"start": 303.425,
+"end": 304.077,
+"pensa": false
+},
+{
+"text": "Não",
+"quem": "n",
+"start": 304.077,
+"end": 304.329,
+"pensa": false
+},
+{
+"text": "porque",
+"quem": "n",
+"start": 304.329,
+"end": 304.83,
+"pensa": false
+},
+{
+"text": "ignorou,",
+"quem": "n",
+"start": 304.83,
+"end": 305.498,
+"pensa": false
+},
+{
+"text": "mas",
+"quem": "n",
+"start": 305.498,
+"end": 305.749,
+"pensa": false
+},
+{
+"text": "porque",
+"quem": "n",
+"start": 305.749,
+"end": 306.25,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 306.25,
+"end": 306.574,
+"pensa": false
+},
+{
+"text": "ele,",
+"quem": "n",
+"start": 306.584,
+"end": 306.918,
+"pensa": false
+},
+{
+"text": "naquele",
+"quem": "n",
+"start": 306.918,
+"end": 307.503,
+"pensa": false
+},
+{
+"text": "momento,",
+"quem": "n",
+"start": 307.503,
+"end": 308.172,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 308.172,
+"end": 308.255,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 308.255,
+"end": 308.589,
+"pensa": false
+},
+{
+"text": "simplesmente",
+"quem": "n",
+"start": 308.589,
+"end": 309.591,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 309.591,
+"end": 309.843,
+"pensa": false
+},
+{
+"text": "estava",
+"quem": "n",
+"start": 309.843,
+"end": 310.344,
+"pensa": false
+},
+{
+"text": "ali.",
+"quem": "n",
+"start": 310.344,
+"end": 310.678,
+"pensa": false
+},
+{
+"text": "Quando",
+"quem": "n",
+"start": 310.678,
+"end": 311.128,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 311.128,
+"end": 311.353,
+"pensa": false
+},
+{
+"text": "finalmente",
+"quem": "n",
+"start": 311.353,
+"end": 312.103,
+"pensa": false
+},
+{
+"text": "parou",
+"quem": "n",
+"start": 312.103,
+"end": 312.478,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 312.478,
+"end": 312.628,
+"pensa": false
+},
+{
+"text": "tocar,",
+"quem": "n",
+"start": 312.628,
+"end": 313.077,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 313.077,
+"end": 313.153,
+"pensa": false
+},
+{
+"text": "janta",
+"quem": "n",
+"start": 313.153,
+"end": 313.528,
+"pensa": false
+},
+{
+"text": "tava",
+"quem": "n",
+"start": 313.528,
+"end": 313.968,
+"pensa": false
+},
+{
+"text": "fria",
+"quem": "n",
+"start": 313.978,
+"end": 314.278,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 314.278,
+"end": 314.428,
+"pensa": false
+},
+{
+"text": "prato,",
+"quem": "n",
+"start": 314.428,
+"end": 314.878,
+"pensa": false
+},
+{
+"text": "coberta",
+"quem": "n",
+"start": 314.878,
+"end": 315.435,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 315.435,
+"end": 315.673,
+"pensa": false
+},
+{
+"text": "outro",
+"quem": "n",
+"start": 315.673,
+"end": 316.071,
+"pensa": false
+},
+{
+"text": "prato,",
+"quem": "n",
+"start": 316.071,
+"end": 316.548,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 316.548,
+"end": 316.628,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 316.628,
+"end": 316.708,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 316.708,
+"end": 317.026,
+"pensa": false
+},
+{
+"text": "já",
+"quem": "n",
+"start": 317.026,
+"end": 317.185,
+"pensa": false
+},
+{
+"text": "tava",
+"quem": "n",
+"start": 317.185,
+"end": 317.652,
+"pensa": false
+},
+{
+"text": "dormindo.",
+"quem": "n",
+"start": 317.662,
+"end": 318.378,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 318.378,
+"end": 318.604,
+"pensa": false
+},
+{
+"text": "três,",
+"quem": "n",
+"start": 318.604,
+"end": 318.755,
+"pensa": false
+},
+{
+"text": "sábado",
+"quem": "n",
+"start": 318.755,
+"end": 319.207,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 319.207,
+"end": 319.357,
+"pensa": false
+},
+{
+"text": "manhã.",
+"quem": "n",
+"start": 319.357,
+"end": 319.809,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 319.809,
+"end": 319.884,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 319.884,
+"end": 320.186,
+"pensa": false
+},
+{
+"text": "aparece",
+"quem": "n",
+"start": 320.186,
+"end": 320.713,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 320.713,
+"end": 320.864,
+"pensa": false
+},
+{
+"text": "porta",
+"quem": "n",
+"start": 320.864,
+"end": 321.24,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 321.24,
+"end": 321.391,
+"pensa": false
+},
+{
+"text": "quarto",
+"quem": "n",
+"start": 321.391,
+"end": 321.843,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 321.843,
+"end": 322.069,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 322.069,
+"end": 322.295,
+"pensa": false
+},
+{
+"text": "bola",
+"quem": "n",
+"start": 322.295,
+"end": 322.596,
+"pensa": false
+},
+{
+"text": "murcha",
+"quem": "n",
+"start": 322.596,
+"end": 323.048,
+"pensa": false
+},
+{
+"text": "debaixo",
+"quem": "n",
+"start": 323.048,
+"end": 323.575,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 323.575,
+"end": 323.726,
+"pensa": false
+},
+{
+"text": "braço",
+"quem": "n",
+"start": 323.726,
+"end": 324.178,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 324.178,
+"end": 324.264,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 324.264,
+"end": 324.349,
+"pensa": false
+},
+{
+"text": "chinelo",
+"quem": "n",
+"start": 324.349,
+"end": 324.949,
+"pensa": false
+},
+{
+"text": "trocado",
+"quem": "n",
+"start": 324.949,
+"end": 325.548,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 325.548,
+"end": 325.721,
+"pensa": false
+},
+{
+"text": "pé.",
+"quem": "n",
+"start": 325.721,
+"end": 325.978,
+"pensa": false
+},
+{
+"text": "Joga",
+"quem": "davi",
+"start": 326.109,
+"end": 326.635,
+"pensa": false
+},
+{
+"text": "comigo?",
+"quem": "davi",
+"start": 326.635,
+"end": 327.555,
+"pensa": false
+},
+{
+"text": "Bora,",
+"quem": "gui",
+"start": 327.687,
+"end": 328.344,
+"pensa": false
+},
+{
+"text": "mas",
+"quem": "gui",
+"start": 328.344,
+"end": 328.738,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "gui",
+"start": 328.738,
+"end": 329.0,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "gui",
+"start": 329.0,
+"end": 329.264,
+"pensa": false
+},
+{
+"text": "pouquinho.",
+"quem": "gui",
+"start": 329.264,
+"end": 330.577,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 330.577,
+"end": 330.672,
+"pensa": false
+},
+{
+"text": "aí",
+"quem": "n",
+"start": 330.672,
+"end": 330.86,
+"pensa": false
+},
+{
+"text": "aconteceu",
+"quem": "n",
+"start": 330.86,
+"end": 331.704,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 331.704,
+"end": 331.986,
+"pensa": false
+},
+{
+"text": "coisa",
+"quem": "n",
+"start": 331.986,
+"end": 332.455,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 332.455,
+"end": 332.736,
+"pensa": false
+},
+{
+"text": "ninguém",
+"quem": "n",
+"start": 332.736,
+"end": 333.393,
+"pensa": false
+},
+{
+"text": "esperava,",
+"quem": "n",
+"start": 333.393,
+"end": 334.238,
+"pensa": false
+},
+{
+"text": "porque",
+"quem": "n",
+"start": 334.238,
+"end": 334.8,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 334.8,
+"end": 335.083,
+"pensa": false
+},
+{
+"text": "focou",
+"quem": "n",
+"start": 335.083,
+"end": 335.552,
+"pensa": false
+},
+{
+"text": "100%",
+"quem": "n",
+"start": 335.552,
+"end": 335.927,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 335.927,
+"end": 336.115,
+"pensa": false
+},
+{
+"text": "irmão.",
+"quem": "n",
+"start": 336.115,
+"end": 336.678,
+"pensa": false
+},
+{
+"text": "Não",
+"quem": "n",
+"start": 336.678,
+"end": 336.935,
+"pensa": false
+},
+{
+"text": "pegou",
+"quem": "n",
+"start": 336.935,
+"end": 337.364,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 337.364,
+"end": 337.449,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 337.449,
+"end": 338.048,
+"pensa": false
+},
+{
+"text": "nenhuma",
+"quem": "n",
+"start": 338.048,
+"end": 338.649,
+"pensa": false
+},
+{
+"text": "vez,",
+"quem": "n",
+"start": 338.649,
+"end": 338.992,
+"pensa": false
+},
+{
+"text": "riu",
+"quem": "n",
+"start": 338.992,
+"end": 339.249,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 339.249,
+"end": 339.421,
+"pensa": false
+},
+{
+"text": "verdade",
+"quem": "n",
+"start": 339.421,
+"end": 340.021,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 340.021,
+"end": 340.192,
+"pensa": false
+},
+{
+"text": "cada",
+"quem": "n",
+"start": 340.192,
+"end": 340.534,
+"pensa": false
+},
+{
+"text": "chute",
+"quem": "n",
+"start": 340.534,
+"end": 340.964,
+"pensa": false
+},
+{
+"text": "torto,",
+"quem": "n",
+"start": 340.964,
+"end": 341.478,
+"pensa": false
+},
+{
+"text": "comemorou",
+"quem": "n",
+"start": 341.478,
+"end": 342.156,
+"pensa": false
+},
+{
+"text": "cada",
+"quem": "n",
+"start": 342.156,
+"end": 342.457,
+"pensa": false
+},
+{
+"text": "gol",
+"quem": "n",
+"start": 342.457,
+"end": 342.683,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 342.683,
+"end": 342.834,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 342.834,
+"end": 343.135,
+"pensa": false
+},
+{
+"text": "como",
+"quem": "n",
+"start": 343.135,
+"end": 343.436,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 343.436,
+"end": 343.587,
+"pensa": false
+},
+{
+"text": "fosse",
+"quem": "n",
+"start": 343.587,
+"end": 343.964,
+"pensa": false
+},
+{
+"text": "final",
+"quem": "n",
+"start": 343.964,
+"end": 344.34,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 344.34,
+"end": 344.49,
+"pensa": false
+},
+{
+"text": "Copa,",
+"quem": "n",
+"start": 344.49,
+"end": 344.868,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 344.868,
+"end": 344.942,
+"pensa": false
+},
+{
+"text": "viu",
+"quem": "n",
+"start": 344.942,
+"end": 345.168,
+"pensa": false
+},
+{
+"text": "coisas",
+"quem": "n",
+"start": 345.168,
+"end": 345.62,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 345.62,
+"end": 345.846,
+"pensa": false
+},
+{
+"text": "nunca",
+"quem": "n",
+"start": 345.846,
+"end": 346.223,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 346.223,
+"end": 346.6,
+"pensa": false
+},
+{
+"text": "reparado:",
+"quem": "n",
+"start": 346.6,
+"end": 347.278,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 347.278,
+"end": 347.457,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 347.457,
+"end": 347.518,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 347.518,
+"end": 347.758,
+"pensa": false
+},
+{
+"text": "corre",
+"quem": "n",
+"start": 347.758,
+"end": 348.058,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 348.058,
+"end": 348.238,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 348.238,
+"end": 348.298,
+"pensa": false
+},
+{
+"text": "língua",
+"quem": "n",
+"start": 348.298,
+"end": 348.658,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 348.658,
+"end": 348.888,
+"pensa": false
+},
+{
+"text": "fora,",
+"quem": "n",
+"start": 348.898,
+"end": 349.197,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 349.197,
+"end": 349.378,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 349.378,
+"end": 349.558,
+"pensa": false
+},
+{
+"text": "fecha",
+"quem": "n",
+"start": 349.558,
+"end": 349.858,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 349.858,
+"end": 349.978,
+"pensa": false
+},
+{
+"text": "olho",
+"quem": "n",
+"start": 349.978,
+"end": 350.218,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 350.218,
+"end": 350.447,
+"pensa": false
+},
+{
+"text": "chutar,",
+"quem": "n",
+"start": 350.457,
+"end": 350.878,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 350.878,
+"end": 351.071,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 351.071,
+"end": 351.264,
+"pensa": false
+},
+{
+"text": "narra",
+"quem": "n",
+"start": 351.264,
+"end": 351.585,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 351.585,
+"end": 351.649,
+"pensa": false
+},
+{
+"text": "próprio",
+"quem": "n",
+"start": 351.649,
+"end": 352.099,
+"pensa": false
+},
+{
+"text": "gol",
+"quem": "n",
+"start": 352.099,
+"end": 352.292,
+"pensa": false
+},
+{
+"text": "baixinho,",
+"quem": "n",
+"start": 352.292,
+"end": 352.87,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 352.87,
+"end": 352.935,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 352.935,
+"end": 353.128,
+"pensa": false
+},
+{
+"text": "depois",
+"quem": "n",
+"start": 353.128,
+"end": 353.514,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 353.514,
+"end": 353.642,
+"pensa": false
+},
+{
+"text": "cada",
+"quem": "n",
+"start": 353.642,
+"end": 353.899,
+"pensa": false
+},
+{
+"text": "gol",
+"quem": "n",
+"start": 353.899,
+"end": 354.157,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 354.157,
+"end": 354.349,
+"pensa": false
+},
+{
+"text": "olha",
+"quem": "n",
+"start": 354.349,
+"end": 354.606,
+"pensa": false
+},
+{
+"text": "pro",
+"quem": "n",
+"start": 354.606,
+"end": 354.918,
+"pensa": false
+},
+{
+"text": "irmão",
+"quem": "n",
+"start": 354.928,
+"end": 355.249,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 355.249,
+"end": 355.497,
+"pensa": false
+},
+{
+"text": "ver",
+"quem": "n",
+"start": 355.507,
+"end": 355.699,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 355.699,
+"end": 355.827,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 355.827,
+"end": 356.021,
+"pensa": false
+},
+{
+"text": "viu.",
+"quem": "n",
+"start": 356.021,
+"end": 356.278,
+"pensa": false
+},
+{
+"text": "Viu,",
+"quem": "davi",
+"start": 356.433,
+"end": 357.052,
+"pensa": false
+},
+{
+"text": "Gui?",
+"quem": "davi",
+"start": 357.052,
+"end": 357.672,
+"pensa": false
+},
+{
+"text": "Viu",
+"quem": "davi",
+"start": 357.672,
+"end": 358.135,
+"pensa": false
+},
+{
+"text": "esse?",
+"quem": "davi",
+"start": 358.135,
+"end": 358.909,
+"pensa": false
+},
+{
+"text": "Vi,",
+"quem": "gui",
+"start": 359.065,
+"end": 359.529,
+"pensa": false
+},
+{
+"text": "foi",
+"quem": "gui",
+"start": 359.529,
+"end": 359.994,
+"pensa": false
+},
+{
+"text": "golaço!",
+"quem": "gui",
+"start": 359.994,
+"end": 361.077,
+"pensa": false
+},
+{
+"text": "Foram",
+"quem": "n",
+"start": 361.077,
+"end": 361.57,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 361.57,
+"end": 361.767,
+"pensa": false
+},
+{
+"text": "20",
+"quem": "n",
+"start": 361.767,
+"end": 361.964,
+"pensa": false
+},
+{
+"text": "minutos.",
+"quem": "n",
+"start": 361.964,
+"end": 362.75,
+"pensa": false
+},
+{
+"text": "Guarda",
+"quem": "n",
+"start": 362.75,
+"end": 363.341,
+"pensa": false
+},
+{
+"text": "esses",
+"quem": "n",
+"start": 363.341,
+"end": 363.834,
+"pensa": false
+},
+{
+"text": "20",
+"quem": "n",
+"start": 363.834,
+"end": 364.029,
+"pensa": false
+},
+{
+"text": "minutos,",
+"quem": "n",
+"start": 364.029,
+"end": 364.817,
+"pensa": false
+},
+{
+"text": "eles",
+"quem": "n",
+"start": 364.817,
+"end": 365.211,
+"pensa": false
+},
+{
+"text": "valem",
+"quem": "n",
+"start": 365.211,
+"end": 365.702,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 365.702,
+"end": 366.096,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 366.096,
+"end": 366.293,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 366.293,
+"end": 366.589,
+"pensa": false
+},
+{
+"text": "parece.",
+"quem": "n",
+"start": 366.589,
+"end": 367.278,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 367.278,
+"end": 367.594,
+"pensa": false
+},
+{
+"text": "quatro.",
+"quem": "n",
+"start": 367.594,
+"end": 367.805,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 367.805,
+"end": 368.12,
+"pensa": false
+},
+{
+"text": "nunca",
+"quem": "n",
+"start": 368.12,
+"end": 368.648,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 368.648,
+"end": 369.175,
+"pensa": false
+},
+{
+"text": "jogado",
+"quem": "n",
+"start": 369.175,
+"end": 369.808,
+"pensa": false
+},
+{
+"text": "xadrez",
+"quem": "n",
+"start": 369.808,
+"end": 370.44,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 370.44,
+"end": 370.651,
+"pensa": false
+},
+{
+"text": "vida,",
+"quem": "n",
+"start": 370.651,
+"end": 371.178,
+"pensa": false
+},
+{
+"text": "mas",
+"quem": "n",
+"start": 371.178,
+"end": 371.375,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 371.375,
+"end": 371.442,
+"pensa": false
+},
+{
+"text": "professor",
+"quem": "n",
+"start": 371.442,
+"end": 372.037,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 372.037,
+"end": 372.17,
+"pensa": false
+},
+{
+"text": "educação",
+"quem": "n",
+"start": 372.17,
+"end": 372.697,
+"pensa": false
+},
+{
+"text": "física",
+"quem": "n",
+"start": 372.697,
+"end": 373.095,
+"pensa": false
+},
+{
+"text": "deixa",
+"quem": "n",
+"start": 373.095,
+"end": 373.425,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 373.425,
+"end": 373.558,
+"pensa": false
+},
+{
+"text": "tabuleiro",
+"quem": "n",
+"start": 373.558,
+"end": 374.153,
+"pensa": false
+},
+{
+"text": "aberto",
+"quem": "n",
+"start": 374.153,
+"end": 374.548,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 374.548,
+"end": 374.681,
+"pensa": false
+},
+{
+"text": "pátio,",
+"quem": "n",
+"start": 374.681,
+"end": 375.077,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 375.077,
+"end": 375.163,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 375.163,
+"end": 375.249,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 375.249,
+"end": 376.021,
+"pensa": false
+},
+{
+"text": "lê",
+"quem": "n",
+"start": 376.021,
+"end": 376.192,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 376.192,
+"end": 376.364,
+"pensa": false
+},
+{
+"text": "regras",
+"quem": "n",
+"start": 376.364,
+"end": 376.878,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 376.878,
+"end": 377.048,
+"pensa": false
+},
+{
+"text": "5",
+"quem": "n",
+"start": 377.048,
+"end": 377.135,
+"pensa": false
+},
+{
+"text": "minutos,",
+"quem": "n",
+"start": 377.135,
+"end": 377.821,
+"pensa": false
+},
+{
+"text": "ganha",
+"quem": "n",
+"start": 377.821,
+"end": 378.249,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 378.249,
+"end": 378.421,
+"pensa": false
+},
+{
+"text": "Tiago",
+"quem": "n",
+"start": 378.421,
+"end": 378.925,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 378.935,
+"end": 379.106,
+"pensa": false
+},
+{
+"text": "6",
+"quem": "n",
+"start": 379.106,
+"end": 379.192,
+"pensa": false
+},
+{
+"text": "jogadas,",
+"quem": "n",
+"start": 379.192,
+"end": 379.878,
+"pensa": false
+},
+{
+"text": "ganha",
+"quem": "n",
+"start": 379.878,
+"end": 380.288,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 380.288,
+"end": 380.452,
+"pensa": false
+},
+{
+"text": "professor,",
+"quem": "n",
+"start": 380.452,
+"end": 381.192,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 381.192,
+"end": 381.274,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 381.274,
+"end": 381.439,
+"pensa": false
+},
+{
+"text": "fim",
+"quem": "n",
+"start": 381.439,
+"end": 381.685,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 381.685,
+"end": 381.849,
+"pensa": false
+},
+{
+"text": "tarde",
+"quem": "n",
+"start": 381.849,
+"end": 382.26,
+"pensa": false
+},
+{
+"text": "aparece",
+"quem": "n",
+"start": 382.26,
+"end": 382.835,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 382.835,
+"end": 382.917,
+"pensa": false
+},
+{
+"text": "Caio,",
+"quem": "n",
+"start": 382.917,
+"end": 383.327,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 383.327,
+"end": 383.492,
+"pensa": false
+},
+{
+"text": "terceiro",
+"quem": "n",
+"start": 383.492,
+"end": 384.149,
+"pensa": false
+},
+{
+"text": "ano,",
+"quem": "n",
+"start": 384.149,
+"end": 384.478,
+"pensa": false
+},
+{
+"text": "campeão",
+"quem": "n",
+"start": 384.478,
+"end": 385.144,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 385.144,
+"end": 385.335,
+"pensa": false
+},
+{
+"text": "clube",
+"quem": "n",
+"start": 385.335,
+"end": 385.811,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 385.811,
+"end": 386.002,
+"pensa": false
+},
+{
+"text": "escola,",
+"quem": "n",
+"start": 386.002,
+"end": 386.668,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 386.668,
+"end": 386.954,
+"pensa": false
+},
+{
+"text": "treinava",
+"quem": "n",
+"start": 386.954,
+"end": 387.716,
+"pensa": false
+},
+{
+"text": "há",
+"quem": "n",
+"start": 387.716,
+"end": 387.907,
+"pensa": false
+},
+{
+"text": "4",
+"quem": "n",
+"start": 387.907,
+"end": 388.002,
+"pensa": false
+},
+{
+"text": "anos.",
+"quem": "n",
+"start": 388.002,
+"end": 388.478,
+"pensa": false
+},
+{
+"text": "Aprendeu",
+"quem": "caio",
+"start": 388.582,
+"end": 389.412,
+"pensa": false
+},
+{
+"text": "hoje?",
+"quem": "caio",
+"start": 389.412,
+"end": 389.931,
+"pensa": false
+},
+{
+"text": "Vai",
+"quem": "caio",
+"start": 389.931,
+"end": 390.242,
+"pensa": false
+},
+{
+"text": "ser",
+"quem": "caio",
+"start": 390.242,
+"end": 390.553,
+"pensa": false
+},
+{
+"text": "rápido.",
+"quem": "caio",
+"start": 390.553,
+"end": 391.279,
+"pensa": false
+},
+{
+"text": "Foi",
+"quem": "n",
+"start": 391.384,
+"end": 391.695,
+"pensa": false
+},
+{
+"text": "rápido",
+"quem": "n",
+"start": 391.695,
+"end": 392.317,
+"pensa": false
+},
+{
+"text": "mesmo,",
+"quem": "n",
+"start": 392.317,
+"end": 392.94,
+"pensa": false
+},
+{
+"text": "23",
+"quem": "n",
+"start": 392.94,
+"end": 393.148,
+"pensa": false
+},
+{
+"text": "jogadas,",
+"quem": "n",
+"start": 393.148,
+"end": 393.978,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 393.978,
+"end": 394.048,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 394.048,
+"end": 394.12,
+"pensa": false
+},
+{
+"text": "Caio",
+"quem": "n",
+"start": 394.12,
+"end": 394.407,
+"pensa": false
+},
+{
+"text": "ficou",
+"quem": "n",
+"start": 394.407,
+"end": 394.764,
+"pensa": false
+},
+{
+"text": "olhando",
+"quem": "n",
+"start": 394.764,
+"end": 395.264,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 395.264,
+"end": 395.335,
+"pensa": false
+},
+{
+"text": "tabuleiro",
+"quem": "n",
+"start": 395.335,
+"end": 395.978,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 395.978,
+"end": 396.192,
+"pensa": false
+},
+{
+"text": "acreditar,",
+"quem": "n",
+"start": 396.192,
+"end": 396.907,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 396.907,
+"end": 397.12,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 397.12,
+"end": 397.192,
+"pensa": false
+},
+{
+"text": "mão",
+"quem": "n",
+"start": 397.192,
+"end": 397.407,
+"pensa": false
+},
+{
+"text": "parada",
+"quem": "n",
+"start": 397.407,
+"end": 397.835,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 397.835,
+"end": 397.978,
+"pensa": false
+},
+{
+"text": "ar",
+"quem": "n",
+"start": 397.978,
+"end": 398.12,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 398.12,
+"end": 398.264,
+"pensa": false
+},
+{
+"text": "cima",
+"quem": "n",
+"start": 398.264,
+"end": 398.548,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 398.548,
+"end": 398.692,
+"pensa": false
+},
+{
+"text": "rei.",
+"quem": "n",
+"start": 398.692,
+"end": 398.978,
+"pensa": false
+},
+{
+"text": "Guilherme,",
+"quem": "pef",
+"start": 399.047,
+"end": 399.739,
+"pensa": false
+},
+{
+"text": "tem",
+"quem": "pef",
+"start": 399.739,
+"end": 399.947,
+"pensa": false
+},
+{
+"text": "campeonato",
+"quem": "pef",
+"start": 399.947,
+"end": 400.639,
+"pensa": false
+},
+{
+"text": "estadual",
+"quem": "pef",
+"start": 400.639,
+"end": 401.192,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "pef",
+"start": 401.192,
+"end": 401.331,
+"pensa": false
+},
+{
+"text": "domingo,",
+"quem": "pef",
+"start": 401.331,
+"end": 401.885,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "pef",
+"start": 401.885,
+"end": 402.023,
+"pensa": false
+},
+{
+"text": "vou",
+"quem": "pef",
+"start": 402.023,
+"end": 402.231,
+"pensa": false
+},
+{
+"text": "te",
+"quem": "pef",
+"start": 402.231,
+"end": 402.369,
+"pensa": false
+},
+{
+"text": "inscrever",
+"quem": "pef",
+"start": 402.369,
+"end": 402.913,
+"pensa": false
+},
+{
+"text": "agora!",
+"quem": "pef",
+"start": 402.923,
+"end": 403.338,
+"pensa": false
+},
+{
+"text": "Melhor",
+"quem": "n",
+"start": 403.643,
+"end": 404.103,
+"pensa": false
+},
+{
+"text": "aluno",
+"quem": "n",
+"start": 404.103,
+"end": 404.487,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 404.487,
+"end": 404.641,
+"pensa": false
+},
+{
+"text": "sala,",
+"quem": "n",
+"start": 404.641,
+"end": 404.948,
+"pensa": false
+},
+{
+"text": "viral",
+"quem": "n",
+"start": 404.948,
+"end": 405.398,
+"pensa": false
+},
+{
+"text": "tocando",
+"quem": "n",
+"start": 405.408,
+"end": 405.945,
+"pensa": false
+},
+{
+"text": "violão,",
+"quem": "n",
+"start": 405.945,
+"end": 406.406,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 406.406,
+"end": 406.482,
+"pensa": false
+},
+{
+"text": "agora",
+"quem": "n",
+"start": 406.482,
+"end": 406.866,
+"pensa": false
+},
+{
+"text": "finalista",
+"quem": "n",
+"start": 406.866,
+"end": 407.557,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 407.557,
+"end": 407.71,
+"pensa": false
+},
+{
+"text": "xadrez,",
+"quem": "n",
+"start": 407.71,
+"end": 408.171,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 408.171,
+"end": 408.324,
+"pensa": false
+},
+{
+"text": "quatro",
+"quem": "n",
+"start": 408.324,
+"end": 408.785,
+"pensa": false
+},
+{
+"text": "dias.",
+"quem": "n",
+"start": 408.785,
+"end": 409.091,
+"pensa": false
+},
+{
+"text": "Parecia",
+"quem": "n",
+"start": 409.091,
+"end": 409.629,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 409.629,
+"end": 409.705,
+"pensa": false
+},
+{
+"text": "poder",
+"quem": "n",
+"start": 409.705,
+"end": 410.089,
+"pensa": false
+},
+{
+"text": "perfeito.",
+"quem": "n",
+"start": 410.089,
+"end": 410.703,
+"pensa": false
+},
+{
+"text": "Mas",
+"quem": "n",
+"start": 411.203,
+"end": 411.457,
+"pensa": false
+},
+{
+"text": "todo",
+"quem": "n",
+"start": 411.457,
+"end": 411.795,
+"pensa": false
+},
+{
+"text": "poder",
+"quem": "n",
+"start": 411.795,
+"end": 412.217,
+"pensa": false
+},
+{
+"text": "cobra",
+"quem": "n",
+"start": 412.217,
+"end": 412.64,
+"pensa": false
+},
+{
+"text": "alguma",
+"quem": "n",
+"start": 412.64,
+"end": 413.147,
+"pensa": false
+},
+{
+"text": "coisa,",
+"quem": "n",
+"start": 413.147,
+"end": 413.57,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 413.57,
+"end": 413.654,
+"pensa": false
+},
+{
+"text": "esse",
+"quem": "n",
+"start": 413.654,
+"end": 413.992,
+"pensa": false
+},
+{
+"text": "estava",
+"quem": "n",
+"start": 413.992,
+"end": 414.5,
+"pensa": false
+},
+{
+"text": "cobrando",
+"quem": "n",
+"start": 414.5,
+"end": 415.176,
+"pensa": false
+},
+{
+"text": "calado.",
+"quem": "n",
+"start": 415.176,
+"end": 415.683,
+"pensa": false
+},
+{
+"text": "Na",
+"quem": "n",
+"start": 416.063,
+"end": 416.204,
+"pensa": false
+},
+{
+"text": "volta",
+"quem": "n",
+"start": 416.204,
+"end": 416.557,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 416.557,
+"end": 416.768,
+"pensa": false
+},
+{
+"text": "casa,",
+"quem": "n",
+"start": 416.768,
+"end": 417.05,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 417.05,
+"end": 417.262,
+"pensa": false
+},
+{
+"text": "vinha",
+"quem": "n",
+"start": 417.262,
+"end": 417.615,
+"pensa": false
+},
+{
+"text": "andando",
+"quem": "n",
+"start": 417.615,
+"end": 418.108,
+"pensa": false
+},
+{
+"text": "estudando",
+"quem": "n",
+"start": 418.108,
+"end": 418.743,
+"pensa": false
+},
+{
+"text": "abertura",
+"quem": "n",
+"start": 418.814,
+"end": 419.378,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 419.378,
+"end": 419.519,
+"pensa": false
+},
+{
+"text": "xadrez",
+"quem": "n",
+"start": 419.519,
+"end": 419.942,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 419.942,
+"end": 420.083,
+"pensa": false
+},
+{
+"text": "celular,",
+"quem": "n",
+"start": 420.083,
+"end": 420.577,
+"pensa": false
+},
+{
+"text": "foco",
+"quem": "n",
+"start": 420.577,
+"end": 420.859,
+"pensa": false
+},
+{
+"text": "total",
+"quem": "n",
+"start": 420.859,
+"end": 421.211,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 421.211,
+"end": 421.352,
+"pensa": false
+},
+{
+"text": "tela,",
+"quem": "n",
+"start": 421.352,
+"end": 421.635,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 421.635,
+"end": 421.705,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 421.705,
+"end": 421.917,
+"pensa": false
+},
+{
+"text": "ouviu",
+"quem": "n",
+"start": 421.917,
+"end": 422.269,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 422.269,
+"end": 422.34,
+"pensa": false
+},
+{
+"text": "buzina,",
+"quem": "n",
+"start": 422.34,
+"end": 422.763,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 422.763,
+"end": 422.977,
+"pensa": false
+},
+{
+"text": "ouviu",
+"quem": "n",
+"start": 422.977,
+"end": 423.334,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 423.334,
+"end": 423.406,
+"pensa": false
+},
+{
+"text": "grito",
+"quem": "n",
+"start": 423.406,
+"end": 423.763,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 423.763,
+"end": 423.906,
+"pensa": false
+},
+{
+"text": "mulher",
+"quem": "n",
+"start": 423.906,
+"end": 424.334,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 424.334,
+"end": 424.477,
+"pensa": false
+},
+{
+"text": "calçada,",
+"quem": "n",
+"start": 424.477,
+"end": 424.977,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 424.977,
+"end": 425.192,
+"pensa": false
+},
+{
+"text": "ouviu",
+"quem": "n",
+"start": 425.192,
+"end": 425.549,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 425.549,
+"end": 425.62,
+"pensa": false
+},
+{
+"text": "bicicleta,",
+"quem": "n",
+"start": 425.62,
+"end": 426.263,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 426.263,
+"end": 426.477,
+"pensa": false
+},
+{
+"text": "passou",
+"quem": "n",
+"start": 426.477,
+"end": 426.906,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 426.906,
+"end": 426.977,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 426.977,
+"end": 427.12,
+"pensa": false
+},
+{
+"text": "palmo",
+"quem": "n",
+"start": 427.12,
+"end": 427.477,
+"pensa": false
+},
+{
+"text": "dele,",
+"quem": "n",
+"start": 427.477,
+"end": 427.763,
+"pensa": false
+},
+{
+"text": "raspou",
+"quem": "n",
+"start": 427.963,
+"end": 428.384,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 428.384,
+"end": 428.525,
+"pensa": false
+},
+{
+"text": "braço",
+"quem": "n",
+"start": 428.525,
+"end": 428.876,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 428.876,
+"end": 428.946,
+"pensa": false
+},
+{
+"text": "derrubou",
+"quem": "n",
+"start": 428.946,
+"end": 429.508,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 429.508,
+"end": 429.578,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 429.578,
+"end": 430.07,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 430.07,
+"end": 430.21,
+"pensa": false
+},
+{
+"text": "chão.",
+"quem": "n",
+"start": 430.21,
+"end": 430.491,
+"pensa": false
+},
+{
+"text": "Tá",
+"quem": "cic",
+"start": 430.491,
+"end": 430.631,
+"pensa": false
+},
+{
+"text": "surdo,",
+"quem": "cic",
+"start": 430.631,
+"end": 430.983,
+"pensa": false
+},
+{
+"text": "moleque?",
+"quem": "cic",
+"start": 430.983,
+"end": 431.474,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 431.474,
+"end": 431.544,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 431.544,
+"end": 431.755,
+"pensa": false
+},
+{
+"text": "entendeu",
+"quem": "n",
+"start": 431.755,
+"end": 432.317,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 432.317,
+"end": 432.387,
+"pensa": false
+},
+{
+"text": "regra",
+"quem": "n",
+"start": 432.387,
+"end": 432.738,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 432.738,
+"end": 432.949,
+"pensa": false
+},
+{
+"text": "ninguém",
+"quem": "n",
+"start": 432.949,
+"end": 433.44,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 433.44,
+"end": 433.791,
+"pensa": false
+},
+{
+"text": "avisado:",
+"quem": "n",
+"start": 433.791,
+"end": 434.283,
+"pensa": false
+},
+{
+"text": "quando",
+"quem": "n",
+"start": 434.803,
+"end": 435.412,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 435.412,
+"end": 435.818,
+"pensa": false
+},
+{
+"text": "foca",
+"quem": "n",
+"start": 435.818,
+"end": 436.223,
+"pensa": false
+},
+{
+"text": "100%",
+"quem": "n",
+"start": 436.223,
+"end": 436.629,
+"pensa": false
+},
+{
+"text": "numa",
+"quem": "n",
+"start": 436.629,
+"end": 437.035,
+"pensa": false
+},
+{
+"text": "coisa,",
+"quem": "n",
+"start": 437.035,
+"end": 437.543,
+"pensa": false
+},
+{
+"text": "todo",
+"quem": "n",
+"start": 437.543,
+"end": 437.948,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 437.948,
+"end": 438.05,
+"pensa": false
+},
+{
+"text": "resto",
+"quem": "n",
+"start": 438.05,
+"end": 438.557,
+"pensa": false
+},
+{
+"text": "deixa",
+"quem": "n",
+"start": 438.557,
+"end": 439.064,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 439.064,
+"end": 439.267,
+"pensa": false
+},
+{
+"text": "existir.",
+"quem": "n",
+"start": 439.267,
+"end": 439.978,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 439.978,
+"end": 440.079,
+"pensa": false
+},
+{
+"text": "perigo,",
+"quem": "n",
+"start": 440.079,
+"end": 440.688,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 440.688,
+"end": 440.891,
+"pensa": false
+},
+{
+"text": "pessoas,",
+"quem": "n",
+"start": 440.891,
+"end": 441.601,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 441.601,
+"end": 441.703,
+"pensa": false
+},
+{
+"text": "até",
+"quem": "n",
+"start": 441.703,
+"end": 442.007,
+"pensa": false
+},
+{
+"text": "quem",
+"quem": "n",
+"start": 442.007,
+"end": 442.413,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 442.413,
+"end": 442.819,
+"pensa": false
+},
+{
+"text": "ama.",
+"quem": "n",
+"start": 442.819,
+"end": 443.123,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 443.523,
+"end": 443.734,
+"pensa": false
+},
+{
+"text": "cinco.",
+"quem": "n",
+"start": 443.734,
+"end": 443.805,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 443.805,
+"end": 444.016,
+"pensa": false
+},
+{
+"text": "passou",
+"quem": "n",
+"start": 444.016,
+"end": 444.438,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 444.438,
+"end": 444.509,
+"pensa": false
+},
+{
+"text": "dia",
+"quem": "n",
+"start": 444.509,
+"end": 444.72,
+"pensa": false
+},
+{
+"text": "inteiro",
+"quem": "n",
+"start": 444.72,
+"end": 445.213,
+"pensa": false
+},
+{
+"text": "treinando",
+"quem": "n",
+"start": 445.213,
+"end": 445.846,
+"pensa": false
+},
+{
+"text": "partidas",
+"quem": "n",
+"start": 445.846,
+"end": 446.409,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 446.409,
+"end": 446.55,
+"pensa": false
+},
+{
+"text": "celular,",
+"quem": "n",
+"start": 446.55,
+"end": 447.043,
+"pensa": false
+},
+{
+"text": "100,",
+"quem": "n",
+"start": 447.483,
+"end": 447.716,
+"pensa": false
+},
+{
+"text": "200",
+"quem": "n",
+"start": 447.716,
+"end": 447.949,
+"pensa": false
+},
+{
+"text": "partidas,",
+"quem": "n",
+"start": 447.949,
+"end": 448.571,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 448.571,
+"end": 448.649,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 448.649,
+"end": 448.804,
+"pensa": false
+},
+{
+"text": "levantou",
+"quem": "n",
+"start": 448.804,
+"end": 449.426,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 449.426,
+"end": 449.659,
+"pensa": false
+},
+{
+"text": "ir",
+"quem": "n",
+"start": 449.659,
+"end": 449.814,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 449.814,
+"end": 449.969,
+"pensa": false
+},
+{
+"text": "banheiro.",
+"quem": "n",
+"start": 449.969,
+"end": 450.591,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 450.591,
+"end": 450.669,
+"pensa": false
+},
+{
+"text": "quando",
+"quem": "n",
+"start": 450.669,
+"end": 451.135,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 451.135,
+"end": 451.213,
+"pensa": false
+},
+{
+"text": "dia",
+"quem": "n",
+"start": 451.213,
+"end": 451.446,
+"pensa": false
+},
+{
+"text": "acabou,",
+"quem": "n",
+"start": 451.446,
+"end": 451.912,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 451.912,
+"end": 452.145,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 452.145,
+"end": 452.378,
+"pensa": false
+},
+{
+"text": "lembrava",
+"quem": "n",
+"start": 452.378,
+"end": 453.0,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 453.0,
+"end": 453.155,
+"pensa": false
+},
+{
+"text": "nada",
+"quem": "n",
+"start": 453.155,
+"end": 453.466,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 453.466,
+"end": 453.621,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 453.621,
+"end": 453.854,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 453.854,
+"end": 454.243,
+"pensa": false
+},
+{
+"text": "acontecido",
+"quem": "n",
+"start": 454.243,
+"end": 455.036,
+"pensa": false
+},
+{
+"text": "fora",
+"quem": "n",
+"start": 455.036,
+"end": 455.353,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 455.353,
+"end": 455.512,
+"pensa": false
+},
+{
+"text": "tabuleiro.",
+"quem": "n",
+"start": 455.512,
+"end": 456.226,
+"pensa": false
+},
+{
+"text": "Naquele",
+"quem": "n",
+"start": 456.226,
+"end": 456.781,
+"pensa": false
+},
+{
+"text": "dia",
+"quem": "n",
+"start": 456.781,
+"end": 457.019,
+"pensa": false
+},
+{
+"text": "era",
+"quem": "n",
+"start": 457.019,
+"end": 457.257,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 457.257,
+"end": 457.336,
+"pensa": false
+},
+{
+"text": "aniversário",
+"quem": "n",
+"start": 457.336,
+"end": 458.209,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 458.209,
+"end": 458.367,
+"pensa": false
+},
+{
+"text": "Tiago,",
+"quem": "n",
+"start": 458.367,
+"end": 458.754,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 458.764,
+"end": 458.843,
+"pensa": false
+},
+{
+"text": "mesmo",
+"quem": "n",
+"start": 458.843,
+"end": 459.24,
+"pensa": false
+},
+{
+"text": "Tiago",
+"quem": "n",
+"start": 459.24,
+"end": 459.626,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 459.636,
+"end": 459.874,
+"pensa": false
+},
+{
+"text": "filmou",
+"quem": "n",
+"start": 459.874,
+"end": 460.35,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 460.35,
+"end": 460.429,
+"pensa": false
+},
+{
+"text": "violão,",
+"quem": "n",
+"start": 460.429,
+"end": 460.905,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 460.905,
+"end": 461.143,
+"pensa": false
+},
+{
+"text": "comemorou",
+"quem": "n",
+"start": 461.143,
+"end": 461.907,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 461.907,
+"end": 461.947,
+"pensa": false
+},
+{
+"text": "10,",
+"quem": "n",
+"start": 461.907,
+"end": 462.077,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 462.077,
+"end": 462.331,
+"pensa": false
+},
+{
+"text": "inscreveu",
+"quem": "n",
+"start": 462.331,
+"end": 463.095,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 463.095,
+"end": 463.35,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 463.35,
+"end": 463.52,
+"pensa": false
+},
+{
+"text": "grupo",
+"quem": "n",
+"start": 463.52,
+"end": 463.944,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 463.944,
+"end": 464.114,
+"pensa": false
+},
+{
+"text": "xadrez,",
+"quem": "n",
+"start": 464.114,
+"end": 464.623,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 464.623,
+"end": 464.708,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 464.708,
+"end": 464.793,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 464.793,
+"end": 465.557,
+"pensa": false
+},
+{
+"text": "esqueceu.",
+"quem": "n",
+"start": 465.557,
+"end": 466.236,
+"pensa": false
+},
+{
+"text": "Nem",
+"quem": "n",
+"start": 466.236,
+"end": 466.491,
+"pensa": false
+},
+{
+"text": "mensagem",
+"quem": "n",
+"start": 466.491,
+"end": 467.16,
+"pensa": false
+},
+{
+"text": "mandou.",
+"quem": "n",
+"start": 467.17,
+"end": 467.679,
+"pensa": false
+},
+{
+"text": "Suave,",
+"quem": "tiago",
+"start": 467.679,
+"end": 468.103,
+"pensa": false
+},
+{
+"text": "mano.",
+"quem": "tiago",
+"start": 468.103,
+"end": 468.443,
+"pensa": false
+},
+{
+"text": "Tu",
+"quem": "tiago",
+"start": 468.443,
+"end": 468.584,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "tiago",
+"start": 468.584,
+"end": 468.725,
+"pensa": false
+},
+{
+"text": "ocupado",
+"quem": "tiago",
+"start": 468.725,
+"end": 469.217,
+"pensa": false
+},
+{
+"text": "demais",
+"quem": "tiago",
+"start": 469.217,
+"end": 469.64,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "tiago",
+"start": 469.64,
+"end": 469.851,
+"pensa": false
+},
+{
+"text": "gente",
+"quem": "tiago",
+"start": 469.851,
+"end": 470.203,
+"pensa": false
+},
+{
+"text": "agora.",
+"quem": "tiago",
+"start": 470.203,
+"end": 470.555,
+"pensa": false
+},
+{
+"text": "Boa",
+"quem": "tiago",
+"start": 470.555,
+"end": 470.766,
+"pensa": false
+},
+{
+"text": "sorte",
+"quem": "tiago",
+"start": 470.766,
+"end": 471.118,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "tiago",
+"start": 471.118,
+"end": 471.259,
+"pensa": false
+},
+{
+"text": "campeonato.",
+"quem": "tiago",
+"start": 471.259,
+"end": 471.963,
+"pensa": false
+},
+{
+"text": "Você",
+"quem": "mae",
+"start": 472.843,
+"end": 473.26,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "mae",
+"start": 473.26,
+"end": 473.468,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "mae",
+"start": 473.468,
+"end": 473.676,
+"pensa": false
+},
+{
+"text": "casa,",
+"quem": "mae",
+"start": 473.676,
+"end": 474.093,
+"pensa": false
+},
+{
+"text": "filho,",
+"quem": "mae",
+"start": 474.093,
+"end": 474.613,
+"pensa": false
+},
+{
+"text": "mas",
+"quem": "mae",
+"start": 474.613,
+"end": 474.926,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "mae",
+"start": 474.926,
+"end": 475.238,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "mae",
+"start": 475.238,
+"end": 475.446,
+"pensa": false
+},
+{
+"text": "aqui.",
+"quem": "mae",
+"start": 475.446,
+"end": 475.863,
+"pensa": false
+},
+{
+"text": "Mãe,",
+"quem": "gui",
+"start": 475.863,
+"end": 476.175,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "gui",
+"start": 476.175,
+"end": 476.279,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "gui",
+"start": 476.279,
+"end": 476.487,
+"pensa": false
+},
+{
+"text": "até",
+"quem": "gui",
+"start": 476.487,
+"end": 476.8,
+"pensa": false
+},
+{
+"text": "domingo.",
+"quem": "gui",
+"start": 476.8,
+"end": 477.529,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 477.529,
+"end": 477.633,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 477.633,
+"end": 477.737,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 477.737,
+"end": 478.153,
+"pensa": false
+},
+{
+"text": "parou",
+"quem": "n",
+"start": 478.153,
+"end": 478.674,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 478.674,
+"end": 478.882,
+"pensa": false
+},
+{
+"text": "pedir.",
+"quem": "n",
+"start": 478.882,
+"end": 479.403,
+"pensa": false
+},
+{
+"text": "Não",
+"quem": "n",
+"start": 479.603,
+"end": 479.849,
+"pensa": false
+},
+{
+"text": "bateu",
+"quem": "n",
+"start": 479.849,
+"end": 480.26,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 480.26,
+"end": 480.496,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 480.506,
+"end": 480.67,
+"pensa": false
+},
+{
+"text": "porta,",
+"quem": "n",
+"start": 480.67,
+"end": 481.08,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 481.08,
+"end": 481.327,
+"pensa": false
+},
+{
+"text": "chamou",
+"quem": "n",
+"start": 481.327,
+"end": 481.819,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 481.819,
+"end": 482.065,
+"pensa": false
+},
+{
+"text": "jogar,",
+"quem": "n",
+"start": 482.065,
+"end": 482.476,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 482.476,
+"end": 482.558,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 482.558,
+"end": 482.64,
+"pensa": false
+},
+{
+"text": "folha",
+"quem": "n",
+"start": 482.64,
+"end": 483.05,
+"pensa": false
+},
+{
+"text": "dobrada",
+"quem": "n",
+"start": 483.05,
+"end": 483.625,
+"pensa": false
+},
+{
+"text": "foi",
+"quem": "n",
+"start": 483.625,
+"end": 483.871,
+"pensa": false
+},
+{
+"text": "parar",
+"quem": "n",
+"start": 483.871,
+"end": 484.281,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 484.281,
+"end": 484.446,
+"pensa": false
+},
+{
+"text": "fundo",
+"quem": "n",
+"start": 484.446,
+"end": 484.856,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 484.856,
+"end": 485.02,
+"pensa": false
+},
+{
+"text": "mochila",
+"quem": "n",
+"start": 485.02,
+"end": 485.595,
+"pensa": false
+},
+{
+"text": "dele,",
+"quem": "n",
+"start": 485.595,
+"end": 485.923,
+"pensa": false
+},
+{
+"text": "debaixo",
+"quem": "n",
+"start": 486.163,
+"end": 486.715,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 486.715,
+"end": 486.873,
+"pensa": false
+},
+{
+"text": "estojo,",
+"quem": "n",
+"start": 486.873,
+"end": 487.336,
+"pensa": false
+},
+{
+"text": "junto",
+"quem": "n",
+"start": 487.346,
+"end": 487.74,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 487.74,
+"end": 487.977,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 487.977,
+"end": 488.046,
+"pensa": false
+},
+{
+"text": "bilhete",
+"quem": "n",
+"start": 488.056,
+"end": 488.608,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 488.608,
+"end": 488.766,
+"pensa": false
+},
+{
+"text": "escola",
+"quem": "n",
+"start": 488.766,
+"end": 489.239,
+"pensa": false
+},
+{
+"text": "escrito",
+"quem": "n",
+"start": 489.239,
+"end": 489.791,
+"pensa": false
+},
+{
+"text": "dia",
+"quem": "n",
+"start": 489.791,
+"end": 490.028,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 490.028,
+"end": 490.186,
+"pensa": false
+},
+{
+"text": "família",
+"quem": "n",
+"start": 490.186,
+"end": 490.738,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 490.738,
+"end": 490.974,
+"pensa": false
+},
+{
+"text": "ninguém",
+"quem": "n",
+"start": 490.974,
+"end": 491.526,
+"pensa": false
+},
+{
+"text": "leu.",
+"quem": "n",
+"start": 491.526,
+"end": 491.763,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 492.323,
+"end": 493.163,
+"pensa": false
+},
+{
+"text": "seis,",
+"quem": "n",
+"start": 493.163,
+"end": 493.443,
+"pensa": false
+},
+{
+"text": "véspera",
+"quem": "n",
+"start": 493.443,
+"end": 493.99,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 493.99,
+"end": 494.146,
+"pensa": false
+},
+{
+"text": "final.",
+"quem": "n",
+"start": 494.146,
+"end": 494.537,
+"pensa": false
+},
+{
+"text": "A",
+"quem": "n",
+"start": 494.537,
+"end": 494.615,
+"pensa": false
+},
+{
+"text": "Dona",
+"quem": "n",
+"start": 494.615,
+"end": 494.927,
+"pensa": false
+},
+{
+"text": "Rose",
+"quem": "n",
+"start": 494.927,
+"end": 495.24,
+"pensa": false
+},
+{
+"text": "entra",
+"quem": "n",
+"start": 495.24,
+"end": 495.63,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 495.63,
+"end": 495.787,
+"pensa": false
+},
+{
+"text": "quarto,",
+"quem": "n",
+"start": 495.787,
+"end": 496.255,
+"pensa": false
+},
+{
+"text": "senta",
+"quem": "n",
+"start": 496.255,
+"end": 496.646,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 496.646,
+"end": 496.802,
+"pensa": false
+},
+{
+"text": "beira",
+"quem": "n",
+"start": 496.802,
+"end": 497.193,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 497.193,
+"end": 497.349,
+"pensa": false
+},
+{
+"text": "cama",
+"quem": "n",
+"start": 497.349,
+"end": 497.661,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 497.661,
+"end": 497.739,
+"pensa": false
+},
+{
+"text": "fala",
+"quem": "n",
+"start": 497.739,
+"end": 498.052,
+"pensa": false
+},
+{
+"text": "devagar,",
+"quem": "n",
+"start": 498.052,
+"end": 498.599,
+"pensa": false
+},
+{
+"text": "olhando",
+"quem": "n",
+"start": 498.599,
+"end": 499.146,
+"pensa": false
+},
+{
+"text": "nos",
+"quem": "n",
+"start": 499.146,
+"end": 499.38,
+"pensa": false
+},
+{
+"text": "olhos",
+"quem": "n",
+"start": 499.38,
+"end": 499.771,
+"pensa": false
+},
+{
+"text": "dele.",
+"quem": "n",
+"start": 499.771,
+"end": 500.083,
+"pensa": false
+},
+{
+"text": "Amanhã",
+"quem": "mae",
+"start": 500.323,
+"end": 500.749,
+"pensa": false
+},
+{
+"text": "às",
+"quem": "mae",
+"start": 500.749,
+"end": 500.891,
+"pensa": false
+},
+{
+"text": "10",
+"quem": "mae",
+"start": 500.891,
+"end": 501.034,
+"pensa": false
+},
+{
+"text": "tem",
+"quem": "mae",
+"start": 501.034,
+"end": 501.247,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "mae",
+"start": 501.247,
+"end": 501.318,
+"pensa": false
+},
+{
+"text": "dia",
+"quem": "mae",
+"start": 501.318,
+"end": 501.531,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "mae",
+"start": 501.531,
+"end": 501.673,
+"pensa": false
+},
+{
+"text": "família",
+"quem": "mae",
+"start": 501.673,
+"end": 502.171,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "mae",
+"start": 502.171,
+"end": 502.313,
+"pensa": false
+},
+{
+"text": "escola",
+"quem": "mae",
+"start": 502.313,
+"end": 502.739,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "mae",
+"start": 502.739,
+"end": 502.881,
+"pensa": false
+},
+{
+"text": "Davi.",
+"quem": "mae",
+"start": 502.881,
+"end": 503.165,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "mae",
+"start": 503.165,
+"end": 503.379,
+"pensa": false
+},
+{
+"text": "vai",
+"quem": "mae",
+"start": 503.379,
+"end": 503.592,
+"pensa": false
+},
+{
+"text": "apresentar",
+"quem": "mae",
+"start": 503.592,
+"end": 504.302,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "mae",
+"start": 504.302,
+"end": 504.444,
+"pensa": false
+},
+{
+"text": "trabalho",
+"quem": "mae",
+"start": 504.444,
+"end": 505.013,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "mae",
+"start": 505.013,
+"end": 505.155,
+"pensa": false
+},
+{
+"text": "frente",
+"quem": "mae",
+"start": 505.155,
+"end": 505.581,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "mae",
+"start": 505.581,
+"end": 505.723,
+"pensa": false
+},
+{
+"text": "todo",
+"quem": "mae",
+"start": 505.723,
+"end": 506.008,
+"pensa": false
+},
+{
+"text": "mundo.",
+"quem": "mae",
+"start": 506.008,
+"end": 506.363,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "mae",
+"start": 506.883,
+"end": 507.104,
+"pensa": false
+},
+{
+"text": "quer",
+"quem": "mae",
+"start": 507.104,
+"end": 507.399,
+"pensa": false
+},
+{
+"text": "muito",
+"quem": "mae",
+"start": 507.399,
+"end": 507.768,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "mae",
+"start": 507.768,
+"end": 507.989,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "mae",
+"start": 507.989,
+"end": 508.284,
+"pensa": false
+},
+{
+"text": "vá,",
+"quem": "mae",
+"start": 508.284,
+"end": 508.431,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "mae",
+"start": 508.431,
+"end": 508.579,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "mae",
+"start": 508.579,
+"end": 508.8,
+"pensa": false
+},
+{
+"text": "vou",
+"quem": "mae",
+"start": 508.8,
+"end": 509.021,
+"pensa": false
+},
+{
+"text": "conseguir",
+"quem": "mae",
+"start": 509.021,
+"end": 509.685,
+"pensa": false
+},
+{
+"text": "sair",
+"quem": "mae",
+"start": 509.685,
+"end": 509.979,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "mae",
+"start": 509.979,
+"end": 510.127,
+"pensa": false
+},
+{
+"text": "mercado.",
+"quem": "mae",
+"start": 510.127,
+"end": 510.643,
+"pensa": false
+},
+{
+"text": "Uhum,",
+"quem": "gui",
+"start": 510.643,
+"end": 511.501,
+"pensa": false
+},
+{
+"text": "vou",
+"quem": "gui",
+"start": 511.511,
+"end": 511.785,
+"pensa": false
+},
+{
+"text": "sim.",
+"quem": "gui",
+"start": 511.785,
+"end": 512.058,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 512.058,
+"end": 512.332,
+"pensa": false
+},
+{
+"text": "respondeu,",
+"quem": "n",
+"start": 512.332,
+"end": 513.154,
+"pensa": false
+},
+{
+"text": "ela",
+"quem": "n",
+"start": 513.154,
+"end": 513.428,
+"pensa": false
+},
+{
+"text": "saiu",
+"quem": "n",
+"start": 513.428,
+"end": 513.793,
+"pensa": false
+},
+{
+"text": "aliviada,",
+"quem": "n",
+"start": 513.793,
+"end": 514.523,
+"pensa": false
+},
+{
+"text": "mas",
+"quem": "n",
+"start": 514.843,
+"end": 515.138,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 515.138,
+"end": 515.434,
+"pensa": false
+},
+{
+"text": "nem",
+"quem": "n",
+"start": 515.434,
+"end": 515.729,
+"pensa": false
+},
+{
+"text": "ouviu,",
+"quem": "n",
+"start": 515.729,
+"end": 516.221,
+"pensa": false
+},
+{
+"text": "porque",
+"quem": "n",
+"start": 516.221,
+"end": 516.812,
+"pensa": false
+},
+{
+"text": "estava",
+"quem": "n",
+"start": 516.812,
+"end": 517.403,
+"pensa": false
+},
+{
+"text": "focado",
+"quem": "n",
+"start": 517.403,
+"end": 517.994,
+"pensa": false
+},
+{
+"text": "100%",
+"quem": "n",
+"start": 517.994,
+"end": 518.388,
+"pensa": false
+},
+{
+"text": "num",
+"quem": "n",
+"start": 518.388,
+"end": 518.683,
+"pensa": false
+},
+{
+"text": "cavalo",
+"quem": "n",
+"start": 518.683,
+"end": 519.274,
+"pensa": false
+},
+{
+"text": "preto",
+"quem": "n",
+"start": 519.274,
+"end": 519.766,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 519.766,
+"end": 519.963,
+"pensa": false
+},
+{
+"text": "casa",
+"quem": "n",
+"start": 519.963,
+"end": 520.357,
+"pensa": false
+},
+{
+"text": "f6.",
+"quem": "n",
+"start": 520.357,
+"end": 520.554,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 520.554,
+"end": 520.652,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 520.652,
+"end": 520.849,
+"pensa": false
+},
+{
+"text": "outro",
+"quem": "n",
+"start": 520.849,
+"end": 521.341,
+"pensa": false
+},
+{
+"text": "lado",
+"quem": "n",
+"start": 521.341,
+"end": 521.735,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 521.735,
+"end": 521.932,
+"pensa": false
+},
+{
+"text": "parede,",
+"quem": "n",
+"start": 521.932,
+"end": 522.523,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 522.523,
+"end": 522.603,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 522.603,
+"end": 523.033,
+"pensa": false
+},
+{
+"text": "ensaiava",
+"quem": "n",
+"start": 523.043,
+"end": 523.473,
+"pensa": false
+},
+{
+"text": "baixinho",
+"quem": "n",
+"start": 523.483,
+"end": 524.123,
+"pensa": false
+},
+{
+"text": "sozinho",
+"quem": "n",
+"start": 524.123,
+"end": 524.683,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 524.683,
+"end": 524.843,
+"pensa": false
+},
+{
+"text": "quarto,",
+"quem": "n",
+"start": 524.843,
+"end": 525.323,
+"pensa": false
+},
+{
+"text": "segurando",
+"quem": "n",
+"start": 525.323,
+"end": 526.043,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 526.043,
+"end": 526.123,
+"pensa": false
+},
+{
+"text": "folha,",
+"quem": "n",
+"start": 526.123,
+"end": 526.523,
+"pensa": false
+},
+{
+"text": "repetindo",
+"quem": "n",
+"start": 526.523,
+"end": 527.243,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 527.243,
+"end": 527.323,
+"pensa": false
+},
+{
+"text": "mesma",
+"quem": "n",
+"start": 527.323,
+"end": 527.723,
+"pensa": false
+},
+{
+"text": "frase",
+"quem": "n",
+"start": 527.723,
+"end": 528.123,
+"pensa": false
+},
+{
+"text": "várias",
+"quem": "n",
+"start": 528.123,
+"end": 528.603,
+"pensa": false
+},
+{
+"text": "vezes",
+"quem": "n",
+"start": 528.603,
+"end": 529.003,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 529.003,
+"end": 529.243,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 529.243,
+"end": 529.483,
+"pensa": false
+},
+{
+"text": "esquecer.",
+"quem": "n",
+"start": 529.483,
+"end": 530.123,
+"pensa": false
+},
+{
+"text": "Dia",
+"quem": "n",
+"start": 530.803,
+"end": 531.103,
+"pensa": false
+},
+{
+"text": "sete,",
+"quem": "n",
+"start": 531.103,
+"end": 531.203,
+"pensa": false
+},
+{
+"text": "dez",
+"quem": "n",
+"start": 531.203,
+"end": 531.403,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 531.403,
+"end": 531.603,
+"pensa": false
+},
+{
+"text": "manhã.",
+"quem": "n",
+"start": 531.603,
+"end": 532.103,
+"pensa": false
+},
+{
+"text": "Final",
+"quem": "n",
+"start": 532.103,
+"end": 532.603,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 532.603,
+"end": 532.803,
+"pensa": false
+},
+{
+"text": "campeonato",
+"quem": "n",
+"start": 532.803,
+"end": 533.803,
+"pensa": false
+},
+{
+"text": "estadual.",
+"quem": "n",
+"start": 533.803,
+"end": 534.603,
+"pensa": false
+},
+{
+"text": "Um",
+"quem": "n",
+"start": 534.603,
+"end": 534.803,
+"pensa": false
+},
+{
+"text": "salão",
+"quem": "n",
+"start": 534.803,
+"end": 535.303,
+"pensa": false
+},
+{
+"text": "grande",
+"quem": "n",
+"start": 535.303,
+"end": 535.903,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 535.903,
+"end": 536.203,
+"pensa": false
+},
+{
+"text": "50",
+"quem": "n",
+"start": 536.203,
+"end": 536.403,
+"pensa": false
+},
+{
+"text": "mesas,",
+"quem": "n",
+"start": 536.403,
+"end": 536.83,
+"pensa": false
+},
+{
+"text": "mas",
+"quem": "n",
+"start": 536.83,
+"end": 537.086,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 537.086,
+"end": 537.257,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 537.257,
+"end": 537.513,
+"pensa": false
+},
+{
+"text": "importando:",
+"quem": "n",
+"start": 537.513,
+"end": 538.367,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 538.367,
+"end": 538.452,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 538.452,
+"end": 538.623,
+"pensa": false
+},
+{
+"text": "final.",
+"quem": "n",
+"start": 538.623,
+"end": 539.05,
+"pensa": false
+},
+{
+"text": "Silêncio",
+"quem": "n",
+"start": 539.05,
+"end": 539.733,
+"pensa": false
+},
+{
+"text": "total,",
+"quem": "n",
+"start": 539.733,
+"end": 540.16,
+"pensa": false
+},
+{
+"text": "relógio",
+"quem": "n",
+"start": 540.16,
+"end": 540.758,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 540.758,
+"end": 540.929,
+"pensa": false
+},
+{
+"text": "xadrez",
+"quem": "n",
+"start": 540.929,
+"end": 541.441,
+"pensa": false
+},
+{
+"text": "batendo,",
+"quem": "n",
+"start": 541.441,
+"end": 542.039,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 542.039,
+"end": 542.124,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 542.124,
+"end": 542.295,
+"pensa": false
+},
+{
+"text": "outro",
+"quem": "n",
+"start": 542.295,
+"end": 542.722,
+"pensa": false
+},
+{
+"text": "lado",
+"quem": "n",
+"start": 542.722,
+"end": 543.064,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 543.064,
+"end": 543.234,
+"pensa": false
+},
+{
+"text": "tabuleiro,",
+"quem": "n",
+"start": 543.234,
+"end": 544.003,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 544.243,
+"end": 544.41,
+"pensa": false
+},
+{
+"text": "adversário",
+"quem": "n",
+"start": 544.41,
+"end": 545.243,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 545.243,
+"end": 545.41,
+"pensa": false
+},
+{
+"text": "19",
+"quem": "n",
+"start": 545.41,
+"end": 545.576,
+"pensa": false
+},
+{
+"text": "anos",
+"quem": "n",
+"start": 545.576,
+"end": 545.91,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 545.91,
+"end": 546.16,
+"pensa": false
+},
+{
+"text": "nunca",
+"quem": "n",
+"start": 546.16,
+"end": 546.576,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 546.576,
+"end": 546.993,
+"pensa": false
+},
+{
+"text": "perdido",
+"quem": "n",
+"start": 546.993,
+"end": 547.576,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 547.576,
+"end": 547.826,
+"pensa": false
+},
+{
+"text": "final.",
+"quem": "n",
+"start": 547.826,
+"end": 548.243,
+"pensa": false
+},
+{
+"text": "Podem",
+"quem": "juiz",
+"start": 548.643,
+"end": 548.987,
+"pensa": false
+},
+{
+"text": "começar.",
+"quem": "juiz",
+"start": 548.987,
+"end": 549.468,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 549.468,
+"end": 549.537,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 549.537,
+"end": 549.606,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 549.606,
+"end": 550.225,
+"pensa": false
+},
+{
+"text": "entrou",
+"quem": "n",
+"start": 550.225,
+"end": 550.637,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 550.637,
+"end": 550.775,
+"pensa": false
+},
+{
+"text": "foco",
+"quem": "n",
+"start": 550.775,
+"end": 551.05,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 551.05,
+"end": 551.325,
+"pensa": false
+},
+{
+"text": "profundo",
+"quem": "n",
+"start": 551.325,
+"end": 551.875,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 551.875,
+"end": 552.013,
+"pensa": false
+},
+{
+"text": "vida",
+"quem": "n",
+"start": 552.013,
+"end": 552.288,
+"pensa": false
+},
+{
+"text": "dele.",
+"quem": "n",
+"start": 552.288,
+"end": 552.563,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 552.803,
+"end": 553.034,
+"pensa": false
+},
+{
+"text": "via",
+"quem": "n",
+"start": 553.034,
+"end": 553.266,
+"pensa": false
+},
+{
+"text": "10",
+"quem": "n",
+"start": 553.266,
+"end": 553.42,
+"pensa": false
+},
+{
+"text": "jogadas",
+"quem": "n",
+"start": 553.42,
+"end": 553.96,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 553.96,
+"end": 554.114,
+"pensa": false
+},
+{
+"text": "frente,",
+"quem": "n",
+"start": 554.114,
+"end": 554.577,
+"pensa": false
+},
+{
+"text": "ouvia",
+"quem": "n",
+"start": 554.577,
+"end": 554.953,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 554.963,
+"end": 555.04,
+"pensa": false
+},
+{
+"text": "próprio",
+"quem": "n",
+"start": 555.04,
+"end": 555.58,
+"pensa": false
+},
+{
+"text": "coração,",
+"quem": "n",
+"start": 555.58,
+"end": 556.12,
+"pensa": false
+},
+{
+"text": "as",
+"quem": "n",
+"start": 556.12,
+"end": 556.274,
+"pensa": false
+},
+{
+"text": "peças",
+"quem": "n",
+"start": 556.274,
+"end": 556.66,
+"pensa": false
+},
+{
+"text": "pareciam",
+"quem": "n",
+"start": 556.66,
+"end": 557.277,
+"pensa": false
+},
+{
+"text": "gigantes,",
+"quem": "n",
+"start": 557.277,
+"end": 557.894,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 557.894,
+"end": 557.972,
+"pensa": false
+},
+{
+"text": "resto",
+"quem": "n",
+"start": 557.972,
+"end": 558.357,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 558.357,
+"end": 558.512,
+"pensa": false
+},
+{
+"text": "salão",
+"quem": "n",
+"start": 558.512,
+"end": 558.897,
+"pensa": false
+},
+{
+"text": "sumiu.",
+"quem": "n",
+"start": 558.897,
+"end": 559.283,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 559.603,
+"end": 559.693,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 559.693,
+"end": 559.873,
+"pensa": false
+},
+{
+"text": "bolso,",
+"quem": "n",
+"start": 559.873,
+"end": 560.322,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 560.322,
+"end": 560.412,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 560.412,
+"end": 561.041,
+"pensa": false
+},
+{
+"text": "começou",
+"quem": "n",
+"start": 561.041,
+"end": 561.67,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 561.67,
+"end": 561.76,
+"pensa": false
+},
+{
+"text": "vibrar.",
+"quem": "n",
+"start": 561.76,
+"end": 562.299,
+"pensa": false
+},
+{
+"text": "Uma",
+"quem": "n",
+"start": 562.299,
+"end": 562.569,
+"pensa": false
+},
+{
+"text": "vez,",
+"quem": "n",
+"start": 562.569,
+"end": 562.839,
+"pensa": false
+},
+{
+"text": "duas,",
+"quem": "n",
+"start": 562.839,
+"end": 563.198,
+"pensa": false
+},
+{
+"text": "cinco,",
+"quem": "n",
+"start": 563.198,
+"end": 563.647,
+"pensa": false
+},
+{
+"text": "dez,",
+"quem": "n",
+"start": 563.647,
+"end": 563.917,
+"pensa": false
+},
+{
+"text": "catorze",
+"quem": "n",
+"start": 563.917,
+"end": 564.636,
+"pensa": false
+},
+{
+"text": "vezes.",
+"quem": "n",
+"start": 564.636,
+"end": 565.085,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 565.085,
+"end": 565.175,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 565.175,
+"end": 565.445,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 565.445,
+"end": 565.715,
+"pensa": false
+},
+{
+"text": "sentiu",
+"quem": "n",
+"start": 565.715,
+"end": 566.254,
+"pensa": false
+},
+{
+"text": "nenhuma.",
+"quem": "n",
+"start": 566.254,
+"end": 566.883,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 567.203,
+"end": 567.275,
+"pensa": false
+},
+{
+"text": "adversário",
+"quem": "n",
+"start": 567.275,
+"end": 567.993,
+"pensa": false
+},
+{
+"text": "ataca,",
+"quem": "n",
+"start": 567.993,
+"end": 568.351,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 568.351,
+"end": 568.567,
+"pensa": false
+},
+{
+"text": "defende,",
+"quem": "n",
+"start": 568.567,
+"end": 569.069,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 569.069,
+"end": 569.141,
+"pensa": false
+},
+{
+"text": "adversário",
+"quem": "n",
+"start": 569.141,
+"end": 569.859,
+"pensa": false
+},
+{
+"text": "sacrifica",
+"quem": "n",
+"start": 569.859,
+"end": 570.505,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 570.505,
+"end": 570.545,
+"pensa": false
+},
+{
+"text": "torre,",
+"quem": "n",
+"start": 570.505,
+"end": 570.864,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 570.864,
+"end": 571.079,
+"pensa": false
+},
+{
+"text": "vê",
+"quem": "n",
+"start": 571.079,
+"end": 571.222,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 571.222,
+"end": 571.294,
+"pensa": false
+},
+{
+"text": "armadilha",
+"quem": "n",
+"start": 571.294,
+"end": 571.94,
+"pensa": false
+},
+{
+"text": "três",
+"quem": "n",
+"start": 571.94,
+"end": 572.227,
+"pensa": false
+},
+{
+"text": "jogadas",
+"quem": "n",
+"start": 572.227,
+"end": 572.73,
+"pensa": false
+},
+{
+"text": "antes,",
+"quem": "n",
+"start": 572.73,
+"end": 573.089,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 573.089,
+"end": 573.16,
+"pensa": false
+},
+{
+"text": "público",
+"quem": "n",
+"start": 573.16,
+"end": 573.663,
+"pensa": false
+},
+{
+"text": "prende",
+"quem": "n",
+"start": 573.663,
+"end": 574.093,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 574.093,
+"end": 574.165,
+"pensa": false
+},
+{
+"text": "respiração,",
+"quem": "n",
+"start": 574.165,
+"end": 574.883,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 575.123,
+"end": 575.216,
+"pensa": false
+},
+{
+"text": "41",
+"quem": "n",
+"start": 575.216,
+"end": 575.401,
+"pensa": false
+},
+{
+"text": "jogadas",
+"quem": "n",
+"start": 575.401,
+"end": 576.048,
+"pensa": false
+},
+{
+"text": "depois,",
+"quem": "n",
+"start": 576.048,
+"end": 576.604,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 576.604,
+"end": 576.881,
+"pensa": false
+},
+{
+"text": "coloca",
+"quem": "n",
+"start": 576.881,
+"end": 577.437,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 577.437,
+"end": 577.477,
+"pensa": false
+},
+{
+"text": "rainha",
+"quem": "n",
+"start": 577.437,
+"end": 577.992,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 577.992,
+"end": 578.177,
+"pensa": false
+},
+{
+"text": "casa",
+"quem": "n",
+"start": 578.177,
+"end": 578.547,
+"pensa": false
+},
+{
+"text": "certa.",
+"quem": "n",
+"start": 578.547,
+"end": 579.01,
+"pensa": false
+},
+{
+"text": "Xeque-mate.",
+"quem": "gui",
+"start": 579.01,
+"end": 580.233,
+"pensa": false
+},
+{
+"text": "Campeão",
+"quem": "n",
+"start": 580.243,
+"end": 580.843,
+"pensa": false
+},
+{
+"text": "estadual,",
+"quem": "n",
+"start": 580.843,
+"end": 581.528,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 581.528,
+"end": 581.785,
+"pensa": false
+},
+{
+"text": "sete",
+"quem": "n",
+"start": 581.785,
+"end": 582.127,
+"pensa": false
+},
+{
+"text": "dias",
+"quem": "n",
+"start": 582.127,
+"end": 582.47,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 582.47,
+"end": 582.641,
+"pensa": false
+},
+{
+"text": "xadrez.",
+"quem": "n",
+"start": 582.641,
+"end": 583.155,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 583.155,
+"end": 583.241,
+"pensa": false
+},
+{
+"text": "salão",
+"quem": "n",
+"start": 583.241,
+"end": 583.669,
+"pensa": false
+},
+{
+"text": "aplaude",
+"quem": "n",
+"start": 583.669,
+"end": 584.268,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 584.268,
+"end": 584.44,
+"pensa": false
+},
+{
+"text": "pé,",
+"quem": "n",
+"start": 584.44,
+"end": 584.611,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 584.611,
+"end": 584.697,
+"pensa": false
+},
+{
+"text": "professor",
+"quem": "n",
+"start": 584.697,
+"end": 585.467,
+"pensa": false
+},
+{
+"text": "chorando",
+"quem": "n",
+"start": 585.467,
+"end": 586.153,
+"pensa": false
+},
+{
+"text": "abraçado",
+"quem": "n",
+"start": 586.153,
+"end": 586.838,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 586.838,
+"end": 587.009,
+"pensa": false
+},
+{
+"text": "troféu,",
+"quem": "n",
+"start": 587.009,
+"end": 587.523,
+"pensa": false
+},
+{
+"text": "gente",
+"quem": "n",
+"start": 587.843,
+"end": 588.18,
+"pensa": false
+},
+{
+"text": "filmando,",
+"quem": "n",
+"start": 588.18,
+"end": 588.72,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 588.72,
+"end": 588.787,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 588.787,
+"end": 588.99,
+"pensa": false
+},
+{
+"text": "tira",
+"quem": "n",
+"start": 588.99,
+"end": 589.259,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 589.259,
+"end": 589.327,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 589.327,
+"end": 589.799,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 589.799,
+"end": 589.934,
+"pensa": false
+},
+{
+"text": "bolso",
+"quem": "n",
+"start": 589.934,
+"end": 590.271,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 590.271,
+"end": 590.474,
+"pensa": false
+},
+{
+"text": "tirar",
+"quem": "n",
+"start": 590.474,
+"end": 590.811,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 590.811,
+"end": 591.013,
+"pensa": false
+},
+{
+"text": "foto.",
+"quem": "n",
+"start": 591.013,
+"end": 591.283,
+"pensa": false
+},
+{
+"text": "14",
+"quem": "n",
+"start": 591.923,
+"end": 592.105,
+"pensa": false
+},
+{
+"text": "chamadas",
+"quem": "n",
+"start": 592.105,
+"end": 592.831,
+"pensa": false
+},
+{
+"text": "perdidas",
+"quem": "n",
+"start": 592.831,
+"end": 593.558,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 593.558,
+"end": 593.739,
+"pensa": false
+},
+{
+"text": "mãe,",
+"quem": "n",
+"start": 593.739,
+"end": 594.012,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 594.012,
+"end": 594.102,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 594.102,
+"end": 594.375,
+"pensa": false
+},
+{
+"text": "mensagem",
+"quem": "n",
+"start": 594.375,
+"end": 595.101,
+"pensa": false
+},
+{
+"text": "só:",
+"quem": "n",
+"start": 595.101,
+"end": 595.283,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 595.843,
+"end": 596.009,
+"pensa": false
+},
+{
+"text": "ficou",
+"quem": "n",
+"start": 596.009,
+"end": 596.284,
+"pensa": false
+},
+{
+"text": "esperando",
+"quem": "n",
+"start": 596.284,
+"end": 596.781,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 596.781,
+"end": 597.002,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 597.002,
+"end": 597.112,
+"pensa": false
+},
+{
+"text": "porta",
+"quem": "n",
+"start": 597.112,
+"end": 597.388,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 597.388,
+"end": 597.498,
+"pensa": false
+},
+{
+"text": "escola",
+"quem": "n",
+"start": 597.498,
+"end": 597.829,
+"pensa": false
+},
+{
+"text": "até",
+"quem": "n",
+"start": 597.829,
+"end": 597.995,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 597.995,
+"end": 598.05,
+"pensa": false
+},
+{
+"text": "apresentação",
+"quem": "n",
+"start": 598.05,
+"end": 598.712,
+"pensa": false
+},
+{
+"text": "acabar.",
+"quem": "n",
+"start": 598.712,
+"end": 599.043,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 599.443,
+"end": 599.634,
+"pensa": false
+},
+{
+"text": "larga",
+"quem": "n",
+"start": 599.634,
+"end": 599.942,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 599.952,
+"end": 600.016,
+"pensa": false
+},
+{
+"text": "troféu",
+"quem": "n",
+"start": 600.016,
+"end": 600.398,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 600.398,
+"end": 600.579,
+"pensa": false
+},
+{
+"text": "mesa",
+"quem": "n",
+"start": 600.589,
+"end": 600.844,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 600.844,
+"end": 600.971,
+"pensa": false
+},
+{
+"text": "juiz",
+"quem": "n",
+"start": 600.971,
+"end": 601.226,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 601.226,
+"end": 601.29,
+"pensa": false
+},
+{
+"text": "sai",
+"quem": "n",
+"start": 601.29,
+"end": 601.481,
+"pensa": false
+},
+{
+"text": "correndo,",
+"quem": "n",
+"start": 601.481,
+"end": 601.99,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 601.99,
+"end": 602.181,
+"pensa": false
+},
+{
+"text": "casaco.",
+"quem": "n",
+"start": 602.181,
+"end": 602.563,
+"pensa": false
+},
+{
+"text": "Atravessa",
+"quem": "n",
+"start": 602.803,
+"end": 603.409,
+"pensa": false
+},
+{
+"text": "três",
+"quem": "n",
+"start": 603.409,
+"end": 603.679,
+"pensa": false
+},
+{
+"text": "ruas",
+"quem": "n",
+"start": 603.679,
+"end": 603.948,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 603.948,
+"end": 604.15,
+"pensa": false
+},
+{
+"text": "olhar",
+"quem": "n",
+"start": 604.15,
+"end": 604.487,
+"pensa": false
+},
+{
+"text": "pros",
+"quem": "n",
+"start": 604.487,
+"end": 604.757,
+"pensa": false
+},
+{
+"text": "lados,",
+"quem": "n",
+"start": 604.757,
+"end": 605.094,
+"pensa": false
+},
+{
+"text": "sobe",
+"quem": "n",
+"start": 605.094,
+"end": 605.363,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 605.363,
+"end": 605.43,
+"pensa": false
+},
+{
+"text": "ladeira,",
+"quem": "n",
+"start": 605.43,
+"end": 605.902,
+"pensa": false
+},
+{
+"text": "entra",
+"quem": "n",
+"start": 605.902,
+"end": 606.239,
+"pensa": false
+},
+{
+"text": "pelo",
+"quem": "n",
+"start": 606.239,
+"end": 606.508,
+"pensa": false
+},
+{
+"text": "portão",
+"quem": "n",
+"start": 606.508,
+"end": 606.912,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 606.912,
+"end": 607.047,
+"pensa": false
+},
+{
+"text": "escola",
+"quem": "n",
+"start": 607.047,
+"end": 607.451,
+"pensa": false
+},
+{
+"text": "sem",
+"quem": "n",
+"start": 607.451,
+"end": 607.654,
+"pensa": false
+},
+{
+"text": "fôlego,",
+"quem": "n",
+"start": 607.654,
+"end": 608.058,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 608.058,
+"end": 608.125,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 608.125,
+"end": 608.192,
+"pensa": false
+},
+{
+"text": "sala",
+"quem": "n",
+"start": 608.192,
+"end": 608.462,
+"pensa": false
+},
+{
+"text": "já",
+"quem": "n",
+"start": 608.462,
+"end": 608.597,
+"pensa": false
+},
+{
+"text": "está",
+"quem": "n",
+"start": 608.597,
+"end": 608.866,
+"pensa": false
+},
+{
+"text": "vazia.",
+"quem": "n",
+"start": 608.866,
+"end": 609.203,
+"pensa": false
+},
+{
+"text": "Cadeirinhas",
+"quem": "n",
+"start": 609.443,
+"end": 610.081,
+"pensa": false
+},
+{
+"text": "coloridas",
+"quem": "n",
+"start": 610.081,
+"end": 610.602,
+"pensa": false
+},
+{
+"text": "empilhadas,",
+"quem": "n",
+"start": 610.602,
+"end": 611.182,
+"pensa": false
+},
+{
+"text": "cartolinas",
+"quem": "n",
+"start": 611.182,
+"end": 611.762,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 611.762,
+"end": 611.878,
+"pensa": false
+},
+{
+"text": "parede",
+"quem": "n",
+"start": 611.878,
+"end": 612.226,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 612.226,
+"end": 612.4,
+"pensa": false
+},
+{
+"text": "desenhos",
+"quem": "n",
+"start": 612.4,
+"end": 612.863,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 612.863,
+"end": 612.979,
+"pensa": false
+},
+{
+"text": "famílias,",
+"quem": "n",
+"start": 612.979,
+"end": 613.443,
+"pensa": false
+},
+{
+"text": "mãe,",
+"quem": "n",
+"start": 613.763,
+"end": 614.021,
+"pensa": false
+},
+{
+"text": "pai,",
+"quem": "n",
+"start": 614.021,
+"end": 614.28,
+"pensa": false
+},
+{
+"text": "avó,",
+"quem": "n",
+"start": 614.28,
+"end": 614.538,
+"pensa": false
+},
+{
+"text": "irmão.",
+"quem": "n",
+"start": 614.538,
+"end": 614.969,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 614.969,
+"end": 615.055,
+"pensa": false
+},
+{
+"text": "lá",
+"quem": "n",
+"start": 615.055,
+"end": 615.228,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 615.228,
+"end": 615.4,
+"pensa": false
+},
+{
+"text": "canto,",
+"quem": "n",
+"start": 615.4,
+"end": 615.831,
+"pensa": false
+},
+{
+"text": "sentado",
+"quem": "n",
+"start": 615.831,
+"end": 616.434,
+"pensa": false
+},
+{
+"text": "sozinho",
+"quem": "n",
+"start": 616.434,
+"end": 617.037,
+"pensa": false
+},
+{
+"text": "numa",
+"quem": "n",
+"start": 617.037,
+"end": 617.381,
+"pensa": false
+},
+{
+"text": "cadeira",
+"quem": "n",
+"start": 617.381,
+"end": 617.985,
+"pensa": false
+},
+{
+"text": "pequena,",
+"quem": "n",
+"start": 617.985,
+"end": 618.588,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 618.588,
+"end": 618.846,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 618.846,
+"end": 618.932,
+"pensa": false
+},
+{
+"text": "mochila",
+"quem": "n",
+"start": 618.932,
+"end": 619.535,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 619.535,
+"end": 619.708,
+"pensa": false
+},
+{
+"text": "colo,",
+"quem": "n",
+"start": 619.708,
+"end": 620.052,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 620.052,
+"end": 620.138,
+"pensa": false
+},
+{
+"text": "Davi.",
+"quem": "n",
+"start": 620.138,
+"end": 620.483,
+"pensa": false
+},
+{
+"text": "Davi,",
+"quem": "gui",
+"start": 620.963,
+"end": 621.534,
+"pensa": false
+},
+{
+"text": "desculpa,",
+"quem": "gui",
+"start": 621.534,
+"end": 622.677,
+"pensa": false
+},
+{
+"text": "eu...",
+"quem": "gui",
+"start": 622.677,
+"end": 622.963,
+"pensa": false
+},
+{
+"text": "Todo",
+"quem": "davi",
+"start": 623.363,
+"end": 623.698,
+"pensa": false
+},
+{
+"text": "mundo",
+"quem": "davi",
+"start": 623.698,
+"end": 624.117,
+"pensa": false
+},
+{
+"text": "trouxe",
+"quem": "davi",
+"start": 624.117,
+"end": 624.62,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "davi",
+"start": 624.62,
+"end": 624.704,
+"pensa": false
+},
+{
+"text": "irmão.",
+"quem": "davi",
+"start": 624.704,
+"end": 625.123,
+"pensa": false
+},
+{
+"text": "Ele",
+"quem": "n",
+"start": 625.123,
+"end": 625.33,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 625.33,
+"end": 625.676,
+"pensa": false
+},
+{
+"text": "ganhado",
+"quem": "n",
+"start": 625.676,
+"end": 626.16,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 626.16,
+"end": 626.299,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 626.299,
+"end": 626.437,
+"pensa": false
+},
+{
+"text": "campeão,",
+"quem": "n",
+"start": 626.437,
+"end": 626.921,
+"pensa": false
+},
+{
+"text": "decorado",
+"quem": "n",
+"start": 626.921,
+"end": 627.474,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 627.474,
+"end": 627.543,
+"pensa": false
+},
+{
+"text": "Revolução",
+"quem": "n",
+"start": 627.543,
+"end": 628.166,
+"pensa": false
+},
+{
+"text": "Francesa",
+"quem": "n",
+"start": 628.166,
+"end": 628.719,
+"pensa": false
+},
+{
+"text": "inteira,",
+"quem": "n",
+"start": 628.719,
+"end": 629.203,
+"pensa": false
+},
+{
+"text": "aprendido",
+"quem": "n",
+"start": 629.443,
+"end": 630.049,
+"pensa": false
+},
+{
+"text": "violão",
+"quem": "n",
+"start": 630.049,
+"end": 630.453,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 630.453,
+"end": 630.587,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 630.587,
+"end": 630.789,
+"pensa": false
+},
+{
+"text": "tarde,",
+"quem": "n",
+"start": 630.789,
+"end": 631.126,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 631.126,
+"end": 631.193,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 631.193,
+"end": 631.395,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 631.395,
+"end": 631.732,
+"pensa": false
+},
+{
+"text": "conseguido",
+"quem": "n",
+"start": 631.732,
+"end": 632.405,
+"pensa": false
+},
+{
+"text": "focar",
+"quem": "n",
+"start": 632.405,
+"end": 632.742,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 632.742,
+"end": 632.876,
+"pensa": false
+},
+{
+"text": "única",
+"quem": "n",
+"start": 632.876,
+"end": 633.213,
+"pensa": false
+},
+{
+"text": "coisa",
+"quem": "n",
+"start": 633.213,
+"end": 633.549,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 633.549,
+"end": 633.751,
+"pensa": false
+},
+{
+"text": "realmente",
+"quem": "n",
+"start": 633.751,
+"end": 634.357,
+"pensa": false
+},
+{
+"text": "importava.",
+"quem": "n",
+"start": 634.357,
+"end": 634.963,
+"pensa": false
+},
+{
+"text": "Então",
+"quem": "n",
+"start": 635.443,
+"end": 635.8,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 635.8,
+"end": 636.014,
+"pensa": false
+},
+{
+"text": "tirou",
+"quem": "n",
+"start": 636.014,
+"end": 636.372,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 636.372,
+"end": 636.443,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 636.443,
+"end": 636.943,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 636.943,
+"end": 637.086,
+"pensa": false
+},
+{
+"text": "bolso,",
+"quem": "n",
+"start": 637.086,
+"end": 637.443,
+"pensa": false
+},
+{
+"text": "desligou,",
+"quem": "n",
+"start": 637.523,
+"end": 638.175,
+"pensa": false
+},
+{
+"text": "guardou,",
+"quem": "n",
+"start": 638.175,
+"end": 638.745,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 638.745,
+"end": 638.826,
+"pensa": false
+},
+{
+"text": "sentou",
+"quem": "n",
+"start": 638.826,
+"end": 639.315,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 639.315,
+"end": 639.478,
+"pensa": false
+},
+{
+"text": "chão",
+"quem": "n",
+"start": 639.478,
+"end": 639.804,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 639.804,
+"end": 639.967,
+"pensa": false
+},
+{
+"text": "frente",
+"quem": "n",
+"start": 639.967,
+"end": 640.455,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 640.455,
+"end": 640.618,
+"pensa": false
+},
+{
+"text": "irmão,",
+"quem": "n",
+"start": 640.618,
+"end": 641.026,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 641.026,
+"end": 641.188,
+"pensa": false
+},
+{
+"text": "altura",
+"quem": "n",
+"start": 641.188,
+"end": 641.677,
+"pensa": false
+},
+{
+"text": "dele.",
+"quem": "n",
+"start": 641.677,
+"end": 642.003,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 642.243,
+"end": 642.334,
+"pensa": false
+},
+{
+"text": "pela",
+"quem": "n",
+"start": 642.334,
+"end": 642.699,
+"pensa": false
+},
+{
+"text": "segunda",
+"quem": "n",
+"start": 642.699,
+"end": 643.337,
+"pensa": false
+},
+{
+"text": "vez",
+"quem": "n",
+"start": 643.337,
+"end": 643.61,
+"pensa": false
+},
+{
+"text": "naquela",
+"quem": "n",
+"start": 643.61,
+"end": 644.249,
+"pensa": false
+},
+{
+"text": "semana,",
+"quem": "n",
+"start": 644.249,
+"end": 644.796,
+"pensa": false
+},
+{
+"text": "focou",
+"quem": "n",
+"start": 644.796,
+"end": 645.251,
+"pensa": false
+},
+{
+"text": "100%",
+"quem": "n",
+"start": 645.251,
+"end": 645.616,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 645.616,
+"end": 645.798,
+"pensa": false
+},
+{
+"text": "Davi.",
+"quem": "n",
+"start": 645.798,
+"end": 646.163,
+"pensa": false
+},
+{
+"text": "Me",
+"quem": "gui",
+"start": 646.563,
+"end": 646.743,
+"pensa": false
+},
+{
+"text": "mostra",
+"quem": "gui",
+"start": 646.743,
+"end": 647.283,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "gui",
+"start": 647.283,
+"end": 647.373,
+"pensa": false
+},
+{
+"text": "desenho.",
+"quem": "gui",
+"start": 647.373,
+"end": 648.003,
+"pensa": false
+},
+{
+"text": "Não",
+"quem": "davi",
+"start": 648.003,
+"end": 648.276,
+"pensa": false
+},
+{
+"text": "precisa",
+"quem": "davi",
+"start": 648.276,
+"end": 648.912,
+"pensa": false
+},
+{
+"text": "mais,",
+"quem": "davi",
+"start": 648.912,
+"end": 649.276,
+"pensa": false
+},
+{
+"text": "já",
+"quem": "davi",
+"start": 649.276,
+"end": 649.458,
+"pensa": false
+},
+{
+"text": "acabou.",
+"quem": "davi",
+"start": 649.458,
+"end": 650.003,
+"pensa": false
+},
+{
+"text": "Precisa",
+"quem": "gui",
+"start": 650.323,
+"end": 651.023,
+"pensa": false
+},
+{
+"text": "sim,",
+"quem": "gui",
+"start": 651.023,
+"end": 651.323,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "gui",
+"start": 651.323,
+"end": 651.523,
+"pensa": false
+},
+{
+"text": "quero",
+"quem": "gui",
+"start": 651.523,
+"end": 652.023,
+"pensa": false
+},
+{
+"text": "ver.",
+"quem": "gui",
+"start": 652.023,
+"end": 652.323,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 652.483,
+"end": 652.567,
+"pensa": false
+},
+{
+"text": "Davi",
+"quem": "n",
+"start": 652.567,
+"end": 652.901,
+"pensa": false
+},
+{
+"text": "abriu",
+"quem": "n",
+"start": 652.901,
+"end": 653.319,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 653.319,
+"end": 653.403,
+"pensa": false
+},
+{
+"text": "mochila,",
+"quem": "n",
+"start": 653.403,
+"end": 653.988,
+"pensa": false
+},
+{
+"text": "tirou",
+"quem": "n",
+"start": 653.988,
+"end": 654.407,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 654.407,
+"end": 654.49,
+"pensa": false
+},
+{
+"text": "folha",
+"quem": "n",
+"start": 654.49,
+"end": 654.908,
+"pensa": false
+},
+{
+"text": "dobrada",
+"quem": "n",
+"start": 654.908,
+"end": 655.494,
+"pensa": false
+},
+{
+"text": "lá",
+"quem": "n",
+"start": 655.494,
+"end": 655.661,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 655.661,
+"end": 655.828,
+"pensa": false
+},
+{
+"text": "fundo,",
+"quem": "n",
+"start": 655.828,
+"end": 656.247,
+"pensa": false
+},
+{
+"text": "toda",
+"quem": "n",
+"start": 656.247,
+"end": 656.581,
+"pensa": false
+},
+{
+"text": "amassada,",
+"quem": "n",
+"start": 656.581,
+"end": 657.25,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 657.25,
+"end": 657.334,
+"pensa": false
+},
+{
+"text": "entregou.",
+"quem": "n",
+"start": 657.334,
+"end": 658.003,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 658.323,
+"end": 658.394,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 658.394,
+"end": 658.535,
+"pensa": false
+},
+{
+"text": "desenho",
+"quem": "n",
+"start": 658.535,
+"end": 659.031,
+"pensa": false
+},
+{
+"text": "tinha",
+"quem": "n",
+"start": 659.031,
+"end": 659.385,
+"pensa": false
+},
+{
+"text": "dois",
+"quem": "n",
+"start": 659.385,
+"end": 659.668,
+"pensa": false
+},
+{
+"text": "meninos",
+"quem": "n",
+"start": 659.668,
+"end": 660.164,
+"pensa": false
+},
+{
+"text": "jogando",
+"quem": "n",
+"start": 660.164,
+"end": 660.66,
+"pensa": false
+},
+{
+"text": "bola",
+"quem": "n",
+"start": 660.66,
+"end": 660.943,
+"pensa": false
+},
+{
+"text": "num",
+"quem": "n",
+"start": 660.943,
+"end": 661.155,
+"pensa": false
+},
+{
+"text": "campinho",
+"quem": "n",
+"start": 661.155,
+"end": 661.722,
+"pensa": false
+},
+{
+"text": "feito",
+"quem": "n",
+"start": 661.722,
+"end": 662.076,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 662.076,
+"end": 662.217,
+"pensa": false
+},
+{
+"text": "giz",
+"quem": "n",
+"start": 662.217,
+"end": 662.43,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 662.43,
+"end": 662.571,
+"pensa": false
+},
+{
+"text": "cera",
+"quem": "n",
+"start": 662.571,
+"end": 662.854,
+"pensa": false
+},
+{
+"text": "verde,",
+"quem": "n",
+"start": 662.854,
+"end": 663.209,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 663.209,
+"end": 663.35,
+"pensa": false
+},
+{
+"text": "grande",
+"quem": "n",
+"start": 663.35,
+"end": 663.775,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 663.775,
+"end": 663.846,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 663.846,
+"end": 663.987,
+"pensa": false
+},
+{
+"text": "pequeno.",
+"quem": "n",
+"start": 663.987,
+"end": 664.483,
+"pensa": false
+},
+{
+"text": "O",
+"quem": "n",
+"start": 664.803,
+"end": 664.868,
+"pensa": false
+},
+{
+"text": "pequeno",
+"quem": "n",
+"start": 664.868,
+"end": 665.324,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 665.324,
+"end": 665.519,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 665.519,
+"end": 665.584,
+"pensa": false
+},
+{
+"text": "língua",
+"quem": "n",
+"start": 665.584,
+"end": 665.974,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 665.974,
+"end": 666.169,
+"pensa": false
+},
+{
+"text": "fora",
+"quem": "n",
+"start": 666.169,
+"end": 666.43,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 666.43,
+"end": 666.495,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 666.495,
+"end": 666.625,
+"pensa": false
+},
+{
+"text": "olho",
+"quem": "n",
+"start": 666.625,
+"end": 666.885,
+"pensa": false
+},
+{
+"text": "fechado,",
+"quem": "n",
+"start": 666.885,
+"end": 667.341,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 667.341,
+"end": 667.406,
+"pensa": false
+},
+{
+"text": "grande",
+"quem": "n",
+"start": 667.406,
+"end": 667.796,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 667.796,
+"end": 667.991,
+"pensa": false
+},
+{
+"text": "os",
+"quem": "n",
+"start": 667.991,
+"end": 668.121,
+"pensa": false
+},
+{
+"text": "braços",
+"quem": "n",
+"start": 668.121,
+"end": 668.512,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 668.512,
+"end": 668.707,
+"pensa": false
+},
+{
+"text": "cima",
+"quem": "n",
+"start": 668.707,
+"end": 668.967,
+"pensa": false
+},
+{
+"text": "comemorando.",
+"quem": "n",
+"start": 668.967,
+"end": 669.683,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 669.923,
+"end": 670.011,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 670.011,
+"end": 670.188,
+"pensa": false
+},
+{
+"text": "cima,",
+"quem": "n",
+"start": 670.188,
+"end": 670.541,
+"pensa": false
+},
+{
+"text": "escrito",
+"quem": "n",
+"start": 670.541,
+"end": 671.16,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 671.16,
+"end": 671.425,
+"pensa": false
+},
+{
+"text": "letra",
+"quem": "n",
+"start": 671.425,
+"end": 671.866,
+"pensa": false
+},
+{
+"text": "torta:",
+"quem": "n",
+"start": 671.866,
+"end": 672.308,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 672.308,
+"end": 672.396,
+"pensa": false
+},
+{
+"text": "melhor",
+"quem": "n",
+"start": 672.396,
+"end": 672.926,
+"pensa": false
+},
+{
+"text": "dia",
+"quem": "n",
+"start": 672.926,
+"end": 673.191,
+"pensa": false
+},
+{
+"text": "da",
+"quem": "n",
+"start": 673.191,
+"end": 673.368,
+"pensa": false
+},
+{
+"text": "minha",
+"quem": "n",
+"start": 673.368,
+"end": 673.81,
+"pensa": false
+},
+{
+"text": "vida.",
+"quem": "n",
+"start": 673.81,
+"end": 674.163,
+"pensa": false
+},
+{
+"text": "Era",
+"quem": "davi",
+"start": 674.563,
+"end": 674.774,
+"pensa": false
+},
+{
+"text": "isso",
+"quem": "davi",
+"start": 674.774,
+"end": 675.056,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "davi",
+"start": 675.056,
+"end": 675.267,
+"pensa": false
+},
+{
+"text": "eu",
+"quem": "davi",
+"start": 675.267,
+"end": 675.408,
+"pensa": false
+},
+{
+"text": "ia",
+"quem": "davi",
+"start": 675.408,
+"end": 675.549,
+"pensa": false
+},
+{
+"text": "apresentar.",
+"quem": "davi",
+"start": 675.549,
+"end": 676.253,
+"pensa": false
+},
+{
+"text": "A",
+"quem": "davi",
+"start": 676.253,
+"end": 676.323,
+"pensa": false
+},
+{
+"text": "professora",
+"quem": "davi",
+"start": 676.323,
+"end": 677.027,
+"pensa": false
+},
+{
+"text": "pediu",
+"quem": "davi",
+"start": 677.027,
+"end": 677.379,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "davi",
+"start": 677.379,
+"end": 677.449,
+"pensa": false
+},
+{
+"text": "melhor",
+"quem": "davi",
+"start": 677.449,
+"end": 677.872,
+"pensa": false
+},
+{
+"text": "dia.",
+"quem": "davi",
+"start": 677.872,
+"end": 678.083,
+"pensa": false
+},
+{
+"text": "Foi",
+"quem": "davi",
+"start": 678.723,
+"end": 678.963,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "davi",
+"start": 678.963,
+"end": 679.043,
+"pensa": false
+},
+{
+"text": "dia",
+"quem": "davi",
+"start": 679.043,
+"end": 679.283,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "davi",
+"start": 679.283,
+"end": 679.523,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "davi",
+"start": 679.523,
+"end": 679.843,
+"pensa": false
+},
+{
+"text": "olhou",
+"quem": "davi",
+"start": 679.843,
+"end": 680.243,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "davi",
+"start": 680.243,
+"end": 680.483,
+"pensa": false
+},
+{
+"text": "mim.",
+"quem": "davi",
+"start": 680.483,
+"end": 680.723,
+"pensa": false
+},
+{
+"text": "Os",
+"quem": "n",
+"start": 680.723,
+"end": 680.934,
+"pensa": false
+},
+{
+"text": "20",
+"quem": "n",
+"start": 680.934,
+"end": 681.144,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 681.144,
+"end": 681.881,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 681.881,
+"end": 682.091,
+"pensa": false
+},
+{
+"text": "sábado.",
+"quem": "n",
+"start": 682.091,
+"end": 682.723,
+"pensa": false
+},
+{
+"text": "De",
+"quem": "n",
+"start": 682.963,
+"end": 683.145,
+"pensa": false
+},
+{
+"text": "sete",
+"quem": "n",
+"start": 683.145,
+"end": 683.508,
+"pensa": false
+},
+{
+"text": "dias",
+"quem": "n",
+"start": 683.508,
+"end": 683.872,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 683.872,
+"end": 684.054,
+"pensa": false
+},
+{
+"text": "superpoder,",
+"quem": "n",
+"start": 684.054,
+"end": 684.963,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 685.283,
+"end": 685.345,
+"pensa": false
+},
+{
+"text": "coisa",
+"quem": "n",
+"start": 685.345,
+"end": 685.655,
+"pensa": false
+},
+{
+"text": "mais",
+"quem": "n",
+"start": 685.655,
+"end": 685.903,
+"pensa": false
+},
+{
+"text": "importante",
+"quem": "n",
+"start": 685.903,
+"end": 686.524,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 686.524,
+"end": 686.71,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 686.71,
+"end": 686.772,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 686.772,
+"end": 687.33,
+"pensa": false
+},
+{
+"text": "fez",
+"quem": "n",
+"start": 687.33,
+"end": 687.516,
+"pensa": false
+},
+{
+"text": "não",
+"quem": "n",
+"start": 687.516,
+"end": 687.703,
+"pensa": false
+},
+{
+"text": "foi",
+"quem": "n",
+"start": 687.703,
+"end": 687.889,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 687.889,
+"end": 687.951,
+"pensa": false
+},
+{
+"text": "troféu,",
+"quem": "n",
+"start": 687.951,
+"end": 688.323,
+"pensa": false
+},
+{
+"text": "nem",
+"quem": "n",
+"start": 688.563,
+"end": 688.908,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 688.908,
+"end": 689.023,
+"pensa": false
+},
+{
+"text": "10,",
+"quem": "n",
+"start": 689.023,
+"end": 689.253,
+"pensa": false
+},
+{
+"text": "nem",
+"quem": "n",
+"start": 689.253,
+"end": 689.598,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 689.598,
+"end": 689.713,
+"pensa": false
+},
+{
+"text": "violão.",
+"quem": "n",
+"start": 689.713,
+"end": 690.403,
+"pensa": false
+},
+{
+"text": "Foram",
+"quem": "n",
+"start": 690.403,
+"end": 690.792,
+"pensa": false
+},
+{
+"text": "20",
+"quem": "n",
+"start": 690.792,
+"end": 690.947,
+"pensa": false
+},
+{
+"text": "minutos",
+"quem": "n",
+"start": 690.947,
+"end": 691.491,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 691.491,
+"end": 691.646,
+"pensa": false
+},
+{
+"text": "bola",
+"quem": "n",
+"start": 691.646,
+"end": 691.957,
+"pensa": false
+},
+{
+"text": "murcha",
+"quem": "n",
+"start": 691.957,
+"end": 692.424,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 692.424,
+"end": 692.657,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 692.657,
+"end": 692.734,
+"pensa": false
+},
+{
+"text": "irmão.",
+"quem": "n",
+"start": 692.734,
+"end": 693.123,
+"pensa": false
+},
+{
+"text": "Me",
+"quem": "gui",
+"start": 693.523,
+"end": 693.666,
+"pensa": false
+},
+{
+"text": "ensina",
+"quem": "gui",
+"start": 693.666,
+"end": 694.094,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "gui",
+"start": 694.094,
+"end": 694.166,
+"pensa": false
+},
+{
+"text": "frase",
+"quem": "gui",
+"start": 694.166,
+"end": 694.523,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "gui",
+"start": 694.523,
+"end": 694.737,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "gui",
+"start": 694.737,
+"end": 695.023,
+"pensa": false
+},
+{
+"text": "ia",
+"quem": "gui",
+"start": 695.023,
+"end": 695.166,
+"pensa": false
+},
+{
+"text": "falar?",
+"quem": "gui",
+"start": 695.166,
+"end": 695.523,
+"pensa": false
+},
+{
+"text": "Meu",
+"quem": "davi",
+"start": 696.643,
+"end": 696.87,
+"pensa": false
+},
+{
+"text": "irmão",
+"quem": "davi",
+"start": 696.87,
+"end": 697.249,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "davi",
+"start": 697.249,
+"end": 697.325,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "davi",
+"start": 697.325,
+"end": 697.401,
+"pensa": false
+},
+{
+"text": "melhor",
+"quem": "davi",
+"start": 697.401,
+"end": 697.856,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "davi",
+"start": 697.856,
+"end": 698.007,
+"pensa": false
+},
+{
+"text": "mundo",
+"quem": "davi",
+"start": 698.007,
+"end": 698.386,
+"pensa": false
+},
+{
+"text": "quando",
+"quem": "davi",
+"start": 698.386,
+"end": 698.841,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "davi",
+"start": 698.841,
+"end": 699.068,
+"pensa": false
+},
+{
+"text": "tá",
+"quem": "davi",
+"start": 699.068,
+"end": 699.22,
+"pensa": false
+},
+{
+"text": "aqui.",
+"quem": "davi",
+"start": 699.22,
+"end": 699.523,
+"pensa": false
+},
+{
+"text": "Ninguém",
+"quem": "n",
+"start": 699.923,
+"end": 700.381,
+"pensa": false
+},
+{
+"text": "sabe",
+"quem": "n",
+"start": 700.381,
+"end": 700.643,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 700.643,
+"end": 700.774,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 700.774,
+"end": 700.839,
+"pensa": false
+},
+{
+"text": "poder",
+"quem": "n",
+"start": 700.839,
+"end": 701.167,
+"pensa": false
+},
+{
+"text": "foi",
+"quem": "n",
+"start": 701.167,
+"end": 701.363,
+"pensa": false
+},
+{
+"text": "embora",
+"quem": "n",
+"start": 701.363,
+"end": 701.756,
+"pensa": false
+},
+{
+"text": "depois",
+"quem": "n",
+"start": 701.756,
+"end": 702.148,
+"pensa": false
+},
+{
+"text": "daquele",
+"quem": "n",
+"start": 702.148,
+"end": 702.607,
+"pensa": false
+},
+{
+"text": "dia,",
+"quem": "n",
+"start": 702.607,
+"end": 702.803,
+"pensa": false
+},
+{
+"text": "mas",
+"quem": "n",
+"start": 703.283,
+"end": 703.507,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 703.507,
+"end": 703.581,
+"pensa": false
+},
+{
+"text": "Guilherme",
+"quem": "n",
+"start": 703.581,
+"end": 704.252,
+"pensa": false
+},
+{
+"text": "descobriu",
+"quem": "n",
+"start": 704.252,
+"end": 704.923,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 704.923,
+"end": 705.147,
+"pensa": false
+},
+{
+"text": "foco",
+"quem": "n",
+"start": 705.147,
+"end": 705.445,
+"pensa": false
+},
+{
+"text": "nunca",
+"quem": "n",
+"start": 705.445,
+"end": 705.818,
+"pensa": false
+},
+{
+"text": "foi",
+"quem": "n",
+"start": 705.818,
+"end": 706.041,
+"pensa": false
+},
+{
+"text": "um",
+"quem": "n",
+"start": 706.041,
+"end": 706.19,
+"pensa": false
+},
+{
+"text": "poder.",
+"quem": "n",
+"start": 706.19,
+"end": 706.563,
+"pensa": false
+},
+{
+"text": "Foco",
+"quem": "n",
+"start": 707.283,
+"end": 707.622,
+"pensa": false
+},
+{
+"text": "é",
+"quem": "n",
+"start": 707.622,
+"end": 707.707,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 707.707,
+"end": 707.876,
+"pensa": false
+},
+{
+"text": "escolher",
+"quem": "n",
+"start": 707.876,
+"end": 708.554,
+"pensa": false
+},
+{
+"text": "onde",
+"quem": "n",
+"start": 708.554,
+"end": 708.892,
+"pensa": false
+},
+{
+"text": "colocar",
+"quem": "n",
+"start": 708.892,
+"end": 709.485,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 709.485,
+"end": 709.57,
+"pensa": false
+},
+{
+"text": "sua",
+"quem": "n",
+"start": 709.57,
+"end": 709.824,
+"pensa": false
+},
+{
+"text": "vida.",
+"quem": "n",
+"start": 709.824,
+"end": 710.163,
+"pensa": false
+},
+{
+"text": "Naquela",
+"quem": "n",
+"start": 710.563,
+"end": 711.052,
+"pensa": false
+},
+{
+"text": "tarde,",
+"quem": "n",
+"start": 711.052,
+"end": 711.401,
+"pensa": false
+},
+{
+"text": "ele",
+"quem": "n",
+"start": 711.401,
+"end": 711.611,
+"pensa": false
+},
+{
+"text": "mandou",
+"quem": "n",
+"start": 711.611,
+"end": 712.03,
+"pensa": false
+},
+{
+"text": "mensagem",
+"quem": "n",
+"start": 712.03,
+"end": 712.589,
+"pensa": false
+},
+{
+"text": "pro",
+"quem": "n",
+"start": 712.589,
+"end": 712.799,
+"pensa": false
+},
+{
+"text": "Tiago",
+"quem": "n",
+"start": 712.799,
+"end": 713.148,
+"pensa": false
+},
+{
+"text": "pedindo",
+"quem": "n",
+"start": 713.148,
+"end": 713.637,
+"pensa": false
+},
+{
+"text": "desculpa",
+"quem": "n",
+"start": 713.637,
+"end": 714.196,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 714.196,
+"end": 714.266,
+"pensa": false
+},
+{
+"text": "chamando",
+"quem": "n",
+"start": 714.266,
+"end": 714.825,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 714.825,
+"end": 715.035,
+"pensa": false
+},
+{
+"text": "comer",
+"quem": "n",
+"start": 715.035,
+"end": 715.384,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 715.384,
+"end": 715.594,
+"pensa": false
+},
+{
+"text": "coxinha,",
+"quem": "n",
+"start": 715.594,
+"end": 716.083,
+"pensa": false
+},
+{
+"text": "buscou",
+"quem": "n",
+"start": 716.483,
+"end": 716.988,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 716.988,
+"end": 717.072,
+"pensa": false
+},
+{
+"text": "troféu,",
+"quem": "n",
+"start": 717.072,
+"end": 717.578,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 717.578,
+"end": 717.662,
+"pensa": false
+},
+{
+"text": "voltou",
+"quem": "n",
+"start": 717.662,
+"end": 718.167,
+"pensa": false
+},
+{
+"text": "pra",
+"quem": "n",
+"start": 718.167,
+"end": 718.42,
+"pensa": false
+},
+{
+"text": "casa",
+"quem": "n",
+"start": 718.42,
+"end": 718.757,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 718.757,
+"end": 718.841,
+"pensa": false
+},
+{
+"text": "pé",
+"quem": "n",
+"start": 718.841,
+"end": 719.009,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 719.009,
+"end": 719.262,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 719.262,
+"end": 719.346,
+"pensa": false
+},
+{
+"text": "Davi,",
+"quem": "n",
+"start": 719.346,
+"end": 719.683,
+"pensa": false
+},
+{
+"text": "chutando",
+"quem": "n",
+"start": 720.083,
+"end": 720.667,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 720.667,
+"end": 720.886,
+"pensa": false
+},
+{
+"text": "pedra",
+"quem": "n",
+"start": 720.886,
+"end": 721.252,
+"pensa": false
+},
+{
+"text": "pela",
+"quem": "n",
+"start": 721.252,
+"end": 721.544,
+"pensa": false
+},
+{
+"text": "calçada,",
+"quem": "n",
+"start": 721.544,
+"end": 722.055,
+"pensa": false
+},
+{
+"text": "com",
+"quem": "n",
+"start": 722.055,
+"end": 722.274,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 722.274,
+"end": 722.347,
+"pensa": false
+},
+{
+"text": "celular",
+"quem": "n",
+"start": 722.347,
+"end": 722.859,
+"pensa": false
+},
+{
+"text": "desligado",
+"quem": "n",
+"start": 722.859,
+"end": 723.516,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 723.516,
+"end": 723.662,
+"pensa": false
+},
+{
+"text": "bolso",
+"quem": "n",
+"start": 723.662,
+"end": 724.027,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 724.027,
+"end": 724.1,
+"pensa": false
+},
+{
+"text": "caminho",
+"quem": "n",
+"start": 724.1,
+"end": 724.612,
+"pensa": false
+},
+{
+"text": "inteiro.",
+"quem": "n",
+"start": 724.612,
+"end": 725.123,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 725.443,
+"end": 725.536,
+"pensa": false
+},
+{
+"text": "na",
+"quem": "n",
+"start": 725.536,
+"end": 725.723,
+"pensa": false
+},
+{
+"text": "geladeira",
+"quem": "n",
+"start": 725.723,
+"end": 726.563,
+"pensa": false
+},
+{
+"text": "de",
+"quem": "n",
+"start": 726.563,
+"end": 726.75,
+"pensa": false
+},
+{
+"text": "casa,",
+"quem": "n",
+"start": 726.75,
+"end": 727.123,
+"pensa": false
+},
+{
+"text": "até",
+"quem": "n",
+"start": 727.123,
+"end": 727.403,
+"pensa": false
+},
+{
+"text": "hoje,",
+"quem": "n",
+"start": 727.403,
+"end": 727.776,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 727.776,
+"end": 727.87,
+"pensa": false
+},
+{
+"text": "troféu",
+"quem": "n",
+"start": 727.87,
+"end": 728.43,
+"pensa": false
+},
+{
+"text": "fica",
+"quem": "n",
+"start": 728.43,
+"end": 728.803,
+"pensa": false
+},
+{
+"text": "do",
+"quem": "n",
+"start": 728.803,
+"end": 728.99,
+"pensa": false
+},
+{
+"text": "lado.",
+"quem": "n",
+"start": 728.99,
+"end": 729.363,
+"pensa": false
+},
+{
+"text": "Mas",
+"quem": "n",
+"start": 730.083,
+"end": 730.369,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 730.369,
+"end": 730.464,
+"pensa": false
+},
+{
+"text": "desenho",
+"quem": "n",
+"start": 730.464,
+"end": 731.131,
+"pensa": false
+},
+{
+"text": "fica",
+"quem": "n",
+"start": 731.131,
+"end": 731.512,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 731.512,
+"end": 731.702,
+"pensa": false
+},
+{
+"text": "meio.",
+"quem": "n",
+"start": 731.702,
+"end": 732.083,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 732.2,
+"end": 732.282,
+"pensa": false
+},
+{
+"text": "você,",
+"quem": "n",
+"start": 732.301,
+"end": 732.788,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 732.807,
+"end": 732.991,
+"pensa": false
+},
+{
+"text": "pudesse",
+"quem": "n",
+"start": 733.01,
+"end": 733.699,
+"pensa": false
+},
+{
+"text": "focar",
+"quem": "n",
+"start": 733.718,
+"end": 734.206,
+"pensa": false
+},
+{
+"text": "100%",
+"quem": "n",
+"start": 734.225,
+"end": 734.611,
+"pensa": false
+},
+{
+"text": "em",
+"quem": "n",
+"start": 734.63,
+"end": 734.813,
+"pensa": false
+},
+{
+"text": "uma",
+"quem": "n",
+"start": 734.832,
+"end": 735.117,
+"pensa": false
+},
+{
+"text": "coisa",
+"quem": "n",
+"start": 735.136,
+"end": 735.622,
+"pensa": false
+},
+{
+"text": "só",
+"quem": "n",
+"start": 735.641,
+"end": 735.825,
+"pensa": false
+},
+{
+"text": "hoje,",
+"quem": "n",
+"start": 735.844,
+"end": 736.332,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 736.351,
+"end": 736.534,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 736.553,
+"end": 736.837,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 736.856,
+"end": 737.243,
+"pensa": false
+},
+{
+"text": "focaria?",
+"quem": "n",
+"start": 737.262,
+"end": 738.052,
+"pensa": false
+},
+{
+"text": "Escreve",
+"quem": "n",
+"start": 738.071,
+"end": 738.529,
+"pensa": false
+},
+{
+"text": "aqui",
+"quem": "n",
+"start": 738.548,
+"end": 738.802,
+"pensa": false
+},
+{
+"text": "nos",
+"quem": "n",
+"start": 738.82,
+"end": 739.005,
+"pensa": false
+},
+{
+"text": "comentários.",
+"quem": "n",
+"start": 739.024,
+"end": 739.754,
+"pensa": false
+},
+{
+"text": "E",
+"quem": "n",
+"start": 739.773,
+"end": 739.822,
+"pensa": false
+},
+{
+"text": "me",
+"quem": "n",
+"start": 739.841,
+"end": 739.959,
+"pensa": false
+},
+{
+"text": "conta",
+"quem": "n",
+"start": 739.978,
+"end": 740.299,
+"pensa": false
+},
+{
+"text": "qual,",
+"quem": "n",
+"start": 740.318,
+"end": 740.571,
+"pensa": false
+},
+{
+"text": "e",
+"quem": "n",
+"start": 740.59,
+"end": 740.64,
+"pensa": false
+},
+{
+"text": "se",
+"quem": "n",
+"start": 740.659,
+"end": 740.775,
+"pensa": false
+},
+{
+"text": "você",
+"quem": "n",
+"start": 740.794,
+"end": 741.048,
+"pensa": false
+},
+{
+"text": "quer",
+"quem": "n",
+"start": 741.067,
+"end": 741.32,
+"pensa": false
+},
+{
+"text": "ver",
+"quem": "n",
+"start": 741.339,
+"end": 741.524,
+"pensa": false
+},
+{
+"text": "no",
+"quem": "n",
+"start": 741.543,
+"end": 741.661,
+"pensa": false
+},
+{
+"text": "canal.",
+"quem": "n",
+"start": 741.679,
+"end": 742.069,
+"pensa": false
+},
+{
+"text": "Se",
+"quem": "n",
+"start": 742.088,
+"end": 742.205,
+"pensa": false
+},
+{
+"text": "inscreve,",
+"quem": "n",
+"start": 742.224,
+"end": 742.75,
+"pensa": false
+},
+{
+"text": "que",
+"quem": "n",
+"start": 742.769,
+"end": 742.945,
+"pensa": false
+},
+{
+"text": "o",
+"quem": "n",
+"start": 742.964,
+"end": 743.009,
+"pensa": false
+},
+{
+"text": "próximo",
+"quem": "n",
+"start": 743.028,
+"end": 743.464,
+"pensa": false
+},
+{
+"text": "pode",
+"quem": "n",
+"start": 743.483,
+"end": 743.724,
+"pensa": false
+},
+{
+"text": "ser",
+"quem": "n",
+"start": 743.743,
+"end": 743.918,
+"pensa": false
+},
+{
+"text": "a",
+"quem": "n",
+"start": 743.937,
+"end": 743.984,
+"pensa": false
+},
+{
+"text": "sua",
+"quem": "n",
+"start": 744.002,
+"end": 744.179,
+"pensa": false
+},
+{
+"text": "ideia.",
+"quem": "n",
+"start": 744.198,
+"end": 744.681,
+"pensa": false
+}
+]

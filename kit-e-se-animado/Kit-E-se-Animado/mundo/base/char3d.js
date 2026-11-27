@@ -79,7 +79,7 @@ function drawFace(x, s, look) {
     if (round > .55) x.ellipse(MX, MY + h * .35, w * .75, h * .62, 0, 0, 7);
     else { x.moveTo(MX - w, top); x.quadraticCurveTo(MX, MY + smile * sy(.03) - h * .12, MX + w, top); x.bezierCurveTo(MX + w * .95, top + h * 1.25, MX - w * .95, top + h * 1.25, MX - w, top); x.closePath(); }
     x.fillStyle = '#5A1E2A'; x.fill(); x.save(); x.clip();
-    if (open > .28 && round < .55) { x.fillStyle = '#FFFFFF'; x.fillRect(MX - w, top - h, w * 2, h * 1.18); }
+    if (open > .28 && round < .55) { x.fillStyle = '#FFFFFF'; x.fillRect(MX - w, top - h, w * 2, h * 1.18); if (s.banguela) { x.fillStyle = '#5A1E2A'; x.fillRect(MX + w * .08, top - h, w * .26, h * .62); } }
     x.fillStyle = '#E8707E'; x.beginPath(); x.ellipse(MX, top + h * 1.05, w * .58, h * .42, 0, 0, 7); x.fill(); x.restore();
     x.strokeStyle = INK; x.lineWidth = 9; x.stroke();
   }
@@ -221,7 +221,7 @@ export function makeChar3D(o = {}) {
       const look = s.look || [0, 0]; const m = s.mouth || {};
       const q = (v, n = 20) => Math.round((v || 0) * n);
       const key = [s.emo, q(s.blink, 10), q(look[0], 8), q(look[1], 8), q(m.open, 12), q(m.round, 6), m.smile === undefined ? 'u' : q(m.smile, 8), q(s.brow, 6), s.lagrima ? 1 : 0, s.olhosAbertos ? 1 : 0].join('|');
-      if (key !== st.key) { st.key = key; drawFace(fctx, { ...o.rosto, ...s, pele, oculos: o.oculos, rugas: o.rugas, oculosEscuros: o.oculosEscuros, bigode: o.bigode, barba: o.barba, olheiras: o.olheiras, sardas: o.sardas, nariz: o.nariz, cilios: o.cilios, sobr: o.sobr, sobrW: o.sobrW }, look); ftex.needsUpdate = true; }
+      if (key !== st.key) { st.key = key; drawFace(fctx, { ...o.rosto, ...s, pele, oculos: o.oculos, rugas: o.rugas, oculosEscuros: o.oculosEscuros, bigode: o.bigode, barba: o.barba, olheiras: o.olheiras, sardas: o.sardas, nariz: o.nariz, cilios: o.cilios, sobr: o.sobr, sobrW: o.sobrW, banguela: o.banguela }, look); ftex.needsUpdate = true; }
       return c;
     },
     /** Vira o corpo para olhar (x,z). */
