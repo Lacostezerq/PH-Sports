@@ -14,8 +14,8 @@ const FIM = `{ float l_ = dot(gl_FragColor.rgb, vec3(.2126,.7152,.0722));
 #include <dithering_fragment>`;
 
 function patch(m, qual) {
-  if (!m || m.userData.fp || m.isShaderMaterial || m.isRawShaderMaterial || m.isLineBasicMaterial) return;
-  m.userData.fp = qual;
+  if (!m || m.userData.fpOk === m.uuid || m.isShaderMaterial || m.isRawShaderMaterial || m.isLineBasicMaterial) return;
+  if (m.userData.fp && m.userData.fp !== qual && m.userData.fpOk === m.uuid) return; m.userData.fp = m.userData.fp === 'alvo' ? 'alvo' : qual; qual = m.userData.fp; m.userData.fpOk = m.uuid;
   m.onBeforeCompile = (sh) => {
     sh.uniforms.uCinza = qual === 'alvo' ? UF.alvo : UF.mundo; sh.uniforms.uOuro = qual === 'alvo' ? UF.claro : UF.ouro;
     sh.fragmentShader = 'uniform float uCinza; uniform float uOuro;\n' + sh.fragmentShader.replace('#include <dithering_fragment>', FIM);
@@ -31,7 +31,7 @@ export function emFoco(objs, o = {}) {
   for (const obj of [].concat(objs)) {
     const malhas = []; obj.traverse((n) => { if (n.isMesh && !n.userData.isOutline && !n.userData.borda) malhas.push(n); });
     for (const n of malhas) {
-      n.material = [].concat(n.material).map((m) => { if (m.userData.fp === 'alvo') return m; const c = m.clone(); c.userData = { ...m.userData }; delete c.userData.fp; patch(c, 'alvo'); return c; });
+      n.material = [].concat(n.material).map((m) => { if (m.userData.fp === 'alvo' && m.userData.fpOk === m.uuid) return m; const c = m.clone(); c.userData = { ...m.userData }; c.userData.fp = 'alvo'; delete c.userData.fpOk; patch(c, 'alvo'); return c; });
       if (n.material.length === 1) n.material = n.material[0];
       if (o.semBorda || n.isSkinnedMesh || (n.material.transparent && !n.material.alphaTest)) continue;
       if (n.geometry && n.geometry.attributes.normal && !n.userData.semBorda) { const b = new THREE.Mesh(n.geometry, borda); b.userData.isOutline = true; b.userData.borda = true; b.renderOrder = -1; n.add(b); bordas.push(b); }

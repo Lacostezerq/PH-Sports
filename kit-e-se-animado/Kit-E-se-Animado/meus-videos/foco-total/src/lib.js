@@ -51,7 +51,7 @@ export function ator(c, def, x = 0, z = 0, ry = 0, y = 0) { const k = makeChar3D
 export function rosto(k, quem, t, emo = 'neutro', extra = {}) {
   const b = quem ? boca(quem, t) : { open: 0, round: 0 };
   const m = extra.mouth || (b.open > 0 ? { open: b.open, round: b.round, smile: extra.smile } : { open: 0, smile: extra.smile });
-  k.face({ emo, blink: extra.blink ?? pisca(t, k.seed || 0), look: extra.look || [0, 0], brow: extra.brow, lagrima: extra.lagrima, olhosAbertos: extra.olhosAbertos, blush: extra.blush, mouth: m });
+  k.face({ emo, blink: extra.blink ?? pisca(t, k.seed || 0), look: extra.look || [0, 0], brow: extra.brow, lagrima: extra.lagrima, olhosAbertos: extra.olhosAbertos, blush: extra.blush, lingua: extra.lingua, pisca1: extra.pisca1, mouth: m });
   // vida: respiração, cabeça que balança devagar e acena junto com a fala
   const H = k.headG.rotation, To = k.torsoG.rotation, V = k._viva;
   if (V && H.x === V.r[0] && H.y === V.r[1] && H.z === V.r[2] && To.x === V.r[3] && To.z === V.r[4]) { H.x -= V.d[0]; H.y -= V.d[1]; H.z -= V.d[2]; To.x -= V.d[3]; To.z -= V.d[4]; }
