@@ -8,7 +8,7 @@ export const UF = { mundo: { value: 0 }, ouro: { value: 0 }, alvo: { value: 0 },
 
 const FIM = `{ float l_ = dot(gl_FragColor.rgb, vec3(.2126,.7152,.0722));
   vec3 cinza_ = vec3(l_) * .7 + .08;
-  vec3 ouro_ = vec3(l_) * vec3(1.32, 1.02, .52) + vec3(.1, .06, .0);
+  vec3 ouro_ = vec3(l_) * vec3(1.08, .84, .46) + vec3(.07, .04, .0);
   vec3 alvo_ = mix(cinza_, ouro_, uOuro);
   gl_FragColor.rgb = mix(gl_FragColor.rgb, alvo_, uCinza); }
 #include <dithering_fragment>`;
@@ -48,7 +48,7 @@ export function focoCena(c) { c.traverse((n) => { if ((n.isMesh || n.isSprite ||
 /** Fundo da cena acompanha o cinza/dourado. */
 export function fundo(c, cor, k, ouro = 0) {
   const a = new THREE.Color(cor); const l = a.r * .2126 + a.g * .7152 + a.b * .0722;
-  const g = new THREE.Color(l * .7 + .08, l * .7 + .08, l * .7 + .08), d = new THREE.Color(l * 1.32 + .1, l * 1.02 + .06, l * .52);
+  const g = new THREE.Color(l * .7 + .08, l * .7 + .08, l * .7 + .08), d = new THREE.Color(l * 1.08 + .07, l * .84 + .04, l * .46);
   g.lerp(d, ouro); c.background = a.clone().lerp(g, k);
 }
 

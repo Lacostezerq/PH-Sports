@@ -14,5 +14,22 @@
   "juiz": "#E0E0E0"
  },
  "destaques": [],
- "elementos": []
+ "elementos": [
+  {
+   "tipo": "like",
+   "inicio": 31.5,
+   "fim": 34.4,
+   "topo": 160,
+   "clique": 33.6,
+   "depois": "VALEU!"
+  },
+  {
+   "tipo": "inscrever",
+   "inicio": 740.2,
+   "fim": 746.8,
+   "topo": 120,
+   "clique": 742.25,
+   "sino": 743.2
+  }
+ ]
 }
