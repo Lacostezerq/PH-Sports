@@ -17,7 +17,7 @@ const deitaCama = (g) => { deitar(g, .95, .43, .38); g.root.position.y = .43 + .
 export const ATO1 = [
   // B1 — "Dia zero. Esse é o Guilherme, 17 anos": deitado na cama mexendo no celular
   mk(35.96, 39.12, { bg: '#DDE6EE', fov: 38, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); const g = ator(c, GUI, 0, 0, 0); deitaCama(g);
-    return (t, u, cm) => { g.pose({ shR: [100, 10], elR: 70, shL: [96, -8], elL: 80, headX: -10 }); rosto(g, null, t, 'tedio', { look: [0, -.6] }); naMao(K.tel, g, 'R', [0, -.06, .05], [Math.PI / 2 + .3, 0, 0]); K.tel.tela('foto', ((t * .7) % 1));
+    return (t, u, cm) => { g.pose({ shR: [55, 12], elR: 95, shL: [20, 10], elL: 30, headX: -14 }); rosto(g, null, t, 'tedio', { look: [0, -.6] }); naMao(K.tel, g, 'R', [0, -.06, .05], [Math.PI / 2 + .3, 0, 0]); K.tel.tela('foto', ((t * .7) % 1));
       cam(cm, [[0, [-.4, 2.2, .9]], [1, [-.15, 1.9, .6]]], [.95, .55, -.4], u / 3.16, 0, 0); return DIA; }; }),
   // B2 — "Mora com a mãe, a Dona Rose, que trabalha de caixa no mercado do bairro"
   mk(39.12, 42.88, { bg: '#F4F4F0', fov: 36 }, (c) => { const M = mercado(c); const r = ator(c, ROSE, -.05, -.42, 0); const cli = ator(c, pessoa(4), 1.6, 1.05, Math.PI + .3); const cx = cyl(.06, .06, .12, '#3E7CC8', 0, 0, 0, { out: .004 }); c.add(cx);

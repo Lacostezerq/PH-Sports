@@ -63,7 +63,7 @@ export const ATO0 = [
   mk(27.84, 31.44, { bg: '#0C0A06', fov: 30 }, (c) => { vazio(c, { cor: '#F2C230' }); const cr = cronometro(2.2); cr.position.set(0, 1, 0); c.add(cr); const pt = particulas(c, [0, 1, 0], { n: 60, cor: '#FFD86A', r: 1.2, tam: .025 });
     const luz = new THREE.PointLight('#FFD86A', 4, 4, 2); luz.position.set(.5, 1.5, 1.2); c.add(luz);
     return (t, u, cm) => { const k = clamp((t - 28) / 2.3); const seg = k < 1 ? 1200 * easeOut(k) : 1200; cr.set(seg, t > 30.3 ? clamp((t - 30.3) * 2) * .6 : 0); cr.rotation.y = Math.sin(t * .8) * .25 * (1 - k * .6); pt(((t - 27.84) / 3.6) % 1);
-      cam(cm, [[0, [.15, 1.08, 1.6]], [1, [.05, 1.02, 1.2]]], [0, 1, 0], u / 3.6, 0, 0); return { bloom: .25, bloomT: .9, vig: .5, exposure: .85 }; }; }),
+      cam(cm, [[0, [.15, 1.05, 2.2]], [1, [.05, 1.02, 1.8]]], [0, 1.08, 0], u / 3.6, 0, 0); return { bloom: .25, bloomT: .9, vig: .5, exposure: .85 }; }; }),
   // A10 — "já merece deixar o like": volta o freeze do Guilherme (o botão de like vem na tela)
   mk(31.44, 34.44, { ...ESC, fov: 30, perto: true, limpa: false }, (c) => { const S = montaSalao(c); const set = emFoco([S.gui.root]);
     return (t, u, cm) => { guiJoga(S, 16.6, 'determinado', { parado: true }); advJoga(S, 16.6); salaoUpd(S, 16.6); S.juiz.root.visible = false; UF.mundo.value = .85; set(.5, t); fundo(c, '#121218', .85);
