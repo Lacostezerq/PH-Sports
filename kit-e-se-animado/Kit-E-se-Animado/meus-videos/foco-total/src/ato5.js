@@ -134,7 +134,7 @@ export const ATO6 = [
   // G2 — "Naquele dia era o aniversário do Tiago": bolo pequeno com vela, três amigos cantando, o Tiago olhando pra porta
   mk(456.23, 462.08, { bg: '#E8D8B8', fov: 40 }, (c) => { const S = salinha(c); const bo = bolo(); bo.position.set(.2, .76, .35); c.add(bo); const ti = ator(c, TIAGO, .2, -.25, 0); const am = [0, 1, 2].map((i) => ator(c, aluno(i + 5, { camisa: ['#E57AA0', '#3E7CC8', '#F2994A'][i] }), -.5 + i * .7, 1.0, Math.PI));
     return (t, u, cm) => { ti.pose(soma(parado(t, 3), { headY: 50 })); rosto(ti, null, t, 'triste', { look: [.8, 0] }); am.forEach((a, i) => { a.pose(soma(parado(t, i), { shL: [40, -10], shR: [40, -10], elL: 60, elR: 60 })); rosto(a, null, t, 'neutro', { mouth: { open: Math.abs(Math.sin(t * 4 + i)) * .5 } }); });
-      if (bo.userData.chama) bo.userData.chama.scale.y = 1 + Math.sin(t * 15) * .2; cam(cm, [[0, [.35, 1.85, 1.55]], [1, [.3, 1.75, 1.45]]], [.2, .9, -.05], u / 5.85); return { tint: '#FFE8C8', sat: .85 }; }; }),
+      if (bo.userData.chama) bo.userData.chama.scale.y = 1 + Math.sin(t * 15) * .2; cam(cm, [[0, [-1.45, 1.45, .15]], [1, [-1.35, 1.4, .1]]], [.25, .95, .05], u / 5.85); return { tint: '#FFE8C8', sat: .85 }; }; }),
   // G3 — "o mesmo Tiago que filmou o violão, que comemorou o 10, que inscreveu ele no grupo de xadrez": flashes, e a conversa sem resposta
   mk(462.08, 467.68, { bg: '#DDE6EE', fov: 30, limpa: false }, (c) => { vazio(c, { cor: '#9FD8FF' }); const tel = celular(); tel.scale.setScalar(5); tel.position.set(0, 1, 0); c.add(tel);
     return (t, u, cm) => { tel.tela('conversa'); tel.rotation.y = Math.sin(t * .6) * .15; cam(cm, [[0, [0, 1.05, 1.6]], [1, [0, 1.0, 1.25]]], [0, .98, 0], u / 5.6, 0, 0); return { vig: .5 }; }; }),
@@ -185,7 +185,7 @@ export const ATO7 = [
   mk(512.06, 514.84, { bg: '#DDE6EE', fov: 40 }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); K.tel.visible = false; const g = ator(c, GUI, 0, 0, 0); sentar(g, .85, -.55, -Math.PI / 2, .42); const T = tabuleiro(.04); T.g.position.set(.75, .45, .15); c.add(T.g); const r = ator(c, ROSE, 0, 0, 0); K.portaK.abre(1);
     return (t, u, cm) => { g.pose(sentado({ shR: [40, 10], elR: 60, lean: 18, headX: 30 })); rosto(g, null, t, 'determinado', { look: [0, .8] }); const k = clamp((t - 513.2) / 1.6);
       if (t < 513.2) { r.place(.6, -.35, 0, -Math.PI / 2 - .3); r.pose({ lean: 30, headX: 10, shL: [40, 10], shR: [40, 10] }); rosto(r, null, t, 'feliz', { blink: 1 }); } else { r.place(lerp(.6, -1.2, k), lerp(-.35, .8, k), 0, 2.4); r.pose(andar(t, { f: 1.6 })); rosto(r, null, t, 'feliz'); }
-      cam(cm, [[0, [-.15, 1.5, -1.35]], [1, [-.05, 1.45, -1.25]]], [.7, 1.0, -.4], u / 2.78); return DIA; }; }),
+      cam(cm, [[0, [-.75, 1.6, -1.4]], [1, [-.65, 1.55, -1.3]]], [.6, .95, -.3], u / 2.78); return DIA; }; }),
   // H5 — "porque estava focado 100% num cavalo preto na casa f6": zoom seco no cavalo brilhando
   mk(514.84, 520.55, { bg: '#1A1A22', fov: 30, perto: true, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); K.tel.visible = false; const g = ator(c, GUI, 0, 0, 0); sentar(g, .85, -.55, -Math.PI / 2, .42); const T = tabuleiro(.04); T.g.position.set(.75, .45, .15); c.add(T.g); const cv = T.P.g8; const set = emFoco([cv]);
     return (t, u, cm) => { g.pose(sentado({ shR: [40, 10], elR: 60, lean: 18, headX: 30 })); rosto(g, null, t, 'determinado', { look: [0, .8] }); T.move(cv, 'g8', 'f6', clamp((t - 515.2) / .6)); UF.mundo.value = .9; set(1, t); fundo(c, '#1A1A22', .9); T.g.updateMatrixWorld(true);
