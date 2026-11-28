@@ -9,6 +9,7 @@ import { cantina } from './lugares_foco.js';
 import { GUI, DAVI, ROSECASA, ROSE, TIAGO, PROFH, aluno } from './elenco_foco.js';
 import { folha, coxinha, prova, paoManteiga, faca } from './pecas_foco.js';
 import { escova, xicara } from './objs.js';
+import { cadernoAberto, folhaDraw } from './objetos.js';
 import { fantasma } from './pecas.js';
 import { deitar } from './lib.js';
 import { rb, bx, cyl, sph, toon, ctex } from './motor/toon.js';
@@ -101,10 +102,10 @@ export const ATO2 = [
       S.g.pose(sentado({ shR: [40, 8], elR: 80, shL: [40, 8], elL: 80, lean: 6, headX: 4 })); rosto(S.g, null, t, 'tedio');
       cam(cm, [[0, [2.6, 2.1, -2.8]], [1, [2.3, 1.9, -2.5]]], [0, .9, .3], u / 4.36); return {}; }; }),
   // C12 — "que sempre dormia nessa aula com a cara no caderno": flashback ANTES
-  mk(164.92, 169.21, { bg: '#F2E6C8', fov: 56 }, (c) => { const S = montaAula(c);
+  mk(164.92, 169.21, { bg: '#F2E6C8', fov: 56 }, (c) => { const S = montaAula(c); const cd = cadernoAberto(); cd.scale.setScalar(.75); cd.position.set(0, .74, -.12); c.add(cd); cd.userData.E.paint('e', (x, W, H) => folhaDraw(x, W, H)); cd.userData.D.paint('d', (x, W, H) => folhaDraw(x, W, H));
     return (t, u, cm) => { alunosUpd(S, t, 1); S.pr.pose(soma({ shR: [80, 30], elR: 40 }, vivo(t, 3))); rosto(S.pr, null, t, 'neutro'); S.ti.pose(sentado(vivo(t, 3))); rosto(S.ti, null, t, 'tedio');
-      S.g.pose(sentado({ lean: 44, headX: 34, shL: [70, 20], elL: 125, shR: [70, 20], elR: 125 })); rosto(S.g, null, t, 'sono', { blink: 1, mouth: { open: .25 } });
-      cam(cm, [[0, [-.6, 1.55, -.4]], [1, [-.6, 1.5, -.3]]], [.05, .85, .3], u / 4.29); return { sat: .3, tint: '#F4DDB8', vig: .55 }; }; }),
+      const re = Math.sin(t * 1.6); S.g.pose(sentado({ lean: 38 + re * 1.5, headX: 26, headZ: -32, shL: [70, 20], elL: 125, shR: [70, 20], elR: 125 })); rosto(S.g, null, t, 'sono', { blink: 1, mouth: { open: .22 + re * .06 } });
+      cam(cm, [[0, [.78, 1.32, -.62]], [1, [.72, 1.28, -.56]]], [0, .8, -.1], u / 4.29); return { sat: .3, tint: '#F4DDB8', vig: .55 }; }; }),
   // C13 — "não perde uma palavra": sentado reto, efeito foco ligado (o professor colorido)
   mk(169.21, 170.72, { bg: '#F2E6C8', fov: 40 }, (c) => { const S = montaAula(c); const set = emFoco([S.pr.root]);
     return (t, u, cm) => { alunosUpd(S, t, 1); fala(S.pr, 'n', t, 'feliz', soma({ shR: [80 + Math.sin(t * 2) * 30, 30], elR: 40 }, vivo(t, 3)), 0, { mouth: { open: Math.abs(Math.sin(t * 9)) * .5 } }); S.ti.pose(sentado({ lean: 40, headX: 30, shL: [70, 20], elL: 120, shR: [70, 20], elR: 120 })); rosto(S.ti, null, t, 'sono', { blink: 1 });
