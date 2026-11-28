@@ -60,7 +60,7 @@ export const ATO9 = [
       cam(cm, [[0, [0, 1.05, 2.4]], [1, [0, 1.02, 1.6]]], [0, 1, 0], u / 12.12, 0, 0); return { bloom: .35, bloomT: .8, vig: .5 }; }; }),
   // K9 — "Me ensina a frase que você ia falar?": olhos cheios, sorrindo
   mk(693.52, 696.64, { bg: '#F7E7C8', fov: 30 }, (c) => { const F = montaFinal(c); F.f.set(1);
-    return (t, u, cm) => { const p = soma(G.sentadoChao, { shR: [60, 10], elR: 30, shL: [60, -10], elL: 30 }); fala(F.g, 'gui', t, 'feliz', p, 0, { lagrima: true, look: [.5, -.3], olhosAbertos: true }); F.g.pose(p); F.d.pose(davSent(t)); rosto(F.d, null, t, 'feliz'); naMao(F.m, F.d, 'R', [-.08, -.1, .18], false);
+    return (t, u, cm) => { const p = soma(G.sentadoChao, { shR: [60, 10], elR: 30, shL: [60, -10], elL: 30 }); fala(F.g, 'gui', t, 'feliz', p, 0, { lagrima: true, look: [.5, -.3], olhosAbertos: true }); F.g.pose(p); F.d.pose(davSent(t)); rosto(F.d, null, t, 'feliz'); { const q = frenteDe(F.d.root, .21, .3); F.m.position.set(q[0], q[1], q[2]); F.m.quaternion.copy(F.d.root.quaternion); F.m.scale.setScalar(.8); }
       F.g.root.updateMatrixWorld(true); const a = F.g.hands.L.localToWorld(new THREE.Vector3(0, -.05, .05)); F.f.position.copy(a); F.f.quaternion.copy(F.g.root.quaternion); OURO(c); F.set(1, t);
       F.g.headG.updateMatrixWorld(true); const h = F.g.headG.localToWorld(new THREE.Vector3(0, .26, .2)), e = F.g.headG.localToWorld(new THREE.Vector3(-.25, .32, 1.15)); cam(cm, [e.x, e.y, e.z], [h.x, h.y, h.z], u / 3.12, 0, 0); return FX; }; }),
   // K10 — "Meu irmão é o melhor do mundo quando ele tá aqui.": de pé na cadeirinha, apresenta só pra ele; o Guilherme aplaude de pé
@@ -86,7 +86,7 @@ export const ATO9 = [
       naMao(tr, k < .5 ? S.prof : S.gui, k < .5 ? 'R' : 'L', [0, -.05, .1], false); cam(cm, [[0, [1.7, 1.3, .7]], [1, [1.55, 1.25, .85]]], [.1, 1.1, 1.75], u / 3.2); return { vig: .4 }; }; }),
   // K15 — "e voltou pra casa a pé com o Davi, chutando uma pedra pela calçada, com o celular desligado no bolso"
   mk(719.68, 725.44, { bg: '#F0C49A', fov: 40 }, (c) => { const R = rua(c, { hora: 'tarde', tipo: 'casas', incl: 4 }); const g = ator(c, GUI, 0, 0, 0); const d = ator(c, DAVI, 0, 0, 0); R.g.add(g.root, d.root); const pd = sph(.035, '#8A8278', 0, 0, 0); R.g.add(pd);
-    return (t, u, cm) => { const z = -(t - 719.68) * .45; g.place(-4.86, z, .16, Math.PI); d.place(-5.17, z - .25, .16, Math.PI); g.pose(andar(t, { f: 1.5 })); d.pose(andar(t + .3, { f: 1.9 })); rosto(g, null, t, 'feliz', { look: [-.5, 0] }); rosto(d, null, t, 'rindo', { look: [.5, 0] });
+    return (t, u, cm) => { const z = -.75 - (t - 719.68) * .45; g.place(-4.84, z, .16, Math.PI); d.place(-5.06, z - .5, .16, Math.PI); g.pose(andar(t, { f: 1.5 })); d.pose(andar(t + .3, { f: 1.9 })); rosto(g, null, t, 'feliz', { look: [-.5, 0] }); rosto(d, null, t, 'rindo', { look: [.5, 0] });
       const pk = ((t - 719.68) * .45) % 1.6; pd.position.set(-5.08 + Math.sin(t) * .1, .18 + Math.max(0, Math.sin(pk / 1.6 * Math.PI)) * .05, z - .6 - pk * .3);
       if (t < 723.6) { const w = R.w(-5.08, .8, z - .1); cam(cm, [w[0] + .55, w[1] + .45, w[2] - 2.6], w, u / 5.76, 0, 0); } else { const w2 = R.w(-4.92, .28, z - .3); cam(cm, [w2[0] + .3, w2[1] + .12, w2[2] - 1.35], w2, (t - 723.6) / 1.84, 0, 0); } return { tint: '#FFD8B0', bloom: .35 }; }; }),
   // K16 — "E na geladeira de casa, até hoje, o troféu fica do lado. Mas o desenho fica no meio."
