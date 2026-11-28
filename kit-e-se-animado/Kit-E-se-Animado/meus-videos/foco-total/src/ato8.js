@@ -115,11 +115,11 @@ export const ATO8 = [
       const cai = smooth(601.0, 601.5, t); tr.position.set(1.85 + cai * .12, .775 - cai * .0, -.2); tr.rotation.z = -cai * 1.5 + Math.sin(t * 20) * .1 * (cai < .1 && t > 600.6 ? 1 : 0); cam(cm, [[0, [2.6, 1.1, .8]], [1, [2.5, 1.05, .7]]], [1.85, .9, -.2], u / 3.36); return { vig: .35 }; }; }),
   // J2 — "Atravessa três ruas sem olhar pros lados": câmera de lado acompanhando a corrida, um carro freia
   mk(602.80, 605.09, { bg: '#BFE3F7', fov: 40 }, (c) => { const R = rua(c, { hora: 'dia', tipo: 'lojas' }); const g = ator(c, GUI, 0, 0, 0); const car = carroPop('#E2443A'); c.add(car);
-    return (t, u, cm) => { const x = lerp(5.5, -5.5, u / 2.29); g.place(x, 0, x > 4 || x < -4 ? .16 : 0, -Math.PI / 2); g.pose(correr(t, 3.2, 1)); rosto(g, null, t, 'medo'); const fr = clamp((t - 603.4) / .6); car.position.set(-1.6, 0, lerp(-12, -2.2, easeOut(fr))); car.rotation.x = fr < 1 ? -fr * .05 : 0;
-      cam(cm, [x + .5, 1.2, 4.5], [x, .9, 0], u / 2.29, 0, 0); return {}; }; }),
+    return (t, u, cm) => { const x = lerp(5.5, -4.95, u / 2.29); g.place(x, .5, x > 4 || x < -4 ? .16 : 0, -Math.PI / 2); g.pose(correr(t, 3.2, 1)); rosto(g, null, t, 'medo'); const fr = clamp((t - 603.4) / .6); car.position.set(-1.6, 0, lerp(-12, -2.2, easeOut(fr))); car.rotation.x = fr < 1 ? -fr * .05 : 0;
+      cam(cm, [x + .5, 1.2, 5.0], [x, .9, .5], u / 2.29, 0, 0); return {}; }; }),
   // J3 — "sobe a ladeira, entra pelo portão da escola sem fôlego"
   mk(605.09, 607.45, { bg: '#BFE3F7', fov: 40 }, (c) => { const R = rua(c, { hora: 'dia', tipo: 'casas', incl: 8 }); const g = ator(c, GUI, 0, 0, 0); R.g.add(g.root);
-    return (t, u, cm) => { const z = lerp(4, -6, u / 2.36); g.place(-5.2, z, .16, Math.PI); g.pose(soma(correr(t, 2.6, .9), { lean: 18 })); rosto(g, null, t, 'medo', { mouth: { open: .6, round: .5 } }); const w = R.w(-5.2, 1, z); cam(cm, [w[0] + 2.5, w[1] + 1.2, w[2] + 3], w, u / 2.36, 0, 0); return {}; }; }),
+    return (t, u, cm) => { const z = lerp(4, -6, u / 2.36); g.place(-4.95, z, .16, Math.PI); g.pose(soma(correr(t, 2.6, .9), { lean: 18 })); rosto(g, null, t, 'medo', { mouth: { open: .6, round: .5 } }); const w = R.w(-4.95, 1, z); cam(cm, [w[0] + 2.5, w[1] + 1.2, w[2] + 3], w, u / 2.36, 0, 0); return {}; }; }),
   // J4 — o corredor com as cartolinas: "minha mãe", "meu pai", "minha vó", "meu irmão"
   mk(607.45, 609.44, { bg: '#F7E7C8', fov: 44 }, (c) => { const C = corredorDavi(c); const g = ator(c, GUI, 0, 0, 0);
     return (t, u, cm) => { const z = lerp(2.5, -8, u / 1.99); g.place(0, z, 0, Math.PI); g.pose(correr(t, 3, 1)); rosto(g, null, t, 'medo'); cam(cm, [[0, [.6, 1.5, z + 2.5]], [1, [.5, 1.45, z + 2.2]]], [0, 1.2, z - 2], u / 1.99, 0, 0); return {}; }; }),
