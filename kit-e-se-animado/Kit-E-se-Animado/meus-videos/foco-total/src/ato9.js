@@ -24,8 +24,8 @@ export const ATO9 = [
       F.g.headG.updateMatrixWorld(true); const h = F.g.headG.localToWorld(new THREE.Vector3(0, .26, .2)), e = F.g.headG.localToWorld(new THREE.Vector3(-.15, .3, .95)); cam(cm, [e.x, e.y, e.z], [h.x, h.y, h.z], u / 1.44, 0, 0); return FX; }; }),
   // K2 — "Não precisa mais, já acabou.": aperta a mochila contra o peito
   mk(648.00, 650.32, { bg: '#F7E7C8', fov: 32 }, (c) => { const F = montaFinal(c); F.f.visible = false;
-    return (t, u, cm) => { const p = davSent(t, { shL: [60, -50], elL: 125, shR: [60, -50], elR: 125, lean: 6 }); fala(F.d, 'davi', t, 'triste', p, 0, { look: [-.3, .2] }); F.d.pose(p); naMao(F.m, F.d, 'R', [-.12, -.06, .18], false); F.g.pose(G.sentadoChao); rosto(F.g, null, t, 'preocupado'); OURO(c); F.set(1, t);
-      cam(cm, [[0, [1.7, .85, -1.3]], [1, [1.8, .82, -1.45]]], [2.6, .65, -2.3], u / 2.32); return FX; }; }),
+    return (t, u, cm) => { const p = davSent(t, { shL: [60, -50], elL: 125, shR: [60, -50], elR: 125, lean: 6 }); fala(F.d, 'davi', t, 'triste', p, 0, { look: [-.3, .2] }); F.d.pose(p); { const q = frenteDe(F.d.root, .21, .3); F.m.position.set(q[0], q[1], q[2]); F.m.quaternion.copy(F.d.root.quaternion); F.m.scale.setScalar(.8); } F.g.pose(G.sentadoChao); rosto(F.g, null, t, 'preocupado'); OURO(c); F.set(1, t);
+      F.d.headG.updateMatrixWorld(true); const dh = F.d.headG.getWorldPosition(new THREE.Vector3()); const fr = frenteDe(F.d.root, 1.05, .78, .35); cam(cm, [[0, fr], [1, [lerp(fr[0], dh.x, .12), fr[1], lerp(fr[2], dh.z, .12)]]], [dh.x, dh.y - .12, dh.z], u / 2.32); return FX; }; }),
   // K3 — "Precisa sim, eu quero ver.": estende a mão aberta
   mk(650.32, 652.48, { bg: '#F7E7C8', fov: 36 }, (c) => { const F = montaFinal(c); F.f.visible = false;
     return (t, u, cm) => { const k = smooth(650.6, 651.4, t); const p = soma(G.sentadoChao, { shR: [lerp(-30, 70, k), 10], elR: lerp(10, 15, k) }); fala(F.g, 'gui', t, 'feliz', p, 0); F.g.pose(p); F.d.pose(davSent(t)); rosto(F.d, null, t, 'surpreso', { look: [.3, .4] }); naMao(F.m, F.d, 'R', [-.08, -.1, .18], false); OURO(c); F.set(1, t);
