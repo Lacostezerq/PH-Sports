@@ -12,7 +12,7 @@ export function mk(t0, t1, o, build) {
   // a cena só é montada quando o vídeo chega nela; a anterior é desmontada (economiza memória)
   const monta = () => { if (ULTIMA && ULTIMA !== s) ULTIMA._desmonta(); ULTIMA = s; c = s.scene = new THREE.Scene(); c.background = bg; if (o.fog) c.fog = new THREE.Fog(o.fog[0], o.fog[1], o.fog[2]); U = build(c, s) || (() => ({})); };
   s._desmonta = () => { if (!U) return; c.traverse((n) => { if (n.geometry) n.geometry.dispose(); if (n.material) for (const m of [].concat(n.material)) { if (m.map && !m.map.userData.fixa && m.map.image && m.map.image.tagName === 'CANVAS' && m.map.image.__dyn) m.map.dispose(); m.dispose(); } }); s.scene = new THREE.Scene(); s.scene.background = bg; U = null; c = null; };
-  s.update = (t, u) => { if (!U) monta(); uT.value = t; CUR = { t0, t1, viva: o.viva ?? 1, scene: c, perto: o.perto }; restaura(c); const r = U(t, u, s.camera) || {}; if (o.limpa !== false) limpaVista(c, s.camera); const V = c.userData.vida; if (V && o.vida !== false) { const T = tw(t); for (const f of V) f(t, T, u); } return FX(r); };
+  s.update = (t, u) => { if (!U) monta(); uT.value = t; CUR = { t0, t1, viva: o.viva ?? 1, scene: c, perto: o.perto }; restaura(c); const r = U(t, u, s.camera) || {}; if (o.expressao !== false) vidaRostos(c, t); if (o.limpa !== false) limpaVista(c, s.camera); const V = c.userData.vida; if (V && o.vida !== false) { const T = tw(t); for (const f of V) f(t, T, u); } return FX(r); };
   return s;
 }
 let ULTIMA = null;
@@ -47,16 +47,33 @@ import { makeChar3D, pisca } from './motor/char3d.js';
 import { boca } from './fala.js';
 /** Coloca um personagem na cena. */
 export function ator(c, def, x = 0, z = 0, ry = 0, y = 0) { const k = makeChar3D(def); k.place(x, z, y, ry); c.add(k.root); k.seed = Math.abs((x * 13 + z * 7) | 0) % 9; return k; }
+const hsh = (n, s) => { const x = Math.sin(n * 127.1 + s * 311.7) * 43758.5453; return x - Math.floor(x); };
+/** Piscada natural: olho fecha de verdade por ~4 quadros, em intervalos irregulares, às vezes piscada dupla. */
+export function piscaV(t, seed = 0) { const Lp = 2.4 + (seed % 5) * .21, n = Math.floor((t + seed * .9) / Lp), tl = (t + seed * .9) - n * Lp;
+  const f = (d) => d < 0 ? 0 : d < .04 ? .55 : d < .14 ? 1 : d < .18 ? .55 : 0; const st = .15 + hsh(n, seed) * (Lp - .8);
+  return Math.max(f(tl - st), hsh(n + 50, seed) < .22 ? f(tl - st - .3) : 0); }
+/** Olhar vivo: pequenos saltos dos olhos para um lado e outro, segurando entre um e outro. */
+export function sacada(t, seed = 0, amp = .24) { const Lp = 1.3 + (seed % 4) * .27, n = Math.floor((t + seed * 1.3) / Lp), tl = (t + seed * 1.3) - n * Lp;
+  const o = (m) => [(hsh(m, seed + 7) - .5) * 2 * amp, (hsh(m, seed + 11) - .5) * amp * .8]; const a = o(n - 1), b2 = o(n), k = Math.min(1, tl / .07); return [a[0] + (b2[0] - a[0]) * k, a[1] + (b2[1] - a[1]) * k]; }
+/** Sobrancelha que levanta de vez em quando (expressão). */
+const sobe = (t, seed) => { const Lp = 3.3 + (seed % 3) * .5, n = Math.floor((t + seed) / Lp), tl = (t + seed) - n * Lp; if (hsh(n, seed + 3) > .35) return 0; const st = hsh(n, seed + 5) * (Lp - 1); const d = tl - st; return d < 0 || d > .9 ? 0 : 1.6 * Math.sin(Math.PI * d / .9); };
+/** Feliz: olho aberto com sorriso, e de vez em quando aperta os olhos ^ ^ (riso) por ~1 s. */
+const riso = (t, seed) => { const Lp = 3.6 + (seed % 3) * .4, n = Math.floor((t + seed * 1.1) / Lp), tl = (t + seed * 1.1) - n * Lp; const st = hsh(n, seed + 9) * (Lp - 1.3); return hsh(n, seed + 13) < .55 && tl > st && tl < st + 1.1; };
+/** Quem não recebeu rosto neste quadro (figurantes, plateia) também pisca e olha em volta. */
+function vidaRostos(c, t) { for (const k of atoresDa(c)) { if (k._rt === t || !k.root.visible || k.congelado) continue; const U2 = k._ult; if (U2 && U2.extra.vivo === false) continue; rosto(k, null, t, U2 ? U2.emo : 'neutro', U2 ? { ...U2.extra, mouth: U2.extra.mouth } : {}); } }
 /** Rosto com piscada automática e boca sincronizada com a fala de `quem` (tempo absoluto t). */
 export function rosto(k, quem, t, emo = 'neutro', extra = {}) {
   const b = quem ? boca(quem, t) : { open: 0, round: 0 };
   const m = extra.mouth || (b.open > 0 ? { open: b.open, round: b.round, smile: extra.smile } : { open: 0, smile: extra.smile });
-  k.face({ emo, blink: extra.blink ?? pisca(t, k.seed || 0), look: extra.look || [0, 0], brow: extra.brow, lagrima: extra.lagrima, olhosAbertos: extra.olhosAbertos, blush: extra.blush, lingua: extra.lingua, pisca1: extra.pisca1, mouth: m });
+  k._rt = t; k._ult = { emo, extra };
+  const sd = k.seed || 0, fz = k.congelado || extra.vivo === false, L0 = extra.look || [0, 0], sc = fz ? [0, 0] : sacada(t, sd, L0[0] || L0[1] ? .13 : .24);
+  const brow = (extra.brow ?? 0) + (fz ? 0 : sobe(t, sd) + (b.open || 0) * 1.3 * (.55 + .45 * Math.sin(t * 4.3 + sd)));
+  k.face({ emo, blink: extra.blink ?? (fz ? 0 : piscaV(t, sd)), look: [L0[0] + sc[0], L0[1] + sc[1]], brow, lagrima: extra.lagrima, olhosAbertos: extra.olhosAbertos ?? (emo === 'feliz' && extra.blink === undefined && !fz ? !riso(t, sd) : undefined), blush: extra.blush, lingua: extra.lingua, pisca1: extra.pisca1, mouth: m });
   // vida: respiração, cabeça que balança devagar e acena junto com a fala
   const H = k.headG.rotation, To = k.torsoG.rotation, V = k._viva;
   if (V && H.x === V.r[0] && H.y === V.r[1] && H.z === V.r[2] && To.x === V.r[3] && To.z === V.r[4]) { H.x -= V.d[0]; H.y -= V.d[1]; H.z -= V.d[2]; To.x -= V.d[3]; To.z -= V.d[4]; }
   if (!k.congelado && extra.vivo !== false) { const sd = (k.seed || 0) * 1.7, tl = t * (extra.lento ?? 1), fala = b.open || 0;
-    const d = [.03 * Math.sin(tl * 1.05 + sd) + fala * .09 * (.6 + .4 * Math.sin(tl * 7.3 + sd)), .045 * Math.sin(tl * .63 + sd * 2) + fala * .05 * Math.sin(tl * 3.1 + sd), .025 * Math.sin(tl * .81 + sd * 3), .018 * Math.sin(tl * 2.2 + sd), .01 * Math.sin(tl * .9 + sd)];
+    const ol = sacada(tl, sd + 3, 1); const d = [.045 * Math.sin(tl * 1.05 + sd) + fala * .11 * (.6 + .4 * Math.sin(tl * 7.3 + sd)) + ol[1] * .06, .065 * Math.sin(tl * .63 + sd * 2) + fala * .06 * Math.sin(tl * 3.1 + sd) + ol[0] * .12, .04 * Math.sin(tl * .81 + sd * 3) + .03 * Math.sin(tl * 1.9 + sd), .025 * Math.sin(tl * 2.2 + sd), .016 * Math.sin(tl * .9 + sd)];
     H.x += d[0]; H.y += d[1]; H.z += d[2]; To.x += d[3]; To.z += d[4]; k._viva = { d, r: [H.x, H.y, H.z, To.x, To.z] }; } else k._viva = null;
 
   return k;
