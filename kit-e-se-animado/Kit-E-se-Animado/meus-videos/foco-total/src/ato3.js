@@ -34,9 +34,9 @@ export const ATO3 = [
     return (t, u, cm) => { K.portaK.abre(1 - smooth(234.9, 235.8, t)); const k = clamp((t - 236.3) / 1.5); g.place(lerp(-.2, -.95, k), lerp(.4, 1.1, k), 0, -2.3); g.pose(k > 0 && k < 1 ? andar(t, { f: 1.8 }) : soma(parado(t, 1), k >= 1 ? { lean: 30, shR: [70, 10], elR: 20 } : {})); rosto(g, null, t, 'surpreso', { look: [-.3, .6] });
       cam(cm, [[0, [1.25, 1.5, -.75]], [1, [1.15, 1.42, -.6]]], [-1.3, .7, 1.1], u / 4.18); return TARDE; }; }),
   // D2 — "com uma corda faltando": ele sopra a poeira, que vira nuvem
-  mk(238.86, 240.88, { bg: '#DDE6EE', fov: 50, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); K.tel.visible = false; K.violao.visible = false; const g = ator(c, GUI, -.85, .95, -2.4); const v = violao({ teia: true, semCorda: 2 }); c.add(v); const cp = [0, 0, 0]; const po = particulas(c, cp, { n: 40, cor: '#D8CDB8', r: .5, tam: .07, sobe: .5 });
-    return (t, u, cm) => { g.pose({ shR: [70, 10], elR: 40, shL: [80, -20], elL: 60, headX: 10 }); rosto(g, null, t, 'neutro', { mouth: t > 239.4 && t < 240.2 ? { open: .4, round: 1 } : undefined, look: [0, .3] }); naMao(v, g, 'L', [0, -.05, .05], false); v.rotation.set(0, -2.4 - Math.PI / 2, 1.2);
-      const p = v.getWorldPosition(new THREE.Vector3()); cp[0] = p.x; cp[1] = p.y + .1; cp[2] = p.z; po(clamp((t - 239.4) / 1.4)); cam(cm, [[0, [-1.38, 1.38, .3]], [1, [-1.36, 1.32, .4]]], [-.85, 1.0, .95], u / 2.02); return TARDE; }; }),
+  mk(238.86, 240.88, { bg: '#DDE6EE', fov: 56, limpa: false }, (c) => { const K = montaCasa(c, { hora: 'tarde' }); K.tel.visible = false; K.violao.visible = false; const g = ator(c, GUI, -.85, .95, -2.4); const v = violao({ teia: true, semCorda: 2 }); c.add(v); const cp = [0, 0, 0]; const po = particulas(c, cp, { n: 40, cor: '#D8CDB8', r: .5, tam: .07, sobe: .5 });
+    return (t, u, cm) => { g.pose({ shR: [40, 10], elR: 50, shL: [62, 30], elL: 22, headX: 16, headY: 22 }); rosto(g, null, t, 'neutro', { mouth: t > 239.4 && t < 240.2 ? { open: .4, round: 1 } : undefined, look: [.5, -.3] }); naMao(v, g, 'L', [0, -.05, .05], false); v.rotation.set(0, -2.4 - Math.PI / 2, 1.2);
+      const p = v.getWorldPosition(new THREE.Vector3()); cp[0] = p.x; cp[1] = p.y + .1; cp[2] = p.z; po(clamp((t - 239.4) / 1.4)); g.headG.updateMatrixWorld(true); const hd = g.headG.getWorldPosition(new THREE.Vector3()); const m = hd.clone().lerp(p, .5); cam(cm, [[0, [-1.36, 1.4, .3]], [1, [-1.34, 1.36, .36]]], [m.x, m.y, m.z], u / 2.02); return TARDE; }; }),
   // D3 — "troca a corda, coloca um vídeo de aula": o celular apoiado num copo com a aula
   mk(240.88, 243.18, { bg: '#DDE6EE', fov: 40 }, (c) => { const S = montaQuartoViolao(c, { hora: 'tarde' }); const copo = cyl(.04, .035, .1, '#CFE6F4', 0, 0, 0, { out: .003 }); copo.position.set(.35, .82, -1.15); c.add(copo); S.K.tel.position.set(.35, .95, -1.12); S.K.tel.rotation.set(-.2, 0, 0); S.K.tel.tela('views', .02);
     const cr = bx(.002, .002, .9, '#E8E0C8', 0, 0, 0); c.add(cr);
@@ -83,10 +83,17 @@ export const ATO3 = [
   mk(290.18, 310.68, { bg: '#C8C0B8', fov: 46, limpa: false }, (c) => { const S = montaQuartoViolao(c, { hora: 'noite' }); S.K.luzes.LG.intensity = 2; const d = ator(c, DAVI, 1.5, .85, -Math.PI / 2); fantasma(d, 1); const f = folha(); c.add(f); f.scale.setScalar(.6); S.K.portaD.abre(1);
     const rel = relogioParede(); rel.position.set(-.3, 2.0, -1.47); c.add(rel); const set = emFoco([S.g.root, S.v]); const nt = notasViolao(c, S.v);
     return (t, u, cm) => { tocando(S.g, S.v, t, 1.1); rosto(S.g, null, t, 'feliz', { blink: 1 }); nt(t, 1); const en = clamp((t - 291.7) / 1.6);
-      d.place(lerp(1.5, .25, en), lerp(.85, 1.05, en), 0, lerp(-Math.PI / 2, 2.58 - Math.PI * 2, en)); const bal = Math.sin(t * 2.2); d.pose(en > 0 && en < 1 ? andar(t, { f: 2 }) : soma({ shL: [30, -40], elL: 120, shR: [30, -40], elR: 120, headX: 6, tilt: bal * 5 }, { bob: Math.abs(bal) * .01 }));
+      d.place(lerp(1.5, -.05, en), lerp(.85, 1.35, en), 0, lerp(-Math.PI / 2, 2.58 - Math.PI * 2, en)); const bal = Math.sin(t * 2.2); d.pose(en > 0 && en < 1 ? andar(t, { f: 2 }) : soma({ shL: [30, -40], elL: 120, shR: [30, -40], elR: 120, headX: 6, tilt: bal * 5 }, { bob: Math.abs(bal) * .01 }));
       d.root.position.x += en >= 1 ? bal * .03 : 0; rosto(d, null, t, 'triste', { look: [-.6, .1] }); d.root.updateMatrixWorld(true); const a = d.hands.L.localToWorld(new THREE.Vector3(0, -.04, .04)), b = d.hands.R.localToWorld(new THREE.Vector3(0, -.04, .04)); f.position.copy(a).add(b).multiplyScalar(.5); f.quaternion.copy(d.root.quaternion); f.set(0);
       rel.hora(20, clamp((t - 294.8) / 9) * 10); UF.mundo.value = 1; set(.5, t); fundo(c, '#C8C0B8', 1); fantasma(d, t > 308.3 ? lerp(1, .15, smooth(308.3, 309.2, t)) * (t > 310.2 ? 1.5 : 1) : 1);
-      cam(cm, [[0, [-1.2, 2.05, -1.2]], [1, [-1.1, 1.95, -1.1]]], [.7, .8, .5], u / 20.5, 0, 0); return { tint: '#E8E2FF' }; }; }),
+      const W = (a, b) => (t - a) / (b - a);
+      if (t < 293) cam(cm, [[0, [-1.2, 2.05, -1.2]], [1, [-1.15, 2.0, -1.15]]], [.7, .8, .5], W(290.18, 293), 0, 0);
+      else if (t < 294.8) cam(cm, [[0, [.75, 1.12, 1.25]], [1, [.7, 1.1, 1.28]]], [f.position.x, f.position.y + .12, f.position.z], W(293, 294.8));
+      else if (t < 298) cam(cm, [[0, [-.3, 1.75, -.55]], [1, [-.3, 1.8, -.7]]], [-.3, 2.0, -1.47], W(294.8, 298));
+      else if (t < 302.4) cam(cm, [[0, [1.45, 1.35, 2.0]], [1, [1.38, 1.32, 1.92]]], [.15, .88, .95], W(298, 302.4));
+      else if (t < 304.1) { S.g.headG.updateMatrixWorld(true); const h = S.g.headG.getWorldPosition(new THREE.Vector3()); cam(cm, [[0, [h.x - .9, h.y + .1, h.z - .5]], [1, [h.x - .8, h.y + .08, h.z - .45]]], [h.x, h.y - .2, h.z], W(302.4, 304.1)); }
+      else cam(cm, [[0, [-1.2, 2.05, -1.2]], [1, [-1.1, 1.95, -1.1]]], [.7, .8, .5], W(304.1, 310.68), 0, 0);
+      return { tint: '#E8E2FF' }; }; }),
   // D12 — "Quando ele finalmente parou de tocar": a cor volta, o quarto está vazio
   mk(310.68, 313.08, { bg: '#C8C0B8', fov: 44 }, (c) => { const S = montaQuartoViolao(c, { hora: 'noite' }); S.K.luzes.LG.intensity = 2;
     return (t, u, cm) => { tocando(S.g, S.v, 310.7, 0); S.g.pose(sentado({ shR: [30, 20], elR: 40, shL: [40, -20], elL: 50, headX: 0, headY: Math.sin((t - 310.68) * 2) * 40 })); rosto(S.g, null, t, 'neutro', { look: [Math.sin((t - 310.68) * 2), 0] }); UF.mundo.value = 1 - smooth(310.7, 311.3, t);
